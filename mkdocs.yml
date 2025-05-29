@@ -6,7 +6,26 @@ site_url: https://health-ri.github.io/semantic-interoperability/
 repo_url: https://github.com/health-ri/semantic-interoperability/
 
 theme:
-  name: material  
+  name: material
+  font:
+    text: Open Sans
+    code: Fira Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
   features:
     - content.code.copy
     - navigation.expand
@@ -21,9 +40,28 @@ theme:
     - toc.follow
     - toc.integrate
     - search.share
-  logo: assets/images/health-ri-logo.png
+  logo: assets/images/health-ri-logo-white.png
   favicon: assets/images/health-ri-favicon.png
+
 plugins:
   - search
+
+extra_css:
+  - assets/stylesheets/colors.css
+
 nav:
   - Home: index.md
+  - Health-RI & Semantic Interoperability:
+      - What is Semantic Interoperability?: semantic-interoperability/index.md
+      - Why It Matters at Health-RI: semantic-interoperability/health-ri-context.md
+  - Ontologies:
+      - What are Ontologies?: ontologies/index.md
+  - Ontology Engineering:
+      - Ontology Engineering Principles: engineering/index.md
+  - OntoUML & gUFO:
+      - Introduction to OntoUML and gUFO: ontouml/index.md
+      - Why OntoUML for Health-RI: ontouml/health-ri.md
+  - The Health-RI Method:
+      - Overview of the Method: method/index.md
+      - Step-by-Step Process: method/steps.md
+      - Application Examples: method/examples.md
