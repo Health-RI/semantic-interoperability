@@ -59,8 +59,9 @@ nav:
   - Ontology Engineering:
       - Ontology Engineering Principles: engineering/index.md
   - OntoUML & gUFO:
-      - Introduction to OntoUML and gUFO: ontouml/index.md
-      - Why OntoUML for Health-RI: ontouml/health-ri.md
+      - Introduction: ontouml-gufo/index.md
+      - OntoUML: ontouml-gufo/ontouml.md
+      - gUFO: ontouml-gufo/gufo.md
   - The Health-RI Method:
       - Overview of the Method: method/index.md
       - Step-by-Step Process: method/steps.md

@@ -25,5 +25,3 @@ This documentation provides:
 - Examples of semantic alignment in real-world use cases.
 
 We invite researchers, data stewards, engineers, and anyone working with structured health data to explore this site and contribute to building a more interoperable health data ecosystem.
-
-> **Start by exploring [Semantic Interoperability](semantic-interoperability/index.md)**.
