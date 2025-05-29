@@ -1,6 +1,29 @@
 site_name: Health-RI Semantic Interoperability
+site_description: Documentation of models, ontologies, and activities related to semantic interoperability within Health-RI
+site_author: Pedro Paulo F. Barcelos
+
 site_url: https://health-ri.github.io/semantic-interoperability/
+repo_url: https://github.com/health-ri/semantic-interoperability/
+
 theme:
-  name: material
+  name: material  
+  features:
+    - content.code.copy
+    - navigation.expand
+    - navigation.instant
+    - navigation.path
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - toc.follow
+    - toc.integrate
+    - search.share
+  logo: assets/images/health-ri-logo.png
+  favicon: assets/images/health-ri-favicon.png
+plugins:
+  - search
 nav:
   - Home: index.md
