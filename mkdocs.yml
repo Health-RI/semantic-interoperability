@@ -1,0 +1,6 @@
+site_name: Health-RI Semantic Interoperability
+site_url: https://health-ri.github.io/semantic-interoperability/
+theme:
+  name: material
+nav:
+  - Home: index.md
