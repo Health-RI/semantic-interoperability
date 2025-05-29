@@ -1,0 +1,50 @@
+:root {
+  --md-primary-fg-color:        #183F74;
+  --md-primary-fg-color--light: #3A5F93;
+  --md-primary-fg-color--dark:  #0F2D56;
+  --md-accent-fg-color:         #F7AD2C;
+}
+
+.md-typeset h1 {
+  font-size: 2.0rem;   /* already quite prominent */
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+  margin-bottom: 1rem;
+}
+
+.md-typeset h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #183F74;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.md-typeset h3 {
+  font-size: 1.0rem;
+  font-weight: 500;
+  font-style: italic;
+  color: #183F74;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.md-typeset p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+/* Change text color in the top nav bar */
+.md-header,
+.md-header .md-header__title,
+.md-header a,
+.md-tabs,
+.md-tabs a {
+  color: #F7AD2C; /* 
+}
+
+/* Optional: keep the background navy blue */
+.md-header {
+  background-color: #183F74;
+}
