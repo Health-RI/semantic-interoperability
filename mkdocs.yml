@@ -51,7 +51,7 @@ extra_css:
 
 nav:
   - Home: index.md
-  - Health-RI & Semantic Interoperability:
+  - Semantic Interoperability:
       - What is Semantic Interoperability?: semantic-interoperability/index.md
       - Why It Matters at Health-RI: semantic-interoperability/health-ri-context.md
   - Ontologies:
@@ -61,6 +61,7 @@ nav:
   - OntoUML & gUFO:
       - Introduction: ontouml-gufo/index.md
       - OntoUML: ontouml-gufo/ontouml.md
+      - How to Create an OntoUML Model: ontouml-gufo/how-to-create-ontouml-model.md
       - gUFO: ontouml-gufo/gufo.md
   - The Health-RI Method:
       - Overview of the Method: method/index.md
