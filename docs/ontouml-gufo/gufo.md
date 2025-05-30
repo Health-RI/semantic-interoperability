@@ -1,6 +1,4 @@
-# gUFO: A Friendly Introduction
-
-<p align="left"><img src="assets/images/gufo-logo.png" width="400" alt="gUFO Logo"></p>
+# gentle UFO (gUFO)
 
 **gUFO** (gentle Unified Foundational Ontology) is a simplified and lightweight version of the Unified Foundational Ontology (UFO). It was designed to make ontology-driven conceptual modeling more accessible and practical for real-world applications, while preserving the formal rigor of its parent ontology.
 

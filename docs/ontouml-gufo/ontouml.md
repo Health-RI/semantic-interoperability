@@ -1,6 +1,6 @@
 # OntoUML
 
-<p align="left"><img src="assets/images/ontouml-logo.png" width="500" alt="OntoUML Logo"></p>
+<p align="left"><img src="../../assets/images/ontouml-logo.png" width="500" alt="OntoUML Logo"></p>
 
 **OntoUML** is an ontologically well-founded language designed for ontology-driven conceptual modeling. It extends the Unified Modeling Language (UML) by incorporating the ontological distinctions provided by the Unified Foundational Ontology (UFO). Through UML’s profiling mechanism, OntoUML defines a collection of class and association stereotypes that reflect the ontological distinctions present in UFO. It also establishes semantically motivated syntactical constraints to ensure that every syntactically correct model represents a sound UFO-based ontology.
 

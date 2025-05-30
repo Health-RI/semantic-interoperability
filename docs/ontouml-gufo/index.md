@@ -1,15 +1,13 @@
 # OntoUML & gUFO
 
-<p align="left"><img src="../assets/images/ontouml-logo.png" width="200" alt="OntoUML Logo"> <img src="../assets/images/gufo-logo.png" width="200" alt="gUFO Logo"></p>
-
 This section introduces **OntoUML** and **gUFO**, two complementary components that form the foundation for ontology-driven conceptual modeling.
 
 ## What You Will Find Here
 
-- 📘 **OntoUML**  
+- **OntoUML**  
   An ontologically well-founded modeling language that extends UML with precise distinctions inspired by the Unified Foundational Ontology (UFO). It supports the creation of conceptual models that are semantically rich and logically consistent.
 
-- 📘 **gUFO (gentle UFO)**  
+- **gUFO (gentle UFO)**  
   A formal OWL 2 implementation of the core concepts of UFO, designed to support ontology-based data integration, knowledge representation, and semantic interoperability across systems.
 
 ## Why These Tools Matter
