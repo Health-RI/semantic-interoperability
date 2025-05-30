@@ -18,7 +18,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../gufo/">
+        <link rel="next" href="../how-to-create-ontouml-model/">
       
       
       <link rel="icon" href="../../assets/images/health-ri-favicon.png">
@@ -250,7 +250,7 @@
           
   
   
-  Health-RI & Semantic Interoperability
+  Semantic Interoperability
 
         </a>
       </li>
@@ -444,7 +444,7 @@
   
   
   <span class="md-ellipsis">
-    Health-RI & Semantic Interoperability
+    Semantic Interoperability
     
   </span>
   
@@ -455,7 +455,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Health-RI & Semantic Interoperability
+            Semantic Interoperability
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -790,9 +790,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#origins-and-foundations" class="md-nav__link">
+  <a href="#origins" class="md-nav__link">
     <span class="md-ellipsis">
-      Origins and Foundations
+      Origins
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-and-standardization-efforts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation and Standardization Efforts
     </span>
   </a>
   
@@ -814,6 +823,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Supporting Tools and Developments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ontoumlufo-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      OntoUML/UFO Catalog
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -829,6 +853,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-create-ontouml-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Create an OntoUML Model
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1005,35 +1052,79 @@
 
 
 <h1 id="ontouml">OntoUML</h1>
-<p align="left"><img src="../assets/images/ontouml-logo.png" width="500" alt="OntoUML Logo"></p>
+<p align="left"><img src="../../assets/images/ontouml-logo.png" width="500" alt="OntoUML Logo"></p>
 
 <p><strong>OntoUML</strong> is an ontologically well-founded language designed for ontology-driven conceptual modeling. It extends the Unified Modeling Language (UML) by incorporating the ontological distinctions provided by the Unified Foundational Ontology (UFO). Through UML’s profiling mechanism, OntoUML defines a collection of class and association stereotypes that reflect the ontological distinctions present in UFO. It also establishes semantically motivated syntactical constraints to ensure that every syntactically correct model represents a sound UFO-based ontology.</p>
-<h2 id="origins-and-foundations">Origins and Foundations</h2>
-<p>The development of OntoUML is rooted in the work of Giancarlo Guizzardi, particularly his Ph.D. thesis titled <a href="https://research.utwente.nl/files/6042428/thesis_Guizzardi.pdf"><em>Ontological Foundations for Structural Conceptual Models</em></a> <strong><a href="#ref1">[1]</a></strong>. In this work, Guizzardi proposed the Unified Foundational Ontology (UFO) as a novel foundational ontology for conceptual modeling and employed it to evaluate and redesign a fragment of the UML 2.0 metamodel. This effort aimed to enhance conceptual modeling and domain ontology engineering by providing a more rigorous ontological foundation.</p>
+<p>OntoUML introduced a methodological commitment to ontological analysis, helping modelers make conceptually sound modeling decisions. By aligning UML notation with foundational ontology, OntoUML became a practical and rigorous approach to ontology-driven conceptual modeling <strong><a href="#ref1">[1]</a></strong>.</p>
+<p>Originally developed to make the use of foundational ontology in modeling more accessible and operational, OntoUML plays a central role in applying UFO in practice. The language was engineered to support the creation of high-quality domain models by explicitly encoding ontological distinctions in modeling constructs, enabling a principled approach to identifying and correcting conceptual modeling errors early in the development process <strong><a href="#ref2">[2]</a></strong>.</p>
+<p>Over time, OntoUML evolved beyond a simple UML profile: it became a community-supported ecosystem with formal semantics and tool support. Its precision and ontological grounding have made it especially valuable in complex domains such as healthcare, defense, digital forensics, and enterprise modeling, where ambiguity and conceptual inconsistency can have significant consequences <strong><a href="#ref2">[2]</a></strong>.</p>
+<h2 id="origins">Origins</h2>
+<p>The development of OntoUML is rooted in the work of Giancarlo Guizzardi, particularly his Ph.D. thesis titled <a href="https://research.utwente.nl/files/6042428/thesis_Guizzardi.pdf"><em>Ontological Foundations for Structural Conceptual Models</em></a> <strong><a href="#ref3">[3]</a></strong>. Although the term “OntoUML” was not used in that work, the conceptual basis for the language—its ontological foundations, modeling distinctions, and methodological approach—was thoroughly developed there. Similarly, the ontology that would later be known as the <strong>Unified Foundational Ontology (UFO)</strong> was introduced in substance, though not yet by name.</p>
+<p>The formal naming and definition of UFO as a unified foundational ontology appeared in a set of contemporaneous publications by Guizzardi and Wagner <strong><a href="#ref4">[4]</a></strong><strong><a href="#ref5">[5]</a></strong><strong><a href="#ref6">[6]</a></strong>. These works extended the ideas from the thesis and applied them to domains such as agent concepts and business modeling, positioning UFO as a comprehensive foundation for conceptual modeling.</p>
+<p>OntoUML was conceived as a lightweight UML profile grounded in this ontological foundation, designed to bridge the gap between formal ontology and practical modeling. It provides semantically rich modeling constructs through stereotypes and well-defined constraints that reflect ontological distinctions—such as types, roles, phases, and relators. This ensures that OntoUML models are logically consistent and ontologically expressive, enhancing semantic precision and interoperability.</p>
+<h2 id="documentation-and-standardization-efforts">Documentation and Standardization Efforts</h2>
+<p>Unlike some modeling languages that provide a centralized and formal specification, OntoUML does not have a single, unified source of documentation. Instead, its evolution is driven by academic research, with improvements and extensions typically introduced through peer-reviewed publications.</p>
+<p>This decentralized development model can pose challenges for newcomers, making the language harder to study and adopt compared to alternatives that offer consolidated reference materials.</p>
+<p>There are, however, two major online resources that offer learning materials for OntoUML:</p>
+<ul>
+<li>
+<p>The official OntoUML portal: <a href="https://ontouml.org/">https://ontouml.org/</a>  </p>
+<blockquote>
+<p>While this is the main site, much of its content is outdated and has not been maintained in recent years.</p>
+</blockquote>
+</li>
+<li>
+<p>The documentation project at Read the Docs: <a href="https://ontouml.readthedocs.io/en/latest/">https://ontouml.readthedocs.io/en/latest/</a>  </p>
+<blockquote>
+<p>This version is more comprehensive and somewhat more recent, but it still contains outdated content and should be read with caution.</p>
+</blockquote>
+</li>
+</ul>
+<p>Despite their limitations, these resources remain valuable for learning the language. However, users should remain aware of their partial and outdated nature and supplement them with insights from more recent academic publications.</p>
 <h2 id="adoption-and-influence">Adoption and Influence</h2>
 <p>Since its inception, OntoUML has been adopted by various academic, corporate, and governmental institutions worldwide for developing conceptual models across diverse domains. The foundational theories underlying OntoUML have also influenced other conceptual modeling languages, such as ORM 2.0.</p>
 <p>Several research groups have contributed to the development and dissemination of OntoUML, including:</p>
 <ul>
-<li>The Ontology &amp; Conceptual Modeling Research Group (NEMO) at the Federal University of Espírito Santo</li>
-<li>The Conceptual and Cognitive Modelling Research Group (CORE) at the Free University of Bozen-Bolzano</li>
-<li>The Center for Conceptual Modelling and Implementation (CCMi) at the Faculty of Information Technology</li>
-<li>The Semantics, Cybersecurity &amp; Services (SCS) group at the University of Twente</li>
+<li>The <a href="https://www.utwente.nl/en/eemcs/scs/">Semantics, Cybersecurity &amp; Services (SCS)</a> group at the University of Twente, the Netherlands  </li>
+<li>The <a href="https://nemo.inf.ufes.br/en/">Ontology &amp; Conceptual Modeling Research Group (NEMO)</a> at the Federal University of Espírito Santo, Brazil  </li>
+<li>The <a href="https://www.inf.unibz.it/krdb/">KRDB Research Centre for Knowledge-based Artificial Intelligence</a> at the Free University of Bozen-Bolzano, Italy  </li>
+<li>The <a href="https://ccmi.fit.cvut.cz/en/">Center for Conceptual Modelling and Implementation (CCMi)</a> at the Faculty of Information Technology, Czechia</li>
 </ul>
 <h2 id="supporting-tools-and-developments">Supporting Tools and Developments</h2>
-<p>OntoUML's ecosystem includes various tools and resources to support modeling activities:</p>
+<p>The official development of OntoUML tools is hosted on GitHub at <a href="https://github.com/OntoUML">https://github.com/OntoUML</a>. These projects are primarily academic efforts, maintained by researchers and contributors from the OntoUML community.</p>
 <ul>
-<li><strong>OntoUML/UFO Catalog</strong>: A comprehensive catalog of OntoUML and UFO ontology models, serving as a robust, structured, and open-source platform for ontology-driven conceptual modeling research.</li>
-<li><strong>OpenPonk</strong>: An open-source platform for modeling and simulation that supports OntoUML.</li>
-<li><strong>Tonto</strong>: A tool designed to facilitate OntoUML modeling.</li>
-<li><strong>OntoUML-JS</strong>: A JavaScript-based library for working with OntoUML models.</li>
-<li><strong>OntoUML Vocabulary</strong>: Provides a formal vocabulary for OntoUML concepts.</li>
-<li><strong>OntoUML Schema</strong>: Defines the schema for OntoUML models.</li>
-<li><strong>OntoUML Json2Graph Decoder</strong>: A tool for converting JSON representations of OntoUML models into graph structures.</li>
+<li><strong><a href="https://github.com/OntoUML/ontouml-js">ontouml-js</a></strong>: A JavaScript library for creating, manipulating, and serializing OntoUML models into JSON format compliant with the ontouml-schema.</li>
+<li><strong><a href="https://github.com/OntoUML/ontouml-json2graph">ontouml-json2graph</a></strong>: Transforms OntoUML JSON models into graph representations aligned with the OntoUML Vocabulary, facilitating visualization and semantic analysis.</li>
+<li><strong><a href="https://github.com/OntoUML/ontouml-metamodel">ontouml-metamodel</a></strong>: Provides an implementation-independent metamodel of OntoUML, covering both abstract and concrete syntaxes, serving as a reference for various OntoUML tools.</li>
+<li><strong><a href="https://github.com/OntoUML/ontouml-models">ontouml-models</a></strong>: A collaborative, structured, and open-source catalog of OntoUML and UFO ontology models, supporting empirical research and model sharing.</li>
+<li><strong><a href="https://github.com/OntoUML/ontouml-models-lib">ontouml-models-lib</a></strong>: A Python library designed to access and manage OntoUML models from the OntoUML/UFO Catalog, simplifying software development tasks.</li>
+<li><strong><a href="https://github.com/OntoUML/ontouml-models-tools">ontouml-models-tools</a></strong>: A set of tools for processing and validating OntoUML models, including functionalities for data quality verification and model analysis.</li>
+<li><strong><a href="https://github.com/OntoUML/ontouml-models-vocabulary">ontouml-models-vocabulary</a></strong>: Defines vocabularies to annotate and interlink models within the OntoUML/UFO Catalog, enhancing semantic interoperability.</li>
+<li><strong><a href="https://github.com/OntoUML/ontouml-schema">ontouml-schema</a></strong>: Provides a JSON Schema representation for OntoUML models, enabling validation and exchange of models in a standardized format.</li>
+<li><strong><a href="https://github.com/OntoUML/ontouml-server">ontouml-server</a></strong>: A server-side application offering services for OntoUML model management, including storage, conversion, and validation functionalities.</li>
+<li><strong><a href="https://github.com/OntoUML/ontouml-vocabulary">ontouml-vocabulary</a></strong>: An OWL vocabulary that formalizes the OntoUML metamodel, supporting the serialization and exchange of OntoUML models as linked data.</li>
+<li><strong><a href="https://github.com/OntoUML/ontouml-vocabulary-lib">ontouml-vocabulary-lib</a></strong>: A Python library facilitating the manipulation of OntoUML vocabulary concepts within RDFLib graphs, bridging OntoUML and Semantic Web technologies.</li>
+<li><strong><a href="https://github.com/OntoUML/ontouml-vp-plugin">ontouml-vp-plugin</a></strong>: A plugin for Visual Paradigm that integrates OntoUML modeling capabilities, allowing users to create and manage OntoUML models within the Visual Paradigm environment.</li>
 </ul>
-<p>These tools aim to enhance the usability and applicability of OntoUML in various modeling scenarios.</p>
+<p>These tools enhance the usability and applicability of OntoUML across various modeling workflows, supporting both academic exploration and industrial adoption.</p>
+<h3 id="ontoumlufo-catalog">OntoUML/UFO Catalog</h3>
+<p>The OntoUML/UFO Catalog is a structured, community-driven repository of real-world OntoUML models, developed with the goal of supporting research, education, and tool development in conceptual modeling. It provides a curated collection of ontologies from various domains—ranging from law and healthcare to logistics and cybersecurity—all represented using OntoUML and grounded in the Unified Foundational Ontology (UFO). Each model is accompanied by metadata that documents its origin, purpose, and scope, facilitating discoverability and reuse.</p>
+<p>Designed as an open and extensible initiative, the catalog is maintained on GitHub (<a href="https://github.com/OntoUML/ontouml-models">OntoUML Models Repository</a>) and promotes collaborative contributions from the broader community. It has proven to be an essential resource for empirical studies and validation of modeling tools and techniques. A peer-reviewed study has also systematically documented the catalog’s structure, evolution, and coverage, highlighting its value for both researchers and practitioners <strong><a href="#ref7">[7]</a></strong>.</p>
 <h2 id="references">References</h2>
-<p><a id="ref1"></a>
-<strong>[1]</strong> Guizzardi, G. (2005). <em>Ontological foundations for structural conceptual models.</em> [PhD Thesis - Research UT, graduation UT, University of Twente]. Telematica Instituut / CTIT. <a href="https://research.utwente.nl/en/publications/ontological-foundations-for-structural-conceptual-models/"><strong>[Access]</strong></a> <a href="https://research.utwente.nl/files/6042428/thesis_Guizzardi.pdf"><strong>[Download]</strong></a></p>
+<p><a id="ref1"></a> 
+- <strong>[1]</strong> Guizzardi, G., Wagner, G., Falbo, R. A., Guizzardi, R. S. S., &amp; Almeida, J. P. A. (2015). <em>OntoUML: A well-founded profile for UML-based conceptual modeling</em>. Applied Ontology, 10(3–4), 259–291. https://doi.org/10.3233/AO-150157</p>
+<p><a id="ref2"></a>
+- <strong>[2]</strong> Guizzardi, G., Wagner, G., Almeida, J. P. A., Guizzardi, R. S. S., &amp; Sales, T. P. (2022). <em>The Unified Foundational Ontology (UFO): Supercharging modeling with foundational ontologies</em>. Applied Ontology, 17(1), 1–44. https://doi.org/10.3233/AO-210256</p>
+<p><a id="ref3"></a>
+- <strong>[3]</strong> Guizzardi, G. (2005). <em>Ontological foundations for structural conceptual models</em> [Doctoral dissertation, University of Twente]. Telematica Instituut / CTIT. <a href="https://research.utwente.nl/en/publications/ontological-foundations-for-structural-conceptual-models/"><strong>[Access]</strong></a> <a href="https://research.utwente.nl/files/6042428/thesis_Guizzardi.pdf"><strong>[Download]</strong></a></p>
+<p><a id="ref4"></a>
+- <strong>[4]</strong> Guizzardi, G., &amp; Wagner, G. (2004). <em>On the ontological foundations of agent concepts</em>. In Proceedings of the 6th International Bi-Conference Workshop on Agent-Oriented Information Systems (AOIS), held in conjunction with CAiSE 2004, Riga, Latvia.</p>
+<p><a id="ref5"></a>
+- <strong>[5]</strong> Guizzardi, G., &amp; Wagner, G. (2005a). <em>Some applications of a unified foundational ontology in business modeling</em>. In T. Bui &amp; A. G. Tjoa (Eds.), Ontologies and business systems analysis. IDEA Group Publishing.</p>
+<p><a id="ref6"></a>
+- <strong>[6]</strong> Guizzardi, G., &amp; Wagner, G. (2005b). <em>Towards ontological foundations for agent modeling concepts using UFO</em>. In V. Dignum, M. Dastani, B. Dunin-Kȩplicz, &amp; R. Meyer (Eds.), Agent-Oriented Information Systems II (pp. xx–xx). Lecture Notes in Artificial Intelligence (Vol. 3508). Springer. https://doi.org/10.1007/11538394_6</p>
+<p><a id="ref7"></a>
+- <strong>[7]</strong> Sales, T. P., Guizzardi, G., Almeida, J. P. A., &amp; Guizzardi, R. S. S. (2023). <em>The OntoUML/UFO Catalog: A structured repository of real-world ontologies for conceptual modeling research</em>. Journal of Systems and Software, 201, 111645. https://doi.org/10.1016/j.jss.2023.111645</p>
 
 
 
