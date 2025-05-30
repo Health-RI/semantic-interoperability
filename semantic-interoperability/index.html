@@ -1,0 +1,1257 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation of models, ontologies, and activities related to semantic interoperability within Health-RI">
+      
+      
+        <meta name="author" content="Pedro Paulo F. Barcelos">
+      
+      
+        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/semantic-interoperability/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../ontouml-gufo/">
+      
+      
+      <link rel="icon" href="../assets/images/health-ri-favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Semantic Interoperability - Health-RI Semantic Interoperability</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/colors.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#semantic-interoperability" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Health-RI Semantic Interoperability" class="md-header__button md-logo" aria-label="Health-RI Semantic Interoperability" data-md-component="logo">
+      
+  <img src="../assets/images/health-ri-logo-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Health-RI Semantic Interoperability
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Semantic Interoperability
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/health-ri/semantic-interoperability/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Semantic Interoperability
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ontologies/index.md" class="md-tabs__link">
+          
+  
+  
+  Ontologies
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../engineering/index.md" class="md-tabs__link">
+          
+  
+  
+  Ontology Engineering
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ontouml-gufo/" class="md-tabs__link">
+          
+  
+  
+  OntoUML & gUFO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../method/index.md" class="md-tabs__link">
+          
+  
+  
+  The Health-RI Method
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Health-RI Semantic Interoperability" class="md-nav__button md-logo" aria-label="Health-RI Semantic Interoperability" data-md-component="logo">
+      
+  <img src="../assets/images/health-ri-logo-white.png" alt="logo">
+
+    </a>
+    Health-RI Semantic Interoperability
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/health-ri/semantic-interoperability/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semantic Interoperability
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Semantic Interoperability
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Semantic Interoperability
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Semantic Interoperability
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-semantic-interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Semantic Interoperability?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-semantic-interoperability-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why is Semantic Interoperability Important?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-interoperability-and-the-i-of-fair" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Interoperability and the “I” of FAIR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-is-semantic-interoperability-achieved" class="md-nav__link">
+    <span class="md-ellipsis">
+      How is Semantic Interoperability Achieved?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representing-the-semantic-interoperability-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Representing the Semantic Interoperability Problem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Representing the Semantic Interoperability Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interoperability-between-systems-a-and-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interoperability Between Systems A and B
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interoperability-between-systems-b-and-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interoperability Between Systems B and C
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interoperability Between Systems B and C">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#causes-and-consequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Causes and Consequences
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ontologies
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ontologies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontologies/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What are Ontologies?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ontology Engineering
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ontology Engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engineering/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ontology Engineering Principles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    OntoUML & gUFO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            OntoUML & gUFO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontouml-gufo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontouml-gufo/ontouml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OntoUML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontouml-gufo/how-to-create-ontouml-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Create an OntoUML Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontouml-gufo/gufo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    gUFO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    The Health-RI Method
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            The Health-RI Method
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../method/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview of the Method
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../method/steps.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Step-by-Step Process
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../method/examples.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="semantic-interoperability">Semantic Interoperability</h1>
+<p>Semantic interoperability is a cornerstone of effective data exchange, ensuring that information shared between systems retains its intended meaning. This capability is vital across various sectors, including healthcare, public administration, and the Internet of Things (IoT), facilitating seamless communication and collaboration.</p>
+<h2 id="what-is-semantic-interoperability">What is Semantic Interoperability?</h2>
+<p>Semantic interoperability refers to the ability of different computer systems to exchange data with unambiguous, shared meaning. Unlike syntactic interoperability, which focuses on the format of data exchange, semantic interoperability ensures that the meaning of the data is preserved and understood consistently across different systems. This is achieved by linking data elements to a common vocabulary or ontology, allowing machines to interpret and process information accurately without human intervention <a href="#ref1">[1]</a><a href="#ref2">[2]</a>.</p>
+<p>A critical challenge that semantic interoperability aims to address is the "false agreement" problem, as defined by Nicola Guarino. This problem arises when different agents (e.g., systems or people) use the same term but mean different things, or when they use different terms but mean the same thing. Guarino explains that many current representation languages are ontologically neutral, allowing knowledge engineers to use identical formal structures to represent fundamentally distinct concepts. This neutrality often leads to false agreements—apparent consensus at the syntactic or logical level that masks genuine semantic divergence.</p>
+<p>To prevent this, semantic interoperability frameworks must explicitly represent ontological commitments, ensuring that shared terms reflect shared understanding <a href="#ref3">[3]</a>. Building on this, Guizzardi adds that interoperability succeeds only when these commitments are not only stated, but also harmonized across systems <a href="#ref11">[11]</a>. Without this alignment, different agents may construct models that appear compatible but actually rely on divergent conceptualizations. As both Guarino and Guizzardi highlight, even when systems use the same vocabulary, they can still misunderstand each other if their ontologies reflect different views of the world. Semantic interoperability must therefore go beyond vocabulary alignment to include agreement on the underlying conceptual structure <a href="#ref4">[4]</a>.</p>
+<p>As Guizzardi explains, every information system necessarily reflects a particular view of reality, whether explicitly or not. That is, it commits to a conceptualization—a theory about what exists and how things are related. Even when developers are unaware of it, their systems make assumptions about the nature of the entities they represent. These assumptions must be clarified and aligned if systems are to interoperate semantically <a href="#ref11">[11]</a>.</p>
+<h2 id="why-is-semantic-interoperability-important">Why is Semantic Interoperability Important?</h2>
+<p>The importance of semantic interoperability lies in its capacity to enable accurate and meaningful data exchange, which is crucial for decision-making, efficiency, and innovation. In healthcare, for instance, it allows for the seamless sharing of patient information across different electronic health record systems, improving patient outcomes and reducing costs. In public services, it supports transparency and collaboration between governmental bodies <a href="#ref5">[5]</a><a href="#ref6">[6]</a>. This need for meaningful data exchange is reflected in the FAIR principles, which highlight Interoperability as one of the four essential pillars of data stewardship <a href="#ref12">[12]</a>.</p>
+<h2 id="semantic-interoperability-and-the-i-of-fair">Semantic Interoperability and the “I” of FAIR</h2>
+<p>The FAIR guiding principles identify <strong>Interoperability</strong> as a central pillar for maximizing the value of information artifacts <a href="#ref12">[12]</a>. According to Guizzardi, the “I” in FAIR must be understood not just as a technical property, but as a commitment to meaningful, semantically grounded data integration that supports <strong>human interoperation mediated by machines</strong> [11].</p>
+<p>The FAIR principles I1–I3 specify that:
+1. (meta)data should use a <strong>formal, accessible, shared, and broadly applicable language</strong> for knowledge representation;
+2. (meta)data should rely on <strong>vocabularies that themselves follow FAIR principles</strong>;
+3. (meta)data should include <strong>qualified references</strong> to other (meta)data.</p>
+<p>These requirements cannot be fulfilled by mere terminological resources alone. To ensure that systems interpret shared data consistently, vocabularies must be underpinned by <strong>ontologies</strong>—explicit and formal representations of shared conceptualizations. Guizzardi emphasizes that vocabularies must be ontologically grounded in order to properly support semantic interoperability [11].</p>
+<p>To achieve this, two levels of support are needed:
+- <strong>Ontologies</strong> (in the plural) serve as “meaning contracts” that clarify the domain-specific conceptualizations shared between systems;
+- <strong>Ontology</strong> (as a discipline) provides the <strong>formal methods and theories</strong> required to build these ontologies correctly and to clarify their commitments.</p>
+<p>This ontological grounding is essential to ensure that relations between data elements reflect not only their syntactic alignment, but also their <strong>real-world semantics</strong>, including identity, dependence, and other ontological distinctions.</p>
+<p>Guizzardi argues that <strong>formal ontologies</strong>—such as the Unified Foundational Ontology (UFO)—play a key role in satisfying the interoperability requirements of FAIR. Ontology-driven representation languages like <strong>OntoUML</strong> allow modelers to specify their conceptualizations in a way that is formally constrained, semantically rich, and verifiable. This ontological precision is crucial to prevent the <strong>false agreement problem</strong>, in which systems appear interoperable at the surface level but interpret the same data differently beneath it.</p>
+<p>Ultimately, the “I” of FAIR demands more than connectivity and shared syntax. It requires a shared <strong>worldview</strong>—an agreement not only on the words used, but on the meanings they are intended to convey. As Guizzardi puts it: <em>“No ontology without Ontology”</em> [11].</p>
+<h2 id="how-is-semantic-interoperability-achieved">How is Semantic Interoperability Achieved?</h2>
+<p>Achieving semantic interoperability involves several steps:</p>
+<ol>
+<li><strong>Standardized Vocabularies and Ontologies</strong>: Use of shared terminologies like SNOMED CT, LOINC, or domain-specific ontologies to ensure consistent understanding of data elements <a href="#ref7">[7]</a>.</li>
+<li><strong>Metadata and Annotations</strong>: Adding semantic layers to data using RDF, OWL, or JSON-LD to provide context and meaning <a href="#ref8">[8]</a>.</li>
+<li><strong>Mappings and Alignments</strong>: Creating links between different vocabularies or datasets to facilitate data integration and interoperability <a href="#ref9">[9]</a>.</li>
+<li><strong>Tools and Platforms</strong>: Employing interoperability frameworks, APIs, and knowledge graphs to support seamless data exchange and understanding <a href="#ref10">[10]</a>.</li>
+<li><strong>Ontologically Grounded Languages</strong>: Employ modeling languages that help explicitly express the ontological assumptions embedded in data and systems. As Guizzardi argues, it is not enough for representation languages to be formally expressive—they must support users in articulating and verifying the real-world semantics of their models through ontological commitments. OntoUML is one such language—explicitly grounded in the Unified Foundational Ontology (UFO)—that enables semantically rich, internally consistent, and verifiable conceptual modeling <a href="#ref11">[11]</a>.</li>
+</ol>
+<p>To avoid misinterpretations, Guarino suggests that ontologies should not only define terms but also specify the intended models they aim to capture. In his formal treatment, a conceptualization is a set of intensional relations—abstractions over possible worlds—which logical models only approximate. A well-designed ontology serves as a logical theory that constrains these models to reflect shared meaning, bridging the gap between formal syntax and real-world semantics <a href="#ref4">[4]</a>.</p>
+<h2 id="representing-the-semantic-interoperability-problem">Representing the Semantic Interoperability Problem</h2>
+<p>Semantic interoperability goes beyond shared data formats or common terminologies—it requires that different systems interpret exchanged data in the same way. Achieving this depends on how well each system’s ontology captures the intended meaning of the concepts it uses. The following diagrams illustrate how systems can differ in their approximation of a shared conceptualization, and how these differences impact their ability to interoperate meaningfully.</p>
+<p align="center">
+  <img src="assets/images/semantic-interoperability-systems-all.png" width="800" alt="Semantic Interoperability Problem">
+</p>
+
+<p>This diagram illustrates how three different systems attempt to represent the same conceptualization—i.e., a shared understanding of the real world—but with varying levels of success. Each system uses a different ontology to constrain its internal model, which leads to differences in how faithfully they capture the intended meaning.</p>
+<ol>
+<li>
+<p><strong>System A (left)</strong> represents an ideal case. Its ontology tightly aligns with the intended semantics (green area), neither including extra interpretations nor excluding valid ones. Guarino describes this as a close approximation of the intended models—a highly desirable, though often difficult to achieve, situation for semantic interoperability.</p>
+</li>
+<li>
+<p><strong>System B (center)</strong> uses a more permissive ontology. The red dotted region shows unintended models that are logically consistent with System B's formalism but diverge from the intended meaning. According to Guarino, such overgeneralization can lead to <strong>false agreement</strong>: systems that appear to be interoperable because they use the same vocabulary, but actually interpret the terms differently.</p>
+</li>
+<li>
+<p><strong>System C (right)</strong> errs in the opposite direction. Its ontology is too restrictive: the blue striped area represents valid meanings that it fails to account for. This can happen when a system’s constraints are overly narrow or incomplete, leading to the exclusion of necessary interpretations and a loss of information.</p>
+</li>
+</ol>
+<p>As Guarino emphasizes, effective semantic interoperability is not just about using the same terms—it's about ensuring that those terms reflect the same <strong>ontological commitments</strong>. An ontology must constrain meaning in a way that captures the full range of intended models and excludes unintended ones. When systems fail to do this, misunderstandings arise—even if they use the same syntax.</p>
+<p>True semantic interoperability, then, demands more than syntactic or logical alignment. It requires a shared <strong>worldview</strong>—a convergence on what exists, how it can be described, and what interpretations are valid <a href="#ref3">[3]</a><a href="#ref4">[4]</a><a href="#ref11">[11]</a>.</p>
+<h3 id="interoperability-between-systems-a-and-b">Interoperability Between Systems A and B</h3>
+<p align="center">
+  <img src="assets/images/semantic-interoperability-systems-a-b.png" width="800" alt="Interoperability Between Systems A and B">
+</p>
+
+<p>This diagram shows what happens when <strong>System A</strong> and <strong>System B</strong> attempt to interoperate. While both aim to represent the same conceptualization (the green area), their ontologies differ significantly in precision.</p>
+<ul>
+<li><strong>System A</strong> is more accurate: it captures only the intended models and avoids unintended interpretations.</li>
+<li><strong>System B</strong> is broader: it includes the intended models but also admits additional, unintended ones (shown by the red-dotted area).</li>
+</ul>
+<p>There is an overlap between their model spaces, which might suggest that interoperability is possible. However, Guarino warns that such overlap can be deceptive. Because System B allows more than System A, their agreement is superficial—they <strong>appear to be interoperable</strong>, but actually lack a shared understanding.</p>
+<ul>
+<li><strong>Cause</strong>: A mismatch in ontological commitment. System B’s broadness allows interpretations that System A explicitly excludes.</li>
+<li><strong>Consequence</strong>: <strong>Semantic mismatches</strong>. Data from System B may be misunderstood or rejected by System A, which interprets those inputs differently—or sees them as invalid altogether.</li>
+</ul>
+<p>This scenario exemplifies the <strong>false agreement problem</strong>: even when systems share data formats and logical structures, they may fail to understand each other if their ontologies do not align <a href="#ref4">[4]</a>.</p>
+<h3 id="interoperability-between-systems-b-and-c">Interoperability Between Systems B and C</h3>
+<p align="center">
+  <img src="assets/images/semantic-interoperability-systems-b-c.png" width="800" alt="Interoperability Between Systems B and C">
+</p>
+
+<p>This case presents an even more problematic scenario: the attempted interoperability between <strong>System B</strong> and <strong>System C</strong>, whose ontologies differ in opposite directions.</p>
+<ul>
+<li><strong>System B</strong> is overly broad. Its ontology admits many unintended models—those that go beyond what the conceptualization requires.</li>
+<li><strong>System C</strong> is too narrow. It fails to include all valid interpretations of the conceptualization, omitting relevant data (as shown in the blue-striped region).</li>
+</ul>
+<p>Their shared space—the red overlapping region—includes some models that both systems accept. However, this overlap is <strong>misleading</strong>. While the systems may agree on certain data structures or schemas, the <strong>meanings they assign to them differ</strong>.</p>
+<ul>
+<li><strong>Cause</strong>: The ontologies diverge not only from each other, but also from the intended conceptualization—one being too lax, the other too strict.</li>
+<li><strong>Consequence</strong>: Even when both systems appear to validate a data exchange, they <strong>interpret the same data differently</strong>, leading to errors, miscommunication, or data loss.</li>
+</ul>
+<p>This is another manifestation of the false agreement problem: syntactic compatibility masks semantic divergence. Guarino argues that for semantic interoperability to succeed, systems must align not only in form but in their <strong>intended models</strong> and the <strong>ontological commitments</strong> that define them <a href="#ref3">[3]</a><a href="#ref4">[4]</a>.</p>
+<h4 id="causes-and-consequences">Causes and Consequences</h4>
+<ul>
+<li><strong>Cause</strong>: The lack of a shared conceptualization and the absence of a common ontological grounding. System B allows too much; System C allows too little.</li>
+<li><strong>Consequence</strong>: <strong>Semantic interoperability fails</strong>. The data exchanged may technically conform to both systems' schemas, but the systems <strong>draw different conclusions</strong> from the same input. This may result in errors, misclassification, data loss, or rejected inputs.</li>
+</ul>
+<p>This scenario illustrates why Guarino argues that <strong>semantic interoperability requires agreement not just on representation syntax or surface ontologies</strong>, but on the deeper <strong>conceptual structures</strong> and <strong>intended models</strong>. Without this alignment, even systems that validate data successfully may still fail to understand each other. </p>
+<p>These examples underscore the importance of designing systems that share not only data but also the underlying conceptual frameworks that give that data meaning. Semantic interoperability is ultimately a matter of shared understanding, not just shared syntax.</p>
+<h2 id="learn-more">Learn More</h2>
+<ul>
+<li><a href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic">SEMIC - EU Semantic Interoperability Community</a></li>
+<li><a href="https://www.hl7.org/fhir/">FHIR - Fast Healthcare Interoperability Resources</a></li>
+<li><a href="https://obofoundry.org/">Open Biological and Biomedical Ontology (OBO) Foundry</a></li>
+<li><a href="https://ec.europa.eu/isa2/home_en">ISA - Interoperability Solutions for European Public Administrations</a></li>
+</ul>
+<h2 id="references">References</h2>
+<p><a id="ref1"></a>
+- <strong>[1]</strong> Semantic interoperability. <em>Wikipedia</em>. Retrieved from: https://en.wikipedia.org/wiki/Semantic_interoperability</p>
+<p><a id="ref2"></a>
+- <strong>[2]</strong> What is semantic interoperability? <em>Wolters Kluwer</em>. Retrieved from: https://www.wolterskluwer.com/en/expert-insights/what-is-semantic-interoperability</p>
+<p><a id="ref3"></a>
+- <strong>[3]</strong> Guarino, N. (2009). <em>The Ontological Level: Revisiting 30 Years of Knowledge Representation</em>. In: Borgida, A.T. et al. (Eds.), Mylopoulos Festschrift, LNCS 5600, pp. 52–67. Springer. https://doi.org/10.1007/978-3-642-01907-4_6</p>
+<p><a id="ref4"></a>
+- <strong>[4]</strong> Guarino, N. (1998). <em>Formal Ontology and Information Systems</em>. In: N. Guarino (ed.), FOIS’98, IOS Press, pp. 3–15. https://www.researchgate.net/publication/272169039_Formal_Ontology_and_Information_Systems</p>
+<p><a id="ref5"></a>
+- <strong>[5]</strong> Interoperability: unifying and maximising data reuse within digital education ecosystems. <em>OECD</em>. Retrieved from: https://www.oecd.org/en/publications/oecd-digital-education-outlook-2023_c74f03de-en/full-report/interoperability-unifying-and-maximising-data-reuse-within-digital-education-ecosystems_660f8da1.html</p>
+<p><a id="ref6"></a>
+- <strong>[6]</strong> Importance of Semantic Interoperability in Public Health Surveillance. <em>SSG</em>. Retrieved from: https://www.ssg-llc.com/semantic-interoperability-importance-of-interoperability-in-public-health/</p>
+<p><a id="ref7"></a>
+- <strong>[7]</strong> Aligning Semantic Interoperability Frameworks with the FOXS Stack. <em>PubMed</em>. Retrieved from: https://pubmed.ncbi.nlm.nih.gov/36473495/</p>
+<p><a id="ref8"></a>
+- <strong>[8]</strong> Achieving Semantic Interoperability Using RDF and OWL. <em>W3C</em>. Retrieved from: https://www.w3.org/2001/sw/BestPractices/OEP/SemInt/</p>
+<p><a id="ref9"></a>
+- <strong>[9]</strong> Suggestions for extending the FAIR Principles based on a linguistic perspective on semantic interoperability. <em>Nature Scientific Data</em>. Retrieved from: https://www.nature.com/articles/s41597-025-05011-x</p>
+<p><a id="ref10"></a>
+- <strong>[10]</strong> FAIR Semantics, Interoperability, and Services. <em>FAIRsFAIR</em>. Retrieved from: https://www.fairsfair.eu/fair-semantics-interoperability-and-services-0</p>
+<p><a id="ref11"></a>
+- <strong>[11]</strong> Guizzardi, G. (2020). <em>Ontology, Ontologies and the “I” of FAIR</em>. Data Intelligence, 2(1–2), 181–191. https://doi.org/10.1162/dint_a_00040</p>
+<p><a id="ref12"></a>
+- <strong>[12]</strong> Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., et al. (2016). <em>The FAIR Guiding Principles for scientific data management and stewardship</em>. Scientific Data, 3, 160018. https://doi.org/10.1038/sdata.2016.18</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.expand", "navigation.instant", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "toc.follow", "toc.integrate", "search.share"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
