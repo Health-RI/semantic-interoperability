@@ -52,8 +52,7 @@ extra_css:
 nav:
   - Home: index.md
   - Semantic Interoperability:
-      - What is Semantic Interoperability?: semantic-interoperability/index.md
-      - Why It Matters at Health-RI: semantic-interoperability/health-ri-context.md
+      - Semantic Interoperability: semantic-interoperability/index.md
   - Ontologies:
       - What are Ontologies?: ontologies/index.md
   - Ontology Engineering:
