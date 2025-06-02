@@ -53,6 +53,7 @@ The official development of OntoUML tools is hosted on GitHub at [https://github
 - **[ontouml-json2graph](https://github.com/OntoUML/ontouml-json2graph)**: Transforms OntoUML JSON models into graph representations aligned with the OntoUML Vocabulary, facilitating visualization and semantic analysis.
 - **[ontouml-metamodel](https://github.com/OntoUML/ontouml-metamodel)**: Provides an implementation-independent metamodel of OntoUML, covering both abstract and concrete syntaxes, serving as a reference for various OntoUML tools.
 - **[ontouml-models](https://github.com/OntoUML/ontouml-models)**: A collaborative, structured, and open-source catalog of OntoUML and UFO ontology models, supporting empirical research and model sharing.
+  > A detailed description of the catalog is provided in the [OntoUML/UFO Catalog page](../ontouml-ufo-catalog.md).
 - **[ontouml-models-lib](https://github.com/OntoUML/ontouml-models-lib)**: A Python library designed to access and manage OntoUML models from the OntoUML/UFO Catalog, simplifying software development tasks.
 - **[ontouml-models-tools](https://github.com/OntoUML/ontouml-models-tools)**: A set of tools for processing and validating OntoUML models, including functionalities for data quality verification and model analysis.
 - **[ontouml-models-vocabulary](https://github.com/OntoUML/ontouml-models-vocabulary)**: Defines vocabularies to annotate and interlink models within the OntoUML/UFO Catalog, enhancing semantic interoperability.
@@ -63,12 +64,6 @@ The official development of OntoUML tools is hosted on GitHub at [https://github
 - **[ontouml-vp-plugin](https://github.com/OntoUML/ontouml-vp-plugin)**: A plugin for Visual Paradigm that integrates OntoUML modeling capabilities, allowing users to create and manage OntoUML models within the Visual Paradigm environment.
 
 These tools enhance the usability and applicability of OntoUML across various modeling workflows, supporting both academic exploration and industrial adoption.
-
-### OntoUML/UFO Catalog
-
-The OntoUML/UFO Catalog is a structured, community-driven repository of real-world OntoUML models, developed with the goal of supporting research, education, and tool development in conceptual modeling. It provides a curated collection of ontologies from various domains—ranging from law and healthcare to logistics and cybersecurity—all represented using OntoUML and grounded in the Unified Foundational Ontology (UFO). Each model is accompanied by metadata that documents its origin, purpose, and scope, facilitating discoverability and reuse.
-
-Designed as an open and extensible initiative, the catalog is maintained on GitHub ([OntoUML Models Repository](https://github.com/OntoUML/ontouml-models)) and promotes collaborative contributions from the broader community. It has proven to be an essential resource for empirical studies and validation of modeling tools and techniques. A peer-reviewed study has also systematically documented the catalog’s structure, evolution, and coverage, highlighting its value for both researchers and practitioners **<a href="#ref7">[7]</a>**.
 
 ## References
 

@@ -60,6 +60,7 @@ nav:
   - OntoUML & gUFO:
       - Introduction: ontouml-gufo/index.md
       - OntoUML: ontouml-gufo/ontouml.md
+      - OntoUML/UFO Catalog: ontouml-gufo/ontouml-ufo-catalog.md
       - How to Create an OntoUML Model: ontouml-gufo/how-to-create-ontouml-model.md
       - gUFO: ontouml-gufo/gufo.md
   - The Health-RI Method:
