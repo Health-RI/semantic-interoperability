@@ -1,4 +1,4 @@
-# Semantic Interoperability
+# Semantic Interoperability Overview
 
 Semantic interoperability is a cornerstone of effective data exchange, ensuring that information shared between systems retains its intended meaning. This capability is vital across various sectors, including healthcare, public administration, and the Internet of Things (IoT), facilitating seamless communication and collaboration.
 

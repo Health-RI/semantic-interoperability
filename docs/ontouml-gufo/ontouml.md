@@ -53,7 +53,7 @@ The official development of OntoUML tools is hosted on GitHub at [https://github
 - **[ontouml-json2graph](https://w3id.org/ontouml/json2graph)**: Transforms OntoUML JSON models into graph representations aligned with the OntoUML Vocabulary, facilitating visualization and semantic analysis.
 - **[ontouml-metamodel](https://w3id.org/ontouml/metamodel)**: Provides an implementation-independent metamodel of OntoUML, covering both abstract and concrete syntaxes, serving as a reference for various OntoUML tools.
 - **[ontouml-models](https://w3id.org/ontouml-models/git)**: A collaborative, structured, and open-source catalog of OntoUML and UFO ontology models, supporting empirical research and model sharing.
-  > A detailed description of the catalog is provided in the [OntoUML/UFO Catalog page](../ontouml-ufo-catalog.md).
+  > A detailed description of the catalog is provided in the [OntoUML/UFO Catalog page](./ontouml-ufo-catalog.md).
 - **[ontouml-models-lib](https://w3id.org/ontouml/models-lib)**: A Python library designed to access and manage OntoUML models from the OntoUML/UFO Catalog, simplifying software development tasks.
 - **[ontouml-models-tools](https://w3id.org/ontouml/models-tools)**: A set of tools for processing and validating OntoUML models, including functionalities for data quality verification and model analysis.
 - **[ontouml-models-vocabulary](https://w3id.org/ontouml/models-vocabulary)**: Defines vocabularies to annotate and interlink models within the OntoUML/UFO Catalog, enhancing semantic interoperability.

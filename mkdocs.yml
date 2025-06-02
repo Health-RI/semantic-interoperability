@@ -52,11 +52,11 @@ extra_css:
 nav:
   - Home: index.md
   - Semantic Interoperability:
-      - Semantic Interoperability: semantic-interoperability/index.md
-  - Ontologies:
-      - What are Ontologies?: ontologies/index.md
-  - Ontology Engineering:
-      - Ontology Engineering Principles: engineering/index.md
+      - Overview: semantic-interoperability/index.md
+  # - Ontologies:
+  #     - What are Ontologies?: ontologies/index.md
+  # - Ontology Engineering:
+  #     - Ontology Engineering Principles: engineering/index.md
   - OntoUML & gUFO:
       - Introduction: ontouml-gufo/index.md
       - OntoUML: ontouml-gufo/ontouml.md
