@@ -33,7 +33,4 @@ This section introduces OntoUML, an ontologically well-founded conceptual modeli
 - [When was gUFO developed?](gufo.md#when-was-gufo-developed)
 - [How does gUFO work?](gufo.md#how-does-gufo-work)
 - [How to Create a gUFO Ontology](gufo.md#how-to-create-a-gufo-ontology)
-  - [1. Direct Authoring in OWL](gufo.md#1-direct-authoring-in-owl)
-  - [2. Modeling in OntoUML and Direct Export to gUFO](gufo.md#2-modeling-in-ontouml-and-direct-export-to-gufo)
-  - [Summary](gufo.md#summary)
 - [References](gufo.md#references)
