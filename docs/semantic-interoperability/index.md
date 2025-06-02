@@ -2,6 +2,18 @@
 
 Semantic interoperability is a cornerstone of effective data exchange, ensuring that information shared between systems retains its intended meaning. This capability is vital across various sectors, including healthcare, public administration, and the Internet of Things (IoT), facilitating seamless communication and collaboration.
 
+<!-- omit from toc -->
+## Table of Contents
+
+- [What is Semantic Interoperability?](#what-is-semantic-interoperability)
+- [Why is Semantic Interoperability Important?](#why-is-semantic-interoperability-important)
+- [Semantic Interoperability and the “I” of FAIR](#semantic-interoperability-and-the-i-of-fair)
+- [How is Semantic Interoperability Achieved?](#how-is-semantic-interoperability-achieved)
+- [Representing the Semantic Interoperability Problem](#representing-the-semantic-interoperability-problem)
+  - [Interoperability Between Systems A and B](#interoperability-between-systems-a-and-b)
+  - [Interoperability Between Systems B and C](#interoperability-between-systems-b-and-c)
+- [References](#references)
+
 ## What is Semantic Interoperability?
 
 Semantic interoperability refers to the ability of different computer systems to exchange data with unambiguous, shared meaning. Unlike syntactic interoperability, which focuses on the format of data exchange, semantic interoperability ensures that the meaning of the data is preserved and understood consistently across different systems. This is achieved by linking data elements to a common vocabulary or ontology, allowing machines to interpret and process information accurately without human intervention <a href="#ref1">[1]</a><a href="#ref2">[2]</a>.
@@ -113,13 +125,6 @@ This is another manifestation of the false agreement problem: syntactic compatib
 This scenario illustrates why Guarino argues that **semantic interoperability requires agreement not just on representation syntax or surface ontologies**, but on the deeper **conceptual structures** and **intended models**. Without this alignment, even systems that validate data successfully may still fail to understand each other. 
 
 These examples underscore the importance of designing systems that share not only data but also the underlying conceptual frameworks that give that data meaning. Semantic interoperability is ultimately a matter of shared understanding, not just shared syntax.
-
-## Learn More
-
-- [SEMIC - EU Semantic Interoperability Community](https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic)
-- [FHIR - Fast Healthcare Interoperability Resources](https://www.hl7.org/fhir/)
-- [Open Biological and Biomedical Ontology (OBO) Foundry](https://obofoundry.org/)
-- [ISA - Interoperability Solutions for European Public Administrations](https://ec.europa.eu/isa2/home_en)
 
 ## References
 

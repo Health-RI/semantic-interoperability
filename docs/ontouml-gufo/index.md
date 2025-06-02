@@ -1,28 +1,39 @@
 # OntoUML & gUFO
 
-This section introduces **OntoUML** and **gUFO**, two complementary components that form the foundation for ontology-driven conceptual modeling.
+This section introduces OntoUML, an ontologically well-founded conceptual modeling language, and gUFO, its lightweight computational counterpart based on the Unified Foundational Ontology (UFO). The resources below provide background, guidance, tools, and structured content to support both the creation and practical application of OntoUML models, as well as their transformation into machine-readable OWL ontologies using gUFO.
 
-## What You Will Find Here
+## [OntoUML](ontouml.md)
 
-- **OntoUML**  
-  An ontologically well-founded modeling language that extends UML with precise distinctions inspired by the Unified Foundational Ontology (UFO). It supports the creation of conceptual models that are semantically rich and logically consistent.
+- [Origins](#origins)
+- [Documentation and Standardization Efforts](ontouml.md#documentation-and-standardization-efforts)
+- [Adoption and Influence](ontouml.md#adoption-and-influence)
+- [Supporting Tools and Developments](ontouml.md#supporting-tools-and-developments)
+- [References](ontouml.md#references)
 
-- **gUFO (gentle UFO)**  
-  A formal OWL 2 implementation of the core concepts of UFO, designed to support ontology-based data integration, knowledge representation, and semantic interoperability across systems.
+## [How to Create an OntoUML Model](how-to-create-ontouml-model.md#)
 
-## Why These Tools Matter
+- [Installation Guide for Visual Paradigm and the OntoUML Plugin](how-to-create-ontouml-model.md#installation-guide-for-visual-paradigm-and-the-ontouml-plugin)
+  - [Step 1: Install Visual Paradigm](how-to-create-ontouml-model.md#step-1-install-visual-paradigm)
+  - [Step 2: Install the OntoUML Plugin](how-to-create-ontouml-model.md#step-2-install-the-ontouml-plugin)
+  - [Step 3: Create an OntoUML Diagram](how-to-create-ontouml-model.md#step-3-create-an-ontouml-diagram)
+- [Additional Features of the Plugin](how-to-create-ontouml-model.md#additional-features-of-the-plugin)
 
-OntoUML and gUFO are used together to bridge the gap between conceptual modeling and semantic technologies. Their combination enables:
+## [OntoUML/UFO Catalog](ontouml-ufo-catalog.md)
 
-- More precise communication of domain knowledge
-- Better model validation and reasoning
-- Interoperability across heterogeneous systems
+- [Access and Structure](ontouml-ufo-catalog.md#access-and-structure)
+  - [Directory Structure Overview](ontouml-ufo-catalog.md#directory-structure-overview)
+- [Catalog's Persistent URLs](ontouml-ufo-catalog.md#catalogs-persistent-urls)
+- [References](ontouml-ufo-catalog.md#references)
 
-Together, they support the development of models that are not just syntactically valid but also **ontologically sound**.
+## [gUFO](gufo.md)
 
----
-
-To explore each in more detail, continue to the dedicated pages:
-
-- [OntoUML](ontouml.md)
-- [gUFO](gufo.md)
+- [What is gUFO?](gufo.md#what-is-gufo)
+- [Why was gUFO created?](gufo.md#why-was-gufo-created)
+- [Where is gUFO used?](gufo.md#where-is-gufo-used)
+- [When was gUFO developed?](gufo.md#when-was-gufo-developed)
+- [How does gUFO work?](gufo.md#how-does-gufo-work)
+- [How to Create a gUFO Ontology](gufo.md#how-to-create-a-gufo-ontology)
+  - [1. Direct Authoring in OWL](gufo.md#1-direct-authoring-in-owl)
+  - [2. Modeling in OntoUML and Direct Export to gUFO](gufo.md#2-modeling-in-ontouml-and-direct-export-to-gufo)
+  - [Summary](gufo.md#summary)
+- [References](gufo.md#references)

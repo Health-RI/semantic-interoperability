@@ -84,6 +84,3 @@ These tools enhance the usability and applicability of OntoUML across various mo
 
 <a id="ref6"></a>
 - **[6]** Guizzardi, G., & Wagner, G. (2005b). *Towards ontological foundations for agent modeling concepts using UFO*. In V. Dignum, M. Dastani, B. Dunin-Kȩplicz, & R. Meyer (Eds.), Agent-Oriented Information Systems II (pp. xx–xx). Lecture Notes in Artificial Intelligence (Vol. 3508). Springer. https://doi.org/10.1007/11538394_6
-
-<a id="ref7"></a>
-- **[7]** Sales, T. P., Guizzardi, G., Almeida, J. P. A., & Guizzardi, R. S. S. (2023). *The OntoUML/UFO Catalog: A structured repository of real-world ontologies for conceptual modeling research*. Journal of Systems and Software, 201, 111645. https://doi.org/10.1016/j.jss.2023.111645

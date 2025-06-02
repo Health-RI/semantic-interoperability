@@ -48,7 +48,7 @@ A public **dashboard** is available at [w3id.org/ontouml-models/dashboard](https
 - Dashboard: https://w3id.org/ontouml-models/dashboard
 - Catalog's latest release: https://w3id.org/ontouml-models/release
 
-## Peer-Reviewed Reference
+## References
 
 The OntoUML/UFO Catalog has been formally described in the following peer-reviewed publication:
 

@@ -58,12 +58,26 @@ nav:
   # - Ontology Engineering:
   #     - Ontology Engineering Principles: engineering/index.md
   - OntoUML & gUFO:
-      - Introduction: ontouml-gufo/index.md
+      - Overview: ontouml-gufo/index.md
       - OntoUML: ontouml-gufo/ontouml.md
       - OntoUML/UFO Catalog: ontouml-gufo/ontouml-ufo-catalog.md
       - How to Create an OntoUML Model: ontouml-gufo/how-to-create-ontouml-model.md
       - gUFO: ontouml-gufo/gufo.md
   - The Health-RI Method:
-      - Overview of the Method: method/index.md
-      - Step-by-Step Process: method/steps.md
-      - Application Examples: method/examples.md
+      - Overview: method/index.md
+
+extra:
+  generator: false    # disables "Made with Material for MkDocs" line
+  social:
+    - icon: fontawesome/solid/envelope
+      link: mailto:pedro.barcelos@health-ri.nl
+      name: Email
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/pedro-paulo-favato-barcelos/
+      name: LinkedIn
+    - icon: fontawesome/brands/github
+      link: https://github.com/pedropaulofb
+      name: GitHub
+    - icon: material/web
+      link: https://health-ri.nl
+      name: Website

@@ -18,10 +18,8 @@ Semantic interoperability plays a foundational role in this mission by ensuring 
 
 ### What You'll Find Here
 
-This documentation provides:
-- Conceptual overviews and definitions,
-- Practical modeling guidelines,
-- Descriptions of the Health-RI methodology,
-- Examples of semantic alignment in real-world use cases.
+This site documents Health-RI's efforts to enable semantic interoperability in health data by providing foundational concepts, modeling techniques, and methodological guidance. It is designed to support researchers, data stewards, and engineers working to align data meaningfully across systems.
 
-We invite researchers, data stewards, engineers, and anyone working with structured health data to explore this site and contribute to building a more interoperable health data ecosystem.
+- [Semantic Interoperability](semantic-interoperability/index.md): Key principles and motivations behind semantic interoperability.
+- [OntoUML & gUFO](ontouml-gufo/index.md): Ontologically grounded modeling tools and their application in semantic infrastructures.
+- [The Health-RI Method](method/index.md): A structured approach for creating reference models and mappings in collaborative environments.
