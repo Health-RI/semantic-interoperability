@@ -49,19 +49,19 @@ Several research groups have contributed to the development and dissemination of
 
 The official development of OntoUML tools is hosted on GitHub at [https://github.com/OntoUML](https://github.com/OntoUML). These projects are primarily academic efforts, maintained by researchers and contributors from the OntoUML community.
 
-- **[ontouml-js](https://github.com/OntoUML/ontouml-js)**: A JavaScript library for creating, manipulating, and serializing OntoUML models into JSON format compliant with the ontouml-schema.
-- **[ontouml-json2graph](https://github.com/OntoUML/ontouml-json2graph)**: Transforms OntoUML JSON models into graph representations aligned with the OntoUML Vocabulary, facilitating visualization and semantic analysis.
-- **[ontouml-metamodel](https://github.com/OntoUML/ontouml-metamodel)**: Provides an implementation-independent metamodel of OntoUML, covering both abstract and concrete syntaxes, serving as a reference for various OntoUML tools.
-- **[ontouml-models](https://github.com/OntoUML/ontouml-models)**: A collaborative, structured, and open-source catalog of OntoUML and UFO ontology models, supporting empirical research and model sharing.
+- **[ontouml-js](https://w3id.org/ontouml/js)**: A JavaScript library for creating, manipulating, and serializing OntoUML models into JSON format compliant with the ontouml-schema.
+- **[ontouml-json2graph](https://w3id.org/ontouml/json2graph)**: Transforms OntoUML JSON models into graph representations aligned with the OntoUML Vocabulary, facilitating visualization and semantic analysis.
+- **[ontouml-metamodel](https://w3id.org/ontouml/metamodel)**: Provides an implementation-independent metamodel of OntoUML, covering both abstract and concrete syntaxes, serving as a reference for various OntoUML tools.
+- **[ontouml-models](https://w3id.org/ontouml-models/git)**: A collaborative, structured, and open-source catalog of OntoUML and UFO ontology models, supporting empirical research and model sharing.
   > A detailed description of the catalog is provided in the [OntoUML/UFO Catalog page](../ontouml-ufo-catalog.md).
-- **[ontouml-models-lib](https://github.com/OntoUML/ontouml-models-lib)**: A Python library designed to access and manage OntoUML models from the OntoUML/UFO Catalog, simplifying software development tasks.
-- **[ontouml-models-tools](https://github.com/OntoUML/ontouml-models-tools)**: A set of tools for processing and validating OntoUML models, including functionalities for data quality verification and model analysis.
-- **[ontouml-models-vocabulary](https://github.com/OntoUML/ontouml-models-vocabulary)**: Defines vocabularies to annotate and interlink models within the OntoUML/UFO Catalog, enhancing semantic interoperability.
-- **[ontouml-schema](https://github.com/OntoUML/ontouml-schema)**: Provides a JSON Schema representation for OntoUML models, enabling validation and exchange of models in a standardized format.
-- **[ontouml-server](https://github.com/OntoUML/ontouml-server)**: A server-side application offering services for OntoUML model management, including storage, conversion, and validation functionalities.
-- **[ontouml-vocabulary](https://github.com/OntoUML/ontouml-vocabulary)**: An OWL vocabulary that formalizes the OntoUML metamodel, supporting the serialization and exchange of OntoUML models as linked data.
-- **[ontouml-vocabulary-lib](https://github.com/OntoUML/ontouml-vocabulary-lib)**: A Python library facilitating the manipulation of OntoUML vocabulary concepts within RDFLib graphs, bridging OntoUML and Semantic Web technologies.
-- **[ontouml-vp-plugin](https://github.com/OntoUML/ontouml-vp-plugin)**: A plugin for Visual Paradigm that integrates OntoUML modeling capabilities, allowing users to create and manage OntoUML models within the Visual Paradigm environment.
+- **[ontouml-models-lib](https://w3id.org/ontouml/models-lib)**: A Python library designed to access and manage OntoUML models from the OntoUML/UFO Catalog, simplifying software development tasks.
+- **[ontouml-models-tools](https://w3id.org/ontouml/models-tools)**: A set of tools for processing and validating OntoUML models, including functionalities for data quality verification and model analysis.
+- **[ontouml-models-vocabulary](https://w3id.org/ontouml/models-vocabulary)**: Defines vocabularies to annotate and interlink models within the OntoUML/UFO Catalog, enhancing semantic interoperability.
+- **[ontouml-schema](https://w3id.org/ontouml/schema)**: Provides a JSON Schema representation for OntoUML models, enabling validation and exchange of models in a standardized format.
+- **[ontouml-server](https://w3id.org/ontouml/server)**: A server-side application offering services for OntoUML model management, including storage, conversion, and validation functionalities.
+- **[ontouml-vocabulary](https://w3id.org/ontouml/vocabulary)**: An OWL vocabulary that formalizes the OntoUML metamodel, supporting the serialization and exchange of OntoUML models as linked data.
+- **[ontouml-vocabulary-lib](https://w3id.org/ontouml/vocabulary-lib)**: A Python library facilitating the manipulation of OntoUML vocabulary concepts within RDFLib graphs, bridging OntoUML and Semantic Web technologies.
+- **[ontouml-vp-plugin](https://w3id.org/ontouml/vp-plugin)**: A plugin for Visual Paradigm that integrates OntoUML modeling capabilities, allowing users to create and manage OntoUML models within the Visual Paradigm environment.
 
 These tools enhance the usability and applicability of OntoUML across various modeling workflows, supporting both academic exploration and industrial adoption.
 

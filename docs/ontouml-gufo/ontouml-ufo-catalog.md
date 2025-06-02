@@ -12,7 +12,7 @@ The catalog is openly maintained on GitHub at [github.com/OntoUML/ontouml-models
 
 - **`.json`**: JSON serialization compliant with the [OntoUML Schema](https://github.com/OntoUML/ontouml-schema)
 - **`.ttl`**: RDF/Turtle files using the [OntoUML Vocabulary](https://github.com/OntoUML/ontouml-vocabulary)
-- **`.vpp`**: Original diagrams in Visual Paradigm format (when available)
+- **`.vpp`**: Original diagrams in Visual Paradigm format
 
 Each model is organized in its own folder and includes a set of standardized metadata files (`metadata.ttl`, `metadata-json.ttl`, `metadata-vpp.ttl`, etc.). The catalog as a whole is described by a root `catalog.ttl` file and validated using SHACL shapes provided under the `/shapes` directory.
 
