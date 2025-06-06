@@ -190,10 +190,17 @@
 ## References
 
 [1] Guizzardi, G. (2005). *Ontological Foundations for Structural Conceptual Models*. (PhD Thesis). Enschede, The Netherlands: Telematica Instituut / University of Twente.
+
 [2] Falbo, R. A. (2014). *OntoUML Quick Guide and Pattern Language*. Technical Report, NEMO, Federal University of Espírito Santo.
+
 [3] Guizzardi, G., Herre, H., & Wagner, G. (2004). “Towards Ontological Foundations for UML Conceptual Models.” In *ER 2004 Workshops* (pp. 110–121). Springer.
+
 [4] Guizzardi, G., et al. (2018). “Ontology-Based Model Transformations in OntoUML: Supporting Role and Phase Mixins.” NEMO Research Report, Federal University of Espírito Santo.
+
 [5] Guizzardi, G., et al. (2013). “Towards Ontological Foundations for the Conceptual Modeling of Events.” In *ER 2013 – Conceptual Modeling* (LNCS 8217, pp. 327–341). Springer.
+
 [6] Suchánek, M., & Alves, V. (2018). *OntoUML Specification Documentation*. (Ontology specification document).
+
 [7] AlpineBits Alliance. (2023). *Modeling Language: OntoUML* (AlpineBits Ontology Documentation).
+
 [8] Guizzardi, G., & Falbo, R. A. (2008). “Experiencing UFO-Based Ontology Design.” *Journal of Software Engineering and Applications*, 1(1), 19–28.
