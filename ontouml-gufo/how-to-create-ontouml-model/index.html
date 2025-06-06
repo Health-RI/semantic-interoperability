@@ -681,6 +681,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Step 3: Create an OntoUML Diagram">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-create-a-new-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Create a New Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-create-a-new-model-inside-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Create a New Model Inside the Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-add-a-new-diagram-to-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Add a New Diagram to the Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-start-modeling-with-ontouml-stereotypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Start Modeling with OntoUML Stereotypes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-add-a-new-ontouml-class-to-the-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Add a New OntoUML Class to the Diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -694,6 +745,30 @@
       Additional Features of the Plugin
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Additional Features of the Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modeling-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modeling Support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-operations-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Operations and Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -855,8 +930,8 @@
 <p>To enable native support for OntoUML, you’ll need to install the open-source plugin:</p>
 <h4 id="21-download-the-plugin">2.1 Download the Plugin</h4>
 <ul>
-<li>GitHub repository: <a href="https://github.com/OntoUML/ontouml-vp-plugin">https://github.com/OntoUML/ontouml-vp-plugin</a></li>
-<li>Latest release (<code>.vpplugin</code> file): <a href="https://github.com/OntoUML/ontouml-vp-plugin/releases">https://github.com/OntoUML/ontouml-vp-plugin/releases</a></li>
+<li>GitHub repository: <a href="https://w3id.org/ontouml/vp-plugin">https://w3id.org/ontouml/vp-plugin</a></li>
+<li>Latest release (<code>.vpplugin</code> file): <a href="https://w3id.org/ontouml/vp-plugin/releases">https://w3id.org/ontouml/vp-plugin/releases</a></li>
 </ul>
 <p>Download the most recent <code>.vpplugin</code> file compatible with your Visual Paradigm version.</p>
 <h4 id="22-install-the-plugin-in-visual-paradigm">2.2 Install the Plugin in Visual Paradigm</h4>
@@ -867,25 +942,55 @@
 <li>Restart Visual Paradigm when prompted.</li>
 </ol>
 <h3 id="step-3-create-an-ontouml-diagram">Step 3: Create an OntoUML Diagram</h3>
-<p>After installation:</p>
-<ol>
-<li>Go to <strong>Modeling → New Diagram</strong>.</li>
-<li>Choose <strong>OntoUML Class Diagram</strong>.</li>
-<li>Use the OntoUML palette to add semantically grounded elements like:</li>
-<li><code>Kind</code>, <code>Quantity</code>, <code>Collective</code>, <code>SubKind</code></li>
-<li><code>Role</code>, <code>Phase</code>, <code>Category</code>, <code>Mixin</code></li>
-<li><code>Relator</code>, <code>Mode</code>, <code>Event</code>, etc.</li>
-</ol>
-<p>These elements reflect ontological distinctions from the Unified Foundational Ontology (UFO).</p>
+<p>After installing the plugin, follow the steps below to create your first OntoUML diagram in Visual Paradigm:</p>
+<h4 id="31-create-a-new-project">3.1 Create a New Project</h4>
+<p>Go to the <strong>Project</strong> tab and click <strong>New</strong> to create a new modeling project.<br />
+This will initialize your workspace.</p>
+<p><img alt="Step 1 – Create New Project" src="../assets/images/vp-step1.png" /></p>
+<p>In the pop-up window that appears, enter a name for your project and the author’s name.<br />
+Then click on <strong>Create Blank Project</strong> to proceed.</p>
+<h4 id="32-create-a-new-model-inside-the-project">3.2 Create a New Model Inside the Project</h4>
+<p>In the <strong>Model Explorer</strong>, right-click on <code>My Project</code> and select<br />
+<strong>Model → New Model…</strong>.<br />
+Give your model a name such as “My Model”.</p>
+<p><img alt="Step 2 – Create New Model" src="../assets/images/vp-step2.png" /></p>
+<h4 id="33-add-a-new-diagram-to-the-model">3.3 Add a New Diagram to the Model</h4>
+<p>Right-click on your newly created model (e.g., “My Model”), go to<br />
+<strong>Sub Diagrams → Add → New Diagram…</strong>.</p>
+<p><img alt="Step 3 – Add New Diagram" src="../assets/images/vp-step3.png" /></p>
+<p>In the dialog that opens, select <strong>Class Diagram</strong> as the diagram type.<br />
+Then give your diagram a name (e.g., “My Model Class Diagram”) and click <strong>OK</strong>.</p>
+<h4 id="34-start-modeling-with-ontouml-stereotypes">3.4 Start Modeling with OntoUML Stereotypes</h4>
+<p>Once the diagram opens, use the class diagram tools to create elements.<br />
+Right-click on a class, go to <strong>OntoUML Stereotypes</strong>, and choose the appropriate stereotype from the list (e.g., <code>Kind</code>, <code>Role</code>, <code>Relator</code>, <code>Phase</code>, etc.).</p>
+<p>These stereotypes correspond to the ontological distinctions defined by the Unified Foundational Ontology (UFO).</p>
+<p><img alt="Step 4 – Add OntoUML Stereotypes" src="../assets/images/vp-step4.png" /></p>
+<p>At this point, your OntoUML modeling environment is ready. You can continue building the model using semantically grounded elements and defining relationships among them.</p>
+<h4 id="35-add-a-new-ontouml-class-to-the-diagram">3.5 Add a New OntoUML Class to the Diagram</h4>
+<p>To begin modeling, select the <strong>Class</strong> tool from the left-side toolbar and click anywhere on the diagram canvas to place a class element.</p>
+<p>Then, right-click the class and go to <strong>OntoUML Stereotypes</strong> to assign a semantic type such as <code>Kind</code>, <code>Category</code>, <code>Relator</code>, or others, depending on the nature of the concept you are representing.</p>
+<p><img alt="Step 5 – Add and Stereotype a Class" src="../assets/images/vp-step5.png" /></p>
 <h2 id="additional-features-of-the-plugin">Additional Features of the Plugin</h2>
-<p>The <code>ontouml-vp-plugin</code> offers several modeling enhancements:</p>
+<p>The <code>ontouml-vp-plugin</code> enhances Visual Paradigm with native support for OntoUML modeling. It adds dedicated functionalities and modeling options to assist in building well-founded models:</p>
+<h3 id="modeling-support">Modeling Support</h3>
 <ul>
-<li><strong>Stereotype-aware modeling</strong>: Palette and toolbox tailored to OntoUML.</li>
-<li><strong>Model validation</strong>: Built-in verification of OntoUML-specific constraints.</li>
-<li><strong>Export options</strong>: Support for JSON and RDF serialization via other OntoUML tools.</li>
+<li><strong>OntoUML Stereotypes</strong>: Easily assign OntoUML stereotypes to classes and relations through a context menu.</li>
+<li><strong>Suggested Stereotypes</strong>: Access intelligent recommendations based on modeling context.</li>
+<li><strong>Meta-Properties</strong>: Enrich model elements with additional OntoUML-specific metadata.</li>
 </ul>
+<p>These options are available by right-clicking a class or relation in the diagram and choosing the appropriate OntoUML feature.</p>
+<h3 id="model-operations-and-validation">Model Operations and Validation</h3>
+<p>The plugin also includes a dedicated OntoUML menu with tools to manage and analyze your model:</p>
+<ul>
+<li><strong>Check Model</strong>: Validates the model according to OntoUML constraints.</li>
+<li><strong>Check Diagram</strong>: Validates specific diagrams for structural and ontological correctness.</li>
+<li><strong>Import from JSON</strong>: Load OntoUML models from serialized JSON files.</li>
+<li><strong>Export to JSON</strong>: Save your model in machine-readable OntoUML JSON format.</li>
+<li><strong>Export to gUFO</strong>: Export your model to OWL/RDF using the gUFO ontology.</li>
+</ul>
+<p>These tools assist in ensuring semantic consistency, enable data exchange across tools, and facilitate publishing and reuse of OntoUML models.</p>
 <p>For more details, see the plugin documentation:<br />
-<a href="https://github.com/OntoUML/ontouml-vp-plugin#readme">https://github.com/OntoUML/ontouml-vp-plugin#readme</a></p>
+<a href="https://w3id.org/ontouml/vp-plugin#readme">https://w3id.org/ontouml/vp-plugin#readme</a></p>
 
 
 
