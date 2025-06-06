@@ -3,42 +3,6 @@
 > **Disclaimer**  
 > The content on this page was partially generated with the assistance of AI tools, based on the documentation listed in the references. While efforts have been made to ensure accuracy, the material is still under review and may contain inaccuracies or omissions. Users are advised to interpret and apply the content with caution, especially in critical or formal contexts.
 
-## Table of Contents
-
-- [Class Stereotypes](#class-stereotypes)
-  - [Kind](#kind)
-  - [Collective](#collective)
-  - [Quantity](#quantity)
-  - [Subkind](#subkind)
-  - [Role](#role)
-  - [Phase](#phase)
-  - [Category](#category)
-  - [RoleMixin](#rolemixin)
-  - [PhaseMixin](#phasemixin)
-  - [Mixin](#mixin)
-  - [Relator](#relator)
-  - [Mode](#mode)
-  - [Quality](#quality)
-  - [Type](#type)
-  - [DataType](#datatype)
-  - [Enumeration](#enumeration)
-  - [Event](#event)
-- [Relationship Stereotypes](#relationship-stereotypes)
-  - [Material](#material)
-  - [Mediation](#mediation)
-  - [Characterization](#characterization)
-  - [Derivation](#derivation)
-  - [ComponentOf](#componentof)
-  - [MemberOf](#memberof)
-  - [SubCollectionOf](#subcollectionof)
-  - [SubQuantityOf](#subquantityof)
-  - [Participation](#participation)
-  - [Creation](#creation)
-  - [Termination](#termination)
-  - [HistoricalDependence](#historicaldependence)
-  - [Instantiation](#instantiation)
-- [References](#references)
-
 ## Class Stereotypes
 
 ### Kind
