@@ -10,6 +10,12 @@ This section introduces OntoUML, an ontologically well-founded conceptual modeli
 - [Supporting Tools and Developments](ontouml.md#supporting-tools-and-developments)
 - [References](ontouml.md#references)
 
+## [OntoUML Stereotypes](ontouml-stereotypes.md)
+
+- [Class Stereotypes](ontouml-stereotypes.md#class-stereotypes)
+- [Relationship Stereotypes](ontouml-stereotypes.md#relationship-stereotypes)
+- [References](ontouml-stereotypes.md#references)
+
 ## [How to Create an OntoUML Model](how-to-create-ontouml-model.md#)
 
 - [Installation Guide for Visual Paradigm and the OntoUML Plugin](how-to-create-ontouml-model.md#installation-guide-for-visual-paradigm-and-the-ontouml-plugin)
