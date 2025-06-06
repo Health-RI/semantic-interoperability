@@ -1,0 +1,1346 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation of models, ontologies, and activities related to semantic interoperability within Health-RI">
+      
+      
+        <meta name="author" content="Pedro Paulo F. Barcelos">
+      
+      
+        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/ontouml-gufo/ontouml-stereotypes/">
+      
+      
+        <link rel="prev" href="../ontouml/">
+      
+      
+        <link rel="next" href="../ontouml-ufo-catalog/">
+      
+      
+      <link rel="icon" href="../../assets/images/health-ri-favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>OntoUML Stereotypes - Health-RI Semantic Interoperability</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/colors.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ontouml-stereotypes-revised-definitions-and-examples" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Health-RI Semantic Interoperability" class="md-header__button md-logo" aria-label="Health-RI Semantic Interoperability" data-md-component="logo">
+      
+  <img src="../../assets/images/health-ri-logo-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Health-RI Semantic Interoperability
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OntoUML Stereotypes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/health-ri/semantic-interoperability/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../semantic-interoperability/" class="md-tabs__link">
+          
+  
+  
+  Semantic Interoperability
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  OntoUML & gUFO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../method/" class="md-tabs__link">
+          
+  
+  
+  The Health-RI Method
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Health-RI Semantic Interoperability" class="md-nav__button md-logo" aria-label="Health-RI Semantic Interoperability" data-md-component="logo">
+      
+  <img src="../../assets/images/health-ri-logo-white.png" alt="logo">
+
+    </a>
+    Health-RI Semantic Interoperability
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/health-ri/semantic-interoperability/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Semantic Interoperability
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Semantic Interoperability
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-interoperability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    OntoUML & gUFO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            OntoUML & gUFO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontouml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OntoUML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    OntoUML Stereotypes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    OntoUML Stereotypes
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-stereotypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Class Stereotypes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Class Stereotypes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kind" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kind
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collective
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subkind" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subkind
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category" class="md-nav__link">
+    <span class="md-ellipsis">
+      Category
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rolemixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      RoleMixin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phasemixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      PhaseMixin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datatype" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataType
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumeration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relationship-stereotypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relationship Stereotypes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relationship Stereotypes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#material" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mediation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mediation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#characterization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Characterization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#derivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derivation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#componentof" class="md-nav__link">
+    <span class="md-ellipsis">
+      ComponentOf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memberof" class="md-nav__link">
+    <span class="md-ellipsis">
+      MemberOf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subcollectionof" class="md-nav__link">
+    <span class="md-ellipsis">
+      SubCollectionOf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subquantityof" class="md-nav__link">
+    <span class="md-ellipsis">
+      SubQuantityOf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#participation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Participation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Termination
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historicaldependence" class="md-nav__link">
+    <span class="md-ellipsis">
+      HistoricalDependence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instantiation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instantiation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontouml-ufo-catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OntoUML/UFO Catalog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-create-ontouml-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Create an OntoUML Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gufo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    gUFO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    The Health-RI Method
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            The Health-RI Method
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ontouml-stereotypes-revised-definitions-and-examples">OntoUML Stereotypes – Revised Definitions and Examples</h1>
+<blockquote>
+<p><strong>Disclaimer</strong><br />
+The content on this page was partially generated with the assistance of AI tools, based on the documentation listed in the references. While efforts have been made to ensure accuracy, the material is still under review and may contain inaccuracies or omissions. Users are advised to interpret and apply the content with caution, especially in critical or formal contexts.</p>
+</blockquote>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#class-stereotypes">Class Stereotypes</a></li>
+<li><a href="#kind">Kind</a></li>
+<li><a href="#collective">Collective</a></li>
+<li><a href="#quantity">Quantity</a></li>
+<li><a href="#subkind">Subkind</a></li>
+<li><a href="#role">Role</a></li>
+<li><a href="#phase">Phase</a></li>
+<li><a href="#category">Category</a></li>
+<li><a href="#rolemixin">RoleMixin</a></li>
+<li><a href="#phasemixin">PhaseMixin</a></li>
+<li><a href="#mixin">Mixin</a></li>
+<li><a href="#relator">Relator</a></li>
+<li><a href="#mode">Mode</a></li>
+<li><a href="#quality">Quality</a></li>
+<li><a href="#type">Type</a></li>
+<li><a href="#datatype">DataType</a></li>
+<li><a href="#enumeration">Enumeration</a></li>
+<li><a href="#event">Event</a></li>
+<li><a href="#relationship-stereotypes">Relationship Stereotypes</a></li>
+<li><a href="#material">Material</a></li>
+<li><a href="#mediation">Mediation</a></li>
+<li><a href="#characterization">Characterization</a></li>
+<li><a href="#derivation">Derivation</a></li>
+<li><a href="#componentof">ComponentOf</a></li>
+<li><a href="#memberof">MemberOf</a></li>
+<li><a href="#subcollectionof">SubCollectionOf</a></li>
+<li><a href="#subquantityof">SubQuantityOf</a></li>
+<li><a href="#participation">Participation</a></li>
+<li><a href="#creation">Creation</a></li>
+<li><a href="#termination">Termination</a></li>
+<li><a href="#historicaldependence">HistoricalDependence</a></li>
+<li><a href="#instantiation">Instantiation</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+<h2 id="class-stereotypes">Class Stereotypes</h2>
+<h3 id="kind">Kind</h3>
+<p><strong>Definition:</strong> A Kind is a rigid sortal type that provides a uniform principle of identity for its instances. In other words, every instance of a Kind is inherently of that type for its whole existence, and the type supplies the criteria for distinguishing those instances from others.</p>
+<p><strong>Example:</strong> Person or Organization can be modeled as Kinds. For instance, every individual person carries the essential identity of “Person” throughout their lifetime. In an OntoUML model, Person as a Kind means that any instance of Person must always be a person (rigidly) and has its own unique identity as a person.</p>
+<h3 id="collective">Collective</h3>
+<p><strong>Definition:</strong> A Collective is a rigid sortal whose instances are plural entities (collections or groups) composed of multiple individuals arranged in a uniform structure. A Collective provides an extensional identity principle for the group as a whole (the collection can change members over time without losing its identity as that collection if set as non-extensional).</p>
+<p><strong>Example:</strong> A flock of birds or a forest (collection of trees) would be modeled as a Collective. For example, The Beatles as a rock band can be seen as a Collective: the band remained the same entity even after one member was replaced, meaning the group’s identity is defined at the collective level rather than by any particular member.</p>
+<h3 id="quantity">Quantity</h3>
+<p><strong>Definition:</strong> A Quantity is a rigid sortal class whose instances are portions of some matter or mass, often described by mass nouns or substance terms. Quantities are individuals that do not carry an identity beyond the amount of stuff they constitute – they are typically divisible and lacking unique identity criteria for each portion.</p>
+<p><strong>Example:</strong> In a model, Water or Gold can be represented as Quantities. Any particular sample of gold or volume of water is an instance of those Quantity types. For instance, one liter of water doesn’t have an individual identity that differentiates it inherently from another liter of water – it’s identified by its volume and content, not by an intrinsic identity like a person or object would have.</p>
+<h3 id="subkind">Subkind</h3>
+<p><strong>Definition:</strong> A Subkind is a rigid sortal subtype that does not introduce its own identity principle but instead inherits the identity criterion from a supertype Kind. Subkinds classify a more specific group within a Kind, carrying all the identity properties defined by that Kind. They partition a Kind into exhaustive, disjoint subclasses without altering how instances are identified (the identity comes from the Kind).</p>
+<p><strong>Example:</strong> If Person is a Kind providing an identity principle for people, then MalePerson and FemalePerson could be modeled as Subkinds of Person. Each MalePerson or FemalePerson inherits the identity criteria from Person (being the same person over time). In practice, an individual like John who is classified as a Person can be further classified as a MalePerson Subkind, but John’s identity as an individual is still determined by him being a person; the Subkind adds additional classification (male gender) without changing the identity basis.</p>
+<h3 id="role">Role</h3>
+<p><strong>Definition:</strong> A Role is an anti-rigid sortal type that an individual can instantiate contingent on a particular relational context or situation. Roles are relationally dependent types, meaning an entity plays a role only by virtue of participating in some relation with other entities. Because Roles are anti-rigid, an instance can gain or lose that classification without losing its identity – the instantiation of the Role is temporary and dependent on external circumstances.</p>
+<p><strong>Example:</strong> Student is a typical Role that a Person may play when enrolled in a school. A person isn’t essentially or eternally a student – this Role is only instantiated while the person is involved in an enrollment relationship with an educational institution. When the person graduates or leaves school, they cease to be a Student (stop instantiating that Role) but remain the same person (their identity as a person is unchanged). Other examples include Employee (a Role a person plays when employed by a company) and Husband (a Role a person plays in the context of a marriage). An individual can move in and out of these role types over time.</p>
+<h3 id="phase">Phase</h3>
+<p><strong>Definition:</strong> A Phase is an anti-rigid sortal that represents a transient, intrinsic condition or stage in the life of an entity. Phases partition the lifespan or state space of a Kind into exclusive periods or states, usually based on some property or stage (e.g., age, development state, status). A Phase is relationally independent (it does not require an external relator to be instantiated) but is temporary with respect to the instance’s existence. All instances of a Phase share the identity supplied by their corresponding Kind, but only satisfy the Phase’s classification during a certain timeframe or condition.</p>
+<p><strong>Example:</strong> Child and Adult can be modeled as Phases of the Kind Person (assuming we partition a person’s life by age). An individual person may be a Child in one period and then transition to the Adult phase later. The person’s identity remains the same (as a Person) but they are classified under different Phases as their intrinsic attributes (in this case, age) change. Another example, in a butterfly’s life cycle, Caterpillar and Butterfly are Phases of the Kind Insect (Lepidopteran) – the same insect individual goes through these phases, each phase being a temporary stage of that individual
+.</p>
+<h3 id="category">Category</h3>
+<p><strong>Definition:</strong> A Category is a rigid non-sortal class (sometimes called a mixin class) that aggregates essential properties common to multiple distinct sortal types (Kinds or Subkinds). Categories do not supply an identity principle of their own (they are non-sortals) but are rigid, meaning if an individual instantiates the Category, it does so in all circumstances. A Category typically generalizes two or more disjoint sortal types that share certain fundamental features.</p>
+<p><strong>Example:</strong> Physical Object can be modeled as a Category that generalizes different Kinds such as Person, Car, and Tree. All of those subtypes are physical objects sharing common essential properties (e.g., having mass and spatial extension), so those common properties are captured in the Category PhysicalObject. Any instance of Person, Car, or Tree will necessarily instantiate PhysicalObject as well, since it rigidly applies to all of them. Another example from ontology literature is RationalAgent as a Category that includes both Person and IntelligentSoftwareAgent — both persons and AI agents could be seen as rational actors, so the Category defines properties they must both have (like the ability to reason).</p>
+<h3 id="rolemixin">RoleMixin</h3>
+<p><strong>Definition:</strong> A RoleMixin is an anti-rigid, externally dependent non-sortal class that captures a role-like property shared by instances of different sorts (i.e. different identity-providing types). A RoleMixin generalizes role behaviors that can be played by heterogeneous kinds of objects. Because it’s anti-rigid, no instance is eternally in the RoleMixin type – an entity instantiates the RoleMixin only when it satisfies certain relational conditions – and because it’s externally dependent, that instantiation depends on some relation to other entity(ies), similar to roles. In short, a RoleMixin is an abstract “role pattern” applicable across multiple types.</p>
+<p><strong>Example:</strong> Customer can be modeled as a RoleMixin, since many different kinds of entities can act as a customer in a purchase context. For example, a Person and a Company (which are distinct Kinds with their own identity principles) might both play the role of “Customer”. Instead of having separate PersonCustomer and CompanyCustomer roles, an abstract RoleMixin Customer can be used to capture the common features of “being a customer” that apply to both persons and organizations. Another example, in communication, an abstract RoleMixin like Responder could be defined, which can be instantiated by either a human agent or an automated agent type, whenever they are in the responding role in some interaction
+.</p>
+<h3 id="phasemixin">PhaseMixin</h3>
+<p><strong>Definition:</strong> A PhaseMixin is an anti-rigid non-sortal class that represents a contingent phase (state or condition) shared by instances of multiple different sorts. Like a RoleMixin, it is a dispersive abstract type applying across different underlying types, but unlike RoleMixin, a PhaseMixin corresponds to an intrinsic, time-bound condition rather than a relational role. A PhaseMixin is essentially a generalization of Phase-like characteristics that can apply to instances of heterogeneous Kinds. In formal terms, PhaseMixins (together with RoleMixins) are exactly those types that are anti-rigid and non-sortal.</p>
+<p><strong>Example:</strong> Consider an abstract condition like AdultOrganism that could cover adult stages of different species. We might model AdultOrganism as a PhaseMixin that applies to instances of Person, Elephant, Dog, or any other Kind representing an organism, whenever those individuals are in their adult phase. Each of those Kinds has its own identity principle (each is a Kind), and each defines its own Phase (like Person has phases Child/Adult, Dog has Puppy/AdultDog, etc.), but the PhaseMixin AdultOrganism captures the shared notion of “adult stage” across all those kinds. An individual entity (say, a particular dog) instantiates AdultOrganism during the time it’s an adult, and a particular person instantiates AdultOrganism during their adult life stage. This modeling assures that AdultOrganism is not tied to one Kind’s identity principle, and an instance ceases to instantiate the PhaseMixin when it’s no longer in that phase (e.g., if it were possible to revert, or simply that it only instantiates after a certain age).</p>
+<h3 id="mixin">Mixin</h3>
+<p><strong>Definition:</strong> A Mixin is a non-sortal class (no single identity principle of its own) that aggregates properties which are essential to some of its instances but accidental to others – this means a Mixin is semi-rigid. Some instances instantiate the Mixin necessarily, while other instances instantiate it contingently. Mixins often represent a certain property or feature that can cut across different taxonomic hierarchies. They are used to factor out commonalities that are not uniformly essential to all instances.</p>
+<p><strong>Example:</strong> An example of a Mixin is Seatable – imagine a property type representing “being suitable for seating”. A variety of concrete objects can satisfy this: chairs and stools instantiate Seatable essentially (by their nature they are for sitting, so every chair or stool must be seatable), whereas a rock or a stack of books might instantiate Seatable only contingently (a rock can be used as a seat, but it’s not essentially meant for sitting). In an OntoUML model, Seatable as a Mixin would have chairs and stools as essential instances (if something is a Chair Kind, it must also be Seatable), while also potentially classifying other things that happen to be used as seats (accidentally seatable). The Mixin captures the shared property “can be sat upon” without implying that everything that has that property belongs to the same kind or carries that property essentially.</p>
+<h3 id="relator">Relator</h3>
+<p><strong>Definition:</strong> A Relator is an existentially dependent moment (in the sense of an object’s dependent aspect) that mediates or connects two or more otherwise independent entities. Every instance of a Relator involves at least two distinct individuals and cannot exist without them. Relators are the ontological counterparts of what we think of as relationships or reified connections – they bear the relationship between entities. In OntoUML, a class stereotyped «relator» represents a situation or link that depends on multiple entities (its participants) to exist.</p>
+<p><strong>Example:</strong> Typical examples of Relators include social or institutional relationships like Marriage, Employment, or Enrollment. For instance, an individual marriage Relator might connect two person instances as spouses; if either person ceases to exist (or the relational context is broken), that particular marriage instance cannot exist. Another example is a Purchase relator connecting a buyer and a seller (and perhaps an item); it is a single unit that depends on all parties – if the buyer or seller didn’t exist, that purchase relationship instance couldn’t exist. In a model, Marriage would be a relator class mediating Person-to-Person, EmploymentContract could be a relator connecting an Employee and a Company, etc.</p>
+<h3 id="mode">Mode</h3>
+<p><strong>Definition:</strong> A Mode is an intrinsic moment (a dependent property or trope) that inheres in exactly one individual. Modes are existentially dependent on a single bearer entity – they cannot exist without that specific entity – and they represent properties, conditions, or dispositions of that entity. Unlike relators, modes do not connect multiple individuals; they characterize only their one bearer. In OntoUML, a class with stereotype «mode» corresponds to a particular way some individual is, which depends on that individual.</p>
+<p><strong>Example:</strong> Examples of modes include abilities, states, or conditions of individual things. For instance, John’s skill in carpentry is a Mode that exists in John (and cannot exist without John). If we have a class Skill stereotyped as a Mode, an instance might be “Mary’s Spanish-language skill,” which is a particular mode inhering in Mary. Other examples: a person’s belief or intention (which exists in the mind of that person), an illness (a condition inhering in a patient), or a magnetic property of a specific metal object. Each of these modes depends on one specific bearer and cannot be transferred to or shared by another entity.</p>
+<h3 id="quality">Quality</h3>
+<p><strong>Definition:</strong> A Quality is a specific kind of Mode that represents a qualitative aspect of an individual – typically one that can be measured or compared – and is associated with a value in some quality dimension or space. In UFO terms, a Quality mediates between an individual (the bearer of the quality) and a value (often in a structured value space, like a number or a position on a scale). Every quality instance is existentially dependent on a particular bearer (the entity that “has” the quality) and can be conceived as an individual quality trope (e.g., a specific weight, color, or temperature of something).</p>
+<p><strong>Example:</strong> Consider the quality of Weight for physical objects. If we model Weight as a Quality, an individual object (say, a specific parcel) might have an instance of Weight (a mode) that connects it to a value (e.g., 5 kilograms) in the weight dimension. Another example is Color as a Quality: an apple has a particular color trope (its specific shade of red) that links the apple to a position in the color space. In OntoUML, we might represent Color as a Quality class; an instance “this apple’s color” is a quality dependent on that apple and is associated with a value (like an RGB value or a spot on the spectrum). Qualities thus allow modeling of attributes as first-class individuals, where their values can be compared or structured (e.g. two apples can share the same color quality value).</p>
+<h3 id="type">Type</h3>
+<p><strong>Definition:</strong> A Type (in OntoUML 2.0 extensions) is a rigid class whose instances are themselves types (classes or classifications of entities). In other words, a class stereotyped «type» is a higher-order type that classifies other classes. Any instance of a «type» is not a concrete individual but rather a category or kind at the object level. Because it is rigid, if something is an instance of a Type, it is necessarily so (it doesn’t shift its classification in this meta-level sense). This construct allows modeling of metaclasses or “types of types” within the OntoUML model.</p>
+<p><strong>Example:</strong> Consider modeling different models of cars: CarModel could be a class stereotyped as «type». Its instances would be specific car models (which are themselves classes of cars in reality). For example, Tesla Model S or Fiat 500 would be instances of the CarModel Type – each of those instances represents a class of actual cars. Another example, species might be a class with stereotype «type», whose instances are specific species (each species is a class of individual organisms). In an OntoUML model, using «type» allows us to treat those category-like entities (car models, species, product categories, etc.) as instances of a higher-order class while still respecting ontological distinctions.</p>
+<h3 id="datatype">DataType</h3>
+<p><strong>Definition:</strong> A DataType in OntoUML represents a class of value spaces – it classifies primitive or value objects that are not considered individuals with identity in the domain, but rather abstract or structured values. A class stereotyped «datatype» defines a conceptual space of possible literal values (such as numbers, measures, or structured data like dates). DataType instances are typically used for attributes and are considered immutable and lacking an identity principle (two identical value instances are indistinguishable).</p>
+<p><strong>Example:</strong> Common examples of DataTypes include things like Integer, String, or domain-specific value types like CurrencyAmount or RGBColor. For instance, if we have a Temperature DataType, its instances might be values like “36.6°C” – two occurrences of the value 36.6°C are not considered two distinct identifiable entities, but essentially the same value. In a model, one might have MassInKilograms as a DataType to represent mass measurements; an instance 5.0 (kg) is a value that could be attached to some Quality or attribute but is not an independent entity in the domain. DataTypes thus serve to model sets of values and measurements that objects can bear.</p>
+<h3 id="enumeration">Enumeration</h3>
+<p><strong>Definition:</strong> An Enumeration is a special kind of DataType class that specifies a finite, discrete set of possible literal values (enumeration literals) in a conceptual space. An Enumeration’s instances are those predefined values, and no others. Like other DataTypes, enumeration values have no independent identity and are considered identical if they have the same literal. The stereotype «enumeration» is used in OntoUML to represent attributes or classes where only a fixed list of values is allowed.</p>
+<p><strong>Example:</strong> An example of an Enumeration is DayOfWeek, which has exactly seven instances (Monday, Tuesday, ..., Sunday) as its allowed values. In an OntoUML model, DayOfWeek would be an enumeration class with those seven literals. Another example: DriverLicenseCategory could be an enumeration with values {A, B, C, D, E} representing different license types. Each literal like B (for a car license) is an instance of the DriverLicenseCategory enumeration. Enumerations are typically used for attributes where the set of values is strictly limited and known in advance.</p>
+<h3 id="event">Event</h3>
+<p><strong>Definition:</strong> An Event (OntoUML stereotype «event») is a class whose instances are events or occurrences in time – perdurants rather than endurants. An Event type represents something that happens and has a temporal extension, such as a process, action, or incident. Classes stereotyped as «event» are disjoint from endurant (object) classes; an instance of an event class cannot simultaneously be an instance of a substantive object class. In OntoUML (extended with UFO-B concepts), marking a class as «event» indicates it captures a historical occurrence, and model constraints prevent mixing events with endurants in the class hierarchy.</p>
+<p><strong>Example:</strong> Wedding, Conference, or Explosion could be modeled as event types. For instance, one might have an Accident class stereotyped «event» to represent accident occurrences. An individual accident (say, a specific car crash on January 1, 2025) is an instance of Accident. As an event, it unfolds in time and can have participants (like vehicles, persons) but it is not itself a persistent object. In the model, no endurant (like a Person or Car Kind) can be a subtype of Accident, and an event type cannot subtype an object type – this reflects the ontological separation of happenings versus things. Events often have attributes for time (e.g., start and end time) and can be related to endurants through event participation relationships.</p>
+<h2 id="relationship-stereotypes">Relationship Stereotypes</h2>
+<h3 id="material">Material</h3>
+<p><strong>Definition:</strong> A Material relationship is an association that represents a concrete, domain-specific relationship between endurant entities, which exists by virtue of a mediating relator entity. Material relations have a “material structure” of their own – there is some event, process, or relator underpinning the connection between the two related entities. In OntoUML, a material relation (stereotyped «material») indicates that the relationship cannot hold unless a certain relator instance exists connecting the participants. Material relations are typically contingent (not necessarily always true for the same pair of individuals over time) and are derivable: there is usually a corresponding Relator class and mediation associations that formally ground the material relation.</p>
+<p><strong>Example:</strong> “is married to” between two Person instances is a Material relation – it holds due to the existence of a Marriage relator connecting those persons. If the marriage relator is dissolved (divorce), the material relation “married to” no longer holds. Similarly, “works for” (between a Person and a Company) is material, typically founded on an EmploymentContract or employment relator. The OntoUML model would include an explicit relator class Employment with mediations to Person and Company, and the material relation works for can be derived via that relator. In essence, material relations in the diagram show the surface-level connection (e.g., Person –works for→ Company) while a relator (e.g., an instance of Employment) and mediation links provide the ontological justification for why that relation holds.</p>
+<h3 id="mediation">Mediation</h3>
+<p><strong>Definition:</strong> Mediation is a fundamental existential dependence relationship that connects a relator to the entities it depends on (its participants). An association stereotyped «mediation» links a relator type with a sortal type that the relator “mediates” or connects. Mediation signifies that an instance of the relator cannot exist unless it is mediating (linked to) an instance of the other type, and typically the relator is dependent on at least two such entities (hence there will be at least two mediation relations for a relator). In OntoUML, each relator must mediate at least two distinct individuals. Mediation is a directed relation: it goes from the relator to the mediated type(s), indicating the relator’s dependency on its participants.</p>
+<p><strong>Example:</strong> In a marriage scenario, a class Marriage (stereotyped «relator») will have two mediation relations: one mediating Marriage to Person (for the spouse role on one side) and another mediating Marriage to Person (for the spouse on the other side). Each Marriage instance must be connected via these mediations to two person instances – it cannot exist in isolation. Another example: an Enrollment relator between a Student and a School would be modeled with a mediation from Enrollment to Student and another from Enrollment to School. The presence of an Enrollment instance (say, a specific enrollment record) is contingent on a particular student and a particular school existing. Mediation explicitly captures that dependence in the model – e.g., “Enrollment (John ←enrollment→ University X)”, where the mediations connect the enrollment relator to John and to University X.</p>
+<h3 id="characterization">Characterization</h3>
+<p><strong>Definition:</strong> Characterization is a relationship that links an individual (the bearer) with an intrinsic dependent property (the feature that characterizes it). In OntoUML, an association stereotyped «characterization» connects a mode or quality (the feature) to the object it characterizes. The feature is an existentially dependent moment of the bearer – it cannot exist without the bearer, and it represents some intrinsic aspect of that bearer. The characterization relation signifies that every instance of the bearer type is associated with (or “exemplifies”) an instance of the feature type in question. (In formal terms, if a characterization link exists, the feature is said to inhere in the bearer.)</p>
+<p><strong>Example:</strong> If we model Weight as a Quality and Person as a Kind, a characterization relation might link Weight to Person (a person has a weight). An instance of Weight (say, John’s weight of 70 kg) characterizes the individual John. John cannot have that particular weight instance without John existing, and that weight depends on John. As another example, consider a mode class Belief and an object class Agent; a characterization relation Agent has Belief means each belief instance exists in (characterizes) some agent. If Mary holds a particular belief (instance of Belief), that belief characterization link ties it to Mary as its bearer. Characterization relations are by nature directed from the mode/quality to the bearer (the mode “characterizes” the bearer) and typically have a cardinality of 1 at the bearer end (each mode instance is tied to exactly one bearer).</p>
+<h3 id="derivation">Derivation</h3>
+<p><strong>Definition:</strong> Derivation is a meta-relationship in OntoUML that connects a material relation to the relator that lies at its foundation. An association stereotyped «derivation» links a relator class to a material association, indicating that the material relationship can be logically derived from the existence of the relator and its mediation relations. In effect, the derivation relationship specifies that if a certain relator instance is present connecting two entities, then a corresponding material relation instance holds between those entities (and vice-versa, the material relation’s presence implies a relator). This construct helps maintain consistency: cardinality constraints on the material relation are determined by the combination of mediations and the relator’s existence. </p>
+<p><strong>Example:</strong> In a model with Marriage as a relator and a material relation “is married to” between Person and Person, we would use a «derivation» to tie the is married to association to the Marriage class. This indicates that “Person A is married to Person B” is true if and only if there exists a Marriage instance connecting A and B. The derivation association often is shown as a dashed line from the relator to the material relation. Another example: a relator EmploymentContract might derive a material relation “works for” (Person – works for → Company). The derivation relationship formally states that the works for link between a given person and company exists because an EmploymentContract relator instance connects them, and if that contract is terminated (relator ceases to exist), the works for relation no longer holds.</p>
+<h3 id="componentof">ComponentOf</h3>
+<p><strong>Definition:</strong> ComponentOf is a part-whole relationship stereotype that represents a functional composition between two objects. An association «componentOf» indicates that the source is a part (component) of the target, and this part contributes in a specific way to the functionality of the whole. Both the whole and the part in a ComponentOf relation are typically functional complexes (Kinds or Subkinds that are complex objects). The relation is usually rigid for the part (the part must be part of some whole of the specified type while it exists) and often carries the inference that if the whole ceases to exist, the part’s specific role or existence as that component ceases as well (depending on cardinalities and modality).</p>
+<p><strong>Example:</strong> A Engine is componentOf a Car. In an OntoUML model, if we have classes Car and Engine (both Kinds, say), a «componentOf» relation from Engine (source) to Car (target) means an engine is a part of a car. The engine plays a functional role (providing power) in the context of the car. If we remove the engine from the car, it no longer functions as a “car engine” (it might be just a spare part unless placed in another car). Other examples: Heart componentOf HumanBody, Wheel componentOf Bicycle. Each of these indicates a part-whole with a functional dependency: the part contributes to the operation or structure of the whole (and generally, a whole cannot function as intended without at least some of its key components present).</p>
+<h3 id="memberof">MemberOf</h3>
+<p><strong>Definition:</strong> MemberOf is a part-whole relation denoting membership in a collective. The stereotype «memberOf» connects either an individual functional object or a sub-collective (as the part) to a Collective (as the whole). This relation indicates that the part is an element of a group/collection that is considered a single collective entity. It carries the semantics that the members together form the collective whole, and often the collective’s identity is independent of any particular member (extensional identity principle). Cardinality constraints usually allow multiple members in the collective and typically a member belongs to at most one such collective of the same type at a time (depending on the nature of the group).</p>
+<p><strong>Example:</strong> Person memberOf Team: an OntoUML model might have a class Team stereotyped «collective» and class Person (a Kind), with a «memberOf» association from Person to Team. This means persons are members of teams. For instance, Alice is a member of The Design Team. If Alice leaves the team, she is no longer connected by that memberOf relation, but the team may still continue (possibly with different members). Another example: a Soldier memberOf Platoon or Tree memberOf Forest (if Forest is treated as a collective of trees). In each case, the collection’s identity (the team, platoon, or forest) isn’t tied to any single member – members can come or go. The MemberOf relation formalizes this membership part-whole connection in the model.</p>
+<h3 id="subcollectionof">SubCollectionOf</h3>
+<p><strong>Definition:</strong> SubCollectionOf is a part-whole stereotype used to represent a collective-to-collective parthood, i.e., a situation where a collective is part of a larger collective. Both the part and whole are Collectives in this relation. The sub-collection relation usually implies that every member of the sub-collective is also a member of the super-collective (the whole), and thus the sub-collective is essentially a subset of the larger collection (but treated as a unit itself). This relation is typically transitive and is used to model hierarchical groupings.</p>
+<p><strong>Example:</strong> A Squad is a sub-collection of a Battalion. If we model a military unit hierarchy, Battalion (whole) and Squad (part) could both be Collectives (each comprised of soldiers), with a «subCollectionOf» relation linking Squad to Battalion. This indicates each squad is part of some battalion. In an instance scenario, Squad Alpha (a collective of 10 soldiers) is a sub-collection of the 5th Battalion (a collective of 200 soldiers); all soldiers in Squad Alpha are members of the 5th Battalion. Another example: ResearchGroup subCollectionOf Department in a university context, if both are modeled as collectives of people. The SubCollectionOf relation helps maintain that the smaller group is conceptually part of the larger group, inheriting the membership context.</p>
+<h3 id="subquantityof">SubQuantityOf</h3>
+<p><strong>Definition:</strong> SubQuantityOf is a part-whole relation that relates one Quantity to a larger Quantity of the same kind – essentially, it denotes a portion-to-whole relationship within stuff or masses. Both the part and whole are instances of a Quantity (a continuous substance or amount). The subquantity inherits the same identity criterion as the whole (since for quantities the identity is often defined by the kind of substance and possibly the total amount). This relation is transitive and is used to model situations where a quantity (e.g., a liter of water) is part of a larger quantity (e.g., a reservoir of water).</p>
+<p><strong>Example:</strong> If Water is modeled as a Quantity type, a «subQuantityOf» association could relate Water to itself (or more specifically, between a volume and a larger volume of water) to express the notion “part of this water is contained in that whole”. For instance, the 2 liters of water in this bottle is a subquantity of the 100 liters of water in the barrel. In the model, we might not distinguish subclasses, but at the instance level we use subquantity links: an instance representing 2L of water is subQuantityOf an instance representing 100L of water
+. Another example: Gold subQuantityOf Gold (one nugget of gold as part of a larger heap of gold). This stereotype explicitly captures divisible substance parthood, where dividing or combining quantities yields the same type of quantity (and identity is tied to the substance, not to any particular parcel).</p>
+<h3 id="participation">Participation</h3>
+<p><strong>Definition:</strong> Participation is an association stereotype that links an endurant (object or agent) with an event, indicating that the endurant participates in (takes part in) the occurrence. This relationship is foundational in connecting the ontology of endurants (UFO-A) with the ontology of events (UFO-B). An association «participation» always relates a class stereotyped «event» to a class representing some endurant type. The existence of a participation link means that the endurant was involved in or present during the event. In ontological terms, the event is existentially dependent on its participants to some extent (an event of a certain type might require specific participants to occur), and each participation is a specific way an endurant figures in an event.</p>
+<p><strong>Example:</strong> In a model with an Event class like SoccerMatch and an endurant class like Person (or SoccerPlayer as a role of Person), a «participation» association could connect SoccerPlayer to SoccerMatch. This would indicate that players (persons) participate in soccer match events. For a specific instance, John Doe participates in Match #45. Other examples include: Student (Person) participates in Exam (event), Machine participates in AssemblyProcess, or more generally Agent participates in Activity. The participation relation can carry additional semantics (roles in the event, time of participation), but fundamentally it ties the object to the event in which it took part. If John is linked to a particular Exam event via participation, it means John was a participant in that exam occurrence.</p>
+<h3 id="creation">Creation</h3>
+<p><strong>Definition:</strong> Creation is a specialized kind of participation that indicates an endurant’s coming into existence is tied to an event. An association stereotyped «creation» relates an event to an endurant type such that if an individual of that type is connected by this relation, that individual is generated or produced by that event. In other words, the event is the creative event for that object. The created endurant did not exist before the event and begins to exist as the event happens or concludes. This stereotype captures the causal origination aspect in the model. (It is one half of the pair, with «termination» for ceasing to exist.)</p>
+<p><strong>Example:</strong> Consider a class Artwork (endurant) and an event class PaintingSession. A «creation» association from PaintingSession to Artwork would mean the artwork is created in the painting event. For instance, Mona Lisa (an instance of Artwork) is created in Da Vinci’s painting process event (an instance of PaintingSession). Another example: if Company is a Kind and FoundingEvent is an event class, a «creation» link can indicate that a company comes into existence as a result of a founding event. In the model, we might say StartupInc (Company) is connected to StartupIncFoundingEvent 2021 via a creation association – interpreting that the company was established in that event. The creation relationship makes it explicit that the event is responsible for the origination of the endurant.</p>
+<h3 id="termination">Termination</h3>
+<p><strong>Definition:</strong> Termination is the counterpart to creation – a specialized participation indicating that an endurant’s existence ends as a result of a certain event. When an endurant is linked to an event by a «termination» association, it means that event brings about the endurant’s termination (the object ceases to exist in or due to that event). The terminated entity does not exist after the event. This stereotype allows modeling of destruction, death, expiration or other forms of existential cessation in the context of events.</p>
+<p><strong>Example:</strong> If we have a class Person and an event class DeathEvent, a «termination» association could connect them, meaning a person dies in that event. For instance, an instance DeathOfJohn (a DeathEvent) terminating the instance John (Person). Similarly, consider Company and DissolutionEvent with a termination link: a specific company ceases to exist during a particular dissolution event. Another example: a Building might have a termination relation with a Demolition event. E.g., Old City Hall Building is terminated by CityHallDemolition2022 event. In each case, the termination association in the model signifies that the event marks the final existence moment of the object – after the event, the object is no more.</p>
+<h3 id="historicaldependence">HistoricalDependence</h3>
+<p><strong>Definition:</strong> HistoricalDependence is a relationship indicating that one endurant is linked to another due to some past event or history involving them. It is typically used when an entity’s present state or existence is historically dependent on another entity’s involvement in an event. The stereotype «historicalDependence» connects two entities to show that one exists or has certain properties because of a specific event that happened involving the other. Essentially, it’s a way to model a dependency that isn’t ongoing like mediation, but rooted in a historical event (often an event that is not explicitly represented as a relator, but still has relevance).</p>
+<p><strong>Example:</strong> An example from cultural heritage: a City might be historically dependent on a certain Painting because that painting (an image object) depicts the city at a point in time
+. In the model, we could have City –historicalDependence→ ImageObject with the interpretation: Paris is historically dependent on “Painting of Paris in 1800” in the sense that the image is a historical record of Paris at that time. Another example: a Site historicallyDependsOn an Artifact (the site is historically significant due to the discovery of that artifact there during an event). Or a person might have a historical dependence on an award object because a past event of winning that award is part of their history. The historicalDependence relation is a way to connect entities via an implicit past event context – it implies there was some event linking them (e.g., the act of creation, discovery, representation, etc. in the past).</p>
+<h3 id="instantiation">Instantiation</h3>
+<p><strong>Definition:</strong> Instantiation (in OntoUML 2.0) is a relationship that links a concrete instance to a type class that classifies it, effectively making the instance an instance-of a model element. The stereotype «instantiation» is used to represent an instance-of relationship within the model itself. It connects a class that represents individuals to another class that represents a higher-order type (a class of which those individuals are instances). This is particularly employed when modeling type hierarchies or using the «type» stereotype classes. The relation is directed: typically from the individual (instance) to the type-of-type (classifier class).</p>
+<p><strong>Example:</strong> Suppose we have a class CarModel (stereotyped «type») and another class Car (a Kind). We can use a «instantiation» association to connect Car to CarModel to indicate that each instance of Car is classified by some instance of CarModel. For instance, a specific car car123 is an instance of the model Tesla Model S. In the model, we might not represent individual instances explicitly, but we represent that Car123 (if it were an object) instantiates TeslaModelS which is an instance of CarModel. Another concrete example: Person class connected via instantiation to a PersonType class – if we treat categories like “StudentType” as instances of PersonType, an instantiation link could show that “Alice” (a Person) is an instance of the type “Student” (if “Student” itself is modeled as an instance of a higher-order class). In summary, instantiation relations in OntoUML capture the idea that “every instance of Class A is classified by some instance of Class B” – for example, every individual car instantiates exactly one car model.</p>
+<h2 id="references">References</h2>
+<p>Guizzardi, G. (2005). Ontological Foundations for Structural Conceptual Models. Enschede, The Netherlands: Telematica Instituut / University of Twente.</p>
+<p>Falbo, R. A. (2014). OntoUML Quick Guide and Pattern Language. Technical report, NEMO, Federal University of Espírito Santo.</p>
+<p>Guizzardi, G. (2005). Ontological Foundations for Structural Conceptual Models. (PhD Thesis). Chapter on Collectives and Quantities.</p>
+<p>Rybak, M., &amp; Pergl, R. (2017). “Towards OntoUML for Software Engineering: Transformation of Rigid Sortal Types into Relational Databases.” Annals of Computer Science and Information Systems, 8, 1211–1220.</p>
+<p>Guizzardi, G. et al. (2018). “Ontology-Based Model Transformations in OntoUML: Supporting Role and Phase Mixins.” In OntoUML and Conceptual Modeling (Nemo Research Report).</p>
+<p>Guizzardi, G. et al. (2013). “Towards Ontological Foundations for the Conceptual Modeling of Events.” In ER 2013 – Conceptual Modeling (LNCS 8217, pp. 327–341). Springer.</p>
+<p>Guizzardi, G. et al. (2018). “Endurant Types in Ontology-Driven Conceptual Modeling: Towards OntoUML 2.0.” In ER 2018 – Conceptual Modeling (LNCS 11157, pp. 136–150). Springer.</p>
+<p>Suchánek, M., &amp; Alves, V. (2018). OntoUML Specification Documentation..</p>
+<p>Guizzardi, G., Wagner, G., Almeida, J. P. A., &amp; Guarino, N. (2015). “Towards Ontological Foundations for the Conceptual Modeling of Events.” Applied Ontology, 10(3-4), 279–314.</p>
+<p>AlpineBits Alliance. (2023). Modeling Language: OntoUML (AlpineBits Ontology Documentation).</p>
+<p>Guizzardi, G., Fonseca, C. M., Benevides, A. B., Almeida, J. P. A., Porello, D., &amp; Sales, T. P. (2018). “Types and Taxonomic Structures in Ontology-Driven Conceptual Modeling.” Conceptual Modeling Perspectives (ER Workshops).</p>
+<p>Guizzardi, G. (2011). Introduction to Ontological Engineering. Presentation, Prague University of Economics.</p>
+<p>Guizzardi, G., Herre, H., &amp; Wagner, G. (2004). “Towards Ontological Foundations for UML Conceptual Models.” In ER 2004 Workshops (pp. 110–121). Springer (discussing roles and relations).</p>
+<p>Ruy, F. B. et al. (2017). “Ontological Anti-Patterns: Empirically Uncovered Error-Prone Structures in Ontology-Driven Models.” In EDOCW 2017 (pp. 105–114). IEEE.</p>
+<p>Guizzardi, G. &amp; Falbo, R. A. (2008). “Experiencing UFO-Based Ontology Design.” Journal of Software Engineering and Applications, 1(1), 19–28 (introducing UFO-B and UFO-C distinctions).</p>
+<p>Benevides, A. B., Guizzardi, G., &amp; Almeida, J. P. A. (2013). “Validating Modal Aspects of OntoUML Conceptual Models Using Automatically Generated Visual World Structures.” Journal of Universal Computer Science, 19(1), 33–56.</p>
+<p>Guarino, N., Guizzardi, G., &amp; Almeida, J. P. A. (2016). “Ontological Considerations about the Representation of Events and Endurants in Business Models.” In BPM 2016: Business Process Management (LNCS 9850, pp. 20–36). Springer.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:pedro.barcelos@health-ri.nl" target="_blank" rel="noopener" title="Email" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/pedro-paulo-favato-barcelos/" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/pedropaulofb" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://health-ri.nl" target="_blank" rel="noopener" title="Website" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.instant", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "toc.follow", "toc.integrate", "search.share"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
