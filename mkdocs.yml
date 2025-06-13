@@ -66,6 +66,8 @@ nav:
       - gUFO: ontouml-gufo/gufo.md
   - The Health-RI Method:
       - Overview: method/index.md
+  - Output:
+      - Overview: output/index.md
 
 extra:
   generator: false    # disables "Made with Material for MkDocs" line

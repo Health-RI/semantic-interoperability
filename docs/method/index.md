@@ -1,17 +1,7 @@
 # Method Overview
 
-## Table of Contents
-
-- [Current Situation](#current-situation)
-- [Toward a Solution: Introducing a Common Reference Model](#toward-a-solution-introducing-a-common-reference-model)
-- [Division of Responsibilities: Modeling and Mapping Teams](#division-of-responsibilities-modeling-and-mapping-teams)
-  - [Ontology Modeling Team](#ontology-modeling-team)
-  - [Ontology Mapping Team](#ontology-mapping-team)
-  - [Domain Guidance and Coordination](#domain-guidance-and-coordination)
-  - [Collaborative Iteration and Feedback](#collaborative-iteration-and-feedback)
-- [Translating OntoUML to OWL via gUFO](#translating-ontouml-to-owl-via-gufo)
-- [Mapping Schemas to the gUFO Ontology](#mapping-schemas-to-the-gufo-ontology)
-- [Incremental Development and Community Accessibility](#incremental-development-and-community-accessibility)
+## Generic process
+![Generic process](./assets/images/Picture0.png)
 
 ## Current Situation
 
