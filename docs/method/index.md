@@ -1,17 +1,7 @@
 # Method Overview
 
-## Table of Contents
-
-- [Current Situation](#current-situation)
-- [Toward a Solution: Introducing a Common Reference Model](#toward-a-solution-introducing-a-common-reference-model)
-- [Division of Responsibilities: Modeling and Mapping Teams](#division-of-responsibilities-modeling-and-mapping-teams)
-  - [Ontology Modeling Team](#ontology-modeling-team)
-  - [Ontology Mapping Team](#ontology-mapping-team)
-  - [Domain Guidance and Coordination](#domain-guidance-and-coordination)
-  - [Collaborative Iteration and Feedback](#collaborative-iteration-and-feedback)
-- [Translating OntoUML to OWL via gUFO](#translating-ontouml-to-owl-via-gufo)
-- [Mapping Schemas to the gUFO Ontology](#mapping-schemas-to-the-gufo-ontology)
-- [Incremental Development and Community Accessibility](#incremental-development-and-community-accessibility)
+## Generic process
+![Generic process](./assets/images/Picture0.png)
 
 ## Current Situation
 
@@ -37,7 +27,8 @@ Rather than relying on isolated and potentially ambiguous schemas, we propose th
 
 This model is not intended to replace local schemas. Instead, it will serve as a **semantic anchor**: each schema will be expected to explicitly declare how its elements correspond to the concepts in the reference model, clarifying their intended meaning and enabling consistent interpretation.
 
-> In practice, schemas do not need to be restructured or rewritten. Rather, they must be **mapped** to the reference model—declaring, for each concept, its corresponding concept (or the nature of its relation) in the shared ontology.
+!!! note
+    In practice, schemas do not need to be restructured or rewritten. Rather, they must be **mapped** to the reference model—declaring, for each concept, its corresponding concept (or the nature of its relation) in the shared ontology.
 
 To be effective, the reference model must be expressed in a **highly expressive modeling language**—one capable of making **ontological commitments explicit** and capturing **rich semantic distinctions**.
 

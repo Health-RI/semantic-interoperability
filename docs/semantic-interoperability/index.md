@@ -2,18 +2,6 @@
 
 Semantic interoperability is a cornerstone of effective data exchange, ensuring that information shared between systems retains its intended meaning. This capability is vital across various sectors, including healthcare, public administration, and the Internet of Things (IoT), facilitating seamless communication and collaboration.
 
-<!-- omit from toc -->
-## Table of Contents
-
-- [What is Semantic Interoperability?](#what-is-semantic-interoperability)
-- [Why is Semantic Interoperability Important?](#why-is-semantic-interoperability-important)
-- [Semantic Interoperability and the “I” of FAIR](#semantic-interoperability-and-the-i-of-fair)
-- [How is Semantic Interoperability Achieved?](#how-is-semantic-interoperability-achieved)
-- [Representing the Semantic Interoperability Problem](#representing-the-semantic-interoperability-problem)
-  - [Interoperability Between Systems A and B](#interoperability-between-systems-a-and-b)
-  - [Interoperability Between Systems B and C](#interoperability-between-systems-b-and-c)
-- [References](#references)
-
 ## What is Semantic Interoperability?
 
 Semantic interoperability refers to the ability of different computer systems to exchange data with unambiguous, shared meaning. Unlike syntactic interoperability, which focuses on the format of data exchange, semantic interoperability ensures that the meaning of the data is preserved and understood consistently across different systems. This is achieved by linking data elements to a common vocabulary or ontology, allowing machines to interpret and process information accurately without human intervention <a href="#ref1">[1]</a><a href="#ref2">[2]</a>.

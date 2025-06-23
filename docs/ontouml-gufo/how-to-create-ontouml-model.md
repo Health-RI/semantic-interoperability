@@ -12,6 +12,9 @@ Other UML tools can also be used to manually create OntoUML models. Since OntoUM
 - [Modelio](https://www.modelio.org) – Free and open-source UML/BPMN tool with profile extension support.
 - [Papyrus](https://www.eclipse.org/papyrus/) – Open-source, Eclipse-based UML modeling framework with support for custom profiles.
 
+!!! tip
+    If possible, prefer tools with native OntoUML support—like Visual Paradigm with the ontouml-vp-plugin—to avoid manual errors when assigning stereotypes.
+
 When using these tools, OntoUML stereotypes (e.g., `«kind»`, `«role»`, `«relator»`) must be applied manually, and modelers must follow the conceptual modeling guidelines provided by the Unified Foundational Ontology (UFO).
 
 ## Installation Guide for Visual Paradigm and the OntoUML Plugin
@@ -33,8 +36,8 @@ To enable native support for OntoUML, you’ll need to install the open-source p
 
 #### 2.1 Download the Plugin
 
-- GitHub repository: [https://github.com/OntoUML/ontouml-vp-plugin](https://github.com/OntoUML/ontouml-vp-plugin)
-- Latest release (`.zip` file): [https://github.com/OntoUML/ontouml-vp-plugin/releases](https://github.com/OntoUML/ontouml-vp-plugin/releases)
+- GitHub repository: [https://w3id.org/ontouml/vp-plugin](https://w3id.org/ontouml/vp-plugin)
+- Latest release (`.zip` file): [https://w3id.org/ontouml/vp-plugin/releases](https://w3id.org/ontouml/vp-plugin/releases)
 
 Download the most recent `zip` file compatible with your Visual Paradigm version.
 
@@ -47,24 +50,78 @@ Download the most recent `zip` file compatible with your Visual Paradigm version
 
 ### Step 3: Create an OntoUML Diagram
 
-After installation:
+After installing the plugin, follow the steps below to create your first OntoUML diagram in Visual Paradigm:
 
-1. Go to **Modeling → New Diagram**.
-2. Choose **OntoUML Class Diagram**.
-3. Use the OntoUML palette to add semantically grounded elements like:
-   - `Kind`, `Quantity`, `Collective`, `SubKind`
-   - `Role`, `Phase`, `Category`, `Mixin`
-   - `Relator`, `Mode`, `Event`, etc.
+#### 3.1 Create a New Project
 
-These elements reflect ontological distinctions from the Unified Foundational Ontology (UFO).
+Go to the **Project** tab and click **New** to create a new modeling project.  
+This will initialize your workspace.
+
+![Step 1 – Create New Project](./assets/images/vp-step1.png)
+
+In the pop-up window that appears, enter a name for your project and the author’s name.  
+Then click on **Create Blank Project** to proceed.
+
+#### 3.2 Create a New Model Inside the Project
+
+In the **Model Explorer**, right-click on `My Project` and select  
+**Model → New Model…**.  
+Give your model a name such as “My Model”.
+
+![Step 2 – Create New Model](./assets/images/vp-step2.png)
+
+#### 3.3 Add a New Diagram to the Model
+
+Right-click on your newly created model (e.g., “My Model”), go to  
+**Sub Diagrams → Add → New Diagram…**.
+
+![Step 3 – Add New Diagram](./assets/images/vp-step3.png)
+
+In the dialog that opens, select **Class Diagram** as the diagram type.  
+Then give your diagram a name (e.g., “My Model Class Diagram”) and click **OK**.
+
+#### 3.4 Start Modeling with OntoUML Stereotypes
+
+Once the diagram opens, use the class diagram tools to create elements.  
+Right-click on a class, go to **OntoUML Stereotypes**, and choose the appropriate stereotype from the list (e.g., `Kind`, `Role`, `Relator`, `Phase`, etc.).
+
+These stereotypes correspond to the ontological distinctions defined by the Unified Foundational Ontology (UFO).
+
+![Step 4 – Add OntoUML Stereotypes](./assets/images/vp-step4.png)
+
+At this point, your OntoUML modeling environment is ready. You can continue building the model using semantically grounded elements and defining relationships among them.
+
+#### 3.5 Add a New OntoUML Class to the Diagram
+
+To begin modeling, select the **Class** tool from the left-side toolbar and click anywhere on the diagram canvas to place a class element.
+
+Then, right-click the class and go to **OntoUML Stereotypes** to assign a semantic type such as `Kind`, `Category`, `Relator`, or others, depending on the nature of the concept you are representing.
+
+![Step 5 – Add and Stereotype a Class](./assets/images/vp-step5.png)
 
 ## Additional Features of the Plugin
 
-The `ontouml-vp-plugin` offers several modeling enhancements:
+The `ontouml-vp-plugin` enhances Visual Paradigm with native support for OntoUML modeling. It adds dedicated functionalities and modeling options to assist in building well-founded models:
 
-- **Stereotype-aware modeling**: Palette and toolbox tailored to OntoUML.
-- **Model validation**: Built-in verification of OntoUML-specific constraints.
-- **Export options**: Support for JSON and RDF serialization via other OntoUML tools.
+### Modeling Support
+
+- **OntoUML Stereotypes**: Easily assign OntoUML stereotypes to classes and relations through a context menu.
+- **Suggested Stereotypes**: Access intelligent recommendations based on modeling context.
+- **Meta-Properties**: Enrich model elements with additional OntoUML-specific metadata.
+
+These options are available by right-clicking a class or relation in the diagram and choosing the appropriate OntoUML feature.
+
+### Model Operations and Validation
+
+The plugin also includes a dedicated OntoUML menu with tools to manage and analyze your model:
+
+- **Check Model**: Validates the model according to OntoUML constraints.
+- **Check Diagram**: Validates specific diagrams for structural and ontological correctness.
+- **Import from JSON**: Load OntoUML models from serialized JSON files.
+- **Export to JSON**: Save your model in machine-readable OntoUML JSON format.
+- **Export to gUFO**: Export your model to OWL/RDF using the gUFO ontology.
+
+These tools assist in ensuring semantic consistency, enable data exchange across tools, and facilitate publishing and reuse of OntoUML models.
 
 For more details, see the plugin documentation:  
-[https://github.com/OntoUML/ontouml-vp-plugin#readme](https://github.com/OntoUML/ontouml-vp-plugin#readme)
+[https://w3id.org/ontouml/vp-plugin#readme](https://w3id.org/ontouml/vp-plugin#readme)

@@ -12,7 +12,7 @@ Over time, OntoUML evolved beyond a simple UML profile: it became a community-su
 
 ## Origins
 
-The development of OntoUML is rooted in the work of Giancarlo Guizzardi, particularly his Ph.D. thesis titled [*Ontological Foundations for Structural Conceptual Models*](https://research.utwente.nl/files/6042428/thesis_Guizzardi.pdf) **<a href="#ref3">[3]</a>**. Although the term “OntoUML” was not used in that work, the conceptual basis for the language—its ontological foundations, modeling distinctions, and methodological approach—was thoroughly developed there. Similarly, the ontology that would later be known as the **Unified Foundational Ontology (UFO)** was introduced in substance, though not yet by name.
+The development of OntoUML is rooted in the work of [Giancarlo Guizzardi](https://www.giancarloguizzardi.com/), particularly his Ph.D. thesis titled [*Ontological Foundations for Structural Conceptual Models*](https://research.utwente.nl/files/6042428/thesis_Guizzardi.pdf) **<a href="#ref3">[3]</a>**. Although the term “OntoUML” was not used in that work, the conceptual basis for the language—its ontological foundations, modeling distinctions, and methodological approach—was thoroughly developed there. Similarly, the ontology that would later be known as the **Unified Foundational Ontology (UFO)** was introduced in substance, though not yet by name.
 
 The formal naming and definition of UFO as a unified foundational ontology appeared in a set of contemporaneous publications by Guizzardi and Wagner **<a href="#ref4">[4]</a>****<a href="#ref5">[5]</a>****<a href="#ref6">[6]</a>**. These works extended the ideas from the thesis and applied them to domains such as agent concepts and business modeling, positioning UFO as a comprehensive foundation for conceptual modeling.
 
@@ -33,6 +33,16 @@ There are, however, two major online resources that offer learning materials for
   > This version is more comprehensive and somewhat more recent, but it still contains outdated content and should be read with caution.
 
 Despite their limitations, these resources remain valuable for learning the language. However, users should remain aware of their partial and outdated nature and supplement them with insights from more recent academic publications.
+
+## Additional Learning Resources
+
+Professor [Giancarlo Guizzardi](https://www.giancarloguizzardi.com/), the original creator of OntoUML and the Unified Foundational Ontology (UFO), offers a wide array of high-quality educational materials freely accessible through his personal website. These resources are invaluable for those interested in learning about ontologies, foundational ontology, and the practical use of OntoUML.
+
+- **[Recorded Talks and Keynotes](https://www.giancarloguizzardi.com/recorded-talks)** — Presentations and invited lectures on ontologies, conceptual modeling, and foundational theories.
+- **[Courses and Tutorials](https://www.giancarloguizzardi.com/courses)** — Graduate-level lectures, structured modules, and instructional materials on ontology-driven conceptual modeling and OntoUML.
+- **[Research and Publications](https://www.giancarloguizzardi.com/research)** — A comprehensive collection of peer-reviewed papers, book chapters, and conference proceedings that define and advance the OntoUML language and UFO theory.
+
+Together, these materials provide both theoretical grounding and practical guidance, making them highly valuable for students, researchers, and professionals working with conceptual models.
 
 ## Adoption and Influence
 
@@ -67,11 +77,11 @@ These tools enhance the usability and applicability of OntoUML across various mo
 
 ## References
 
-<a id="ref1"></a> 
-- **[1]** Guizzardi, G., Wagner, G., Falbo, R. A., Guizzardi, R. S. S., & Almeida, J. P. A. (2015). *OntoUML: A well-founded profile for UML-based conceptual modeling*. Applied Ontology, 10(3–4), 259–291. https://doi.org/10.3233/AO-150157
+<a id="ref1"></a>
+- **[1]** Guizzardi, G., Wagner, G., Falbo, R. A., Guizzardi, R. S. S., & Almeida, J. P. A. (2015). *OntoUML: A well-founded profile for UML-based conceptual modeling*. Applied Ontology, 10(3–4), 259–291. <https://doi.org/10.3233/AO-150157>
 
 <a id="ref2"></a>
-- **[2]** Guizzardi, G., Wagner, G., Almeida, J. P. A., Guizzardi, R. S. S., & Sales, T. P. (2022). *The Unified Foundational Ontology (UFO): Supercharging modeling with foundational ontologies*. Applied Ontology, 17(1), 1–44. https://doi.org/10.3233/AO-210256
+- **[2]** Guizzardi, G., Wagner, G., Almeida, J. P. A., Guizzardi, R. S. S., & Sales, T. P. (2022). *The Unified Foundational Ontology (UFO): Supercharging modeling with foundational ontologies*. Applied Ontology, 17(1), 1–44. <https://doi.org/10.3233/AO-210256>
 
 <a id="ref3"></a>
 - **[3]** Guizzardi, G. (2005). *Ontological foundations for structural conceptual models* [Doctoral dissertation, University of Twente]. Telematica Instituut / CTIT. [**[Access]**](https://research.utwente.nl/en/publications/ontological-foundations-for-structural-conceptual-models/) [**[Download]**](https://research.utwente.nl/files/6042428/thesis_Guizzardi.pdf)
@@ -83,4 +93,4 @@ These tools enhance the usability and applicability of OntoUML across various mo
 - **[5]** Guizzardi, G., & Wagner, G. (2005a). *Some applications of a unified foundational ontology in business modeling*. In T. Bui & A. G. Tjoa (Eds.), Ontologies and business systems analysis. IDEA Group Publishing.
 
 <a id="ref6"></a>
-- **[6]** Guizzardi, G., & Wagner, G. (2005b). *Towards ontological foundations for agent modeling concepts using UFO*. In V. Dignum, M. Dastani, B. Dunin-Kȩplicz, & R. Meyer (Eds.), Agent-Oriented Information Systems II (pp. xx–xx). Lecture Notes in Artificial Intelligence (Vol. 3508). Springer. https://doi.org/10.1007/11538394_6
+- **[6]** Guizzardi, G., & Wagner, G. (2005b). *Towards ontological foundations for agent modeling concepts using UFO*. In V. Dignum, M. Dastani, B. Dunin-Kȩplicz, & R. Meyer (Eds.), Agent-Oriented Information Systems II (pp. xx–xx). Lecture Notes in Artificial Intelligence (Vol. 3508). Springer. <https://doi.org/10.1007/11538394_6>

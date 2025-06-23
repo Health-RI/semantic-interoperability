@@ -175,3 +175,7 @@ cython_debug/
 
 # Website
 /site/
+
+# Visual Paradigm Temporary Files
+**/*vpp.bak*
+**/*vpp.lck*

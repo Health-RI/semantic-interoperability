@@ -46,6 +46,11 @@ theme:
 plugins:
   - search
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 extra_css:
   - assets/stylesheets/colors.css
 
@@ -53,18 +58,17 @@ nav:
   - Home: index.md
   - Semantic Interoperability:
       - Overview: semantic-interoperability/index.md
-  # - Ontologies:
-  #     - What are Ontologies?: ontologies/index.md
-  # - Ontology Engineering:
-  #     - Ontology Engineering Principles: engineering/index.md
   - OntoUML & gUFO:
       - Overview: ontouml-gufo/index.md
       - OntoUML: ontouml-gufo/ontouml.md
+      - OntoUML Stereotypes: ontouml-gufo/ontouml-stereotypes.md
       - OntoUML/UFO Catalog: ontouml-gufo/ontouml-ufo-catalog.md
       - How to Create an OntoUML Model: ontouml-gufo/how-to-create-ontouml-model.md
       - gUFO: ontouml-gufo/gufo.md
   - The Health-RI Method:
       - Overview: method/index.md
+  - Output:
+      - Overview: output/index.md
 
 extra:
   generator: false    # disables "Made with Material for MkDocs" line
