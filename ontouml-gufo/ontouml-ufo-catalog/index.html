@@ -927,9 +927,13 @@
 <li><strong><code>.ttl</code></strong>: RDF/Turtle files using the <a href="https://w3id.org/ontouml/vocabulary">OntoUML Vocabulary</a></li>
 <li><strong><code>.vpp</code></strong>: Original diagrams in Visual Paradigm format</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If your goal is to use OntoUML with Semantic Web technologies, prefer the <code>.ttl</code> files. For diagram visualization and editing, use the <code>.vpp</code> files in Visual Paradigm.</p>
+</div>
 <p>Each model is organized in its own folder and includes a set of standardized metadata files (<code>metadata.ttl</code>, <code>metadata-json.ttl</code>, <code>metadata-vpp.ttl</code>, etc.). The catalog as a whole is described by a root <code>catalog.ttl</code> file and validated using SHACL shapes provided under the <code>/shapes</code> directory.</p>
 <h3 id="directory-structure-overview">Directory Structure Overview</h3>
-<pre><code>/ontouml-models
+<div class="highlight"><pre><span></span><code>/ontouml-models
 ├── catalog.ttl
 ├── /models
 │   └── /[model-id]/
@@ -947,7 +951,7 @@
     ├── Distribution-shape.ttl
     ├── Resource-shape.ttl
     └── SemanticArtefact-shape.ttl
-</code></pre>
+</code></pre></div>
 <p>A public <strong>dashboard</strong> is available at <a href="https://w3id.org/ontouml-models/dashboard">w3id.org/ontouml-models/dashboard</a>, offering visualizations of the catalog’s contents. Users can explore metadata distributions by year, domain, modeling task, and stereotype usage. As of now, the catalog comprises over <strong>190 datasets</strong>, with more than <strong>13.000 classes</strong>, <strong>9.000 relations</strong>, and <strong>hundreds of thousands of RDF triples</strong>.</p>
 <h2 id="catalogs-persistent-urls">Catalog's Persistent URLs</h2>
 <ul>
