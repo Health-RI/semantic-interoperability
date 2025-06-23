@@ -37,15 +37,15 @@ To enable native support for OntoUML, you’ll need to install the open-source p
 #### 2.1 Download the Plugin
 
 - GitHub repository: [https://w3id.org/ontouml/vp-plugin](https://w3id.org/ontouml/vp-plugin)
-- Latest release (`.vpplugin` file): [https://w3id.org/ontouml/vp-plugin/releases](https://w3id.org/ontouml/vp-plugin/releases)
+- Latest release (`.zip` file): [https://w3id.org/ontouml/vp-plugin/releases](https://w3id.org/ontouml/vp-plugin/releases)
 
-Download the most recent `.vpplugin` file compatible with your Visual Paradigm version.
+Download the most recent `zip` file compatible with your Visual Paradigm version.
 
 #### 2.2 Install the Plugin in Visual Paradigm
 
 1. Open Visual Paradigm.
-2. Navigate to **Tools → Plugins → Install Plugin**.
-3. Select the `.vpplugin` file you downloaded.
+2. Navigate to **Help → Install Plugin**.
+3. Select the `.zip` file you downloaded.
 4. Restart Visual Paradigm when prompted.
 
 ### Step 3: Create an OntoUML Diagram
