@@ -2,7 +2,7 @@
 
 This section introduces OntoUML, an ontologically well-founded conceptual modeling language, and gUFO, its lightweight computational counterpart based on the Unified Foundational Ontology (UFO). The resources below provide background, guidance, tools, and structured content to support both the creation and practical application of OntoUML models, as well as their transformation into machine-readable OWL ontologies using gUFO.
 
-## [OntoUML](ontouml.md)
+<span style="font-size: 2.0em">[OntoUML](ontouml.md)</span>
 
 - [Origins](ontouml.md##origins)
 - [Documentation and Standardization Efforts](ontouml.md##documentation-and-standardization-efforts)
@@ -11,13 +11,13 @@ This section introduces OntoUML, an ontologically well-founded conceptual modeli
 - [Supporting Tools and Developments](ontouml.md##supporting-tools-and-developments)
 - [References](ontouml.md##references)
 
-## [OntoUML Stereotypes](ontouml-stereotypes.md)
+<span style="font-size: 2.0em">[OntoUML Stereotypes](ontouml-stereotypes.md)</span>
 
 - [Class Stereotypes](ontouml-stereotypes.md#class-stereotypes)
 - [Relationship Stereotypes](ontouml-stereotypes.md#relationship-stereotypes)
 - [References](ontouml-stereotypes.md#references)
 
-## [How to Create an OntoUML Model](how-to-create-ontouml-model.md#)
+<span style="font-size: 2.0em">[How to Create an OntoUML Model](how-to-create-ontouml-model.md#)</span>
 
 - [Installation Guide for Visual Paradigm and the OntoUML Plugin](how-to-create-ontouml-model.md#installation-guide-for-visual-paradigm-and-the-ontouml-plugin)
   - [Step 1: Install Visual Paradigm](how-to-create-ontouml-model.md#step-1-install-visual-paradigm)
@@ -25,14 +25,14 @@ This section introduces OntoUML, an ontologically well-founded conceptual modeli
   - [Step 3: Create an OntoUML Diagram](how-to-create-ontouml-model.md#step-3-create-an-ontouml-diagram)
 - [Additional Features of the Plugin](how-to-create-ontouml-model.md#additional-features-of-the-plugin)
 
-## [OntoUML/UFO Catalog](ontouml-ufo-catalog.md)
+<span style="font-size: 2.0em">[OntoUML/UFO Catalog](ontouml-ufo-catalog.md)</span>
 
 - [Access and Structure](ontouml-ufo-catalog.md#access-and-structure)
   - [Directory Structure Overview](ontouml-ufo-catalog.md#directory-structure-overview)
 - [Catalog's Persistent URLs](ontouml-ufo-catalog.md#catalogs-persistent-urls)
 - [References](ontouml-ufo-catalog.md#references)
 
-## [gUFO](gufo.md)
+<span style="font-size: 2.0em">[gUFO](gufo.md)</span>
 
 - [What is gUFO?](gufo.md#what-is-gufo)
 - [Why was gUFO created?](gufo.md#why-was-gufo-created)

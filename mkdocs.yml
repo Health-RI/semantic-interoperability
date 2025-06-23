@@ -46,6 +46,11 @@ theme:
 plugins:
   - search
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 extra_css:
   - assets/stylesheets/colors.css
 
@@ -53,10 +58,6 @@ nav:
   - Home: index.md
   - Semantic Interoperability:
       - Overview: semantic-interoperability/index.md
-  # - Ontologies:
-  #     - What are Ontologies?: ontologies/index.md
-  # - Ontology Engineering:
-  #     - Ontology Engineering Principles: engineering/index.md
   - OntoUML & gUFO:
       - Overview: ontouml-gufo/index.md
       - OntoUML: ontouml-gufo/ontouml.md

@@ -12,6 +12,9 @@ Other UML tools can also be used to manually create OntoUML models. Since OntoUM
 - [Modelio](https://www.modelio.org) – Free and open-source UML/BPMN tool with profile extension support.
 - [Papyrus](https://www.eclipse.org/papyrus/) – Open-source, Eclipse-based UML modeling framework with support for custom profiles.
 
+!!! tip
+    If possible, prefer tools with native OntoUML support—like Visual Paradigm with the ontouml-vp-plugin—to avoid manual errors when assigning stereotypes.
+
 When using these tools, OntoUML stereotypes (e.g., `«kind»`, `«role»`, `«relator»`) must be applied manually, and modelers must follow the conceptual modeling guidelines provided by the Unified Foundational Ontology (UFO).
 
 ## Installation Guide for Visual Paradigm and the OntoUML Plugin

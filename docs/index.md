@@ -16,7 +16,7 @@ This site serves as a central resource for:
 
 Semantic interoperability plays a foundational role in this mission by ensuring that data from diverse sources can be aligned and understood consistently — not just technically, but conceptually.
 
-### What You'll Find Here
+## What You'll Find Here
 
 This site documents Health-RI's efforts to enable semantic interoperability in health data by providing foundational concepts, modeling techniques, and methodological guidance. It is designed to support researchers, data stewards, and engineers working to align data meaningfully across systems.
 
