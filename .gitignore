@@ -179,3 +179,22 @@ cython_debug/
 # Visual Paradigm Temporary Files
 **/*vpp.bak*
 **/*vpp.lck*
+
+# Microsoft Office temporary files
+~$*
+*.tmp
+*.bak
+*.wbk
+*.asd
+*.lnk
+*.lock
+
+# Office backup and autosave files
+*.tmp
+*.log
+*.ds_store
+*.sln.docstates
+
+# Thumbnails and previews
+Thumbs.db
+*.lnk
