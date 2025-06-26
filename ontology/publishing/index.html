@@ -958,34 +958,48 @@
 <li><strong>Patch</strong>: Fixes or clarifications that stay within the established scope (e.g., label corrections, comment improvements).</li>
 </ul>
 <p>While inspired by <a href="https://semver.org/">Semantic Versioning</a>, this adapted strategy is tailored for ontology and conceptual model management.</p>
-<blockquote>
-<p>Only <strong>major versions</strong> will trigger a formal release and will have a corresponding published specification webpage (location to be defined). Minor and patch versions are published in the repository but will not have standalone specification pages.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only <strong>major versions</strong> will trigger a formal release and will have a corresponding published specification webpage (location to be defined). These releases are considered <strong>stable versions</strong>, and intended for broader reuse and citation.
+Minor and patch versions are published in the repository but will not have standalone specification pages.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>We adopt a <strong>fast versioning strategy</strong>: files are made available in the <code>/ontology</code> folder as soon as possible, even when they may present smaller completion or consistency issues. This enables early access and collaboration, while stability is guaranteed only for major releases.</p>
+</div>
 <h2 id="published-artifacts">Published Artifacts</h2>
 <p>For each ontology release, the following artifacts are published:</p>
 <ul>
 <li>
-<p><strong>OntoUML conceptual model (Visual Paradigm)</strong><br />
-  File: <code>Health-RI Ontology-v&lt;version&gt;.vpp</code><br />
+<p><strong>OntoUML conceptual model (Visual Paradigm)</strong>
+  File: <code>Health-RI Ontology-v&lt;version&gt;.vpp</code>
   Includes all OntoUML constructs and diagrams</p>
 </li>
 <li>
-<p><strong>OntoUML JSON export</strong><br />
-  File: <code>Health-RI Ontology-v&lt;version&gt;.json</code><br />
+<p><strong>OntoUML JSON export</strong>
+  File: <code>Health-RI Ontology-v&lt;version&gt;.json</code>
   Conforms to the <a href="https://w3id.org/ontouml/schema">OntoUML Schema</a></p>
 </li>
 <li>
-<p><strong>gUFO OWL ontology (Turtle)</strong><br />
-  File: <code>Health-RI Ontology-v&lt;version&gt;.ttl</code><br />
+<p><strong>gUFO OWL ontology (Turtle)</strong>
+  File: <code>Health-RI Ontology-v&lt;version&gt;.ttl</code>
   OWL serialization that imports or reflects gUFO axioms</p>
 </li>
 </ul>
-<blockquote>
-<p><strong>Note</strong>: The version numbers of the <code>.vpp</code>/<code>.json</code> (OntoUML) and <code>.ttl</code> (OWL/gUFO) files are managed independently, as they serve distinct modeling and semantic layers. The <code>.ttl</code> file includes a <code>dcterms:conformsTo</code> metadata relation to indicate which OntoUML version it corresponds to.</p>
-</blockquote>
-<p>Example:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>gUFO files are only generated for versions of the model that are <strong>syntactically valid</strong>.
+As a result, no <code>.ttl</code> file will be provided for versions that are still incomplete or under development.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The version numbers of the <code>.vpp</code>/<code>.json</code> (OntoUML) and <code>.ttl</code> (OWL/gUFO) files are managed independently. The <code>.ttl</code> file includes a <code>dcterms:conformsTo</code> metadata relation to indicate which OntoUML version it corresponds to.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">w3id</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">health</span><span class="o">-</span><span class="nv">ri</span><span class="o">/</span><span class="nv">ontology</span>#<span class="o">&gt;</span><span class="w"> </span><span class="nv">dcterms</span>:<span class="nv">conformsTo</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">w3id</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">health</span><span class="o">-</span><span class="nv">ri</span><span class="o">/</span><span class="nv">ontouml</span><span class="o">-</span><span class="nv">v0</span>.<span class="mi">3</span>.<span class="mi">0</span><span class="o">&gt;</span><span class="w"> </span>.
 </code></pre></div>
+</div>
+</div>
 <h2 id="repository-structure">Repository Structure</h2>
 <p>All current artifacts are made available in the <code>/ontology</code> folder:</p>
 <div class="highlight"><pre><span></span><code>ontology/
