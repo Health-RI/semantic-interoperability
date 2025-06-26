@@ -14,31 +14,41 @@ We use an **adapted semantic versioning** scheme to indicate the type and impact
 
 While inspired by [Semantic Versioning](https://semver.org/), this adapted strategy is tailored for ontology and conceptual model management.
 
-> Only **major versions** will trigger a formal release and will have a corresponding published specification webpage (location to be defined). Minor and patch versions are published in the repository but will not have standalone specification pages.
+!!! note
+    Only **major versions** will trigger a formal release and will have a corresponding published specification webpage (location to be defined). These releases are considered **stable versions**, and intended for broader reuse and citation.
+    Minor and patch versions are published in the repository but will not have standalone specification pages.
+
+!!! info
+    We adopt a **fast versioning strategy**: files are made available in the `/ontology` folder as soon as possible, even when they may present smaller completion or consistency issues. This enables early access and collaboration, while stability is guaranteed only for major releases.
 
 ## Published Artifacts
 
 For each ontology release, the following artifacts are published:
 
-- **OntoUML conceptual model (Visual Paradigm)**  
-  File: `Health-RI Ontology-v<version>.vpp`  
+- **OntoUML conceptual model (Visual Paradigm)**
+  File: `Health-RI Ontology-v<version>.vpp`
   Includes all OntoUML constructs and diagrams
 
-- **OntoUML JSON export**  
-  File: `Health-RI Ontology-v<version>.json`  
+- **OntoUML JSON export**
+  File: `Health-RI Ontology-v<version>.json`
   Conforms to the [OntoUML Schema](https://w3id.org/ontouml/schema)
 
-- **gUFO OWL ontology (Turtle)**  
-  File: `Health-RI Ontology-v<version>.ttl`  
+- **gUFO OWL ontology (Turtle)**
+  File: `Health-RI Ontology-v<version>.ttl`
   OWL serialization that imports or reflects gUFO axioms
 
-> **Note**: The version numbers of the `.vpp`/`.json` (OntoUML) and `.ttl` (OWL/gUFO) files are managed independently, as they serve distinct modeling and semantic layers. The `.ttl` file includes a `dcterms:conformsTo` metadata relation to indicate which OntoUML version it corresponds to.
+!!! note
+    gUFO files are only generated for versions of the model that are **syntactically valid**.
+    As a result, no `.ttl` file will be provided for versions that are still incomplete or under development.
 
-Example:
+!!! info
+    The version numbers of the `.vpp`/`.json` (OntoUML) and `.ttl` (OWL/gUFO) files are managed independently. The `.ttl` file includes a `dcterms:conformsTo` metadata relation to indicate which OntoUML version it corresponds to.
 
-```ttl
-<https://w3id.org/health-ri/ontology#> dcterms:conformsTo <https://w3id.org/health-ri/ontouml-v0.3.0> .
-```
+    !!! example
+        ```ttl
+        <https://w3id.org/health-ri/ontology#> dcterms:conformsTo <https://w3id.org/health-ri/ontouml-v0.3.0> .
+        ```
+
 
 ## Repository Structure
 

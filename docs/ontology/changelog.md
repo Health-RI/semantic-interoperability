@@ -1,9 +1,16 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project are documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),  
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+This changelog follows the [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format and reflects the **adapted semantic versioning** strategy defined in the repository's documentation:
+
+**Version format**: `<major>.<minor>.<patch>`
+
+- **Major** versions represent conceptual milestones or structural overhauls. These are the only versions that trigger formal **releases**, are considered **stable**, and receive a corresponding published specification webpage.
+- **Minor** versions include additions, refinements, or reorganizations that preserve semantic compatibility.
+- **Patch** versions provide small corrections or clarifications (e.g., label adjustments, comment improvements) that do not affect conceptual structure.
+
+The repository uses a **fast versioning strategy**: new versions are made available in the `/ontology` folder as soon as possible, even if they present minor completeness or consistency issues. This ensures early access and traceability, while formal stability is guaranteed only for major versions.
 
 ## [0.1.0] - 2025-06-20
 
