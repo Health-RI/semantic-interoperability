@@ -16,8 +16,8 @@ jobs:
         with:
           python-version: 3.x
 
-      - name: Install dependencies
-        run: pip install mkdocs mkdocs-material mkdocs-link-check
+      - name: Install Python dependencies
+        run: pip install mkdocs mkdocs-material
 
       - name: Clean Visual Paradigm temp files
         run: python scripts/clean_vpp_temp_files.py
@@ -30,11 +30,14 @@ jobs:
       - name: Validate MkDocs configuration
         run: mkdocs build --strict --verbose --clean --site-dir /tmp/mkdocs-check
 
-      - name: Check for broken links
-        run: mkdocs-link-check --verbose
-
       - name: Build MkDocs site
         run: mkdocs build
+
+      - name: Install LinkChecker
+        run: sudo apt-get install -y linkchecker
+
+      - name: Check links in built site
+        run: linkchecker ./site --no-status
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
