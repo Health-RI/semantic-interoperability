@@ -17,7 +17,7 @@ jobs:
           python-version: 3.x
 
       - name: Install dependencies
-        run: pip install mkdocs mkdocs-material
+        run: pip install mkdocs mkdocs-material mkdocs-link-check
 
       - name: Clean Visual Paradigm temp files
         run: python scripts/clean_vpp_temp_files.py
