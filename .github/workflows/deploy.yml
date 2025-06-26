@@ -2,7 +2,7 @@ name: Deploy MkDocs site to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   deploy:
@@ -26,6 +26,12 @@ jobs:
         run: |
           mkdir -p docs/ontology
           cp ontologies/changelog.md docs/ontology/changelog.md
+
+      - name: Validate MkDocs configuration
+        run: mkdocs build --strict --verbose --clean --site-dir /tmp/mkdocs-check
+
+      - name: Check for broken links
+        run: mkdocs-link-check --verbose
 
       - name: Build MkDocs site
         run: mkdocs build
