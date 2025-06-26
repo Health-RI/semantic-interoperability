@@ -1,0 +1,37 @@
+name: Deploy MkDocs site to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install mkdocs mkdocs-material
+
+      - name: Clean Visual Paradigm temp files
+        run: python scripts/clean_vpp_temp_files.py
+
+      - name: Copy changelog to docs folder
+        run: |
+          mkdir -p docs/ontology
+          cp ontology/changelog.md docs/ontology/changelog.md
+
+      - name: Build MkDocs site
+        run: mkdocs build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site

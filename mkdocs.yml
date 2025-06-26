@@ -67,11 +67,11 @@ nav:
       - gUFO: ontouml-gufo/gufo.md
   - The Health-RI Method:
       - Overview: method/index.md
-  # - The Health-RI Ontology:
-  #     - OntoUML: method/index.md
-  #     - gUFO: method/index.md
-  - Output:
-      - Overview: output/index.md
+  - The Health-RI Ontology:
+      - Publishing: ontology/publishing.md
+      - Changelog: ontology/changelog.md
+  # - Output:
+  #     - Overview: output/index.md
 
 extra:
   generator: false    # disables "Made with Material for MkDocs" line
