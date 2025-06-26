@@ -4,12 +4,12 @@ This section introduces OntoUML, an ontologically well-founded conceptual modeli
 
 <span style="font-size: 2.0em">[OntoUML](ontouml.md)</span>
 
-- [Origins](ontouml.md##origins)
-- [Documentation and Standardization Efforts](ontouml.md##documentation-and-standardization-efforts)
-- [Additional Learning Resources](ontouml.md##additional-learning-resources)
-- [Adoption and Influence](ontouml.md##adoption-and-influence)
-- [Supporting Tools and Developments](ontouml.md##supporting-tools-and-developments)
-- [References](ontouml.md##references)
+- [Origins](ontouml.md#origins)
+- [Documentation and Standardization Efforts](ontouml.md#documentation-and-standardization-efforts)
+- [Additional Learning Resources](ontouml.md#additional-learning-resources)
+- [Adoption and Influence](ontouml.md#adoption-and-influence)
+- [Supporting Tools and Developments](ontouml.md#supporting-tools-and-developments)
+- [References](ontouml.md#references)
 
 <span style="font-size: 2.0em">[OntoUML Stereotypes](ontouml-stereotypes.md)</span>
 
