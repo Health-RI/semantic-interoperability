@@ -1,0 +1,29 @@
+<https://w3id.org/health-ri/ontology#> rdf:type owl:Ontology ;
+    dct:abstract """TBD"""@en ;
+    dct:contributor <https://w3id.org/health-ri/contributor/0000-0000-0000-0000> ,
+                    <https://w3id.org/health-ri/contributor/0000-0000-0000-0001> ,
+                    <https://w3id.org/health-ri/contributor/0000-0000-0000-0002> ;
+    dct:creator <https://w3id.org/health-ri/creator/0000-0000-0000-0003> ;
+    dct:description "TBD description of the ontology. This vocabulary provides a canonical RDF-based serialization for a domain-specific language or model, enabling publication, data exchange, and computational processing."@en ;
+    dct:identifier "https://w3id.org/health-ri/ontology" ;
+    dct:issued "2025-01-01"^^xsd:date ;
+    dct:language "en"^^xsd:language ;
+    dct:license <https://w3id.org/health-ri/license> ;
+    dct:modified "2025-01-02"^^xsd:date ;
+    dct:publisher <https://w3id.org/health-ri/publisher/organization1> ,
+                  <https://w3id.org/health-ri/publisher/organization2> ,
+                  <https://w3id.org/health-ri/publisher/organization3> ;
+    dct:title "Example Ontology Vocabulary"@en ;
+    vann:preferredNamespacePrefix "example" ;
+    vann:preferredNamespaceUri "https://w3id.org/health-ri/ontology#"^^xsd:anyURI ;
+    owl:versionInfo "TBD version information, e.g., notes about changes, structure, or semantics."@en ;
+    dcat:keyword "domain"@en ,
+                 "example"@en ,
+                 "model"@en ,
+                 "ontology"@en ,
+                 "vocabulary"@en ;
+    dcat:landingPage <https://w3id.org/health-ri/ontology/landing> ;
+    dcat:version "0.0.0" ;
+    foaf:homepage <https://w3id.org/health-ri/ontology> ;
+    foaf:logo <https://w3id.org/health-ri/resources/logo.png> ;
+    mod:repository <https://w3id.org/health-ri/ontology/repository> .
