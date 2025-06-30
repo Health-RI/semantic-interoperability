@@ -112,3 +112,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renamed `Phenotypic Sex Assignment` to `Phenotypic Sex Assessment`.
 - Renamed `Phenotypic Sex Assigner` to `Phenotypic Sex Assessor`.
 - Renamed `Phenotypic Sex Assignee` to `Person with Assessed Phenotypic Sex`.
+
+## [0.5.2] - 2025-06-30
+
+### Added
+
+- Added detailed descriptions for multiple classes in the ontology, replacing previously null values to improve clarity and documentation quality.
+
+### Changed
+
+- Updated descriptions for:
+  - Roles, relators, and categories related to sex and gender assignments and recognitions (e.g., Person with Assigned Sex at Birth, Legal Gender Recognizer, Administrative Gender Recognizer).
+  - Core biological concepts such as Chromosome, Allosome, Human Cell, Karyotypical Sex, Phenotypic Sex, and Sex at Birth.
+  - Traits and characteristic categories for sexual and visual dimorphic features.
+  - High-level categories like Sex and Gender, including Legal, Administrative, and Identity forms.
+  - General concepts including Person, Organization, Government, and Document.
+- Improved consistency and clarity across all descriptions to support better understanding in administrative, legal, medical, and ontological contexts.
