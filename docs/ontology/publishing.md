@@ -38,7 +38,7 @@ For each ontology release, the following artifacts are published:
   OWL serialization that imports or reflects gUFO axioms
 
 - **Diagram images**
-  Folder: `ontology/model images`
+  Folder: `ontologies/model images`
   Contains the exported PNG images of all diagrams that compose the model
 
 !!! note
@@ -55,10 +55,10 @@ For each ontology release, the following artifacts are published:
 
 ## Repository Structure
 
-All current artifacts are made available in the `/ontology` folder:
+All current artifacts are made available in the `/ontologies` folder:
 
 ```txt
-ontology/
+ontologies/
 │
 ├── Health-RI Ontology-vX.Y.Z.vpp    # latest OntoUML model
 ├── Health-RI Ontology-vX.Y.Z.json   # latest OntoUML JSON export
@@ -70,7 +70,7 @@ ontology/
 
 ### Archive and Change History
 
-- Only the **latest version** of each artifact is visible directly in the `ontology/` folder.
+- Only the **latest version** of each artifact is visible directly in the `ontologies/` folder.
 - **All previous versions** are archived in the `archive.rar` file for transparency and reproducibility.
 - A **changelog file (`changelog.md`)** summarizes all version changes and links them to their respective files and semantic impact.
   - The changelog follows the [Keep a Changelog](https://keepachangelog.com/) format.
