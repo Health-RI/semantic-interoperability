@@ -70,6 +70,7 @@ nav:
   - The Health-RI Ontology:
       - Publishing: ontology/publishing.md
       - Changelog: ontology/changelog.md
+      - Sex and Gender Ontology: ontology/sex-gender.md
   # - Output:
   #     - Overview: output/index.md
 
