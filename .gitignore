@@ -198,3 +198,6 @@ cython_debug/
 # Thumbnails and previews
 Thumbs.db
 *.lnk
+
+# Protege
+**/catalog-v*.xml
