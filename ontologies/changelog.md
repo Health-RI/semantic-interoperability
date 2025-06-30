@@ -94,3 +94,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Generalization structure revised to include new superclass for persons with assigned statuses
 - Layout adjustments in diagrams to reflect new hierarchical relationships
+
+## [0.5.1] - 2025-06-30
+
+### Added
+
+- Class: `Sex` was introduced to the model.
+
+### Removed
+
+- Package: `Complementary`
+- Classes: `Biological Sex Assigner`, `Biological Sex Assignee`, and `Biological Sex Assignment`
+- Classes: `Social Gender` and `Administrative Gender`
+
+### Changed
+
+- Renamed `Phenotypic Sex Assignment` to `Phenotypic Sex Assessment`.
+- Renamed `Phenotypic Sex Assigner` to `Phenotypic Sex Assessor`.
+- Renamed `Phenotypic Sex Assignee` to `Person with Assessed Phenotypic Sex`.

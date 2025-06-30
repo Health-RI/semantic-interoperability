@@ -7,12 +7,6 @@
 
 <https://w3id.org/health-ri/ontology> rdf:type owl:Ontology;
     owl:imports gufo:.
-:Sex rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Aspect, [
-  rdf:type owl:Class;
-  owl:unionOf (gufo:IntrinsicMode gufo:ExtrinsicMode)
-];
-    rdfs:label "Sex"@en.
 :Gender rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:subClassOf gufo:Aspect, [
   rdf:type owl:Class;
@@ -40,15 +34,15 @@
     rdfs:label "Person with Female Sex at Birth"@en.
 :PersonWithIndeterminateSexAtBirth rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
     rdfs:label "Person with Indeterminate Sex at Birth"@en.
-:PhenotypicSexAssignment rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+:PhenotypicSexAssessment rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:subClassOf gufo:Relator;
-    rdfs:label "Phenotypic Sex Assignment"@en.
-:PhenotypicSexAssigner rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
-    rdfs:label "Phenotypic Sex Assigner"@en.
+    rdfs:label "Phenotypic Sex Assessment"@en.
+:PhenotypicSexAssessor rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Phenotypic Sex Assessor"@en.
 :SexAtBirthAssigner rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
     rdfs:label "Sex at Birth Assigner"@en.
-:PhenotypicSexAssignee rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
-    rdfs:label "Phenotypic Sex Assignee"@en.
+:PersonWithAssessedPhenotypicSex rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Person with Assessed Phenotypic Sex"@en.
 :FemalePhenotypicPerson rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
     rdfs:label "Female Phenotypic Person"@en.
 :MalePhenotypicPerson rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
@@ -64,13 +58,6 @@
     rdfs:label "Female-typical Dimorphic Characteristic"@en.
 :IndeterminateDimorphicCharacteristic rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:label "Indeterminate Dimorphic Characteristic"@en.
-:BiologicalSexAssigner rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
-    rdfs:label "Biological Sex Assigner"@en.
-:BiologicalSexAssignee rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
-    rdfs:label "Biological Sex Assignee"@en.
-:BiologicalSexAssignment rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Relator;
-    rdfs:label "Biological Sex Assignment"@en.
 :MaleBiologicalPerson rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
     rdfs:label "Male Biological Person"@en.
 :FemaleBiologicalPerson rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
@@ -78,6 +65,7 @@
 :IndeterminateBiologicalPerson rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
     rdfs:label "Indeterminate Biological Person"@en.
 :VisualSexCharacteristic rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Visual Sex Characteristic"@en.
 :MaleTypicalVisualSexCharacteristic rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:label "Male-typical Visual Sex Characteristic"@en.
@@ -85,36 +73,29 @@
     rdfs:label "Female-typical Visual Sex Characteristic"@en.
 :IndeterminateVisualSexCharacteristic rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:label "Indeterminate Visual Sex Characteristic"@en.
-:LegalGender rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:ExtrinsicMode;
-    rdfs:label "Legal Gender"@en.
-:BiologicalSex rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
-    rdfs:subClassOf gufo:IntrinsicMode;
-    rdfs:label "Biological Sex"@en.
 :KaryotypicalSex rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:label "Karyotypical Sex"@en.
-:PhenotipicalSex rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:ExtrinsicMode;
-    rdfs:label "Phenotipical Sex"@en.
-:AssignedSexAtBirth rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:ExtrinsicMode;
-    rdfs:label "Assigned Sex at Birth"@en.
-:SocialGender rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:subClassOf gufo:IntrinsicMode;
-    rdfs:label "Social Gender"@en.
-:AdministrativeGender rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:label "Karyotypical Sex"@en.
+:PhenotypicSex rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:subClassOf gufo:ExtrinsicMode;
-    rdfs:label "Administrative Gender"@en.
-:LegalGenderRecognition rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
-    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Phenotypic Sex"@en.
+:SexAtBirth rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Sex at Birth"@en.
+:Sex rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Aspect, [
+  rdf:type owl:Class;
+  owl:unionOf (gufo:IntrinsicMode gufo:ExtrinsicMode)
+];
+    rdfs:label "Sex"@en.
+:LegalGenderRecognition rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
     rdfs:label "Legal Gender Recognition"@en.
-:GenderRecognitionDocument rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+:GenderRecognitionDocument rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:label "Gender Recognition Document"@en.
 :Organization rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Organization"@en.
-:PersonWithLegalGenderRecognition rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
-    rdfs:label "Person with Legal Gender Recognition"@en.
+:PersonWithRecognizedLegalGender rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Person with Recognized Legal Gender"@en.
 :LegalGenderRecognizer rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
     rdfs:label "Legal Gender Recognizer"@en.
 :LegalMalePerson rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
@@ -125,6 +106,27 @@
     rdfs:label "Legal Non-binary Person"@en.
 :PersonWithUnassignedLegalGender rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
     rdfs:label "Person with Unassigned Legal Gender"@en.
+:LegalGender rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Legal Gender"@en.
+:GenderIdentity rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:IntrinsicMode;
+    rdfs:label "Gender Identity"@en.
+:MaleGenderIdentity rdf:type owl:Class, gufo:Phase, owl:NamedIndividual;
+    rdfs:label "Male Gender Identity"@en.
+:FemaleGenderIdentity rdf:type owl:Class, gufo:Phase, owl:NamedIndividual;
+    rdfs:label "Female Gender Identity"@en.
+:NonBinaryGenderIdentity rdf:type owl:Class, gufo:Phase, owl:NamedIndividual;
+    rdfs:label "Non-binary Gender Identity"@en.
+:AdministrativeGenderRecognizer rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Administrative Gender Recognizer"@en.
+:AdministrativeGenderRecognition rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:Relator;
+    rdfs:label "Administrative Gender Recognition"@en.
+:PersonWithRecognizedAdministrativeGender rdf:type owl:Class, gufo:Role, owl:NamedIndividual;
+    rdfs:label "Person with Recognized Administrative Gender"@en.
+:AdministrativeGender rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+    rdfs:subClassOf gufo:ExtrinsicMode;
+    rdfs:label "Administrative Gender"@en.
 :Person rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Person"@en.
@@ -150,10 +152,10 @@
     rdfs:label "Regular Karyotypical Male"@en.
 :RegularKaryotypicalFemale rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
     rdfs:label "Regular Karyotypical Female"@en.
-:SexChromosomeRegularPerson rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "Sex Chromosome Regular Person"@en.
-:SexChromosomeVariantPerson rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
-    rdfs:label "Sex Chromosome Variant Person"@en.
+:PersonWithRegularSexChromosome rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Person with Regular Sex Chromosome"@en.
+:PersonWithVariantSexChromosome rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
+    rdfs:label "Person with Variant Sex Chromosome"@en.
 :VariantKaryotypicalMale rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
     rdfs:label "Variant Karyotypical Male"@en.
 :VariantKaryotypicalFemale rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
@@ -166,48 +168,44 @@
     rdfs:label "Karyotypically Indeterminate Person"@en.
 :Government rdf:type owl:Class, gufo:SubKind, owl:NamedIndividual;
     rdfs:label "Government"@en.
-:Document rdf:type owl:Class, gufo:Kind, owl:NamedIndividual;
+:Document rdf:type owl:Class, gufo:Category, owl:NamedIndividual;
     rdfs:subClassOf gufo:FunctionalComplex;
     rdfs:label "Document"@en.
-:personIsComponentOfVisualSexCharacteristic rdfs:subPropertyOf :personIsComponentOfSexualDimorphicCharacteristic.
-:phenotypicSexAssignmentMediatesPhenotypicSexAssignee rdfs:subPropertyOf :biologicalSexAssignmentMediatesBiologicalSexAssignee.
+:personWithRecognizedLegalGenderInheresInLegalGender rdfs:subPropertyOf :administrativeGenderInheresInPersonWithRecognizedAdministrativeGender.
+:legalGenderRecognitionMediatesPersonWithRecognizedLegalGender rdfs:subPropertyOf :administrativeGenderRecognitionMediatesPersonWithRecognizedAdministrativeGender.
+:legalGenderRecognitionMediatesLegalGenderRecognizer rdfs:subPropertyOf :administrativeGenderRecognitionMediatesAdministrativeGenderRecognizer.
 :AdministrativeGender rdfs:subClassOf :Gender.
-:SocialGender rdfs:subClassOf :Gender.
-:LegalGender rdfs:subClassOf :Gender.
-:BiologicalSex rdfs:subClassOf :Sex.
-:PhenotipicalSex rdfs:subClassOf :Sex.
-:AssignedSexAtBirth rdfs:subClassOf :Sex.
+:GenderIdentity rdfs:subClassOf :Gender.
 :PersonWithMaleSexAtBirth rdfs:subClassOf :PersonWithAssignedSexAtBirth.
 :PersonWithFemaleSexAtBirth rdfs:subClassOf :PersonWithAssignedSexAtBirth.
 :PersonWithIndeterminateSexAtBirth rdfs:subClassOf :PersonWithAssignedSexAtBirth.
 :SexAtBirthAssigner rdfs:subClassOf :HealthcareProfessional.
-:FemalePhenotypicPerson rdfs:subClassOf :PhenotypicSexAssignee.
-:MalePhenotypicPerson rdfs:subClassOf :PhenotypicSexAssignee.
-:AmbiguousPhenotypicPerson rdfs:subClassOf :PhenotypicSexAssignee.
+:PhenotypicSexAssessor rdfs:subClassOf :HealthcareProfessional.
+:FemalePhenotypicPerson rdfs:subClassOf :PersonWithAssessedPhenotypicSex.
+:MalePhenotypicPerson rdfs:subClassOf :PersonWithAssessedPhenotypicSex.
+:AmbiguousPhenotypicPerson rdfs:subClassOf :PersonWithAssessedPhenotypicSex.
 :MaleTypicalDimorphicCharacteristic rdfs:subClassOf :SexualDimorphicCharacteristic.
 :FemaleTypicalDimorphicCharacteristic rdfs:subClassOf :SexualDimorphicCharacteristic.
 :IndeterminateDimorphicCharacteristic rdfs:subClassOf :SexualDimorphicCharacteristic.
-:MaleBiologicalPerson rdfs:subClassOf :BiologicalSexAssignee.
-:FemaleBiologicalPerson rdfs:subClassOf :BiologicalSexAssignee.
-:IndeterminateBiologicalPerson rdfs:subClassOf :BiologicalSexAssignee.
 :MaleTypicalVisualSexCharacteristic rdfs:subClassOf :VisualSexCharacteristic.
 :FemaleTypicalVisualSexCharacteristic rdfs:subClassOf :VisualSexCharacteristic.
 :IndeterminateVisualSexCharacteristic rdfs:subClassOf :VisualSexCharacteristic.
-:VisualSexCharacteristic rdfs:subClassOf :SexualDimorphicCharacteristic.
-:MaleTypicalVisualSexCharacteristic rdfs:subClassOf :MaleTypicalDimorphicCharacteristic.
-:FemaleTypicalVisualSexCharacteristic rdfs:subClassOf :FemaleTypicalDimorphicCharacteristic.
-:IndeterminateVisualSexCharacteristic rdfs:subClassOf :IndeterminateDimorphicCharacteristic.
-:PhenotypicSexAssigner rdfs:subClassOf :BiologicalSexAssigner.
-:PhenotypicSexAssignee rdfs:subClassOf :BiologicalSexAssignee.
-:FemalePhenotypicPerson rdfs:subClassOf :FemaleBiologicalPerson.
-:MalePhenotypicPerson rdfs:subClassOf :MaleBiologicalPerson.
-:AmbiguousPhenotypicPerson rdfs:subClassOf :IndeterminateBiologicalPerson.
-:KaryotypicalSex rdfs:subClassOf :BiologicalSex.
+:SexAtBirth rdfs:subClassOf :PhenotypicSex.
+:KaryotypicalSex rdfs:subClassOf :Sex.
+:PhenotypicSex rdfs:subClassOf :Sex.
 :Government rdfs:subClassOf :Organization.
-:LegalMalePerson rdfs:subClassOf :PersonWithLegalGenderRecognition.
-:LegalFemalePerson rdfs:subClassOf :PersonWithLegalGenderRecognition.
-:LegalNonBinaryPerson rdfs:subClassOf :PersonWithLegalGenderRecognition.
-:PersonWithUnassignedLegalGender rdfs:subClassOf :PersonWithLegalGenderRecognition.
+:LegalMalePerson rdfs:subClassOf :PersonWithRecognizedLegalGender.
+:LegalFemalePerson rdfs:subClassOf :PersonWithRecognizedLegalGender.
+:LegalNonBinaryPerson rdfs:subClassOf :PersonWithRecognizedLegalGender.
+:PersonWithUnassignedLegalGender rdfs:subClassOf :PersonWithRecognizedLegalGender.
+:MaleGenderIdentity rdfs:subClassOf :GenderIdentity.
+:FemaleGenderIdentity rdfs:subClassOf :GenderIdentity.
+:NonBinaryGenderIdentity rdfs:subClassOf :GenderIdentity.
+:AdministrativeGenderRecognizer rdfs:subClassOf :Organization.
+:LegalGender rdfs:subClassOf :AdministrativeGender.
+:PersonWithRecognizedLegalGender rdfs:subClassOf :PersonWithRecognizedAdministrativeGender.
+:LegalGenderRecognition rdfs:subClassOf :AdministrativeGenderRecognition.
+:LegalGenderRecognizer rdfs:subClassOf :AdministrativeGenderRecognizer.
 :HealthcareProfessional rdfs:subClassOf :Person.
 :PersonWithUnassignedSexAtBirth rdfs:subClassOf :Person.
 :PersonWithAssignedSexAtBirth rdfs:subClassOf :Person.
@@ -217,90 +215,87 @@
 :AllosomeY rdfs:subClassOf :Allosome.
 :HaploidCell rdfs:subClassOf :HumanCell.
 :DiploidCell rdfs:subClassOf :HumanCell.
-:RegularKaryotypicalMale rdfs:subClassOf :SexChromosomeRegularPerson.
-:RegularKaryotypicalFemale rdfs:subClassOf :SexChromosomeRegularPerson.
-:SexChromosomeRegularPerson rdfs:subClassOf :Person.
-:SexChromosomeVariantPerson rdfs:subClassOf :Person.
-:VariantKaryotypicalMale rdfs:subClassOf :SexChromosomeVariantPerson.
-:VariantKaryotypicalFemale rdfs:subClassOf :SexChromosomeVariantPerson.
-:KaryotypicallyIndeterminatePerson rdfs:subClassOf :SexChromosomeVariantPerson.
+:RegularKaryotypicalMale rdfs:subClassOf :PersonWithRegularSexChromosome.
+:RegularKaryotypicalFemale rdfs:subClassOf :PersonWithRegularSexChromosome.
+:PersonWithRegularSexChromosome rdfs:subClassOf :Person.
+:PersonWithVariantSexChromosome rdfs:subClassOf :Person.
+:VariantKaryotypicalMale rdfs:subClassOf :PersonWithVariantSexChromosome.
+:VariantKaryotypicalFemale rdfs:subClassOf :PersonWithVariantSexChromosome.
+:KaryotypicallyIndeterminatePerson rdfs:subClassOf :PersonWithVariantSexChromosome.
 :KaryotypicalMale rdfs:subClassOf :Person.
 :KaryotypicalFemale rdfs:subClassOf :Person.
 :RegularKaryotypicalMale rdfs:subClassOf :KaryotypicalMale.
 :VariantKaryotypicalMale rdfs:subClassOf :KaryotypicalMale.
 :RegularKaryotypicalFemale rdfs:subClassOf :KaryotypicalFemale.
 :VariantKaryotypicalFemale rdfs:subClassOf :KaryotypicalFemale.
-:PhenotypicSexAssigner rdfs:subClassOf :Person.
-:PhenotypicSexAssignee rdfs:subClassOf :Person.
-:BiologicalSexAssigner rdfs:subClassOf :Person.
-:BiologicalSexAssignee rdfs:subClassOf :Person.
-:PersonWithLegalGenderRecognition rdfs:subClassOf :Person.
+:PersonWithAssessedPhenotypicSex rdfs:subClassOf :Person.
+:PersonWithRecognizedLegalGender rdfs:subClassOf :Person.
+:MaleBiologicalPerson rdfs:subClassOf :Person.
+:FemaleBiologicalPerson rdfs:subClassOf :Person.
+:IndeterminateBiologicalPerson rdfs:subClassOf :Person.
+:PersonWithRecognizedAdministrativeGender rdfs:subClassOf :Person.
 :LegalGenderRecognizer rdfs:subClassOf :Government.
 :GenderRecognitionDocument rdfs:subClassOf :Document.
-[ rdf:type owl:AllDisjointClasses ] owl:members (:AdministrativeGender :SocialGender :LegalGender).
-:Gender owl:equivalentClass [
-  rdf:type owl:Class;
-  owl:unionOf (:AdministrativeGender :SocialGender :LegalGender)
-].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:PhenotipicalSex :AssignedSexAtBirth :BiologicalSex).
-:Sex owl:equivalentClass [
-  rdf:type owl:Class;
-  owl:unionOf (:PhenotipicalSex :AssignedSexAtBirth :BiologicalSex)
-].
+[ rdf:type owl:AllDisjointClasses ] owl:members (:AdministrativeGender :GenderIdentity).
+[ rdf:type owl:AllDisjointClasses ] owl:members (:KaryotypicalSex :PhenotypicSex).
 :Person owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:PersonWithUnassignedSexAtBirth :PersonWithAssignedSexAtBirth)
+  owl:unionOf (:PersonWithAssignedSexAtBirth :PersonWithUnassignedSexAtBirth)
 ].
 :PersonWithAssignedSexAtBirth owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:PersonWithIndeterminateSexAtBirth :PersonWithFemaleSexAtBirth :PersonWithMaleSexAtBirth)
+  owl:unionOf (:PersonWithMaleSexAtBirth :PersonWithIndeterminateSexAtBirth :PersonWithFemaleSexAtBirth)
 ].
-:PhenotypicSexAssignee owl:equivalentClass [
+:PersonWithAssessedPhenotypicSex owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:AmbiguousPhenotypicPerson :FemalePhenotypicPerson :MalePhenotypicPerson)
+  owl:unionOf (:FemalePhenotypicPerson :MalePhenotypicPerson :AmbiguousPhenotypicPerson)
 ].
 [ rdf:type owl:AllDisjointClasses ] owl:members (:IndeterminateDimorphicCharacteristic :FemaleTypicalDimorphicCharacteristic :MaleTypicalDimorphicCharacteristic).
 :SexualDimorphicCharacteristic owl:equivalentClass [
   rdf:type owl:Class;
   owl:unionOf (:IndeterminateDimorphicCharacteristic :FemaleTypicalDimorphicCharacteristic :MaleTypicalDimorphicCharacteristic)
 ].
-:BiologicalSexAssignee owl:equivalentClass [
-  rdf:type owl:Class;
-  owl:unionOf (:MaleBiologicalPerson :IndeterminateBiologicalPerson :FemaleBiologicalPerson)
-].
 [ rdf:type owl:AllDisjointClasses ] owl:members (:FemaleTypicalVisualSexCharacteristic :IndeterminateVisualSexCharacteristic :MaleTypicalVisualSexCharacteristic).
 :VisualSexCharacteristic owl:equivalentClass [
   rdf:type owl:Class;
   owl:unionOf (:FemaleTypicalVisualSexCharacteristic :IndeterminateVisualSexCharacteristic :MaleTypicalVisualSexCharacteristic)
 ].
-:PersonWithLegalGenderRecognition owl:equivalentClass [
+:Person owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:LegalFemalePerson :PersonWithUnassignedLegalGender :LegalMalePerson :LegalNonBinaryPerson)
+  owl:unionOf (:MaleBiologicalPerson :FemaleBiologicalPerson :IndeterminateBiologicalPerson)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:AllosomeY :AllosomeX).
+:PersonWithRecognizedLegalGender owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:unionOf (:LegalNonBinaryPerson :PersonWithUnassignedLegalGender :LegalFemalePerson :LegalMalePerson)
+].
+:GenderIdentity owl:equivalentClass [
+  rdf:type owl:Class;
+  owl:unionOf (:FemaleGenderIdentity :NonBinaryGenderIdentity :MaleGenderIdentity)
+].
+[ rdf:type owl:AllDisjointClasses ] owl:members (:AllosomeX :AllosomeY).
 :Allosome owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:AllosomeY :AllosomeX)
+  owl:unionOf (:AllosomeX :AllosomeY)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:DiploidCell :HaploidCell).
+[ rdf:type owl:AllDisjointClasses ] owl:members (:HaploidCell :DiploidCell).
 :HumanCell owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:DiploidCell :HaploidCell)
+  owl:unionOf (:HaploidCell :DiploidCell)
 ].
 [ rdf:type owl:AllDisjointClasses ] owl:members (:RegularKaryotypicalMale :RegularKaryotypicalFemale).
-:SexChromosomeRegularPerson owl:equivalentClass [
+:PersonWithRegularSexChromosome owl:equivalentClass [
   rdf:type owl:Class;
   owl:unionOf (:RegularKaryotypicalMale :RegularKaryotypicalFemale)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:SexChromosomeRegularPerson :SexChromosomeVariantPerson).
+[ rdf:type owl:AllDisjointClasses ] owl:members (:PersonWithVariantSexChromosome :PersonWithRegularSexChromosome).
 :Person owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:SexChromosomeRegularPerson :SexChromosomeVariantPerson)
+  owl:unionOf (:PersonWithVariantSexChromosome :PersonWithRegularSexChromosome)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:VariantKaryotypicalMale :VariantKaryotypicalFemale :KaryotypicallyIndeterminatePerson).
-:SexChromosomeVariantPerson owl:equivalentClass [
+[ rdf:type owl:AllDisjointClasses ] owl:members (:KaryotypicallyIndeterminatePerson :VariantKaryotypicalFemale :VariantKaryotypicalMale).
+:PersonWithVariantSexChromosome owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:VariantKaryotypicalMale :VariantKaryotypicalFemale :KaryotypicallyIndeterminatePerson)
+  owl:unionOf (:KaryotypicallyIndeterminatePerson :VariantKaryotypicalFemale :VariantKaryotypicalMale)
 ].
 [ rdf:type owl:AllDisjointClasses ] owl:members (:KaryotypicalMale :KaryotypicalFemale).
 :Person owl:equivalentClass [
@@ -312,10 +307,10 @@
   rdf:type owl:Class;
   owl:unionOf (:RegularKaryotypicalFemale :VariantKaryotypicalFemale)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:RegularKaryotypicalMale :VariantKaryotypicalMale).
+[ rdf:type owl:AllDisjointClasses ] owl:members (:VariantKaryotypicalMale :RegularKaryotypicalMale).
 :KaryotypicalMale owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:RegularKaryotypicalMale :VariantKaryotypicalMale)
+  owl:unionOf (:VariantKaryotypicalMale :RegularKaryotypicalMale)
 ].
 :SexAtBirthAssigner rdfs:subClassOf [
   rdf:type owl:Restriction;
@@ -354,78 +349,28 @@
   owl:onProperty gufo:mediates;
   owl:someValuesFrom :BirthRelatedLegislationRule
 ].
-:PhenotypicSexAssignment rdfs:subClassOf [
+:PhenotypicSexAssessment rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty [ owl:inverseOf gufo:mediates ];
-  owl:someValuesFrom :PhenotypicSexAssigner
+  owl:someValuesFrom :PhenotypicSexAssessor
 ].
-:PhenotypicSexAssigner rdfs:subClassOf [
+:PhenotypicSexAssessor rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty gufo:mediates;
-  owl:someValuesFrom :PhenotypicSexAssignment
+  owl:someValuesFrom :PhenotypicSexAssessment
 ].
-:PhenotypicSexAssignee rdfs:subClassOf [
+:PersonWithAssessedPhenotypicSex rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty [ owl:inverseOf gufo:mediates ];
-  owl:someValuesFrom :PhenotypicSexAssignment
+  owl:someValuesFrom :PhenotypicSexAssessment
 ].
-:PhenotypicSexAssignment rdfs:subClassOf [
-  rdf:type owl:Restriction;
-  owl:onProperty gufo:mediates;
-  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :PhenotypicSexAssignee
-].
-:BiologicalSexAssigner rdfs:subClassOf [
-  rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf gufo:mediates ];
-  owl:someValuesFrom :BiologicalSexAssignment
-].
-:BiologicalSexAssignment rdfs:subClassOf [
-  rdf:type owl:Restriction;
-  owl:onProperty gufo:mediates;
-  owl:someValuesFrom :BiologicalSexAssigner
-].
-:BiologicalSexAssignee rdfs:subClassOf [
-  rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf gufo:mediates ];
-  owl:someValuesFrom :BiologicalSexAssignment
-].
-:BiologicalSexAssignment rdfs:subClassOf [
+:PhenotypicSexAssessment rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :BiologicalSexAssignee
+  owl:onClass :PersonWithAssessedPhenotypicSex
 ].
-:SocialGender rdfs:subClassOf [
-  rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
-  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :Person
-].
-:Person rdfs:subClassOf [
-  rdf:type owl:Restriction;
-  owl:onProperty gufo:inheresIn;
-  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :SocialGender
-], [
-  rdf:type owl:Restriction;
-  owl:onProperty gufo:inheresIn;
-  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :AdministrativeGender
-].
-:LegalGender rdfs:subClassOf [
-  rdf:type owl:Restriction;
-  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
-  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :Person
-].
-:Person rdfs:subClassOf [
-  rdf:type owl:Restriction;
-  owl:onProperty gufo:inheresIn;
-  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :LegalGender
-].
-:BiologicalSex rdfs:subClassOf [
+:KaryotypicalSex rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty [ owl:inverseOf gufo:inheresIn ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
@@ -435,33 +380,43 @@
   rdf:type owl:Restriction;
   owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :BiologicalSex
+  owl:onClass :KaryotypicalSex
 ].
-:AssignedSexAtBirth rdfs:subClassOf [
+:PersonWithAssessedPhenotypicSex rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty [ owl:inverseOf gufo:inheresIn ];
-  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :Person
+  owl:someValuesFrom :PhenotypicSex
 ].
-:Person rdfs:subClassOf [
+:PhenotypicSex rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :AssignedSexAtBirth
+  owl:onClass :PersonWithAssessedPhenotypicSex
 ].
-:PhenotipicalSex rdfs:subClassOf [
+:PersonWithAssignedSexAtBirth rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty [ owl:inverseOf gufo:inheresIn ];
   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :Person
+  owl:onClass :SexAtBirth
 ].
-:Person rdfs:subClassOf [
+:SexAtBirth rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty gufo:inheresIn;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :PhenotipicalSex
+  owl:onClass :PersonWithAssignedSexAtBirth
 ].
-:PersonWithLegalGenderRecognition rdfs:subClassOf [
+:Person rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :Sex
+].
+:Sex rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Person
+].
+:PersonWithRecognizedLegalGender rdfs:subClassOf [
   rdf:type owl:Restriction;
   owl:onProperty [ owl:inverseOf gufo:mediates ];
   owl:someValuesFrom :LegalGenderRecognition
@@ -470,7 +425,7 @@
   rdf:type owl:Restriction;
   owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
-  owl:onClass :PersonWithLegalGenderRecognition
+  owl:onClass :PersonWithRecognizedLegalGender
 ].
 :LegalGenderRecognizer rdfs:subClassOf [
   rdf:type owl:Restriction;
@@ -494,4 +449,59 @@
   owl:onProperty gufo:mediates;
   owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
   owl:onClass :GenderRecognitionDocument
+].
+:LegalGender rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :PersonWithRecognizedLegalGender
+].
+:PersonWithRecognizedLegalGender rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :LegalGender
+].
+:Person rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :GenderIdentity
+].
+:GenderIdentity rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :Person
+].
+:AdministrativeGenderRecognizer rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :AdministrativeGenderRecognition
+].
+:AdministrativeGenderRecognition rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :AdministrativeGenderRecognizer
+].
+:PersonWithRecognizedAdministrativeGender rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:mediates ];
+  owl:someValuesFrom :AdministrativeGenderRecognition
+].
+:AdministrativeGenderRecognition rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:mediates;
+  owl:someValuesFrom :PersonWithRecognizedAdministrativeGender
+].
+:PersonWithRecognizedAdministrativeGender rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty [ owl:inverseOf gufo:inheresIn ];
+  owl:someValuesFrom :AdministrativeGender
+].
+:AdministrativeGender rdfs:subClassOf [
+  rdf:type owl:Restriction;
+  owl:onProperty gufo:inheresIn;
+  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger;
+  owl:onClass :PersonWithRecognizedAdministrativeGender
 ].
