@@ -37,6 +37,10 @@ For each ontology release, the following artifacts are published:
   File: `Health-RI Ontology-v<version>.ttl`
   OWL serialization that imports or reflects gUFO axioms
 
+- **Diagram images**
+  Folder: `ontology/model images`
+  Contains the exported PNG images of all diagrams that compose the model
+
 !!! note
     gUFO files are only generated for versions of the model that are **syntactically valid**.
     As a result, no `.ttl` file will be provided for versions that are still incomplete or under development.
@@ -49,7 +53,6 @@ For each ontology release, the following artifacts are published:
         <https://w3id.org/health-ri/ontology#> dcterms:conformsTo <https://w3id.org/health-ri/ontouml-v0.3.0> .
         ```
 
-
 ## Repository Structure
 
 All current artifacts are made available in the `/ontology` folder:
@@ -60,6 +63,7 @@ ontology/
 ├── Health-RI Ontology-vX.Y.Z.vpp    # latest OntoUML model
 ├── Health-RI Ontology-vX.Y.Z.json   # latest OntoUML JSON export
 ├── Health-RI Ontology-vX.Y.Z.ttl    # latest OWL ontology
+├── model images/                    # exported PNG images of all diagrams
 ├── archive.rar                      # compressed file with all previous versions
 └── changelog.md                     # human-readable log of changes
 ```
@@ -77,7 +81,6 @@ ontology/
 To support stable references and long-term access, we provide permanent URLs (PermURLs) via [W3ID](https://w3id.org/):
 
 - **Latest release**: <https://w3id.org/health-ri/ontology/latest>
-
 - **All releases overview**: <https://w3id.org/health-ri/ontology/releases>
 
 These PermURLs allow users and systems to always retrieve the most recent or complete list of released ontology versions, even if the actual files are hosted elsewhere (e.g., on GitHub).
