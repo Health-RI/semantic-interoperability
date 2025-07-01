@@ -71,6 +71,7 @@ nav:
       - Publishing: ontology/publishing.md
       - Changelog: ontology/changelog.md
       - Sex and Gender Ontology: ontology/sex-gender.md
+      - Specification: ontology/specification/index-en.html
   # - Output:
   #     - Overview: output/index.md
 

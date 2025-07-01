@@ -32,11 +32,11 @@
                  "health records"@en ,
                  "ontology"@en ,
                  "semantic interoperability"@en ;
-    dcat:landingPage <https://w3id.org/health-ri/ontology> ;
+    dcat:landingPage <https://w3id.org/health-ri/semantic-interoperability> ;
     dcat:version "0.5.2" ;
-    foaf:homepage <https://w3id.org/health-ri/ontology> ;
-    foaf:logo <https://w3id.org/health-ri/resources/logo.png> ;
-    mod:repository <https://github.com/Health-RI/semantic-interoperability> .
+    foaf:homepage <https://w3id.org/health-ri/semantic-interoperability> ;
+    foaf:logo <https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/docs/assets/images/health-ri-logo-blue.png> ;
+    mod:repository <https://w3id.org/health-ri/semantic-interoperability/git> .
 
 
 <https://w3id.org/health-ri/ontology> rdf:type owl:Ontology ;
