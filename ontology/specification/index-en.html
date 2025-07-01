@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>Health-RI Ontology for Sex and Gender Concepts</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/health-ri/ontology#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/health-ri/ontology#","name":"Health-RI Ontology for Sex and Gender Concepts", "headline":"The Health-RI Ontology defines core concepts relevant to representing personal sex and gender information in health records. It provides a domain ontology for consistent description, data exchange, and integration across systems, covering administrative/legal, biological, and social aspects of sex and gender.", "dateReleased":"2025-06-20", "dateModified":"2025-06-30", "version":"0.5.2 – Includes updated definitions and improved structure for Administrative, Legal, and Phenotypic Sex classes, plus enhanced metadata.", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"https://orcid.org/0000-0003-2736-7817","url":"https://orcid.org/0000-0003-2736-7817"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Health-RI Ontology for Sex and Gender Concepts</h1>
+<img src="https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/docs/assets/images/health-ri-logo-blue.png" width="300/">
+<h2>Release: 2025-06-20</h2>
+
+
+<dl>
+<dt>Modified on: 2025-06-30</dt>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/health-ri/ontology#">https://w3id.org/health-ri/ontology#</a></dd>
+<dt>Revision:</dt>
+<dd>0.5.2 – Includes updated definitions and improved structure for Administrative, Legal, and Phenotypic Sex classes, plus enhanced metadata.</dd>
+<dt>Issued on:</dt>
+<dd>2024-06-18</dd>
+<dt>Authors:</dt>
+<dd><a href="https://orcid.org/0000-0003-2736-7817">https://orcid.org/0000-0003-2736-7817</a></dd>
+
+<dt>Publisher:</dt>
+<dd><a href="https://w3id.org/health-ri/publisher/health-ri">https://w3id.org/health-ri/publisher/health-ri</a></dd>
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://purl.org/nemo/gufo#">gufo#</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>https://orcid.org/0000-0003-2736-7817. Health-RI Ontology for Sex and Gender Concepts. Revision: 0.5.2 – Includes updated definitions and improved structure for Administrative, Legal, and Phenotypic Sex classes, plus enhanced metadata..</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The Health-RI Ontology defines core concepts relevant to representing personal sex and gender information in health records. It provides a domain ontology for consistent description, data exchange, and integration across systems, covering administrative/legal, biological, and social aspects of sex and gender.</span>
+</div>
+<div id="toc"></div>  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Health-RI Ontology for Sex and Gender Concepts: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">This ontology models sex and gender concepts relevant to health records in the Netherlands. It includes classes for Administrative Gender, Legal Gender, Sex Assigned at Birth, Phenotypic Sex, Karyotypical Sex, and Gender Identity, among others. The ontology enables consistent terminology and semantic interoperability across health information systems.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Health-RI Ontology for Sex and Gender Concepts classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Health-RI Ontology for Sex and Gender Concepts.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#AdministrativeGender" title="https://w3id.org/health-ri/ontology#AdministrativeGender">Administrative Gender</a></li>
+  <li><a href="#AdministrativeGenderRecognition" title="https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition">Administrative Gender Recognition</a></li>
+  <li><a href="#AdministrativeGenderRecognizer" title="https://w3id.org/health-ri/ontology#AdministrativeGenderRecognizer">Administrative Gender Recognizer</a></li>
+  <li><a href="#Allosome" title="https://w3id.org/health-ri/ontology#Allosome">Allosome</a></li>
+  <li><a href="#AllosomeX" title="https://w3id.org/health-ri/ontology#AllosomeX">Allosome X</a></li>
+  <li><a href="#AllosomeY" title="https://w3id.org/health-ri/ontology#AllosomeY">Allosome Y</a></li>
+  <li><a href="#AmbiguousPhenotypicPerson" title="https://w3id.org/health-ri/ontology#AmbiguousPhenotypicPerson">Ambiguous Phenotypic Person</a></li>
+  <li><a href="#BirthNotification" title="https://w3id.org/health-ri/ontology#BirthNotification">Birth Notification</a></li>
+  <li><a href="#BirthRelatedLegislationRule" title="https://w3id.org/health-ri/ontology#BirthRelatedLegislationRule">Birth-related Legislation Rule</a></li>
+  <li><a href="#Chromosome" title="https://w3id.org/health-ri/ontology#Chromosome">Chromosome</a></li>
+  <li><a href="#DiploidCell" title="https://w3id.org/health-ri/ontology#DiploidCell">Diploid Cell</a></li>
+  <li><a href="#Document" title="https://w3id.org/health-ri/ontology#Document">Document</a></li>
+  <li><a href="#FemaleBiologicalPerson" title="https://w3id.org/health-ri/ontology#FemaleBiologicalPerson">Female Biological Person</a></li>
+  <li><a href="#FemaleGenderIdentity" title="https://w3id.org/health-ri/ontology#FemaleGenderIdentity">Female Gender Identity</a></li>
+  <li><a href="#FemalePhenotypicPerson" title="https://w3id.org/health-ri/ontology#FemalePhenotypicPerson">Female Phenotypic Person</a></li>
+  <li><a href="#FemaleTypicalDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic">Female-typical Dimorphic Characteristic</a></li>
+  <li><a href="#FemaleTypicalVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic">Female-typical Visual Sex Characteristic</a></li>
+  <li><a href="#Gamete" title="https://w3id.org/health-ri/ontology#Gamete">Gamete</a></li>
+  <li><a href="#Gender" title="https://w3id.org/health-ri/ontology#Gender">Gender</a></li>
+  <li><a href="#GenderIdentity" title="https://w3id.org/health-ri/ontology#GenderIdentity">Gender Identity</a></li>
+  <li><a href="#GenderRecognitionDocument" title="https://w3id.org/health-ri/ontology#GenderRecognitionDocument">Gender Recognition Document</a></li>
+  <li><a href="#Government" title="https://w3id.org/health-ri/ontology#Government">Government</a></li>
+  <li><a href="#HaploidCell" title="https://w3id.org/health-ri/ontology#HaploidCell">Haploid Cell</a></li>
+  <li><a href="#HealthcareProfessional" title="https://w3id.org/health-ri/ontology#HealthcareProfessional">Healthcare Professional</a></li>
+  <li><a href="#HumanCell" title="https://w3id.org/health-ri/ontology#HumanCell">Human Cell</a></li>
+  <li><a href="#IndeterminateBiologicalPerson" title="https://w3id.org/health-ri/ontology#IndeterminateBiologicalPerson">Indeterminate Biological Person</a></li>
+  <li><a href="#IndeterminateDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic">Indeterminate Dimorphic Characteristic</a></li>
+  <li><a href="#IndeterminateVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic">Indeterminate Visual Sex Characteristic</a></li>
+  <li><a href="#KaryotypicalFemale" title="https://w3id.org/health-ri/ontology#KaryotypicalFemale">Karyotypical Female</a></li>
+  <li><a href="#KaryotypicalMale" title="https://w3id.org/health-ri/ontology#KaryotypicalMale">Karyotypical Male</a></li>
+  <li><a href="#KaryotypicalSex" title="https://w3id.org/health-ri/ontology#KaryotypicalSex">Karyotypical Sex</a></li>
+  <li><a href="#KaryotypicallyIndeterminatePerson" title="https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson">Karyotypically Indeterminate Person</a></li>
+  <li><a href="#LegalFemalePerson" title="https://w3id.org/health-ri/ontology#LegalFemalePerson">Legal Female Person</a></li>
+  <li><a href="#LegalGender" title="https://w3id.org/health-ri/ontology#LegalGender">Legal Gender</a></li>
+  <li><a href="#LegalGenderRecognition" title="https://w3id.org/health-ri/ontology#LegalGenderRecognition">Legal Gender Recognition</a></li>
+  <li><a href="#LegalGenderRecognizer" title="https://w3id.org/health-ri/ontology#LegalGenderRecognizer">Legal Gender Recognizer</a></li>
+  <li><a href="#LegalMalePerson" title="https://w3id.org/health-ri/ontology#LegalMalePerson">Legal Male Person</a></li>
+  <li><a href="#LegalNonBinaryPerson" title="https://w3id.org/health-ri/ontology#LegalNonBinaryPerson">Legal Non-binary Person</a></li>
+  <li><a href="#MaleBiologicalPerson" title="https://w3id.org/health-ri/ontology#MaleBiologicalPerson">Male Biological Person</a></li>
+  <li><a href="#MaleGenderIdentity" title="https://w3id.org/health-ri/ontology#MaleGenderIdentity">Male Gender Identity</a></li>
+  <li><a href="#MalePhenotypicPerson" title="https://w3id.org/health-ri/ontology#MalePhenotypicPerson">Male Phenotypic Person</a></li>
+  <li><a href="#MaleTypicalDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic">Male-typical Dimorphic Characteristic</a></li>
+  <li><a href="#MaleTypicalVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic">Male-typical Visual Sex Characteristic</a></li>
+  <li><a href="#NonBinaryGenderIdentity" title="https://w3id.org/health-ri/ontology#NonBinaryGenderIdentity">Non-binary Gender Identity</a></li>
+  <li><a href="#Organization" title="https://w3id.org/health-ri/ontology#Organization">Organization</a></li>
+  <li><a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a></li>
+  <li><a href="#PersonWithAssessedPhenotypicSex" title="https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex">Person with Assessed Phenotypic Sex</a></li>
+  <li><a href="#PersonWithAssignedSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth">Person with Assigned Sex at Birth</a></li>
+  <li><a href="#PersonWithFemaleSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithFemaleSexAtBirth">Person with Female Sex at Birth</a></li>
+  <li><a href="#PersonWithIndeterminateSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithIndeterminateSexAtBirth">Person with Indeterminate Sex at Birth</a></li>
+  <li><a href="#PersonWithMaleSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithMaleSexAtBirth">Person with Male Sex at Birth</a></li>
+  <li><a href="#PersonWithRecognizedAdministrativeGender" title="https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender">Person with Recognized Administrative Gender</a></li>
+  <li><a href="#PersonWithRecognizedLegalGender" title="https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender">Person with Recognized Legal Gender</a></li>
+  <li><a href="#PersonWithRegularSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome">Person with Regular Sex Chromosome</a></li>
+  <li><a href="#PersonWithUnassignedLegalGender" title="https://w3id.org/health-ri/ontology#PersonWithUnassignedLegalGender">Person with Unassigned Legal Gender</a></li>
+  <li><a href="#PersonWithUnassignedSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithUnassignedSexAtBirth">Person with Unassigned Sex at Birth</a></li>
+  <li><a href="#PersonWithVariantSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a></li>
+  <li><a href="#PhenotypicSex" title="https://w3id.org/health-ri/ontology#PhenotypicSex">Phenotypic Sex</a></li>
+  <li><a href="#PhenotypicSexAssessment" title="https://w3id.org/health-ri/ontology#PhenotypicSexAssessment">Phenotypic Sex Assessment</a></li>
+  <li><a href="#PhenotypicSexAssessor" title="https://w3id.org/health-ri/ontology#PhenotypicSexAssessor">Phenotypic Sex Assessor</a></li>
+  <li><a href="#RegularKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale">Regular Karyotypical Female</a></li>
+  <li><a href="#RegularKaryotypicalMale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalMale">Regular Karyotypical Male</a></li>
+  <li><a href="#Sex" title="https://w3id.org/health-ri/ontology#Sex">Sex</a></li>
+  <li><a href="#SexAtBirth" title="https://w3id.org/health-ri/ontology#SexAtBirth">Sex at Birth</a></li>
+  <li><a href="#SexAtBirthAssigner" title="https://w3id.org/health-ri/ontology#SexAtBirthAssigner">Sex at Birth Assigner</a></li>
+  <li><a href="#SexAtBirthAssignment" title="https://w3id.org/health-ri/ontology#SexAtBirthAssignment">Sex at Birth Assignment</a></li>
+  <li><a href="#SexualDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic">Sexual Dimorphic Characteristic</a></li>
+  <li><a href="#VariantKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale">Variant Karyotypical Female</a></li>
+  <li><a href="#VariantKaryotypicalMale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalMale">Variant Karyotypical Male</a></li>
+  <li><a href="#VisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#VisualSexCharacteristic">Visual Sex Characteristic</a></li>
+ </ul>
+ <div class="entity" id="AdministrativeGender">
+  <h3>Administrative Gender<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#AdministrativeGender</p>
+  <div class="comment">
+   <span class="markdown">Represents the type of gender designation used in administrative contexts, such as records, forms, or institutional databases. This category captures the labels or classifications assigned through formal processes, supporting consistent management of gender information across systems.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#ExtrinsicMode" target="_blank" title="http://purl.org/nemo/gufo#ExtrinsicMode">ExtrinsicMode</a> <sup class="type-c" title="class">c</sup>, <a href="#Gender" title="https://w3id.org/health-ri/ontology#Gender">Gender</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#LegalGender" title="https://w3id.org/health-ri/ontology#LegalGender">Legal Gender</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#GenderIdentity" title="https://w3id.org/health-ri/ontology#GenderIdentity">Gender Identity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AdministrativeGenderRecognition">
+  <h3>Administrative Gender Recognition<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition</p>
+  <div class="comment">
+   <span class="markdown">Describes the process and relationship through which an organization formally assigns or recognizes a person's administrative gender. It represents the structured interaction that results in an individual's gender being recorded or changed in administrative systems.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#Relator" target="_blank" title="http://purl.org/nemo/gufo#Relator">Relator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#LegalGenderRecognition" title="https://w3id.org/health-ri/ontology#LegalGenderRecognition">Legal Gender Recognition</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AdministrativeGenderRecognizer">
+  <h3>Administrative Gender Recognizer<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#AdministrativeGenderRecognizer</p>
+  <div class="comment">
+   <span class="markdown">Represents the role played by an organization when it is responsible for assigning or recognizing a person's administrative gender. This role formalizes the authority to make or record gender-related determinations within an administrative context.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Organization" title="https://w3id.org/health-ri/ontology#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#LegalGenderRecognizer" title="https://w3id.org/health-ri/ontology#LegalGenderRecognizer">Legal Gender Recognizer</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Allosome">
+  <h3>Allosome<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#Allosome</p>
+  <div class="comment">
+   <span class="markdown">Refers to the sex chromosomes that determine an individual's chromosomal sex. Humans typically have two allosomes per diploid cell, which can be combinations of X and Y chromosomes. Allosomes carry genes that influence sexual development and related traits.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#AllosomeX" title="https://w3id.org/health-ri/ontology#AllosomeX">Allosome X</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#AllosomeY" title="https://w3id.org/health-ri/ontology#AllosomeY">Allosome Y</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Chromosome" title="https://w3id.org/health-ri/ontology#Chromosome">Chromosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#AllosomeX" title="https://w3id.org/health-ri/ontology#AllosomeX">Allosome X</a> <sup class="type-c" title="class">c</sup>, <a href="#AllosomeY" title="https://w3id.org/health-ri/ontology#AllosomeY">Allosome Y</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AllosomeX">
+  <h3>Allosome X<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#AllosomeX</p>
+  <div class="comment">
+   <span class="markdown">One of the two types of human sex chromosomes. The X chromosome contains many essential genes unrelated to sex determination but is also critical for sexual development. It is present in both males and females, usually as XX in females and XY in males.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Allosome" title="https://w3id.org/health-ri/ontology#Allosome">Allosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AllosomeY" title="https://w3id.org/health-ri/ontology#AllosomeY">Allosome Y</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AllosomeY">
+  <h3>Allosome Y<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#AllosomeY</p>
+  <div class="comment">
+   <span class="markdown">The sex chromosome that determines male development in humans when paired with an X chromosome. The Y chromosome carries genes responsible for initiating male sex differentiation but contains fewer genes overall than the X chromosome. It can only occur in combination with at least one X chromosome in viable human cells.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Allosome" title="https://w3id.org/health-ri/ontology#Allosome">Allosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AllosomeX" title="https://w3id.org/health-ri/ontology#AllosomeX">Allosome X</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AmbiguousPhenotypicPerson">
+  <h3>Ambiguous Phenotypic Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#AmbiguousPhenotypicPerson</p>
+  <div class="comment">
+   <span class="markdown">Includes individuals whose anatomical traits do not clearly align with either male-typical or female-typical categories. This classification acknowledges the existence of anatomical diversity and variations outside binary expectations.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithAssessedPhenotypicSex" title="https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex">Person with Assessed Phenotypic Sex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="BirthNotification">
+  <h3>Birth Notification<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#BirthNotification</p>
+  <div class="comment">
+   <span class="markdown">Represents the official document or record that includes the assigned sex at birth along with other birth details. Often required by legal or administrative systems as the initial source of personal data for registration. Also called a "birth record" or "attending physician's report".</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank" title="http://purl.org/nemo/gufo#FunctionalComplex">FunctionalComplex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="BirthRelatedLegislationRule">
+  <h3>Birth-related Legislation Rule<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#BirthRelatedLegislationRule</p>
+  <div class="comment">
+   <span class="markdown">Describes the set of legal or regulatory requirements that govern how sex at birth must be assessed, assigned, and recorded. This concept ensures that the model accounts for variation in laws and administrative practices across jurisdictions.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#IntrinsicMode" target="_blank" title="http://purl.org/nemo/gufo#IntrinsicMode">IntrinsicMode</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Chromosome">
+  <h3>Chromosome<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#Chromosome</p>
+  <div class="comment">
+   <span class="markdown">A thread-like structure of nucleic acids and proteins carrying genetic information. Chromosomes are fundamental units of heredity and exist in pairs in most human cells, encoding the instructions for development, functioning, and reproduction.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank" title="http://purl.org/nemo/gufo#FunctionalComplex">FunctionalComplex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Allosome" title="https://w3id.org/health-ri/ontology#Allosome">Allosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DiploidCell">
+  <h3>Diploid Cell<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#DiploidCell</p>
+  <div class="comment">
+   <span class="markdown">A type of human cell containing two complete sets of chromosomes'one from each parent. In humans, diploid cells include somatic cells and have 46 chromosomes, including two allosomes that determine chromosomal sex (e.g., XX or XY).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#HumanCell" title="https://w3id.org/health-ri/ontology#HumanCell">Human Cell</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#HaploidCell" title="https://w3id.org/health-ri/ontology#HaploidCell">Haploid Cell</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Document">
+  <h3>Document<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#Document</p>
+  <div class="comment">
+   <span class="markdown">A recorded piece of information that can be stored, shared, and referenced. Documents serve as authoritative records of facts, decisions, or transactions and can exist in physical or digital form. They are used to communicate, formalize, and preserve information across contexts such as administration, law, business, and personal records.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank" title="http://purl.org/nemo/gufo#FunctionalComplex">FunctionalComplex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#GenderRecognitionDocument" title="https://w3id.org/health-ri/ontology#GenderRecognitionDocument">Gender Recognition Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FemaleBiologicalPerson">
+  <h3>Female Biological Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#FemaleBiologicalPerson</p>
+  <div class="comment">
+   <span class="markdown">Refers to a person whose sexual dimorphic characteristics align more strongly with those typically classified as female. The classification is based on the predominance of female-typical features in the overall assessment.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FemaleGenderIdentity">
+  <h3>Female Gender Identity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#FemaleGenderIdentity</p>
+  <div class="comment">
+   <span class="markdown">Describes an individual's self-identification as female. It encompasses the personal sense of being female and often informs social expression, interaction, and personal narrative.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#GenderIdentity" title="https://w3id.org/health-ri/ontology#GenderIdentity">Gender Identity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FemalePhenotypicPerson">
+  <h3>Female Phenotypic Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#FemalePhenotypicPerson</p>
+  <div class="comment">
+   <span class="markdown">Describes an individual assessed as having predominantly female-typical anatomical features. The classification reflects traits typically associated with female development.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithAssessedPhenotypicSex" title="https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex">Person with Assessed Phenotypic Sex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FemaleTypicalDimorphicCharacteristic">
+  <h3>Female-typical Dimorphic Characteristic<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic</p>
+  <div class="comment">
+   <span class="markdown">Includes anatomical or physiological traits more typical of females, such as wider pelvic structure or distribution of body fat. These traits inform classification into the female category.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#SexualDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic">Sexual Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#IndeterminateDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic">Indeterminate Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>, <a href="#MaleTypicalDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic">Male-typical Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FemaleTypicalVisualSexCharacteristic">
+  <h3>Female-typical Visual Sex Characteristic<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic</p>
+  <div class="comment">
+   <span class="markdown">Encompasses anatomical features typically associated with females, such as breast development, pelvic shape, or distribution of body fat.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#VisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#VisualSexCharacteristic">Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#IndeterminateVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic">Indeterminate Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>, <a href="#MaleTypicalVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic">Male-typical Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Gamete">
+  <h3>Gamete<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#Gamete</p>
+  <div class="comment">
+   <span class="markdown">A mature reproductive cell (sperm or egg) that is haploid in nature. Gametes carry half the number of chromosomes of a diploid cell and combine during fertilization to form a diploid zygote, restoring the full chromosome set.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#HaploidCell" title="https://w3id.org/health-ri/ontology#HaploidCell">Haploid Cell</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Gender">
+  <h3>Gender<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#Gender</p>
+  <div class="comment">
+   <span class="markdown">Represents the broad conceptual category encompassing all types of gender characterizations a person may have. It includes self-defined aspects, such as gender identity, as well as externally assigned forms like administrative or legal gender. This category supports understanding gender as a complex social and institutional phenomenon that can be intrinsic to the person or shaped by external authorities and systems.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#Aspect" target="_blank" title="http://purl.org/nemo/gufo#Aspect">Aspect</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#AdministrativeGender" title="https://w3id.org/health-ri/ontology#AdministrativeGender">Administrative Gender</a> <sup class="type-c" title="class">c</sup>, <a href="#GenderIdentity" title="https://w3id.org/health-ri/ontology#GenderIdentity">Gender Identity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="GenderIdentity">
+  <h3>Gender Identity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#GenderIdentity</p>
+  <div class="comment">
+   <span class="markdown">Represents a person's deeply held sense of their own gender. It is an intrinsic aspect of self-understanding and social identity, reflecting how individuals perceive themselves and wish to be recognized. Gender identity may or may not align with a person's sex assigned at birth.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#FemaleGenderIdentity" title="https://w3id.org/health-ri/ontology#FemaleGenderIdentity">Female Gender Identity</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#MaleGenderIdentity" title="https://w3id.org/health-ri/ontology#MaleGenderIdentity">Male Gender Identity</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#NonBinaryGenderIdentity" title="https://w3id.org/health-ri/ontology#NonBinaryGenderIdentity">Non-binary Gender Identity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Gender" title="https://w3id.org/health-ri/ontology#Gender">Gender</a> <sup class="type-c" title="class">c</sup>, <a href="http://purl.org/nemo/gufo#IntrinsicMode" target="_blank" title="http://purl.org/nemo/gufo#IntrinsicMode">IntrinsicMode</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#FemaleGenderIdentity" title="https://w3id.org/health-ri/ontology#FemaleGenderIdentity">Female Gender Identity</a> <sup class="type-c" title="class">c</sup>, <a href="#MaleGenderIdentity" title="https://w3id.org/health-ri/ontology#MaleGenderIdentity">Male Gender Identity</a> <sup class="type-c" title="class">c</sup>, <a href="#NonBinaryGenderIdentity" title="https://w3id.org/health-ri/ontology#NonBinaryGenderIdentity">Non-binary Gender Identity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AdministrativeGender" title="https://w3id.org/health-ri/ontology#AdministrativeGender">Administrative Gender</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="GenderRecognitionDocument">
+  <h3>Gender Recognition Document<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#GenderRecognitionDocument</p>
+  <div class="comment">
+   <span class="markdown">Refers to official records or certificates that confirm or establish a person's legal gender. These documents provide formal evidence of legal gender recognition and are used in administrative, legal, and social contexts.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Document" title="https://w3id.org/health-ri/ontology#Document">Document</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Government">
+  <h3>Government<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#Government</p>
+  <div class="comment">
+   <span class="markdown">A formal organization with authority to create, implement, and enforce laws and policies within a defined territory. Governments typically manage public services, maintain order, and regulate social and economic activities. They exercise unique legal powers, including issuing official documents, defining legal statuses, and recognizing individual rights.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Organization" title="https://w3id.org/health-ri/ontology#Organization">Organization</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#LegalGenderRecognizer" title="https://w3id.org/health-ri/ontology#LegalGenderRecognizer">Legal Gender Recognizer</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="HaploidCell">
+  <h3>Haploid Cell<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#HaploidCell</p>
+  <div class="comment">
+   <span class="markdown">A cell with only one set of chromosomes. In humans, these are the reproductive cells (gametes) with 23 chromosomes total, including one allosome. Haploid cells are essential for sexual reproduction, ensuring that chromosome numbers remain stable across generations.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#HumanCell" title="https://w3id.org/health-ri/ontology#HumanCell">Human Cell</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Gamete" title="https://w3id.org/health-ri/ontology#Gamete">Gamete</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#DiploidCell" title="https://w3id.org/health-ri/ontology#DiploidCell">Diploid Cell</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="HealthcareProfessional">
+  <h3>Healthcare Professional<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#HealthcareProfessional</p>
+  <div class="comment">
+   <span class="markdown">Represents any trained and authorized individual who provides medical or health-related services. This includes doctors, nurses, midwives, and other clinicians involved in patient care. In the context of this model, healthcare professionals carry out assessments, make observations, and record classifications such as phenotypic sex at birth, but their role more broadly encompasses diagnosis, treatment, counseling, and support for overall health and well-being.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#PhenotypicSexAssessor" title="https://w3id.org/health-ri/ontology#PhenotypicSexAssessor">Phenotypic Sex Assessor</a> <sup class="type-c" title="class">c</sup>, <a href="#SexAtBirthAssigner" title="https://w3id.org/health-ri/ontology#SexAtBirthAssigner">Sex at Birth Assigner</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="HumanCell">
+  <h3>Human Cell<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#HumanCell</p>
+  <div class="comment">
+   <span class="markdown">The fundamental structural and functional unit of the human body. Human cells vary in type and function, but all contain genetic material in the form of chromosomes, including sex chromosomes that help determine biological sex.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#DiploidCell" title="https://w3id.org/health-ri/ontology#DiploidCell">Diploid Cell</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#HaploidCell" title="https://w3id.org/health-ri/ontology#HaploidCell">Haploid Cell</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank" title="http://purl.org/nemo/gufo#FunctionalComplex">FunctionalComplex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#DiploidCell" title="https://w3id.org/health-ri/ontology#DiploidCell">Diploid Cell</a> <sup class="type-c" title="class">c</sup>, <a href="#HaploidCell" title="https://w3id.org/health-ri/ontology#HaploidCell">Haploid Cell</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="IndeterminateBiologicalPerson">
+  <h3>Indeterminate Biological Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#IndeterminateBiologicalPerson</p>
+  <div class="comment">
+   <span class="markdown">Describes individuals whose combination of sexual dimorphic characteristics does not clearly align with either male-typical or female-typical classifications. This category acknowledges biological variation that does not fit conventional binary classifications.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="IndeterminateDimorphicCharacteristic">
+  <h3>Indeterminate Dimorphic Characteristic<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic</p>
+  <div class="comment">
+   <span class="markdown">Captures traits that do not clearly align with typical male or female patterns. It supports the recognition of biological diversity and variation beyond the binary model.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#SexualDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic">Sexual Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#FemaleTypicalDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic">Female-typical Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>, <a href="#MaleTypicalDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic">Male-typical Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="IndeterminateVisualSexCharacteristic">
+  <h3>Indeterminate Visual Sex Characteristic<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic</p>
+  <div class="comment">
+   <span class="markdown">Captures anatomical features that do not clearly align with male-typical or female-typical categories. This classification supports recognizing and documenting variations beyond the binary model.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#VisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#VisualSexCharacteristic">Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#FemaleTypicalVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic">Female-typical Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>, <a href="#MaleTypicalVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic">Male-typical Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="KaryotypicalFemale">
+  <h3>Karyotypical Female<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#KaryotypicalFemale</p>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#RegularKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale">Regular Karyotypical Female</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#VariantKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale">Variant Karyotypical Female</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#RegularKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale">Regular Karyotypical Female</a> <sup class="type-c" title="class">c</sup>, <a href="#VariantKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale">Variant Karyotypical Female</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#KaryotypicalMale" title="https://w3id.org/health-ri/ontology#KaryotypicalMale">Karyotypical Male</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="KaryotypicalMale">
+  <h3>Karyotypical Male<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#KaryotypicalMale</p>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#RegularKaryotypicalMale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalMale">Regular Karyotypical Male</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#VariantKaryotypicalMale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalMale">Variant Karyotypical Male</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#RegularKaryotypicalMale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalMale">Regular Karyotypical Male</a> <sup class="type-c" title="class">c</sup>, <a href="#VariantKaryotypicalMale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalMale">Variant Karyotypical Male</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#KaryotypicalFemale" title="https://w3id.org/health-ri/ontology#KaryotypicalFemale">Karyotypical Female</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="KaryotypicalSex">
+  <h3>Karyotypical Sex<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#KaryotypicalSex</p>
+  <div class="comment">
+   <span class="markdown">Refers to the classification of a person's sex based on their chromosomal composition, specifically the configuration of sex chromosomes (allosomes). It provides a genetic basis for categorizing individuals as male, female, or variants, supporting a biological understanding of sex that is stable across a person's life.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#IntrinsicMode" target="_blank" title="http://purl.org/nemo/gufo#IntrinsicMode">IntrinsicMode</a> <sup class="type-c" title="class">c</sup>, <a href="#Sex" title="https://w3id.org/health-ri/ontology#Sex">Sex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#PhenotypicSex" title="https://w3id.org/health-ri/ontology#PhenotypicSex">Phenotypic Sex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="KaryotypicallyIndeterminatePerson">
+  <h3>Karyotypically Indeterminate Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson</p>
+  <div class="comment">
+   <span class="markdown">Captures cases where the chromosomal composition does not allow clear classification as male or female. This category acknowledges the existence of complex or ambiguous chromosomal patterns that do not fit binary definitions.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithVariantSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#VariantKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale">Variant Karyotypical Female</a> <sup class="type-c" title="class">c</sup>, <a href="#VariantKaryotypicalMale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalMale">Variant Karyotypical Male</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LegalFemalePerson">
+  <h3>Legal Female Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#LegalFemalePerson</p>
+  <div class="comment">
+   <span class="markdown">Refers to an individual whose legal gender is officially recognized as female. This status is used in legal documents and administrative records to determine rights and obligations.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithRecognizedLegalGender" title="https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender">Person with Recognized Legal Gender</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LegalGender">
+  <h3>Legal Gender<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#LegalGender</p>
+  <div class="comment">
+   <span class="markdown">Denotes the gender category recognized by law and recorded in official systems. It provides a standardized basis for administrative processes, legal rights, and social recognition, supporting consistent management of gender-related information.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AdministrativeGender" title="https://w3id.org/health-ri/ontology#AdministrativeGender">Administrative Gender</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LegalGenderRecognition">
+  <h3>Legal Gender Recognition<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#LegalGenderRecognition</p>
+  <div class="comment">
+   <span class="markdown">Describes the formal process through which a person's legal gender is established, assigned, or modified in accordance with laws and administrative procedures. This recognition is often documented and has legal consequences for a person's rights and social standing.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AdministrativeGenderRecognition" title="https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition">Administrative Gender Recognition</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LegalGenderRecognizer">
+  <h3>Legal Gender Recognizer<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#LegalGenderRecognizer</p>
+  <div class="comment">
+   <span class="markdown">Represents the role of an entity'often a government body or its agents'authorized to formally assign or recognize a person's legal gender. This role includes the authority to record, approve, or modify legal gender status in official records.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AdministrativeGenderRecognizer" title="https://w3id.org/health-ri/ontology#AdministrativeGenderRecognizer">Administrative Gender Recognizer</a> <sup class="type-c" title="class">c</sup>, <a href="#Government" title="https://w3id.org/health-ri/ontology#Government">Government</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LegalMalePerson">
+  <h3>Legal Male Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#LegalMalePerson</p>
+  <div class="comment">
+   <span class="markdown">Describes an individual whose legal gender is officially recognized and recorded as male. This classification carries legal and administrative implications for rights, responsibilities, and identification.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithRecognizedLegalGender" title="https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender">Person with Recognized Legal Gender</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="LegalNonBinaryPerson">
+  <h3>Legal Non-binary Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#LegalNonBinaryPerson</p>
+  <div class="comment">
+   <span class="markdown">Includes individuals whose legal gender is formally recognized as non-binary, acknowledging identities outside the traditional male/female binary. This classification supports administrative and legal recognition of gender diversity.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithRecognizedLegalGender" title="https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender">Person with Recognized Legal Gender</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MaleBiologicalPerson">
+  <h3>Male Biological Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#MaleBiologicalPerson</p>
+  <div class="comment">
+   <span class="markdown">Describes a person whose overall set of sexual dimorphic characteristics aligns more strongly with those typically classified as male. This classification relies on counting or weighting traits that are conventionally considered male-typical.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MaleGenderIdentity">
+  <h3>Male Gender Identity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#MaleGenderIdentity</p>
+  <div class="comment">
+   <span class="markdown">Refers to an individual's self-identification as male. This identity reflects personal understanding and experience of being male, which can shape social roles, expression, and expectations.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#GenderIdentity" title="https://w3id.org/health-ri/ontology#GenderIdentity">Gender Identity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MalePhenotypicPerson">
+  <h3>Male Phenotypic Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#MalePhenotypicPerson</p>
+  <div class="comment">
+   <span class="markdown">Refers to an individual assessed as having predominantly male-typical anatomical features. This classification is based on observed traits aligned with typical male development.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithAssessedPhenotypicSex" title="https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex">Person with Assessed Phenotypic Sex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MaleTypicalDimorphicCharacteristic">
+  <h3>Male-typical Dimorphic Characteristic<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic</p>
+  <div class="comment">
+   <span class="markdown">Represents specific anatomical or physiological traits that are statistically more common or pronounced in males. Examples might include broader shoulders or denser facial hair.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#SexualDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic">Sexual Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#FemaleTypicalDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic">Female-typical Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>, <a href="#IndeterminateDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic">Indeterminate Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MaleTypicalVisualSexCharacteristic">
+  <h3>Male-typical Visual Sex Characteristic<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic</p>
+  <div class="comment">
+   <span class="markdown">Includes anatomical features statistically more common or pronounced in males, such as external genitalia shape, body hair distribution, or certain skeletal structures.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#VisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#VisualSexCharacteristic">Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#FemaleTypicalVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic">Female-typical Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>, <a href="#IndeterminateVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic">Indeterminate Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="NonBinaryGenderIdentity">
+  <h3>Non-binary Gender Identity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#NonBinaryGenderIdentity</p>
+  <div class="comment">
+   <span class="markdown">Includes gender identities outside the traditional male/female binary. This category accommodates diverse self-understandings such as genderqueer, agender, or other identities that do not fit exclusively into male or female classifications.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#GenderIdentity" title="https://w3id.org/health-ri/ontology#GenderIdentity">Gender Identity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Organization">
+  <h3>Organization<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#Organization</p>
+  <div class="comment">
+   <span class="markdown">A structured group of people with a common purpose, such as a business, government agency, nonprofit, or other formal entity. Organizations can have defined roles, responsibilities, and authority to make decisions, deliver services, and interact with individuals or other organizations in systematic ways.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank" title="http://purl.org/nemo/gufo#FunctionalComplex">FunctionalComplex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#AdministrativeGenderRecognizer" title="https://w3id.org/health-ri/ontology#AdministrativeGenderRecognizer">Administrative Gender Recognizer</a> <sup class="type-c" title="class">c</sup>, <a href="#Government" title="https://w3id.org/health-ri/ontology#Government">Government</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Person">
+  <h3>Person<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#Person</p>
+  <div class="comment">
+   <span class="markdown">Represents an individual human being, considered as a whole entity with biological, psychological, and social dimensions. This concept serves as the foundational unit in the ontology, providing the bearer of various properties, roles, and classifications such as sex and gender. It abstracts from specific contexts or classifications to describe any human subject capable of having intrinsic traits and participating in social and administrative systems.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#FemaleBiologicalPerson" title="https://w3id.org/health-ri/ontology#FemaleBiologicalPerson">Female Biological Person</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#IndeterminateBiologicalPerson" title="https://w3id.org/health-ri/ontology#IndeterminateBiologicalPerson">Indeterminate Biological Person</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#MaleBiologicalPerson" title="https://w3id.org/health-ri/ontology#MaleBiologicalPerson">Male Biological Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dd>
+    <a href="#KaryotypicalFemale" title="https://w3id.org/health-ri/ontology#KaryotypicalFemale">Karyotypical Female</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#KaryotypicalMale" title="https://w3id.org/health-ri/ontology#KaryotypicalMale">Karyotypical Male</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dd>
+    <a href="#PersonWithAssignedSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth">Person with Assigned Sex at Birth</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#PersonWithUnassignedSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithUnassignedSexAtBirth">Person with Unassigned Sex at Birth</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dd>
+    <a href="#PersonWithRegularSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome">Person with Regular Sex Chromosome</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#PersonWithVariantSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank" title="http://purl.org/nemo/gufo#FunctionalComplex">FunctionalComplex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#FemaleBiologicalPerson" title="https://w3id.org/health-ri/ontology#FemaleBiologicalPerson">Female Biological Person</a> <sup class="type-c" title="class">c</sup>, <a href="#HealthcareProfessional" title="https://w3id.org/health-ri/ontology#HealthcareProfessional">Healthcare Professional</a> <sup class="type-c" title="class">c</sup>, <a href="#IndeterminateBiologicalPerson" title="https://w3id.org/health-ri/ontology#IndeterminateBiologicalPerson">Indeterminate Biological Person</a> <sup class="type-c" title="class">c</sup>, <a href="#KaryotypicalFemale" title="https://w3id.org/health-ri/ontology#KaryotypicalFemale">Karyotypical Female</a> <sup class="type-c" title="class">c</sup>, <a href="#KaryotypicalMale" title="https://w3id.org/health-ri/ontology#KaryotypicalMale">Karyotypical Male</a> <sup class="type-c" title="class">c</sup>, <a href="#MaleBiologicalPerson" title="https://w3id.org/health-ri/ontology#MaleBiologicalPerson">Male Biological Person</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithAssessedPhenotypicSex" title="https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex">Person with Assessed Phenotypic Sex</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithAssignedSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth">Person with Assigned Sex at Birth</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithRecognizedAdministrativeGender" title="https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender">Person with Recognized Administrative Gender</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithRecognizedLegalGender" title="https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender">Person with Recognized Legal Gender</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithRegularSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome">Person with Regular Sex Chromosome</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithUnassignedSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithUnassignedSexAtBirth">Person with Unassigned Sex at Birth</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithVariantSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PersonWithAssessedPhenotypicSex">
+  <h3>Person with Assessed Phenotypic Sex<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex</p>
+  <div class="comment">
+   <span class="markdown">Describes an individual whose phenotypic sex has been evaluated and categorized, typically by a healthcare professional. This classification recognizes that phenotypic sex is not simply 'given' but results from an assessment process.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#AmbiguousPhenotypicPerson" title="https://w3id.org/health-ri/ontology#AmbiguousPhenotypicPerson">Ambiguous Phenotypic Person</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#FemalePhenotypicPerson" title="https://w3id.org/health-ri/ontology#FemalePhenotypicPerson">Female Phenotypic Person</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#MalePhenotypicPerson" title="https://w3id.org/health-ri/ontology#MalePhenotypicPerson">Male Phenotypic Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#AmbiguousPhenotypicPerson" title="https://w3id.org/health-ri/ontology#AmbiguousPhenotypicPerson">Ambiguous Phenotypic Person</a> <sup class="type-c" title="class">c</sup>, <a href="#FemalePhenotypicPerson" title="https://w3id.org/health-ri/ontology#FemalePhenotypicPerson">Female Phenotypic Person</a> <sup class="type-c" title="class">c</sup>, <a href="#MalePhenotypicPerson" title="https://w3id.org/health-ri/ontology#MalePhenotypicPerson">Male Phenotypic Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PersonWithAssignedSexAtBirth">
+  <h3>Person with Assigned Sex at Birth<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth</p>
+  <div class="comment">
+   <span class="markdown">Describes an individual who has received a recorded sex classification during the birth registration process. This role reflects the outcome of a formal assignment that categorizes the person as male, female, or indeterminate at birth.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#PersonWithFemaleSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithFemaleSexAtBirth">Person with Female Sex at Birth</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#PersonWithIndeterminateSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithIndeterminateSexAtBirth">Person with Indeterminate Sex at Birth</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#PersonWithMaleSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithMaleSexAtBirth">Person with Male Sex at Birth</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithFemaleSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithFemaleSexAtBirth">Person with Female Sex at Birth</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithIndeterminateSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithIndeterminateSexAtBirth">Person with Indeterminate Sex at Birth</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithMaleSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithMaleSexAtBirth">Person with Male Sex at Birth</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PersonWithFemaleSexAtBirth">
+  <h3>Person with Female Sex at Birth<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PersonWithFemaleSexAtBirth</p>
+  <div class="comment">
+   <span class="markdown">Denotes individuals officially assigned as female in their birth record, based on clinical observation of anatomical features immediately after birth.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithAssignedSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth">Person with Assigned Sex at Birth</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PersonWithIndeterminateSexAtBirth">
+  <h3>Person with Indeterminate Sex at Birth<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PersonWithIndeterminateSexAtBirth</p>
+  <div class="comment">
+   <span class="markdown">Includes individuals whose sex at birth is formally recorded as indeterminate. This category supports administrative recognition of cases where observed features do not clearly fit male or female classifications.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithAssignedSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth">Person with Assigned Sex at Birth</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PersonWithMaleSexAtBirth">
+  <h3>Person with Male Sex at Birth<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PersonWithMaleSexAtBirth</p>
+  <div class="comment">
+   <span class="markdown">Denotes individuals officially assigned as male in their birth record, typically based on observed anatomical features at the time of delivery.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithAssignedSexAtBirth" title="https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth">Person with Assigned Sex at Birth</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PersonWithRecognizedAdministrativeGender">
+  <h3>Person with Recognized Administrative Gender<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender</p>
+  <div class="comment">
+   <span class="markdown">Refers to an individual whose gender has been formally assigned or recognized by an organization for administrative purposes. This role acknowledges that administrative gender is not merely self-defined but is established through interaction with an authoritative body.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithRecognizedLegalGender" title="https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender">Person with Recognized Legal Gender</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PersonWithRecognizedLegalGender">
+  <h3>Person with Recognized Legal Gender<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender</p>
+  <div class="comment">
+   <span class="markdown">Denotes an individual who has an officially assigned legal gender recorded through a formal recognition process. This role reflects the outcome of administrative or legal procedures defining a person's gender status for legal and institutional purposes.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#LegalFemalePerson" title="https://w3id.org/health-ri/ontology#LegalFemalePerson">Legal Female Person</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#LegalMalePerson" title="https://w3id.org/health-ri/ontology#LegalMalePerson">Legal Male Person</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#LegalNonBinaryPerson" title="https://w3id.org/health-ri/ontology#LegalNonBinaryPerson">Legal Non-binary Person</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#PersonWithUnassignedLegalGender" title="https://w3id.org/health-ri/ontology#PersonWithUnassignedLegalGender">Person with Unassigned Legal Gender</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithRecognizedAdministrativeGender" title="https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender">Person with Recognized Administrative Gender</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#LegalFemalePerson" title="https://w3id.org/health-ri/ontology#LegalFemalePerson">Legal Female Person</a> <sup class="type-c" title="class">c</sup>, <a href="#LegalMalePerson" title="https://w3id.org/health-ri/ontology#LegalMalePerson">Legal Male Person</a> <sup class="type-c" title="class">c</sup>, <a href="#LegalNonBinaryPerson" title="https://w3id.org/health-ri/ontology#LegalNonBinaryPerson">Legal Non-binary Person</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithUnassignedLegalGender" title="https://w3id.org/health-ri/ontology#PersonWithUnassignedLegalGender">Person with Unassigned Legal Gender</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PersonWithRegularSexChromosome">
+  <h3>Person with Regular Sex Chromosome<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome</p>
+  <div class="comment">
+   <span class="markdown">Describes individuals whose sex chromosome composition follows typical patterns without significant variations. Commonly corresponds to XX (female) or XY (male) karyotypes, reflecting the most frequent chromosomal configurations in the human population.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#RegularKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale">Regular Karyotypical Female</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#RegularKaryotypicalMale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalMale">Regular Karyotypical Male</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#RegularKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale">Regular Karyotypical Female</a> <sup class="type-c" title="class">c</sup>, <a href="#RegularKaryotypicalMale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalMale">Regular Karyotypical Male</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#PersonWithVariantSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PersonWithUnassignedLegalGender">
+  <h3>Person with Unassigned Legal Gender<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PersonWithUnassignedLegalGender</p>
+  <div class="comment">
+   <span class="markdown">Represents individuals who, in legal or administrative records, do not have a formally assigned legal gender. This category allows for flexibility in cases where no specific legal gender is recorded or chosen.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PersonWithRecognizedLegalGender" title="https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender">Person with Recognized Legal Gender</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PersonWithUnassignedSexAtBirth">
+  <h3>Person with Unassigned Sex at Birth<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PersonWithUnassignedSexAtBirth</p>
+  <div class="comment">
+   <span class="markdown">Represents individuals who, at the point of registration, do not have a formally recorded sex assignment. This acknowledges the possibility of cases where no clear classification is made, recognizing flexibility in administrative processes.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PersonWithVariantSexChromosome">
+  <h3>Person with Variant Sex Chromosome<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome</p>
+  <div class="comment">
+   <span class="markdown">Includes individuals whose chromosomal composition deviates from the typical XX or XY patterns. Examples might include XXY, X0, or other variations that contribute to diverse biological presentations of sex. This classification ensures the model accommodates chromosomal diversity.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#KaryotypicallyIndeterminatePerson" title="https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson">Karyotypically Indeterminate Person</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#VariantKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale">Variant Karyotypical Female</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#VariantKaryotypicalMale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalMale">Variant Karyotypical Male</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Person" title="https://w3id.org/health-ri/ontology#Person">Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#KaryotypicallyIndeterminatePerson" title="https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson">Karyotypically Indeterminate Person</a> <sup class="type-c" title="class">c</sup>, <a href="#VariantKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale">Variant Karyotypical Female</a> <sup class="type-c" title="class">c</sup>, <a href="#VariantKaryotypicalMale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalMale">Variant Karyotypical Male</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#PersonWithRegularSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome">Person with Regular Sex Chromosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PhenotypicSex">
+  <h3>Phenotypic Sex<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PhenotypicSex</p>
+  <div class="comment">
+   <span class="markdown">Represents the observable anatomical and morphological features that inform sex classification, such as genitalia, secondary sexual traits, and body structure. It is determined through clinical or visual assessment and can vary across individuals.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#ExtrinsicMode" target="_blank" title="http://purl.org/nemo/gufo#ExtrinsicMode">ExtrinsicMode</a> <sup class="type-c" title="class">c</sup>, <a href="#Sex" title="https://w3id.org/health-ri/ontology#Sex">Sex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#SexAtBirth" title="https://w3id.org/health-ri/ontology#SexAtBirth">Sex at Birth</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#KaryotypicalSex" title="https://w3id.org/health-ri/ontology#KaryotypicalSex">Karyotypical Sex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PhenotypicSexAssessment">
+  <h3>Phenotypic Sex Assessment<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PhenotypicSexAssessment</p>
+  <div class="comment">
+   <span class="markdown">Represents the structured process through which a person's phenotypic sex is evaluated and categorized. It involves the interaction between the healthcare professional (assessor) and the individual being assessed.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#Relator" target="_blank" title="http://purl.org/nemo/gufo#Relator">Relator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PhenotypicSexAssessor">
+  <h3>Phenotypic Sex Assessor<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#PhenotypicSexAssessor</p>
+  <div class="comment">
+   <span class="markdown">Refers to the role of the healthcare professional responsible for evaluating a person's phenotypic sex. This role involves clinical judgment and interpretation of anatomical features.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#HealthcareProfessional" title="https://w3id.org/health-ri/ontology#HealthcareProfessional">Healthcare Professional</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="RegularKaryotypicalFemale">
+  <h3>Regular Karyotypical Female<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale</p>
+  <div class="comment">
+   <span class="markdown">Refers to individuals with the standard female chromosomal configuration, typically XX. This category aligns with the most common understanding of female karyotypical sex in biology.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#KaryotypicalFemale" title="https://w3id.org/health-ri/ontology#KaryotypicalFemale">Karyotypical Female</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithRegularSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome">Person with Regular Sex Chromosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#RegularKaryotypicalMale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalMale">Regular Karyotypical Male</a> <sup class="type-c" title="class">c</sup>, <a href="#VariantKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale">Variant Karyotypical Female</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="RegularKaryotypicalMale">
+  <h3>Regular Karyotypical Male<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#RegularKaryotypicalMale</p>
+  <div class="comment">
+   <span class="markdown">Represents individuals with a typical male chromosomal configuration, usually XY. It reflects the standard genetic basis used to define male karyotypical sex in medical and genetic contexts.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#KaryotypicalMale" title="https://w3id.org/health-ri/ontology#KaryotypicalMale">Karyotypical Male</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithRegularSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome">Person with Regular Sex Chromosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#RegularKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale">Regular Karyotypical Female</a> <sup class="type-c" title="class">c</sup>, <a href="#VariantKaryotypicalMale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalMale">Variant Karyotypical Male</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Sex">
+  <h3>Sex<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#Sex</p>
+  <div class="comment">
+   <span class="markdown">Denotes the overall category for classifying a person's biological traits related to reproductive anatomy, chromosomes, and other physical characteristics. It includes different dimensions such as karyotypical sex (chromosomal composition), phenotypic sex (observable anatomical features), and sex at birth (the classification assigned during birth registration). This category emphasizes that sex, while grounded in biology, can involve observation, interpretation, and formal assignment.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#Aspect" target="_blank" title="http://purl.org/nemo/gufo#Aspect">Aspect</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#KaryotypicalSex" title="https://w3id.org/health-ri/ontology#KaryotypicalSex">Karyotypical Sex</a> <sup class="type-c" title="class">c</sup>, <a href="#PhenotypicSex" title="https://w3id.org/health-ri/ontology#PhenotypicSex">Phenotypic Sex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SexAtBirth">
+  <h3>Sex at Birth<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#SexAtBirth</p>
+  <div class="comment">
+   <span class="markdown">Represents the formal classification of a person's sex that is recorded at the time of birth. This category acknowledges that sex at birth is not simply observed but is officially documented, often forming the basis for legal and administrative records throughout life.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#PhenotypicSex" title="https://w3id.org/health-ri/ontology#PhenotypicSex">Phenotypic Sex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SexAtBirthAssigner">
+  <h3>Sex at Birth Assigner<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#SexAtBirthAssigner</p>
+  <div class="comment">
+   <span class="markdown">Represents the role of professionals authorized to make and record the sex assignment at birth, typically including clinicians such as doctors or midwives who perform the observation and formal documentation.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#HealthcareProfessional" title="https://w3id.org/health-ri/ontology#HealthcareProfessional">Healthcare Professional</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SexAtBirthAssignment">
+  <h3>Sex at Birth Assignment<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#SexAtBirthAssignment</p>
+  <div class="comment">
+   <span class="markdown">Captures the formal process through which a newborn's sex is assigned and recorded. This mediation process connects the assigner with the person being assigned, documenting the outcome in official records.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#Relator" target="_blank" title="http://purl.org/nemo/gufo#Relator">Relator</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SexualDimorphicCharacteristic">
+  <h3>Sexual Dimorphic Characteristic<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic</p>
+  <div class="comment">
+   <span class="markdown">An umbrella category for traits that show differences between sexes. These characteristics are used to classify biological sex by examining their type and distribution in an individual. Examples include body hair patterns, skeletal structure, and other anatomical features.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#FemaleTypicalDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic">Female-typical Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#IndeterminateDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic">Indeterminate Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#MaleTypicalDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic">Male-typical Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank" title="http://purl.org/nemo/gufo#FunctionalComplex">FunctionalComplex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#FemaleTypicalDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic">Female-typical Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>, <a href="#IndeterminateDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic">Indeterminate Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>, <a href="#MaleTypicalDimorphicCharacteristic" title="https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic">Male-typical Dimorphic Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="VariantKaryotypicalFemale">
+  <h3>Variant Karyotypical Female<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale</p>
+  <div class="comment">
+   <span class="markdown">Describes individuals with variations from the standard XX female configuration while still aligning with a female classification. Such variations may include atypical chromosomal arrangements that result in female phenotypes or identities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#KaryotypicalFemale" title="https://w3id.org/health-ri/ontology#KaryotypicalFemale">Karyotypical Female</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithVariantSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#RegularKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale">Regular Karyotypical Female</a> <sup class="type-c" title="class">c</sup>, <a href="#KaryotypicallyIndeterminatePerson" title="https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson">Karyotypically Indeterminate Person</a> <sup class="type-c" title="class">c</sup>, <a href="#VariantKaryotypicalMale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalMale">Variant Karyotypical Male</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="VariantKaryotypicalMale">
+  <h3>Variant Karyotypical Male<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#VariantKaryotypicalMale</p>
+  <div class="comment">
+   <span class="markdown">Includes individuals whose chromosomal patterns are considered male but differ from the standard XY configuration. For example, XXY or other variations that still lead to a male classification but with genetic differences.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#KaryotypicalMale" title="https://w3id.org/health-ri/ontology#KaryotypicalMale">Karyotypical Male</a> <sup class="type-c" title="class">c</sup>, <a href="#PersonWithVariantSexChromosome" title="https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#RegularKaryotypicalMale" title="https://w3id.org/health-ri/ontology#RegularKaryotypicalMale">Regular Karyotypical Male</a> <sup class="type-c" title="class">c</sup>, <a href="#KaryotypicallyIndeterminatePerson" title="https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson">Karyotypically Indeterminate Person</a> <sup class="type-c" title="class">c</sup>, <a href="#VariantKaryotypicalFemale" title="https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale">Variant Karyotypical Female</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="VisualSexCharacteristic">
+  <h3>Visual Sex Characteristic<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/health-ri/ontology#VisualSexCharacteristic</p>
+  <div class="comment">
+   <span class="markdown">An umbrella category for anatomical features used to assess phenotypic sex. These characteristics serve as the basis for classifying individuals and include observable traits that vary in typicality across sexes.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#FemaleTypicalVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic">Female-typical Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#IndeterminateVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic">Indeterminate Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#MaleTypicalVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic">Male-typical Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://purl.org/nemo/gufo#FunctionalComplex" target="_blank" title="http://purl.org/nemo/gufo#FunctionalComplex">FunctionalComplex</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#FemaleTypicalVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic">Female-typical Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>, <a href="#IndeterminateVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic">Indeterminate Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>, <a href="#MaleTypicalVisualSexCharacteristic" title="https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic">Male-typical Visual Sex Characteristic</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

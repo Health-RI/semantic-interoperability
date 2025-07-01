@@ -1,0 +1,953 @@
+<https://w3id.org/health-ri/ontology#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/health-ri/ontology#> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/nemo/gufo#> .
+<https://w3id.org/health-ri/ontology#> <http://purl.org/dc/terms/abstract> "The Health-RI Ontology defines core concepts relevant to representing personal sex and gender information in health records. It provides a domain ontology for consistent description, data exchange, and integration across systems, covering administrative/legal, biological, and social aspects of sex and gender."@en .
+<https://w3id.org/health-ri/ontology#> <http://purl.org/dc/terms/creator> <https://orcid.org/0000-0003-2736-7817> .
+<https://w3id.org/health-ri/ontology#> <http://purl.org/dc/terms/description> "This ontology models sex and gender concepts relevant to health records in the Netherlands. It includes classes for Administrative Gender, Legal Gender, Sex Assigned at Birth, Phenotypic Sex, Karyotypical Sex, and Gender Identity, among others. The ontology enables consistent terminology and semantic interoperability across health information systems."@en .
+<https://w3id.org/health-ri/ontology#> <http://purl.org/dc/terms/identifier> "https://w3id.org/health-ri/ontology" .
+<https://w3id.org/health-ri/ontology#> <http://purl.org/dc/terms/issued> "2024-06-18"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/health-ri/ontology#> <http://purl.org/dc/terms/language> "en"^^<http://www.w3.org/2001/XMLSchema#language> .
+<https://w3id.org/health-ri/ontology#> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/health-ri/ontology#> <http://purl.org/dc/terms/modified> "2025-01-02"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/health-ri/ontology#> <http://purl.org/dc/terms/publisher> <https://w3id.org/health-ri/publisher/health-ri> .
+<https://w3id.org/health-ri/ontology#> <http://purl.org/dc/terms/title> "Health-RI Ontology for Sex and Gender Concepts"@en .
+<https://w3id.org/health-ri/ontology#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "health-ri" .
+<https://w3id.org/health-ri/ontology#> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/health-ri/ontology#"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/health-ri/ontology#> <http://www.w3.org/2002/07/owl#versionInfo> "0.5.2 – Includes updated definitions and improved structure for Administrative, Legal, and Phenotypic Sex classes, plus enhanced metadata."@en .
+<https://w3id.org/health-ri/ontology#> <http://www.w3.org/ns/dcat#keyword> "health records"@en .
+<https://w3id.org/health-ri/ontology#> <http://www.w3.org/ns/dcat#keyword> "ontology"@en .
+<https://w3id.org/health-ri/ontology#> <http://www.w3.org/ns/dcat#keyword> "semantic interoperability"@en .
+<https://w3id.org/health-ri/ontology#> <http://www.w3.org/ns/dcat#keyword> "sex and gender"@en .
+<https://w3id.org/health-ri/ontology#> <http://www.w3.org/ns/dcat#landingPage> <https://w3id.org/health-ri/ontology> .
+<https://w3id.org/health-ri/ontology#> <http://www.w3.org/ns/dcat#version> "0.5.2" .
+<https://w3id.org/health-ri/ontology#> <http://xmlns.com/foaf/0.1/homepage> <https://w3id.org/health-ri/ontology> .
+<https://w3id.org/health-ri/ontology#> <http://xmlns.com/foaf/0.1/logo> <https://w3id.org/health-ri/resources/logo.png> .
+<https://w3id.org/health-ri/ontology#> <https://w3id.org/mod#repository> <https://github.com/Health-RI/semantic-interoperability> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/language
+<http://purl.org/dc/terms/language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/dcat#keyword
+<http://www.w3.org/ns/dcat#keyword> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/dcat#landingPage
+<http://www.w3.org/ns/dcat#landingPage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/dcat#version
+<http://www.w3.org/ns/dcat#version> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/homepage
+<http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/logo
+<http://xmlns.com/foaf/0.1/logo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/health-ri/ontology#administrativeGenderInheresInPersonWithRecognizedAdministrativeGender
+<https://w3id.org/health-ri/ontology#administrativeGenderInheresInPersonWithRecognizedAdministrativeGender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/health-ri/ontology#administrativeGenderRecognitionMediatesAdministrativeGenderRecognizer
+<https://w3id.org/health-ri/ontology#administrativeGenderRecognitionMediatesAdministrativeGenderRecognizer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/health-ri/ontology#administrativeGenderRecognitionMediatesPersonWithRecognizedAdministrativeGender
+<https://w3id.org/health-ri/ontology#administrativeGenderRecognitionMediatesPersonWithRecognizedAdministrativeGender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/health-ri/ontology#legalGenderRecognitionMediatesLegalGenderRecognizer
+<https://w3id.org/health-ri/ontology#legalGenderRecognitionMediatesLegalGenderRecognizer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/health-ri/ontology#legalGenderRecognitionMediatesLegalGenderRecognizer> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/health-ri/ontology#administrativeGenderRecognitionMediatesAdministrativeGenderRecognizer> .
+# 
+# https://w3id.org/health-ri/ontology#legalGenderRecognitionMediatesPersonWithRecognizedLegalGender
+<https://w3id.org/health-ri/ontology#legalGenderRecognitionMediatesPersonWithRecognizedLegalGender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/health-ri/ontology#legalGenderRecognitionMediatesPersonWithRecognizedLegalGender> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/health-ri/ontology#administrativeGenderRecognitionMediatesPersonWithRecognizedAdministrativeGender> .
+# 
+# https://w3id.org/health-ri/ontology#personWithRecognizedLegalGenderInheresInLegalGender
+<https://w3id.org/health-ri/ontology#personWithRecognizedLegalGenderInheresInLegalGender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<https://w3id.org/health-ri/ontology#personWithRecognizedLegalGenderInheresInLegalGender> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/health-ri/ontology#administrativeGenderInheresInPersonWithRecognizedAdministrativeGender> .
+# 
+# https://w3id.org/mod#repository
+<https://w3id.org/mod#repository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/health-ri/ontology#AdministrativeGender
+<https://w3id.org/health-ri/ontology#AdministrativeGender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#AdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#ExtrinsicMode> .
+<https://w3id.org/health-ri/ontology#AdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Gender> .
+<https://w3id.org/health-ri/ontology#AdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender> .
+_:genid1 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#AdministrativeGender> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/health-ri/ontology#GenderIdentity> .
+<https://w3id.org/health-ri/ontology#AdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the type of gender designation used in administrative contexts, such as records, forms, or institutional databases. This category captures the labels or classifications assigned through formal processes, supporting consistent management of gender information across systems."@en .
+<https://w3id.org/health-ri/ontology#AdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#label> "Administrative Gender"@en .
+# 
+# https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition
+<https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#Relator> .
+<https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#mediates> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#AdministrativeGenderRecognizer> .
+_:genid3 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#mediates> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the process and relationship through which an organization formally assigns or recognizes a person's administrative gender. It represents the structured interaction that results in an individual's gender being recorded or changed in administrative systems."@en .
+<https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition> <http://www.w3.org/2000/01/rdf-schema#label> "Administrative Gender Recognition"@en .
+# 
+# https://w3id.org/health-ri/ontology#AdministrativeGenderRecognizer
+<https://w3id.org/health-ri/ontology#AdministrativeGenderRecognizer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#AdministrativeGenderRecognizer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Organization> .
+<https://w3id.org/health-ri/ontology#AdministrativeGenderRecognizer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#mediates> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#AdministrativeGenderRecognizer> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the role played by an organization when it is responsible for assigning or recognizing a person's administrative gender. This role formalizes the authority to make or record gender-related determinations within an administrative context."@en .
+<https://w3id.org/health-ri/ontology#AdministrativeGenderRecognizer> <http://www.w3.org/2000/01/rdf-schema#label> "Administrative Gender Recognizer"@en .
+# 
+# https://w3id.org/health-ri/ontology#Allosome
+<https://w3id.org/health-ri/ontology#Allosome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Allosome> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#unionOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#AllosomeY> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#AllosomeX> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Allosome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Chromosome> .
+<https://w3id.org/health-ri/ontology#Allosome> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the sex chromosomes that determine an individual's chromosomal sex. Humans typically have two allosomes per diploid cell, which can be combinations of X and Y chromosomes. Allosomes carry genes that influence sexual development and related traits."@en .
+<https://w3id.org/health-ri/ontology#Allosome> <http://www.w3.org/2000/01/rdf-schema#label> "Allosome"@en .
+# 
+# https://w3id.org/health-ri/ontology#AllosomeX
+<https://w3id.org/health-ri/ontology#AllosomeX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#AllosomeX> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Allosome> .
+<https://w3id.org/health-ri/ontology#AllosomeX> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/health-ri/ontology#AllosomeY> .
+<https://w3id.org/health-ri/ontology#AllosomeX> <http://www.w3.org/2000/01/rdf-schema#comment> "One of the two types of human sex chromosomes. The X chromosome contains many essential genes unrelated to sex determination but is also critical for sexual development. It is present in both males and females, usually as XX in females and XY in males."@en .
+<https://w3id.org/health-ri/ontology#AllosomeX> <http://www.w3.org/2000/01/rdf-schema#label> "Allosome X"@en .
+# 
+# https://w3id.org/health-ri/ontology#AllosomeY
+<https://w3id.org/health-ri/ontology#AllosomeY> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#AllosomeY> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Allosome> .
+<https://w3id.org/health-ri/ontology#AllosomeY> <http://www.w3.org/2000/01/rdf-schema#comment> "The sex chromosome that determines male development in humans when paired with an X chromosome. The Y chromosome carries genes responsible for initiating male sex differentiation but contains fewer genes overall than the X chromosome. It can only occur in combination with at least one X chromosome in viable human cells."@en .
+<https://w3id.org/health-ri/ontology#AllosomeY> <http://www.w3.org/2000/01/rdf-schema#label> "Allosome Y"@en .
+# 
+# https://w3id.org/health-ri/ontology#AmbiguousPhenotypicPerson
+<https://w3id.org/health-ri/ontology#AmbiguousPhenotypicPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#AmbiguousPhenotypicPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex> .
+<https://w3id.org/health-ri/ontology#AmbiguousPhenotypicPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "Includes individuals whose anatomical traits do not clearly align with either male-typical or female-typical categories. This classification acknowledges the existence of anatomical diversity and variations outside binary expectations."@en .
+<https://w3id.org/health-ri/ontology#AmbiguousPhenotypicPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Ambiguous Phenotypic Person"@en .
+# 
+# https://w3id.org/health-ri/ontology#BirthNotification
+<https://w3id.org/health-ri/ontology#BirthNotification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#BirthNotification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#FunctionalComplex> .
+<https://w3id.org/health-ri/ontology#BirthNotification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#SexAtBirthAssignment> .
+_:genid9 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#mediates> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#BirthNotification> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the official document or record that includes the assigned sex at birth along with other birth details. Often required by legal or administrative systems as the initial source of personal data for registration.\r\n\r\nAlso called a \"birth record\" or \"attending physician's report\"."@en .
+<https://w3id.org/health-ri/ontology#BirthNotification> <http://www.w3.org/2000/01/rdf-schema#label> "Birth Notification"@en .
+# 
+# https://w3id.org/health-ri/ontology#BirthRelatedLegislationRule
+<https://w3id.org/health-ri/ontology#BirthRelatedLegislationRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#BirthRelatedLegislationRule> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#IntrinsicMode> .
+<https://w3id.org/health-ri/ontology#BirthRelatedLegislationRule> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the set of legal or regulatory requirements that govern how sex at birth must be assessed, assigned, and recorded. This concept ensures that the model accounts for variation in laws and administrative practices across jurisdictions."@en .
+<https://w3id.org/health-ri/ontology#BirthRelatedLegislationRule> <http://www.w3.org/2000/01/rdf-schema#label> "Birth-related Legislation Rule"@en .
+# 
+# https://w3id.org/health-ri/ontology#Chromosome
+<https://w3id.org/health-ri/ontology#Chromosome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Chromosome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#FunctionalComplex> .
+<https://w3id.org/health-ri/ontology#Chromosome> <http://www.w3.org/2000/01/rdf-schema#comment> "A thread-like structure of nucleic acids and proteins carrying genetic information. Chromosomes are fundamental units of heredity and exist in pairs in most human cells, encoding the instructions for development, functioning, and reproduction."@en .
+<https://w3id.org/health-ri/ontology#Chromosome> <http://www.w3.org/2000/01/rdf-schema#label> "Chromosome"@en .
+# 
+# https://w3id.org/health-ri/ontology#DiploidCell
+<https://w3id.org/health-ri/ontology#DiploidCell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#DiploidCell> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#HumanCell> .
+<https://w3id.org/health-ri/ontology#DiploidCell> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/health-ri/ontology#HaploidCell> .
+<https://w3id.org/health-ri/ontology#DiploidCell> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of human cell containing two complete sets of chromosomes'one from each parent. In humans, diploid cells include somatic cells and have 46 chromosomes, including two allosomes that determine chromosomal sex (e.g., XX or XY)."@en .
+<https://w3id.org/health-ri/ontology#DiploidCell> <http://www.w3.org/2000/01/rdf-schema#label> "Diploid Cell"@en .
+# 
+# https://w3id.org/health-ri/ontology#Document
+<https://w3id.org/health-ri/ontology#Document> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Document> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#FunctionalComplex> .
+<https://w3id.org/health-ri/ontology#Document> <http://www.w3.org/2000/01/rdf-schema#comment> "A recorded piece of information that can be stored, shared, and referenced. Documents serve as authoritative records of facts, decisions, or transactions and can exist in physical or digital form. They are used to communicate, formalize, and preserve information across contexts such as administration, law, business, and personal records."@en .
+<https://w3id.org/health-ri/ontology#Document> <http://www.w3.org/2000/01/rdf-schema#label> "Document"@en .
+# 
+# https://w3id.org/health-ri/ontology#FemaleBiologicalPerson
+<https://w3id.org/health-ri/ontology#FemaleBiologicalPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#FemaleBiologicalPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#FemaleBiologicalPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to a person whose sexual dimorphic characteristics align more strongly with those typically classified as female. The classification is based on the predominance of female-typical features in the overall assessment."@en .
+<https://w3id.org/health-ri/ontology#FemaleBiologicalPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Female Biological Person"@en .
+# 
+# https://w3id.org/health-ri/ontology#FemaleGenderIdentity
+<https://w3id.org/health-ri/ontology#FemaleGenderIdentity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#FemaleGenderIdentity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#GenderIdentity> .
+<https://w3id.org/health-ri/ontology#FemaleGenderIdentity> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes an individual's self-identification as female. It encompasses the personal sense of being female and often informs social expression, interaction, and personal narrative."@en .
+<https://w3id.org/health-ri/ontology#FemaleGenderIdentity> <http://www.w3.org/2000/01/rdf-schema#label> "Female Gender Identity"@en .
+# 
+# https://w3id.org/health-ri/ontology#FemalePhenotypicPerson
+<https://w3id.org/health-ri/ontology#FemalePhenotypicPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#FemalePhenotypicPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex> .
+<https://w3id.org/health-ri/ontology#FemalePhenotypicPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes an individual assessed as having predominantly female-typical anatomical features. The classification reflects traits typically associated with female development."@en .
+<https://w3id.org/health-ri/ontology#FemalePhenotypicPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Female Phenotypic Person"@en .
+# 
+# https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic
+<https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic> .
+<https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic> <http://www.w3.org/2000/01/rdf-schema#comment> "Includes anatomical or physiological traits more typical of females, such as wider pelvic structure or distribution of body fat. These traits inform classification into the female category."@en .
+<https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic> <http://www.w3.org/2000/01/rdf-schema#label> "Female-typical Dimorphic Characteristic"@en .
+# 
+# https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic
+<https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#VisualSexCharacteristic> .
+<https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic> <http://www.w3.org/2000/01/rdf-schema#comment> "Encompasses anatomical features typically associated with females, such as breast development, pelvic shape, or distribution of body fat."@en .
+<https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic> <http://www.w3.org/2000/01/rdf-schema#label> "Female-typical Visual Sex Characteristic"@en .
+# 
+# https://w3id.org/health-ri/ontology#Gamete
+<https://w3id.org/health-ri/ontology#Gamete> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Gamete> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#HaploidCell> .
+<https://w3id.org/health-ri/ontology#Gamete> <http://www.w3.org/2000/01/rdf-schema#comment> "A mature reproductive cell (sperm or egg) that is haploid in nature. Gametes carry half the number of chromosomes of a diploid cell and combine during fertilization to form a diploid zygote, restoring the full chromosome set."@en .
+<https://w3id.org/health-ri/ontology#Gamete> <http://www.w3.org/2000/01/rdf-schema#label> "Gamete"@en .
+# 
+# https://w3id.org/health-ri/ontology#Gender
+<https://w3id.org/health-ri/ontology#Gender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Gender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#Aspect> .
+<https://w3id.org/health-ri/ontology#Gender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#unionOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/nemo/gufo#IntrinsicMode> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/nemo/gufo#ExtrinsicMode> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Gender> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the broad conceptual category encompassing all types of gender characterizations a person may have. It includes self-defined aspects, such as gender identity, as well as externally assigned forms like administrative or legal gender. This category supports understanding gender as a complex social and institutional phenomenon that can be intrinsic to the person or shaped by external authorities and systems."@en .
+<https://w3id.org/health-ri/ontology#Gender> <http://www.w3.org/2000/01/rdf-schema#label> "Gender"@en .
+# 
+# https://w3id.org/health-ri/ontology#GenderIdentity
+<https://w3id.org/health-ri/ontology#GenderIdentity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#GenderIdentity> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#unionOf> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#NonBinaryGenderIdentity> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#MaleGenderIdentity> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#FemaleGenderIdentity> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#GenderIdentity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#IntrinsicMode> .
+<https://w3id.org/health-ri/ontology#GenderIdentity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Gender> .
+<https://w3id.org/health-ri/ontology#GenderIdentity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#Person> .
+_:genid18 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#GenderIdentity> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents a person's deeply held sense of their own gender. It is an intrinsic aspect of self-understanding and social identity, reflecting how individuals perceive themselves and wish to be recognized. Gender identity may or may not align with a person's sex assigned at birth."@en .
+<https://w3id.org/health-ri/ontology#GenderIdentity> <http://www.w3.org/2000/01/rdf-schema#label> "Gender Identity"@en .
+# 
+# https://w3id.org/health-ri/ontology#GenderRecognitionDocument
+<https://w3id.org/health-ri/ontology#GenderRecognitionDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#GenderRecognitionDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Document> .
+<https://w3id.org/health-ri/ontology#GenderRecognitionDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#LegalGenderRecognition> .
+_:genid19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#mediates> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#GenderRecognitionDocument> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to official records or certificates that confirm or establish a person's legal gender. These documents provide formal evidence of legal gender recognition and are used in administrative, legal, and social contexts."@en .
+<https://w3id.org/health-ri/ontology#GenderRecognitionDocument> <http://www.w3.org/2000/01/rdf-schema#label> "Gender Recognition Document"@en .
+# 
+# https://w3id.org/health-ri/ontology#Government
+<https://w3id.org/health-ri/ontology#Government> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Government> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Organization> .
+<https://w3id.org/health-ri/ontology#Government> <http://www.w3.org/2000/01/rdf-schema#comment> "A formal organization with authority to create, implement, and enforce laws and policies within a defined territory. Governments typically manage public services, maintain order, and regulate social and economic activities. They exercise unique legal powers, including issuing official documents, defining legal statuses, and recognizing individual rights."@en .
+<https://w3id.org/health-ri/ontology#Government> <http://www.w3.org/2000/01/rdf-schema#label> "Government"@en .
+# 
+# https://w3id.org/health-ri/ontology#HaploidCell
+<https://w3id.org/health-ri/ontology#HaploidCell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#HaploidCell> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#HumanCell> .
+<https://w3id.org/health-ri/ontology#HaploidCell> <http://www.w3.org/2000/01/rdf-schema#comment> "A cell with only one set of chromosomes. In humans, these are the reproductive cells (gametes) with 23 chromosomes total, including one allosome. Haploid cells are essential for sexual reproduction, ensuring that chromosome numbers remain stable across generations."@en .
+<https://w3id.org/health-ri/ontology#HaploidCell> <http://www.w3.org/2000/01/rdf-schema#label> "Haploid Cell"@en .
+# 
+# https://w3id.org/health-ri/ontology#HealthcareProfessional
+<https://w3id.org/health-ri/ontology#HealthcareProfessional> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#HealthcareProfessional> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#HealthcareProfessional> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents any trained and authorized individual who provides medical or health-related services. This includes doctors, nurses, midwives, and other clinicians involved in patient care. In the context of this model, healthcare professionals carry out assessments, make observations, and record classifications such as phenotypic sex at birth, but their role more broadly encompasses diagnosis, treatment, counseling, and support for overall health and well-being."@en .
+<https://w3id.org/health-ri/ontology#HealthcareProfessional> <http://www.w3.org/2000/01/rdf-schema#label> "Healthcare Professional"@en .
+# 
+# https://w3id.org/health-ri/ontology#HumanCell
+<https://w3id.org/health-ri/ontology#HumanCell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#HumanCell> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#unionOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#HaploidCell> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#DiploidCell> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#HumanCell> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#FunctionalComplex> .
+<https://w3id.org/health-ri/ontology#HumanCell> <http://www.w3.org/2000/01/rdf-schema#comment> "The fundamental structural and functional unit of the human body. Human cells vary in type and function, but all contain genetic material in the form of chromosomes, including sex chromosomes that help determine biological sex."@en .
+<https://w3id.org/health-ri/ontology#HumanCell> <http://www.w3.org/2000/01/rdf-schema#label> "Human Cell"@en .
+# 
+# https://w3id.org/health-ri/ontology#IndeterminateBiologicalPerson
+<https://w3id.org/health-ri/ontology#IndeterminateBiologicalPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#IndeterminateBiologicalPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#IndeterminateBiologicalPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes individuals whose combination of sexual dimorphic characteristics does not clearly align with either male-typical or female-typical classifications. This category acknowledges biological variation that does not fit conventional binary classifications."@en .
+<https://w3id.org/health-ri/ontology#IndeterminateBiologicalPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Indeterminate Biological Person"@en .
+# 
+# https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic
+<https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic> .
+<https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic> <http://www.w3.org/2000/01/rdf-schema#comment> "Captures traits that do not clearly align with typical male or female patterns. It supports the recognition of biological diversity and variation beyond the binary model."@en .
+<https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic> <http://www.w3.org/2000/01/rdf-schema#label> "Indeterminate Dimorphic Characteristic"@en .
+# 
+# https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic
+<https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#VisualSexCharacteristic> .
+<https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic> <http://www.w3.org/2000/01/rdf-schema#comment> "Captures anatomical features that do not clearly align with male-typical or female-typical categories. This classification supports recognizing and documenting variations beyond the binary model."@en .
+<https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic> <http://www.w3.org/2000/01/rdf-schema#label> "Indeterminate Visual Sex Characteristic"@en .
+# 
+# https://w3id.org/health-ri/ontology#KaryotypicalFemale
+<https://w3id.org/health-ri/ontology#KaryotypicalFemale> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#KaryotypicalFemale> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#unionOf> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#KaryotypicalFemale> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#KaryotypicalFemale> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/health-ri/ontology#KaryotypicalMale> .
+<https://w3id.org/health-ri/ontology#KaryotypicalFemale> <http://www.w3.org/2000/01/rdf-schema#label> "Karyotypical Female"@en .
+# 
+# https://w3id.org/health-ri/ontology#KaryotypicalMale
+<https://w3id.org/health-ri/ontology#KaryotypicalMale> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#KaryotypicalMale> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#unionOf> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#VariantKaryotypicalMale> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#RegularKaryotypicalMale> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#KaryotypicalMale> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#KaryotypicalMale> <http://www.w3.org/2000/01/rdf-schema#label> "Karyotypical Male"@en .
+# 
+# https://w3id.org/health-ri/ontology#KaryotypicalSex
+<https://w3id.org/health-ri/ontology#KaryotypicalSex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#KaryotypicalSex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#IntrinsicMode> .
+<https://w3id.org/health-ri/ontology#KaryotypicalSex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Sex> .
+<https://w3id.org/health-ri/ontology#KaryotypicalSex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
+_:genid30 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#Person> .
+_:genid30 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> _:genid31 .
+_:genid31 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#KaryotypicalSex> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/health-ri/ontology#PhenotypicSex> .
+<https://w3id.org/health-ri/ontology#KaryotypicalSex> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the classification of a person's sex based on their chromosomal composition, specifically the configuration of sex chromosomes (allosomes). It provides a genetic basis for categorizing individuals as male, female, or variants, supporting a biological understanding of sex that is stable across a person's life."@en .
+<https://w3id.org/health-ri/ontology#KaryotypicalSex> <http://www.w3.org/2000/01/rdf-schema#label> "Karyotypical Sex"@en .
+# 
+# https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson
+<https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome> .
+<https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson> <http://www.w3.org/2000/01/rdf-schema#comment> "Captures cases where the chromosomal composition does not allow clear classification as male or female. This category acknowledges the existence of complex or ambiguous chromosomal patterns that do not fit binary definitions."@en .
+<https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson> <http://www.w3.org/2000/01/rdf-schema#label> "Karyotypically Indeterminate Person"@en .
+# 
+# https://w3id.org/health-ri/ontology#LegalFemalePerson
+<https://w3id.org/health-ri/ontology#LegalFemalePerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#LegalFemalePerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> .
+<https://w3id.org/health-ri/ontology#LegalFemalePerson> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to an individual whose legal gender is officially recognized as female. This status is used in legal documents and administrative records to determine rights and obligations."@en .
+<https://w3id.org/health-ri/ontology#LegalFemalePerson> <http://www.w3.org/2000/01/rdf-schema#label> "Legal Female Person"@en .
+# 
+# https://w3id.org/health-ri/ontology#LegalGender
+<https://w3id.org/health-ri/ontology#LegalGender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#LegalGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#AdministrativeGender> .
+<https://w3id.org/health-ri/ontology#LegalGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid32 .
+_:genid32 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> _:genid33 .
+_:genid33 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#LegalGender> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the gender category recognized by law and recorded in official systems. It provides a standardized basis for administrative processes, legal rights, and social recognition, supporting consistent management of gender-related information."@en .
+<https://w3id.org/health-ri/ontology#LegalGender> <http://www.w3.org/2000/01/rdf-schema#label> "Legal Gender"@en .
+# 
+# https://w3id.org/health-ri/ontology#LegalGenderRecognition
+<https://w3id.org/health-ri/ontology#LegalGenderRecognition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#LegalGenderRecognition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition> .
+<https://w3id.org/health-ri/ontology#LegalGenderRecognition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid34 .
+_:genid34 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#GenderRecognitionDocument> .
+_:genid34 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid34 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#mediates> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#LegalGenderRecognition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid35 .
+_:genid35 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#LegalGenderRecognizer> .
+_:genid35 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#mediates> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#LegalGenderRecognition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid36 .
+_:genid36 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> .
+_:genid36 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#mediates> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#LegalGenderRecognition> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the formal process through which a person's legal gender is established, assigned, or modified in accordance with laws and administrative procedures. This recognition is often documented and has legal consequences for a person's rights and social standing."@en .
+<https://w3id.org/health-ri/ontology#LegalGenderRecognition> <http://www.w3.org/2000/01/rdf-schema#label> "Legal Gender Recognition"@en .
+# 
+# https://w3id.org/health-ri/ontology#LegalGenderRecognizer
+<https://w3id.org/health-ri/ontology#LegalGenderRecognizer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#LegalGenderRecognizer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#AdministrativeGenderRecognizer> .
+<https://w3id.org/health-ri/ontology#LegalGenderRecognizer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Government> .
+<https://w3id.org/health-ri/ontology#LegalGenderRecognizer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
+_:genid37 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#LegalGenderRecognition> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> _:genid38 .
+_:genid38 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#mediates> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#LegalGenderRecognizer> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the role of an entity'often a government body or its agents'authorized to formally assign or recognize a person's legal gender. This role includes the authority to record, approve, or modify legal gender status in official records."@en .
+<https://w3id.org/health-ri/ontology#LegalGenderRecognizer> <http://www.w3.org/2000/01/rdf-schema#label> "Legal Gender Recognizer"@en .
+# 
+# https://w3id.org/health-ri/ontology#LegalMalePerson
+<https://w3id.org/health-ri/ontology#LegalMalePerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#LegalMalePerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> .
+<https://w3id.org/health-ri/ontology#LegalMalePerson> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes an individual whose legal gender is officially recognized and recorded as male. This classification carries legal and administrative implications for rights, responsibilities, and identification."@en .
+<https://w3id.org/health-ri/ontology#LegalMalePerson> <http://www.w3.org/2000/01/rdf-schema#label> "Legal Male Person"@en .
+# 
+# https://w3id.org/health-ri/ontology#LegalNonBinaryPerson
+<https://w3id.org/health-ri/ontology#LegalNonBinaryPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#LegalNonBinaryPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> .
+<https://w3id.org/health-ri/ontology#LegalNonBinaryPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "Includes individuals whose legal gender is formally recognized as non-binary, acknowledging identities outside the traditional male/female binary. This classification supports administrative and legal recognition of gender diversity."@en .
+<https://w3id.org/health-ri/ontology#LegalNonBinaryPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Legal Non-binary Person"@en .
+# 
+# https://w3id.org/health-ri/ontology#MaleBiologicalPerson
+<https://w3id.org/health-ri/ontology#MaleBiologicalPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#MaleBiologicalPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#MaleBiologicalPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes a person whose overall set of sexual dimorphic characteristics aligns more strongly with those typically classified as male. This classification relies on counting or weighting traits that are conventionally considered male-typical."@en .
+<https://w3id.org/health-ri/ontology#MaleBiologicalPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Male Biological Person"@en .
+# 
+# https://w3id.org/health-ri/ontology#MaleGenderIdentity
+<https://w3id.org/health-ri/ontology#MaleGenderIdentity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#MaleGenderIdentity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#GenderIdentity> .
+<https://w3id.org/health-ri/ontology#MaleGenderIdentity> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to an individual's self-identification as male. This identity reflects personal understanding and experience of being male, which can shape social roles, expression, and expectations."@en .
+<https://w3id.org/health-ri/ontology#MaleGenderIdentity> <http://www.w3.org/2000/01/rdf-schema#label> "Male Gender Identity"@en .
+# 
+# https://w3id.org/health-ri/ontology#MalePhenotypicPerson
+<https://w3id.org/health-ri/ontology#MalePhenotypicPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#MalePhenotypicPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex> .
+<https://w3id.org/health-ri/ontology#MalePhenotypicPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to an individual assessed as having predominantly male-typical anatomical features. This classification is based on observed traits aligned with typical male development."@en .
+<https://w3id.org/health-ri/ontology#MalePhenotypicPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Male Phenotypic Person"@en .
+# 
+# https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic
+<https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic> .
+<https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents specific anatomical or physiological traits that are statistically more common or pronounced in males. Examples might include broader shoulders or denser facial hair."@en .
+<https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic> <http://www.w3.org/2000/01/rdf-schema#label> "Male-typical Dimorphic Characteristic"@en .
+# 
+# https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic
+<https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#VisualSexCharacteristic> .
+<https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic> <http://www.w3.org/2000/01/rdf-schema#comment> "Includes anatomical features statistically more common or pronounced in males, such as external genitalia shape, body hair distribution, or certain skeletal structures."@en .
+<https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic> <http://www.w3.org/2000/01/rdf-schema#label> "Male-typical Visual Sex Characteristic"@en .
+# 
+# https://w3id.org/health-ri/ontology#NonBinaryGenderIdentity
+<https://w3id.org/health-ri/ontology#NonBinaryGenderIdentity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#NonBinaryGenderIdentity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#GenderIdentity> .
+<https://w3id.org/health-ri/ontology#NonBinaryGenderIdentity> <http://www.w3.org/2000/01/rdf-schema#comment> "Includes gender identities outside the traditional male/female binary. This category accommodates diverse self-understandings such as genderqueer, agender, or other identities that do not fit exclusively into male or female classifications."@en .
+<https://w3id.org/health-ri/ontology#NonBinaryGenderIdentity> <http://www.w3.org/2000/01/rdf-schema#label> "Non-binary Gender Identity"@en .
+# 
+# https://w3id.org/health-ri/ontology#Organization
+<https://w3id.org/health-ri/ontology#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#FunctionalComplex> .
+<https://w3id.org/health-ri/ontology#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "A structured group of people with a common purpose, such as a business, government agency, nonprofit, or other formal entity. Organizations can have defined roles, responsibilities, and authority to make decisions, deliver services, and interact with individuals or other organizations in systematic ways."@en .
+<https://w3id.org/health-ri/ontology#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization"@en .
+# 
+# https://w3id.org/health-ri/ontology#Person
+<https://w3id.org/health-ri/ontology#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Person> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid39 .
+_:genid39 <http://www.w3.org/2002/07/owl#unionOf> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#MaleBiologicalPerson> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#IndeterminateBiologicalPerson> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#FemaleBiologicalPerson> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Person> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid43 .
+_:genid43 <http://www.w3.org/2002/07/owl#unionOf> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#KaryotypicalMale> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#KaryotypicalFemale> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Person> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid46 .
+_:genid46 <http://www.w3.org/2002/07/owl#unionOf> _:genid48 .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#PersonWithUnassignedSexAtBirth> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Person> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid49 .
+_:genid49 <http://www.w3.org/2002/07/owl#unionOf> _:genid51 .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid50 .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#FunctionalComplex> .
+<https://w3id.org/health-ri/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid52 .
+_:genid52 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#Sex> .
+_:genid52 <http://www.w3.org/2002/07/owl#onProperty> _:genid53 .
+_:genid53 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid54 .
+_:genid54 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#KaryotypicalSex> .
+_:genid54 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid54 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid55 .
+_:genid55 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#GenderIdentity> .
+_:genid55 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid55 <http://www.w3.org/2002/07/owl#onProperty> _:genid56 .
+_:genid56 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents an individual human being, considered as a whole entity with biological, psychological, and social dimensions. This concept serves as the foundational unit in the ontology, providing the bearer of various properties, roles, and classifications such as sex and gender. It abstracts from specific contexts or classifications to describe any human subject capable of having intrinsic traits and participating in social and administrative systems."@en .
+<https://w3id.org/health-ri/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
+# 
+# https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex
+<https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid57 .
+_:genid57 <http://www.w3.org/2002/07/owl#unionOf> _:genid60 .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid59 .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid58 .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#MalePhenotypicPerson> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#FemalePhenotypicPerson> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#AmbiguousPhenotypicPerson> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid61 .
+_:genid61 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#PhenotypicSex> .
+_:genid61 <http://www.w3.org/2002/07/owl#onProperty> _:genid62 .
+_:genid62 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid63 .
+_:genid63 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#PhenotypicSexAssessment> .
+_:genid63 <http://www.w3.org/2002/07/owl#onProperty> _:genid64 .
+_:genid64 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#mediates> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes an individual whose phenotypic sex has been evaluated and categorized, typically by a healthcare professional. This classification recognizes that phenotypic sex is not simply 'given' but results from an assessment process."@en .
+<https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex> <http://www.w3.org/2000/01/rdf-schema#label> "Person with Assessed Phenotypic Sex"@en .
+# 
+# https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth
+<https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid65 .
+_:genid65 <http://www.w3.org/2002/07/owl#unionOf> _:genid68 .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid67 .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid66 .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#PersonWithMaleSexAtBirth> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#PersonWithIndeterminateSexAtBirth> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#PersonWithFemaleSexAtBirth> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid69 .
+_:genid69 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#SexAtBirthAssignment> .
+_:genid69 <http://www.w3.org/2002/07/owl#onProperty> _:genid70 .
+_:genid70 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#mediates> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid71 .
+_:genid71 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#SexAtBirth> .
+_:genid71 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid71 <http://www.w3.org/2002/07/owl#onProperty> _:genid72 .
+_:genid72 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes an individual who has received a recorded sex classification during the birth registration process. This role reflects the outcome of a formal assignment that categorizes the person as male, female, or indeterminate at birth."@en .
+<https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#label> "Person with Assigned Sex at Birth"@en .
+# 
+# https://w3id.org/health-ri/ontology#PersonWithFemaleSexAtBirth
+<https://w3id.org/health-ri/ontology#PersonWithFemaleSexAtBirth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithFemaleSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> .
+<https://w3id.org/health-ri/ontology#PersonWithFemaleSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes individuals officially assigned as female in their birth record, based on clinical observation of anatomical features immediately after birth."@en .
+<https://w3id.org/health-ri/ontology#PersonWithFemaleSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#label> "Person with Female Sex at Birth"@en .
+# 
+# https://w3id.org/health-ri/ontology#PersonWithIndeterminateSexAtBirth
+<https://w3id.org/health-ri/ontology#PersonWithIndeterminateSexAtBirth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithIndeterminateSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> .
+<https://w3id.org/health-ri/ontology#PersonWithIndeterminateSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#comment> "Includes individuals whose sex at birth is formally recorded as indeterminate. This category supports administrative recognition of cases where observed features do not clearly fit male or female classifications."@en .
+<https://w3id.org/health-ri/ontology#PersonWithIndeterminateSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#label> "Person with Indeterminate Sex at Birth"@en .
+# 
+# https://w3id.org/health-ri/ontology#PersonWithMaleSexAtBirth
+<https://w3id.org/health-ri/ontology#PersonWithMaleSexAtBirth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithMaleSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> .
+<https://w3id.org/health-ri/ontology#PersonWithMaleSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes individuals officially assigned as male in their birth record, typically based on observed anatomical features at the time of delivery."@en .
+<https://w3id.org/health-ri/ontology#PersonWithMaleSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#label> "Person with Male Sex at Birth"@en .
+# 
+# https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid73 .
+_:genid73 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#AdministrativeGender> .
+_:genid73 <http://www.w3.org/2002/07/owl#onProperty> _:genid74 .
+_:genid74 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid75 .
+_:genid75 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#AdministrativeGenderRecognition> .
+_:genid75 <http://www.w3.org/2002/07/owl#onProperty> _:genid76 .
+_:genid76 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#mediates> .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to an individual whose gender has been formally assigned or recognized by an organization for administrative purposes. This role acknowledges that administrative gender is not merely self-defined but is established through interaction with an authoritative body."@en .
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender> <http://www.w3.org/2000/01/rdf-schema#label> "Person with Recognized Administrative Gender"@en .
+# 
+# https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid77 .
+_:genid77 <http://www.w3.org/2002/07/owl#unionOf> _:genid81 .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid80 .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid79 .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid78 .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#PersonWithUnassignedLegalGender> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#LegalNonBinaryPerson> .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#LegalMalePerson> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#LegalFemalePerson> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithRecognizedAdministrativeGender> .
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid82 .
+_:genid82 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#LegalGenderRecognition> .
+_:genid82 <http://www.w3.org/2002/07/owl#onProperty> _:genid83 .
+_:genid83 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#mediates> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid84 .
+_:genid84 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#LegalGender> .
+_:genid84 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid84 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes an individual who has an officially assigned legal gender recorded through a formal recognition process. This role reflects the outcome of administrative or legal procedures defining a person's gender status for legal and institutional purposes."@en .
+<https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> <http://www.w3.org/2000/01/rdf-schema#label> "Person with Recognized Legal Gender"@en .
+# 
+# https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome
+<https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid85 .
+_:genid85 <http://www.w3.org/2002/07/owl#unionOf> _:genid87 .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid86 .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#RegularKaryotypicalMale> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome> .
+<https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes individuals whose sex chromosome composition follows typical patterns without significant variations. Commonly corresponds to XX (female) or XY (male) karyotypes, reflecting the most frequent chromosomal configurations in the human population."@en .
+<https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome> <http://www.w3.org/2000/01/rdf-schema#label> "Person with Regular Sex Chromosome"@en .
+# 
+# https://w3id.org/health-ri/ontology#PersonWithUnassignedLegalGender
+<https://w3id.org/health-ri/ontology#PersonWithUnassignedLegalGender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithUnassignedLegalGender> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithRecognizedLegalGender> .
+<https://w3id.org/health-ri/ontology#PersonWithUnassignedLegalGender> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents individuals who, in legal or administrative records, do not have a formally assigned legal gender. This category allows for flexibility in cases where no specific legal gender is recorded or chosen."@en .
+<https://w3id.org/health-ri/ontology#PersonWithUnassignedLegalGender> <http://www.w3.org/2000/01/rdf-schema#label> "Person with Unassigned Legal Gender"@en .
+# 
+# https://w3id.org/health-ri/ontology#PersonWithUnassignedSexAtBirth
+<https://w3id.org/health-ri/ontology#PersonWithUnassignedSexAtBirth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithUnassignedSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#PersonWithUnassignedSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents individuals who, at the point of registration, do not have a formally recorded sex assignment. This acknowledges the possibility of cases where no clear classification is made, recognizing flexibility in administrative processes."@en .
+<https://w3id.org/health-ri/ontology#PersonWithUnassignedSexAtBirth> <http://www.w3.org/2000/01/rdf-schema#label> "Person with Unassigned Sex at Birth"@en .
+# 
+# https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome
+<https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid88 .
+_:genid88 <http://www.w3.org/2002/07/owl#unionOf> _:genid91 .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid90 .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid89 .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#VariantKaryotypicalMale> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale> .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson> .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Person> .
+<https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome> <http://www.w3.org/2000/01/rdf-schema#comment> "Includes individuals whose chromosomal composition deviates from the typical XX or XY patterns. Examples might include XXY, X0, or other variations that contribute to diverse biological presentations of sex. This classification ensures the model accommodates chromosomal diversity."@en .
+<https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome> <http://www.w3.org/2000/01/rdf-schema#label> "Person with Variant Sex Chromosome"@en .
+# 
+# https://w3id.org/health-ri/ontology#PhenotypicSex
+<https://w3id.org/health-ri/ontology#PhenotypicSex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PhenotypicSex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#ExtrinsicMode> .
+<https://w3id.org/health-ri/ontology#PhenotypicSex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#Sex> .
+<https://w3id.org/health-ri/ontology#PhenotypicSex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid92 .
+_:genid92 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex> .
+_:genid92 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid92 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#PhenotypicSex> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the observable anatomical and morphological features that inform sex classification, such as genitalia, secondary sexual traits, and body structure. It is determined through clinical or visual assessment and can vary across individuals."@en .
+<https://w3id.org/health-ri/ontology#PhenotypicSex> <http://www.w3.org/2000/01/rdf-schema#label> "Phenotypic Sex"@en .
+# 
+# https://w3id.org/health-ri/ontology#PhenotypicSexAssessment
+<https://w3id.org/health-ri/ontology#PhenotypicSexAssessment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PhenotypicSexAssessment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#Relator> .
+<https://w3id.org/health-ri/ontology#PhenotypicSexAssessment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid93 .
+_:genid93 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#PhenotypicSexAssessor> .
+_:genid93 <http://www.w3.org/2002/07/owl#onProperty> _:genid94 .
+_:genid94 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#mediates> .
+_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#PhenotypicSexAssessment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid95 .
+_:genid95 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#PersonWithAssessedPhenotypicSex> .
+_:genid95 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid95 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#mediates> .
+_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#PhenotypicSexAssessment> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the structured process through which a person's phenotypic sex is evaluated and categorized. It involves the interaction between the healthcare professional (assessor) and the individual being assessed."@en .
+<https://w3id.org/health-ri/ontology#PhenotypicSexAssessment> <http://www.w3.org/2000/01/rdf-schema#label> "Phenotypic Sex Assessment"@en .
+# 
+# https://w3id.org/health-ri/ontology#PhenotypicSexAssessor
+<https://w3id.org/health-ri/ontology#PhenotypicSexAssessor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#PhenotypicSexAssessor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#HealthcareProfessional> .
+<https://w3id.org/health-ri/ontology#PhenotypicSexAssessor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid96 .
+_:genid96 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#PhenotypicSexAssessment> .
+_:genid96 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#mediates> .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#PhenotypicSexAssessor> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to the role of the healthcare professional responsible for evaluating a person's phenotypic sex. This role involves clinical judgment and interpretation of anatomical features."@en .
+<https://w3id.org/health-ri/ontology#PhenotypicSexAssessor> <http://www.w3.org/2000/01/rdf-schema#label> "Phenotypic Sex Assessor"@en .
+# 
+# https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#KaryotypicalFemale> .
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome> .
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/health-ri/ontology#RegularKaryotypicalMale> .
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale> .
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale> <http://www.w3.org/2000/01/rdf-schema#comment> "Refers to individuals with the standard female chromosomal configuration, typically XX. This category aligns with the most common understanding of female karyotypical sex in biology."@en .
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalFemale> <http://www.w3.org/2000/01/rdf-schema#label> "Regular Karyotypical Female"@en .
+# 
+# https://w3id.org/health-ri/ontology#RegularKaryotypicalMale
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalMale> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalMale> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#KaryotypicalMale> .
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalMale> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithRegularSexChromosome> .
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalMale> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/health-ri/ontology#VariantKaryotypicalMale> .
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalMale> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents individuals with a typical male chromosomal configuration, usually XY. It reflects the standard genetic basis used to define male karyotypical sex in medical and genetic contexts."@en .
+<https://w3id.org/health-ri/ontology#RegularKaryotypicalMale> <http://www.w3.org/2000/01/rdf-schema#label> "Regular Karyotypical Male"@en .
+# 
+# https://w3id.org/health-ri/ontology#Sex
+<https://w3id.org/health-ri/ontology#Sex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Sex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#Aspect> .
+<https://w3id.org/health-ri/ontology#Sex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid97 .
+_:genid97 <http://www.w3.org/2002/07/owl#unionOf> _:genid99 .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid98 .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/nemo/gufo#IntrinsicMode> .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/nemo/gufo#ExtrinsicMode> .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#Sex> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid100 .
+_:genid100 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#Person> .
+_:genid100 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid100 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#Sex> <http://www.w3.org/2000/01/rdf-schema#comment> "Denotes the overall category for classifying a person's biological traits related to reproductive anatomy, chromosomes, and other physical characteristics. It includes different dimensions such as karyotypical sex (chromosomal composition), phenotypic sex (observable anatomical features), and sex at birth (the classification assigned during birth registration). This category emphasizes that sex, while grounded in biology, can involve observation, interpretation, and formal assignment."@en .
+<https://w3id.org/health-ri/ontology#Sex> <http://www.w3.org/2000/01/rdf-schema#label> "Sex"@en .
+# 
+# https://w3id.org/health-ri/ontology#SexAtBirth
+<https://w3id.org/health-ri/ontology#SexAtBirth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#SexAtBirth> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PhenotypicSex> .
+<https://w3id.org/health-ri/ontology#SexAtBirth> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid101 .
+_:genid101 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> .
+_:genid101 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid101 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#inheresIn> .
+_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#SexAtBirth> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the formal classification of a person's sex that is recorded at the time of birth. This category acknowledges that sex at birth is not simply observed but is officially documented, often forming the basis for legal and administrative records throughout life."@en .
+<https://w3id.org/health-ri/ontology#SexAtBirth> <http://www.w3.org/2000/01/rdf-schema#label> "Sex at Birth"@en .
+# 
+# https://w3id.org/health-ri/ontology#SexAtBirthAssigner
+<https://w3id.org/health-ri/ontology#SexAtBirthAssigner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#SexAtBirthAssigner> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#HealthcareProfessional> .
+<https://w3id.org/health-ri/ontology#SexAtBirthAssigner> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid102 .
+_:genid102 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#SexAtBirthAssignment> .
+_:genid102 <http://www.w3.org/2002/07/owl#onProperty> _:genid103 .
+_:genid103 <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/nemo/gufo#mediates> .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#SexAtBirthAssigner> <http://www.w3.org/2000/01/rdf-schema#comment> "Represents the role of professionals authorized to make and record the sex assignment at birth, typically including clinicians such as doctors or midwives who perform the observation and formal documentation."@en .
+<https://w3id.org/health-ri/ontology#SexAtBirthAssigner> <http://www.w3.org/2000/01/rdf-schema#label> "Sex at Birth Assigner"@en .
+# 
+# https://w3id.org/health-ri/ontology#SexAtBirthAssignment
+<https://w3id.org/health-ri/ontology#SexAtBirthAssignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#SexAtBirthAssignment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#Relator> .
+<https://w3id.org/health-ri/ontology#SexAtBirthAssignment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid104 .
+_:genid104 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#BirthRelatedLegislationRule> .
+_:genid104 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#mediates> .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#SexAtBirthAssignment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid105 .
+_:genid105 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/health-ri/ontology#SexAtBirthAssigner> .
+_:genid105 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#mediates> .
+_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#SexAtBirthAssignment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid106 .
+_:genid106 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#BirthNotification> .
+_:genid106 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid106 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#mediates> .
+_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#SexAtBirthAssignment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid107 .
+_:genid107 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/health-ri/ontology#PersonWithAssignedSexAtBirth> .
+_:genid107 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid107 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/nemo/gufo#mediates> .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/health-ri/ontology#SexAtBirthAssignment> <http://www.w3.org/2000/01/rdf-schema#comment> "Captures the formal process through which a newborn's sex is assigned and recorded. This mediation process connects the assigner with the person being assigned, documenting the outcome in official records."@en .
+<https://w3id.org/health-ri/ontology#SexAtBirthAssignment> <http://www.w3.org/2000/01/rdf-schema#label> "Sex at Birth Assignment"@en .
+# 
+# https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic
+<https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid108 .
+_:genid108 <http://www.w3.org/2002/07/owl#unionOf> _:genid111 .
+_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid110 .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid109 .
+_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic> .
+_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic> .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic> .
+_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#FunctionalComplex> .
+<https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic> <http://www.w3.org/2000/01/rdf-schema#comment> "An umbrella category for traits that show differences between sexes. These characteristics are used to classify biological sex by examining their type and distribution in an individual. Examples include body hair patterns, skeletal structure, and other anatomical features."@en .
+<https://w3id.org/health-ri/ontology#SexualDimorphicCharacteristic> <http://www.w3.org/2000/01/rdf-schema#label> "Sexual Dimorphic Characteristic"@en .
+# 
+# https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale
+<https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#KaryotypicalFemale> .
+<https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome> .
+<https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes individuals with variations from the standard XX female configuration while still aligning with a female classification. Such variations may include atypical chromosomal arrangements that result in female phenotypes or identities."@en .
+<https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale> <http://www.w3.org/2000/01/rdf-schema#label> "Variant Karyotypical Female"@en .
+# 
+# https://w3id.org/health-ri/ontology#VariantKaryotypicalMale
+<https://w3id.org/health-ri/ontology#VariantKaryotypicalMale> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#VariantKaryotypicalMale> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#KaryotypicalMale> .
+<https://w3id.org/health-ri/ontology#VariantKaryotypicalMale> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/health-ri/ontology#PersonWithVariantSexChromosome> .
+<https://w3id.org/health-ri/ontology#VariantKaryotypicalMale> <http://www.w3.org/2000/01/rdf-schema#comment> "Includes individuals whose chromosomal patterns are considered male but differ from the standard XY configuration. For example, XXY or other variations that still lead to a male classification but with genetic differences."@en .
+<https://w3id.org/health-ri/ontology#VariantKaryotypicalMale> <http://www.w3.org/2000/01/rdf-schema#label> "Variant Karyotypical Male"@en .
+# 
+# https://w3id.org/health-ri/ontology#VisualSexCharacteristic
+<https://w3id.org/health-ri/ontology#VisualSexCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#VisualSexCharacteristic> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid112 .
+_:genid112 <http://www.w3.org/2002/07/owl#unionOf> _:genid115 .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid114 .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid113 .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic> .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic> .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic> .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/health-ri/ontology#VisualSexCharacteristic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/nemo/gufo#FunctionalComplex> .
+<https://w3id.org/health-ri/ontology#VisualSexCharacteristic> <http://www.w3.org/2000/01/rdf-schema#comment> "An umbrella category for anatomical features used to assess phenotypic sex. These characteristics serve as the basis for classifying individuals and include observable traits that vary in typicality across sexes."@en .
+<https://w3id.org/health-ri/ontology#VisualSexCharacteristic> <http://www.w3.org/2000/01/rdf-schema#label> "Visual Sex Characteristic"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid116 <http://www.w3.org/2002/07/owl#members> _:genid119 .
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid118 .
+_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid117 .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#MaleTypicalDimorphicCharacteristic> .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#IndeterminateDimorphicCharacteristic> .
+_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#FemaleTypicalDimorphicCharacteristic> .
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid120 <http://www.w3.org/2002/07/owl#members> _:genid123 .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid122 .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid121 .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#MaleTypicalVisualSexCharacteristic> .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#IndeterminateVisualSexCharacteristic> .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#FemaleTypicalVisualSexCharacteristic> .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid124 <http://www.w3.org/2002/07/owl#members> _:genid127 .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid126 .
+_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid125 .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#VariantKaryotypicalMale> .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#VariantKaryotypicalFemale> .
+_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/health-ri/ontology#KaryotypicallyIndeterminatePerson> .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
