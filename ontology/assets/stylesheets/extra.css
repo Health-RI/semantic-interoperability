@@ -124,10 +124,7 @@
   margin-block: 16px;
 }
 
-[data-md-color-scheme="slate"] #columnToggles input[type="checkbox"] {
-  filter: brightness(1.5);
-}
-
+/* Checkbox rows (labels) */
 #columnToggles label {
   display: inline-flex;
   align-items: center;
@@ -141,4 +138,34 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ============================
+   BULK CONTROL BUTTONS
+   ============================ */
+
+.column-toggle-button {
+  padding: 4px 10px;
+  font-size: 0.9em;
+  border-radius: 4px;
+  border: 1px solid #183F74;
+  background-color: #ffffff;
+  color: #183F74;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-right: 8px;
+}
+
+.column-toggle-button:hover {
+  background-color: #f0f0f0;
+}
+
+[data-md-color-scheme="slate"] .column-toggle-button {
+  border: 1px solid #F7AD2C;
+  background-color: #2a2a2a;
+  color: #F7AD2C;
+}
+
+[data-md-color-scheme="slate"] .column-toggle-button:hover {
+  background-color: #333;
 }

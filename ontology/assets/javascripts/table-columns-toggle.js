@@ -12,6 +12,31 @@ document.addEventListener('DOMContentLoaded', function() {
   // Clear existing toggles
   toggleContainer.innerHTML = '';
 
+  // Add bulk controls
+  const bulkControls = document.createElement('div');
+  bulkControls.style.marginBottom = '8px';
+
+  const makeButton = (text) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = text;
+    btn.classList.add('column-toggle-button');
+    return btn;
+  };
+
+
+  const checkAllBtn = makeButton('Check all');
+  const uncheckAllBtn = makeButton('Uncheck all');
+  const checkDefaultBtn = makeButton('Check most common');
+
+  bulkControls.appendChild(checkAllBtn);
+  bulkControls.appendChild(uncheckAllBtn);
+  bulkControls.appendChild(checkDefaultBtn);
+  toggleContainer.parentNode.insertBefore(bulkControls, toggleContainer);
+
+  // Create and store all checkbox references
+  const checkboxRefs = [];
+
   headers.forEach((th, index) => {
     const headerText = th.textContent.trim();
 
@@ -52,5 +77,29 @@ document.addEventListener('DOMContentLoaded', function() {
     label.appendChild(checkbox);
     label.appendChild(document.createTextNode(' ' + headerText));
     toggleContainer.appendChild(label);
+
+    checkboxRefs.push({ checkbox, headerText });
+  });
+
+  // Add event listeners for bulk buttons
+  checkAllBtn.addEventListener('click', () => {
+    checkboxRefs.forEach(ref => {
+      if (!ref.checkbox.checked) ref.checkbox.click();
+    });
+  });
+
+  uncheckAllBtn.addEventListener('click', () => {
+    checkboxRefs.forEach(ref => {
+      if (ref.checkbox.checked) ref.checkbox.click();
+    });
+  });
+
+  checkDefaultBtn.addEventListener('click', () => {
+    checkboxRefs.forEach(ref => {
+      const shouldCheck = defaultVisible.includes(ref.headerText);
+      if (ref.checkbox.checked !== shouldCheck) {
+        ref.checkbox.click();
+      }
+    });
   });
 });
