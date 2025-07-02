@@ -99,3 +99,5 @@ extra:
 extra_javascript:
   - ontology/assets/javascripts/tablesort.min.js
   - ontology/assets/javascripts/init-tablesort.js
+  - ontology/assets/javascripts/table-search.js
+  - ontology/assets/javascripts/table-columns-toggle.js
