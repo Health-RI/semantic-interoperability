@@ -1,0 +1,7 @@
+subject_id	subject_label	object_id	object_label	predicate_id	mapping_justification	author_id	mapping_date
+fhir:birth_sex	The sex of a person at birth (and recorded on the birth certificate).	health-ri:SexAtBirth	Sex at Birth	rdfs:subClassOf	semapv:ManualMappingCuration	https://orcid.org/0000-0003-2736-7817	2025-07-02
+omop:gender_concept_id	The biological sex of a person at birth.	health-ri:SexAtBirth	Sex at Birth	rdfs:subClassOf	semapv:ManualMappingCuration	https://orcid.org/0000-0003-2736-7817	2025-07-02
+openehr:sex_assigned_at_birth	The sex of an individual determined by anatomical characteristics observed and registered at birth.	health-ri:SexAtBirth	Sex at Birth	rdfs:subClassOf	semapv:ManualMappingCuration	https://orcid.org/0000-0003-2736-7817	2025-07-02
+omop:observation_concept_id_as_gender	Gender (Observable entity)	health-ri:Gender	Gender	rdfs:subClassOf	semapv:ManualMappingCuration	https://orcid.org/0000-0003-2736-7817	2025-07-02
+openehr:administrative_gender	The gender of an individual for administrative purposes.	health-ri:AdministrativeGender	Administrative Gender	rdfs:subClassOf	semapv:ManualMappingCuration	https://orcid.org/0000-0003-2736-7817	2025-07-02
+fhir:administrative_gender	The gender of a patient for administration and record keeping purposes.	health-ri:AdministrativeGender	Administrative Gender	rdfs:subClassOf	semapv:ManualMappingCuration	https://orcid.org/0000-0003-2736-7817	2025-07-02

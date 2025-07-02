@@ -2,58 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
     </url>
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/method/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
     </url>
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/ontology/changelog/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://health-ri.github.io/semantic-interoperability/ontology/mappings/</loc>
+         <lastmod>2025-07-02</lastmod>
     </url>
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/ontology/publishing/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
     </url>
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/ontology/sex-gender/</loc>
-         <lastmod>2025-07-01</lastmod>
-    </url>
-    <url>
-         <loc>https://health-ri.github.io/semantic-interoperability/ontology/specification/readme/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
     </url>
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/ontouml-gufo/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
     </url>
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/ontouml-gufo/gufo/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
     </url>
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/ontouml-gufo/how-to-create-ontouml-model/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
     </url>
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/ontouml-gufo/ontouml-stereotypes/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
     </url>
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/ontouml-gufo/ontouml-ufo-catalog/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
     </url>
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/ontouml-gufo/ontouml/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
     </url>
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/output/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
     </url>
     <url>
          <loc>https://health-ri.github.io/semantic-interoperability/semantic-interoperability/</loc>
-         <lastmod>2025-07-01</lastmod>
+         <lastmod>2025-07-02</lastmod>
     </url>
 </urlset>
