@@ -1,7 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+function initColumnToggles() {
   const table = document.querySelector('table');
   const toggleContainer = document.getElementById('columnToggles');
+
   if (!table || !toggleContainer) return;
+
+  // Prevent double initialization on repeated SPA navigations
+  if (toggleContainer.dataset.initialized) return;
+  toggleContainer.dataset.initialized = 'true';
 
   const headers = table.querySelectorAll('thead th');
   if (!headers.length) return;
@@ -23,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.classList.add('column-toggle-button');
     return btn;
   };
-
 
   const checkAllBtn = makeButton('Check all');
   const uncheckAllBtn = makeButton('Uncheck all');
@@ -102,4 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-});
+}
+
+if (typeof document$ !== 'undefined') {
+  document$.subscribe(() => {
+    initColumnToggles();
+  });
+} else {
+  document.addEventListener('DOMContentLoaded', initColumnToggles);
+}
