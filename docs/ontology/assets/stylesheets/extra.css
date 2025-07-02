@@ -1,0 +1,28 @@
+.md-typeset table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.95em;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.md-typeset th {
+  background-color: #183F74;
+  color: #F7AD2C;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.md-typeset td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.md-typeset tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.md-typeset tr:hover {
+  background-color: #f5f5f5;
+}

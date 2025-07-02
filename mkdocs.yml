@@ -45,6 +45,8 @@ theme:
 
 plugins:
   - search
+  - table-reader
+
 
 markdown_extensions:
   - admonition
@@ -53,6 +55,8 @@ markdown_extensions:
 
 extra_css:
   - assets/stylesheets/colors.css
+  - ontology/assets/stylesheets/extra.css
+
 
 nav:
   - Home: index.md
@@ -72,6 +76,7 @@ nav:
       - Changelog: ontology/changelog.md
       - Sex and Gender Ontology: ontology/sex-gender.md
       - Specification: ontology/specification/index-en.html
+      - Mappings: ontology/mappings.md
   # - Output:
   #     - Overview: output/index.md
 
@@ -90,3 +95,7 @@ extra:
     - icon: material/web
       link: https://health-ri.nl
       name: Website
+
+extra_javascript:
+  - ontology/assets/javascripts/tablesort.min.js
+  - ontology/assets/javascripts/init-tablesort.js
