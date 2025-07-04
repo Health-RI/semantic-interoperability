@@ -20,7 +20,7 @@ jobs:
         run: pip install mkdocs mkdocs-material mkdocs-table-reader-plugin
 
       - name: Clean Visual Paradigm temp files
-        run: python scripts/clean_vpp_temp_files.py
+        run: python scripts/clean_unwanted_files.py
 
       - name: Copy changelog to docs folder
         run: |
