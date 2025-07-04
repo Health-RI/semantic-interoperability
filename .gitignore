@@ -201,3 +201,13 @@ Thumbs.db
 
 # Protege
 **/catalog-v*.xml
+
+# Ignore all .bat files except those inside the /script folder
+*.bat
+!script/*.bat
+
+# Ignore all diff.path files
+**/diff.path
+
+# Ignore all .del files
+**/*.del

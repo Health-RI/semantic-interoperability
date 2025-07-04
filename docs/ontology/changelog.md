@@ -101,3 +101,97 @@ The repository uses a **fast versioning strategy**: new versions are made availa
 
 - Generalization structure revised to include new superclass for persons with assigned statuses
 - Layout adjustments in diagrams to reflect new hierarchical relationships
+
+## [0.5.2] - 2025-07-01
+
+### Added
+
+- New **Package**:
+
+  - _Auxiliary_ package to hold supporting concepts.
+
+- New **Classes**:
+
+  - _Legal Gender_ (subkind of Administrative Gender)
+  - _Gender Identity_ and its phases:
+    - Male Gender Identity
+    - Female Gender Identity
+    - Non-binary Gender Identity
+  - _Person with Recognized Legal Gender_
+  - _Person with Recognized Administrative Gender_
+  - _Administrative Gender Recognizer_ (role)
+  - _Administrative Gender Recognition_ (relator)
+  - _Administrative Gender_ (mode)
+  - _Person Without Legal Gender_
+  - _Person's Sex and Gender_ (category)
+
+- **Generalizations** and **Generalization Sets**:
+
+  - New hierarchies linking _Gender Identity_ phases to _Gender Identity_
+  - Added generalizations connecting _Administrative Gender_ subkinds and roles
+  - Introduced _gender identity types_ generalization set (complete, disjoint)
+
+- **Relations**:
+
+  - New characterization and mediation relations linking persons to their administrative, legal, and gender identity classifications.
+  - Added properties with correct cardinalities to support these relations.
+
+- **Diagram**:
+  - _Administrative-Legal Gender_ diagram placeholder added.
+
+### Changed
+
+- Many **descriptions** were added to previously empty class definitions, improving semantic clarity:
+
+  - For example, _Sex at Birth_, _Phenotypic Sex_, _Karyotypical Sex_, _Assigned Sex at Birth_, _Healthcare Professional_, _Birth Record_, _Legal Gender Recognition_, and many others now have clear, detailed descriptions.
+  - These changes improve documentation for users and implementers.
+
+- Various **names and stereotypes** were adjusted for consistency and correctness:
+
+  - _Assigned Sex at Birth_ renamed to _Sex at Birth_, now a **subkind**.
+  - _Legal Gender Recognition_ stereotype changed from **relator** to **subkind**.
+  - _Legal Gender Certificate_ stereotype corrected from **subkind** to **kind**.
+  - _Document_ stereotype adjusted from **kind** to **category**.
+
+- **Removed**:
+
+  - _Complementary_ package.
+  - _Biological Sex Assignment_ classes and related mediation relations (including _Biological Sex Assigner_ and _Assignee_ roles).
+  - _Legal Gender_, _Biological Sex_, and _Social Gender_ classes were removed and restructured.
+  - Obsolete generalizations supporting these now-removed classes.
+
+- **Refactored**:
+  - ID values for many classes and properties were reorganized for consistency.
+  - Cardinalities on properties were reviewed and corrected (e.g., from `0..1` to `1..*` where appropriate).
+
+### Notes
+
+This release reflects a **significant conceptual reorganization** of the ontology to:
+
+- Clarify the distinction between biological, administrative, and self-identified dimensions of sex and gender.
+- Better support legal and administrative use cases, including formal recognition processes.
+- Improve semantic precision and documentation quality.
+
+## [0.6.0] - 2025-07-02
+
+### Added
+
+- New classes to model administrative gender roles and designations:
+  - _Person with Male Administrative Gender_
+  - _Person with Female Administrative Gender_
+  - _Person with Non-binary Administrative Gender_
+  - _Male Administrative Gender_
+  - _Female Administrative Gender_
+  - _Non-binary Administrative Gender_
+- New generalizations linking these classes to their respective superclasses.
+- Two new generalization sets:
+  - _person's administrative genders_ (incomplete, overlapping)
+  - _administrative gender types_ (complete, disjoint)
+- New characterization relations connecting persons to their administrative gender classifications.
+- A new generalization set _administrative gender characterization types_ grouping characterization relations by gender type.
+
+### Changed
+
+- Updated various internal IDs for consistency.
+- Corrected property cardinalities and read-only settings on characterization relations.
+- Improved naming of certain properties, including renaming one to **"has administrative gender"** to clarify its role.
