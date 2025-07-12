@@ -132,7 +132,7 @@ It is important to recognize that domain modeling is a **gradual and deliberate 
 
 Rather than attempting to produce a complete and exhaustive reference model from the outset, the strategy adopted is one of **incremental construction**. The reference model will begin with a small set of well-defined core concepts. With each new modeling session, additional concepts will be introduced and integrated, ensuring they are **coherently aligned with the existing structure**. This approach allows the model to evolve in a controlled, extensible, and quality-assured manner.
 
-All versions of the reference model will be made **openly available to the community** via the repository at [https://w3id.org/health-ri/semantic-interoperability](https://w3id.org/health-ri/semantic-interoperability).
+All versions of the reference model will be made **openly available to the community** via the repository at [https://w3id.org/health-ri/semantic-interoperability/git](https://w3id.org/health-ri/semantic-interoperability/git).
 
 This ensures that institutions, researchers, and developers can **reuse, review, and contribute** to the model as it grows, supporting broader adoption and promoting transparency.
 
