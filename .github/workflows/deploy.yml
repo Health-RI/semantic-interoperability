@@ -17,7 +17,7 @@ jobs:
           python-version: 3.x
 
       - name: Install Python dependencies
-        run: pip install mkdocs mkdocs-material mkdocs-table-reader-plugin
+        run: pip install mkdocs mkdocs-material mkdocs-table-reader-plugin packaging
 
       - name: Clean unwanted files
         run: python scripts/clean_unwanted_files.py
@@ -26,6 +26,11 @@ jobs:
         run: |
           mkdir -p docs/ontology
           cp ontologies/changelog.md docs/ontology/changelog.md
+
+      - name: Remove old and copy new images
+        run: |
+          rm -rf docs/ontology/assets/images/*
+          cp -r ontologies/model\ images/* docs/ontology/assets/images/
 
       - name: Validate MkDocs configuration
         run: mkdocs build --strict --verbose --clean --site-dir /tmp/mkdocs-check

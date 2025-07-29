@@ -72,11 +72,12 @@ nav:
   - The Health-RI Method:
       - Overview: method/index.md
   - The Health-RI Ontology:
+      - Home: ontology/home.md
       - Publishing: ontology/publishing.md
       - Changelog: ontology/changelog.md
-      - Sex and Gender Ontology: ontology/sex-gender.md
-      - Specification: ontology/specification/index-en.html
+      - Ontology Presentation: ontology/ontology.md
       - Mappings: ontology/mappings.md
+      - Specification: ontology/specification/index-en.html
   # - Output:
   #     - Overview: output/index.md
 
