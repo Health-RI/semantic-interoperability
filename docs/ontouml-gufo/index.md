@@ -1,6 +1,4 @@
-# The Health-RI Ontology
-
-TO BE UPDATED!!!
+# OntoUML & gUFO
 
 This section introduces OntoUML, an ontologically well-founded conceptual modeling language, and gUFO, its lightweight computational counterpart based on the Unified Foundational Ontology (UFO). The resources below provide background, guidance, tools, and structured content to support both the creation and practical application of OntoUML models, as well as their transformation into machine-readable OWL ontologies using gUFO.
 
