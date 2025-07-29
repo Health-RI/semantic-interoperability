@@ -1,8 +1,9 @@
 import json
-import argparse
 from pathlib import Path
 from packaging import version
 import re
+import os
+import logging
 
 
 def has_meaningful_content(pkg, diagrams_by_owner):
@@ -232,45 +233,41 @@ def get_latest_json_file(directory):
                     latest_version = file_version_obj
                     latest_file = file
             except version.InvalidVersion:
-                print(f"Skipping invalid version: {file_version}")
+                logging.info(f"Skipping invalid version: {file_version}")
 
     return latest_file
 
 
 def main():
     """
-    The main entry point of the script. It parses command-line arguments, loads the OntoUML JSON data,
-    generates Markdown documentation, and writes it to the specified output file.
+    The main entry point of the script. It loads the latest OntoUML JSON data,
+    generates Markdown documentation, and writes it to a fixed output file.
     """
+    logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
+
+    # Ensure script runs from project root
+    os.chdir(Path(__file__).parent.parent.resolve())
+
+    # Define paths
     images_folder = Path("docs/ontology/assets/images")
     images_folder.mkdir(parents=True, exist_ok=True)
 
-    parser = argparse.ArgumentParser(
-        description="Generate Markdown documentation from OntoUML JSON export."
-    )
-    parser.add_argument(
-        "output_md",
-        nargs="?",
-        default="docs/ontology/ontology.md",
-        help="Path to write the Markdown output file",
-    )
-
-    args = parser.parse_args()
-    output_path = Path(args.output_md)  # Safer and reusable
-
-    # Automatically determine the latest JSON file
+    output_path = Path("docs/ontology/ontology.md")
     ontologies_dir = Path("ontologies")
+
+    # Load latest JSON file
     latest_json = get_latest_json_file(ontologies_dir)
     if latest_json:
-        print(f"Using latest JSON file: {latest_json}")
+        logging.info(f"Using latest JSON file: {latest_json}")
         data = load_json(latest_json)
     else:
-        print("No valid JSON files found.")
+        logging.info("No valid JSON files found.")
         return
 
+    # Generate Markdown and write to file
     markdown_output = generate_markdown(data, images_folder=images_folder)
     output_path.write_text(markdown_output, encoding="utf-8")
-    print(f"Documentation written to: {output_path}")
+    logging.info(f"Documentation written to: {output_path}")
 
 
 if __name__ == "__main__":

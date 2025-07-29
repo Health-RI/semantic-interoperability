@@ -32,6 +32,9 @@ jobs:
           rm -rf docs/ontology/assets/images/*
           cp -r ontologies/model\ images/* docs/ontology/assets/images/
 
+      - name: Generate OntoUML documentation
+        run: python scripts/ontouml-docgen.py          
+
       - name: Validate MkDocs configuration
         run: mkdocs build --strict --verbose --clean --site-dir /tmp/mkdocs-check
 
