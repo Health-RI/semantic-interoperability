@@ -72,7 +72,7 @@ nav:
   - The Health-RI Method:
       - Overview: method/index.md
   - The Health-RI Ontology:
-      - Home: ontology/home.md
+      - Home: ontology/index.md
       - Publishing: ontology/publishing.md
       - Changelog: ontology/changelog.md
       - Ontology Presentation: ontology/ontology.md
