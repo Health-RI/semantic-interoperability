@@ -67,8 +67,6 @@ While not all these dimensions are explicitly modeled, the ontology focuses on t
 
 This separation helps clarify that while biological sex is fundamentally about the person's body, some of its types require social practices of observation, assessment, and formal assignment.
 
-![Sex](assets\images\Sex.png)
-
 ### Gender
 
 Gender is also modeled as a **<<mode>>**, reflecting its intrinsic nature as a property of a person. However, the ontology carefully distinguishes **intrinsic** from **extrinsic** modes of gender:
@@ -118,8 +116,6 @@ The model includes:
 - Male, Female, and Non-binary identities as **<<phase>>** subtypes, acknowledging that a person's gender identity can vary over time.
 
 This approach supports inclusive modeling of diverse gender identities while recognizing their personal, self-defined nature.
-
-![Gender Identity](assets\images\Gender Identity.png)
 
 ## Biology
 
