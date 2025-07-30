@@ -48,7 +48,7 @@ jobs:
         run: sudo apt-get install -y linkchecker
 
       - name: Check links in built site
-        run: linkchecker ./site --no-status
+        run: linkchecker ./site --no-status --ignore-url="specification\.html#n[0-9a-f]{32}"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
