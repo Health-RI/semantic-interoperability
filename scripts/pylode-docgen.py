@@ -30,9 +30,7 @@ def fix_internal_links_in_html(file_path: Path):
         html = file_path.read_text(encoding="utf-8")
         # Replace href="file:///.../specification.html#SomeAnchor" → href="#SomeAnchor"
         fixed_html = re.sub(
-            r'href="file://[^"]*/specification\.html#([^"]+)"',
-            r'href="#\1"',
-            html
+            r'href="file://[^"]*/specification\.html#([^"]+)"', r'href="#\1"', html
         )
         file_path.write_text(fixed_html, encoding="utf-8")
         logging.info("Patched internal file:// links to use relative anchors (#...).")
@@ -40,7 +38,9 @@ def fix_internal_links_in_html(file_path: Path):
         logging.warning(f"Could not patch internal links: {e}")
 
 
-def sort_toc_sections_in_html(file_path: Path, section_ids=("classes", "annotationproperties")):
+def sort_toc_sections_in_html(
+    file_path: Path, section_ids=("classes", "annotationproperties")
+):
     """
     Sorts the list items under 'Classes' and 'Annotation Properties' in the Table of Contents.
     """
@@ -65,6 +65,36 @@ def sort_toc_sections_in_html(file_path: Path, section_ids=("classes", "annotati
         logging.warning(f"Could not sort ToC sections: {e}")
 
 
+def insert_logo_in_html(
+    file_path: Path,
+    logo_url="../assets/images/health-ri-logo-blue.png",
+    alt_text="Health-RI Logo",
+):
+    """
+    Inserts a logo image at the top of the HTML body.
+    """
+    try:
+        html = file_path.read_text(encoding="utf-8")
+        soup = BeautifulSoup(html, "html.parser")
+
+        # Find the body and insert logo at the top
+        body = soup.body
+        if body:
+            img_tag = soup.new_tag(
+                "img",
+                src=logo_url,
+                alt=alt_text,
+                style="max-height: 80px; margin-bottom: 1em;",
+            )
+            body.insert(0, img_tag)
+            file_path.write_text(str(soup), encoding="utf-8")
+            logging.info("Inserted logo at the top of the HTML.")
+        else:
+            logging.warning("No <body> tag found. Logo not inserted.")
+    except Exception as e:
+        logging.warning(f"Could not insert logo: {e}")
+
+
 def main():
     logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
@@ -80,17 +110,13 @@ def main():
 
     logging.info(f"Generating specification from: {latest_ttl}")
     try:
-        subprocess.run([
-            "pylode",
-            str(latest_ttl),
-            "-o",
-            str(output_file)
-        ], check=True)
+        subprocess.run(["pylode", str(latest_ttl), "-o", str(output_file)], check=True)
         logging.info(f"Specification generated at: {output_file}")
 
         # Post-process the file to fix broken internal links
         fix_internal_links_in_html(output_file)
         sort_toc_sections_in_html(output_file)
+        insert_logo_in_html(output_file)
 
     except subprocess.CalledProcessError as e:
         logging.error(f"PyLODE generation failed: {e}")
