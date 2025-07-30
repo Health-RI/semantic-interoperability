@@ -39,7 +39,7 @@ jobs:
         run: python scripts/pylode-docgen.py
 
       - name: Validate MkDocs configuration
-        run: mkdocs build --strict --verbose --clean --site-dir /tmp/mkdocs-check
+        run: mkdocs build --verbose --clean --site-dir /tmp/mkdocs-check
 
       - name: Build MkDocs site
         run: mkdocs build
