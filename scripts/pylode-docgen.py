@@ -3,6 +3,7 @@ import subprocess
 import logging
 from pathlib import Path
 from packaging import version
+from bs4 import BeautifulSoup  # New dependency
 
 
 def get_latest_ttl_file(directory: Path):
@@ -39,6 +40,31 @@ def fix_internal_links_in_html(file_path: Path):
         logging.warning(f"Could not patch internal links: {e}")
 
 
+def sort_toc_sections_in_html(file_path: Path, section_ids=("classes", "annotationproperties")):
+    """
+    Sorts the list items under 'Classes' and 'Annotation Properties' in the Table of Contents.
+    """
+    try:
+        html = file_path.read_text(encoding="utf-8")
+        soup = BeautifulSoup(html, "html.parser")
+
+        for section_id in section_ids:
+            toc_anchor = soup.find("a", href=f"#{section_id}")
+            if toc_anchor:
+                parent_li = toc_anchor.find_parent("li")
+                ul_second = parent_li.find("ul", class_="second")
+                if ul_second:
+                    list_items = ul_second.find_all("li")
+                    sorted_items = sorted(list_items, key=lambda li: li.a.text.lower())
+                    ul_second.clear()
+                    for li in sorted_items:
+                        ul_second.append(li)
+        file_path.write_text(str(soup), encoding="utf-8")
+        logging.info(f"Sorted Table of Contents entries for sections: {section_ids}")
+    except Exception as e:
+        logging.warning(f"Could not sort ToC sections: {e}")
+
+
 def main():
     logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
@@ -64,6 +90,7 @@ def main():
 
         # Post-process the file to fix broken internal links
         fix_internal_links_in_html(output_file)
+        sort_toc_sections_in_html(output_file)
 
     except subprocess.CalledProcessError as e:
         logging.error(f"PyLODE generation failed: {e}")
