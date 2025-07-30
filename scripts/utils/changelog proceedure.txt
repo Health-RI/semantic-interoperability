@@ -5,4 +5,4 @@ jq "del(.. | .shape?, .. | select(type == \"object\" and (.type | type == \"stri
 
 2)
 
-diff -U0 --minimal -w old.del new.del | clip
+diff -U0 --minimal -w old.del new.del > "diff.txt"

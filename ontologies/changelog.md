@@ -128,3 +128,113 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - High-level categories like Sex and Gender, including Legal, Administrative, and Identity forms.
   - General concepts including Person, Organization, Government, and Document.
 - Improved consistency and clarity across all descriptions to support better understanding in administrative, legal, medical, and ontological contexts.
+
+## [0.6.0] - 2025-07-30
+
+### Added
+
+- Introduced new classes to represent administrative gender assignments:
+  - `Person with Male Administrative Gender`
+  - `Person with Female Administrative Gender`
+  - `Person with Non-binary Administrative Gender`
+  - `Male Administrative Gender`, `Female Administrative Gender`, and `Non-binary Administrative Gender`
+- Added new generalizations and generalization sets:
+  - Generalizations linking `Person with Administrative Gender` roles to `Person`
+  - Generalizations linking administrative gender phases to the `Administrative Gender` category
+  - Generalization sets:
+    - `person's administrative genders` (complete, not disjoint)
+    - `administrative gender types` (complete, disjoint)
+    - `administrative gender characterization types` (complete, disjoint)
+- Introduced three new `characterization` relations:
+  - Each links one of the `Person with X Administrative Gender` roles with the corresponding `X Administrative Gender` phase
+- Added names to several previously unnamed relations, such as `"has administrative gender"`
+
+### Changed
+
+- Swapped internal OntoUML element IDs to improve structural clarity and align with internal conventions. These changes affect class and generalization identifiers but not their semantic content.
+- Improved the clarity of modeling administrative gender recognition as separate from legal or self-identified gender representations.
+- Reorganized the ontology structure to accommodate the new administrative gender module while preserving backward compatibility.
+
+### Fixed
+
+- Corrected some inconsistencies in generalization references and alignment of identifiers for relations and generalizations across the administrative gender module.
+
+## [0.7.0] - 2025-07-30
+
+### Changed
+
+- Reassigned internal OntoUML element identifiers to improve structural consistency and tooling traceability:
+  - Multiple `id` values for classes, generalizations, and relations were systematically rotated or swapped.
+  - These changes have no impact on the logical content or semantics of the ontology but support improved internal alignment.
+
+### Removed
+
+- Class: `Organization` (previously defined as a `kind`) was removed from the ontology.
+  - It included a description as a structured group with roles, responsibilities, and formal authority.
+  - If still needed, its usage should be reintroduced in future updates or considered as part of an external reference ontology.
+
+## [0.8.0] - 2025-07-30
+
+### Added
+
+- Introduced a new diagnostic module with comprehensive modeling of diagnostic types and roles, including:
+  - `Healthcare Diagnosis`, `Clinical Diagnosis`, `Laboratory Diagnosis`, `Radiological Diagnosis`, `Administrative Coding Diagnosis`, `Epidemiological Diagnosis`, `Surveillance Diagnosis`, `Research Diagnosis`
+  - Diagnosis roles such as `Diagnosed Biological Part`, `Diagnosed Specimen`, `Diagnosed Group`, and `Diagnosed Cellular Entity`
+  - `Conclusive Diagnostic Assessment`, `Concluded Diagnostic Relation`, and other related constructs
+- New taxonomy and generalization sets for diagnosis classification, including:
+  - `healthcare diagnosis types by source`, `healthcare diagnosis types by focus`, `healthcare diagnosis types by use`, `types of diagnosed entities`, and `cellular entity diagnosis types`
+- Introduced `Self-diagnosis`, `External Diagnosis`, and `Diagnosis Suspicion` as distinct classes
+- New diagnostic relation: characterization between diagnosis suspicion and assessed condition
+- Expanded health condition classification with:
+  - `Traumatic Health Condition`, `Non-traumatic Health Condition`, `Risk-based Health Condition`, `Exposure-based Health Condition`, `Inherent Health Condition`, and `Injury`
+- Introduced `Cellular Entity` and its states: `Living Cellular Entity`, `Dead Cellular Entity`
+- New generalization sets for animal types, trauma-based health condition types, and cellular entity states
+
+### Changed
+
+- Replaced `Animal`, `Non-Human Animal`, `Living Animal`, and `Dead Animal` with an updated and more expressive `Cellular Entity` taxonomy
+- Revised several stereotypes:
+  - Changed various `subkind` and unnamed classes to proper `category`, `roleMixin`, or `phaseMixin` stereotypes
+  - Updated `Health Condition` classes to clarify their nature (e.g., intrinsic vs extrinsic modes)
+- Improved modeling coherence for diagnostic processes, replacing older concepts like `Antemortem Diagnosis` and `Postmortem Diagnosis` with more granular and categorized alternatives
+
+### Removed
+
+- Removed the entire `Animal` classification block including:
+  - `Animal`, `Non-Human Animal`, `Living Animal`, `Dead Animal`
+  - Their generalizations and generalization sets (e.g., `animal types`, `animal living state`)
+
+## [0.9.0] - 2025-07-30
+
+### Added
+
+- New textual descriptions were added to key sections of the ontology and diagrams, improving documentation and understandability:
+  - Ontology-level description of sex and gender, distinguishing intrinsic and extrinsic modes and their role in formal assessment or self-identification.
+  - Detailed diagram descriptions for:
+    - **Sex at Birth**, **Karyotypical Sex**, **Phenotypic Sex**
+    - **Legal Gender**, **Administrative Gender**, **Gender Identity**
+    - Integrated overview diagram of all sex and gender modes
+    - Biological **Sex** as a conceptual umbrella
+
+### Changed
+
+- Swapped internal identifiers of several classes and generalizations to align with structural or tooling needs. These include:
+  - Various class IDs for `Person`, `Gender`, `Health Condition`, and diagnostic modules
+  - Generalization and generalization set IDs (e.g., in "healthcare diagnosis types by use", "by focus", etc.)
+- These identifier changes do not affect the semantic content of the model but improve consistency and traceability in tooling pipelines.
+
+### Fixed
+
+- Improved alignment and phrasing in existing class descriptions for **Gender** and **Sex**, especially in the documentation layer.
+
+## [0.9.1] - 2025-07-30
+
+### Changed
+
+- Updated internal identifiers (`id` fields) for multiple classes, relations, and generalizations to improve consistency in serialization and downstream processing. These changes do not affect the logical structure or semantics of the ontology.
+
+### Fixed
+
+- Corrected typographic artifacts in textual descriptions for sex and gender constructs that previously used escaped HTML-like formatting (`**<<mode>>**`, `**<<phase>>**`, etc.). These are now consistently rendered.
+- Minor cleanup in markdown-style syntax within descriptions, ensuring accurate rendering in downstream documentation tools.
+
