@@ -77,7 +77,7 @@ nav:
       - Changelog: ontology/changelog.md
       - Ontology Presentation: ontology/ontology.md
       - Mappings: ontology/mappings.md
-      - Specification: ontology/specification/index-en.html
+      - Specification: ontology/specification.html
   # - Output:
   #     - Overview: output/index.md
 
