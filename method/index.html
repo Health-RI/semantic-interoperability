@@ -861,15 +861,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#incremental-development-and-community-accessibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      Incremental Development and Community Accessibility
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1100,39 +1091,43 @@
 <p><img alt="Generic process" src="assets/images/Picture0.png" /></p>
 <h2 id="current-situation">Current Situation</h2>
 <p><img alt="Current Situation" src="assets/images/Picture1.png" /></p>
-<p>Health-RI serves as an intermediary that enables the nodes in its network to <strong>publish and consume data</strong> across institutions and systems. However, for this data exchange to be <strong>meaningful and analytically reliable</strong>, the data must be interpreted consistently and correctly by all parties involved.</p>
-<p>Addressing this challenge requires moving beyond structural or syntactic alignment. What is needed is <strong>semantic interoperability</strong>—a shared understanding of the meaning behind the data being exchanged.</p>
-<p>As illustrated in the figure above, each node maintains its own <strong>data schema</strong> and <strong>data repository</strong>. These schemas often vary significantly in structure, terminology, and the standards or assumptions they follow. In practice, several challenges arise:</p>
+<p>Health-RI serves as an intermediary that enables the nodes in its network to publish and consume data across institutions and systems. However, for this data exchange to be meaningful and analytically reliable, the data must be interpreted consistently and correctly by all parties involved.</p>
+<p>Addressing this challenge requires moving beyond structural or syntactic alignment. What is needed is semantic interoperability—a shared understanding of the meaning behind the data being exchanged.</p>
+<p>As illustrated in the figure above, each node maintains its own data schema and data repository. These schemas often vary significantly in structure, terminology, and the standards or assumptions they follow. In practice, several challenges arise:</p>
 <ul>
-<li>Some schemas adhere to formal standards, while others are <strong>informally defined</strong> by the data authors themselves.</li>
-<li>A single schema might be <strong>influenced by multiple standards</strong>, each introducing different terminologies or modeling assumptions.</li>
-<li>Documentation is often <strong>incomplete or ambiguous</strong>, which leads to misunderstandings and misinterpretation when data is exchanged between nodes.</li>
+<li>Some schemas adhere to formal standards, while others are informally defined by the data authors themselves.</li>
+<li>A single schema might be influenced by multiple standards, each introducing different terminologies or modeling assumptions.</li>
+<li>Documentation is often incomplete or ambiguous, which leads to misunderstandings and misinterpretation when data is exchanged between nodes.</li>
 </ul>
-<p>This lack of clear, shared semantics introduces <strong>significant barriers to data integration and analysis</strong>. It increases the risk of misinterpretation, reduces confidence in the data, and ultimately limits reuse and impact.</p>
+<p>This lack of clear, shared semantics introduces significant barriers to data integration and analysis. It increases the risk of misinterpretation, reduces confidence in the data, and ultimately limits reuse and impact.</p>
 <p>To address these challenges and ensure semantic alignment across Health-RI’s network, we propose a new approach centered around a shared reference model.</p>
 <h2 id="toward-a-solution-introducing-a-common-reference-model">Toward a Solution: Introducing a Common Reference Model</h2>
-<p>Rather than relying on isolated and potentially ambiguous schemas, we propose the creation of a <strong>Common Reference Model</strong> to serve as a shared semantic foundation across all nodes.</p>
-<p>This model is not intended to replace local schemas. Instead, it will serve as a <strong>semantic anchor</strong>: each schema will be expected to explicitly declare how its elements correspond to the concepts in the reference model, clarifying their intended meaning and enabling consistent interpretation.</p>
+<p>Rather than relying on isolated and potentially ambiguous schemas, we propose the creation of a Common Reference Model to serve as a shared semantic foundation across all nodes.</p>
+<p>This model is not intended to replace local schemas. Instead, it will serve as a semantic anchor: each schema will be expected to explicitly declare how its elements correspond to the concepts in the reference model, clarifying their intended meaning and enabling consistent interpretation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In practice, schemas do not need to be restructured or rewritten. Rather, they must be <strong>mapped</strong> to the reference model—declaring, for each concept, its corresponding concept (or the nature of its relation) in the shared ontology.</p>
+<p>In practice, schemas do not need to be restructured or rewritten. Rather, they must be mapped to the reference model—declaring, for each concept, its corresponding concept (or the nature of its relation) in the shared ontology.</p>
 </div>
-<p>To be effective, the reference model must be expressed in a <strong>highly expressive modeling language</strong>—one capable of making <strong>ontological commitments explicit</strong> and capturing <strong>rich semantic distinctions</strong>.</p>
-<p>These requirements call for the use of <strong>ontologically well-founded modeling languages</strong>, which are grounded in formal ontology and support the precise representation of complex domains. Among them, <strong>OntoUML</strong> stands out as a leading and widely adopted approach, offering both theoretical rigor and practical tooling.</p>
+<p>To be effective, the reference model must be expressed in a highly expressive modeling language—one capable of making ontological commitments explicit and capturing rich semantic distinctions.</p>
+<p>These requirements call for the use of ontologically well-founded modeling languages, which are grounded in formal ontology and support the precise representation of complex domains. Among them, <a href="../ontouml-gufo/ontouml/">OntoUML</a> stands out as a leading and widely adopted approach, offering both theoretical rigor and practical tooling.</p>
+<p>The image below illustrates the roles and technologies involved in our approach to enabling semantic interoperability. At the top, the conceptual common reference model is represented using OntoUML, providing a clear and ontologically well-founded view of the meaning of concepts. While this model supports human understanding, it is not directly usable in computational artifacts.</p>
+<p><img alt="Common Reference Model" src="assets/images/common-reference-model.png" /></p>
+<p>To enable computational use, the OntoUML model is transformed into a corresponding ontology implemented in <a href="../ontouml-gufo/gufo/">gUFO</a>, a lightweight ontology in OWL aligned with the Unified Foundational Ontology (UFO).</p>
+<p>Once the computational ontology is available, computational artifacts—such as schemas, web ontologies, or others used for information exchange—can be mapped to the gUFO-based OWL ontology. These mappings may be created by Health-RI (see <a href="../ontology/mappings/">mappings</a>) or by the owners of the aligned artifacts.</p>
 <!-- TODO: add advantages of OntoUML and link to its page -->
 
 <h2 id="division-of-responsibilities-modeling-and-mapping-teams">Division of Responsibilities: Modeling and Mapping Teams</h2>
 <p><img alt="Modeling and Mapping Teams" src="assets/images/Picture2.png" /></p>
 <p>To operationalize the approach based on a shared reference model, Health-RI will structure the effort around two complementary teams:</p>
 <ul>
-<li>The <strong>Ontology Modeling Team</strong></li>
-<li>The <strong>Ontology Mapping Team</strong></li>
+<li>The Ontology Modeling Team</li>
+<li>The Ontology Mapping Team</li>
 </ul>
 <p>These teams will work in parallel to accelerate delivery while maintaining a clear division of responsibilities.</p>
 <h3 id="ontology-modeling-team">Ontology Modeling Team</h3>
 <p>The Modeling Team is responsible for developing the reference model using OntoUML. Team members are expected to:</p>
 <ul>
-<li>Model domain knowledge using <strong>OntoUML</strong> with a high degree of accuracy and precision.</li>
+<li>Model domain knowledge using OntoUML with a high degree of accuracy and precision.</li>
 <li>Analyze and interpret technical materials, such as standards, protocols, and domain documentation.</li>
 <li>Engage with domain specialists to gather the necessary insights for accurate modeling.</li>
 </ul>
@@ -1141,14 +1136,14 @@
 <p>The Mapping Team is responsible for linking existing data schemas from participating nodes to the reference model. This involves:</p>
 <ul>
 <li>Interpreting and understanding OntoUML models.</li>
-<li>Analyzing data schemas in various formats, with an emphasis on <strong>Semantic Web technologies</strong>.</li>
+<li>Analyzing data schemas in various formats, with an emphasis on Semantic Web technologies.</li>
 <li>Applying best practices in concept mapping using appropriate tools and techniques.</li>
-<li>Utilizing the <a href="https://mapping-commons.github.io/sssom/"><strong>Simple Standard for Sharing Ontological Mappings (SSSOM)</strong></a> to document mappings in a consistent and reusable way.</li>
-<li>Collaborating closely with <strong>data holders, managers, and owners</strong> at each node to capture the intended meaning of schema elements.</li>
+<li>Utilizing the <a href="https://mapping-commons.github.io/sssom/">Simple Standard for Sharing Ontological Mappings (SSSOM)</a> to document mappings in a consistent and reusable way.</li>
+<li>Collaborating closely with data holders, managers, and owners at each node to capture the intended meaning of schema elements.</li>
 </ul>
 <p>This team plays a critical role in ensuring that local schemas are semantically aligned with the reference model, enabling shared understanding across the network.</p>
 <h3 id="domain-guidance-and-coordination">Domain Guidance and Coordination</h3>
-<p>While domain knowledge is essential, it does not need to reside within the modeling or mapping teams. Instead, a <strong>third coordinating group</strong> will provide:</p>
+<p>While domain knowledge is essential, it does not need to reside within the modeling or mapping teams. Instead, a third coordinating group will provide:</p>
 <ul>
 <li>Access to domain experts and technical documentation.</li>
 <li>Guidance throughout the modeling and mapping processes.</li>
@@ -1156,52 +1151,45 @@
 </ul>
 <p>This group ensures that the teams are supported with the necessary context and resources to perform their tasks effectively.</p>
 <h3 id="collaborative-iteration-and-feedback">Collaborative Iteration and Feedback</h3>
-<p>As shown in the diagram, the Modeling and Mapping Teams operate in a <strong>collaborative feedback loop</strong>.</p>
+<p>As shown in the diagram, the Modeling and Mapping Teams operate in a collaborative feedback loop.</p>
 <ul>
-<li>The <strong>Ontology Modeling Team</strong> develops the conceptual model.</li>
-<li>The <strong>Ontology Mapping Team</strong> uses this model to map the local schemas.</li>
+<li>The Ontology Modeling Team develops the conceptual model.</li>
+<li>The Ontology Mapping Team uses this model to map the local schemas.</li>
 <li>Insights gained during the mapping process are fed back to the modeling team.</li>
 </ul>
 <p>This feedback may include:</p>
 <ul>
-<li><strong>Missing concepts</strong> that need to be added to the reference model.</li>
-<li><strong>Redundant or unused elements</strong> that can be removed or revised.</li>
-<li><strong>Ambiguities or inconsistencies</strong> that require clarification.</li>
+<li>Missing concepts that need to be added to the reference model.</li>
+<li>Redundant or unused elements that can be removed or revised.</li>
+<li>Ambiguities or inconsistencies that require clarification.</li>
 </ul>
 <p>This iterative cycle improves both the quality of the reference model and the precision of the mappings. Over time, it leads to a stronger, more coherent semantic framework for Health-RI and its partners.</p>
 <h2 id="translating-ontouml-to-owl-via-gufo">Translating OntoUML to OWL via gUFO</h2>
-<p>While OntoUML provides the expressiveness and ontological rigor needed to build the reference model, it is designed primarily for <strong>conceptual modeling</strong>. Its focus is on producing models that support <strong>human understanding</strong>, <strong>learning</strong>, <strong>communication</strong>, and <strong>informed decision-making</strong>. As such, OntoUML models are not directly suited for computational use in Semantic Web applications or automated reasoning tasks.</p>
-<p>To bridge this gap, the OntoUML model must be <strong>transformed into a computational representation</strong>. This is achieved by converting the OntoUML reference model into <strong>gUFO (gentle UFO)</strong>—a lightweight, computationally accessible ontology derived from UFO, the foundational ontology on which OntoUML is based.</p>
-<p>gUFO is implemented in the <strong>Web Ontology Language (OWL)</strong>, a widely used standard for representing ontologies on the Semantic Web. This makes it compatible with existing RDF-based technologies and allows:</p>
+<p>While OntoUML provides the expressiveness and ontological rigor needed to build the reference model, it is designed primarily for conceptual modeling. Its focus is on producing models that support human understanding, learning, communication, and informed decision-making. As such, OntoUML models are not directly suited for computational use in Semantic Web applications or automated reasoning tasks.</p>
+<p>To bridge this gap, the OntoUML model must be transformed into a computational representation. This is achieved by converting the OntoUML reference model into <a href="../ontouml-gufo/gufo/">gUFO (gentle UFO)</a>—a lightweight, computationally accessible ontology derived from UFO, the foundational ontology on which OntoUML is based.</p>
+<p>gUFO is implemented in the Web Ontology Language (OWL), a widely used standard for representing ontologies on the Semantic Web. This makes it compatible with existing RDF-based technologies and allows:</p>
 <ul>
-<li>The OntoUML-based reference model to be <strong>used computationally</strong> within semantic infrastructures.</li>
-<li>Semantic mappings from node-level <strong>RDF-based schemas</strong> to be aligned directly with the OWL representation of the model.</li>
+<li>The OntoUML-based reference model to be used computationally within semantic infrastructures.</li>
+<li>Semantic mappings from node-level RDF-based schemas to be aligned directly with the OWL representation of the model.</li>
 </ul>
-<p>By converting OntoUML models into gUFO-compliant OWL ontologies, we ensure that the semantics captured during conceptual modeling are <strong>retained</strong>, while also enabling their <strong>technical integration</strong> into semantic web systems and interoperability workflows.</p>
+<p>By converting OntoUML models into gUFO-compliant OWL ontologies, we ensure that the semantics captured during conceptual modeling are retained, while also enabling their technical integration into semantic web systems and interoperability workflows.</p>
 <h2 id="mapping-schemas-to-the-gufo-ontology">Mapping Schemas to the gUFO Ontology</h2>
 <p>Once the reference model has been converted into its computational form—namely, the gUFO ontology in OWL format—schema-level mappings can be established to connect the original data schemas to the reference ontology.</p>
 <p>The figure above outlines the decision process for performing these mappings, depending on the characteristics and technical constraints of each source schema.</p>
-<p>The first consideration is whether the original schema is expressed using <strong>Semantic Web technologies</strong>, such as RDF, RDFS, or OWL. If it is not, the schema cannot be programmatically linked to gUFO concepts. In these cases, the recommended approach is to create <strong>comprehensive external documentation</strong> that clearly registers the mappings between the schema and the gUFO ontology in a structured and traceable manner.</p>
-<p>If the schema is already implemented using Semantic Web technologies, the next step is to determine whether it is possible to <strong>extend or modify</strong> the schema:</p>
+<p>The first consideration is whether the original schema is expressed using Semantic Web technologies, such as RDF, RDFS, or OWL. If it is not, the schema cannot be programmatically linked to gUFO concepts. In these cases, the recommended approach is to create comprehensive external documentation that clearly registers the mappings between the schema and the gUFO ontology in a structured and traceable manner.</p>
+<p>If the schema is already implemented using Semantic Web technologies, the next step is to determine whether it is possible to extend or modify the schema:</p>
 <ul>
 <li>
-<p>If the schema is <strong>writable and under the control of the team</strong>, the mappings should be directly embedded into the schema using standard RDF mechanisms (e.g., <code>rdfs:seeAlso</code>, <code>owl:equivalentClass</code>, or custom annotation properties) that link schema terms to the corresponding concepts in gUFO.</p>
+<p>If the schema is writable and under the control of the team, the mappings should be directly embedded into the schema using standard RDF mechanisms (e.g., <code>rdfs:seeAlso</code>, <code>owl:equivalentClass</code>, or custom annotation properties) that link schema terms to the corresponding concepts in gUFO.</p>
 </li>
 <li>
-<p>If the schema is <strong>non-writable</strong> (e.g., maintained by an external authority, published as read-only, or subject to strict governance constraints), the mappings must be maintained externally. In such cases, the use of the <strong>Simple Standard for Sharing Ontological Mappings (SSSOM)</strong> is recommended. SSSOM provides a machine-readable, semantically robust format for documenting mappings between source terms and reference ontology concepts.</p>
+<p>If the schema is non-writable (e.g., maintained by an external authority, published as read-only, or subject to strict governance constraints), the mappings must be maintained externally. In such cases, the use of the <a href="https://mapping-commons.github.io/sssom/">Simple Standard for Sharing Ontological Mappings (SSSOM)</a> is recommended. SSSOM provides a machine-readable, semantically robust format for documenting mappings between source terms and reference ontology concepts.</p>
 </li>
 <li>
-<p>Finally, even if the schema is expressed in a Semantic Web format but lacks the structural flexibility to support such mappings natively (e.g., due to rigid serialization patterns or minimal annotation support), the mapping must still be registered in a <strong>formal and sound</strong> manner. This should be done in accordance with the <strong>capabilities and limitations of the target technology</strong>, ensuring both semantic precision and technical feasibility.</p>
+<p>Finally, even if the schema is expressed in a Semantic Web format but lacks the structural flexibility to support such mappings natively (e.g., due to rigid serialization patterns or minimal annotation support), the mapping must still be registered in a formal and sound manner. This should be done in accordance with the capabilities and limitations of the target technology, ensuring both semantic precision and technical feasibility.</p>
 </li>
 </ul>
-<p>By tailoring the mapping strategy to the technical nature of each schema, we ensure that all semantic alignments—whether embedded or external—remain <strong>traceable, reusable, and aligned</strong> with the reference ontology. This step is critical for enabling robust semantic interoperability across the Health-RI ecosystem.</p>
-<h2 id="incremental-development-and-community-accessibility">Incremental Development and Community Accessibility</h2>
-<p>It is important to recognize that domain modeling is a <strong>gradual and deliberate process</strong>. Because it aims to represent concepts with a high degree of semantic precision, it naturally requires time, iteration, and careful validation.</p>
-<p>Rather than attempting to produce a complete and exhaustive reference model from the outset, the strategy adopted is one of <strong>incremental construction</strong>. The reference model will begin with a small set of well-defined core concepts. With each new modeling session, additional concepts will be introduced and integrated, ensuring they are <strong>coherently aligned with the existing structure</strong>. This approach allows the model to evolve in a controlled, extensible, and quality-assured manner.</p>
-<p>All versions of the reference model will be made <strong>openly available to the community</strong> via the repository at <a href="https://w3id.org/health-ri/semantic-interoperability/git">https://w3id.org/health-ri/semantic-interoperability/git</a>.</p>
-<p>This ensures that institutions, researchers, and developers can <strong>reuse, review, and contribute</strong> to the model as it grows, supporting broader adoption and promoting transparency.</p>
-<p>Schema-specific mappings, however, will be managed separately. These mappings may follow different strategies depending on <strong>negotiations with the schema owners</strong>, their governance frameworks, and technical constraints. In all cases, the goal is to align the schema concepts with the reference model in a manner that is technically sound and consistent with local policies.</p>
-<p>With each new release of the reference model, the mapping team can establish additional mappings. In this way, the semantic alignment across nodes will progressively improve, and the usability of the data will increase—as more and more of the underlying meanings become explicit, documented, and interoperable.</p>
+<p>By tailoring the mapping strategy to the technical nature of each schema, we ensure that all semantic alignments—whether embedded or external—remain traceable, reusable, and aligned with the reference ontology. This step is critical for enabling robust semantic interoperability across the Health-RI ecosystem.</p>
 
 
 
