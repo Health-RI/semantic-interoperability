@@ -14,31 +14,28 @@
 @base <https://w3id.org/health-ri/ontology> .
 
 <https://w3id.org/health-ri/ontology#> rdf:type owl:Ontology ;
-    dct:abstract """TBD"""@en ;
-    dct:contributor <https://w3id.org/health-ri/contributor/0000-0000-0000-0000> ,
-                    <https://w3id.org/health-ri/contributor/0000-0000-0000-0001> ,
-                    <https://w3id.org/health-ri/contributor/0000-0000-0000-0002> ;
-    dct:creator <https://w3id.org/health-ri/creator/0000-0000-0000-0003> ;
+    dct:abstract "Developed by Health‑RI and collaborators, this ontology—grounded in UFO and implemented in gUFO/OWL—enables semantic interoperability across healthcare and life sciences, extending beyond systems to include institutions, research infrastructures, and services. It establishes a common reference model that harmonizes data from diverse sources by formally defining domain concepts and allowing mappings from heterogeneous sources."@en ;
+    dct:contributor <https://orcid.org/0000-0003-0771-3516> ,   # Niek van Ulzen
+                    <https://orcid.org/0000-0003-1451-4240> ;   # Anika Bongaarts
+    dct:creator <https://orcid.org/0000-0003-2736-7817> ;   # Pedro Paulo F. Barcelos
     dct:description "TBD description of the ontology. This vocabulary provides a canonical RDF-based serialization for a domain-specific language or model, enabling publication, data exchange, and computational processing."@en ;
     dct:identifier "https://w3id.org/health-ri/ontology" ;
-    dct:issued "2025-01-01"^^xsd:date ;
     dct:language "en"^^xsd:language ;
-    dct:license <https://w3id.org/health-ri/license> ;
-    dct:modified "2025-01-02"^^xsd:date ;
-    dct:publisher <https://w3id.org/health-ri/publisher/organization1> ,
-                  <https://w3id.org/health-ri/publisher/organization2> ,
-                  <https://w3id.org/health-ri/publisher/organization3> ;
-    dct:title "Example Ontology Vocabulary"@en ;
-    vann:preferredNamespacePrefix "example" ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:publisher <https://w3id.org/health-ri> ;
+    dct:title "Health-RI Ontology"@en ;
+    vann:preferredNamespacePrefix "health-ri" ;
     vann:preferredNamespaceUri "https://w3id.org/health-ri/ontology#"^^xsd:anyURI ;
-    owl:versionInfo "TBD version information, e.g., notes about changes, structure, or semantics."@en ;
     dcat:keyword "domain"@en ,
                  "example"@en ,
                  "model"@en ,
                  "ontology"@en ,
                  "vocabulary"@en ;
-    dcat:landingPage <https://w3id.org/health-ri/ontology/landing> ;
-    dcat:version "0.0.0" ;
-    foaf:homepage <https://w3id.org/health-ri/ontology> ;
-    foaf:logo <https://w3id.org/health-ri/resources/logo.png> ;
-    mod:repository <https://w3id.org/health-ri/ontology/repository> .
+    dcat:landingPage <https://w3id.org/health-ri/semantic-interoperability> ;
+    foaf:logo <https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/docs/assets/images/health-ri-logo-blue.png> ;
+    foaf:homepage <https://w3id.org/health-ri/semantic-interoperability> ;
+    mod:repository <https://w3id.org/health-ri/semantic-interoperability/git> ;
+    dct:issued "2025-05-20"^^xsd:date ;
+    
+    dct:modified "2025-07-30"^^xsd:date ;
+    dcat:version "0.9.1" .
