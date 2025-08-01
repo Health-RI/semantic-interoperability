@@ -5,7 +5,7 @@ from packaging import version
 from rdflib import Graph, Literal, Namespace
 from rdflib.namespace import XSD
 
-logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
+logging.basicConfig(level=logging.DEBUG, format="[%(levelname)s] %(message)s")
 
 
 def get_latest_ttl_file(directory):
@@ -24,10 +24,14 @@ def get_latest_ttl_file(directory):
     latest_version = None
     latest_file = None
 
+    logging.debug(f"Looking for TTL files in: {directory.resolve()}")
+
     for file in Path(directory).glob("Health-RI Ontology-v*.ttl"):
+        logging.debug(f"Checking file: {file.name}")
         match = re.match(pattern, file.name)
         if match:
             file_version = match.group(1)
+            logging.debug(f"Matched version: {file_version}")
             try:
                 file_version_obj = version.parse(file_version)
                 if latest_version is None or file_version_obj > latest_version:
@@ -37,6 +41,7 @@ def get_latest_ttl_file(directory):
                 logging.info(f"Skipping invalid version: {file_version}")
 
     return latest_file
+
 
 
 def should_merge_metadata(graph: Graph) -> bool:
@@ -84,12 +89,13 @@ def merge_ttl_files(latest_a: Path, b_path: Path):
 
     # Overwrite file A with the merged graph
     g_a.serialize(destination=latest_a, format="turtle")
-    logging.info(f"Metadata sucessfully merged. File saved to: {latest_a.resolve()}")
+    logging.info(f"Metadata successfully merged. File saved to: {latest_a.resolve()}")
 
 
 if __name__ == "__main__":
-    directory = Path("../ontologies")
-    ttl_metadata_path = Path("scripts/utils/metadata-template.ttl")
+    script_dir = Path(__file__).resolve().parent
+    directory = script_dir.parent / "ontologies"
+    ttl_metadata_path = script_dir / "utils" / "metadata-template.ttl"
 
     latest_gufo_path = get_latest_ttl_file(directory)
 
@@ -105,6 +111,4 @@ if __name__ == "__main__":
         if not latest_gufo_path:
             logging.warning(f"No valid TTL file found in: {directory}")
         if not ttl_metadata_path.exists():
-            logging.warning(
-                f"Metadata file not found at: {ttl_metadata_path.resolve()}"
-            )
+            logging.warning(f"Metadata file not found at: {ttl_metadata_path.resolve()}")
