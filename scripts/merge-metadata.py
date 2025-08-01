@@ -2,10 +2,11 @@ import re
 import logging
 from pathlib import Path
 from packaging import version
-from rdflib import Graph, Literal, Namespace
-from rdflib.namespace import XSD
+from datetime import date
+from rdflib import Graph, Literal, URIRef
+from rdflib.namespace import XSD, DCTERMS, DCAT
 
-logging.basicConfig(level=logging.DEBUG, format="[%(levelname)s] %(message)s")
+logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
 
 def get_latest_ttl_file(directory):
@@ -18,11 +19,13 @@ def get_latest_ttl_file(directory):
         directory (str or Path): Path to the directory containing the TTL files.
 
     Returns:
-        Path or None: Path to the latest versioned TTL file, or None if no valid file is found.
+        Tuple[Path or None, str or None]: Path to the latest versioned TTL file and its version string,
+        or (None, None) if no valid file is found.
     """
     pattern = r"^Health-RI Ontology-v(\d+\.\d+\.\d+)\.ttl$"
     latest_version = None
     latest_file = None
+    version_str = None
 
     logging.debug(f"Looking for TTL files in: {directory.resolve()}")
 
@@ -37,11 +40,11 @@ def get_latest_ttl_file(directory):
                 if latest_version is None or file_version_obj > latest_version:
                     latest_version = file_version_obj
                     latest_file = file
+                    version_str = file_version
             except version.InvalidVersion:
                 logging.info(f"Skipping invalid version: {file_version}")
 
-    return latest_file
-
+    return latest_file, version_str
 
 
 def should_merge_metadata(graph: Graph) -> bool:
@@ -55,21 +58,36 @@ def should_merge_metadata(graph: Graph) -> bool:
     Returns:
         bool: True if the metadata is NOT present and should be merged; False otherwise.
     """
-    DCT = Namespace("http://purl.org/dc/terms/")
     issued_literal = Literal("2025-05-20", datatype=XSD.date)
 
-    for _ in graph.subjects(predicate=DCT.issued, object=issued_literal):
+    for _ in graph.subjects(predicate=DCTERMS.issued, object=issued_literal):
         return False  # Metadata already present
     return True  # Metadata not present
 
 
-def merge_ttl_files(latest_a: Path, b_path: Path):
+def bind_common_prefixes(graph: Graph) -> None:
+    """
+    Binds commonly used prefixes to the given RDFLib graph.
+    """
+    graph.bind("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+    graph.bind("rdfs", "http://www.w3.org/2000/01/rdf-schema#")
+    graph.bind("owl", "http://www.w3.org/2002/07/owl#")
+    graph.bind("xsd", "http://www.w3.org/2001/XMLSchema#")
+    graph.bind("gufo", "http://purl.org/nemo/gufo#")
+    graph.bind("health-ri", "https://w3id.org/health-ri/ontology#")
+    graph.bind("dct", DCTERMS)
+    graph.bind("dcat", DCAT)
+
+
+def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
     """
     Merges TTL file B into the latest version of TTL file A and overwrites A.
+    Also adds dct:modified and dcat:version triples if metadata was merged.
 
     Args:
         latest_a (Path): Path to the latest TTL file A.
         b_path (Path): Path to file B.
+        version_str (str): The version string to include in dcat:version.
     """
     g_a = Graph()
     g_a.parse(latest_a, format="turtle")
@@ -79,17 +97,21 @@ def merge_ttl_files(latest_a: Path, b_path: Path):
 
     g_a += g_b
 
-    # Explicitly bind prefixes (important for serialization output)
-    g_a.bind("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#")
-    g_a.bind("rdfs", "http://www.w3.org/2000/01/rdf-schema#")
-    g_a.bind("owl", "http://www.w3.org/2002/07/owl#")
-    g_a.bind("xsd", "http://www.w3.org/2001/XMLSchema#")
-    g_a.bind("gufo", "http://purl.org/nemo/gufo#")
-    g_a.bind("health-ri", "https://w3id.org/health-ri/ontology#")
+    # Add dct:modified and dcat:version triples
+    today = date.today().isoformat()
+    modified_literal = Literal(today, datatype=XSD.date)
+    version_literal = Literal(version_str)
 
-    # Overwrite file A with the merged graph
+    ontology_uri = URIRef("https://w3id.org/health-ri/ontology")
+
+    g_a.add((ontology_uri, DCTERMS.modified, modified_literal))
+    g_a.add((ontology_uri, DCAT.version, version_literal))
+
+    bind_common_prefixes(g_a)
+
     g_a.serialize(destination=latest_a, format="turtle")
     logging.info(f"Metadata successfully merged. File saved to: {latest_a.resolve()}")
+    logging.info(f"Added dct:modified = {today} and dcat:version = {version_str}")
 
 
 if __name__ == "__main__":
@@ -97,14 +119,14 @@ if __name__ == "__main__":
     directory = script_dir.parent / "ontologies"
     ttl_metadata_path = script_dir / "utils" / "metadata-template.ttl"
 
-    latest_gufo_path = get_latest_ttl_file(directory)
+    latest_gufo_path, version_str = get_latest_ttl_file(directory)
 
-    if latest_gufo_path and ttl_metadata_path.exists():
+    if latest_gufo_path and version_str and ttl_metadata_path.exists():
         current_graph = Graph()
         current_graph.parse(latest_gufo_path, format="turtle")
 
         if should_merge_metadata(current_graph):
-            merge_ttl_files(latest_gufo_path, ttl_metadata_path)
+            merge_ttl_files(latest_gufo_path, ttl_metadata_path, version_str)
         else:
             logging.info(f"Metadata already present in: {latest_gufo_path.name}")
     else:
