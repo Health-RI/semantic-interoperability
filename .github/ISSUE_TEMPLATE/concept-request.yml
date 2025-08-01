@@ -1,0 +1,50 @@
+name: Request New Concept
+description: Propose a new concept to be added to the Health-RI OntoUML model or gUFO-based ontology.
+title: "[New Concept] <Suggested concept name>"
+labels: ["enhancement", "ontology", "triage"]
+assignees:
+  - pedropaulofb
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to propose a new term or concept that should be included in the ontology.
+
+  - type: input
+    id: concept-name
+    attributes:
+      label: Suggested concept name
+      placeholder: e.g., “Genomic Biomarker”
+
+  - type: textarea
+    id: concept-description
+    attributes:
+      label: Describe the concept
+      placeholder: Define the concept clearly. Include context, domain, and key characteristics.
+
+  - type: textarea
+    id: justification
+    attributes:
+      label: Why should this be included?
+      placeholder: Explain why the concept is relevant or necessary in the context of semantic interoperability or Health-RI use cases.
+
+  - type: input
+    id: last-checked-version
+    attributes:
+      label: Last version checked
+      description: Indicate which version of the ontology you reviewed to confirm that this concept is not already present.
+      placeholder: e.g., v1.3.0, Health-RI Ontology-v0.6.0.ttl
+
+  - type: textarea
+    id: references
+    attributes:
+      label: Optional – References or external sources
+      placeholder: Standards, publications, or ontology terms that support this concept.
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent to share and reuse
+      options:
+        - label: I consent to my contribution being reused and cited in future ontology updates and documentation.
+          required: true

@@ -1,0 +1,59 @@
+name: Other Contribution or Request
+description: Suggest improvements, ask for support, or propose collaborations that do not fit into existing templates.
+title: "[Contribution] <Short title describing your input>"
+labels: ["collaboration", "question", "triage"]
+assignees:
+  - pedropaulofb
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your interest in contributing to the Health-RI Semantic Interoperability Initiative. Please use this form for any suggestions, requests, or proposals that do not fall under error reports or new concept requests.
+
+  - type: dropdown
+    id: contribution-type
+    attributes:
+      label: What type of contribution is this?
+      options:
+        - Documentation improvement
+        - Modeling advice or clarification
+        - Mapping or alignment proposal
+        - Suggestion for examples or use cases
+        - General question or support request
+        - Proposal for collaboration
+        - Other
+      default: 0
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe your contribution or request
+      placeholder: Provide a clear and detailed description of your input, question, or idea.
+      description: Include any relevant background or context that might help us understand your contribution.
+
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: What would you like to see happen?
+      placeholder: Describe what kind of feedback or action you expect from the team.
+
+  - type: textarea
+    id: related-resources
+    attributes:
+      label: Optional – Any references, links, or supporting materials
+      placeholder: e.g., related ontologies, documents, GitHub repositories, etc.
+
+  - type: input
+    id: reviewed-version
+    attributes:
+      label: (Optional) Ontology version reviewed
+      description: If your contribution refers to a specific artifact (e.g., a concept, mapping, or document), please indicate the version you reviewed.
+      placeholder: e.g., v0.6.0, Health-RI Ontology-v1.2.1.ttl
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent to share and reuse
+      options:
+        - label: I consent to my contribution being reused and cited in future updates, documentation, or discussions.
+          required: true

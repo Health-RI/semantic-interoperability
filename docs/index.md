@@ -1,8 +1,8 @@
 <p align="left"><img src="assets/images/health-ri-logo-blue.png" width="750" alt="Health-RI Logo"></p>
 
-# Health-RI: Semantic Interoperability
+# Health-RI Semantic Interoperability Initiative
 
-Welcome to the official documentation site for semantic interoperability within the Health-RI ecosystem.
+Welcome to the official documentation site for the Health-RI Semantic Interoperability Initiative.
 
 This site serves as a central resource for:
 - Understanding what **semantic interoperability** is and why it matters,

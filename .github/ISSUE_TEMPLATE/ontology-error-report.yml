@@ -1,0 +1,57 @@
+name: Report Ontology Error
+description: Identify issues, inconsistencies, or ambiguities in the current OntoUML or gUFO ontology artifacts.
+title: "[Error] <Brief description of the issue>"
+labels: ["error", "ontology", "triage"]
+assignees:
+  - pedropaulofb
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the Health-RI ontology. Please provide as much detail as possible about the issue you're reporting.
+
+  - type: dropdown
+    id: artifact
+    attributes:
+      label: Affected Artifact
+      options:
+        - OntoUML model (.vpp or .json)
+        - gUFO OWL ontology (.ttl)
+        - Diagram/image
+        - Documentation
+        - Other
+      default: 0
+
+  - type: input
+    id: version
+    attributes:
+      label: Version of the artifact
+      description: Please indicate the version number or filename of the artifact where the issue was found.
+      placeholder: e.g., v1.2.0, Health-RI Ontology-v0.5.2.ttl
+
+  - type: input
+    id: element
+    attributes:
+      label: Element name or identifier (if known)
+      placeholder: e.g., "Clinical Condition (Class)" or "https://w3id.org/health-ri/ontology#ClinicalCondition"
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: Describe the issue
+      description: What is wrong, missing, unclear, or contradictory?
+      placeholder: Provide a clear explanation of the problem, including the context where you found it.
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Optional – Suggested correction or clarification
+      placeholder: If you have a proposed fix, add it here.
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent to share and reuse
+      options:
+        - label: I consent to my contribution being reused and cited in future ontology updates and documentation.
+          required: true
