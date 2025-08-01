@@ -2,9 +2,11 @@ import re
 import logging
 from pathlib import Path
 from packaging import version
-from rdflib import Graph
+from rdflib import Graph, Literal, Namespace
+from rdflib.namespace import XSD
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
+
 
 def get_latest_ttl_file(directory):
     """
@@ -37,6 +39,25 @@ def get_latest_ttl_file(directory):
     return latest_file
 
 
+def should_merge_metadata(graph: Graph) -> bool:
+    """
+    Determines whether metadata should be merged by checking if
+    the triple ?s dct:issued "2025-05-20"^^xsd:date already exists.
+
+    Args:
+        graph (Graph): The RDF graph to check.
+
+    Returns:
+        bool: True if the metadata is NOT present and should be merged; False otherwise.
+    """
+    DCT = Namespace("http://purl.org/dc/terms/")
+    issued_literal = Literal("2025-05-20", datatype=XSD.date)
+
+    for _ in graph.subjects(predicate=DCT.issued, object=issued_literal):
+        return False  # Metadata already present
+    return True  # Metadata not present
+
+
 def merge_ttl_files(latest_a: Path, b_path: Path):
     """
     Merges TTL file B into the latest version of TTL file A and overwrites A.
@@ -63,19 +84,27 @@ def merge_ttl_files(latest_a: Path, b_path: Path):
 
     # Overwrite file A with the merged graph
     g_a.serialize(destination=latest_a, format="turtle")
-    print(f"Merged and saved to: {latest_a.resolve()}")
+    logging.info(f"Metadata sucessfully merged. File saved to: {latest_a.resolve()}")
 
 
 if __name__ == "__main__":
     directory = Path("../ontologies")
-    ttl_metadata_path = Path("utils/metadata-template.ttl")
+    ttl_metadata_path = Path("scripts/utils/metadata-template.ttl")
 
     latest_gufo_path = get_latest_ttl_file(directory)
 
     if latest_gufo_path and ttl_metadata_path.exists():
-        merge_ttl_files(latest_gufo_path, ttl_metadata_path)
+        current_graph = Graph()
+        current_graph.parse(latest_gufo_path, format="turtle")
+
+        if should_merge_metadata(current_graph):
+            merge_ttl_files(latest_gufo_path, ttl_metadata_path)
+        else:
+            logging.info(f"Metadata already present in: {latest_gufo_path.name}")
     else:
         if not latest_gufo_path:
-            print("No valid TTL file found in:", directory)
+            logging.warning(f"No valid TTL file found in: {directory}")
         if not ttl_metadata_path.exists():
-            print("Metadata file not found at:", ttl_metadata_path.resolve())
+            logging.warning(
+                f"Metadata file not found at: {ttl_metadata_path.resolve()}"
+            )
