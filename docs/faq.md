@@ -109,4 +109,38 @@
     TBD.
 
 ??? question "Can external parties contribute to the modeling or mapping process?"
-    Yes. Collaboration is encouraged through feedback, schema alignment, and domain expert engagement. Please contact the coordination team if you would like to be involved.
+    Yes. External contributions are welcome and encouraged.
+    
+    Community members can submit suggestions, error reports, or collaboration proposals directly via our [GitHub Issue Forms](https://github.com/health-ri/semantic-interoperability/issues/new/choose).
+
+    Available contribution types include:
+    - Reporting errors or inconsistencies in the OntoUML/gUFO models
+    - Proposing new ontology concepts
+    - Suggesting improvements to documentation or mappings
+    - Proposing example use cases or general feedback
+
+    For details, visit the [Contributing page](../contributing/).
+
+## Community Contributions and Feedback
+
+??? question "How can I contribute to the Health-RI Semantic Interoperability Initiative?"
+    You can contribute by submitting structured feedback using one of our GitHub Issue Forms. We currently support the following contribution types:
+
+    - **Report an error** in the OntoUML or gUFO-based ontology
+    - **Request a new concept** to be added to the reference model
+    - **Submit other input** such as documentation improvements, mapping suggestions, or collaboration proposals
+
+    Start here: [Contribute via GitHub](https://github.com/health-ri/semantic-interoperability/issues/new/choose)  
+    Or visit our [Contributing page](../contributing/) for more guidance.
+
+??? question "Do I need to check the ontology version before submitting a contribution?"
+    Yes, we ask contributors to indicate which version of the ontology or artifact they reviewed before submitting a request — especially when reporting issues or suggesting new concepts.
+
+    This helps us avoid duplicates, understand the context of your feedback, and keep the review process efficient.
+
+    You’ll find a field for this information in the contribution forms.
+
+??? question "Where can I find more information on how to submit feedback?"
+    See our [Contributing page](../contributing/), which outlines how to submit structured input, what types of feedback are accepted, and how your suggestions will be reviewed.
+
+    All community input is tracked as GitHub Issues and reviewed by the modeling and coordination teams.
