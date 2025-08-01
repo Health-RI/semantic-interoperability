@@ -78,6 +78,7 @@ nav:
       - Ontology Presentation: ontology/ontology.md
       - Mappings: ontology/mappings.md
       - Specification: ontology/specification.html
+  - FAQ: faq.md
   # - Output:
   #     - Overview: output/index.md
 
