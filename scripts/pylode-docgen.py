@@ -105,7 +105,7 @@ def main():
 
     latest_ttl = get_latest_ttl_file(ttl_dir)
     if not latest_ttl:
-        logging.error("No valid TTL files found in 'ontologies/'.")
+        logging.warning("No valid TTL files found in 'ontologies/'. No specification will be produced.")
         return
 
     logging.info(f"Generating specification from: {latest_ttl}")
