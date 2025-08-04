@@ -62,14 +62,24 @@ The [SKOS](https://www.w3.org/TR/skos-reference/) standard provides a set of map
 - **`skos:broadMatch`** is used when the external concept is **broader** than our reference concept (i.e., it includes our concept and possibly more).
 - **`skos:narrowMatch`** is used when the external concept is **narrower** than our reference concept (i.e., it captures a more specific notion).
 
+!!! note "Clarifying skos:exactMatch semantics"
+    Although `skos:exactMatch` is declared as a transitive property in SKOS, it does **not imply logical equivalence** (such as `owl:equivalentClass`). It is intended to capture a strong semantic alignment **in meaning**, not in logical entailment. This allows semantic interoperability without risking unintended reasoning consequences in OWL-based systems.
+
 In contrast to `exactMatch`, both `narrowMatch` and `broadMatch` allow **multiple mappings per concept** to express partial or hierarchical semantic overlaps.
 
 These mappings are only to be used when **no perfect equivalence exists** and a semantic approximation must be made to the **closest reference concept** in the Health‑RI ontology.
 
+#### Visual Example: Exact Semantic Alignment
+
+![Cross-ontology mapping using skos:exactMatch and rdfs:subClassOf](./assets/images/example-mapping.png)  
+*Figure 3: External ontologies (e.g., HealthCare and Veterinary) map their local concepts to reference concepts in the Health-RI Ontology via `skos:exactMatch` (red). These reference concepts are also semantically structured via `rdfs:subClassOf` (brown), enabling consistent classification across domains.*
+
+This figure illustrates how concepts such as `hc:Patient` and `vet:Patient` are mapped to `hri:HealthcarePatient` and `hri:VeterinaryPatient` respectively. These are in turn subsumed by higher-level concepts like `hri:Human` or `hri:NonHumanAnimal`, ultimately aligning under `hri:Animal`. This modeling strategy ensures that semantic alignments preserve domain distinctions while enabling unified interpretation under a shared reference ontology.
+
 #### Visual Example: Broader and Narrower Semantic Alignments
 
 ![Cross-ontology mapping using exactMatch, narrowMatch, and broadMatch](./assets/images/example-mapping2.png)  
-*Figure 3: Mapping external concepts from GeneralHealth and PetVeterinary ontologies to the Health-RI ontology. This example evolves from Figure 2 by incorporating `skos:narrowMatch` (magenta) and `skos:broadMatch` (blue) mappings in addition to `skos:exactMatch` (red).*
+*Figure 4: Mapping external concepts from GeneralHealth and PetVeterinary ontologies to the Health-RI ontology. This example evolves from Figure 3 by incorporating `skos:narrowMatch` (magenta) and `skos:broadMatch` (blue) mappings in addition to `skos:exactMatch` (red).*
 
 - `ghc:Patient` and `pvet:Patient` are both linked via `skos:narrowMatch` to `hri:VeterinaryPatient`, indicating that each of these patients represents a **specialized kind** of patient in the Health‑RI ontology.
 - `pvet:PetAnimal` is linked via `skos:broadMatch` to `hri:NonHumanAnimal`, signaling that the external concept is broader in scope.
