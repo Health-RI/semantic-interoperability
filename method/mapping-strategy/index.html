@@ -898,6 +898,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#visual-example-exact-semantic-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Example: Exact Semantic Alignment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#visual-example-broader-and-narrower-semantic-alignments" class="md-nav__link">
     <span class="md-ellipsis">
       Visual Example: Broader and Narrower Semantic Alignments
@@ -1271,11 +1280,19 @@
 <li><strong><code>skos:broadMatch</code></strong> is used when the external concept is <strong>broader</strong> than our reference concept (i.e., it includes our concept and possibly more).</li>
 <li><strong><code>skos:narrowMatch</code></strong> is used when the external concept is <strong>narrower</strong> than our reference concept (i.e., it captures a more specific notion).</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Clarifying skos:exactMatch semantics</p>
+<p>Although <code>skos:exactMatch</code> is declared as a transitive property in SKOS, it does <strong>not imply logical equivalence</strong> (such as <code>owl:equivalentClass</code>). It is intended to capture a strong semantic alignment <strong>in meaning</strong>, not in logical entailment. This allows semantic interoperability without risking unintended reasoning consequences in OWL-based systems.</p>
+</div>
 <p>In contrast to <code>exactMatch</code>, both <code>narrowMatch</code> and <code>broadMatch</code> allow <strong>multiple mappings per concept</strong> to express partial or hierarchical semantic overlaps.</p>
 <p>These mappings are only to be used when <strong>no perfect equivalence exists</strong> and a semantic approximation must be made to the <strong>closest reference concept</strong> in the Health‑RI ontology.</p>
+<h4 id="visual-example-exact-semantic-alignment">Visual Example: Exact Semantic Alignment</h4>
+<p><img alt="Cross-ontology mapping using skos:exactMatch and rdfs:subClassOf" src="../assets/images/example-mapping.png" /><br />
+<em>Figure 3: External ontologies (e.g., HealthCare and Veterinary) map their local concepts to reference concepts in the Health-RI Ontology via <code>skos:exactMatch</code> (red). These reference concepts are also semantically structured via <code>rdfs:subClassOf</code> (brown), enabling consistent classification across domains.</em></p>
+<p>This figure illustrates how concepts such as <code>hc:Patient</code> and <code>vet:Patient</code> are mapped to <code>hri:HealthcarePatient</code> and <code>hri:VeterinaryPatient</code> respectively. These are in turn subsumed by higher-level concepts like <code>hri:Human</code> or <code>hri:NonHumanAnimal</code>, ultimately aligning under <code>hri:Animal</code>. This modeling strategy ensures that semantic alignments preserve domain distinctions while enabling unified interpretation under a shared reference ontology.</p>
 <h4 id="visual-example-broader-and-narrower-semantic-alignments">Visual Example: Broader and Narrower Semantic Alignments</h4>
 <p><img alt="Cross-ontology mapping using exactMatch, narrowMatch, and broadMatch" src="../assets/images/example-mapping2.png" /><br />
-<em>Figure 3: Mapping external concepts from GeneralHealth and PetVeterinary ontologies to the Health-RI ontology. This example evolves from Figure 2 by incorporating <code>skos:narrowMatch</code> (magenta) and <code>skos:broadMatch</code> (blue) mappings in addition to <code>skos:exactMatch</code> (red).</em></p>
+<em>Figure 4: Mapping external concepts from GeneralHealth and PetVeterinary ontologies to the Health-RI ontology. This example evolves from Figure 3 by incorporating <code>skos:narrowMatch</code> (magenta) and <code>skos:broadMatch</code> (blue) mappings in addition to <code>skos:exactMatch</code> (red).</em></p>
 <ul>
 <li><code>ghc:Patient</code> and <code>pvet:Patient</code> are both linked via <code>skos:narrowMatch</code> to <code>hri:VeterinaryPatient</code>, indicating that each of these patients represents a <strong>specialized kind</strong> of patient in the Health‑RI ontology.</li>
 <li><code>pvet:PetAnimal</code> is linked via <code>skos:broadMatch</code> to <code>hri:NonHumanAnimal</code>, signaling that the external concept is broader in scope.</li>
