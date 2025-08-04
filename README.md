@@ -1,4 +1,4 @@
-# Health-RI Semantic Interoperability Documentation
+# Health-RI Semantic Interoperability Initiative Documentation
 
 This repository contains the source files for the [GitHub Pages site](https://health-ri.github.io/semantic-interoperability/) documenting models, ontologies, and other resources related to semantic interoperability activities at Health-RI.
 
