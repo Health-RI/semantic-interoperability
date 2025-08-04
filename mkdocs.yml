@@ -72,6 +72,7 @@ nav:
       - gUFO: ontouml-gufo/gufo.md
   - The Health-RI Method:
       - Overview: method/index.md
+      - Mapping Strategy: method/mapping-strategy.md
   - The Health-RI Ontology:
       - Home: ontology/index.md
       - Publishing: ontology/publishing.md
