@@ -116,21 +116,3 @@ gUFO is implemented in the Web Ontology Language (OWL), a widely used standard f
 * Semantic mappings from node-level RDF-based schemas to be aligned directly with the OWL representation of the model.
 
 By converting OntoUML models into gUFO-compliant OWL ontologies, we ensure that the semantics captured during conceptual modeling are retained, while also enabling their technical integration into semantic web systems and interoperability workflows.
-
-## Mapping Schemas to the gUFO Ontology
-
-Once the reference model has been converted into its computational form—namely, the gUFO ontology in OWL format—schema-level mappings can be established to connect the original data schemas to the reference ontology.
-
-The figure above outlines the decision process for performing these mappings, depending on the characteristics and technical constraints of each source schema.
-
-The first consideration is whether the original schema is expressed using Semantic Web technologies, such as RDF, RDFS, or OWL. If it is not, the schema cannot be programmatically linked to gUFO concepts. In these cases, the recommended approach is to create comprehensive external documentation that clearly registers the mappings between the schema and the gUFO ontology in a structured and traceable manner.
-
-If the schema is already implemented using Semantic Web technologies, the next step is to determine whether it is possible to extend or modify the schema:
-
-* If the schema is writable and under the control of the team, the mappings should be directly embedded into the schema using standard RDF mechanisms (e.g., `rdfs:seeAlso`, `owl:equivalentClass`, or custom annotation properties) that link schema terms to the corresponding concepts in gUFO.
-
-* If the schema is non-writable (e.g., maintained by an external authority, published as read-only, or subject to strict governance constraints), the mappings must be maintained externally. In such cases, the use of the [Simple Standard for Sharing Ontological Mappings (SSSOM)](https://mapping-commons.github.io/sssom/) is recommended. SSSOM provides a machine-readable, semantically robust format for documenting mappings between source terms and reference ontology concepts.
-
-* Finally, even if the schema is expressed in a Semantic Web format but lacks the structural flexibility to support such mappings natively (e.g., due to rigid serialization patterns or minimal annotation support), the mapping must still be registered in a formal and sound manner. This should be done in accordance with the capabilities and limitations of the target technology, ensuring both semantic precision and technical feasibility.
-
-By tailoring the mapping strategy to the technical nature of each schema, we ensure that all semantic alignments—whether embedded or external—remain traceable, reusable, and aligned with the reference ontology. This step is critical for enabling robust semantic interoperability across the Health-RI ecosystem.
