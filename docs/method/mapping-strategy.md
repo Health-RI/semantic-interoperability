@@ -30,12 +30,12 @@ This visual clarifies that OntoUML provides the conceptual meaning, which the gU
 
 ### Roles of the Artifacts
 
-| Artifact   | Layer | Purpose                                                                  |
-| ---------- | ----- | ------------------------------------------------------------------------ |
-| OntoUML    | CIM   | Domain-level clarity, conceptual validation, communication among experts |
-| gUFO (OWL) | PIM   | Machine-readable semantics, reasoning support, tool interoperability     |
+| Artifact   | Layer | Purpose                                                                                                                                                       | Practical Role                                                                                        |
+| ---------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **OntoUML**    | CIM   | Provides clarity about domain-specific concepts by offering clear and precise definitions, supporting conceptual validation and enabling expert communication | Serves as a semantic map and meaning contract to align domain terms for interoperability              |
+| **gUFO** (OWL) | PIM   | Provides machine-readable semantics, supporting automated reasoning and tool interoperability                                                                 | Enables integration and alignment of RDF-based artifacts within semantic web and linked data contexts |
 
-Maintaining both artifacts ensures clear traceability from domain concepts (OntoUML / CIM) to executable ontology structures (gUFO / PIM) <a href="#ref3">[3]</a>.
+Maintaining both artifacts ensures clear traceability from domain concepts (OntoUML/CIM) to executable ontology structures (gUFO/PIM) <a href="#ref3">[3]</a>.
 
 ## Semantic Reference: Defining CIM-to-PIM Semantics
 
