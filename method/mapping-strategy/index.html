@@ -1254,22 +1254,25 @@
 <th>Artifact</th>
 <th>Layer</th>
 <th>Purpose</th>
+<th>Practical Role</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>OntoUML</td>
+<td><strong>OntoUML</strong></td>
 <td>CIM</td>
-<td>Domain-level clarity, conceptual validation, communication among experts</td>
+<td>Provides clarity about domain-specific concepts by offering clear and precise definitions, supporting conceptual validation and enabling expert communication</td>
+<td>Serves as a semantic map and meaning contract to align domain terms for interoperability</td>
 </tr>
 <tr>
-<td>gUFO (OWL)</td>
+<td><strong>gUFO</strong> (OWL)</td>
 <td>PIM</td>
-<td>Machine-readable semantics, reasoning support, tool interoperability</td>
+<td>Provides machine-readable semantics, supporting automated reasoning and tool interoperability</td>
+<td>Enables integration and alignment of RDF-based artifacts within semantic web and linked data contexts</td>
 </tr>
 </tbody>
 </table>
-<p>Maintaining both artifacts ensures clear traceability from domain concepts (OntoUML / CIM) to executable ontology structures (gUFO / PIM) <a href="#ref3">[3]</a>.</p>
+<p>Maintaining both artifacts ensures clear traceability from domain concepts (OntoUML/CIM) to executable ontology structures (gUFO/PIM) <a href="#ref3">[3]</a>.</p>
 <h2 id="semantic-reference-defining-cim-to-pim-semantics">Semantic Reference: Defining CIM-to-PIM Semantics</h2>
 <p>In the Health‑RI architecture, every class in the gUFO ontology (PIM) is implicitly semantically defined by its counterpart in OntoUML (CIM). For example, the class <code>health‑ri:Person</code> in gUFO borrows its semantics from the <code>Person</code> class in the OntoUML model. Because the CIM is not computational, this semantic linkage remains implicit and is <em>not formally encoded</em> <a href="#ref3">[3]</a>.</p>
 <h2 id="aligning-thirdparty-ontologies-via-skos-mapping">Aligning Third‑Party Ontologies via SKOS Mapping</h2>
