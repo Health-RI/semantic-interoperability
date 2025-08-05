@@ -21,6 +21,7 @@ The initiative supports the development of shared ontologies and mappings to ali
 ## Contributing
 
 We welcome contributions via GitHub Issues:
+
 - [Report an error](https://github.com/health-ri/semantic-interoperability/issues/new?template=ontology-error-report.yml)
 - [Request a new concept](https://github.com/health-ri/semantic-interoperability/issues/new?template=concept-request.yml)
 - [Suggest improvements](https://github.com/health-ri/semantic-interoperability/issues/new?template=other-contribution.yml)

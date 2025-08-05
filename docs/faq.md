@@ -1,11 +1,11 @@
 # Frequently Asked Questions (FAQ)
 
-!!! warning
-    This page's content is still under review and may contain inaccuracies or omissions. Users are advised to interpret and apply the content with caution.
-
 ## Project Overview and Strategic Context
 
 *Questions about the initiative’s purpose, strategic goals, expected impact, and broader context.*
+
+!!! warning "Draft Answers"
+    The answers in this section are part of an ongoing effort to address strategic questions about the initiative. They are based on initial interpretations and should be used with caution. All entries are marked as **drafts** and will be further refined and validated in collaboration with stakeholders.
 
 ??? question "What is the goal of Health-RI’s semantic interoperability initiative?"
     To enable meaningful data integration across health and life sciences institutions by aligning data semantically, not just structurally. This is achieved through the development and adoption of a common reference model that captures domain meaning explicitly.
@@ -96,6 +96,15 @@
     This initiative does not aim to create a new standard. Instead, it recognizes that existing standards such as OMOP, HL7, and DCAT-AP each serve different purposes and contain distinct types of content—ranging from data exchange formats to terminologies and domain-specific data models.
 
     The goal is to harmonize the underlying concepts from these standards, as well as other models and artifacts, by aligning them with a shared semantic reference ontology. This ontology provides a common conceptual foundation that enables consistent interpretation and integration of diverse representations. The reference ontology acts as a semantic anchor, supporting interoperability across heterogeneous data sources, standards, and systems.
+
+??? question "Why did Health-RI decide to build a new ontology instead of reusing existing ones from the biomedical and life sciences domains (like those in OBO Foundry)? (TBD)"
+    TBD.
+
+??? question "Does the Health-RI initiative reuse any existing biomedical or life sciences ontologies? Are external ontologies integrated or referenced within the Health-RI ontology? (TBD)"
+    TBD.
+
+??? question "Given that many life sciences ontologies adopt the Basic Formal Ontology (BFO), what motivated the use of UFO rather than BFO as the foundation for this initiative’s ontology? (TBD)"
+    TBD.
 
 ## Modeling Approach: OntoUML and gUFO
 
