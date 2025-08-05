@@ -1053,9 +1053,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#technical-implementation-and-adoption" class="md-nav__link">
+  <a href="#modeling-approach-ontouml-and-gufo" class="md-nav__link">
     <span class="md-ellipsis">
-      Technical Implementation and Adoption
+      Modeling Approach: OntoUML and gUFO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-and-alignment-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping and Alignment Strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ontology-lifecycle-and-publishing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ontology Lifecycle and Publishing
     </span>
   </a>
   
@@ -1125,13 +1143,14 @@
 <p>This page's content is still under review and may contain inaccuracies or omissions. Users are advised to interpret and apply the content with caution.</p>
 </div>
 <h2 id="project-overview-and-strategic-context">Project Overview and Strategic Context</h2>
+<p><em>Questions about the initiative’s purpose, strategic goals, expected impact, and broader context.</em></p>
 <details class="question">
 <summary>What is the goal of Health-RI’s semantic interoperability initiative?</summary>
 <p>To enable meaningful data integration across health and life sciences institutions by aligning data semantically, not just structurally. This is achieved through the development and adoption of a common reference model that captures domain meaning explicitly.</p>
 </details>
 <details class="question">
-<summary>What exactly are we trying to achieve with semantic interoperability? (TBD)</summary>
-<p>TBD.</p>
+<summary>What exactly are we trying to achieve with semantic interoperability?</summary>
+<p>We aim to align external and internal ontologies to a shared reference model, ensuring that semantic definitions are preserved across conceptual and computational layers. This is achieved through structured mappings (e.g., <code>skos:exactMatch</code>) from third-party concepts to Health-RI’s authoritative conceptual model (OntoUML) and its computational counterpart (gUFO).</p>
 </details>
 <details class="question">
 <summary>Why is semantic interoperability important in healthcare and life sciences?</summary>
@@ -1142,8 +1161,8 @@
 <p>It addresses the issue of inconsistent data semantics across institutions, which leads to errors, false agreement, and limited reuse. Many systems use similar terms but with different meanings, or different terms for the same concept.</p>
 </details>
 <details class="question">
-<summary>What does success look like for this project? (TBD)</summary>
-<p>TBD.</p>
+<summary>What does success look like for this project?</summary>
+<p>Success means having a robust reference model (OntoUML) and executable OWL artifacts (gUFO) in place, with external ontologies semantically aligned through precise mappings. It also includes supporting community contributions, replacing approximate mappings (e.g., <code>skos:narrowMatch</code>) with exact ones where possible, and continuously refining the model to bridge semantic gaps.</p>
 </details>
 <details class="question">
 <summary>Who will benefit from or use the developed solutions?</summary>
@@ -1158,16 +1177,16 @@
 <p>TBD.</p>
 </details>
 <details class="question">
-<summary>How do current systems or processes work without semantic alignment? (TBD)</summary>
-<p>TBD.</p>
+<summary>How do current systems or processes work without semantic alignment?</summary>
+<p>Without semantic alignment, systems may use the same term for different concepts or different terms for the same concept, causing ambiguity and inconsistency.</p>
 </details>
 <details class="question">
-<summary>What are some examples of current successes or progress? (TBD)</summary>
-<p>TBD.</p>
+<summary>What are some examples of current successes or progress?</summary>
+<p>The development of the OntoUML conceptual model, its implementation as the gUFO OWL ontology, and the strategy for semantically aligning third-party ontologies using SKOS mapping are all concrete milestones achieved. Figures and examples in the documentation illustrate successful alignment strategies already in use.</p>
 </details>
 <details class="question">
-<summary>What challenges are currently being faced? (TBD)</summary>
-<p>TBD.</p>
+<summary>What challenges are currently being faced?</summary>
+<p>One challenge is when no exact match exists between external concepts and the reference ontology. This requires approximate mappings and motivates the need to expand the Health-RI ontology to bridge gaps. Another challenge is managing transitivity and ambiguity in mappings (e.g., limiting to a single <code>skos:exactMatch</code> per concept).</p>
 </details>
 <details class="question">
 <summary>What risks and limitations should be considered? (TBD)</summary>
@@ -1178,8 +1197,8 @@
 <p>TBD.</p>
 </details>
 <details class="question">
-<summary>What changes are expected in the future? (TBD)</summary>
-<p>TBD.</p>
+<summary>What changes are expected in the future?</summary>
+<p>Future work includes refining the ontology by introducing intermediate concepts to replace approximate mappings with exact ones, enhancing semantic precision and reasoning capabilities.</p>
 </details>
 <details class="question">
 <summary>How might the future process or system improve data use across institutions? (TBD)</summary>
@@ -1191,8 +1210,9 @@
 </details>
 <details class="question">
 <summary>What is the common reference model and why is it needed?</summary>
-<p>It’s a conceptual model created using OntoUML to serve as a semantic anchor for all participating data schemas. Instead of replacing local schemas, it provides a shared foundation for mapping and aligning meaning.
-<a href="../method/">Read more</a></p>
+<p>It’s a conceptual model created using OntoUML to serve as a semantic anchor for all participating data schemas. Instead of replacing local schemas, it provides a shared foundation for mapping and aligning meaning.</p>
+<p>OntoUML defines the domain-level semantics, while gUFO implements those concepts in OWL. This layered architecture ensures that semantic meaning is preserved from human-level models to machine-readable artifacts.</p>
+<p><a href="../method/">Read more</a></p>
 </details>
 <details class="question">
 <summary>How does this initiative relate to the FAIR principles?</summary>
@@ -1208,12 +1228,14 @@
 <a href="../method/#toward-a-solution-introducing-a-common-reference-model">Read more</a></li>
 </ul>
 </details>
+<h2 id="modeling-approach-ontouml-and-gufo">Modeling Approach: OntoUML and gUFO</h2>
+<p><em>Questions about the internal modeling framework, layers, and implementation choices.</em></p>
 <details class="question">
 <summary>What are OntoUML and gUFO, and why are they used?</summary>
-<p>OntoUML is a conceptual modeling language grounded in formal ontology (UFO). gUFO is its OWL counterpart, enabling computational use. Together, they ensure semantic precision and machine-actionable models.
-<a href="../ontouml-gufo/ontouml/">OntoUML overview</a> • <a href="../ontouml-gufo/gufo/">gUFO details</a></p>
+<p>OntoUML is a conceptual modeling language grounded in formal ontology (UFO). gUFO is its OWL counterpart, enabling computational use. Together, they ensure semantic precision and machine-actionable models.</p>
+<p>OntoUML operates at MDA's CIM layer to capture conceptual semantics, while gUFO provides a platform-independent OWL implementation at the PIM layer. This ensures a traceable and interoperable flow from conceptualization to deployment.</p>
+<p><a href="../ontouml-gufo/ontouml/">OntoUML overview</a> • <a href="../ontouml-gufo/gufo/">gUFO details</a></p>
 </details>
-<h2 id="technical-implementation-and-adoption">Technical Implementation and Adoption</h2>
 <details class="question">
 <summary>How is the OntoUML model converted to OWL?</summary>
 <p>The OntoUML model is exported to OWL using the gUFO specification via plugin tooling. The resulting ontology retains the original semantics in a format suitable for Semantic Web technologies.
@@ -1224,6 +1246,41 @@
 <p>OntoUML is a conceptual modeling language for humans; gUFO is its OWL-based computational counterpart used in Semantic Web technologies.
 <a href="../ontouml-gufo/ontouml/">OntoUML</a> • <a href="../ontouml-gufo/gufo/">gUFO</a></p>
 </details>
+<h2 id="mapping-and-alignment-strategy">Mapping and Alignment Strategy</h2>
+<p><em>Questions about how external concepts are aligned to the Health-RI reference model using SKOS and related mapping techniques.</em></p>
+<details class="question">
+<summary>How are mappings from local schemas to the reference model created?</summary>
+<p>If schemas are OWL/RDF-based, mappings can be embedded directly using standard RDF properties. Otherwise, external mappings are created using <a href="https://mapping-commons.github.io/sssom/">SSSOM</a>.</p>
+<p>Mappings follow SKOS standards and can be asserted using:
+- <code>skos:exactMatch</code> for perfect semantic alignment (only one allowed),
+- <code>skos:broadMatch</code> or <code>skos:narrowMatch</code> when the match is approximate.</p>
+<p>These mappings support semantic alignment without requiring modification to the original schema and are managed either by Health-RI (non-invasively in SSSOM) or by partners (embedded in their own RDF models).</p>
+<p><a href="../method/#mapping-schemas-to-the-gufo-ontology">Full explanation</a></p>
+</details>
+<details class="question">
+<summary>What is <code>skos:exactMatch</code>, and how is it different from <code>owl:equivalentClass</code>?</summary>
+<p><code>skos:exactMatch</code> indicates strong semantic similarity between two concepts across different ontologies, but it does not imply logical equivalence. Unlike <code>owl:equivalentClass</code>, it avoids unintended reasoning consequences and is safer for linking ontologies with different logical foundations.</p>
+</details>
+<details class="question">
+<summary>Why is there a rule that only one <code>skos:exactMatch</code> is allowed per concept?</summary>
+<p>To avoid semantic ambiguity. Allowing multiple <code>skos:exactMatch</code> assertions for the same concept would imply conflicting definitions and hinder consistent interpretation. Each external concept must match only one Health-RI concept with perfect equivalence.</p>
+</details>
+<details class="question">
+<summary>What should I do if no exact match exists between my concept and the Health-RI ontology?</summary>
+<p>If your concept is broader or narrower than any existing reference concept, use <code>skos:broadMatch</code> or <code>skos:narrowMatch</code> accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future.</p>
+</details>
+<details class="question">
+<summary>Who can create or host the semantic mappings?</summary>
+<p>Mappings can be authored by:
+- <strong>Health-RI</strong> (non-invasive, published in SSSOM format), for public or external ontologies;
+- <strong>External partners</strong>, by embedding <code>skos:*Match</code> statements directly in their ontology files, especially when they control the editorial process of the external artifact.</p>
+</details>
+<details class="question">
+<summary>Can I request new reference concepts if needed for mapping?</summary>
+<p>Yes. If you find that no suitable concept exists in the Health-RI ontology to match yours, you can propose new reference concepts. These requests are welcome and reviewed by the modeling team. If accepted, new concepts may be added to enable stronger mappings in the future.</p>
+</details>
+<h2 id="ontology-lifecycle-and-publishing">Ontology Lifecycle and Publishing</h2>
+<p><em>Questions about how the ontology is released, versioned, and maintained over time.</em></p>
 <details class="question">
 <summary>Where can I find the latest version of the Health-RI ontology?</summary>
 <p>All published versions are available in the <code>/ontologies/</code> folder. The most recent major release is always accessible via:
@@ -1245,11 +1302,6 @@
 <a href="../ontology/publishing/#versioning-policy">More info</a></p>
 </details>
 <details class="question">
-<summary>How are mappings from local schemas to the reference model created?</summary>
-<p>If schemas are OWL/RDF-based, mappings can be embedded directly using standard RDF properties. Otherwise, external mappings are created using <a href="https://mapping-commons.github.io/sssom/">SSSOM</a>.
-<a href="../method/#mapping-schemas-to-the-gufo-ontology">Full explanation</a></p>
-</details>
-<details class="question">
 <summary>How will the new solutions be maintained and supported? (TBD)</summary>
 <p>TBD.</p>
 </details>
@@ -1257,6 +1309,8 @@
 <summary>How will the solution be tested and accepted? (TBD)</summary>
 <p>TBD.</p>
 </details>
+<h2 id="community-contributions-and-feedback">Community Contributions and Feedback</h2>
+<p><em>Questions about how users can provide input, report issues, or contribute to the ontology and mappings.</em></p>
 <details class="question">
 <summary>Can external parties contribute to the modeling or mapping process?</summary>
 <p>Yes. External contributions are welcome and encouraged.</p>
@@ -1268,7 +1322,6 @@
 - Proposing example use cases or general feedback</p>
 <p>For details, visit the <a href="../contributing/">Contributing page</a>.</p>
 </details>
-<h2 id="community-contributions-and-feedback">Community Contributions and Feedback</h2>
 <details class="question">
 <summary>How can I contribute to the Health-RI Semantic Interoperability Initiative?</summary>
 <p>You can contribute by submitting structured feedback using one of our GitHub Issue Forms. We currently support the following contribution types:</p>

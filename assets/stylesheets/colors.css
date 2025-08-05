@@ -3,10 +3,10 @@
    Define primary and accent colors for consistent reuse throughout themes.
 ============================================================================= */
 :root {
-  --md-primary-fg-color:        #183F74; /* Navy Blue */
-  --md-primary-fg-color--light: #3A5F93; /* Lighter Navy Blue */
-  --md-primary-fg-color--dark:  #0F2D56; /* Darker Navy Blue */
-  --md-accent-fg-color:         #F7AD2C; /* Golden Yellow */
+  --md-primary-fg-color: #183f74; /* Navy Blue */
+  --md-primary-fg-color--light: #3a5f93; /* Lighter Navy Blue */
+  --md-primary-fg-color--dark: #0f2d56; /* Darker Navy Blue */
+  --md-accent-fg-color: #f7ad2c; /* Golden Yellow */
 }
 
 /* =============================================================================
@@ -14,7 +14,7 @@
    Customize headings and paragraphs across the site.
 ============================================================================= */
 .md-typeset h1 {
-  font-size: 2.0rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--md-primary-fg-color);
   margin-bottom: 1rem;
@@ -23,16 +23,16 @@
 .md-typeset h2 {
   font-size: 1.5rem;
   font-weight: 500;
-  color: #183F74;
+  color: #183f74;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 .md-typeset h3 {
-  font-size: 1.0rem;
+  font-size: 1rem;
   font-weight: 500;
   font-style: italic;
-  color: #183F74;
+  color: #183f74;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -51,27 +51,27 @@
 .md-header a,
 .md-tabs a,
 .md-tabs__link {
-  color: #F7AD2C !important; /* Golden Yellow */
+  color: #f7ad2c !important; /* Golden Yellow */
 }
 
 /* Primary sidebar (left) links */
 .md-nav__link {
-  color: #183F74 !important; /* Navy Blue */
+  color: #183f74 !important; /* Navy Blue */
 }
 
 /* Top-level section titles */
 .md-nav__title {
-  color: #183F74; /* Navy Blue */
+  color: #183f74; /* Navy Blue */
 }
 
 /* Right sidebar (TOC) links */
 .md-nav--secondary .md-nav__link {
-  color: #183F74; /* Navy Blue */
+  color: #183f74; /* Navy Blue */
 }
 
 /* Active sidebar link */
 .md-nav__link--active {
-  color: #183F74 !important; /* Navy Blue */
+  color: #183f74 !important; /* Navy Blue */
 }
 
 /* Tabs styling */
@@ -85,40 +85,40 @@
 
 /* Global dark theme variables */
 [data-md-color-scheme="slate"] {
-  --md-default-fg-color:           #ffffff;
-  --md-default-fg-color--light:    #e0e0e0;
-  --md-default-bg-color:           #141414;
+  --md-default-fg-color: #ffffff;
+  --md-default-fg-color--light: #e0e0e0;
+  --md-default-bg-color: #141414;
 
-  --md-code-fg-color:              #ffffff;
-  --md-code-bg-color:              #1e1e1e;
+  --md-code-fg-color: #ffffff;
+  --md-code-bg-color: #1e1e1e;
 
-  --md-typeset-a-color:            #F7AD2C; /* Golden Yellow */
-  --md-primary-fg-color:           #183F74; /* Navy Blue */
-  --md-primary-bg-color:           #141414;
+  --md-typeset-a-color: #f7ad2c; /* Golden Yellow */
+  --md-primary-fg-color: #183f74; /* Navy Blue */
+  --md-primary-bg-color: #141414;
 }
 
 /* Headings in dark mode */
 [data-md-color-scheme="slate"] .md-typeset h1,
 [data-md-color-scheme="slate"] .md-typeset h2,
 [data-md-color-scheme="slate"] .md-typeset h3 {
-  color: #F7AD2C; /* Golden Yellow */
+  color: #f7ad2c; /* Golden Yellow */
 }
 
 /* Top nav text in dark mode */
 [data-md-color-scheme="slate"] .md-header__title,
 [data-md-color-scheme="slate"] .md-nav__link,
 [data-md-color-scheme="slate"] .md-tabs__link {
-  color: #F7AD2C !important; /* Golden Yellow */
+  color: #f7ad2c !important; /* Golden Yellow */
 }
 
 /* Right sidebar (TOC) in dark mode */
 [data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link {
-  color: #F7AD2C;
+  color: #f7ad2c;
 }
 
 /* Active sidebar link in dark mode */
 [data-md-color-scheme="slate"] .md-nav__link--active {
-  color: #F7AD2C !important;
+  color: #f7ad2c !important;
 }
 
 /* =============================================================================
@@ -128,19 +128,18 @@
 
 /* Light mode: active sidebar item */
 .md-nav__link--active {
-  color: #183F74 !important;
+  color: #183f74 !important;
   font-weight: bold;
-  border-left: 3px solid #183F74;
+  border-left: 3px solid #183f74;
   padding-left: calc(1rem - 3px); /* compensate for border width */
   background-color: rgba(24, 63, 116, 0.05); /* subtle background */
 }
 
 /* Dark mode: active sidebar item */
 [data-md-color-scheme="slate"] .md-nav__link--active {
-  color: #F7AD2C !important;
+  color: #f7ad2c !important;
   font-weight: bold;
-  border-left: 3px solid #F7AD2C;
+  border-left: 3px solid #f7ad2c;
   padding-left: calc(1rem - 3px); /* align with light mode */
   background-color: rgba(247, 173, 44, 0.1);
 }
-
