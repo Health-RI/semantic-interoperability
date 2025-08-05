@@ -117,9 +117,9 @@ In the figure above, concepts like `hri:PetVet.Patient` and `hri:PetAnimal` were
 - **OntoUML (CIM)** defines the authoritative semantics for PIM artifacts.
 - **gUFO (PIM)** encodes those semantics in an executable OWL ontology.
 - **External concepts** are mapped to our reference via:
-  	- `skos:exactMatch` for perfect semantic equivalence (one per concept),
-  	- `skos:narrowMatch` or `skos:broadMatch` when approximate alignment is necessary (multiple allowed),
-    - and when such approximations reveal modeling gaps, the Health‑RI ontology is extended to support more precise mappings.
+  - `skos:exactMatch` for perfect semantic equivalence (one per concept),
+  - `skos:narrowMatch` or `skos:broadMatch` when approximate alignment is necessary (multiple allowed),
+  - and when such approximations reveal modeling gaps, the Health‑RI ontology is extended to support more precise mappings.
 - **Mappings may be authored by** the Health‑RI team (non-invasive, in SSSOM format) or by external partners (embedded in the external ontology).
 - This enables reasoning from external definitions back to OntoUML semantics—even when external artifacts don't know about OntoUML directly.
 
