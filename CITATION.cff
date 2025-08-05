@@ -1,0 +1,44 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: semantic-interoperability
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - name: Stichting Health-RI
+    address: Beatrixgebouw Jaarbeurs 6
+    city: Utrecht
+    country: NL
+    post-code: 3521 AL
+    location: '5e etage, ruimte: HI-FIVE'
+    email: info@health-ri.nl
+    tel: ' 085 3039498'
+    website: 'https://www.health-ri.nl/contact'
+  - given-names: Pedro Paulo
+    family-names: Favato Barcelos
+    email: pedro.barcelos@health-ri.nl
+    affiliation: Health-RI
+    orcid: 'https://orcid.org/0000-0003-2736-7817'
+identifiers:
+  - type: url
+    value: >-
+      https://w3id.org/health-ri/semantic-interoperability/git
+    description: w3id perm-id
+repository-code: 'https://github.com/Health-RI/semantic-interoperability'
+url: 'https://health-ri.github.io/semantic-interoperability/'
+abstract: >-
+  Documentation and resources on semantic interoperability
+  efforts at Health‑RI, supporting metadata standards, FAIR
+  principles, and reusable health data models.
+keywords:
+  - semantic interoperability
+  - Health‑RI
+  - ontology
+  - healthcare
+  - health
+  - ontouml
+  - ontology-engineering
+license: MIT
