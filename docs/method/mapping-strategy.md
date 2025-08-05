@@ -54,7 +54,7 @@ There are two possible approaches for creating and maintaining such mappings:
 These complementary approaches enable semantic alignment in both centrally controlled and federated interoperability scenarios.
 
 !!! info "View Current Mappings"
-    For a list of the mappings created by the Health‑RI team, see the [Mappings page](../../ontology/mappings.md).
+    For a list of the mappings created by the Health‑RI team, see the [Mappings page](../ontology/mappings.md).
 
 !!! warning "Only one `skos:exactMatch` allowed"
     Each concept may have **exactly one** `skos:exactMatch` to a Health‑RI concept—**and only when a perfect semantic equivalence exists**. Using more than one `skos:exactMatch` for the same concept is not allowed, as it introduces ambiguity.
