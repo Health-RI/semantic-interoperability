@@ -25,6 +25,9 @@ jobs:
       - name: Ensure metadata is added to gUFO file
         run: python scripts/merge-metadata.py
 
+      # TODO:
+      # - name: Copy latest versions of vpp, ttl, and json to 'latest' folder
+
       - name: Copy changelog to docs folder
         run: |
           mkdir -p docs/ontology

@@ -3,19 +3,21 @@ import subprocess
 import logging
 from pathlib import Path
 from packaging import version
-from bs4 import BeautifulSoup  # New dependency
+from bs4 import BeautifulSoup
+import shutil
 
 
 def get_latest_ttl_file(directory: Path):
     """
-    Finds the latest TTL file in the given directory based on semantic versioning.
+    Finds the latest versioned TTL file in the given directory based on semantic versioning
+    embedded in the filename (e.g., 'health-ri-ontology-v1.2.3.ttl').
 
     Args:
         directory (Path): Directory containing versioned TTL files.
 
     Returns:
-        tuple[Path | None, Version | None]: A tuple with the path to the latest TTL file
-        and its parsed version, or (None, None) if no valid files are found.
+        tuple[Path | None, Version | None]: The path to the latest TTL file and its parsed version,
+        or (None, None) if no valid files are found.
     """
     pattern = r"health-ri-ontology-v(\d+\.\d+\.\d+)\.ttl"
     latest_file = None
@@ -56,8 +58,8 @@ def sort_toc_sections_in_html(
     file_path: Path, section_ids=("classes", "annotationproperties")
 ):
     """
-    Sorts the entries in the Table of Contents for specified sections (e.g., Classes, 
-    Annotation Properties) alphabetically by label.
+    Sorts the entries in the Table of Contents (ToC) for specified sections
+    (e.g., 'Classes', 'Annotation Properties') alphabetically by label text.
 
     Args:
         file_path (Path): Path to the HTML file.
@@ -90,7 +92,7 @@ def insert_logo_in_html(
     alt_text="Health-RI Logo",
 ):
     """
-    Inserts a logo image at the top of the HTML document's <body> section.
+    Inserts a logo image at the top of the HTML document's <body> section. The logo is inserted before any existing body content.
 
     Args:
         file_path (Path): Path to the HTML file.
@@ -121,8 +123,13 @@ def insert_logo_in_html(
 
 def main():
     """
-    Main execution function. Generates the latest ontology HTML documentation using PyLODE,
-    applies post-processing, and saves both the latest and versioned HTML outputs.
+    Main execution function. Generates the HTML specification using PyLODE from the
+    latest versioned TTL file, applies post-processing (link fixing, ToC sorting, logo insertion),
+    and saves the result to:
+
+    - docs/ontology/specification.html
+    - ontologies/latest/documentations/specification.html
+    - ontologies/versioned/documentations/specification-v<version>.html
     """
     logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
@@ -133,7 +140,9 @@ def main():
 
     latest_ttl, latest_version = get_latest_ttl_file(ttl_dir)
     if not latest_ttl:
-        logging.warning("No valid TTL files found in 'ontologies/versioned/'. No specification will be produced.")
+        logging.warning(
+            "No valid TTL files found in 'ontologies/versioned/'. No specification will be produced."
+        )
         return
 
     logging.info(f"Generating specification from: {latest_ttl}")
@@ -148,10 +157,19 @@ def main():
 
         # Save versioned copy
         version_str = str(latest_version)
-        versioned_output = base_dir / f"ontologies/versioned/documentations/specification-v{version_str}.html"
+        versioned_output = (
+            base_dir
+            / f"ontologies/versioned/documentations/specification-v{version_str}.html"
+        )
         versioned_output.parent.mkdir(parents=True, exist_ok=True)
-        versioned_output.write_text(output_file.read_text(encoding="utf-8"), encoding="utf-8")
+        shutil.copyfile(output_file, versioned_output)
         logging.info(f"Copied versioned specification to: {versioned_output}")
+
+        # Save latest copy
+        latest_output = base_dir / "ontologies/latest/documentations/specification.html"
+        latest_output.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(output_file, latest_output)
+        logging.info(f"Copied specification to: {latest_output}")
 
     except subprocess.CalledProcessError as e:
         logging.error(f"PyLODE generation failed: {e}")
