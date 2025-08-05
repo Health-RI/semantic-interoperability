@@ -1,0 +1,820 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gufo: <http://purl.org/nemo/gufo#> .
+@prefix health-ri: <https://w3id.org/health-ri/ontyology#> .
+@prefix ns1: <https://w3id.org/mod#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+health-ri: a owl:Ontology ;
+    dcterms:abstract "TBD"@en ;
+    dcterms:contributor <https://w3id.org/health-ri/contributor/0000-0000-0000-0000>,
+        <https://w3id.org/health-ri/contributor/0000-0000-0000-0001>,
+        <https://w3id.org/health-ri/contributor/0000-0000-0000-0002> ;
+    dcterms:creator <https://w3id.org/health-ri/creator/0000-0000-0000-0003> ;
+    dcterms:description "TBD description of the ontology. This vocabulary provides a canonical RDF-based serialization for a domain-specific language or model, enabling publication, data exchange, and computational processing."@en ;
+    dcterms:identifier "https://w3id.org/health-ri/ontology" ;
+    dcterms:issued "2025-01-01"^^xsd:date ;
+    dcterms:language "en"^^xsd:language ;
+    dcterms:license <https://w3id.org/health-ri/license> ;
+    dcterms:modified "2025-01-02"^^xsd:date ;
+    dcterms:publisher <https://w3id.org/health-ri/publisher/organization1>,
+        <https://w3id.org/health-ri/publisher/organization2>,
+        <https://w3id.org/health-ri/publisher/organization3> ;
+    dcterms:title "Example Ontology Vocabulary"@en ;
+    vann:preferredNamespacePrefix "example" ;
+    vann:preferredNamespaceUri "https://w3id.org/health-ri/ontology#"^^xsd:anyURI ;
+    owl:versionInfo "TBD version information, e.g., notes about changes, structure, or semantics."@en ;
+    dcat:keyword "domain"@en,
+        "example"@en,
+        "model"@en,
+        "ontology"@en,
+        "vocabulary"@en ;
+    dcat:landingPage <https://w3id.org/health-ri/ontology/landing> ;
+    dcat:version "0.0.0" ;
+    foaf:homepage <https://w3id.org/health-ri/ontology> ;
+    foaf:logo <https://w3id.org/health-ri/resources/logo.png> ;
+    ns1:repository <https://w3id.org/health-ri/ontology/repository> .
+
+health-ri:Gamete a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Gamete"@en ;
+    rdfs:comment "A mature reproductive cell (sperm or egg) that is haploid in nature. Gametes carry half the number of chromosomes of a diploid cell and combine during fertilization to form a diploid zygote, restoring the full chromosome set."@en ;
+    rdfs:subClassOf health-ri:HaploidCell .
+
+health-ri:femaleAdministrativeGenderInheresInPersonWithFemaleAdministrativeGender rdfs:subPropertyOf health-ri:hasAdministrativeGender .
+
+health-ri:legalGenderRecognitionMediatesLegalGenderRecognizer rdfs:subPropertyOf health-ri:administrativeGenderRecognitionMediatesAdministrativeGenderRecognizer .
+
+health-ri:legalGenderRecognitionMediatesPersonWithRecognizedLegalGender rdfs:subPropertyOf health-ri:administrativeGenderRecognitionMediatesPersonWithRecognizedAdministrativeGender .
+
+health-ri:maleAdministrativeGenderInheresInPersonWithMaleAdministrativeGender rdfs:subPropertyOf health-ri:hasAdministrativeGender .
+
+health-ri:nonBinaryAdministrativeGenderInheresInPersonWithNonBinaryAdministrativeGender rdfs:subPropertyOf health-ri:hasAdministrativeGender .
+
+health-ri:personWithRecognizedLegalGenderInheresInLegalGender rdfs:subPropertyOf health-ri:hasAdministrativeGender .
+
+<https://w3id.org/health-ri/ontology> a owl:Ontology ;
+    owl:imports gufo: .
+
+health-ri:AmbiguousPhenotypicPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Ambiguous Phenotypic Person"@en ;
+    rdfs:comment "Includes individuals whose anatomical traits do not clearly align with either male-typical or female-typical categories. This classification acknowledges the existence of anatomical diversity and variations outside binary expectations."@en ;
+    rdfs:subClassOf health-ri:PersonWithAssessedPhenotypicSex .
+
+health-ri:BirthNotification a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Birth Notification"@en ;
+    rdfs:comment """Represents the official document or record that includes the assigned sex at birth along with other birth details. Often required by legal or administrative systems as the initial source of personal data for registration.
+
+Also called a "birth record" or "attending physician�s report"."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass health-ri:SexAtBirthAssignment ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        gufo:FunctionalComplex .
+
+health-ri:BirthRelatedLegislationRule a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Birth-related Legislation Rule"@en ;
+    rdfs:comment "Describes the set of legal or regulatory requirements that govern how sex at birth must be assessed, assigned, and recorded. This concept ensures that the model accounts for variation in laws and administrative practices across jurisdictions."@en ;
+    rdfs:subClassOf gufo:IntrinsicMode .
+
+health-ri:Chromosome a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Chromosome"@en ;
+    rdfs:comment "A thread-like structure of nucleic acids and proteins carrying genetic information. Chromosomes are fundamental units of heredity and exist in pairs in most human cells, encoding the instructions for development, functioning, and reproduction."@en ;
+    rdfs:subClassOf gufo:FunctionalComplex .
+
+health-ri:Document a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Document"@en ;
+    rdfs:comment "A recorded piece of information that can be stored, shared, and referenced. Documents serve as authoritative records of facts, decisions, or transactions and can exist in physical or digital form. They are used to communicate, formalize, and preserve information across contexts such as administration, law, business, and personal records."@en ;
+    rdfs:subClassOf gufo:FunctionalComplex .
+
+health-ri:FemaleBiologicalPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Female Biological Person"@en ;
+    rdfs:comment "Refers to a person whose sexual dimorphic characteristics align more strongly with those typically classified as female. The classification is based on the predominance of female-typical features in the overall assessment."@en ;
+    rdfs:subClassOf health-ri:Person .
+
+health-ri:FemaleGenderIdentity a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Female Gender Identity"@en ;
+    rdfs:comment "Describes an individual's self-identification as female. It encompasses the personal sense of being female and often informs social expression, interaction, and personal narrative."@en ;
+    rdfs:subClassOf health-ri:GenderIdentity .
+
+health-ri:FemalePhenotypicPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Female Phenotypic Person"@en ;
+    rdfs:comment "Describes an individual assessed as having predominantly female-typical anatomical features. The classification reflects traits typically associated with female development."@en ;
+    rdfs:subClassOf health-ri:PersonWithAssessedPhenotypicSex .
+
+health-ri:GenderRecognitionDocument a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Gender Recognition Document"@en ;
+    rdfs:comment "Refers to official records or certificates that confirm or establish a person�s legal gender. These documents provide formal evidence of legal gender recognition and are used in administrative, legal, and social contexts."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass health-ri:LegalGenderRecognition ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        health-ri:Document .
+
+health-ri:Government a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Government"@en ;
+    rdfs:comment "A formal organization with authority to create, implement, and enforce laws and policies within a defined territory. Governments typically manage public services, maintain order, and regulate social and economic activities. They exercise unique legal powers, including issuing official documents, defining legal statuses, and recognizing individual rights."@en ;
+    rdfs:subClassOf health-ri:Organization .
+
+health-ri:IndeterminateBiologicalPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Indeterminate Biological Person"@en ;
+    rdfs:comment "Describes individuals whose combination of sexual dimorphic characteristics does not clearly align with either male-typical or female-typical classifications. This category acknowledges biological variation that does not fit conventional binary classifications."@en ;
+    rdfs:subClassOf health-ri:Person .
+
+health-ri:LegalFemalePerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Legal Female Person"@en ;
+    rdfs:comment "Refers to an individual whose legal gender is officially recognized as female. This status is used in legal documents and administrative records to determine rights and obligations."@en ;
+    rdfs:subClassOf health-ri:PersonWithRecognizedLegalGender .
+
+health-ri:LegalGender a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Legal Gender"@en ;
+    rdfs:comment "Denotes the gender category recognized by law and recorded in official systems. It provides a standardized basis for administrative processes, legal rights, and social recognition, supporting consistent management of gender-related information."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom health-ri:PersonWithRecognizedLegalGender ],
+        health-ri:AdministrativeGender .
+
+health-ri:LegalGenderRecognizer a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Legal Gender Recognizer"@en ;
+    rdfs:comment "Represents the role of an entity�often a government body or its agents�authorized to formally assign or recognize a person's legal gender. This role includes the authority to record, approve, or modify legal gender status in official records."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom health-ri:LegalGenderRecognition ],
+        health-ri:AdministrativeGenderRecognizer,
+        health-ri:Government .
+
+health-ri:LegalMalePerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Legal Male Person"@en ;
+    rdfs:comment "Describes an individual whose legal gender is officially recognized and recorded as male. This classification carries legal and administrative implications for rights, responsibilities, and identification."@en ;
+    rdfs:subClassOf health-ri:PersonWithRecognizedLegalGender .
+
+health-ri:LegalNonBinaryPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Legal Non-binary Person"@en ;
+    rdfs:comment "Includes individuals whose legal gender is formally recognized as non-binary, acknowledging identities outside the traditional male/female binary. This classification supports administrative and legal recognition of gender diversity."@en ;
+    rdfs:subClassOf health-ri:PersonWithRecognizedLegalGender .
+
+health-ri:MaleBiologicalPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Male Biological Person"@en ;
+    rdfs:comment "Describes a person whose overall set of sexual dimorphic characteristics aligns more strongly with those typically classified as male. This classification relies on counting or weighting traits that are conventionally considered male-typical."@en ;
+    rdfs:subClassOf health-ri:Person .
+
+health-ri:MaleGenderIdentity a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Male Gender Identity"@en ;
+    rdfs:comment "Refers to an individual's self-identification as male. This identity reflects personal understanding and experience of being male, which can shape social roles, expression, and expectations."@en ;
+    rdfs:subClassOf health-ri:GenderIdentity .
+
+health-ri:MalePhenotypicPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Male Phenotypic Person"@en ;
+    rdfs:comment "Refers to an individual assessed as having predominantly male-typical anatomical features. This classification is based on observed traits aligned with typical male development."@en ;
+    rdfs:subClassOf health-ri:PersonWithAssessedPhenotypicSex .
+
+health-ri:NonBinaryGenderIdentity a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Non-binary Gender Identity"@en ;
+    rdfs:comment "Includes gender identities outside the traditional male/female binary. This category accommodates diverse self-understandings such as genderqueer, agender, or other identities that do not fit exclusively into male or female classifications."@en ;
+    rdfs:subClassOf health-ri:GenderIdentity .
+
+health-ri:PersonWithFemaleSexAtBirth a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Female Sex at Birth"@en ;
+    rdfs:comment "Denotes individuals officially assigned as female in their birth record, based on clinical observation of anatomical features immediately after birth."@en ;
+    rdfs:subClassOf health-ri:PersonWithAssignedSexAtBirth .
+
+health-ri:PersonWithIndeterminateSexAtBirth a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Indeterminate Sex at Birth"@en ;
+    rdfs:comment "Includes individuals whose sex at birth is formally recorded as indeterminate. This category supports administrative recognition of cases where observed features do not clearly fit male or female classifications."@en ;
+    rdfs:subClassOf health-ri:PersonWithAssignedSexAtBirth .
+
+health-ri:PersonWithMaleSexAtBirth a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Male Sex at Birth"@en ;
+    rdfs:comment "Denotes individuals officially assigned as male in their birth record, typically based on observed anatomical features at the time of delivery."@en ;
+    rdfs:subClassOf health-ri:PersonWithAssignedSexAtBirth .
+
+health-ri:PersonWithUnassignedLegalGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Unassigned Legal Gender"@en ;
+    rdfs:comment "Represents individuals who, in legal or administrative records, do not have a formally assigned legal gender. This category allows for flexibility in cases where no specific legal gender is recorded or chosen."@en ;
+    rdfs:subClassOf health-ri:PersonWithRecognizedLegalGender .
+
+health-ri:PersonWithUnassignedSexAtBirth a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Unassigned Sex at Birth"@en ;
+    rdfs:comment "Represents individuals who, at the point of registration, do not have a formally recorded sex assignment. This acknowledges the possibility of cases where no clear classification is made, recognizing flexibility in administrative processes."@en ;
+    rdfs:subClassOf health-ri:Person .
+
+health-ri:PhenotypicSexAssessor a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Phenotypic Sex Assessor"@en ;
+    rdfs:comment "Refers to the role of the healthcare professional responsible for evaluating a person�s phenotypic sex. This role involves clinical judgment and interpretation of anatomical features."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty gufo:mediates ;
+            owl:someValuesFrom health-ri:PhenotypicSexAssessment ],
+        health-ri:HealthcareProfessional .
+
+health-ri:SexAtBirth a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Sex at Birth"@en ;
+    rdfs:comment "Represents the formal classification of a person's sex that is recorded at the time of birth. This category acknowledges that sex at birth is not simply observed but is officially documented, often forming the basis for legal and administrative records throughout life."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:PersonWithAssignedSexAtBirth ;
+            owl:onProperty gufo:inheresIn ],
+        health-ri:PhenotypicSex .
+
+health-ri:SexAtBirthAssigner a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Sex at Birth Assigner"@en ;
+    rdfs:comment "Represents the role of professionals authorized to make and record the sex assignment at birth, typically including clinicians such as doctors or midwives who perform the observation and formal documentation."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom health-ri:SexAtBirthAssignment ],
+        health-ri:HealthcareProfessional .
+
+health-ri:AdministrativeGenderRecognizer a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Administrative Gender Recognizer"@en ;
+    rdfs:comment "Represents the role played by an organization when it is responsible for assigning or recognizing a person�s administrative gender. This role formalizes the authority to make or record gender-related determinations within an administrative context."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom health-ri:AdministrativeGenderRecognition ],
+        health-ri:Organization .
+
+health-ri:Allosome a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Allosome"@en ;
+    rdfs:comment "Refers to the sex chromosomes that determine an individual�s chromosomal sex. Humans typically have two allosomes per diploid cell, which can be combinations of X and Y chromosomes. Allosomes carry genes that influence sexual development and related traits."@en ;
+    rdfs:subClassOf health-ri:Chromosome ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:AllosomeX health-ri:AllosomeY ) ] .
+
+health-ri:AllosomeX a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Allosome X"@en ;
+    rdfs:comment "One of the two types of human sex chromosomes. The X chromosome contains many essential genes unrelated to sex determination but is also critical for sexual development. It is present in both males and females, usually as XX in females and XY in males."@en ;
+    rdfs:subClassOf health-ri:Allosome .
+
+health-ri:AllosomeY a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Allosome Y"@en ;
+    rdfs:comment "The sex chromosome that determines male development in humans when paired with an X chromosome. The Y chromosome carries genes responsible for initiating male sex differentiation but contains fewer genes overall than the X chromosome. It can only occur in combination with at least one X chromosome in viable human cells."@en ;
+    rdfs:subClassOf health-ri:Allosome .
+
+health-ri:DiploidCell a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Diploid Cell"@en ;
+    rdfs:comment "A type of human cell containing two complete sets of chromosomes�one from each parent. In humans, diploid cells include somatic cells and have 46 chromosomes, including two allosomes that determine chromosomal sex (e.g., XX or XY)."@en ;
+    rdfs:subClassOf health-ri:HumanCell .
+
+health-ri:FemaleAdministrativeGender a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Female Administrative Gender"@en ;
+    rdfs:comment " Represents an administrative gender designation that classifies individuals as female in formal contexts such as records, forms, or institutional systems. This type supports consistent recognition and management of female gender information across administrative processes."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:PersonWithFemaleAdministrativeGender ;
+            owl:onProperty gufo:inheresIn ],
+        health-ri:AdministrativeGender .
+
+health-ri:FemaleTypicalDimorphicCharacteristic a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Female-typical Dimorphic Characteristic"@en ;
+    rdfs:comment "Includes anatomical or physiological traits more typical of females, such as wider pelvic structure or distribution of body fat. These traits inform classification into the female category."@en ;
+    rdfs:subClassOf health-ri:SexualDimorphicCharacteristic .
+
+health-ri:FemaleTypicalVisualSexCharacteristic a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Female-typical Visual Sex Characteristic"@en ;
+    rdfs:comment "Encompasses anatomical features typically associated with females, such as breast development, pelvic shape, or distribution of body fat."@en ;
+    rdfs:subClassOf health-ri:VisualSexCharacteristic .
+
+health-ri:Gender a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Gender"@en ;
+    rdfs:comment "Represents the broad conceptual category encompassing all types of gender characterizations a person may have. It includes self-defined aspects, such as gender identity, as well as externally assigned forms like administrative or legal gender. This category supports understanding gender as a complex social and institutional phenomenon that can be intrinsic to the person or shaped by external authorities and systems."@en ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:unionOf ( gufo:IntrinsicMode gufo:ExtrinsicMode ) ],
+        gufo:Aspect .
+
+health-ri:HealthcareProfessional a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Healthcare Professional"@en ;
+    rdfs:comment "Represents any trained and authorized individual who provides medical or health-related services. This includes doctors, nurses, midwives, and other clinicians involved in patient care. In the context of this model, healthcare professionals carry out assessments, make observations, and record classifications such as phenotypic sex at birth, but their role more broadly encompasses diagnosis, treatment, counseling, and support for overall health and well-being."@en ;
+    rdfs:subClassOf health-ri:Person .
+
+health-ri:HumanCell a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Human Cell"@en ;
+    rdfs:comment "The fundamental structural and functional unit of the human body. Human cells vary in type and function, but all contain genetic material in the form of chromosomes, including sex chromosomes that help determine biological sex."@en ;
+    rdfs:subClassOf gufo:FunctionalComplex ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:HaploidCell health-ri:DiploidCell ) ] .
+
+health-ri:IndeterminateDimorphicCharacteristic a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Indeterminate Dimorphic Characteristic"@en ;
+    rdfs:comment "Captures traits that do not clearly align with typical male or female patterns. It supports the recognition of biological diversity and variation beyond the binary model."@en ;
+    rdfs:subClassOf health-ri:SexualDimorphicCharacteristic .
+
+health-ri:IndeterminateVisualSexCharacteristic a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Indeterminate Visual Sex Characteristic"@en ;
+    rdfs:comment "Captures anatomical features that do not clearly align with male-typical or female-typical categories. This classification supports recognizing and documenting variations beyond the binary model."@en ;
+    rdfs:subClassOf health-ri:VisualSexCharacteristic .
+
+health-ri:KaryotypicalSex a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Karyotypical Sex"@en ;
+    rdfs:comment "Refers to the classification of a person�s sex based on their chromosomal composition, specifically the configuration of sex chromosomes (allosomes). It provides a genetic basis for categorizing individuals as male, female, or variants, supporting a biological understanding of sex that is stable across a person�s life."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass health-ri:Person ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        gufo:IntrinsicMode,
+        health-ri:Sex .
+
+health-ri:KaryotypicallyIndeterminatePerson a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Karyotypically Indeterminate Person"@en ;
+    rdfs:comment "Captures cases where the chromosomal composition does not allow clear classification as male or female. This category acknowledges the existence of complex or ambiguous chromosomal patterns that do not fit binary definitions."@en ;
+    rdfs:subClassOf health-ri:PersonWithVariantSexChromosome .
+
+health-ri:MaleAdministrativeGender a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Male Administrative Gender"@en ;
+    rdfs:comment " Represents an administrative gender designation that classifies individuals as male in formal contexts such as records, forms, or institutional systems. This type supports consistent recognition and management of male gender information across administrative processes."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:PersonWithMaleAdministrativeGender ;
+            owl:onProperty gufo:inheresIn ],
+        health-ri:AdministrativeGender .
+
+health-ri:MaleTypicalDimorphicCharacteristic a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Male-typical Dimorphic Characteristic"@en ;
+    rdfs:comment "Represents specific anatomical or physiological traits that are statistically more common or pronounced in males. Examples might include broader shoulders or denser facial hair."@en ;
+    rdfs:subClassOf health-ri:SexualDimorphicCharacteristic .
+
+health-ri:MaleTypicalVisualSexCharacteristic a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Male-typical Visual Sex Characteristic"@en ;
+    rdfs:comment "Includes anatomical features statistically more common or pronounced in males, such as external genitalia shape, body hair distribution, or certain skeletal structures."@en ;
+    rdfs:subClassOf health-ri:VisualSexCharacteristic .
+
+health-ri:NonBinaryAdministrativeGender a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Non-binary Administrative Gender"@en ;
+    rdfs:comment " Represents an administrative gender designation for individuals whose gender is formally recognized as non-binary or outside the male/female binary. This type enables consistent documentation and management of non-binary gender identities in administrative contexts."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:PersonWithNonBinaryAdministrativeGender ;
+            owl:onProperty gufo:inheresIn ],
+        health-ri:AdministrativeGender .
+
+health-ri:Organization a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Organization"@en ;
+    rdfs:comment "A structured group of people with a common purpose, such as a business, government agency, nonprofit, or other formal entity. Organizations can have defined roles, responsibilities, and authority to make decisions, deliver services, and interact with individuals or other organizations in systematic ways."@en ;
+    rdfs:subClassOf gufo:FunctionalComplex .
+
+health-ri:PersonWithFemaleAdministrativeGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Female Administrative Gender"@en ;
+    rdfs:comment "Refers to an individual who has been formally designated as female in administrative records or systems. This role indicates that an authoritative body has assigned or acknowledged a female classification for use in official documentation, identification, or institutional processes."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom health-ri:FemaleAdministrativeGender ],
+        health-ri:PersonWithRecognizedAdministrativeGender .
+
+health-ri:PersonWithMaleAdministrativeGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Male Administrative Gender"@en ;
+    rdfs:comment "Refers to an individual who has been formally designated as male in administrative records or systems. This role indicates that an authoritative body has assigned or acknowledged a male classification for the purpose of official documentation, identification, or institutional processes."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom health-ri:MaleAdministrativeGender ],
+        health-ri:PersonWithRecognizedAdministrativeGender .
+
+health-ri:PersonWithNonBinaryAdministrativeGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Non-binary Administrative Gender"@en ;
+    rdfs:comment "Refers to an individual who has been formally designated with a non-binary gender classification in administrative records or systems. This role indicates that an authoritative body has assigned or acknowledged a gender designation outside the traditional male/female binary for the purpose of official documentation, identification, or institutional processes."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom health-ri:NonBinaryAdministrativeGender ],
+        health-ri:PersonWithRecognizedAdministrativeGender .
+
+health-ri:PhenotypicSexAssessment a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Phenotypic Sex Assessment"@en ;
+    rdfs:comment "Represents the structured process through which a person's phenotypic sex is evaluated and categorized. It involves the interaction between the healthcare professional (assessor) and the individual being assessed."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom health-ri:PhenotypicSexAssessor ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:PersonWithAssessedPhenotypicSex ;
+            owl:onProperty gufo:mediates ],
+        gufo:Relator .
+
+health-ri:AdministrativeGenderRecognition a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Administrative Gender Recognition"@en ;
+    rdfs:comment "Describes the process and relationship through which an organization formally assigns or recognizes a person's administrative gender. It represents the structured interaction that results in an individual's gender being recorded or changed in administrative systems."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:AdministrativeGenderRecognizer ;
+            owl:onProperty gufo:mediates ],
+        [ a owl:Restriction ;
+            owl:onProperty gufo:mediates ;
+            owl:someValuesFrom health-ri:PersonWithRecognizedAdministrativeGender ],
+        gufo:Relator .
+
+health-ri:HaploidCell a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Haploid Cell"@en ;
+    rdfs:comment "A cell with only one set of chromosomes. In humans, these are the reproductive cells (gametes) with 23 chromosomes total, including one allosome. Haploid cells are essential for sexual reproduction, ensuring that chromosome numbers remain stable across generations."@en ;
+    rdfs:subClassOf health-ri:HumanCell .
+
+health-ri:LegalGenderRecognition a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Legal Gender Recognition"@en ;
+    rdfs:comment "Describes the formal process through which a person's legal gender is established, assigned, or modified in accordance with laws and administrative procedures. This recognition is often documented and has legal consequences for a person's rights and social standing."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:PersonWithRecognizedLegalGender ;
+            owl:onProperty gufo:mediates ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:LegalGenderRecognizer ;
+            owl:onProperty gufo:mediates ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:GenderRecognitionDocument ;
+            owl:onProperty gufo:mediates ],
+        health-ri:AdministrativeGenderRecognition .
+
+health-ri:PhenotypicSex a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Phenotypic Sex"@en ;
+    rdfs:comment "Represents the observable anatomical and morphological features that inform sex classification, such as genitalia, secondary sexual traits, and body structure. It is determined through clinical or visual assessment and can vary across individuals."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:PersonWithAssessedPhenotypicSex ;
+            owl:onProperty gufo:inheresIn ],
+        gufo:ExtrinsicMode,
+        health-ri:Sex .
+
+health-ri:Sex a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Sex"@en ;
+    rdfs:comment "Denotes the overall category for classifying a person's biological traits related to reproductive anatomy, chromosomes, and other physical characteristics. It includes different dimensions such as karyotypical sex (chromosomal composition), phenotypic sex (observable anatomical features), and sex at birth (the classification assigned during birth registration). This category emphasizes that sex, while grounded in biology, can involve observation, interpretation, and formal assignment."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:Person ;
+            owl:onProperty gufo:inheresIn ],
+        [ a owl:Class ;
+            owl:unionOf ( gufo:IntrinsicMode gufo:ExtrinsicMode ) ],
+        gufo:Aspect .
+
+health-ri:SexAtBirthAssignment a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Sex at Birth Assignment"@en ;
+    rdfs:comment "Captures the formal process through which a newborn's sex is assigned and recorded. This mediation process connects the assigner with the person being assigned, documenting the outcome in official records."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty gufo:mediates ;
+            owl:someValuesFrom health-ri:SexAtBirthAssigner ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:PersonWithAssignedSexAtBirth ;
+            owl:onProperty gufo:mediates ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:BirthNotification ;
+            owl:onProperty gufo:mediates ],
+        [ a owl:Restriction ;
+            owl:onProperty gufo:mediates ;
+            owl:someValuesFrom health-ri:BirthRelatedLegislationRule ],
+        gufo:Relator .
+
+health-ri:SexualDimorphicCharacteristic a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Sexual Dimorphic Characteristic"@en ;
+    rdfs:comment "An umbrella category for traits that show differences between sexes. These characteristics are used to classify biological sex by examining their type and distribution in an individual. Examples include body hair patterns, skeletal structure, and other anatomical features."@en ;
+    rdfs:subClassOf gufo:FunctionalComplex ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:FemaleTypicalDimorphicCharacteristic health-ri:MaleTypicalDimorphicCharacteristic health-ri:IndeterminateDimorphicCharacteristic ) ] .
+
+health-ri:VisualSexCharacteristic a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Visual Sex Characteristic"@en ;
+    rdfs:comment "An umbrella category for anatomical features used to assess phenotypic sex. These characteristics serve as the basis for classifying individuals and include observable traits that vary in typicality across sexes."@en ;
+    rdfs:subClassOf gufo:FunctionalComplex ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:IndeterminateVisualSexCharacteristic health-ri:FemaleTypicalVisualSexCharacteristic health-ri:MaleTypicalVisualSexCharacteristic ) ] .
+
+health-ri:KaryotypicalFemale a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Karyotypical Female"@en ;
+    rdfs:subClassOf health-ri:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:RegularKaryotypicalFemale health-ri:VariantKaryotypicalFemale ) ] .
+
+health-ri:KaryotypicalMale a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Karyotypical Male"@en ;
+    rdfs:subClassOf health-ri:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:RegularKaryotypicalMale health-ri:VariantKaryotypicalMale ) ] .
+
+health-ri:PersonWithRegularSexChromosome a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Regular Sex Chromosome"@en ;
+    rdfs:comment "Describes individuals whose sex chromosome composition follows typical patterns without significant variations. Commonly corresponds to XX (female) or XY (male) karyotypes, reflecting the most frequent chromosomal configurations in the human population."@en ;
+    rdfs:subClassOf health-ri:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:RegularKaryotypicalFemale health-ri:RegularKaryotypicalMale ) ] .
+
+health-ri:RegularKaryotypicalFemale a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Regular Karyotypical Female"@en ;
+    rdfs:comment "Refers to individuals with the standard female chromosomal configuration, typically XX. This category aligns with the most common understanding of female karyotypical sex in biology."@en ;
+    rdfs:subClassOf health-ri:KaryotypicalFemale,
+        health-ri:PersonWithRegularSexChromosome .
+
+health-ri:RegularKaryotypicalMale a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Regular Karyotypical Male"@en ;
+    rdfs:comment "Represents individuals with a typical male chromosomal configuration, usually XY. It reflects the standard genetic basis used to define male karyotypical sex in medical and genetic contexts."@en ;
+    rdfs:subClassOf health-ri:KaryotypicalMale,
+        health-ri:PersonWithRegularSexChromosome .
+
+health-ri:VariantKaryotypicalFemale a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Variant Karyotypical Female"@en ;
+    rdfs:comment "Describes individuals with variations from the standard XX female configuration while still aligning with a female classification. Such variations may include atypical chromosomal arrangements that result in female phenotypes or identities."@en ;
+    rdfs:subClassOf health-ri:KaryotypicalFemale,
+        health-ri:PersonWithVariantSexChromosome .
+
+health-ri:VariantKaryotypicalMale a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Variant Karyotypical Male"@en ;
+    rdfs:comment "Includes individuals whose chromosomal patterns are considered male but differ from the standard XY configuration. For example, XXY or other variations that still lead to a male classification but with genetic differences."@en ;
+    rdfs:subClassOf health-ri:KaryotypicalMale,
+        health-ri:PersonWithVariantSexChromosome .
+
+health-ri:GenderIdentity a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Gender Identity"@en ;
+    rdfs:comment "Represents a person's deeply held sense of their own gender. It is an intrinsic aspect of self-understanding and social identity, reflecting how individuals perceive themselves and wish to be recognized. Gender identity may or may not align with a person's sex assigned at birth."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:Person ;
+            owl:onProperty gufo:inheresIn ],
+        gufo:IntrinsicMode,
+        health-ri:Gender ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:MaleGenderIdentity health-ri:NonBinaryGenderIdentity health-ri:FemaleGenderIdentity ) ] .
+
+health-ri:PersonWithAssessedPhenotypicSex a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Assessed Phenotypic Sex"@en ;
+    rdfs:comment "Describes an individual whose phenotypic sex has been evaluated and categorized, typically by a healthcare professional. This classification recognizes that phenotypic sex is not simply �given� but results from an assessment process."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom health-ri:PhenotypicSexAssessment ],
+        [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom health-ri:PhenotypicSex ],
+        health-ri:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:MalePhenotypicPerson health-ri:FemalePhenotypicPerson health-ri:AmbiguousPhenotypicPerson ) ] .
+
+health-ri:PersonWithVariantSexChromosome a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Variant Sex Chromosome"@en ;
+    rdfs:comment "Includes individuals whose chromosomal composition deviates from the typical XX or XY patterns. Examples might include XXY, X0, or other variations that contribute to diverse biological presentations of sex. This classification ensures the model accommodates chromosomal diversity."@en ;
+    rdfs:subClassOf health-ri:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:VariantKaryotypicalFemale health-ri:VariantKaryotypicalMale health-ri:KaryotypicallyIndeterminatePerson ) ] .
+
+health-ri:AdministrativeGender a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Administrative Gender"@en ;
+    rdfs:comment "Represents the type of gender designation used in administrative contexts, such as records, forms, or institutional databases. This category captures the labels or classifications assigned through formal processes, supporting consistent management of gender information across systems."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:PersonWithRecognizedAdministrativeGender ;
+            owl:onProperty gufo:inheresIn ],
+        gufo:ExtrinsicMode,
+        health-ri:Gender ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:MaleAdministrativeGender health-ri:NonBinaryAdministrativeGender health-ri:FemaleAdministrativeGender ) ] .
+
+health-ri:PersonWithAssignedSexAtBirth a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Assigned Sex at Birth"@en ;
+    rdfs:comment "Describes an individual who has received a recorded sex classification during the birth registration process. This role reflects the outcome of a formal assignment that categorizes the person as male, female, or indeterminate at birth."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom health-ri:SexAtBirthAssignment ],
+        [ a owl:Restriction ;
+            owl:onClass health-ri:SexAtBirth ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        health-ri:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:PersonWithFemaleSexAtBirth health-ri:PersonWithMaleSexAtBirth health-ri:PersonWithIndeterminateSexAtBirth ) ] .
+
+health-ri:PersonWithRecognizedAdministrativeGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Recognized Administrative Gender"@en ;
+    rdfs:comment "Refers to an individual whose gender has been formally assigned or recognized by an organization for administrative purposes. This role acknowledges that administrative gender is not merely self-defined but is established through interaction with an authoritative body."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom health-ri:AdministrativeGender ],
+        [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom health-ri:AdministrativeGenderRecognition ],
+        health-ri:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:PersonWithMaleAdministrativeGender health-ri:PersonWithFemaleAdministrativeGender health-ri:PersonWithNonBinaryAdministrativeGender ) ] .
+
+health-ri:PersonWithRecognizedLegalGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Recognized Legal Gender"@en ;
+    rdfs:comment "Denotes an individual who has an officially assigned legal gender recorded through a formal recognition process. This role reflects the outcome of administrative or legal procedures defining a person's gender status for legal and institutional purposes."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom health-ri:LegalGenderRecognition ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:LegalGender ;
+            owl:onProperty gufo:inheresIn ],
+        health-ri:Person,
+        health-ri:PersonWithRecognizedAdministrativeGender ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:PersonWithUnassignedLegalGender health-ri:LegalFemalePerson health-ri:LegalNonBinaryPerson health-ri:LegalMalePerson ) ] .
+
+health-ri:Person a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person"@en ;
+    rdfs:comment "Represents an individual human being, considered as a whole entity with biological, psychological, and social dimensions. This concept serves as the foundational unit in the ontology, providing the bearer of various properties, roles, and classifications such as sex and gender. It abstracts from specific contexts or classifications to describe any human subject capable of having intrinsic traits and participating in social and administrative systems."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass health-ri:KaryotypicalSex ;
+            owl:onProperty gufo:inheresIn ],
+        [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom health-ri:Sex ],
+        [ a owl:Restriction ;
+            owl:onClass health-ri:GenderIdentity ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        gufo:FunctionalComplex ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( health-ri:PersonWithAssignedSexAtBirth health-ri:PersonWithUnassignedSexAtBirth ) ],
+        [ a owl:Class ;
+            owl:unionOf ( health-ri:FemaleBiologicalPerson health-ri:MaleBiologicalPerson health-ri:IndeterminateBiologicalPerson ) ],
+        [ a owl:Class ;
+            owl:unionOf ( health-ri:PersonWithRegularSexChromosome health-ri:PersonWithVariantSexChromosome ) ],
+        [ a owl:Class ;
+            owl:unionOf ( health-ri:KaryotypicalFemale health-ri:KaryotypicalMale ) ] .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( health-ri:PhenotypicSex health-ri:KaryotypicalSex ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( health-ri:RegularKaryotypicalMale health-ri:VariantKaryotypicalMale ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( health-ri:FemaleTypicalDimorphicCharacteristic health-ri:MaleTypicalDimorphicCharacteristic health-ri:IndeterminateDimorphicCharacteristic ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( health-ri:IndeterminateVisualSexCharacteristic health-ri:FemaleTypicalVisualSexCharacteristic health-ri:MaleTypicalVisualSexCharacteristic ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( health-ri:AllosomeX health-ri:AllosomeY ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( health-ri:HaploidCell health-ri:DiploidCell ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( health-ri:GenderIdentity health-ri:AdministrativeGender ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( health-ri:RegularKaryotypicalFemale health-ri:RegularKaryotypicalMale ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( health-ri:PersonWithRegularSexChromosome health-ri:PersonWithVariantSexChromosome ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( health-ri:VariantKaryotypicalFemale health-ri:VariantKaryotypicalMale health-ri:KaryotypicallyIndeterminatePerson ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( health-ri:KaryotypicalFemale health-ri:KaryotypicalMale ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( health-ri:RegularKaryotypicalFemale health-ri:VariantKaryotypicalFemale ) .
+
