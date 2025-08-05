@@ -4,7 +4,7 @@ from pathlib import Path
 from packaging import version
 from datetime import date
 from rdflib import Graph, Literal, URIRef
-from rdflib.namespace import XSD, DCTERMS, DCAT, OWL
+from rdflib.namespace import XSD, DCTERMS, OWL
 
 logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
@@ -74,20 +74,19 @@ def bind_common_prefixes(graph: Graph) -> None:
     graph.bind("owl", "http://www.w3.org/2002/07/owl#")
     graph.bind("xsd", "http://www.w3.org/2001/XMLSchema#")
     graph.bind("gufo", "http://purl.org/nemo/gufo#")
-    graph.bind("health-ri", "https://w3id.org/health-ri/ontology#")
+    graph.bind("hri", "https://w3id.org/health-ri/ontology#")
     graph.bind("dct", DCTERMS)
-    graph.bind("dcat", DCAT)
 
 
 def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
     """
     Merges TTL file B into the latest version of TTL file A and overwrites A.
-    Also adds dct:modified, dcat:version, and owl:versionIRI triples if metadata was merged.
+    Also adds dct:modified, owl:versionInfo, and owl:versionIRI triples if metadata was merged.
 
     Args:
         latest_a (Path): Path to the latest TTL file A.
         b_path (Path): Path to file B.
-        version_str (str): The version string to include in dcat:version and owl:versionIRI.
+        version_str (str): The version string to include in owl:versionInfo and owl:versionIRI.
     """
     g_a = Graph()
     g_a.parse(latest_a, format="turtle")
@@ -97,27 +96,25 @@ def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
 
     g_a += g_b
 
-    # Add dct:modified and dcat:version triples
+    # Add dct:modified and owl:versionInfo triples
     today = date.today().isoformat()
-    modified_literal = Literal(today, datatype=XSD.date)
-    version_literal = Literal(version_str)
 
-    ontology_uri = URIRef("https://w3id.org/health-ri/ontology#")
-    version_iri = URIRef(f"https://w3id.org/health-ri/ontology/v{version_str}#")
+    ontology_uri = URIRef("https://w3id.org/health-ri/ontology")
+    version_iri = URIRef(f"https://w3id.org/health-ri/ontology/v{version_str}")
 
-    g_a.add((ontology_uri, DCTERMS.modified, modified_literal))
-    g_a.add((ontology_uri, DCAT.version, version_literal))
+    g_a.add((ontology_uri, DCTERMS.modified, Literal(today, datatype=XSD.date)))
+    g_a.add((ontology_uri, OWL.versionInfo, Literal(version_str)))
     g_a.add((ontology_uri, OWL.versionIRI, version_iri))
 
     bind_common_prefixes(g_a)
 
     g_a.serialize(destination=latest_a, format="turtle")
     logging.info(f"Metadata successfully merged. File saved to: {latest_a.resolve()}")
-    logging.info(f"Added dct:modified = {today}, dcat:version = {version_str}, owl:versionIRI = {version_iri}")
+    logging.info(f"Added dct:modified = {today}, owl:versionInfo = {version_str}, owl:versionIRI = {version_iri}")
 
 if __name__ == "__main__":
     script_dir = Path(__file__).resolve().parent
-    directory = script_dir.parent / "ontologies"
+    directory = script_dir.parent / "ontologies" / "versioned"
     ttl_metadata_path = script_dir / "utils" / "metadata-template.ttl"
 
     latest_gufo_path, version_str = get_latest_ttl_file(directory)

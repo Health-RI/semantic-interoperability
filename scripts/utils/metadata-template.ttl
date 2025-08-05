@@ -1,4 +1,4 @@
-@prefix health-ri: <https://w3id.org/health-ri/ontology#> .
+@prefix hri: <https://w3id.org/health-ri/ontology#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -35,7 +35,7 @@
     dct:language "en"^^xsd:language ;
 
     # --- 5. Technical Namespace Configuration ---
-    vann:preferredNamespacePrefix "health-ri" ;
+    vann:preferredNamespacePrefix "hri" ;
     vann:preferredNamespaceUri "https://w3id.org/health-ri/ontology#"^^xsd:anyURI ;
 
     # --- 6. Keywords and Classification ---
