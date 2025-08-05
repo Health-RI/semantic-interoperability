@@ -1337,12 +1337,10 @@
 <ul>
 <li><strong>OntoUML (CIM)</strong> defines the authoritative semantics for PIM artifacts.</li>
 <li><strong>gUFO (PIM)</strong> encodes those semantics in an executable OWL ontology.</li>
-<li><strong>External concepts</strong> are mapped to our reference via:<ul>
+<li><strong>External concepts</strong> are mapped to our reference via:</li>
 <li><code>skos:exactMatch</code> for perfect semantic equivalence (one per concept),</li>
 <li><code>skos:narrowMatch</code> or <code>skos:broadMatch</code> when approximate alignment is necessary (multiple allowed),</li>
 <li>and when such approximations reveal modeling gaps, the Health‑RI ontology is extended to support more precise mappings.</li>
-</ul>
-</li>
 <li><strong>Mappings may be authored by</strong> the Health‑RI team (non-invasive, in SSSOM format) or by external partners (embedded in the external ontology).</li>
 <li>This enables reasoning from external definitions back to OntoUML semantics—even when external artifacts don't know about OntoUML directly.</li>
 </ul>

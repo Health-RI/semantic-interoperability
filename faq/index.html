@@ -1258,9 +1258,15 @@
 <p><em>Questions about the internal modeling framework, layers, and implementation choices.</em></p>
 <details class="question">
 <summary>What are OntoUML and gUFO, and why are they used?</summary>
-<p>OntoUML is a conceptual modeling language grounded in formal ontology (UFO). gUFO is its OWL counterpart, enabling computational use. Together, they ensure semantic precision and machine-actionable models.</p>
+<p>OntoUML is a conceptual modeling language grounded in the foundational ontology named Unified Foundational Ontology (UFO). gUFO is its OWL counterpart, enabling computational use. Together, they ensure semantic precision and machine-actionable models.</p>
 <p>OntoUML operates at MDA's CIM layer to capture conceptual semantics, while gUFO provides a platform-independent OWL implementation at the PIM layer. This ensures a traceable and interoperable flow from conceptualization to deployment.</p>
 <p><a href="../ontouml-gufo/ontouml/">OntoUML overview</a> • <a href="../ontouml-gufo/gufo/">gUFO details</a></p>
+</details>
+<details class="question">
+<summary>OntoUML and gUFO seem very complex. Isn’t that a barrier to adoption?</summary>
+<p>This is a common concern. Foundational ontologies like UFO are indeed complex—because they aim to capture real-world meaning with a high level of precision and avoid ambiguity across domains. Some complexity is simply inherent to the task: when we model the real-life elements, especially across institutions or sectors, we cannot always rely on overly simplistic representations.</p>
+<p>That said, this initiative does not require users to engage directly with UFO. Instead, we rely on OntoUML and gUFO to make that foundational theory accessible in practice. OntoUML provides intuitive modeling constructs grounded in UFO, while gUFO offers a lightweight OWL implementation suitable for real-world applications.</p>
+<p>This layered approach lets modelers benefit from UFO’s expressive power without being overwhelmed by its formal depth. The complexity is managed by the modeling framework and supported by tools like Visual Paradigm and the OntoUML plugin. In fact, these languages have already been applied successfully in domains like public health, law, and digital humanities—demonstrating that the approach is both practical and scalable.</p>
 </details>
 <details class="question">
 <summary>How is the OntoUML model converted to OWL?</summary>
