@@ -211,7 +211,7 @@ def get_latest_json_file(directory):
     """
     Finds the latest JSON file in the specified directory based on semantic versioning
     embedded in the filename. It assumes the filename format:
-    'Health-RI Ontology-v<MAJOR>.<MINOR>.<PATCH>.json'.
+    'health-ri-ontology-v<MAJOR>.<MINOR>.<PATCH>.json'.
 
     Args:
         directory (str or Path): Path to the directory containing the JSON files.
@@ -219,11 +219,11 @@ def get_latest_json_file(directory):
     Returns:
         Path or None: Path to the latest versioned JSON file, or None if no valid file is found.
     """
-    pattern = r"Health-RI Ontology-v(\d+\.\d+\.\d+)\.json"
+    pattern = r"health-ri-ontology-v(\d+\.\d+\.\d+)\.json"
     latest_version = None
     latest_file = None
 
-    for file in Path(directory).glob("Health-RI Ontology-v*.json"):
+    for file in Path(directory).glob("health-ri-ontology-v*.json"):
         match = re.match(pattern, file.name)
         if match:
             file_version = match.group(1)
@@ -253,7 +253,7 @@ def main():
     images_folder.mkdir(parents=True, exist_ok=True)
 
     output_path = Path("docs/ontology/ontology.md")
-    ontologies_dir = Path("ontologies")
+    ontologies_dir = Path("ontologies/versioned")
 
     # Load latest JSON file
     latest_json = get_latest_json_file(ontologies_dir)
