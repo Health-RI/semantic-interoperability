@@ -19,6 +19,18 @@
 ??? question "What problem is this initiative addressing?"
     It addresses the issue of inconsistent data semantics across institutions, which leads to errors, false agreement, and limited reuse. Many systems use similar terms but with different meanings, or different terms for the same concept.
 
+??? question "Is there a standardized way to define common reference models? Are we using standardized methods, languages, or tools?"
+    There is currently no global standard for defining and implementing semantic reference models. However, the approach adopted by this initiative—based on ontology-driven conceptual modeling and explicit ontological commitments—is recognized in the literature as the only viable path to achieve real semantic interoperability (see [Guizzardi (2020)](https://doi.org/10.1162/dint_a_00033)).
+
+    We apply well-established methods and languages that have been successfully used in a variety of domains and are widely recognized for their effectiveness (see [Guizzardi et al. (2022)](https://journals.sagepub.com/doi/abs/10.3233/AO-210256)). These include:
+
+    - OntoUML for conceptual modeling
+    - OWL and RDF for computational representation and publishing
+    - SKOS mapping properties (e.g., `skos:exactMatch`, `skos:broadMatch`) for ontology alignment
+    - Persistent identifiers, alignment with FAIR principles
+
+    Other approaches may offer faster implementation or simpler integration but often fail to ensure semantic consistency over time. By contrast, our approach prioritizes long-term semantic precision and interoperability.
+
 ??? question "What does success look like for this project?"
     Success means having a robust reference model (OntoUML) and executable OWL artifacts (gUFO) in place, with external ontologies semantically aligned through precise mappings. It also includes supporting community contributions, replacing approximate mappings (e.g., `skos:narrowMatch`) with exact ones where possible, and continuously refining the model to bridge semantic gaps.
 
@@ -60,7 +72,7 @@
 
     OntoUML defines the domain-level semantics, while gUFO implements those concepts in OWL. This layered architecture ensures that semantic meaning is preserved from human-level models to machine-readable artifacts.
 
-    [Read more](../method/)
+    [Read more.](../method/)
 
 ??? question "How does this initiative relate to the FAIR principles?"
     It supports the 'I' in FAIR—Interoperability—by grounding vocabularies and schemas in shared ontologies and ontological commitments.
@@ -70,7 +82,21 @@
     - OntoUML conceptual modeling
     - gUFO OWL-based computational ontologies
     - Schema-to-ontology mappings using tools like SSSOM
-    [Read more](../method/#toward-a-solution-introducing-a-common-reference-model)
+
+    [Read more.](../method/#toward-a-solution-introducing-a-common-reference-model)
+
+??? question "Why do we need the semantic interoperability initiative if standards like HL7, OMOP, or DCAT-AP already exist? Isn’t this duplicating existing efforts?"
+    This initiative complements existing standards like HL7, OMOP, and DCAT by focusing on semantic precision, ontological clarity, and interoperability at the conceptual level. While HL7 and OMOP define syntactic and structural specifications for health data, this initiative addresses foundational semantics to align and reason over data models meaningfully. It:
+
+    - Provides foundational ontological grounding that is missing in most standards.
+    - Enables alignment across heterogeneous schemas and institutions through a shared conceptual backbone.
+    - Supports model-driven engineering (MDE) practices to enable consistent transformations and mappings.
+
+??? question "What is the relationship between this initiative and existing health data standards such as OMOP, HL7, or DCAT-AP?"
+    This initiative does not aim to create a new standard. Instead, it recognizes that existing standards such as OMOP, HL7, and DCAT-AP each serve different purposes and contain distinct types of content—ranging from data exchange formats to terminologies and domain-specific data models.
+
+    The goal is to harmonize the underlying concepts from these standards, as well as other models and artifacts, by aligning them with a shared semantic reference ontology. This ontology provides a common conceptual foundation that enables consistent interpretation and integration of diverse representations. The reference ontology acts as a semantic anchor, supporting interoperability across heterogeneous data sources, standards, and systems.
+
 
 ## Modeling Approach: OntoUML and gUFO
 
@@ -85,7 +111,7 @@
 
 ??? question "How is the OntoUML model converted to OWL?"
     The OntoUML model is exported to OWL using the gUFO specification via plugin tooling. The resulting ontology retains the original semantics in a format suitable for Semantic Web technologies.
-    [More info](../ontouml-gufo/gufo/)
+    [More info.](../ontouml-gufo/gufo/)
 
 ??? question "What is the difference between OntoUML and gUFO?"
     OntoUML is a conceptual modeling language for humans; gUFO is its OWL-based computational counterpart used in Semantic Web technologies.
@@ -99,6 +125,7 @@
     If schemas are OWL/RDF-based, mappings can be embedded directly using standard RDF properties. Otherwise, external mappings are created using [SSSOM](https://mapping-commons.github.io/sssom/).
 
     Mappings follow SKOS standards and can be asserted using:
+
     - `skos:exactMatch` for perfect semantic alignment (only one allowed),
     - `skos:broadMatch` or `skos:narrowMatch` when the match is approximate.
 
@@ -117,6 +144,7 @@
 
 ??? question "Who can create or host the semantic mappings?"
     Mappings can be authored by:
+
     - **Health-RI** (non-invasive, published in SSSOM format), for public or external ontologies;
     - **External partners**, by embedding `skos:*Match` statements directly in their ontology files, especially when they control the editorial process of the external artifact.
 
@@ -134,15 +162,25 @@
 
 ??? question "What artifacts are published with each ontology release?"
     Each release includes:
+
     - OntoUML `.vpp` and `.json` files
     - OWL `.ttl` file
     - Diagram images
     - A versioned changelog and archive
-    [Details here](../ontology/publishing/#published-artifacts)
+
+    [Details here.](../ontology/publishing/#published-artifacts)
 
 ??? question "What is the publishing strategy for ontology releases?"
     A fast versioning strategy is adopted, where only major versions are considered stable and published with full documentation. Minor/patch versions are published for collaboration and traceability.
-    [More info](../ontology/publishing/#versioning-policy)
+    [More info.](../ontology/publishing/#versioning-policy)
+
+??? question "How are the OntoUML and gUFO ontologies and the produced semantic mappings maintained over time?"
+    Ontologies and semantic mappings are maintained in version-controlled repositories and released through a structured publishing pipeline. Each release is assigned a permanent, citable URL, with both a persistent identifier (PURL) and a timestamped version. Ontologies are published in multiple formats (e.g., RDF/Turtle, JSON) and validated prior to release. This process ensures transparency, long-term accessibility, and semantic stability across versions.
+    [Read more.](./ontology/publishing.md)
+
+??? question "Who is responsible for maintaining the ontology and its associated mappings?"
+    The Health-RI team is responsible for maintaining the core ontologies and mappings produced within the initiative. This work is carried out in close collaboration with external partners who contribute ideas, suggestions, and mappings. Contributions are reviewed and integrated through a structured, version-controlled process.
+    [Read more.](contributing.md)
 
 ??? question "How will the new solutions be maintained and supported? (TBD)"
     TBD.
@@ -160,6 +198,7 @@
     Community members can submit suggestions, error reports, or collaboration proposals directly via our [GitHub Issue Forms](https://github.com/health-ri/semantic-interoperability/issues/new/choose).
 
     Available contribution types include:
+
     - Reporting errors or inconsistencies in the OntoUML/gUFO models
     - Proposing new ontology concepts
     - Suggesting improvements to documentation or mappings
