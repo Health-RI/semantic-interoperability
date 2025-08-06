@@ -177,7 +177,7 @@ def process_package(pkg, diagrams_by_owner, images_folder, level=2):
     return lines
 
 
-def generate_markdown(data, images_folder=None):
+def generate_markdown(data, version_str, images_folder=None):
     """
     Generates the complete Markdown documentation from the given OntoUML JSON data.
 
@@ -192,7 +192,7 @@ def generate_markdown(data, images_folder=None):
     Returns:
         str: The full Markdown-formatted documentation as a single string.
     """
-    lines = [f"# {clean_text(data['name'])}", ""]
+    lines = [f"# {clean_text(data['name'])}", f"*Version {version_str}*", ""]
 
     model = data.get("model", {})
     contents = model.get("contents") or []
@@ -235,7 +235,7 @@ def get_latest_json_file(directory):
             except version.InvalidVersion:
                 logging.info(f"Skipping invalid version: {file_version}")
 
-    return latest_file
+    return latest_file, str(latest_version) if latest_version else None
 
 
 def main():
@@ -256,8 +256,8 @@ def main():
     ontologies_dir = Path("ontologies/versioned")
 
     # Load latest JSON file
-    latest_json = get_latest_json_file(ontologies_dir)
-    if latest_json:
+    latest_json, version_str = get_latest_json_file(ontologies_dir)
+    if latest_json and version_str:
         logging.info(f"Using latest JSON file: {latest_json}")
         data = load_json(latest_json)
     else:
@@ -265,7 +265,7 @@ def main():
         return
 
     # Generate Markdown and write to file
-    markdown_output = generate_markdown(data, images_folder=images_folder)
+    markdown_output = generate_markdown(data, version_str, images_folder=images_folder)
     output_path.write_text(markdown_output, encoding="utf-8")
     logging.info(f"Documentation written to: {output_path}")
 

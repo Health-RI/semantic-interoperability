@@ -25,8 +25,8 @@ jobs:
       - name: Ensure metadata is added to gUFO file
         run: python scripts/merge-metadata.py
 
-      # TODO:
-      # - name: Copy latest versions of vpp, ttl, and json to 'latest' folder
+      - name: Move newest files from versioned folder to latest folder
+        run: python scripts/move-latest.py
 
       - name: Copy changelog to docs folder
         run: |

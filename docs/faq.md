@@ -4,7 +4,7 @@
 
 *Questions about the initiative’s purpose, strategic goals, expected impact, and broader context.*
 
-!!! warning "Draft Answers"
+!!! warning "Disclaimer"
     The answers in this section are part of an ongoing effort to address strategic questions about the initiative. They are based on initial interpretations and should be used with caution. All entries are marked as **drafts** and will be further refined and validated in collaboration with stakeholders.
 
 ??? question "What is the goal of Health-RI’s semantic interoperability initiative?"
