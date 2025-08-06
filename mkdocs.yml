@@ -80,6 +80,7 @@ nav:
       - Ontology Documentation: ontology/documentation.md
       - Ontology Specification: ontology/specification.html
       - Mappings: ontology/mappings.md
+      - Permanent Identifiers (PIDs): ontology/permanent-ids.md
   - FAQ: faq.md
   - Contributing: contributing.md
   # - Output:

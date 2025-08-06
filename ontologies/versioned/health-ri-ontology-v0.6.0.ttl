@@ -10,35 +10,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-health-ri: a owl:Ontology ;
-    dcterms:abstract "TBD"@en ;
-    dcterms:contributor <https://w3id.org/health-ri/contributor/0000-0000-0000-0000>,
-        <https://w3id.org/health-ri/contributor/0000-0000-0000-0001>,
-        <https://w3id.org/health-ri/contributor/0000-0000-0000-0002> ;
-    dcterms:creator <https://w3id.org/health-ri/creator/0000-0000-0000-0003> ;
-    dcterms:description "TBD description of the ontology. This vocabulary provides a canonical RDF-based serialization for a domain-specific language or model, enabling publication, data exchange, and computational processing."@en ;
-    dcterms:identifier "https://w3id.org/health-ri/ontology" ;
-    dcterms:issued "2025-01-01"^^xsd:date ;
-    dcterms:language "en"^^xsd:language ;
-    dcterms:license <https://w3id.org/health-ri/license> ;
-    dcterms:modified "2025-01-02"^^xsd:date ;
-    dcterms:publisher <https://w3id.org/health-ri/publisher/organization1>,
-        <https://w3id.org/health-ri/publisher/organization2>,
-        <https://w3id.org/health-ri/publisher/organization3> ;
-    dcterms:title "Example Ontology Vocabulary"@en ;
-    vann:preferredNamespacePrefix "example" ;
-    vann:preferredNamespaceUri "https://w3id.org/health-ri/ontology#"^^xsd:anyURI ;
-    owl:versionInfo "TBD version information, e.g., notes about changes, structure, or semantics."@en ;
-    dcat:keyword "domain"@en,
-        "example"@en,
-        "model"@en,
-        "ontology"@en,
-        "vocabulary"@en ;
-    dcat:landingPage <https://w3id.org/health-ri/ontology/landing> ;
-    dcat:version "0.0.0" ;
-    foaf:homepage <https://w3id.org/health-ri/ontology> ;
-    foaf:logo <https://w3id.org/health-ri/resources/logo.png> ;
-    ns1:repository <https://w3id.org/health-ri/ontology/repository> .
+health-ri: a owl:Ontology .
 
 health-ri:Gamete a gufo:SubKind,
         owl:Class,
