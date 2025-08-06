@@ -4,6 +4,7 @@ from packaging import version
 import re
 import os
 import logging
+from urllib.parse import quote
 
 
 def has_meaningful_content(pkg, diagrams_by_owner):
@@ -178,22 +179,24 @@ def process_package(pkg, diagrams_by_owner, images_folder, level=2):
 
 
 def generate_markdown(
-    data, version_str, images_folder=None, image_path_prefix="assets/images"
+    data,
+    version_str,
+    images_folder=None,
+    image_path_prefix="assets/images",
+    encode_image_path=False,
 ):
     """
     Generates the complete Markdown documentation from the given OntoUML JSON data.
 
-    This function processes only top-level packages in the model. For each package, it recursively
-    collects and formats content (descriptions, diagrams, images) into Markdown sections.
-    Image links are generated using filenames matched in the provided images folder.
-
     Args:
-        data (dict): The OntoUML model data, including top-level structure, diagrams, and metadata.
-        images_folder (str or Path, optional): Path to the folder containing images to include in the documentation.
-        image_path_prefix (str): Prefix to prepend to image paths in the Markdown (e.g., "assets/images" or "images").
+        data (dict): The OntoUML model data.
+        version_str (str): Version string to include in the document.
+        images_folder (str or Path, optional): Directory containing image files.
+        image_path_prefix (str): Prefix used for image links in the Markdown.
+        encode_image_path (bool): If True, percent-encode spaces in image paths.
 
     Returns:
-        str: The full Markdown-formatted documentation as a single string.
+        str: The full Markdown-formatted documentation.
     """
 
     def process_package_with_prefix(pkg, diagrams_by_owner, images_folder, level=2):
@@ -215,6 +218,9 @@ def generate_markdown(
             image = find_image_for_element(diagram.get("name", ""), images_folder)
             if image:
                 relative_image_path = Path(image_path_prefix) / image.name
+                relative_image_path = str(relative_image_path).replace("\\", "/")
+                if encode_image_path:
+                    relative_image_path = quote(relative_image_path)
                 diagram_lines.append(f"![{diagram_name}]({relative_image_path})")
                 diagram_lines.append("")
 
@@ -240,7 +246,6 @@ def generate_markdown(
 
         lines.extend(diagram_lines)
         lines.extend(content_lines)
-
         return lines
 
     lines = [f"# {clean_text(data['name'])}", f"*Version {version_str}*", ""]
@@ -333,7 +338,11 @@ def main():
 
     # 3. Latest Markdown copy with "images/" paths
     markdown_latest = generate_markdown(
-        data, version_str, images_folder, image_path_prefix="../images"
+        data,
+        version_str,
+        images_folder,
+        image_path_prefix="../images",
+        encode_image_path=True,
     )
     latest_md_path = latest_docs_dir / "documentation.md"
     latest_md_path.write_text(markdown_latest, encoding="utf-8")
