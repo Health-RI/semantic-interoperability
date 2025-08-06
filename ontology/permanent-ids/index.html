@@ -12,13 +12,13 @@
         <meta name="author" content="Pedro Paulo F. Barcelos">
       
       
-        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/ontouml-gufo/gufo/">
+        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/ontology/permanent-ids/">
       
       
-        <link rel="prev" href="../how-to-create-ontouml-model/">
+        <link rel="prev" href="../mappings/">
       
       
-        <link rel="next" href="../../method/">
+        <link rel="next" href="../../faq/">
       
       
       <link rel="icon" href="../../assets/images/health-ri-favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>gUFO - Health-RI Semantic Interoperability</title>
+        <title>Permanent Identifiers (PIDs) - Health-RI Semantic Interoperability</title>
       
     
     
@@ -54,7 +54,7 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/colors.css">
     
-      <link rel="stylesheet" href="../../ontology/assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gentle-ufo-gufo" class="md-skip">
+        <a href="#permanent-identifiers-pids" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              gUFO
+              Permanent Identifiers (PIDs)
             
           </span>
         </div>
@@ -264,13 +264,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../ontouml-gufo/" class="md-tabs__link">
           
   
   
@@ -306,11 +304,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../ontology/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -513,31 +513,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -550,7 +547,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             OntoUML & gUFO
@@ -564,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../ontouml-gufo/" class="md-nav__link">
         
   
   
@@ -587,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ontouml/" class="md-nav__link">
+      <a href="../../ontouml-gufo/ontouml/" class="md-nav__link">
         
   
   
@@ -610,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ontouml-stereotypes/" class="md-nav__link">
+      <a href="../../ontouml-gufo/ontouml-stereotypes/" class="md-nav__link">
         
   
   
@@ -633,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ontouml-ufo-catalog/" class="md-nav__link">
+      <a href="../../ontouml-gufo/ontouml-ufo-catalog/" class="md-nav__link">
         
   
   
@@ -656,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../how-to-create-ontouml-model/" class="md-nav__link">
+      <a href="../../ontouml-gufo/how-to-create-ontouml-model/" class="md-nav__link">
         
   
   
@@ -676,32 +673,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    gUFO
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ontouml-gufo/gufo/" class="md-nav__link">
         
   
   
@@ -712,137 +687,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-gufo" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is gUFO?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-was-gufo-created" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why was gUFO created?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#where-is-gufo-used" class="md-nav__link">
-    <span class="md-ellipsis">
-      Where is gUFO used?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-was-gufo-developed" class="md-nav__link">
-    <span class="md-ellipsis">
-      When was gUFO developed?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-does-gufo-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      How does gUFO work?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-create-a-gufo-ontology" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Create a gUFO Ontology
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How to Create a gUFO Ontology">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-direct-authoring-in-owl" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Direct Authoring in OWL
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-modeling-in-ontouml-and-direct-export-to-gufo" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Modeling in OntoUML and Direct Export to gUFO
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Modeling in OntoUML and Direct Export to gUFO">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Steps:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -957,28 +801,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -991,7 +838,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             The Health-RI Ontology
@@ -1005,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ontology/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -1028,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ontology/publishing/" class="md-nav__link">
+      <a href="../publishing/" class="md-nav__link">
         
   
   
@@ -1051,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ontology/changelog/" class="md-nav__link">
+      <a href="../changelog/" class="md-nav__link">
         
   
   
@@ -1074,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ontology/documentation/" class="md-nav__link">
+      <a href="../documentation/" class="md-nav__link">
         
   
   
@@ -1097,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ontology/specification.html" class="md-nav__link">
+      <a href="../specification.html" class="md-nav__link">
         
   
   
@@ -1120,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ontology/mappings/" class="md-nav__link">
+      <a href="../mappings/" class="md-nav__link">
         
   
   
@@ -1140,10 +987,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../ontology/permanent-ids/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Permanent Identifiers (PIDs)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1154,6 +1023,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initiative-wide-identifier-semantic-interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initiative-Wide Identifier: /semantic-interoperability
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initiative-Wide Identifier: /semantic-interoperability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uri" class="md-nav__link">
+    <span class="md-ellipsis">
+      URI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ontology-identifier-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ontology Identifier: /ontology
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ontology Identifier: /ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uri_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      URI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifiers-for-the-latest-ontology-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifiers for the Latest Ontology Version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifiers-for-versioned-ontology-releases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifiers for Versioned Ontology Releases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifiers for Versioned Ontology Releases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-persistent-identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of Persistent Identifiers
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1229,105 +1217,135 @@
   
 
 
-<h1 id="gentle-ufo-gufo">gentle UFO (gUFO)</h1>
-<p>The 'gentle Unified Foundational Ontology', or simply <strong>gUFO</strong>, is a simplified and lightweight version of the Unified Foundational Ontology (UFO). It was designed to make ontology-driven conceptual modeling more accessible and practical for real-world applications, while preserving the formal rigor of its parent ontology.</p>
-<h2 id="what-is-gufo">What is gUFO?</h2>
-<p>gUFO provides a set of foundational building blocks—such as <code>Object</code>, <code>Event</code>, <code>Quality</code>, and <code>Situation</code>—that help structure knowledge in a clear and shared way. These concepts are intended to be reused across different domains, helping organizations align their understanding of data and concepts.</p>
-<p>Put simply, gUFO is a toolkit for creating consistent and precise representations of meaning.</p>
-<h2 id="why-was-gufo-created">Why was gUFO created?</h2>
-<p>UFO is rich and comprehensive, but its complexity can be a barrier for practical adoption. To address this, gUFO was introduced in 2019 as a lightweight version of UFO. It focuses on usability, compatibility with existing tools, and ease of adoption for systems that need formal grounding without the burden of full ontological complexity.</p>
-<p>The goal was to support knowledge graph creation, semantic data integration, and model interoperability in a more approachable way <a href="#ref2">[2]</a>.</p>
-<h2 id="where-is-gufo-used">Where is gUFO used?</h2>
-<p>gUFO has found applications in various fields:</p>
-<ul>
-<li><strong>Semantic interoperability</strong> across organizations and systems</li>
-<li><strong>Knowledge graphs</strong> for structured web data and enterprise data integration</li>
-<li><strong>Ontology engineering</strong> and conceptual modeling in research and industry</li>
-<li><strong>Linked data</strong> and Semantic Web technologies</li>
-<li><strong>Education</strong>, as a stepping stone to foundational ontologies</li>
-</ul>
-<p>Its use has been documented in both academic and applied settings across domains such as public health, digital humanities, software engineering, and e-government <a href="#ref5">[5]</a>.</p>
-<h2 id="when-was-gufo-developed">When was gUFO developed?</h2>
-<p>gUFO was released in 2019 by João Paulo A. Almeida, Giancarlo Guizzardi, Tiago Prince Sales, and Ricardo A. Falbo. It is built on more than a decade of research on UFO and its application in ontology-driven conceptual modeling <a href="#ref1">[1]</a>.</p>
-<h2 id="how-does-gufo-work">How does gUFO work?</h2>
-<p>gUFO is implemented in OWL 2 DL, which means it can be used with standard ontology tools and reasoners. Its key features include:</p>
-<ul>
-<li><strong>Reusable core categories</strong> grounded in formal ontology</li>
-<li><strong>Interoperability</strong> with tools and linked data ecosystems</li>
-<li><strong>Simplified structure</strong> focused on structural (not behavioral) aspects</li>
-<li><strong>Extendibility</strong>, allowing users to specialize concepts for their domains</li>
-</ul>
-<p>This balance between formality and simplicity makes gUFO ideal for organizations aiming to adopt semantic technologies without starting from scratch.</p>
-<h2 id="how-to-create-a-gufo-ontology">How to Create a gUFO Ontology</h2>
-<p>There are two main ways to create a gUFO-compliant ontology, depending on the user's familiarity with ontology modeling tools and the desired level of formality or tool support.</p>
-<h3 id="1-direct-authoring-in-owl">1. Direct Authoring in OWL</h3>
-<p>The most flexible approach is to create the ontology directly using an OWL 2 DL editor such as:</p>
-<ul>
-<li><a href="https://protege.stanford.edu"><strong>Protégé</strong></a> – A free, open-source ontology editor widely used in academic and industry settings</li>
-<li><a href="https://www.topquadrant.com/products/topbraid-composer/"><strong>TopBraid Composer</strong></a> – A professional-grade editor with advanced RDF and SPARQL support</li>
-<li><a href="http://vowl.visualdataweb.org/webvowl-editor/"><strong>WebVOWL Editor</strong></a> – A lightweight, web-based tool for visual ontology creation</li>
-</ul>
-<p>You can import the official gUFO ontology from:</p>
-<ul>
-<li><strong>OWL file</strong>: <a href="https://purl.org/nemo/gufo">https://purl.org/nemo/gufo</a></li>
-<li><strong>Documentation site</strong>: <a href="https://nemo-ufes.github.io/gufo/">https://nemo-ufes.github.io/gufo/</a></li>
-</ul>
-<p>After importing gUFO into your tool, you can begin defining your own classes and properties as specializations of gUFO’s foundational categories, such as <code>gufo:Object</code>, <code>gufo:Event</code>, <code>gufo:Quality</code>, or <code>gufo:Situation</code>.</p>
-<p>This approach gives full control over ontology structure and serialization, and is ideal for applications requiring fine-grained reasoning or integration with existing linked data.</p>
-<h3 id="2-modeling-in-ontouml-and-direct-export-to-gufo">2. Modeling in OntoUML and Direct Export to gUFO</h3>
-<p>An alternative and user-friendly approach to creating a gUFO ontology is to first model it conceptually in OntoUML and then export it directly to a gUFO-compliant OWL ontology using the <a href="https://w3id.org/ontouml/vp-plugin"><strong>ontouml-vp-plugin</strong></a> in Visual Paradigm.</p>
-<h4 id="steps">Steps:</h4>
-<ol>
-<li><strong>Create the OntoUML model</strong> using Visual Paradigm with the OntoUML plugin.</li>
-<li>The plugin supports OntoUML stereotypes such as <code>«kind»</code>, <code>«role»</code>, <code>«relator»</code>, and offers a dedicated palette for ontology-driven modeling.</li>
-<li><strong>Export directly to gUFO</strong>:</li>
-<li>From the top menu, select <strong><code>Export → Export to gUFO</code></strong>.</li>
-<li>In the dialog that appears, configure the export parameters:<ul>
-<li>Set the <strong>Base IRI</strong></li>
-<li>Choose the <strong>output format</strong> (e.g., Turtle)</li>
-<li>Optionally enable URI customization, property creation behavior, and pre-analysis</li>
-</ul>
-</li>
-<li>Select which model elements to include and click <strong>Export</strong>.</li>
-</ol>
-<p>This process will generate an OWL ontology in the selected format, conforming to the <a href="https://nemo-ufes.github.io/gufo/">gUFO specification</a>.</p>
-<h3 id="summary">Summary</h3>
+<h1 id="permanent-identifiers-pids">Permanent Identifiers (PIDs)</h1>
+<p>This page lists the <strong>persistent, stable, and dereferenceable identifiers (PIDs)</strong> established by the Health-RI Semantic Interoperability Initiative. These URIs support semantic interoperability, long-term accessibility, and alignment with FAIR principles.</p>
+<h2 id="initiative-wide-identifier-semantic-interoperability">Initiative-Wide Identifier: <code>/semantic-interoperability</code></h2>
+<h3 id="uri">URI</h3>
+<p><code>https://w3id.org/health-ri/semantic-interoperability</code></p>
+<p>This URI refers to the Semantic Interoperability Initiative as a whole. It provides persistent access to the initiative’s public-facing resources and is suitable for citing the initiative in publications, websites, and metadata records.</p>
+<h2 id="ontology-identifier-ontology">Ontology Identifier: <code>/ontology</code></h2>
+<h3 id="uri_1">URI</h3>
+<p><code>https://w3id.org/health-ri/ontology</code></p>
+<p>This is the <strong>main identifier for the Health-RI Ontology</strong>. It supports HTTP content negotiation to serve either machine-readable ontology files or human-readable documentation.</p>
+<h3 id="identifiers-for-the-latest-ontology-version">Identifiers for the Latest Ontology Version</h3>
+<p>These URIs point to the <strong>most recent release</strong> of the Health-RI Ontology and related documentation formats.</p>
 <table>
 <thead>
 <tr>
-<th>Approach</th>
-<th>Tooling</th>
-<th>Output Format</th>
-<th>Best For</th>
+<th>PID</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Direct OWL authoring</td>
-<td>Protégé, TopBraid, etc.</td>
-<td>OWL 2 / RDF</td>
-<td>Ontologists, Semantic Web experts</td>
+<td><code>/ontology/ttl</code></td>
+<td>OWL ontology in Turtle format</td>
 </tr>
 <tr>
-<td>OntoUML + transformation</td>
-<td>Visual Paradigm + plugins</td>
-<td>OWL 2 (via gUFO)</td>
-<td>Conceptual modelers, teams using UFO-based methods</td>
+<td><code>/ontology/specification</code></td>
+<td>HTML rendering of the ontology specification</td>
+</tr>
+<tr>
+<td><code>/ontology/documentation</code></td>
+<td>Markdown documentation (raw version)</td>
+</tr>
+<tr>
+<td><code>/ontology/json</code></td>
+<td>OntoUML model exported as JSON</td>
+</tr>
+<tr>
+<td><code>/ontology/vpp</code></td>
+<td>OntoUML model file in Visual Paradigm format</td>
 </tr>
 </tbody>
 </table>
-<p>Both approaches are valid and produce gUFO-compliant ontologies. The choice depends on the modeling style and technical familiarity of the user.</p>
-<h2 id="references">References</h2>
-<p><a id="ref1"></a>
-<strong>[1]</strong> Guizzardi, G. (2005). <em>Ontological foundations for structural conceptual models.</em> [PhD Thesis - Research UT, graduation UT, University of Twente]. Telematica Instituut / CTIT. <a href="https://research.utwente.nl/en/publications/ontological-foundations-for-structural-conceptual-models/"><strong>[Access]</strong></a> <a href="https://research.utwente.nl/files/6042428/thesis_Guizzardi.pdf"><strong>[Download]</strong></a></p>
-<p><a id="ref2"></a>
-<strong>[2]</strong> Almeida, J. P. A., Guizzardi, G., Sales, T. P., &amp; Falbo, R. A. (2019). <em>gUFO: A Lightweight Implementation of the Unified Foundational Ontology (UFO).</em> <a href="https://nemo-ufes.github.io/gufo/"><strong>[Access]</strong></a></p>
-<p><a id="ref3"></a>
-<strong>[3]</strong> Guizzardi, G., Wagner, G., Falbo, R. A., Guizzardi, R. S. S., &amp; Almeida, J. P. A. (2013). <em>Towards Ontological Foundations for the Conceptual Modeling of Events.</em> In <em>Conceptual Modeling – ER 2013</em> (pp. 327–341). Springer. <a href="https://doi.org/10.1007/978-3-642-41924-9_27"><strong>[DOI]</strong></a></p>
-<p><a id="ref4"></a>
-<strong>[4]</strong> Sales, T. P., Guizzardi, G., Almeida, J. P. A., &amp; Benevides, A. B. (2023). <em>Ontology-Driven Conceptual Modeling with gUFO.</em> In <em>Frontiers in Artificial Intelligence and Applications</em>, 394, 331–336. <a href="https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA231122"><strong>[Access]</strong></a></p>
-<p><a id="ref5"></a>
-<strong>[5]</strong> Guizzardi, G. (2020). <em>Contributions to Ontology-Driven Conceptual Modeling Theory</em>. [Doctoral Habilitation Thesis, Free University of Bozen-Bolzano]. <a href="https://bia.unibz.it/esploro/outputs/doctoral/Contributions-to-Ontology-Driven-Conceptual-Modeling-Theory/991006425097401241?repId=12284268390001241"><strong>[Download]</strong></a></p>
+<p>Each of these URIs redirects to the latest available version of the resource.</p>
+<h3 id="identifiers-for-versioned-ontology-releases">Identifiers for Versioned Ontology Releases</h3>
+<p>To support traceability and reproducibility, each ontology release is also available via <strong>version-specific URIs</strong>.</p>
+<h4 id="format">Format</h4>
+<p><code>https://w3id.org/health-ri/ontology/vX.Y.Z/{format}</code></p>
+<p>Where:</p>
+<ul>
+<li><code>X.Y.Z</code> is the semantic version (e.g., <code>2.0.0</code>)</li>
+<li><code>{format}</code> is one of:</li>
+<li><code>ttl</code> — OWL ontology (Turtle)</li>
+<li><code>vpp</code> — OntoUML model (Visual Paradigm)</li>
+<li><code>json</code> — OntoUML model (JSON)</li>
+<li><code>documentation</code> — Markdown documentation</li>
+<li><code>specification</code> — HTML specification</li>
+</ul>
+<h4 id="examples">Examples</h4>
+<ul>
+<li>
+<p><code>https://w3id.org/health-ri/ontology/v2.0.0/ttl</code><br />
+  → Ontology in Turtle format for version 2.0.0</p>
+</li>
+<li>
+<p><code>https://w3id.org/health-ri/ontology/v2.0.0/specification</code><br />
+  → HTML specification for version 2.0.0</p>
+</li>
+<li>
+<p><code>https://w3id.org/health-ri/ontology/v2.0.0/vpp</code><br />
+  → Visual Paradigm project file for version 2.0.0</p>
+</li>
+</ul>
+<h2 id="overview-of-persistent-identifiers">Overview of Persistent Identifiers</h2>
+<table>
+<thead>
+<tr>
+<th>PID</th>
+<th>Description</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ontology</code></td>
+<td>Ontology root</td>
+<td>Content negotiation (RDF or HTML)</td>
+</tr>
+<tr>
+<td><code>/ontology/ttl</code></td>
+<td>Latest ontology in Turtle format</td>
+<td>Redirects to raw <code>.ttl</code> file</td>
+</tr>
+<tr>
+<td><code>/ontology/specification</code></td>
+<td>Latest HTML specification</td>
+<td>Human-readable documentation</td>
+</tr>
+<tr>
+<td><code>/ontology/documentation</code></td>
+<td>Markdown documentation</td>
+<td>Raw <code>.md</code> version</td>
+</tr>
+<tr>
+<td><code>/ontology/json</code></td>
+<td>Latest JSON export of OntoUML</td>
+<td>Redirects to <code>.json</code></td>
+</tr>
+<tr>
+<td><code>/ontology/vpp</code></td>
+<td>Latest OntoUML model (<code>.vpp</code>)</td>
+<td>Redirects to Visual Paradigm file</td>
+</tr>
+<tr>
+<td><code>/ontology/vX.Y.Z/{format}</code></td>
+<td>Versioned ontology release</td>
+<td>Format-specific persistent access</td>
+</tr>
+<tr>
+<td><code>/semantic-interoperability</code></td>
+<td>Project-level identifier</td>
+<td>Redirects to documentation site</td>
+</tr>
+<tr>
+<td><code>/semantic-interoperability/git</code></td>
+<td>Source code and data repository</td>
+<td>Redirects to GitHub</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -1418,13 +1436,13 @@
     
       <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
       
-        <script src="../../ontology/assets/javascripts/tablesort.min.js"></script>
+        <script src="../assets/javascripts/tablesort.min.js"></script>
       
-        <script src="../../ontology/assets/javascripts/init-tablesort.js"></script>
+        <script src="../assets/javascripts/init-tablesort.js"></script>
       
-        <script src="../../ontology/assets/javascripts/table-search.js"></script>
+        <script src="../assets/javascripts/table-search.js"></script>
       
-        <script src="../../ontology/assets/javascripts/table-columns-toggle.js"></script>
+        <script src="../assets/javascripts/table-columns-toggle.js"></script>
       
     
   </body>

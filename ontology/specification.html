@@ -284,6 +284,12 @@ td {
 <script id="schema.org" type="application/ld+json">
 [
   {
+    "@id": "https://w3id.org/health-ri/ontyology#",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ]
+  },
+  {
     "@id": "https://w3id.org/health-ri/ontology",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -338,68 +344,6 @@ td {
         "@id": "https://w3id.org/health-ri"
       }
     ]
-  },
-  {
-    "@id": "https://w3id.org/health-ri/ontyology#",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/contributor": [
-      {
-        "@id": "https://w3id.org/health-ri/contributor/0000-0000-0000-0000"
-      },
-      {
-        "@id": "https://w3id.org/health-ri/contributor/0000-0000-0000-0001"
-      },
-      {
-        "@id": "https://w3id.org/health-ri/contributor/0000-0000-0000-0002"
-      }
-    ],
-    "https://schema.org/creator": [
-      {
-        "@id": "https://w3id.org/health-ri/creator/0000-0000-0000-0003"
-      }
-    ],
-    "https://schema.org/dateIssued": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-01-01"
-      }
-    ],
-    "https://schema.org/dateModified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-01-02"
-      }
-    ],
-    "https://schema.org/description": [
-      {
-        "@language": "en",
-        "@value": "TBD description of the ontology. This vocabulary provides a canonical RDF-based serialization for a domain-specific language or model, enabling publication, data exchange, and computational processing."
-      }
-    ],
-    "https://schema.org/license": [
-      {
-        "@id": "https://w3id.org/health-ri/license"
-      }
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Example Ontology Vocabulary"
-      }
-    ],
-    "https://schema.org/publisher": [
-      {
-        "@id": "https://w3id.org/health-ri/publisher/organization1"
-      },
-      {
-        "@id": "https://w3id.org/health-ri/publisher/organization2"
-      },
-      {
-        "@id": "https://w3id.org/health-ri/publisher/organization3"
-      }
-    ]
   }
 ]
 	</script>
@@ -407,7 +351,7 @@ td {
 <body><img alt="Health-RI Logo" src="../assets/images/health-ri-logo-blue.png" style="max-height: 80px; margin-bottom: 1em;"/>
 <div id="content">
 <div class="section" id="metadata">
-<h1>Example Ontology VocabularyHealth-RI Ontology</h1>
+<h1>Health-RI Ontology</h1>
 <h2>Metadata</h2>
 <dl>
 <div>
@@ -415,46 +359,29 @@ td {
 <strong>IRI</strong>
 </dt>
 <dd>
-<code>https://w3id.org/health-ri/ontology</code>
+<code>https://w3id.org/health-ri/ontyology#</code>
 </dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://purl.org/dc/terms/title" title="A name given to the resource. Defined in DCMI Metadata Terms">Title</a>
 </dt>
-<dd>
-<ul>
-<li><p>Example Ontology Vocabulary</p></li>
-<li><p>Health-RI Ontology</p></li>
-</ul>
-</dd>
+<dd><p>Health-RI Ontology</p></dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://purl.org/dc/terms/publisher" title="An entity responsible for making the resource available. Defined in DCMI Metadata Terms">Publisher</a>
 </dt>
-<dd>
-<ul>
-<li>https://w3id.org/health-ri/publisher/organization1</li>
-<li>https://w3id.org/health-ri/publisher/organization2</li>
-<li>https://w3id.org/health-ri/publisher/organization3</li>
-<li>https://w3id.org/health-ri</li>
-</ul>
-</dd>
+<dd>https://w3id.org/health-ri</dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://purl.org/dc/terms/creator" title="An entity responsible for making the resource. Defined in DCMI Metadata Terms">Creator</a>
 </dt>
 <dd>
-<ul>
-<li>https://w3id.org/health-ri/creator/0000-0000-0000-0003</li>
-<li>
 <span>
 <a href="https://orcid.org/0000-0003-2736-7817">https://orcid.org/0000-0003-2736-7817</a>
 </span>
-</li>
-</ul>
 </dd>
 </div>
 <div>
@@ -463,9 +390,6 @@ td {
 </dt>
 <dd>
 <ul>
-<li>https://w3id.org/health-ri/contributor/0000-0000-0000-0000</li>
-<li>https://w3id.org/health-ri/contributor/0000-0000-0000-0001</li>
-<li>https://w3id.org/health-ri/contributor/0000-0000-0000-0002</li>
 <li>
 <span>
 <a href="https://orcid.org/0000-0003-0771-3516">https://orcid.org/0000-0003-0771-3516</a>
@@ -488,37 +412,20 @@ td {
 <dt>
 <a class="hover_property" href="http://purl.org/dc/terms/modified" title="Date on which the resource was changed. Defined in DCMI Metadata Terms">Date Modified</a>
 </dt>
-<dd>
-<ul>
-<li><p>2025-01-02</p></li>
-<li><p>2025-08-06</p></li>
-</ul>
-</dd>
+<dd><p>2025-08-06</p></dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://purl.org/dc/terms/issued" title="Date of formal issuance of the resource. Defined in DCMI Metadata Terms">Date Issued</a>
 </dt>
-<dd>
-<ul>
-<li><p>2025-01-01</p></li>
-<li><p>2025-05-20</p></li>
-</ul>
-</dd>
+<dd><p>2025-05-20</p></dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://purl.org/dc/terms/license" title="A legal document giving official permission to do something with the resource. Defined in DCMI Metadata Terms">License</a>
 </dt>
 <dd>
-<ul>
-<li>
-<a href="https://w3id.org/health-ri/license">https://w3id.org/health-ri/license</a>
-</li>
-<li>
 <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>
-</li>
-</ul>
 </dd>
 </div>
 <div>
@@ -533,49 +440,27 @@ td {
 <dt>
 <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionInfo" title="The annotation property that provides version information for an ontology or another OWL construct. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Info</a>
 </dt>
-<dd>
-<ul>
-<li><p>TBD version information, e.g., notes about changes, structure, or semantics.</p></li>
-<li><p>0.6.0</p></li>
-</ul>
-</dd>
+<dd><p>0.6.0</p></dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespacePrefix" title="None. Defined in None">Preferred Namespace Prefix</a>
 </dt>
-<dd>
-<ul>
-<li><p>example</p></li>
-<li><p>hri</p></li>
-</ul>
-</dd>
+<dd><p>hri</p></dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespaceUri" title="None. Defined in None">Preferred Namespace Uri</a>
 </dt>
 <dd>
-<ul>
-<li>
 <a href="https://w3id.org/health-ri/ontology#">https://w3id.org/health-ri/ontology#</a>
-</li>
-<li>
-<a href="https://w3id.org/health-ri/ontology#">https://w3id.org/health-ri/ontology#</a>
-</li>
-</ul>
 </dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </dt>
-<dd>
-<ul>
-<li><p>TBD description of the ontology. This vocabulary provides a canonical RDF-based serialization for a domain-specific language or model, enabling publication, data exchange, and computational processing.</p></li>
-<li><p>This ontology is part of Health-RI’s semantic interoperability initiative, which provides a shared ontological framework for harmonizing healthcare and life sciences data across institutions. It includes a conceptual reference model defined in OntoUML and a machine-processable OWL ontology implemented using gUFO. These artifacts are used to enable explicit mappings from heterogeneous data schemas, ensuring consistent semantics in data exchange and integration. The approach supports both human understanding and computational tractability. All components are openly published and designed for reuse across systems and services.</p></li>
-</ul>
-</dd>
+<dd><p>This ontology is part of Health-RI’s semantic interoperability initiative, which provides a shared ontological framework for harmonizing healthcare and life sciences data across institutions. It includes a conceptual reference model defined in OntoUML and a machine-processable OWL ontology implemented using gUFO. These artifacts are used to enable explicit mappings from heterogeneous data schemas, ensuring consistent semantics in data exchange and integration. The approach supports both human understanding and computational tractability. All components are openly published and designed for reuse across systems and services.</p></dd>
 </div>
 </dl>
 </div>
@@ -674,7 +559,7 @@ td {
 <td>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b2">na3ca43a638814f729422c09e6e3b5867b2</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b2">nd49d22e3c87249f7a4043e0c7089be61b2</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -913,7 +798,7 @@ td {
 <td>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b4">na3ca43a638814f729422c09e6e3b5867b4</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b4">nd49d22e3c87249f7a4043e0c7089be61b4</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -1060,7 +945,7 @@ td {
 <td>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b6">na3ca43a638814f729422c09e6e3b5867b6</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b6">nd49d22e3c87249f7a4043e0c7089be61b6</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -1121,7 +1006,7 @@ td {
 <td>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b8">na3ca43a638814f729422c09e6e3b5867b8</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b8">nd49d22e3c87249f7a4043e0c7089be61b8</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -1599,7 +1484,7 @@ td {
 <td>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b12">na3ca43a638814f729422c09e6e3b5867b12</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b12">nd49d22e3c87249f7a4043e0c7089be61b12</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -1650,7 +1535,7 @@ td {
 <td>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b14">na3ca43a638814f729422c09e6e3b5867b14</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b14">nd49d22e3c87249f7a4043e0c7089be61b14</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -2085,12 +1970,12 @@ td {
 </th>
 <td>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#HaploidCell">Haploid Cell</a>
+<a href="https://w3id.org/health-ri/ontyology#DiploidCell">Diploid Cell</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#DiploidCell">Diploid Cell</a>
+<a href="https://w3id.org/health-ri/ontyology#HaploidCell">Haploid Cell</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2220,7 +2105,7 @@ td {
 <td>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b26">na3ca43a638814f729422c09e6e3b5867b26</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b26">nd49d22e3c87249f7a4043e0c7089be61b26</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -2496,7 +2381,7 @@ td {
 <td>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b30">na3ca43a638814f729422c09e6e3b5867b30</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b30">nd49d22e3c87249f7a4043e0c7089be61b30</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -2547,7 +2432,7 @@ td {
 <td>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b32">na3ca43a638814f729422c09e6e3b5867b32</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b32">nd49d22e3c87249f7a4043e0c7089be61b32</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -2598,7 +2483,7 @@ td {
 <td>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b34">na3ca43a638814f729422c09e6e3b5867b34</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b34">nd49d22e3c87249f7a4043e0c7089be61b34</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -2648,7 +2533,7 @@ td {
 <li>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b36">na3ca43a638814f729422c09e6e3b5867b36</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b36">nd49d22e3c87249f7a4043e0c7089be61b36</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -3133,12 +3018,12 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#MaleTypicalDimorphicCharacteristic">Male-typical Dimorphic Characteristic</a>
+<a href="https://w3id.org/health-ri/ontyology#FemaleTypicalDimorphicCharacteristic">Female-typical Dimorphic Characteristic</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#FemaleTypicalDimorphicCharacteristic">Female-typical Dimorphic Characteristic</a>
+<a href="https://w3id.org/health-ri/ontyology#MaleTypicalDimorphicCharacteristic">Male-typical Dimorphic Characteristic</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3203,7 +3088,7 @@ td {
 </th>
 <td>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#FemaleTypicalVisualSexCharacteristic">Female-typical Visual Sex Characteristic</a>
+<a href="https://w3id.org/health-ri/ontyology#MaleTypicalVisualSexCharacteristic">Male-typical Visual Sex Characteristic</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -3213,7 +3098,7 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#MaleTypicalVisualSexCharacteristic">Male-typical Visual Sex Characteristic</a>
+<a href="https://w3id.org/health-ri/ontyology#FemaleTypicalVisualSexCharacteristic">Female-typical Visual Sex Characteristic</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3275,12 +3160,12 @@ td {
 </th>
 <td>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#RegularKaryotypicalFemale">Regular Karyotypical Female</a>
+<a href="https://w3id.org/health-ri/ontyology#VariantKaryotypicalFemale">Variant Karyotypical Female</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#VariantKaryotypicalFemale">Variant Karyotypical Female</a>
+<a href="https://w3id.org/health-ri/ontyology#RegularKaryotypicalFemale">Regular Karyotypical Female</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3336,12 +3221,12 @@ td {
 </th>
 <td>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#VariantKaryotypicalMale">Variant Karyotypical Male</a>
+<a href="https://w3id.org/health-ri/ontyology#RegularKaryotypicalMale">Regular Karyotypical Male</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#RegularKaryotypicalMale">Regular Karyotypical Male</a>
+<a href="https://w3id.org/health-ri/ontyology#VariantKaryotypicalMale">Variant Karyotypical Male</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3637,12 +3522,12 @@ td {
 </th>
 <td>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#NonBinaryGenderIdentity">Non-binary Gender Identity</a>
+<a href="https://w3id.org/health-ri/ontyology#MaleGenderIdentity">Male Gender Identity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#MaleGenderIdentity">Male Gender Identity</a>
+<a href="https://w3id.org/health-ri/ontyology#NonBinaryGenderIdentity">Non-binary Gender Identity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -3736,12 +3621,12 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#FemalePhenotypicPerson">Female Phenotypic Person</a>
+<a href="https://w3id.org/health-ri/ontyology#MalePhenotypicPerson">Male Phenotypic Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#MalePhenotypicPerson">Male Phenotypic Person</a>
+<a href="https://w3id.org/health-ri/ontyology#FemalePhenotypicPerson">Female Phenotypic Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3755,7 +3640,7 @@ td {
 <li>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b75">na3ca43a638814f729422c09e6e3b5867b75</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b75">nd49d22e3c87249f7a4043e0c7089be61b75</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -3771,7 +3656,7 @@ td {
 <li>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b77">na3ca43a638814f729422c09e6e3b5867b77</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b77">nd49d22e3c87249f7a4043e0c7089be61b77</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -3850,17 +3735,17 @@ td {
 </th>
 <td>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#VariantKaryotypicalFemale">Variant Karyotypical Female</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
 <a href="https://w3id.org/health-ri/ontyology#VariantKaryotypicalMale">Variant Karyotypical Male</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="https://w3id.org/health-ri/ontyology#KaryotypicallyIndeterminatePerson">Karyotypically Indeterminate Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="https://w3id.org/health-ri/ontyology#VariantKaryotypicalFemale">Variant Karyotypical Female</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3935,17 +3820,17 @@ td {
 </th>
 <td>
 <span>
+<a href="https://w3id.org/health-ri/ontyology#MaleAdministrativeGender">Male Administrative Gender</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
 <a href="https://w3id.org/health-ri/ontyology#NonBinaryAdministrativeGender">Non-binary Administrative Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="https://w3id.org/health-ri/ontyology#FemaleAdministrativeGender">Female Administrative Gender</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="https://w3id.org/health-ri/ontyology#MaleAdministrativeGender">Male Administrative Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -4040,12 +3925,12 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#PersonWithIndeterminateSexAtBirth">Person with Indeterminate Sex at Birth</a>
+<a href="https://w3id.org/health-ri/ontyology#PersonWithFemaleSexAtBirth">Person with Female Sex at Birth</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#PersonWithFemaleSexAtBirth">Person with Female Sex at Birth</a>
+<a href="https://w3id.org/health-ri/ontyology#PersonWithIndeterminateSexAtBirth">Person with Indeterminate Sex at Birth</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -4059,7 +3944,7 @@ td {
 <li>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b92">na3ca43a638814f729422c09e6e3b5867b92</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b92">nd49d22e3c87249f7a4043e0c7089be61b92</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4075,7 +3960,7 @@ td {
 <li>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b94">na3ca43a638814f729422c09e6e3b5867b94</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b94">nd49d22e3c87249f7a4043e0c7089be61b94</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -4149,17 +4034,17 @@ td {
 </th>
 <td>
 <span>
+<a href="https://w3id.org/health-ri/ontyology#PersonWithFemaleAdministrativeGender">Person with Female Administrative Gender</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
 <a href="https://w3id.org/health-ri/ontyology#PersonWithNonBinaryAdministrativeGender">Person with Non-binary Administrative Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="https://w3id.org/health-ri/ontyology#PersonWithMaleAdministrativeGender">Person with Male Administrative Gender</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="https://w3id.org/health-ri/ontyology#PersonWithFemaleAdministrativeGender">Person with Female Administrative Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -4173,7 +4058,7 @@ td {
 <li>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b100">na3ca43a638814f729422c09e6e3b5867b100</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b100">nd49d22e3c87249f7a4043e0c7089be61b100</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4189,7 +4074,7 @@ td {
 <li>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b102">na3ca43a638814f729422c09e6e3b5867b102</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b102">nd49d22e3c87249f7a4043e0c7089be61b102</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4284,6 +4169,11 @@ td {
 </th>
 <td>
 <span>
+<a href="https://w3id.org/health-ri/ontyology#LegalFemalePerson">Legal Female Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
 <a href="https://w3id.org/health-ri/ontyology#LegalNonBinaryPerson">Legal Non-binary Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
@@ -4297,11 +4187,6 @@ td {
 <a href="https://w3id.org/health-ri/ontyology#PersonWithUnassignedLegalGender">Person with Unassigned Legal Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
-<span class="cardinality">or</span>
-<span>
-<a href="https://w3id.org/health-ri/ontyology#LegalFemalePerson">Legal Female Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
 </td>
 </tr>
 <tr>
@@ -4313,7 +4198,7 @@ td {
 <li>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b108">na3ca43a638814f729422c09e6e3b5867b108</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b108">nd49d22e3c87249f7a4043e0c7089be61b108</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4435,12 +4320,12 @@ td {
 </li>
 <li>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a>
+<a href="https://w3id.org/health-ri/ontyology#PersonWithRegularSexChromosome">Person with Regular Sex Chromosome</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="https://w3id.org/health-ri/ontyology#PersonWithRegularSexChromosome">Person with Regular Sex Chromosome</a>
+<a href="https://w3id.org/health-ri/ontyology#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -4478,7 +4363,7 @@ td {
 <li>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b117">na3ca43a638814f729422c09e6e3b5867b117</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b117">nd49d22e3c87249f7a4043e0c7089be61b117</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4494,7 +4379,7 @@ td {
 <li>
 <span>
 <span>
-<a href="na3ca43a638814f729422c09e6e3b5867b119">na3ca43a638814f729422c09e6e3b5867b119</a>
+<a href="nd49d22e3c87249f7a4043e0c7089be61b119">nd49d22e3c87249f7a4043e0c7089be61b119</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
