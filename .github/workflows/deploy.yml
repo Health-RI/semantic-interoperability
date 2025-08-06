@@ -25,6 +25,9 @@ jobs:
       - name: Ensure metadata is added to gUFO file
         run: python scripts/merge-metadata.py
 
+      - name: Move newest files from versioned folder to latest folder
+        run: python scripts/move-latest.py
+
       - name: Copy changelog to docs folder
         run: |
           mkdir -p docs/ontology
@@ -33,7 +36,7 @@ jobs:
       - name: Remove old and copy new images
         run: |
           rm -rf docs/ontology/assets/images/*
-          cp -r ontologies/model\ images/* docs/ontology/assets/images/
+          cp -r ontologies/latest/images/* docs/ontology/assets/images/
 
       - name: Generate OntoUML documentation
         run: python scripts/ontouml-docgen.py

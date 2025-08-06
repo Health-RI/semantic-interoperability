@@ -77,9 +77,9 @@ nav:
       - Home: ontology/index.md
       - Publishing: ontology/publishing.md
       - Changelog: ontology/changelog.md
-      - Ontology Presentation: ontology/ontology.md
+      - Ontology Documentation: ontology/documentation.md
+      - Ontology Specification: ontology/specification.html
       - Mappings: ontology/mappings.md
-      - Specification: ontology/specification.html
   - FAQ: faq.md
   - Contributing: contributing.md
   # - Output:

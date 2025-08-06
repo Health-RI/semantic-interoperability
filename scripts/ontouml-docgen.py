@@ -4,6 +4,7 @@ from packaging import version
 import re
 import os
 import logging
+from urllib.parse import quote
 
 
 def has_meaningful_content(pkg, diagrams_by_owner):
@@ -177,30 +178,85 @@ def process_package(pkg, diagrams_by_owner, images_folder, level=2):
     return lines
 
 
-def generate_markdown(data, images_folder=None):
+def generate_markdown(
+    data,
+    version_str,
+    images_folder=None,
+    image_path_prefix="assets/images",
+    encode_image_path=False,
+):
     """
     Generates the complete Markdown documentation from the given OntoUML JSON data.
 
-    This function processes only top-level packages in the model. For each package, it recursively
-    collects and formats content (descriptions, diagrams, images) into Markdown sections.
-    Image links are generated using filenames matched in the provided images folder.
-
     Args:
-        data (dict): The OntoUML model data, including top-level structure, diagrams, and metadata.
-        images_folder (str or Path, optional): Path to the folder containing images to include in the documentation.
+        data (dict): The OntoUML model data.
+        version_str (str): Version string to include in the document.
+        images_folder (str or Path, optional): Directory containing image files.
+        image_path_prefix (str): Prefix used for image links in the Markdown.
+        encode_image_path (bool): If True, percent-encode spaces in image paths.
 
     Returns:
-        str: The full Markdown-formatted documentation as a single string.
+        str: The full Markdown-formatted documentation.
     """
-    lines = [f"# {clean_text(data['name'])}", ""]
 
+    def process_package_with_prefix(pkg, diagrams_by_owner, images_folder, level=2):
+        if not pkg.get("name") or not has_meaningful_content(pkg, diagrams_by_owner):
+            return []
+
+        name = clean_text(pkg["name"])
+        heading_prefix = "#" * level
+
+        diagram_lines = []
+        for diagram in diagrams_by_owner.get(pkg["id"], []):
+            if not diagram.get("description"):
+                continue
+
+            diagram_name = clean_text(diagram.get("name") or "(unnamed diagram)")
+            diagram_lines.append(f"{'#' * (level + 1)} {diagram_name}")
+            diagram_lines.append("")
+
+            image = find_image_for_element(diagram.get("name", ""), images_folder)
+            if image:
+                relative_image_path = Path(image_path_prefix) / image.name
+                relative_image_path = str(relative_image_path).replace("\\", "/")
+                if encode_image_path:
+                    relative_image_path = quote(relative_image_path)
+                diagram_lines.append(f"![{diagram_name}]({relative_image_path})")
+                diagram_lines.append("")
+
+            diagram_lines.append(clean_text(diagram["description"]))
+            diagram_lines.append("")
+
+        content_lines = []
+        for content in pkg.get("contents") or []:
+            if content.get("type") == "Package":
+                sub_output = process_package_with_prefix(
+                    content, diagrams_by_owner, images_folder, level + 1
+                )
+                if sub_output:
+                    content_lines.extend(sub_output)
+
+        if not pkg.get("description") and not diagram_lines and not content_lines:
+            return []
+
+        lines = [f"{heading_prefix} {name}", ""]
+        if pkg.get("description"):
+            lines.append(clean_text(pkg["description"]))
+            lines.append("")
+
+        lines.extend(diagram_lines)
+        lines.extend(content_lines)
+        return lines
+
+    lines = [f"# {clean_text(data['name'])}", f"*Version {version_str}*", ""]
     model = data.get("model", {})
     contents = model.get("contents") or []
-
     diagrams_by_owner = index_diagrams_by_owner(data.get("diagrams", []))
 
     for top_level_pkg in contents:
-        section = process_package(top_level_pkg, diagrams_by_owner, images_folder)
+        section = process_package_with_prefix(
+            top_level_pkg, diagrams_by_owner, images_folder
+        )
         if section:
             lines.extend(section)
 
@@ -211,7 +267,7 @@ def get_latest_json_file(directory):
     """
     Finds the latest JSON file in the specified directory based on semantic versioning
     embedded in the filename. It assumes the filename format:
-    'Health-RI Ontology-v<MAJOR>.<MINOR>.<PATCH>.json'.
+    'health-ri-ontology-v<MAJOR>.<MINOR>.<PATCH>.json'.
 
     Args:
         directory (str or Path): Path to the directory containing the JSON files.
@@ -219,11 +275,11 @@ def get_latest_json_file(directory):
     Returns:
         Path or None: Path to the latest versioned JSON file, or None if no valid file is found.
     """
-    pattern = r"Health-RI Ontology-v(\d+\.\d+\.\d+)\.json"
+    pattern = r"health-ri-ontology-v(\d+\.\d+\.\d+)\.json"
     latest_version = None
     latest_file = None
 
-    for file in Path(directory).glob("Health-RI Ontology-v*.json"):
+    for file in Path(directory).glob("health-ri-ontology-v*.json"):
         match = re.match(pattern, file.name)
         if match:
             file_version = match.group(1)
@@ -235,15 +291,15 @@ def get_latest_json_file(directory):
             except version.InvalidVersion:
                 logging.info(f"Skipping invalid version: {file_version}")
 
-    return latest_file
+    return latest_file, str(latest_version) if latest_version else None
 
 
 def main():
     """
     The main entry point of the script. It loads the latest OntoUML JSON data,
-    generates Markdown documentation, and writes it to a fixed output file.
+    generates Markdown documentation, and writes it to multiple output files.
     """
-    logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
+    logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
     # Ensure script runs from project root
     os.chdir(Path(__file__).parent.parent.resolve())
@@ -252,22 +308,45 @@ def main():
     images_folder = Path("docs/ontology/assets/images")
     images_folder.mkdir(parents=True, exist_ok=True)
 
-    output_path = Path("docs/ontology/ontology.md")
-    ontologies_dir = Path("ontologies")
+    ontologies_dir = Path("ontologies/versioned")
+    latest_dir = Path("ontologies/latest")
+    versioned_docs_dir = ontologies_dir / "documentations"
+    latest_docs_dir = latest_dir / "documentations"
+    output_path_main = Path("docs/ontology/documentation.md")
 
-    # Load latest JSON file
-    latest_json = get_latest_json_file(ontologies_dir)
-    if latest_json:
+    versioned_docs_dir.mkdir(parents=True, exist_ok=True)
+    latest_docs_dir.mkdir(parents=True, exist_ok=True)
+
+    latest_json, version_str = get_latest_json_file(ontologies_dir)
+    if latest_json and version_str:
         logging.info(f"Using latest JSON file: {latest_json}")
         data = load_json(latest_json)
     else:
         logging.info("No valid JSON files found.")
         return
 
-    # Generate Markdown and write to file
-    markdown_output = generate_markdown(data, images_folder=images_folder)
-    output_path.write_text(markdown_output, encoding="utf-8")
-    logging.info(f"Documentation written to: {output_path}")
+    # 1. Main Markdown output (original path)
+    markdown_main = generate_markdown(data, version_str, images_folder)
+    output_path_main.write_text(markdown_main, encoding="utf-8")
+    logging.info(f"Main documentation written to: {output_path_main}")
+
+    # 2. Versioned Markdown copy
+    versioned_md_name = f"documentation-v{version_str}.md"
+    versioned_md_path = versioned_docs_dir / versioned_md_name
+    versioned_md_path.write_text(markdown_main, encoding="utf-8")
+    logging.info(f"Versioned documentation written to: {versioned_md_path}")
+
+    # 3. Latest Markdown copy with "images/" paths
+    markdown_latest = generate_markdown(
+        data,
+        version_str,
+        images_folder,
+        image_path_prefix="../images",
+        encode_image_path=True,
+    )
+    latest_md_path = latest_docs_dir / "documentation.md"
+    latest_md_path.write_text(markdown_latest, encoding="utf-8")
+    logging.info(f"Latest documentation written to: {latest_md_path}")
 
 
 if __name__ == "__main__":

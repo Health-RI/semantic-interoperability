@@ -1,4 +1,4 @@
-@prefix health-ri: <https://w3id.org/health-ri/ontology#> .
+@prefix hri: <https://w3id.org/health-ri/ontology#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -14,27 +14,43 @@
 @base <https://w3id.org/health-ri/ontology> .
 
 <https://w3id.org/health-ri/ontology> rdf:type owl:Ontology ;
+
+    # --- 1. Type and Identity ---
+    dct:identifier "https://w3id.org/health-ri/ontology" ;
+
+    # --- 2. Titles and Summaries ---
+    dct:title "Health-RI Ontology"@en ;
     dct:abstract "Developed by Health‑RI and collaborators, this ontology—grounded in UFO and implemented in gUFO/OWL—enables semantic interoperability across healthcare and life sciences, extending beyond systems to include institutions, research infrastructures, and services. It establishes a common reference model that harmonizes data from diverse sources by formally defining domain concepts and allowing mappings from heterogeneous sources."@en ;
+    dct:description """This ontology is part of Health-RI’s semantic interoperability initiative, which provides a shared ontological framework for harmonizing healthcare and life sciences data across institutions. It includes a conceptual reference model defined in OntoUML and a machine-processable OWL ontology implemented using gUFO. These artifacts are used to enable explicit mappings from heterogeneous data schemas, ensuring consistent semantics in data exchange and integration. The approach supports both human understanding and computational tractability. All components are openly published and designed for reuse across systems and services."""@en ;
+
+    # --- 3. Creators and Contributors ---
+    dct:creator <https://orcid.org/0000-0003-2736-7817> ;   # Pedro Paulo F. Barcelos
     dct:contributor <https://orcid.org/0000-0003-0771-3516> ,   # Niek van Ulzen
                     <https://orcid.org/0000-0003-1451-4240> ,   # Anika Bongaarts
                     <https://orcid.org/0009-0006-1783-9082> ;   # Reinier Groeneveld
-    dct:creator <https://orcid.org/0000-0003-2736-7817> ;   # Pedro Paulo F. Barcelos
-    dct:description """This ontology is part of Health-RI’s semantic interoperability initiative, which provides a shared ontological framework for harmonizing healthcare and life sciences data across institutions. It includes a conceptual reference model defined in OntoUML and a machine-processable OWL ontology implemented using gUFO. These artifacts are used to enable explicit mappings from heterogeneous data schemas, ensuring consistent semantics in data exchange and integration. The approach supports both human understanding and computational tractability. All components are openly published and designed for reuse across systems and services."""@en ;
-    dct:identifier "https://w3id.org/health-ri/ontology" ;
-    dct:language "en"^^xsd:language ;
-    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+
+    # --- 4. Publication and Licensing ---
     dct:publisher <https://w3id.org/health-ri> ;
-    dct:title "Health-RI Ontology"@en ;
-    vann:preferredNamespacePrefix "health-ri" ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dct:language "en"^^xsd:language ;
+
+    # --- 5. Technical Namespace Configuration ---
+    vann:preferredNamespacePrefix "hri" ;
     vann:preferredNamespaceUri "https://w3id.org/health-ri/ontology#"^^xsd:anyURI ;
+
+    # --- 6. Keywords and Classification ---
     dcat:keyword "biomedicine"@en ,
                  "clinical data"@en ,
                  "health information systems"@en ,
                  "healthcare"@en ,
                  "life sciences"@en ,
                  "medical terminology"@en ;
+
+    # --- 7. Web Presence and Documentation ---
     dcat:landingPage <https://w3id.org/health-ri/semantic-interoperability> ;
-    foaf:logo <https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/docs/assets/images/health-ri-logo-blue.png> ;
     foaf:homepage <https://w3id.org/health-ri/semantic-interoperability> ;
+    foaf:logo <https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/docs/assets/images/health-ri-logo-blue.png> ;
     mod:repository <https://w3id.org/health-ri/semantic-interoperability/git> ;
+
+    # --- 8. Versioning and Dates ---
     dct:issued "2025-05-20"^^xsd:date .

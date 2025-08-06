@@ -3,15 +3,27 @@ import subprocess
 import logging
 from pathlib import Path
 from packaging import version
-from bs4 import BeautifulSoup  # New dependency
+from bs4 import BeautifulSoup
+import shutil
 
 
 def get_latest_ttl_file(directory: Path):
-    pattern = r"Health-RI Ontology-v(\d+\.\d+\.\d+)\.ttl"
+    """
+    Finds the latest versioned TTL file in the given directory based on semantic versioning
+    embedded in the filename (e.g., 'health-ri-ontology-v1.2.3.ttl').
+
+    Args:
+        directory (Path): Directory containing versioned TTL files.
+
+    Returns:
+        tuple[Path | None, Version | None]: The path to the latest TTL file and its parsed version,
+        or (None, None) if no valid files are found.
+    """
+    pattern = r"health-ri-ontology-v(\d+\.\d+\.\d+)\.ttl"
     latest_file = None
     latest_version = None
 
-    for file in directory.glob("Health-RI Ontology-v*.ttl"):
+    for file in directory.glob("health-ri-ontology-v*.ttl"):
         match = re.match(pattern, file.name)
         if match:
             file_version = version.parse(match.group(1))
@@ -19,12 +31,16 @@ def get_latest_ttl_file(directory: Path):
                 latest_version = file_version
                 latest_file = file
 
-    return latest_file
+    return latest_file, latest_version
 
 
 def fix_internal_links_in_html(file_path: Path):
     """
-    Replaces absolute file:// links to internal anchors with relative '#anchor' links.
+    Fixes PyLODE-generated HTML links that use absolute `file://` paths, converting them
+    to relative fragment identifiers (e.g., '#AnchorName').
+
+    Args:
+        file_path (Path): Path to the HTML file to patch.
     """
     try:
         html = file_path.read_text(encoding="utf-8")
@@ -42,7 +58,12 @@ def sort_toc_sections_in_html(
     file_path: Path, section_ids=("classes", "annotationproperties")
 ):
     """
-    Sorts the list items under 'Classes' and 'Annotation Properties' in the Table of Contents.
+    Sorts the entries in the Table of Contents (ToC) for specified sections
+    (e.g., 'Classes', 'Annotation Properties') alphabetically by label text.
+
+    Args:
+        file_path (Path): Path to the HTML file.
+        section_ids (tuple[str]): HTML anchor IDs of the ToC sections to sort.
     """
     try:
         html = file_path.read_text(encoding="utf-8")
@@ -71,7 +92,12 @@ def insert_logo_in_html(
     alt_text="Health-RI Logo",
 ):
     """
-    Inserts a logo image at the top of the HTML body.
+    Inserts a logo image at the top of the HTML document's <body> section. The logo is inserted before any existing body content.
+
+    Args:
+        file_path (Path): Path to the HTML file.
+        logo_url (str): Relative URL of the logo image to embed.
+        alt_text (str): Alternative text for the logo image.
     """
     try:
         html = file_path.read_text(encoding="utf-8")
@@ -96,16 +122,27 @@ def insert_logo_in_html(
 
 
 def main():
+    """
+    Main execution function. Generates the HTML specification using PyLODE from the
+    latest versioned TTL file, applies post-processing (link fixing, ToC sorting, logo insertion),
+    and saves the result to:
+
+    - docs/ontology/specification.html
+    - ontologies/latest/documentations/specification.html
+    - ontologies/versioned/documentations/specification-v<version>.html
+    """
     logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
     # Define directories
     base_dir = Path(__file__).resolve().parent.parent
-    ttl_dir = base_dir / "ontologies"
+    ttl_dir = base_dir / "ontologies" / "versioned"
     output_file = base_dir / "docs/ontology/specification.html"
 
-    latest_ttl = get_latest_ttl_file(ttl_dir)
+    latest_ttl, latest_version = get_latest_ttl_file(ttl_dir)
     if not latest_ttl:
-        logging.warning("No valid TTL files found in 'ontologies/'. No specification will be produced.")
+        logging.warning(
+            "No valid TTL files found in 'ontologies/versioned/'. No specification will be produced."
+        )
         return
 
     logging.info(f"Generating specification from: {latest_ttl}")
@@ -117,6 +154,22 @@ def main():
         fix_internal_links_in_html(output_file)
         sort_toc_sections_in_html(output_file)
         insert_logo_in_html(output_file)
+
+        # Save versioned copy
+        version_str = str(latest_version)
+        versioned_output = (
+            base_dir
+            / f"ontologies/versioned/documentations/specification-v{version_str}.html"
+        )
+        versioned_output.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(output_file, versioned_output)
+        logging.info(f"Copied versioned specification to: {versioned_output}")
+
+        # Save latest copy
+        latest_output = base_dir / "ontologies/latest/documentations/specification.html"
+        latest_output.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(output_file, latest_output)
+        logging.info(f"Copied specification to: {latest_output}")
 
     except subprocess.CalledProcessError as e:
         logging.error(f"PyLODE generation failed: {e}")

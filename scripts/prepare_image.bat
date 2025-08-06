@@ -10,6 +10,7 @@ REM Loop over image files
 for %%F in (*.png *.jpg *.jpeg) do (
     echo Processing %%F...
     magick "%%F" ^
+        -trim +repage ^
         -background white ^
         -alpha remove -alpha off ^
         -gravity center ^
