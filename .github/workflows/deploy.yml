@@ -44,6 +44,18 @@ jobs:
       - name: Generate PyLODE Specification
         run: python scripts/pylode-docgen.py
 
+      - name: Commit and push generated files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin main  # Ensure local copy is up to date
+          git add ontologies/versioned/documentations/*.md \
+                  ontologies/latest/documentations/*.md \
+                  docs/ontology/documentation.md \
+                  docs/ontology/specification.html || true
+          git diff --cached --quiet || git commit -m "docs: update generated documentation and specifications"
+          git push origin main
+
       - name: Validate MkDocs configuration
         run: mkdocs build --verbose --clean --site-dir /tmp/mkdocs-check
 
