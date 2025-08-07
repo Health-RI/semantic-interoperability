@@ -1040,19 +1040,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#initiative-wide-identifier-semantic-interoperability" class="md-nav__link">
+  <a href="#initiative-wide-identifier" class="md-nav__link">
     <span class="md-ellipsis">
-      Initiative-Wide Identifier: /semantic-interoperability
+      Initiative-Wide Identifier
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Initiative-Wide Identifier: /semantic-interoperability">
+    <nav class="md-nav" aria-label="Initiative-Wide Identifier">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uri" class="md-nav__link">
+  <a href="#uri-httpsw3idorghealth-risemantic-interoperability" class="md-nav__link">
     <span class="md-ellipsis">
-      URI
+      URI: https://w3id.org/health-ri/semantic-interoperability
     </span>
   </a>
   
@@ -1064,19 +1064,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ontology-identifier-ontology" class="md-nav__link">
+  <a href="#ontology-identifier" class="md-nav__link">
     <span class="md-ellipsis">
-      Ontology Identifier: /ontology
+      Ontology Identifier
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Ontology Identifier: /ontology">
+    <nav class="md-nav" aria-label="Ontology Identifier">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uri_1" class="md-nav__link">
+  <a href="#uri-httpsw3idorghealth-riontology" class="md-nav__link">
     <span class="md-ellipsis">
-      URI
+      URI: https://w3id.org/health-ri/ontology
     </span>
   </a>
   
@@ -1219,16 +1219,14 @@
 
 <h1 id="permanent-identifiers-pids">Permanent Identifiers (PIDs)</h1>
 <p>This page lists the <strong>persistent, stable, and dereferenceable identifiers (PIDs)</strong> established by the Health-RI Semantic Interoperability Initiative. These URIs support semantic interoperability, long-term accessibility, and alignment with FAIR principles.</p>
-<h2 id="initiative-wide-identifier-semantic-interoperability">Initiative-Wide Identifier: <code>/semantic-interoperability</code></h2>
-<h3 id="uri">URI</h3>
-<p><code>https://w3id.org/health-ri/semantic-interoperability</code></p>
+<h2 id="initiative-wide-identifier">Initiative-Wide Identifier</h2>
+<h3 id="uri-httpsw3idorghealth-risemantic-interoperability">URI: <code>https://w3id.org/health-ri/semantic-interoperability</code></h3>
 <p>This URI refers to the Semantic Interoperability Initiative as a whole. It provides persistent access to the initiative’s public-facing resources and is suitable for citing the initiative in publications, websites, and metadata records.</p>
-<h2 id="ontology-identifier-ontology">Ontology Identifier: <code>/ontology</code></h2>
-<h3 id="uri_1">URI</h3>
-<p><code>https://w3id.org/health-ri/ontology</code></p>
-<p>This is the <strong>main identifier for the Health-RI Ontology</strong>. It supports HTTP content negotiation to serve either machine-readable ontology files or human-readable documentation.</p>
-<h3 id="identifiers-for-the-latest-ontology-version">Identifiers for the Latest Ontology Version</h3>
-<p>These URIs point to the <strong>most recent release</strong> of the Health-RI Ontology and related documentation formats.</p>
+<h2 id="ontology-identifier">Ontology Identifier</h2>
+<h3 id="uri-httpsw3idorghealth-riontology">URI: <code>https://w3id.org/health-ri/ontology</code></h3>
+<p>This is the <strong>main identifier for the Health-RI Ontology</strong>, which always resolves to the ontology's most recent version.</p>
+<h3 id="identifiers-for-the-latest-ontology-version">Identifiers for the <strong>Latest Ontology Version</strong></h3>
+<p>These URIs point to the <strong>most recent release</strong> of the Health-RI Ontology and related documentation formats. The different URIs supports HTTP content negotiation to serve either machine-readable ontology files (e.g., Turtle) or human-readable documentation (HTML specification).</p>
 <table>
 <thead>
 <tr>
@@ -1260,33 +1258,48 @@
 </tbody>
 </table>
 <p>Each of these URIs redirects to the latest available version of the resource.</p>
-<h3 id="identifiers-for-versioned-ontology-releases">Identifiers for Versioned Ontology Releases</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use either <code>/doc</code> or <code>/documentation</code>, and <code>/spec</code> or <code>/specification</code> — both forms are valid and equivalent.</p>
+</div>
+<h3 id="identifiers-for-versioned-ontology-releases">Identifiers for <strong>Versioned Ontology Releases</strong></h3>
+<p>Each versioned release of the Health-RI Ontology is identified by its own dedicated URI in the format <strong><code>https://w3id.org/health-ri/ontology/vX.Y.Z</code></strong>. This URI is used as the <code>owl:versionIRI</code> in the ontology metadata.</p>
 <p>To support traceability and reproducibility, each ontology release is also available via <strong>version-specific URIs</strong>.</p>
 <h4 id="format">Format</h4>
 <p><code>https://w3id.org/health-ri/ontology/vX.Y.Z/{format}</code></p>
 <p>Where:</p>
 <ul>
 <li><code>X.Y.Z</code> is the semantic version (e.g., <code>2.0.0</code>)</li>
-<li><code>{format}</code> is one of:</li>
+<li><code>{format}</code> is one of:<ul>
 <li><code>ttl</code> — OWL ontology (Turtle)</li>
 <li><code>vpp</code> — OntoUML model (Visual Paradigm)</li>
 <li><code>json</code> — OntoUML model (JSON)</li>
 <li><code>documentation</code> — Markdown documentation</li>
 <li><code>specification</code> — HTML specification</li>
 </ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can also use the version URI without a <code>{format}</code> (e.g., <code>/v0.6.0</code>) to directly access the <code>.ttl</code> file.</p>
+</div>
 <h4 id="examples">Examples</h4>
 <ul>
 <li>
-<p><code>https://w3id.org/health-ri/ontology/v2.0.0/ttl</code><br />
-  → Ontology in Turtle format for version 2.0.0</p>
+<p><code>https://w3id.org/health-ri/ontology/v0.6.0/ttl</code>
+  → Ontology in Turtle format for version 0.6.0</p>
 </li>
 <li>
-<p><code>https://w3id.org/health-ri/ontology/v2.0.0/specification</code><br />
-  → HTML specification for version 2.0.0</p>
+<p><code>https://w3id.org/health-ri/ontology/v0.6.0/vpp</code>
+  → Visual Paradigm project file for version 0.6.0</p>
 </li>
 <li>
-<p><code>https://w3id.org/health-ri/ontology/v2.0.0/vpp</code><br />
-  → Visual Paradigm project file for version 2.0.0</p>
+<p><code>https://w3id.org/health-ri/ontology/v0.9.1/documentation</code>
+  → Markdown documentation for version 0.9.1</p>
+</li>
+<li>
+<p><code>https://w3id.org/health-ri/ontology/v0.6.0/specification</code>
+  → HTML specification for version 0.6.0</p>
 </li>
 </ul>
 <h2 id="overview-of-persistent-identifiers">Overview of Persistent Identifiers</h2>
@@ -1296,6 +1309,7 @@
 <th>PID</th>
 <th>Description</th>
 <th>Behavior</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
@@ -1303,46 +1317,55 @@
 <td><code>/ontology</code></td>
 <td>Ontology root</td>
 <td>Content negotiation (RDF or HTML)</td>
+<td><a href="https://w3id.org/health-ri/ontology">https://w3id.org/health-ri/ontology</a></td>
 </tr>
 <tr>
 <td><code>/ontology/ttl</code></td>
 <td>Latest ontology in Turtle format</td>
 <td>Redirects to raw <code>.ttl</code> file</td>
+<td><a href="https://w3id.org/health-ri/ontology/ttl">https://w3id.org/health-ri/ontology/ttl</a></td>
 </tr>
 <tr>
 <td><code>/ontology/specification</code></td>
 <td>Latest HTML specification</td>
 <td>Human-readable documentation</td>
+<td><a href="https://w3id.org/health-ri/ontology/specification">https://w3id.org/health-ri/ontology/specification</a></td>
 </tr>
 <tr>
 <td><code>/ontology/documentation</code></td>
 <td>Markdown documentation</td>
-<td>Raw <code>.md</code> version</td>
+<td>Redirects to <code>.md</code></td>
+<td><a href="https://w3id.org/health-ri/ontology/documentation">https://w3id.org/health-ri/ontology/documentation</a></td>
 </tr>
 <tr>
 <td><code>/ontology/json</code></td>
 <td>Latest JSON export of OntoUML</td>
 <td>Redirects to <code>.json</code></td>
+<td><a href="https://w3id.org/health-ri/ontology/json">https://w3id.org/health-ri/ontology/json</a></td>
 </tr>
 <tr>
 <td><code>/ontology/vpp</code></td>
 <td>Latest OntoUML model (<code>.vpp</code>)</td>
 <td>Redirects to Visual Paradigm file</td>
+<td><a href="https://w3id.org/health-ri/ontology/vpp">https://w3id.org/health-ri/ontology/vpp</a></td>
 </tr>
 <tr>
 <td><code>/ontology/vX.Y.Z/{format}</code></td>
 <td>Versioned ontology release</td>
 <td>Format-specific persistent access</td>
+<td><a href="https://w3id.org/health-ri/ontology/v0.6.0/ttl">https://w3id.org/health-ri/ontology/v0.6.0/ttl</a></td>
 </tr>
 <tr>
 <td><code>/semantic-interoperability</code></td>
 <td>Project-level identifier</td>
 <td>Redirects to documentation site</td>
+<td><a href="https://w3id.org/health-ri/semantic-interoperability">https://w3id.org/health-ri/semantic-interoperability</a></td>
 </tr>
 <tr>
 <td><code>/semantic-interoperability/git</code></td>
 <td>Source code and data repository</td>
 <td>Redirects to GitHub</td>
+<td><a href="https://w3id.org/health-ri/semantic-interoperability/git">https://w3id.org/health-ri/semantic-interoperability/git</a></td>
 </tr>
 </tbody>
 </table>

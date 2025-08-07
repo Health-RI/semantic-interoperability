@@ -1261,7 +1261,7 @@
 <li>gUFO OWL-based computational ontologies</li>
 <li>Schema-to-ontology mappings using tools like SSSOM</li>
 </ul>
-<p><a href="../method/#toward-a-solution-introducing-a-common-reference-model">Read more.</a></p>
+<p><a href="../method">Read more.</a></p>
 </details>
 <details class="question">
 <summary>Why do we need the semantic interoperability initiative if standards like HL7, OMOP, or DCAT-AP already exist? Isn’t this duplicating existing efforts?</summary>
@@ -1295,7 +1295,7 @@
 <summary>What are OntoUML and gUFO, and why are they used?</summary>
 <p>OntoUML is a conceptual modeling language grounded in the foundational ontology named Unified Foundational Ontology (UFO). gUFO is its OWL counterpart, enabling computational use. Together, they ensure semantic precision and machine-actionable models.</p>
 <p>OntoUML operates at MDA's CIM layer to capture conceptual semantics, while gUFO provides a platform-independent OWL implementation at the PIM layer. This ensures a traceable and interoperable flow from conceptualization to deployment.</p>
-<p><a href="../ontouml-gufo/ontouml/">OntoUML overview</a> • <a href="../ontouml-gufo/gufo/">gUFO details</a></p>
+<p><a href="../ontouml-gufo/ontouml">OntoUML overview</a> • <a href="../ontouml-gufo/gufo">gUFO details</a></p>
 </details>
 <details class="question">
 <summary>OntoUML and gUFO seem very complex. Isn’t that a barrier to adoption?</summary>
@@ -1306,12 +1306,12 @@
 <details class="question">
 <summary>How is the OntoUML model converted to OWL?</summary>
 <p>The OntoUML model is exported to OWL using the gUFO specification via plugin tooling. The resulting ontology retains the original semantics in a format suitable for Semantic Web technologies.
-<a href="../ontouml-gufo/gufo/">More info.</a></p>
+<a href="../ontouml-gufo/gufo">More info.</a></p>
 </details>
 <details class="question">
 <summary>What is the difference between OntoUML and gUFO?</summary>
 <p>OntoUML is a conceptual modeling language for humans; gUFO is its OWL-based computational counterpart used in Semantic Web technologies.
-<a href="../ontouml-gufo/ontouml/">OntoUML</a> • <a href="../ontouml-gufo/gufo/">gUFO</a></p>
+<a href="../ontouml-gufo/ontouml">OntoUML</a> • <a href="../ontouml-gufo/gufo">gUFO</a></p>
 </details>
 <h2 id="mapping-and-alignment-strategy">Mapping and Alignment Strategy</h2>
 <p><em>Questions about how external concepts are aligned to the Health-RI reference model using SKOS and related mapping techniques.</em></p>
@@ -1324,7 +1324,7 @@
 <li><code>skos:broadMatch</code> or <code>skos:narrowMatch</code> when the match is approximate.</li>
 </ul>
 <p>These mappings support semantic alignment without requiring modification to the original schema and are managed either by Health-RI (non-invasively in SSSOM) or by partners (embedded in their own RDF models).</p>
-<p><a href="../method/#mapping-schemas-to-the-gufo-ontology">Full explanation</a></p>
+<p><a href="../method/mapping-strategy">Full explanation</a></p>
 </details>
 <details class="question">
 <summary>What is <code>skos:exactMatch</code>, and how is it different from <code>owl:equivalentClass</code>?</summary>
@@ -1339,6 +1339,12 @@
 <p>If your concept is broader or narrower than any existing reference concept, use <code>skos:broadMatch</code> or <code>skos:narrowMatch</code> accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future.</p>
 </details>
 <details class="question">
+<summary>Can new concepts be added to the Health-RI ontology to improve mapping precision?</summary>
+<p>Yes. When <code>skos:exactMatch</code> cannot be used due to missing concepts, we encourage you to contact the Health-RI modeling team (<a href="../contributing">read more.</a>).</p>
+<p>If justified, new intermediate concepts may be added to the reference ontology. This helps replace approximate mappings (<code>skos:broadMatch</code>, <code>skos:narrowMatch</code>) with exact ones and ensures better semantic precision for reasoning, integration, and long-term alignment.</p>
+<p><a href="../method/mapping-strategy">See example</a></p>
+</details>
+<details class="question">
 <summary>Who can create or host the semantic mappings?</summary>
 <p>Mappings can be authored by:</p>
 <ul>
@@ -1350,13 +1356,32 @@
 <summary>Can I request new reference concepts if needed for mapping?</summary>
 <p>Yes. If you find that no suitable concept exists in the Health-RI ontology to match yours, you can propose new reference concepts. These requests are welcome and reviewed by the modeling team. If accepted, new concepts may be added to enable stronger mappings in the future.</p>
 </details>
+<details class="question">
+<summary>Who creates and maintains the semantic mappings to the Health-RI ontology?</summary>
+<p>Mappings can be created and maintained by:</p>
+<ul>
+<li>The <strong>Health-RI team</strong>, which curates non-invasive mappings using the <a href="https://w3id.org/sssom/">SSSOM</a> format. These mappings are published externally and do not alter the original third-party ontologies.</li>
+<li><strong>External partners</strong>, who can embed mappings directly in their own ontology files using SKOS properties (e.g., <code>skos:exactMatch</code>).</li>
+</ul>
+<p><a href="../method/mapping-strategy">Read more.</a></p>
+</details>
 <h2 id="ontology-lifecycle-and-publishing">Ontology Lifecycle and Publishing</h2>
 <p><em>Questions about how the ontology is released, versioned, and maintained over time.</em></p>
 <details class="question">
 <summary>Where can I find the latest version of the Health-RI ontology?</summary>
 <p>All published versions are available in the <code>/ontologies/</code> folder. The most recent major release is always accessible via:
 <a href="https://w3id.org/health-ri/ontology/latest">https://w3id.org/health-ri/ontology/latest</a>
-<a href="../ontology/publishing/#versioning-policy">More on versioning</a></p>
+<a href="../ontology/publishing">More on versioning</a></p>
+</details>
+<details class="question">
+<summary>How do I cite or refer to the Health-RI initiative and its ontology?</summary>
+<p>You can use the following permanent, stable, and dereferenceable URIs to cite the initiative and its semantic artifacts:</p>
+<ul>
+<li><strong>Initiative-wide identifier</strong>: <code>https://w3id.org/health-ri/semantic-interoperability</code></li>
+<li><strong>Health-RI Ontology root</strong>: <code>https://w3id.org/health-ri/ontology</code></li>
+</ul>
+<p>These PIDs support long-term access, are suitable for citations, and follow FAIR practices.</p>
+<p><a href="../ontology/permanent-ids">Read more.</a></p>
 </details>
 <details class="question">
 <summary>What artifacts are published with each ontology release?</summary>
@@ -1367,22 +1392,62 @@
 <li>Diagram images</li>
 <li>A versioned changelog and archive</li>
 </ul>
-<p><a href="../ontology/publishing/#published-artifacts">Details here.</a></p>
+<p><a href="../ontology/publishing">Details here.</a></p>
+</details>
+<details class="question">
+<summary>How can I access a specific version of the Health-RI ontology?</summary>
+<p>Use the versioned PID format: <code>https://w3id.org/health-ri/ontology/vX.Y.Z/{format}</code></p>
+<p>Replace <code>X.Y.Z</code> with the version number (e.g., <code>v0.6.0</code>) and <code>{format}</code> with one of:</p>
+<ul>
+<li><code>ttl</code> for the ontology file (Turtle)</li>
+<li><code>vpp</code> for the OntoUML Visual Paradigm file</li>
+<li><code>json</code> for the OntoUML JSON export</li>
+<li><code>specification</code> for the HTML spec</li>
+<li><code>documentation</code> for the Markdown documentation</li>
+</ul>
+<p>Example:
+<code>https://w3id.org/health-ri/ontology/v0.6.0/ttl</code> → Ontology file for version 0.6.0
+<code>https://w3id.org/health-ri/ontology/v0.6.0/specification</code> → Human-readable specification</p>
+<p><a href="../ontology/permanent-ids">Details here.</a></p>
+</details>
+<details class="question">
+<summary>What’s the difference between the latest and versioned ontology URIs?</summary>
+<ul>
+<li>The <strong>latest URI</strong> (<code>https://w3id.org/health-ri/ontology</code>) always points to the most recent stable release. Its content may change over time as new versions are published.</li>
+<li>A <strong>versioned URI</strong> (e.g., <code>https://w3id.org/health-ri/ontology/v2.0.0</code>) points to a specific, immutable release. Its content will never change, ensuring long-term consistency.</li>
+</ul>
+<p>Use the <strong>versioned URI</strong> when immutability is essential — for example, in scientific publications, formal mappings, or regulatory documentation. This guarantees that your references always point to the same version of the ontology.</p>
+<p>Use the <strong>latest URI</strong> when you want to stay aligned with the most up-to-date ontology version and future improvements.</p>
+<p><a href="../ontology/permanent-ids">More info</a></p>
+</details>
+<details class="question">
+<summary>Which URI should I use in my mapping: the latest or a versioned one?</summary>
+<p>Use the <strong>latest URI</strong> (e.g., <code>https://w3id.org/health-ri/ontology#HealthcarePatient</code>) when:</p>
+<ul>
+<li>You want to always point to the most up-to-date definition.</li>
+<li>Your use case allows future updates without breaking dependencies.</li>
+</ul>
+<p>Use the <strong>versioned URI</strong> (e.g., <code>https://w3id.org/health-ri/ontology/v2.0.0#HealthcarePatient</code>) when:</p>
+<ul>
+<li>You need traceability and reproducibility (e.g., publications, data provenance).</li>
+<li>You want to avoid semantic drift caused by future updates.</li>
+</ul>
+<p><a href="../ontology/permanent-ids">Best practices.</a></p>
 </details>
 <details class="question">
 <summary>What is the publishing strategy for ontology releases?</summary>
 <p>A fast versioning strategy is adopted, where only major versions are considered stable and published with full documentation. Minor/patch versions are published for collaboration and traceability.
-<a href="../ontology/publishing/#versioning-policy">More info.</a></p>
+<a href="../ontology/publishing">More info.</a></p>
 </details>
 <details class="question">
 <summary>How are the OntoUML and gUFO ontologies and the produced semantic mappings maintained over time?</summary>
 <p>Ontologies and semantic mappings are maintained in version-controlled repositories and released through a structured publishing pipeline. Each release is assigned a permanent, citable URL, with both a persistent identifier (PURL) and a timestamped version. Ontologies are published in multiple formats (e.g., RDF/Turtle, JSON) and validated prior to release. This process ensures transparency, long-term accessibility, and semantic stability across versions.
-<a href="../ontology/publishing/">Read more.</a></p>
+<a href="../ontology/publishing">Read more.</a></p>
 </details>
 <details class="question">
 <summary>Who is responsible for maintaining the ontology and its associated mappings?</summary>
 <p>The Health-RI team is responsible for maintaining the core ontologies and mappings produced within the initiative. This work is carried out in close collaboration with external partners who contribute ideas, suggestions, and mappings. Contributions are reviewed and integrated through a structured, version-controlled process.
-<a href="../contributing/">Read more.</a></p>
+<a href="../contributing">Read more.</a></p>
 </details>
 <details class="question">
 <summary>How will the new solutions be maintained and supported? (TBD)</summary>
@@ -1415,7 +1480,7 @@
 <li><strong>Request a new concept</strong> to be added to the reference model</li>
 <li><strong>Submit other input</strong> such as documentation improvements, mapping suggestions, or collaboration proposals</li>
 </ul>
-<p>Start here: <a href="https://github.com/health-ri/semantic-interoperability/issues/new/choose">Contribute via GitHub</a><br />
+<p>Start here: <a href="https://github.com/health-ri/semantic-interoperability/issues/new/choose">Contribute via GitHub</a>
 Or visit our <a href="../contributing/">Contributing page</a> for more guidance.</p>
 </details>
 <details class="question">
