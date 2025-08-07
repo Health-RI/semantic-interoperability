@@ -94,6 +94,10 @@ ontologies/
 !!! tip "What does 'latest' mean?"
     The `latest/` folder always mirrors the contents of the highest published version. This provides stable, convenient access to the most recent files without needing to specify a version number.
 
+!!! note "Where are the images of the diagrams?"
+    The `images/` folder — containing exported PNG versions of all OntoUML diagrams — is only provided under the `latest/` folder.  
+    These images are always generated from the most recent `.vpp` file and are not versioned individually.
+
 ## Archive and Change History
 
 - Only the **latest version** of each artifact is visible directly in the `ontologies/latest/` folder.

@@ -190,6 +190,20 @@
     <https://w3id.org/health-ri/ontology/latest>
     [More on versioning](../method/publication)
 
+??? question "What is the difference between major, minor, and patch versions in your versioning policy?"
+    We follow an adapted semantic versioning scheme: `<major>.<minor>.<patch>`.  
+    - **Major** versions mark conceptual milestones or structural overhauls and are considered stable and citable.  
+    - **Minor** versions include scoped improvements that preserve semantic compatibility.  
+    - **Patch** versions address fixes or clarifications without modifying the established scope.  
+    Only major versions trigger a formal release and a published specification.
+
+    [Read more.](../method/publication)
+
+??? question "What does the 'latest' folder contain and how is it maintained?"
+    The `ontologies/latest/` folder always mirrors the highest available published version of each artifact.  
+    It provides stable access to the most recent files without needing to specify a version number.  
+    Each new release automatically updates the `latest/` folder to reflect its content.
+
 ??? question "How do I cite or refer to the Health-RI initiative and its ontology?"
     You can use the following permanent, stable, and dereferenceable URIs to cite the initiative and its semantic artifacts:
 
@@ -200,15 +214,30 @@
 
     [Read more.](../method/permanent-ids)
 
-??? question "What artifacts are published with each ontology release?"
-    Each release includes:
+??? question "What types of files are published with each ontology version?"
+    Each ontology version includes the following artifacts:
 
-    - OntoUML `.vpp` and `.json` files
-    - OWL `.ttl` file
-    - Diagram images
-    - A versioned changelog and archive
+    - `.vpp`: OntoUML conceptual model (Visual Paradigm project)
+    - `.json`: OntoUML export compliant with the OntoUML Schema
+    - `.ttl`: OWL ontology (based on gUFO) — only for syntactically valid models
+    - `.md`: Human-readable documentation (Markdown)
+    - `.html`: Human-readable specification (HTML)
+    - `.png`: Diagram images (only in the `latest/` folder)
 
-    [Details here.](../method/publication)
+    These are published under both `ontologies/latest/` (most recent version) and `ontologies/versioned/` (versioned archive).  
+    [More details here.](../method/publication)
+
+??? question "Where can I find the exported images of the ontology diagrams?"
+    Exported PNG images of all OntoUML diagrams are available in the `ontologies/latest/images/` folder.  
+    These images are always generated from the latest `.vpp` file and are not maintained for previous versions.
+
+??? question "Why is there sometimes no OWL (.ttl) file available for a version?"
+    The `.ttl` file (gUFO-compliant OWL ontology) is only generated when the OntoUML model is syntactically valid.  
+    Incomplete or draft versions may not include a `.ttl` file until model consistency is ensured.
+
+??? question "Can the latest version of the OWL (.ttl) file correspond to a different version than the latest version of the OntoUML (.json/.vpp) model?"
+    Yes. The `.ttl` versioning is managed independently and may lag behind the `.vpp` or `.json` files.  
+    The OWL file includes a `dcterms:conformsTo` triple that explicitly links it to the OntoUML version it was derived from.
 
 ??? question "How can I access a specific version of the Health-RI ontology?"
     Use the versioned PID format: `https://w3id.org/health-ri/ontology/vX.Y.Z/{format}`
