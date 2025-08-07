@@ -30,8 +30,8 @@ This visual clarifies that OntoUML provides the conceptual meaning, which the gU
 
 ### Roles of the Artifacts
 
-| Artifact   | Layer | Purpose                                                                                                                                                       | Practical Role                                                                                        |
-| ---------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Artifact       | Layer | Purpose                                                                                                                                                       | Practical Role                                                                                        |
+| -------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **OntoUML**    | CIM   | Provides clarity about domain-specific concepts by offering clear and precise definitions, supporting conceptual validation and enabling expert communication | Serves as a semantic map and meaning contract to align domain terms for interoperability              |
 | **gUFO** (OWL) | PIM   | Provides machine-readable semantics, supporting automated reasoning and tool interoperability                                                                 | Enables integration and alignment of RDF-based artifacts within semantic web and linked data contexts |
 
@@ -40,6 +40,9 @@ Maintaining both artifacts ensures clear traceability from domain concepts (Onto
 ## Semantic Reference: Defining CIM-to-PIM Semantics
 
 In the Health‑RI architecture, every class in the gUFO ontology (PIM) is implicitly semantically defined by its counterpart in OntoUML (CIM). For example, the class `health‑ri:Person` in gUFO borrows its semantics from the `Person` class in the OntoUML model. Because the CIM is not computational, this semantic linkage remains implicit and is *not formally encoded* <a href="#ref3">[3]</a>.
+
+!!! tip "Why the CIM-PIM link matters"
+    Even though the OntoUML model is not executable, it defines the core meaning that gUFO classes implement. This semantic grounding improves trust, clarity, and alignment in data integration.
 
 ## Aligning Third‑Party Ontologies via SKOS Mapping
 
@@ -79,6 +82,15 @@ The [SKOS](https://www.w3.org/TR/skos-reference/) standard provides a set of map
 In contrast to `exactMatch`, both `narrowMatch` and `broadMatch` allow **multiple mappings per concept** to express partial or hierarchical semantic overlaps.
 
 These mappings are only to be used when **no perfect equivalence exists** and a semantic approximation must be made to the **closest reference concept** in the Health‑RI ontology.
+
+#### Avoiding Ambiguous or Imprecise Mappings
+
+SKOS also provides two additional [mapping properties](https://www.w3.org/TR/skos-reference/#mapping): `skos:closeMatch` and `skos:relatedMatch`. While these can be used to express looser or associative relationships between concepts, we discourage their use in our semantic alignment strategy. These properties are often too vague or non-committal to support high-quality interoperability:
+
+- [`skos:closeMatch`](https://www.w3.org/TR/skos-reference/#closeMatch) suggests a high degree of similarity, but without sufficient clarity to assert meaningful equivalence.
+- [`skos:relatedMatch`](https://www.w3.org/TR/skos-reference/#relatedMatch) captures a broad, unspecified relationship, lacking the semantic precision required for interoperability use cases.
+
+Our goal is to ensure mappings are as precise and unambiguous as possible, enabling clear semantic reasoning and reliable integration. Therefore, unless justified by a well-documented use case, `closeMatch` and `relatedMatch` should be avoided.
 
 ### Visual Example: Exact Semantic Alignment
 
