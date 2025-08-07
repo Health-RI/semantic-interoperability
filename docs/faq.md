@@ -188,7 +188,7 @@
 ??? question "Where can I find the latest version of the Health-RI ontology?"
     All published versions are available in the `/ontologies/` folder. The most recent major release is always accessible via:
     <https://w3id.org/health-ri/ontology/latest>
-    [More on versioning](../ontology/publication)
+    [More on versioning](../method/publication)
 
 ??? question "How do I cite or refer to the Health-RI initiative and its ontology?"
     You can use the following permanent, stable, and dereferenceable URIs to cite the initiative and its semantic artifacts:
@@ -198,7 +198,7 @@
 
     These PIDs support long-term access, are suitable for citations, and follow FAIR practices.
 
-    [Read more.](../ontology/permanent-ids)
+    [Read more.](../method/permanent-ids)
 
 ??? question "What artifacts are published with each ontology release?"
     Each release includes:
@@ -208,7 +208,7 @@
     - Diagram images
     - A versioned changelog and archive
 
-    [Details here.](../ontology/publication)
+    [Details here.](../method/publication)
 
 ??? question "How can I access a specific version of the Health-RI ontology?"
     Use the versioned PID format: `https://w3id.org/health-ri/ontology/vX.Y.Z/{format}`
@@ -225,7 +225,7 @@
     `https://w3id.org/health-ri/ontology/v0.6.0/ttl` → Ontology file for version 0.6.0
     `https://w3id.org/health-ri/ontology/v0.6.0/specification` → Human-readable specification
 
-    [Details here.](../ontology/permanent-ids)
+    [Details here.](../method/permanent-ids)
 
 ??? question "What’s the difference between the latest and versioned ontology URIs?"
     - The **latest URI** (`https://w3id.org/health-ri/ontology`) always points to the most recent stable release. Its content may change over time as new versions are published.
@@ -235,7 +235,7 @@
 
     Use the **latest URI** when you want to stay aligned with the most up-to-date ontology version and future improvements.
 
-    [More info](../ontology/permanent-ids)
+    [More info](../method/permanent-ids)
 
 ??? question "Which URI should I use in my mapping: the latest or a versioned one?"
     Use the **latest URI** (e.g., `https://w3id.org/health-ri/ontology#HealthcarePatient`) when:
@@ -248,15 +248,15 @@
     - You need traceability and reproducibility (e.g., publications, data provenance).
     - You want to avoid semantic drift caused by future updates.
 
-    [Best practices.](../ontology/permanent-ids)
+    [Best practices.](../method/permanent-ids)
 
 ??? question "What is the publishing strategy for ontology releases?"
     A fast versioning strategy is adopted, where only major versions are considered stable and published with full documentation. Minor/patch versions are published for collaboration and traceability.
-    [More info.](../ontology/publication)
+    [More info.](../method/publication)
 
 ??? question "How are the OntoUML and gUFO ontologies and the produced semantic mappings maintained over time?"
     Ontologies and semantic mappings are maintained in version-controlled repositories and released through a structured publishing pipeline. Each release is assigned a permanent, citable URL, with both a persistent identifier (PURL) and a timestamped version. Ontologies are published in multiple formats (e.g., RDF/Turtle, JSON) and validated prior to release. This process ensures transparency, long-term accessibility, and semantic stability across versions.
-    [Read more.](../ontology/publication)
+    [Read more.](../method/publication)
 
 ??? question "Who is responsible for maintaining the ontology and its associated mappings?"
     The Health-RI team is responsible for maintaining the core ontologies and mappings produced within the initiative. This work is carried out in close collaboration with external partners who contribute ideas, suggestions, and mappings. Contributions are reviewed and integrated through a structured, version-controlled process.

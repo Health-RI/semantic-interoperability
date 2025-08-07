@@ -1,4 +1,4 @@
-# Ontology Publishing
+# Initiative Publications
 
 This repository follows a structured and transparent publishing approach to support traceability, stability, and reuse of the Health-RI Ontology and its artifacts.
 

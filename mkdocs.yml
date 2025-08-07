@@ -73,12 +73,12 @@ nav:
   - The Health-RI Method:
       - Overview: method/index.md
       - Mapping Strategy: method/mapping-strategy.md
+      - Publishing: method/publication.md
+      - Permanent Identifiers (PIDs): method/permanent-ids.md
   - The Health-RI Ontology:
       - Home: ontology/index.md
-      - Ontology Documentation: ontology/documentation.md
-      - Ontology Specification: ontology/specification.html
-      - Publishing: ontology/publication.md
-      - Permanent Identifiers (PIDs): ontology/permanent-ids.md
+      - Documentation: ontology/documentation.md
+      - Specification: ontology/specification.html
       - Changelog: ontology/changelog.md
       # - Mappings: ontology/mappings.md
   - FAQ: faq.md
