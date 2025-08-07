@@ -175,6 +175,16 @@
     <https://w3id.org/health-ri/ontology/latest>
     [More on versioning](../ontology/publishing/#versioning-policy)
 
+??? question "How do I cite or refer to the Health-RI initiative and its ontology?"
+    You can use the following permanent, stable, and dereferenceable URIs to cite the initiative and its semantic artifacts:
+
+    - **Initiative-wide identifier**: `https://w3id.org/health-ri/semantic-interoperability`
+    - **Health-RI Ontology root**: `https://w3id.org/health-ri/ontology`
+
+    These PIDs support long-term access, are suitable for citations, and follow FAIR practices.
+
+    [Read more.](../ontology/permanent-ids/)
+
 ??? question "What artifacts are published with each ontology release?"
     Each release includes:
 
@@ -184,6 +194,46 @@
     - A versioned changelog and archive
 
     [Details here.](../ontology/publishing/#published-artifacts)
+
+??? question "How can I access a specific version of the Health-RI ontology?"
+    Use the versioned PID format: `https://w3id.org/health-ri/ontology/vX.Y.Z/{format}`
+
+    Replace `X.Y.Z` with the version number (e.g., `v0.6.0`) and `{format}` with one of:
+
+    - `ttl` for the ontology file (Turtle)
+    - `vpp` for the OntoUML Visual Paradigm file
+    - `json` for the OntoUML JSON export
+    - `specification` for the HTML spec
+    - `documentation` for the Markdown documentation
+
+    Example:
+    `https://w3id.org/health-ri/ontology/v0.6.0/ttl` → Ontology file for version 0.6.0
+    `https://w3id.org/health-ri/ontology/v0.6.0/specification` → Human-readable specification
+
+    [Details here.](../ontology/permanent-ids/)
+
+??? question "What’s the difference between the latest and versioned ontology URIs?"
+    - The **latest URI** (`https://w3id.org/health-ri/ontology`) always points to the most recent stable release. Its content may change over time as new versions are published.
+    - A **versioned URI** (e.g., `https://w3id.org/health-ri/ontology/v2.0.0`) points to a specific, immutable release. Its content will never change, ensuring long-term consistency.
+
+    Use the **versioned URI** when immutability is essential — for example, in scientific publications, formal mappings, or regulatory documentation. This guarantees that your references always point to the same version of the ontology.
+
+    Use the **latest URI** when you want to stay aligned with the most up-to-date ontology version and future improvements.
+
+    [More info](../ontology/permanent-ids/)
+
+??? question "Which URI should I use in my mapping: the latest or a versioned one?"
+    Use the **latest URI** (e.g., `https://w3id.org/health-ri/ontology#HealthcarePatient`) when:
+
+    - You want to always point to the most up-to-date definition.
+    - Your use case allows future updates without breaking dependencies.
+
+    Use the **versioned URI** (e.g., `https://w3id.org/health-ri/ontology/v2.0.0#HealthcarePatient`) when:
+
+    - You need traceability and reproducibility (e.g., publications, data provenance).
+    - You want to avoid semantic drift caused by future updates.
+
+    [Best practices.](../ontology/permanent-ids/)
 
 ??? question "What is the publishing strategy for ontology releases?"
     A fast versioning strategy is adopted, where only major versions are considered stable and published with full documentation. Minor/patch versions are published for collaboration and traceability.
@@ -228,7 +278,7 @@
     - **Request a new concept** to be added to the reference model
     - **Submit other input** such as documentation improvements, mapping suggestions, or collaboration proposals
 
-    Start here: [Contribute via GitHub](https://github.com/health-ri/semantic-interoperability/issues/new/choose)  
+    Start here: [Contribute via GitHub](https://github.com/health-ri/semantic-interoperability/issues/new/choose)
     Or visit our [Contributing page](../contributing/) for more guidance.
 
 ??? question "Do I need to check the ontology version before submitting a contribution?"

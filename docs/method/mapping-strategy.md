@@ -99,6 +99,19 @@ Our goal is to ensure mappings are as precise and unambiguous as possible, enabl
 
 This figure illustrates how concepts such as `hc:Patient` and `vet:Patient` are mapped to `hri:HealthcarePatient` and `hri:VeterinaryPatient` respectively. These are in turn subsumed by higher-level concepts like `hri:Human` or `hri:NonHumanAnimal`, ultimately aligning under `hri:Animal`. This modeling strategy ensures that semantic alignments preserve domain distinctions while enabling unified interpretation under a shared reference ontology.
 
+!!! tip "How to assert an exact match in your OWL file"
+    To assign that a concept in your ontology has its semantics defined by a concept in the **latest version** of the Health-RI Ontology, use `skos:exactMatch` as shown below:
+
+    - `hc:Patient skos:exactMatch <https://w3id.org/health-ri/ontology#HealthcarePatient> .`
+
+    Or, if you've defined the prefix `hri: <https://w3id.org/health-ri/ontology#>`, you can simply write:
+
+    - `hc:Patient skos:exactMatch hri:HealthcarePatient .`
+
+    To align with a **specific version** of a Health-RI Ontology's concept (e.g., `v2.0.0`), use:
+
+    - `hc:Patient skos:exactMatch <https://w3id.org/health-ri/ontology/v2.0.0#HealthcarePatient> .`
+
 ### Visual Example: Broader and Narrower Semantic Alignments
 
 ![Cross-ontology mapping using exactMatch, narrowMatch, and broadMatch](./assets/images/example-mapping2.png)
@@ -110,6 +123,16 @@ This figure illustrates how concepts such as `hc:Patient` and `vet:Patient` are 
 - Internal hierarchical structure is preserved via `rdfs:subClassOf` to allow consistent classification across ontologies.
 
 This more flexible mapping strategy supports gradual alignment of external ontologies to our reference model even in cases where semantic overlap is partial rather than complete.
+
+!!! tip "How to assert broader or narrower mappings in your OWL file"
+    After having defined the `hri` prefix, to express an approximate mapping using `skos:narrowMatch` or `skos:broadMatch`, use:
+
+      - `ghc:Patient skos:narrowMatch hri:VeterinaryPatient .`
+      - `pvet:PetAnimal skos:broadMatch hri:NonHumanAnimal .`
+
+    You may also reference a specific version using the full ontology's URI (e.g., for v2.0.0):
+
+      - `ghc:Patient skos:narrowMatch <https://w3id.org/health-ri/ontology/v2.0.0#VeterinaryPatient> .`
 
 #### Visual Example: Completing the Ontology via Semantic Gaps
 
