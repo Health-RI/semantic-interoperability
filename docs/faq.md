@@ -83,7 +83,7 @@
     - gUFO OWL-based computational ontologies
     - Schema-to-ontology mappings using tools like SSSOM
 
-    [Read more.](../method/index.md)
+    [Read more.](../method)
 
 ??? question "Why do we need the semantic interoperability initiative if standards like HL7, OMOP, or DCAT-AP already exist? Isn’t this duplicating existing efforts?"
     This initiative complements existing standards like HL7, OMOP, and DCAT by focusing on semantic precision, ontological clarity, and interoperability at the conceptual level. While HL7 and OMOP define syntactic and structural specifications for health data, this initiative addresses foundational semantics to align and reason over data models meaningfully. It:
@@ -115,7 +115,7 @@
 
     OntoUML operates at MDA's CIM layer to capture conceptual semantics, while gUFO provides a platform-independent OWL implementation at the PIM layer. This ensures a traceable and interoperable flow from conceptualization to deployment.
 
-    [OntoUML overview](../ontouml-gufo/ontouml.md) • [gUFO details](../ontouml-gufo/gufo.md)
+    [OntoUML overview](../ontouml-gufo/ontouml) • [gUFO details](../ontouml-gufo/gufo)
 
 ??? question "OntoUML and gUFO seem very complex. Isn’t that a barrier to adoption?"
     This is a common concern. Foundational ontologies like UFO are indeed complex—because they aim to capture real-world meaning with a high level of precision and avoid ambiguity across domains. Some complexity is simply inherent to the task: when we model the real-life elements, especially across institutions or sectors, we cannot always rely on overly simplistic representations.
@@ -126,11 +126,11 @@
 
 ??? question "How is the OntoUML model converted to OWL?"
     The OntoUML model is exported to OWL using the gUFO specification via plugin tooling. The resulting ontology retains the original semantics in a format suitable for Semantic Web technologies.
-    [More info.](../ontouml-gufo/gufo.md)
+    [More info.](../ontouml-gufo/gufo)
 
 ??? question "What is the difference between OntoUML and gUFO?"
     OntoUML is a conceptual modeling language for humans; gUFO is its OWL-based computational counterpart used in Semantic Web technologies.
-    [OntoUML](../ontouml-gufo/ontouml.md) • [gUFO](../ontouml-gufo/gufo.md)
+    [OntoUML](../ontouml-gufo/ontouml) • [gUFO](../ontouml-gufo/gufo)
 
 ## Mapping and Alignment Strategy
 
@@ -146,7 +146,7 @@
 
     These mappings support semantic alignment without requiring modification to the original schema and are managed either by Health-RI (non-invasively in SSSOM) or by partners (embedded in their own RDF models).
 
-    [Full explanation](../method/mapping-strategy.md)
+    [Full explanation](../method/mapping-strategy)
 
 ??? question "What is `skos:exactMatch`, and how is it different from `owl:equivalentClass`?"
     `skos:exactMatch` indicates strong semantic similarity between two concepts across different ontologies, but it does not imply logical equivalence. Unlike `owl:equivalentClass`, it avoids unintended reasoning consequences and is safer for linking ontologies with different logical foundations.
@@ -158,11 +158,11 @@
     If your concept is broader or narrower than any existing reference concept, use `skos:broadMatch` or `skos:narrowMatch` accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future.
 
 ??? question "Can new concepts be added to the Health-RI ontology to improve mapping precision?"
-    Yes. When `skos:exactMatch` cannot be used due to missing concepts, we encourage you to contact the Health-RI modeling team ([read more.](contributing.md)).
+    Yes. When `skos:exactMatch` cannot be used due to missing concepts, we encourage you to contact the Health-RI modeling team ([read more.](../contributing)).
 
     If justified, new intermediate concepts may be added to the reference ontology. This helps replace approximate mappings (`skos:broadMatch`, `skos:narrowMatch`) with exact ones and ensures better semantic precision for reasoning, integration, and long-term alignment.
 
-    [See example](../method/mapping-strategy.md)
+    [See example](../method/mapping-strategy)
 
 ??? question "Who can create or host the semantic mappings?"
     Mappings can be authored by:
@@ -179,7 +179,7 @@
     - The **Health-RI team**, which curates non-invasive mappings using the [SSSOM](https://w3id.org/sssom/) format. These mappings are published externally and do not alter the original third-party ontologies.
     - **External partners**, who can embed mappings directly in their own ontology files using SKOS properties (e.g., `skos:exactMatch`).
 
-    [Read more.](../method/mapping-strategy.md)
+    [Read more.](../method/mapping-strategy)
 
 
 ## Ontology Lifecycle and Publishing
@@ -189,7 +189,7 @@
 ??? question "Where can I find the latest version of the Health-RI ontology?"
     All published versions are available in the `/ontologies/` folder. The most recent major release is always accessible via:
     <https://w3id.org/health-ri/ontology/latest>
-    [More on versioning](../ontology/publishing.md)
+    [More on versioning](../ontology/publishing)
 
 ??? question "How do I cite or refer to the Health-RI initiative and its ontology?"
     You can use the following permanent, stable, and dereferenceable URIs to cite the initiative and its semantic artifacts:
@@ -199,7 +199,7 @@
 
     These PIDs support long-term access, are suitable for citations, and follow FAIR practices.
 
-    [Read more.](../ontology/permanent-ids.md)
+    [Read more.](../ontology/permanent-ids)
 
 ??? question "What artifacts are published with each ontology release?"
     Each release includes:
@@ -209,7 +209,7 @@
     - Diagram images
     - A versioned changelog and archive
 
-    [Details here.](../ontology/publishing.md)
+    [Details here.](../ontology/publishing)
 
 ??? question "How can I access a specific version of the Health-RI ontology?"
     Use the versioned PID format: `https://w3id.org/health-ri/ontology/vX.Y.Z/{format}`
@@ -226,7 +226,7 @@
     `https://w3id.org/health-ri/ontology/v0.6.0/ttl` → Ontology file for version 0.6.0
     `https://w3id.org/health-ri/ontology/v0.6.0/specification` → Human-readable specification
 
-    [Details here.](../ontology/permanent-ids.md)
+    [Details here.](../ontology/permanent-ids)
 
 ??? question "What’s the difference between the latest and versioned ontology URIs?"
     - The **latest URI** (`https://w3id.org/health-ri/ontology`) always points to the most recent stable release. Its content may change over time as new versions are published.
@@ -236,7 +236,7 @@
 
     Use the **latest URI** when you want to stay aligned with the most up-to-date ontology version and future improvements.
 
-    [More info](../ontology/permanent-ids.md)
+    [More info](../ontology/permanent-ids)
 
 ??? question "Which URI should I use in my mapping: the latest or a versioned one?"
     Use the **latest URI** (e.g., `https://w3id.org/health-ri/ontology#HealthcarePatient`) when:
@@ -249,19 +249,19 @@
     - You need traceability and reproducibility (e.g., publications, data provenance).
     - You want to avoid semantic drift caused by future updates.
 
-    [Best practices.](../ontology/permanent-ids.md)
+    [Best practices.](../ontology/permanent-ids)
 
 ??? question "What is the publishing strategy for ontology releases?"
     A fast versioning strategy is adopted, where only major versions are considered stable and published with full documentation. Minor/patch versions are published for collaboration and traceability.
-    [More info.](../ontology/publishing.md)
+    [More info.](../ontology/publishing)
 
 ??? question "How are the OntoUML and gUFO ontologies and the produced semantic mappings maintained over time?"
     Ontologies and semantic mappings are maintained in version-controlled repositories and released through a structured publishing pipeline. Each release is assigned a permanent, citable URL, with both a persistent identifier (PURL) and a timestamped version. Ontologies are published in multiple formats (e.g., RDF/Turtle, JSON) and validated prior to release. This process ensures transparency, long-term accessibility, and semantic stability across versions.
-    [Read more.](../ontology/publishing.md)
+    [Read more.](../ontology/publishing)
 
 ??? question "Who is responsible for maintaining the ontology and its associated mappings?"
     The Health-RI team is responsible for maintaining the core ontologies and mappings produced within the initiative. This work is carried out in close collaboration with external partners who contribute ideas, suggestions, and mappings. Contributions are reviewed and integrated through a structured, version-controlled process.
-    [Read more.](contributing.md)
+    [Read more.](../contributing)
 
 ??? question "How will the new solutions be maintained and supported? (TBD)"
     TBD.
