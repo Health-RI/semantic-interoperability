@@ -12,13 +12,13 @@
         <meta name="author" content="Pedro Paulo F. Barcelos">
       
       
-        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/ontology/publishing/">
+        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/ontology/publication/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../specification.html">
       
       
-        <link rel="next" href="../changelog/">
+        <link rel="next" href="../permanent-ids/">
       
       
       <link rel="icon" href="../../assets/images/health-ri-favicon.png">
@@ -872,6 +872,52 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ontology Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ontology Specification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -943,33 +989,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#published-artifacts_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Published Artifacts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#repository-structure" class="md-nav__link">
     <span class="md-ellipsis">
       Repository Structure
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Repository Structure">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#archive-and-change-history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Archive and Change History
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#permanent-identifiers" class="md-nav__link">
+  <a href="#archive-and-change-history" class="md-nav__link">
     <span class="md-ellipsis">
-      Permanent Identifiers
+      Archive and Change History
     </span>
   </a>
   
@@ -991,104 +1031,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Changelog
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../documentation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Ontology Documentation
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../specification.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Ontology Specification
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mappings/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Mappings
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../permanent-ids/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Permanent Identifiers (PIDs)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changelog
     
   </span>
   
@@ -1182,8 +1153,7 @@
 <p>While inspired by <a href="https://semver.org/">Semantic Versioning</a>, this adapted strategy is tailored for ontology and conceptual model management.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Only <strong>major versions</strong> will trigger a formal release and will have a corresponding published specification webpage (location to be defined). These releases are considered <strong>stable versions</strong>, and intended for broader reuse and citation.
-Minor and patch versions are published in the repository but will not have standalone specification pages.</p>
+<p>Only <strong>major versions</strong> will trigger a formal release and will have a corresponding published specification webpage. These releases are considered <strong>stable versions</strong>, and intended for broader reuse and citation.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1191,27 +1161,43 @@ Minor and patch versions are published in the repository but will not have stand
 </div>
 <h2 id="published-artifacts">Published Artifacts</h2>
 <p>For each ontology release, the following artifacts are published:</p>
+<h2 id="published-artifacts_1">Published Artifacts</h2>
+<p>For each ontology release, the following artifacts are published — always in both <code>ontologies/latest/</code> and <code>ontologies/versioned/</code> folders.</p>
 <ul>
+<li><strong>OntoUML conceptual model (Visual Paradigm)</strong>
+  Includes all OntoUML constructs and diagrams.</li>
+<li><a href="https://w3id.org/health-ri/ontology/vpp"><code>ontologies/latest/health-ri-ontology.vpp</code></a></li>
 <li>
-<p><strong>OntoUML conceptual model (Visual Paradigm)</strong>
-  File: <code>Health-RI Ontology-v&lt;version&gt;.vpp</code>
-  Includes all OntoUML constructs and diagrams</p>
+<p><code>ontologies/versioned/health-ri-ontology-v&lt;version&gt;.vpp</code></p>
 </li>
 <li>
 <p><strong>OntoUML JSON export</strong>
-  File: <code>Health-RI Ontology-v&lt;version&gt;.json</code>
-  Conforms to the <a href="https://w3id.org/ontouml/schema">OntoUML Schema</a></p>
+  Conforms to the <a href="https://w3id.org/ontouml/schema">OntoUML Schema</a>.</p>
+</li>
+<li><a href="https://w3id.org/health-ri/ontology/json"><code>ontologies/latest/health-ri-ontology.json</code></a></li>
+<li>
+<p><code>ontologies/versioned/health-ri-ontology-v&lt;version&gt;.json</code></p>
 </li>
 <li>
 <p><strong>gUFO OWL ontology (Turtle)</strong>
-  File: <code>Health-RI Ontology-v&lt;version&gt;.ttl</code>
-  OWL serialization that imports or reflects gUFO axioms</p>
+  OWL serialization that imports or reflects gUFO axioms.</p>
+</li>
+<li><a href="https://w3id.org/health-ri/ontology/ttl"><code>ontologies/latest/health-ri-ontology.ttl</code></a></li>
+<li>
+<p><code>ontologies/versioned/health-ri-ontology-v&lt;version&gt;.ttl</code></p>
 </li>
 <li>
-<p><strong>Diagram images</strong>
-  Folder: <code>ontologies/model images</code>
-  Contains the exported PNG images of all diagrams that compose the model</p>
+<p><strong>Markdown documentation</strong></p>
 </li>
+<li><a href="https://w3id.org/health-ri/ontology/documentation"><code>ontologies/latest/documentations/documentation.md</code></a></li>
+<li>
+<p><code>ontologies/versioned/documentations/documentation-v&lt;version&gt;.md</code></p>
+</li>
+<li>
+<p><strong>HTML specification</strong></p>
+</li>
+<li><a href="https://w3id.org/health-ri/ontology/specification"><code>ontologies/latest/documentations/specification.html</code></a></li>
+<li><code>ontologies/versioned/documentations/specification-v&lt;version&gt;.html</code></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1221,38 +1207,53 @@ As a result, no <code>.ttl</code> file will be provided for versions that are st
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>The version numbers of the <code>.vpp</code>/<code>.json</code> (OntoUML) and <code>.ttl</code> (OWL/gUFO) files are managed independently. The <code>.ttl</code> file includes a <code>dcterms:conformsTo</code> metadata relation to indicate which OntoUML version it corresponds to.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">w3id</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">health</span><span class="o">-</span><span class="nv">ri</span><span class="o">/</span><span class="nv">ontology</span>#<span class="o">&gt;</span><span class="w"> </span><span class="nv">dcterms</span>:<span class="nv">conformsTo</span><span class="w"> </span><span class="o">&lt;</span><span class="nv">https</span>:<span class="o">//</span><span class="nv">w3id</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">health</span><span class="o">-</span><span class="nv">ri</span><span class="o">/</span><span class="nv">ontouml</span><span class="o">-</span><span class="nv">v0</span>.<span class="mi">3</span>.<span class="mi">0</span><span class="o">&gt;</span><span class="w"> </span>.
-</code></pre></div>
+<p><code>&lt;https://w3id.org/health-ri/ontology#&gt; dcterms:conformsTo &lt;https://w3id.org/health-ri/ontouml-v0.3.0&gt; .</code></p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">Mapping Artifacts – Coming Soon</p>
+<p>Information about the mapping outputs will be added in a future update. Their design and structure are still under discussion and will be published once finalized.</p>
 </div>
 <h2 id="repository-structure">Repository Structure</h2>
 <p>All current artifacts are made available in the <code>/ontologies</code> folder:</p>
 <div class="highlight"><pre><span></span><code>ontologies/
 │
-├── Health-RI Ontology-vX.Y.Z.vpp    # latest OntoUML model
-├── Health-RI Ontology-vX.Y.Z.json   # latest OntoUML JSON export
-├── Health-RI Ontology-vX.Y.Z.ttl    # latest OWL ontology
-├── model images/                    # exported PNG images of all diagrams
-├── archive.rar                      # compressed file with all previous versions
-└── changelog.md                     # human-readable log of changes
+├── latest/
+│   ├── health-ri-ontology.vpp
+│   ├── health-ri-ontology.json
+│   ├── health-ri-ontology.ttl
+│   ├── documentations/
+│   │   ├── documentation.md
+│   │   └── specification.html
+│   └── images/
+│       └── *.png   # Exported PNG images of all diagrams
+│
+├── versioned/
+│   ├── health-ri-ontology-vX.Y.Z.json
+│   ├── health-ri-ontology-vX.Y.Z.vpp
+│   ├── health-ri-ontology-vX.Y.Z.ttl
+│   └── documentations/
+│       ├── documentation-vX.Y.Z.md
+│       └── specification-vX.Y.Z.html
+│
+├── changelog.md
+└── ...
 </code></pre></div>
-<h3 id="archive-and-change-history">Archive and Change History</h3>
+<div class="admonition tip">
+<p class="admonition-title">What does 'latest' mean?</p>
+<p>The <code>latest/</code> folder always mirrors the contents of the highest published version. This provides stable, convenient access to the most recent files without needing to specify a version number.</p>
+</div>
+<h2 id="archive-and-change-history">Archive and Change History</h2>
 <ul>
-<li>Only the <strong>latest version</strong> of each artifact is visible directly in the <code>ontologies/</code> folder.</li>
-<li><strong>All previous versions</strong> are archived in the <code>archive.rar</code> file for transparency and reproducibility.</li>
+<li>Only the <strong>latest version</strong> of each artifact is visible directly in the <code>ontologies/latest/</code> folder.</li>
+<li><strong>All previous versions</strong> are organized in the <code>ontologies/versioned/</code> directory for transparency and reproducibility.</li>
 <li>A <strong>changelog file (<code>changelog.md</code>)</strong> summarizes all version changes and links them to their respective files and semantic impact.</li>
 <li>The changelog follows the <a href="https://keepachangelog.com/">Keep a Changelog</a> format.</li>
 <li>It is generated and maintained with the support of an AI-assisted tool to ensure consistency and clarity.</li>
 </ul>
-<h2 id="permanent-identifiers">Permanent Identifiers</h2>
-<p>To support stable references and long-term access, we provide permanent URLs (PermURLs) via <a href="https://w3id.org/">W3ID</a>:</p>
-<ul>
-<li><strong>Latest release</strong>: <a href="https://w3id.org/health-ri/ontology/latest">https://w3id.org/health-ri/ontology/latest</a></li>
-<li><strong>All releases overview</strong>: <a href="https://w3id.org/health-ri/ontology/releases">https://w3id.org/health-ri/ontology/releases</a></li>
-</ul>
-<p>These PermURLs allow users and systems to always retrieve the most recent or complete list of released ontology versions, even if the actual files are hosted elsewhere (e.g., on GitHub).</p>
+<div class="admonition tip">
+<p class="admonition-title">Looking for PID details?</p>
+<p>The full description of all Permanent Identifiers (PIDs) — including format-specific URIs for each version — is documented separately. Access the complete description at: <a href="../permanent-ids/">Permanent Identifiers</a>.</p>
+</div>
 
 
 
