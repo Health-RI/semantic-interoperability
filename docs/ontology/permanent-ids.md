@@ -4,7 +4,7 @@ This page lists the **persistent, stable, and dereferenceable identifiers (PIDs)
 
 ## Initiative-Wide Identifier: `/semantic-interoperability`
 
-### URI  
+### URI
 
 `https://w3id.org/health-ri/semantic-interoperability`
 
@@ -12,13 +12,13 @@ This URI refers to the Semantic Interoperability Initiative as a whole. It provi
 
 ## Ontology Identifier: `/ontology`
 
-### URI  
+### URI
 
 `https://w3id.org/health-ri/ontology`
 
-This is the **main identifier for the Health-RI Ontology**. It supports HTTP content negotiation to serve either machine-readable ontology files or human-readable documentation.
+This is the **main identifier for the Health-RI Ontology**. It supports HTTP content negotiation to serve either machine-readable ontology files (e.g., Turtle) or human-readable documentation (HTML specification).
 
-### Identifiers for the Latest Ontology Version
+### Identifiers for the **Latest Ontology Version**
 
 These URIs point to the **most recent release** of the Health-RI Ontology and related documentation formats.
 
@@ -32,11 +32,11 @@ These URIs point to the **most recent release** of the Health-RI Ontology and re
 
 Each of these URIs redirects to the latest available version of the resource.
 
-### Identifiers for Versioned Ontology Releases
+### Identifiers for **Versioned Ontology Releases**
 
 To support traceability and reproducibility, each ontology release is also available via **version-specific URIs**.
 
-#### Format  
+#### Format
 
 `https://w3id.org/health-ri/ontology/vX.Y.Z/{format}`
 
@@ -52,25 +52,28 @@ Where:
 
 #### Examples
 
-- `https://w3id.org/health-ri/ontology/v2.0.0/ttl`  
-  → Ontology in Turtle format for version 2.0.0
+- `https://w3id.org/health-ri/ontology/v0.6.0/ttl`
+  → Ontology in Turtle format for version 0.6.0
 
-- `https://w3id.org/health-ri/ontology/v2.0.0/specification`  
-  → HTML specification for version 2.0.0
+- `https://w3id.org/health-ri/ontology/v0.6.0/vpp`
+  → Visual Paradigm project file for version 0.6.0
 
-- `https://w3id.org/health-ri/ontology/v2.0.0/vpp`  
-  → Visual Paradigm project file for version 2.0.0
+- `https://w3id.org/health-ri/ontology/v0.9.1/documentation`
+  → Markdown documentation for version 0.9.1
+
+- `https://w3id.org/health-ri/ontology/v0.6.0/specification`
+  → HTML specification for version 0.6.0
 
 ## Overview of Persistent Identifiers
 
-| PID                              | Description                      | Behavior                          |
-| -------------------------------- | -------------------------------- | --------------------------------- |
-| `/ontology`                      | Ontology root                    | Content negotiation (RDF or HTML) |
-| `/ontology/ttl`                  | Latest ontology in Turtle format | Redirects to raw `.ttl` file      |
-| `/ontology/specification`        | Latest HTML specification        | Human-readable documentation      |
-| `/ontology/documentation`        | Markdown documentation           | Raw `.md` version                 |
-| `/ontology/json`                 | Latest JSON export of OntoUML    | Redirects to `.json`              |
-| `/ontology/vpp`                  | Latest OntoUML model (`.vpp`)    | Redirects to Visual Paradigm file |
-| `/ontology/vX.Y.Z/{format}`      | Versioned ontology release       | Format-specific persistent access |
-| `/semantic-interoperability`     | Project-level identifier         | Redirects to documentation site   |
-| `/semantic-interoperability/git` | Source code and data repository  | Redirects to GitHub               |
+| PID                              | Description                      | Behavior                          | Example                                                    |
+| -------------------------------- | -------------------------------- | --------------------------------- | ---------------------------------------------------------- |
+| `/ontology`                      | Ontology root                    | Content negotiation (RDF or HTML) | `https://w3id.org/health-ri/ontology`                      |
+| `/ontology/ttl`                  | Latest ontology in Turtle format | Redirects to raw `.ttl` file      | `https://w3id.org/health-ri/ontology/ttl`                  |
+| `/ontology/specification`        | Latest HTML specification        | Human-readable documentation      | `https://w3id.org/health-ri/ontology/specification`        |
+| `/ontology/documentation`        | Markdown documentation           | Redirects to `.md`                | `https://w3id.org/health-ri/ontology/documentation`        |
+| `/ontology/json`                 | Latest JSON export of OntoUML    | Redirects to `.json`              | `https://w3id.org/health-ri/ontology/json`                 |
+| `/ontology/vpp`                  | Latest OntoUML model (`.vpp`)    | Redirects to Visual Paradigm file | `https://w3id.org/health-ri/ontology/vpp`                  |
+| `/ontology/vX.Y.Z/{format}`      | Versioned ontology release       | Format-specific persistent access | `https://w3id.org/health-ri/ontology/v0.6.0/ttl`           |
+| `/semantic-interoperability`     | Project-level identifier         | Redirects to documentation site   | `https://w3id.org/health-ri/semantic-interoperability`     |
+| `/semantic-interoperability/git` | Source code and data repository  | Redirects to GitHub               | `https://w3id.org/health-ri/semantic-interoperability/git` |
