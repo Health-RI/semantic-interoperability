@@ -157,6 +157,13 @@
 ??? question "What should I do if no exact match exists between my concept and the Health-RI ontology?"
     If your concept is broader or narrower than any existing reference concept, use `skos:broadMatch` or `skos:narrowMatch` accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future.
 
+??? question "Can new concepts be added to the Health-RI ontology to improve mapping precision?"
+    Yes. When `skos:exactMatch` cannot be used due to missing concepts, we encourage you to contact the Health-RI modeling team ([read more.](contributing.md)).
+
+    If justified, new intermediate concepts may be added to the reference ontology. This helps replace approximate mappings (`skos:broadMatch`, `skos:narrowMatch`) with exact ones and ensures better semantic precision for reasoning, integration, and long-term alignment.
+
+    [See example](../method/mapping-strategy)
+
 ??? question "Who can create or host the semantic mappings?"
     Mappings can be authored by:
 
@@ -165,6 +172,15 @@
 
 ??? question "Can I request new reference concepts if needed for mapping?"
     Yes. If you find that no suitable concept exists in the Health-RI ontology to match yours, you can propose new reference concepts. These requests are welcome and reviewed by the modeling team. If accepted, new concepts may be added to enable stronger mappings in the future.
+
+??? question "Who creates and maintains the semantic mappings to the Health-RI ontology?"
+    Mappings can be created and maintained by:
+
+    - The **Health-RI team**, which curates non-invasive mappings using the [SSSOM](https://w3id.org/sssom/) format. These mappings are published externally and do not alter the original third-party ontologies.
+    - **External partners**, who can embed mappings directly in their own ontology files using SKOS properties (e.g., `skos:exactMatch`).
+
+    [Read more.](../method/mapping-strategy/#aligning-third-party-ontologies-via-skos-mapping)
+
 
 ## Ontology Lifecycle and Publishing
 
@@ -183,7 +199,7 @@
 
     These PIDs support long-term access, are suitable for citations, and follow FAIR practices.
 
-    [Read more.](../ontology/permanent-ids/)
+    [Read more.](../ontology/permanent-ids.md)
 
 ??? question "What artifacts are published with each ontology release?"
     Each release includes:
@@ -210,7 +226,7 @@
     `https://w3id.org/health-ri/ontology/v0.6.0/ttl` → Ontology file for version 0.6.0
     `https://w3id.org/health-ri/ontology/v0.6.0/specification` → Human-readable specification
 
-    [Details here.](../ontology/permanent-ids/)
+    [Details here.](../ontology/permanent-ids.md)
 
 ??? question "What’s the difference between the latest and versioned ontology URIs?"
     - The **latest URI** (`https://w3id.org/health-ri/ontology`) always points to the most recent stable release. Its content may change over time as new versions are published.
@@ -220,7 +236,7 @@
 
     Use the **latest URI** when you want to stay aligned with the most up-to-date ontology version and future improvements.
 
-    [More info](../ontology/permanent-ids/)
+    [More info](../ontology/permanent-ids.md)
 
 ??? question "Which URI should I use in my mapping: the latest or a versioned one?"
     Use the **latest URI** (e.g., `https://w3id.org/health-ri/ontology#HealthcarePatient`) when:
@@ -233,7 +249,7 @@
     - You need traceability and reproducibility (e.g., publications, data provenance).
     - You want to avoid semantic drift caused by future updates.
 
-    [Best practices.](../ontology/permanent-ids/)
+    [Best practices.](../ontology/permanent-ids.md)
 
 ??? question "What is the publishing strategy for ontology releases?"
     A fast versioning strategy is adopted, where only major versions are considered stable and published with full documentation. Minor/patch versions are published for collaboration and traceability.
@@ -241,7 +257,7 @@
 
 ??? question "How are the OntoUML and gUFO ontologies and the produced semantic mappings maintained over time?"
     Ontologies and semantic mappings are maintained in version-controlled repositories and released through a structured publishing pipeline. Each release is assigned a permanent, citable URL, with both a persistent identifier (PURL) and a timestamped version. Ontologies are published in multiple formats (e.g., RDF/Turtle, JSON) and validated prior to release. This process ensures transparency, long-term accessibility, and semantic stability across versions.
-    [Read more.](./ontology/publishing.md)
+    [Read more.](../ontology/publishing.md)
 
 ??? question "Who is responsible for maintaining the ontology and its associated mappings?"
     The Health-RI team is responsible for maintaining the core ontologies and mappings produced within the initiative. This work is carried out in close collaboration with external partners who contribute ideas, suggestions, and mappings. Contributions are reviewed and integrated through a structured, version-controlled process.
