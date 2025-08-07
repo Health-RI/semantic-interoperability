@@ -1351,6 +1351,21 @@
 <a href="../method/publication">More on versioning</a></p>
 </details>
 <details class="question">
+<summary>What is the difference between major, minor, and patch versions in your versioning policy?</summary>
+<p>We follow an adapted semantic versioning scheme: <code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>.<br />
+- <strong>Major</strong> versions mark conceptual milestones or structural overhauls and are considered stable and citable.<br />
+- <strong>Minor</strong> versions include scoped improvements that preserve semantic compatibility.<br />
+- <strong>Patch</strong> versions address fixes or clarifications without modifying the established scope.<br />
+Only major versions trigger a formal release and a published specification.</p>
+<p><a href="../method/publication">Read more.</a></p>
+</details>
+<details class="question">
+<summary>What does the 'latest' folder contain and how is it maintained?</summary>
+<p>The <code>ontologies/latest/</code> folder always mirrors the highest available published version of each artifact.<br />
+It provides stable access to the most recent files without needing to specify a version number.<br />
+Each new release automatically updates the <code>latest/</code> folder to reflect its content.</p>
+</details>
+<details class="question">
 <summary>How do I cite or refer to the Health-RI initiative and its ontology?</summary>
 <p>You can use the following permanent, stable, and dereferenceable URIs to cite the initiative and its semantic artifacts:</p>
 <ul>
@@ -1361,15 +1376,33 @@
 <p><a href="../method/permanent-ids">Read more.</a></p>
 </details>
 <details class="question">
-<summary>What artifacts are published with each ontology release?</summary>
-<p>Each release includes:</p>
+<summary>What types of files are published with each ontology version?</summary>
+<p>Each ontology version includes the following artifacts:</p>
 <ul>
-<li>OntoUML <code>.vpp</code> and <code>.json</code> files</li>
-<li>OWL <code>.ttl</code> file</li>
-<li>Diagram images</li>
-<li>A versioned changelog and archive</li>
+<li><code>.vpp</code>: OntoUML conceptual model (Visual Paradigm project)</li>
+<li><code>.json</code>: OntoUML export compliant with the OntoUML Schema</li>
+<li><code>.ttl</code>: OWL ontology (based on gUFO) — only for syntactically valid models</li>
+<li><code>.md</code>: Human-readable documentation (Markdown)</li>
+<li><code>.html</code>: Human-readable specification (HTML)</li>
+<li><code>.png</code>: Diagram images (only in the <code>latest/</code> folder)</li>
 </ul>
-<p><a href="../method/publication">Details here.</a></p>
+<p>These are published under both <code>ontologies/latest/</code> (most recent version) and <code>ontologies/versioned/</code> (versioned archive).<br />
+<a href="../method/publication">More details here.</a></p>
+</details>
+<details class="question">
+<summary>Where can I find the exported images of the ontology diagrams?</summary>
+<p>Exported PNG images of all OntoUML diagrams are available in the <code>ontologies/latest/images/</code> folder.<br />
+These images are always generated from the latest <code>.vpp</code> file and are not maintained for previous versions.</p>
+</details>
+<details class="question">
+<summary>Why is there sometimes no OWL (.ttl) file available for a version?</summary>
+<p>The <code>.ttl</code> file (gUFO-compliant OWL ontology) is only generated when the OntoUML model is syntactically valid.<br />
+Incomplete or draft versions may not include a <code>.ttl</code> file until model consistency is ensured.</p>
+</details>
+<details class="question">
+<summary>Can the latest version of the OWL (.ttl) file correspond to a different version than the latest version of the OntoUML (.json/.vpp) model?</summary>
+<p>Yes. The <code>.ttl</code> versioning is managed independently and may lag behind the <code>.vpp</code> or <code>.json</code> files.<br />
+The OWL file includes a <code>dcterms:conformsTo</code> triple that explicitly links it to the OntoUML version it was derived from.</p>
 </details>
 <details class="question">
 <summary>How can I access a specific version of the Health-RI ontology?</summary>
