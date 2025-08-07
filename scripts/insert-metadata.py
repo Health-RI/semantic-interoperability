@@ -81,12 +81,12 @@ def bind_common_prefixes(graph: Graph) -> None:
 def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
     """
     Merges TTL file B into the latest version of TTL file A and overwrites A.
-    Also adds dct:modified, owl:versionInfo, and owl:versionIRI triples if metadata was merged.
+    Also adds dct:modified, owl:versionInfo, owl:versionIRI, and two dct:conformsTo triples.
 
     Args:
         latest_a (Path): Path to the latest TTL file A.
         b_path (Path): Path to file B.
-        version_str (str): The version string to include in owl:versionInfo and owl:versionIRI.
+        version_str (str): The version string to include in metadata triples.
     """
     g_a = Graph()
     g_a.parse(latest_a, format="turtle")
@@ -96,21 +96,29 @@ def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
 
     g_a += g_b
 
-    # Add dct:modified and owl:versionInfo triples
     today = date.today().isoformat()
 
     ontology_uri = URIRef("https://w3id.org/health-ri/ontology")
     version_iri = URIRef(f"https://w3id.org/health-ri/ontology/v{version_str}")
+    conforms_to_vpp = URIRef(f"https://w3id.org/health-ri/ontology/v{version_str}/vpp")
+    conforms_to_json = URIRef(
+        f"https://w3id.org/health-ri/ontology/v{version_str}/json"
+    )
 
     g_a.add((ontology_uri, DCTERMS.modified, Literal(today, datatype=XSD.date)))
     g_a.add((ontology_uri, OWL.versionInfo, Literal(version_str)))
     g_a.add((ontology_uri, OWL.versionIRI, version_iri))
+    g_a.add((ontology_uri, DCTERMS.conformsTo, conforms_to_vpp))
+    g_a.add((ontology_uri, DCTERMS.conformsTo, conforms_to_json))
 
     bind_common_prefixes(g_a)
 
     g_a.serialize(destination=latest_a, format="turtle")
     logging.info(f"Metadata successfully merged. File saved to: {latest_a.resolve()}")
-    logging.info(f"Added dct:modified = {today}, owl:versionInfo = {version_str}, owl:versionIRI = {version_iri}")
+    logging.info(
+        f"Added dct:modified = {today}, owl:versionInfo = {version_str}, owl:versionIRI = {version_iri}, dct:conformsTo = {conforms_to_vpp}, dct:conformsTo = {conforms_to_json}"
+    )
+
 
 if __name__ == "__main__":
     script_dir = Path(__file__).resolve().parent
@@ -131,4 +139,6 @@ if __name__ == "__main__":
         if not latest_gufo_path:
             logging.warning(f"No valid TTL file found in: {directory}")
         if not ttl_metadata_path.exists():
-            logging.warning(f"Metadata file not found at: {ttl_metadata_path.resolve()}")
+            logging.warning(
+                f"Metadata file not found at: {ttl_metadata_path.resolve()}"
+            )

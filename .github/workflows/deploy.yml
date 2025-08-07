@@ -23,7 +23,7 @@ jobs:
         run: python scripts/clean_unwanted_files.py
 
       - name: Ensure metadata is added to gUFO file
-        run: python scripts/merge-metadata.py
+        run: python scripts/insert-metadata.py
 
       - name: Move newest files from versioned folder to latest folder
         run: python scripts/move-latest.py
