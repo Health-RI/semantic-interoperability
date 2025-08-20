@@ -50,7 +50,7 @@ body:
         - owl:DatatypeProperty
         - skos:Concept
         - owl:NamedIndividual
-      default: ""
+      default: 0
     validations:
       required: false
 
@@ -238,7 +238,7 @@ body:
         License for the mapping - spec: https://mapping-commons.github.io/sssom/license/
         Must be an absolute (NonRelativeURI). If omitted, the default will be applied: https://creativecommons.org/licenses/by/4.0/
       placeholder: "e.g., https://creativecommons.org/licenses/by/4.0/"
-      value: ""
+      value: "https://creativecommons.org/licenses/by/4.0/"
     validations:
       required: false
 
