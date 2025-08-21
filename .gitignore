@@ -211,3 +211,5 @@ Thumbs.db
 
 # Ignore all .del files
 **/*.del
+
+.vscode/
