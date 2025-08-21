@@ -1,0 +1,3 @@
+record_id2	subject_id	subject_label	object_id	object_label	predicate_id	mapping_justification	author_id	mapping_date
+hri:test1	fhir:birth_sex	The sex of a person at birth (and recorded on the birth certificate).	hri:SexAtBirth	Sex at Birth	rdfs:subClassOf	semapv:ManualMappingCuration	https://orcid.org/0000-0003-2736-7817	2025-07-02
+hri:test2	omop:gender_concept_id	The biological sex of a person at birth.	hri:SexAtBirth	Sex at Birth	rdfs:subClassOf	semapv:ManualMappingCuration	https://orcid.org/0000-0003-2736-7817	2025-07-02

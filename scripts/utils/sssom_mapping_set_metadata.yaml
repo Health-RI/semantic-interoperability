@@ -1,0 +1,86 @@
+# =============================================================================
+# Metadata for Health-RI SSSOM Mapping Set
+# =============================================================================
+
+# This file documents high-level metadata about the mapping set, following the SSSOM (Simple Standard for Sharing Ontological Mappings) 1.1 specification.
+
+# Initiative overview for readers
+comment: This mapping set is part of the Health-RI Semantic Interoperability Initiative, which supports the development of shared ontologies and mappings to align heterogeneous data sources conceptually and semantically.
+
+# ---------------------------------------------------------------------------
+# Standard & versioning
+# ---------------------------------------------------------------------------
+
+# The version of the SSSOM specification used. Important for validation.
+sssom_version: 1.1
+
+# A persistent identifier for this mapping set. W3ID guarantees long-term resolvability and stability.
+mapping_set_id: https://w3id.org/health-ri/semantic-interoperability/mappings
+
+# Version identifier for the mapping set. Automatically generated in publication workflows.
+# mapping_set_version:
+
+# A short, human-readable title for this mapping set.
+mapping_set_title: Health-RI Ontology Mappings
+
+# A human-readable description for this mapping set.
+mapping_set_description: Manually curated mappings aligning key concepts from external artifacts to the Health-RI Ontology.
+
+# ---------------------------------------------------------------------------
+# Provenance & stewardship
+# ---------------------------------------------------------------------------
+
+# Machine-readable identifier for the creator (ORCID).
+creator_id: orcid:0000-0003-2736-7817
+
+# Human-readable name of the mapping set creator.
+creator_label: Pedro Paulo Favato Barcelos
+
+# Date when this mapping set was first published.
+publication_date: 2025-07-30
+
+# ---------------------------------------------------------------------------
+# Licensing and governance
+# ---------------------------------------------------------------------------
+
+# License under which the mapping set is released. CC BY 4.0 encourages reuse while requiring attribution.
+license: https://creativecommons.org/licenses/by/4.0/
+
+# URL of the issue tracker for reporting problems or requesting changes.
+issue_tracker: https://github.com/Health-RI/semantic-interoperability/issues
+
+# ---------------------------------------------------------------------------
+# References / related resources
+# ---------------------------------------------------------------------------
+
+# Related landing page for the broader semantic interoperability project.
+see_also: https://w3id.org/health-ri/semantic-interoperability
+
+# ---------------------------------------------------------------------------
+# CURIE map
+# ---------------------------------------------------------------------------
+
+# Defines namespace prefixes used in the mappings file. Ensures compact representation of IRIs and consistent resolution.
+curie_map:
+  dcterms: http://purl.org/dc/terms/
+  hri: https://w3id.org/health-ri/ontology#
+  hrim: https://w3id.org/health-ri/semantic-interoperability/mappings#
+  orcid: https://orcid.org/
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  semapv: https://w3id.org/semapv/vocab/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sssom: https://w3id.org/sssom/
+
+# ---------------------------------------------------------------------------
+# Definition of non-SSSOM slots 
+# ---------------------------------------------------------------------------
+
+extension_definitions:
+  - slot_name: replaces
+    property: dcterms:replaces
+    type_hint: sssom:record_id
+  - slot_name: isReplacedBy
+    property: dcterms:isReplacedBy
+    type_hint: sssom:record_id
