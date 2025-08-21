@@ -63,7 +63,7 @@ see_also: https://w3id.org/health-ri/semantic-interoperability
 # Defines namespace prefixes used in the mappings file. Ensures compact representation of IRIs and consistent resolution.
 curie_map:
   dcterms: http://purl.org/dc/terms/
-  hri: https://w3id.org/health-ri/ontology#
+  hrio: https://w3id.org/health-ri/ontology#
   hrim: https://w3id.org/health-ri/semantic-interoperability/mappings#
   orcid: https://orcid.org/
   prov: http://www.w3.org/ns/prov#

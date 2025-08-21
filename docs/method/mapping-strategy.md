@@ -92,16 +92,16 @@ These mappings are only to be used when **no perfect equivalence exists** and a 
 ![Cross-ontology mapping using hriv:semanticsDefinedBy and rdfs:subClassOf](./assets/images/example-mapping.png)
 *Figure 3: External ontologies (e.g., HealthCare and Veterinary) map their local concepts to reference concepts in the Health-RI Ontology via `hriv:semanticsDefinedBy` (red). These reference concepts are also semantically structured via `rdfs:subClassOf` (brown), enabling consistent classification across domains.*
 
-This figure illustrates how concepts such as `hc:Patient` and `vet:Patient` are mapped to `hri:HealthcarePatient` and `hri:VeterinaryPatient` respectively. These are in turn subsumed by higher-level concepts like `hri:Human` or `hri:NonHumanAnimal`, ultimately aligning under `hri:Animal`. This modeling strategy ensures that semantic alignments preserve domain distinctions while enabling unified interpretation under a shared reference ontology.
+This figure illustrates how concepts such as `hc:Patient` and `vet:Patient` are mapped to `hrio:HealthcarePatient` and `hrio:VeterinaryPatient` respectively. These are in turn subsumed by higher-level concepts like `hrio:Human` or `hrio:NonHumanAnimal`, ultimately aligning under `hrio:Animal`. This modeling strategy ensures that semantic alignments preserve domain distinctions while enabling unified interpretation under a shared reference ontology.
 
 !!! tip "How to assert an exact match in your OWL file"
     To assign that a concept in your ontology has its semantics defined by a concept in the **latest version** of the Health-RI Ontology, use `hriv:semanticsDefinedBy` as shown below:
 
     - `hc:Patient hriv:semanticsDefinedBy <https://w3id.org/health-ri/ontology#HealthcarePatient> .`
 
-    Or, if you've defined the prefix `hri: <https://w3id.org/health-ri/ontology#>`, you can simply write:
+    Or, if you've defined the prefix `hrio: <https://w3id.org/health-ri/ontology#>`, you can simply write:
 
-    - `hc:Patient hriv:semanticsDefinedBy hri:HealthcarePatient .`
+    - `hc:Patient hriv:semanticsDefinedBy hrio:HealthcarePatient .`
 
     To align with a **specific version** of a Health-RI Ontology's concept (e.g., `v2.0.0`), use:
 
@@ -112,9 +112,9 @@ This figure illustrates how concepts such as `hc:Patient` and `vet:Patient` are 
 ![Cross-ontology mapping using hriv:semanticsDefinedBy, hriv:semanticsDefinedByNarrow, and hriv:semanticsDefinedByBroad](./assets/images/example-mapping2.png)
 *Figure 4: Mapping external concepts from GeneralHealth and PetVeterinary ontologies to the Health-RI ontology. This example evolves from Figure 3 by incorporating `hriv:semanticsDefinedByNarrow` (magenta) and `hriv:semanticsDefinedByBroad` (blue) mappings in addition to `hriv:semanticsDefinedBy` (red).*
 
-- `ghc:Patient` and `pvet:Patient` are both linked via `hriv:semanticsDefinedByNarrow` to `hri:VeterinaryPatient`, indicating that each of these patients represents a specialized kind of patient in the Health-RI ontology.
-- `pvet:PetAnimal` is linked via `hriv:semanticsDefinedByBroad` to `hri:NonHumanAnimal`, signaling that the external concept is broader in scope.
-- The figure also maintains `hriv:semanticsDefinedBy` mappings for concepts that are fully equivalent (e.g., `ghc:Animal` and `hri:Animal`).
+- `ghc:Patient` and `pvet:Patient` are both linked via `hriv:semanticsDefinedByNarrow` to `hrio:VeterinaryPatient`, indicating that each of these patients represents a specialized kind of patient in the Health-RI ontology.
+- `pvet:PetAnimal` is linked via `hriv:semanticsDefinedByBroad` to `hrio:NonHumanAnimal`, signaling that the external concept is broader in scope.
+- The figure also maintains `hriv:semanticsDefinedBy` mappings for concepts that are fully equivalent (e.g., `ghc:Animal` and `hrio:Animal`).
 - Internal hierarchical structure is preserved via `rdfs:subClassOf` to allow consistent classification across ontologies.
 
 This more flexible mapping strategy supports gradual alignment of external ontologies to our reference model even in cases where semantic overlap is partial rather than complete.
@@ -122,8 +122,8 @@ This more flexible mapping strategy supports gradual alignment of external ontol
 !!! tip "How to assert broader or narrower mappings in your OWL file"
     After having defined the `hri` prefix, to express an approximate mapping using `hriv:semanticsDefinedByNarrow` or `hriv:semanticsDefinedByBroad`, use:
 
-      - `ghc:Patient hriv:semanticsDefinedByNarrow hri:VeterinaryPatient .`
-      - `pvet:PetAnimal hriv:semanticsDefinedByBroad hri:NonHumanAnimal .`
+      - `ghc:Patient hriv:semanticsDefinedByNarrow hrio:VeterinaryPatient .`
+      - `pvet:PetAnimal hriv:semanticsDefinedByBroad hrio:NonHumanAnimal .`
 
     You may also reference a specific version using the full ontology's URI (e.g., for v2.0.0):
 
@@ -140,7 +140,7 @@ In cases where an external ontology cannot be mapped via `hriv:semanticsDefinedB
 - A more **complete and semantically precise reference model**,
 - And clearer, more actionable mappings for downstream reasoning and integration.
 
-In the figure above, concepts like `hri:PetVet.Patient` and `hri:PetAnimal` were introduced to bridge the gap between `pvet:Patient`/`pvet:PetAnimal` and broader Health-RI categories. These new concepts enable the creation of precise `hriv:semanticsDefinedBy` relationships, improving the coherence and utility of both the reference ontology and the external ontology being mapped.
+In the figure above, concepts like `hrio:PetVet.Patient` and `hrio:PetAnimal` were introduced to bridge the gap between `pvet:Patient`/`pvet:PetAnimal` and broader Health-RI categories. These new concepts enable the creation of precise `hriv:semanticsDefinedBy` relationships, improving the coherence and utility of both the reference ontology and the external ontology being mapped.
 
 ## References
 

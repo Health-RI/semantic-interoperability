@@ -101,7 +101,7 @@ body:
     attributes:
       label: object_id (Required)
       description: "ID of the object entity - spec: https://mapping-commons.github.io/sssom/object_id/"
-      placeholder: "e.g., hri:Person"
+      placeholder: "e.g., hrio:Person"
     validations:
       required: true
 
@@ -231,7 +231,7 @@ body:
         Example:
         ```
         fhir: "http://hl7.org/fhir/"
-        hri: "https://w3id.org/health-ri/ontology/"
+        hrio: "https://w3id.org/health-ri/ontology/"
         skos: "http://www.w3.org/2004/02/skos/core#"
         orcid: "https://orcid.org/"
         ```
@@ -242,7 +242,7 @@ body:
         - Include bindings for all prefixes you used (e.g., `fhir`, `hri`, `skos`, `orcid`, etc.).
       placeholder: |
         fhir: "http://hl7.org/fhir/"
-        hri: "https://w3id.org/health-ri/ontology/"
+        hrio: "https://w3id.org/health-ri/ontology/"
         skos: "http://www.w3.org/2004/02/skos/core#"
         orcid: "https://orcid.org/"
     validations:
