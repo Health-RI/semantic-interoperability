@@ -52,6 +52,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.footnotes
   - attr_list
 
 extra_css:
@@ -73,6 +74,7 @@ nav:
   - The Health-RI Method:
       - Overview: method/index.md
       - Mapping Strategy: method/mapping-strategy.md
+      - Mapping Set: method/mapping-set.md
       - Publishing: method/publication.md
       - Permanent Identifiers (PIDs): method/permanent-ids.md
   - The Health-RI Ontology:

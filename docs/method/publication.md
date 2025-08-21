@@ -22,10 +22,6 @@ While inspired by [Semantic Versioning](https://semver.org/), this adapted strat
 
 ## Published Artifacts
 
-For each ontology release, the following artifacts are published:
-
-## Published Artifacts
-
 For each ontology release, the following artifacts are published — always in both `ontologies/latest/` and `ontologies/versioned/` folders.
 
 - **OntoUML conceptual model (Visual Paradigm)**
