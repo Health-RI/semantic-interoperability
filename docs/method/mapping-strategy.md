@@ -62,7 +62,6 @@ These complementary approaches enable semantic alignment in both centrally contr
 !!! info
     For details about the schema and contribution process, see the [SSSOM Mapping Set](./mapping-set.md).
 
-
 !!! warning "Only one `hriv:semanticsDefinedBy` allowed"
     Each concept may have **exactly one** `hriv:semanticsDefinedBy` to a Health-RI concept—**and only when a perfect semantic equivalence exists**. Using more than one `hriv:semanticsDefinedBy` for the same concept is not allowed, as it introduces ambiguity.
 

@@ -186,6 +186,74 @@
 
     [Read more.](../method/mapping-strategy)
 
+## SSSOM Mapping Set
+
+??? question "Is the Health-RI SSSOM Mapping Set manually curated or automatically generated?"
+    It is **manually curated** by the Health-RI mapping team with input from external collaborators.
+
+??? question "Where can I download the SSSOM Mapping Set, and in which formats?"
+    Use the stable URIs:
+
+    - `https://github.com/Health-RI/semantic-interoperability/mappings` → TTL
+    - `https://github.com/Health-RI/semantic-interoperability/mappings/ttl` → TTL
+    - `https://github.com/Health-RI/semantic-interoperability/mappings/tsv` → TSV.
+
+??? question "How is the mapping set versioned?"
+    The mapping set uses date-based versions (YYYY-MM-DD) tied to the publication date, with at most one release per day.
+
+??? question "Can a published mapping be deleted? How are corrections handled?"
+    Published mappings **cannot be removed**. To revise an entry, create a new record that uses `replaces` to supersede the old one; the system will automatically add the corresponding `isReplacedBy` link to the replaced record at publication time.
+
+??? question "Which SSSOM fields are mandatory, optional, or system-assigned?"
+    Fields are divided by responsibility:
+
+    - Contributor (mandatory) — must be provided in PRs (e.g., `subject_id`, `predicate_id`, `object_id`, `mapping_justification`, `author_id`, `mapping_date`)
+    - Contributor (optional) — can be added if available
+    - Curator — added or verified by Health-RI curators
+    - System (Fixed) — constant, cannot be changed
+    - System (Generated) — assigned at publication time
+
+??? question "What fields should I provide when contributing a mapping?"
+    At minimum, contributors must provide all mandatory fields:
+    `subject_id`, `predicate_id`, `object_id`, `mapping_justification`, `author_id`, and `mapping_date`.
+
+    Optional fields can be added if available (for example, comments or additional provenance). System-assigned and curator fields will be handled during the review and publication process.
+
+    For the complete specification of all fields and their roles, see the Mapping Set Schema Reference page.
+
+??? question "Besides creating positive assertions, can I also create negative ones?"
+    Yes. Most mappings are positive, where you state that two concepts are related. But sometimes you may want to explicitly say that a mapping should **not** hold. For that, use the field `predicate_modifier` with the value `Not`. If your mapping is positive, just leave this field empty.
+
+    **Examples**
+
+    - Positive mapping: "fhir:Patient has its semantics defined by hrio:Patient"
+      `subject_id = fhir:Patient`
+      `predicate_id = hriv:semanticsDefinedBy`
+      `object_id = hrio:Patient`
+      `predicate_modifier =` (empty)
+
+    - Negative mapping: "vet:Patient DOES NOT have its semantics defined by hrio:Patient"
+      `subject_id = vet:Patient`
+      `predicate_id = hriv:semanticsDefinedBy`
+      `object_id = hrio:Patient`
+      `predicate_modifier = Not`
+
+## Community Contributions and Feedback
+
+??? question "What are the supported ways to contribute a new mapping row?"
+    There are two options:
+
+    1) **Issue form (preferred)** — submit the SSSOM mapping issue form for a single row.
+    2) **Excel template** — fill in the `mappings` sheet (rows) and the `prefix` sheet (CURIE bindings) in the [provided XLSX](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx), then attach it to a new issue.
+    In the template, headers for mandatory fields are black, and optional ones are green. Both methods are curator-reviewed and integrated into the official mapping set.
+
+??? question "What should I check before submitting a mapping?"
+    Use the submission checklist:
+
+    - All mandatory contributor fields are present and correctly formatted.
+    - Optional values (if any) use valid identifiers (e.g., ORCID, resolvable URIs, SEMAPV terms).
+    - If you pin a version, ensure `object_source` is a specific version URI (not a generic one).
+
 ## Ontology Lifecycle and Publishing
 
 *Questions about how the ontology is released, versioned, and maintained over time.*
@@ -196,17 +264,17 @@
     [More on versioning](../method/publication)
 
 ??? question "What is the difference between major, minor, and patch versions in your versioning policy?"
-    We follow an adapted semantic versioning scheme: `<major>.<minor>.<patch>`.  
-    - **Major** versions mark conceptual milestones or structural overhauls and are considered stable and citable.  
-    - **Minor** versions include scoped improvements that preserve semantic compatibility.  
-    - **Patch** versions address fixes or clarifications without modifying the established scope.  
+    We follow an adapted semantic versioning scheme: `<major>.<minor>.<patch>`.
+    - **Major** versions mark conceptual milestones or structural overhauls and are considered stable and citable.
+    - **Minor** versions include scoped improvements that preserve semantic compatibility.
+    - **Patch** versions address fixes or clarifications without modifying the established scope.
     Only major versions trigger a formal release and a published specification.
 
     [Read more.](../method/publication)
 
 ??? question "What does the 'latest' folder contain and how is it maintained?"
-    The `ontologies/latest/` folder always mirrors the highest available published version of each artifact.  
-    It provides stable access to the most recent files without needing to specify a version number.  
+    The `ontologies/latest/` folder always mirrors the highest available published version of each artifact.
+    It provides stable access to the most recent files without needing to specify a version number.
     Each new release automatically updates the `latest/` folder to reflect its content.
 
 ??? question "How do I cite or refer to the Health-RI initiative and its ontology?"
@@ -229,19 +297,19 @@
     - `.html`: Human-readable specification (HTML)
     - `.png`: Diagram images (only in the `latest/` folder)
 
-    These are published under both `ontologies/latest/` (most recent version) and `ontologies/versioned/` (versioned archive).  
+    These are published under both `ontologies/latest/` (most recent version) and `ontologies/versioned/` (versioned archive).
     [More details here.](../method/publication)
 
 ??? question "Where can I find the exported images of the ontology diagrams?"
-    Exported PNG images of all OntoUML diagrams are available in the `ontologies/latest/images/` folder.  
+    Exported PNG images of all OntoUML diagrams are available in the `ontologies/latest/images/` folder.
     These images are always generated from the latest `.vpp` file and are not maintained for previous versions.
 
 ??? question "Why is there sometimes no OWL (.ttl) file available for a version?"
-    The `.ttl` file (gUFO-compliant OWL ontology) is only generated when the OntoUML model is syntactically valid.  
+    The `.ttl` file (gUFO-compliant OWL ontology) is only generated when the OntoUML model is syntactically valid.
     Incomplete or draft versions may not include a `.ttl` file until model consistency is ensured.
 
 ??? question "Can the latest version of the OWL (.ttl) file correspond to a different version than the latest version of the OntoUML (.json/.vpp) model?"
-    Yes. The `.ttl` versioning is managed independently and may lag behind the `.vpp` or `.json` files.  
+    Yes. The `.ttl` versioning is managed independently and may lag behind the `.vpp` or `.json` files.
     The OWL file includes a `dcterms:conformsTo` triple that explicitly links it to the OntoUML version it was derived from.
 
 ??? question "How can I access a specific version of the Health-RI ontology?"
@@ -302,7 +370,7 @@
 ??? question "How will the solution be tested and accepted? (TBD)"
     TBD.
 
-## Community Contributions and Feedback
+### Community Contributions and Feedback
 
 *Questions about how users can provide input, report issues, or contribute to the ontology and mappings.*
 
