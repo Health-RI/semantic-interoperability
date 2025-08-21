@@ -17,7 +17,7 @@ jobs:
           python-version: 3.x
 
       - name: Install Python dependencies
-        run: pip install mkdocs mkdocs-material mkdocs-table-reader-plugin packaging pylode beautifulsoup4
+        run: pip install mkdocs mkdocs-material mkdocs-table-reader-plugin packaging pylode beautifulsoup4 pymdown-extensions
 
       - name: Clean unwanted files
         run: python scripts/clean_unwanted_files.py
