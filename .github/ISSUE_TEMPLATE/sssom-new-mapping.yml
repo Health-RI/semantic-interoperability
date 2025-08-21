@@ -84,6 +84,15 @@ body:
     validations:
       required: true
 
+  - type: input
+    id: predicate_modifier
+    attributes:
+      label: predicate_modifier
+      description: "Optional modifier for the predicate—for negation, use 'Not' (spec: https://mapping-commons.github.io/sssom/predicate_modifier/)"
+      placeholder: "e.g., Not"
+    validations:
+      required: false
+
   ####################################################################
   # OBJECT
   ####################################################################
@@ -121,7 +130,7 @@ body:
       description: |
         Source vocabulary of object - spec: https://mapping-commons.github.io/sssom/object_source/
         If left blank, the project default (latest Health-RI ontology URI) will be applied.
-      placeholder: "e.g., hri:http://w3id.org/health-ri/ontology/v0.9.1/ttl"
+      placeholder: "e.g., http://w3id.org/health-ri/ontology/v0.9.1/ttl"
     validations:
       required: false
 
@@ -133,8 +142,8 @@ body:
     attributes:
       label: mapping_justification (Required)
       description: |
-        Reason supporting the mapping - spec: https://mapping-commons.github.io/sssom/mapping_justification/
-        Examples: semapv:ManualMappingCuration, semapv:LogicalReasoning, semapv:LexicalMatching
+        Activity or rationale that supports why a given mapping is considered correct or appropriate - spec: https://mapping-commons.github.io/sssom/mapping_justification/
+        Examples: semapv:ManualMappingCuration
       placeholder: "e.g., semapv:ManualMappingCuration"
     validations:
       required: true
@@ -191,6 +200,18 @@ body:
       placeholder: "e.g., 2025-07-02"
     validations:
       required: true
+
+  - type: textarea
+    id: replaces
+    attributes:
+      label: replaces (0..*)
+      description: |
+        Indicates that this mapping record replaces another - spec: https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/replaces/
+        Provide one per line. Use full URIs.
+      placeholder: |
+        http://health-ri.org/mappings/rec122
+    validations:
+      required: false
 
   ####################################################################
   # PREFIX MAP (for CURIEs used anywhere above)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--Created by yFiles for HTML 3.0.0.2-->
+<!--Created by yFiles for HTML 3.0.0.3-->
 <graphml xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml.html/2.0/ygraphml.xsd " xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:yca="http://www.yworks.com/xml/yfiles-compat-arrows/1.0" xmlns:ycns="http://www.yworks.com/xml/yfiles-compat-node-styles/1.0" xmlns:yjs2="http://www.yworks.com/xml/yfiles-for-html/2.0/xaml" xmlns:template-styles="http://www.yworks.com/demos/template-node-style/3.0" xmlns:demostyle2="http://www.yworks.com/yFilesHTML/demos/FlatDemoStyle/2.0" xmlns:demostyle="http://www.yworks.com/yFilesHTML/demos/FlatDemoStyle/1.0" xmlns:icon-style="http://www.yworks.com/yed-live/icon-style/1.0" xmlns:bpmn="http://www.yworks.com/xml/yfiles-bpmn/2.0" xmlns:demotablestyle="http://www.yworks.com/yFilesHTML/demos/FlatDemoTableStyle/1.0" xmlns:uml="http://www.yworks.com/yFilesHTML/demos/UMLDemoStyle/1.0" xmlns:GraphvizNodeStyle="http://www.yworks.com/yFilesHTML/graphviz-node-style/1.0" xmlns:Vue3jsNodeStyle="http://www.yworks.com/demos/yfiles-vue-node-style/3.0" xmlns:explorer-style="http://www.yworks.com/data-explorer/1.0" xmlns:yx="http://www.yworks.com/xml/yfiles-common/4.0" xmlns:y="http://www.yworks.com/xml/yfiles-common/3.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/3.0" xmlns:yjs="http://www.yworks.com/xml/yfiles-for-html/3.0/xaml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<key id="d0" for="node" attr.type="int" attr.name="zOrder" y:attr.uri="http://www.yworks.com/xml/yfiles-z-order/1.0/zOrder"/>
 	<key id="d1" for="node" attr.type="boolean" attr.name="Expanded" y:attr.uri="http://www.yworks.com/xml/yfiles-common/2.0/folding/Expanded">
@@ -402,7 +402,7 @@
 					<data key="d0">0</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:VeterinaryPatient" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:VeterinaryPatient" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -485,7 +485,7 @@
 					<data key="d0">1</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:HealthcarePatient" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:HealthcarePatient" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -548,7 +548,7 @@
 					<data key="d0">2</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:Human" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:Human" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -556,7 +556,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="306" Y="-79.37" Width="120.5" Height="60"/>
+						<y:RectD X="306" Y="-79.37" Width="125.75" Height="60"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" fill="{y:GraphMLReference 23}"/>
@@ -635,7 +635,7 @@
 					<data key="d0">3</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:Animal" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:Animal" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -742,7 +742,7 @@
 					<data key="d0">4</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:NonHumanAnimal" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:NonHumanAnimal" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -750,7 +750,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="306" Y="63.264999999999986" Width="120.5" Height="60"/>
+						<y:RectD X="306" Y="63.264999999999986" Width="125.75" Height="60"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" fill="{y:GraphMLReference 23}"/>
@@ -850,7 +850,7 @@
 				</x:List>
 			</data>
 			<data key="d5">
-				<y:RectD X="397.90649600808297" Y="168.64999999999998" Width="210.81200798383406" Height="65.74000000000001"/>
+				<y:RectD X="393.34399600808285" Y="168.64999999999998" Width="215.37450798383418" Height="65.74000000000001"/>
 			</data>
 			<data key="d7">
 				<yjs:GroupNodeStyle tabWidth="30" tabHeight="20" tabPadding="3" tabPosition="NONE" iconForegroundFill="{y:GraphMLReference 58}" iconOffset="2" minimumContentAreaSize="0,0" hitTransparentContentArea="true" tabBackgroundFill="{y:GraphMLReference 59}" contentAreaFill="{y:GraphMLReference 60}" tabFill="{y:GraphMLReference 61}" stroke="{y:GraphMLReference 62}" cssClass="y-group-node"/>
@@ -911,7 +911,7 @@
 					<data key="d0">2</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="skos:exactMatch" LayoutParameter="{y:GraphMLReference 28}">
+							<y:Label Text="hriv:semanticsDefinedBy" LayoutParameter="{y:GraphMLReference 28}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -919,10 +919,10 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="443.71899600808285" Y="211.015" Width="92" Height="16.375"/>
+						<y:RectD X="400.34399600808285" Y="211.015" Width="135.375" Height="16.375"/>
 					</data>
 					<data key="d7">
-						<demostyle:FlowchartNodeStyle type="terminator" stroke="{y:GraphMLReference 64}" fill="{y:GraphMLReference 27}"/>
+						<demostyle:FlowchartNodeStyle type="terminator" stroke="WHITE" fill="{y:GraphMLReference 27}"/>
 					</data>
 					<data key="d8">
 						<y:ViewState>
@@ -1198,7 +1198,7 @@
 					<data key="d0">0</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:VeterinaryPatient" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:VeterinaryPatient" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -1322,7 +1322,7 @@
 					<data key="d0">1</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:HealthcarePatient" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:HealthcarePatient" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -1401,7 +1401,7 @@
 					<data key="d0">2</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:Human" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:Human" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -1409,7 +1409,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="306.0937857891229" Y="515.0323677901293" Width="120.5" Height="60"/>
+						<y:RectD X="306.0937857891229" Y="515.0323677901293" Width="125.75" Height="60"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" fill="{y:GraphMLReference 23}"/>
@@ -1516,7 +1516,7 @@
 					<data key="d0">3</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:Animal" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:Animal" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -1666,7 +1666,7 @@
 					<data key="d0">4</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:NonHumanAnimal" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:NonHumanAnimal" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -1674,7 +1674,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="307.07560610157134" Y="671.938976900636" Width="120.5" Height="60"/>
+						<y:RectD X="307.07560610157134" Y="671.938976900636" Width="125.75" Height="60"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" fill="{y:GraphMLReference 23}"/>
@@ -1798,7 +1798,7 @@
 				</x:List>
 			</data>
 			<data key="d5">
-				<y:RectD X="183.81299201616616" Y="785.444258700407" Width="425.81200798383384" Height="65.73999999999978"/>
+				<y:RectD X="139.24508876064402" Y="785.444258700407" Width="470.379911239356" Height="65.73999999999978"/>
 			</data>
 			<data key="d7">
 				<yjs:GroupNodeStyle tabWidth="30" tabHeight="20" tabPadding="3" tabPosition="NONE" iconForegroundFill="{y:GraphMLReference 58}" iconOffset="2" minimumContentAreaSize="0,0" hitTransparentContentArea="true" tabBackgroundFill="{y:GraphMLReference 59}" contentAreaFill="{y:GraphMLReference 60}" tabFill="{y:GraphMLReference 61}" stroke="{y:GraphMLReference 62}" cssClass="y-group-node"/>
@@ -1808,15 +1808,15 @@
 					<data key="d0">0</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="skos:broadMatch" LayoutParameter="{y:GraphMLReference 28}">
+							<y:Label Text="hriv:semanticsDefinedByBroad" LayoutParameter="{y:GraphMLReference 28}">
 								<y:Label.Style>
-									<yjs:LabelStyle verticalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
+									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="RIGHT" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
 							</y:Label>
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="427.25049201616605" Y="804.8092587004065" Width="108.625" Height="16.375"/>
+						<y:RectD X="359.50049201616605" Y="804.8092587004065" Width="176.375" Height="16.375"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" stroke="{y:GraphMLReference 63}" fill="{y:GraphMLReference 27}"/>
@@ -1834,6 +1834,16 @@
 										<y:FreeNodePortLocationModelParameter Ratio="0.38235294117647056,0" Offset="0,-3.8125"/>
 									</y:Port.LocationParameter>
 								</y:Port>
+							</y:ViewState>
+						</data>
+					</port>
+					<port name="p1">
+						<data key="d16">
+							<y:FreeNodePortLocationModelParameter Ratio="0.005606166783461819,0.5"/>
+						</data>
+						<data key="d18">
+							<y:ViewState>
+								<y:Port x:Key="c|view"/>
 							</y:ViewState>
 						</data>
 					</port>
@@ -1867,7 +1877,7 @@
 					<data key="d0">2</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="skos:narrowMatch" LayoutParameter="{y:GraphMLReference 28}">
+							<y:Label Text="hriv:semanticsDefinedByNarrow" LayoutParameter="{y:GraphMLReference 28}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -1875,7 +1885,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="427.25049201616605" Y="827.8092587004068" Width="108.625" Height="16.375"/>
+						<y:RectD X="359.50049201616605" Y="827.8092587004061" Width="176.375" Height="16.375"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" stroke="{y:GraphMLReference 64}" fill="{y:GraphMLReference 27}"/>
@@ -1893,6 +1903,16 @@
 										<y:FreeNodePortLocationModelParameter Ratio="0.38235294117647056,0" Offset="0,-3.8125"/>
 									</y:Port.LocationParameter>
 								</y:Port>
+							</y:ViewState>
+						</data>
+					</port>
+					<port name="p1">
+						<data key="d16">
+							<y:FreeNodePortLocationModelParameter Ratio="0.005606166783461819,0.5"/>
+						</data>
+						<data key="d18">
+							<y:ViewState>
+								<y:Port x:Key="c|view"/>
 							</y:ViewState>
 						</data>
 					</port>
@@ -1934,7 +1954,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="251.45109811773762" Y="804.8092587004065" Width="92" Height="16.375"/>
+						<y:RectD X="206.01359811773762" Y="804.8092587004063" Width="92" Height="16.375"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" stroke="{y:GraphMLReference 63}" fill="{y:GraphMLReference 27}"/>
@@ -1985,7 +2005,7 @@
 					<data key="d0">6</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="skos:exactMatch" LayoutParameter="{y:GraphMLReference 28}">
+							<y:Label Text="hriv:semanticsDefinedBy" LayoutParameter="{y:GraphMLReference 28}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -1993,7 +2013,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="251.45109811773762" Y="827.8092587004065" Width="92" Height="16.375"/>
+						<y:RectD X="160.95109811773762" Y="827.8092587004065" Width="137.0625" Height="16.375"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" stroke="{y:GraphMLReference 64}" fill="{y:GraphMLReference 27}"/>
@@ -2070,12 +2090,12 @@
 						</yjs:PolylineEdgeStyle>
 					</data>
 				</edge>
-				<edge id="n7::e2" source="n7::n4" target="n7::n5" sourceport="p0" targetport="p0">
+				<edge id="n7::e2" source="n7::n4" target="n7::n0" sourceport="p0" targetport="p1">
 					<data key="d13">
 						<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 54}" targetArrow="{y:GraphMLReference 55}" sourceArrow="{y:GraphMLReference 18}"/>
 					</data>
 				</edge>
-				<edge id="n7::e3" source="n7::n6" target="n7::n7" sourceport="p0" targetport="p0">
+				<edge id="n7::e3" source="n7::n6" target="n7::n2" sourceport="p0" targetport="p1">
 					<data key="d13">
 						<yjs:PolylineEdgeStyle stroke="{y:GraphMLReference 67}" targetArrow="{y:GraphMLReference 68}" sourceArrow="{y:GraphMLReference 69}"/>
 					</data>
@@ -2322,7 +2342,7 @@
 					<data key="d0">0</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:VeterinaryPatient" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:VeterinaryPatient" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -2474,7 +2494,7 @@
 					<data key="d0">1</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:HealthcarePatient" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:HealthcarePatient" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -2570,7 +2590,7 @@
 					<data key="d0">2</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:Human" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:Human" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -2578,7 +2598,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="306.0937857891229" Y="1183.0323677901292" Width="120.5" Height="60"/>
+						<y:RectD X="306.0937857891229" Y="1183.0323677901292" Width="127.1875" Height="60"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" fill="{y:GraphMLReference 23}"/>
@@ -2685,7 +2705,7 @@
 					<data key="d0">3</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:Animal" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:Animal" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -2849,7 +2869,7 @@
 					<data key="d0">4</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:NonHumanAnimal" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:NonHumanAnimal" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -2857,7 +2877,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="307.07560610157134" Y="1339.9389769006361" Width="120.5" Height="60"/>
+						<y:RectD X="307.07560610157134" Y="1339.9389769006361" Width="127.1875" Height="60"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" fill="{y:GraphMLReference 23}"/>
@@ -2957,7 +2977,7 @@
 					<data key="d0">5</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:Patient" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:Patient" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -3124,7 +3144,7 @@
 					<data key="d0">6</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:PetVet.Patient" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:PetVet.Patient" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -3301,7 +3321,7 @@
 					<data key="d0">7</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:PetAnimal" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:PetAnimal" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -3309,7 +3329,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="307.07560610157134" Y="1437.6889769006361" Width="120.5" Height="60"/>
+						<y:RectD X="307.07560610157134" Y="1437.6889769006361" Width="127.1875" Height="60"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" fill="{y:GraphMLReference 71}">
@@ -3763,7 +3783,7 @@
 					<data key="d0">0</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:VeterinaryPatient" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:VeterinaryPatient" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -3870,7 +3890,7 @@
 					<data key="d0">1</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:HealthcarePatient" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:HealthcarePatient" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -3949,7 +3969,7 @@
 					<data key="d0">2</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:Human" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:Human" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -3957,7 +3977,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="1543.75" Y="-59.067499999999995" Width="120.5" Height="60"/>
+						<y:RectD X="1543.75" Y="-59.067499999999995" Width="126.8125" Height="60"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" fill="{y:GraphMLReference 23}"/>
@@ -4064,7 +4084,7 @@
 					<data key="d0">3</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:Animal" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:Animal" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -4207,7 +4227,7 @@
 					<data key="d0">4</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hri:NonHumanAnimal" LayoutParameter="{y:GraphMLReference 3}">
+							<y:Label Text="hrio:NonHumanAnimal" LayoutParameter="{y:GraphMLReference 3}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -4215,7 +4235,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="1543.75" Y="83.5675" Width="120.5" Height="60"/>
+						<y:RectD X="1543.75" Y="83.5675" Width="126.8125" Height="60"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" fill="{y:GraphMLReference 23}"/>
@@ -4408,7 +4428,7 @@
 					<data key="d0">2</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="skos:exactMatch" LayoutParameter="{y:GraphMLReference 28}">
+							<y:Label Text="hriv:semanticsDefinedBy" LayoutParameter="{y:GraphMLReference 28}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -4416,7 +4436,7 @@
 						</x:List>
 					</data>
 					<data key="d5">
-						<y:RectD X="1682.375492016166" Y="249.2025" Width="92" Height="16.375"/>
+						<y:RectD X="1637.687992016166" Y="249.2025" Width="136.6875" Height="16.375"/>
 					</data>
 					<data key="d7">
 						<demostyle:FlowchartNodeStyle type="terminator" stroke="{y:GraphMLReference 64}" fill="{y:GraphMLReference 27}"/>
