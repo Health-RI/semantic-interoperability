@@ -911,7 +911,7 @@
 					<data key="d0">2</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hriv:semanticsDefinedBy" LayoutParameter="{y:GraphMLReference 28}">
+							<y:Label Text="hriv:hasSemantics" LayoutParameter="{y:GraphMLReference 28}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -1808,7 +1808,7 @@
 					<data key="d0">0</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hriv:semanticsDefinedByBroad" LayoutParameter="{y:GraphMLReference 28}">
+							<y:Label Text="hriv:hasSemanticsBroad" LayoutParameter="{y:GraphMLReference 28}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" horizontalTextAlignment="RIGHT" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -1877,7 +1877,7 @@
 					<data key="d0">2</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hriv:semanticsDefinedByNarrow" LayoutParameter="{y:GraphMLReference 28}">
+							<y:Label Text="hriv:hasSemanticsNarrow" LayoutParameter="{y:GraphMLReference 28}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -2005,7 +2005,7 @@
 					<data key="d0">6</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hriv:semanticsDefinedBy" LayoutParameter="{y:GraphMLReference 28}">
+							<y:Label Text="hriv:hasSemantics" LayoutParameter="{y:GraphMLReference 28}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -4428,7 +4428,7 @@
 					<data key="d0">2</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hriv:semanticsDefinedBy" LayoutParameter="{y:GraphMLReference 28}">
+							<y:Label Text="hriv:hasSemantics" LayoutParameter="{y:GraphMLReference 28}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
