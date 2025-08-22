@@ -68,6 +68,8 @@ skos:example rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/health-ri/mapping-vocabulary#hasSemantics
 hriv:hasSemantics rdf:type owl:ObjectProperty ;
+                  rdfs:label "hasSemantics"@en ;
+                  rdfs:isDefinedBy <https://w3id.org/health-ri/mapping-vocabulary> ;
                   rdfs:subPropertyOf semiotics:expresses ;
                   rdfs:domain semiotics:Expression ;
                   rdfs:range semiotics:Meaning ;
@@ -101,6 +103,8 @@ This property also differs conceptually from skos:exactMatch. skos:exactMatch se
 
 ###  https://w3id.org/health-ri/mapping-vocabulary#hasSemanticsGeneral
 hriv:hasSemanticsGeneral rdf:type owl:ObjectProperty ;
+                         rdfs:label "hasSemanticsGeneral"@en ;
+                         rdfs:isDefinedBy <https://w3id.org/health-ri/mapping-vocabulary> ;
                          rdfs:subPropertyOf owl:topObjectProperty ;
                          rdfs:domain semiotics:Expression ;
                          rdfs:range semiotics:Meaning ;
@@ -134,6 +138,8 @@ This property also differs conceptually from skos:narrowMatch. While skos:narrow
 
 ###  https://w3id.org/health-ri/mapping-vocabulary#hasSemanticsSpecific
 hriv:hasSemanticsSpecific rdf:type owl:ObjectProperty ;
+                          rdfs:label "hasSemanticsSpecific"@en ;
+                          rdfs:isDefinedBy <https://w3id.org/health-ri/mapping-vocabulary> ;
                           rdfs:subPropertyOf owl:topObjectProperty ;
                           rdfs:domain semiotics:Expression ;
                           rdfs:range semiotics:Meaning ;
