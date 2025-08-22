@@ -35,7 +35,7 @@
     dct:language "en"^^xsd:language ;
 
     # --- 5. Technical Namespace Configuration ---
-    vann:preferredNamespacePrefix "hri" ;
+    vann:preferredNamespacePrefix "hrio" ;
     vann:preferredNamespaceUri "https://w3id.org/health-ri/ontology#"^^xsd:anyURI ;
 
     # --- 6. Keywords and Classification ---

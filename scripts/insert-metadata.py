@@ -74,7 +74,7 @@ def bind_common_prefixes(graph: Graph) -> None:
     graph.bind("owl", "http://www.w3.org/2002/07/owl#")
     graph.bind("xsd", "http://www.w3.org/2001/XMLSchema#")
     graph.bind("gufo", "http://purl.org/nemo/gufo#")
-    graph.bind("hri", "https://w3id.org/health-ri/ontology#")
+    graph.bind("hrio", "https://w3id.org/health-ri/ontology#")
     graph.bind("dct", DCTERMS)
 
 
