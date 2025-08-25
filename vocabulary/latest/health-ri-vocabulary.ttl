@@ -1,0 +1,224 @@
+@prefix hriv: <https://w3id.org/health-ri/mapping-vocabulary#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix semiotics: <http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+#################################################################
+#  Vocabulary Metadata
+#################################################################
+
+<https://w3id.org/health-ri/mapping-vocabulary#> rdf:type owl:Ontology ;
+
+  ## 1) Identity
+  dcterms:title       "Health-RI Mapping Vocabulary"@en ;
+  dcterms:identifier  "https://w3id.org/health-ri/mapping-vocabulary"^^xsd:anyURI ;
+
+  ## 2) Summary / Description
+  dcterms:abstract "A vocabulary by Health-RI defining mapping properties (hriv:hasExactMeaning, hriv:hasSemanticsBroad, hriv:hasSemanticsNarrow) to express semantic alignments between external artifacts and the Health-RI Ontology. It supports exact, broader, and narrower meaning links for cross-scheme alignment without asserting OWL logical equivalence."@en ;
+  dcterms:description "This vocabulary is part of the Health-RI Semantic Interoperability Initiative. It provides properties for aligning local concepts to reference concepts in the Health-RI Ontology, enabling non-invasive mappings (e.g., via SSSOM) or embedded annotations in ontologies."@en ;
+
+  ## 3) People and Organization
+  dcterms:creator     <https://orcid.org/0000-0003-2736-7817> ;
+  dcterms:contributor <https://orcid.org/0000-0003-0771-3516> ,
+                      <https://orcid.org/0009-0006-1783-9082> ;
+  dcterms:publisher   <https://w3id.org/health-ri> ;
+
+  ## 4) License and Language
+  dcterms:license  <https://creativecommons.org/licenses/by/4.0/> ;
+  dcterms:language "en"^^xsd:language ;
+
+  ## 5) Namespace Hints
+  vann:preferredNamespacePrefix "hriv" ;
+  vann:preferredNamespaceUri     "https://w3id.org/health-ri/mapping-vocabulary#"^^xsd:anyURI ;
+
+  ## 6) Web Presence and Documentation
+  dcat:landingPage <https://w3id.org/health-ri/semantic-interoperability> ;
+  foaf:homepage    <https://w3id.org/health-ri/semantic-interoperability> ;
+  mod:repository   <https://w3id.org/health-ri/semantic-interoperability/git> ;
+  foaf:logo        <https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/docs/assets/images/health-ri-logo-blue.png> ;
+
+  ## 7) Keywords
+  dcat:keyword "semantic mapping"@en ,
+               "ontology alignment"@en ;
+
+  ## 8) Imports / Dependencies
+  owl:imports <http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl> ;
+
+  ## 9) Versioning and Dates
+  dcterms:issued  "2025-08-25"^^xsd:date ;
+  owl:versionInfo "1.0.0" ;
+  owl:versionIRI  <https://w3id.org/health-ri/mapping-vocabulary/v1.0.0> .
+
+
+#################################################################
+#  Object Properties
+#  (Grouped by core property with its inverse)
+#################################################################
+
+### Core: hriv:hasExactMeaning
+hriv:hasExactMeaning
+  rdf:type            owl:ObjectProperty ;
+  rdfs:label          "hasExactMeaning"@en ;
+  rdfs:isDefinedBy    <https://w3id.org/health-ri/mapping-vocabulary> ;
+  rdfs:subPropertyOf  semiotics:expresses ;
+  rdfs:domain         semiotics:Expression ;
+  rdfs:range          semiotics:Meaning ;
+  owl:inverseOf       hriv:isExactMeaningOf ;
+  rdfs:comment """A specialized subproperty of semiotics:expresses indicating that the meaning is formally and fully defined by the expression—i.e., the expression’s semantics are precisely determined by the associated meaning, rather than merely conveyed. It is used when an expression's semantics are unambiguously and exclusively defined by a specific meaning.
+
+Unlike owl:equivalentClass—which asserts full logical equivalence between two classes—this property is meant to capture a definitional relation between an expression and a meaning. It conveys semantic definition without declaring classes to be interchangeable under all logical inferences. While the former establishes full semantic equivalence between classes, enabling bi-directional inference of class membership, the latter models a one-way definitional relation from an expression to a meaning, rather than interchangeability of classes.
+
+This property also differs conceptually from skos:exactMatch. skos:exactMatch serves to align semantically similar concepts across systems (potentially without shared logic), indicating that two concepts may be used interchangeably across vocabularies without guaranteeing logical equivalence. hriv:hasExactMeaning encodes a precise, definitional link—the expression’s semantics are directly and unambiguously defined by the associated meaning."""@en ;
+  skos:example """CASE 'Code-to-meaning (exact clinical condition)'
+- Context: A coding token precisely and exclusively denotes a disease concept.
+- Triples:
+ ex:ICD10_E11 a semiotics:Expression .
+ ex:DiabetesMellitus a semiotics:Meaning .
+ ex:ICD10_E11 hriv:hasExactMeaning ex:DiabetesMellitus .
+- Rationale: The expression’s semantics are fully determined by that disease meaning (no broader/narrower substitution)."""@en ,
+               """CASE 'Measurement label-to-meaning (method-independent)'
+- Context: A variable named “Systolic blood pressure (mmHg)” denotes the systolic arterial pressure measurement.
+- Triples:
+ ex:SBP_mmHg_label a semiotics:Expression .
+ ex:SystolicArterialBloodPressure a semiotics:Meaning .
+ ex:SBP_mmHg_label hriv:hasExactMeaning ex:SystolicArterialBloodPressure .
+- Rationale: The semantics are the specific physiological quantity (unit choice does not change the meaning)."""@en ,
+               """CASE — 'Data element name-to-meaning (operational metadata)'
+- Context: A column header has a fixed, definitional intent.
+- Triples:
+ ex:birth_year_label a semiotics:Expression .
+ ex:YearOfBirth a semiotics:Meaning .
+ ex:birth_year_label hriv:hasExactMeaning ex:YearOfBirth .
+- Rationale: The label defines exactly the intended meaning (year component of birth), not merely hints at it."""@en .
+
+### Inverse: hriv:isExactMeaningOf
+hriv:isExactMeaningOf
+  a                  owl:ObjectProperty ;
+  rdfs:label         "isExactMeaningOf"@en ;
+  rdfs:isDefinedBy   <https://w3id.org/health-ri/mapping-vocabulary> ;
+  rdfs:domain        semiotics:Meaning ;
+  rdfs:range         semiotics:Expression ;
+  owl:inverseOf      hriv:hasExactMeaning ;
+  rdfs:comment       "Inverse of hriv:hasExactMeaning."@en .
+
+
+### Core: hriv:hasBroaderMeaningThan
+hriv:hasBroaderMeaningThan
+  rdf:type          owl:ObjectProperty ;
+  rdfs:label        "hasBroaderMeaningThan"@en ;
+  rdfs:isDefinedBy  <https://w3id.org/health-ri/mapping-vocabulary> ;
+  rdfs:domain       semiotics:Expression ;
+  rdfs:range        semiotics:Meaning ;
+  owl:inverseOf       hriv:isNarrowerMeaningFor ;
+  rdfs:comment """Indicates that the semantics of an expression are defined by a generalized meaning—one that generalizes the linked meaning (triple's object). If an expression A hasBroaderMeaningThan B, then there exists a generalization B′ of B such that A hriv:hasExactMeaning B′. This property is used when the semantics of an expression are determined not by the object meaning itself, but by a more general meaning of it.
+
+In relation to hriv:hasExactMeaning, hriv:hasBroaderMeaningThan captures a weaker, less precise form: while hriv:hasExactMeaning asserts a precise definitional link between an expression and a meaning, hriv:hasBroaderMeaningThan establishes the link through a generalization of the referenced meaning (i.e., A → B′ where B′ ⊒ B).
+
+This property differs conceptually from skos:broadMatch, which aligns a concept to a more general one across vocabularies, and from skos:narrowMatch, which aligns a concept to a more specific one across vocabularies; by contrast, hriv:hasBroaderMeaningThan links an expression to a meaning that is more specific than the expression’s own meaning, indicating that the expression’s meaning serves as a generalization of the linked meaning."""@en ;
+  skos:example """CASE 'Broader disorder linked to a specific subtype'
+- Context: Local label “Heart disease” must map where the target has a specific subtype available.
+- Triples:
+ ex:HeartDisease a semiotics:Expression .
+ ex:IschemicHeartDisease a semiotics:Meaning . # specific
+ ex:HeartDisease hriv:hasBroaderMeaningThan ex:IschemicHeartDisease .
+- Rationale: The expression’s semantics are defined by a generalization (e.g., CardiovascularDisease), which is a superclass of IschemicHeartDisease."""@en ,
+               """CASE 'Generic test linked to a specific analyte test'
+- Context: Variable “Cholesterol test” mapped where the target distinguishes 'LDL cholesterol test.'
+- Triples:
+ ex:CholesterolTest a semiotics:Expression .
+ ex:LDLCholesterolTest a semiotics:Meaning . # specific
+ ex:CholesterolTest hriv:hasBroaderMeaningThan ex:LDLCholesterolTest .
+- Rationale: The expression denotes a general cholesterol measurement; its defining meaning is a superclass of LDLCholesterolTest (e.g., CholesterolMeasurement)."""@en ,
+               """CASE 'High-level condition linked to a specific type'
+- Context: Dataset column “Diabetes mellitus” (any) mapped where the target provides 'Type 2 diabetes mellitus.'
+- Triples:
+ ex:Diabetes a semiotics:Expression .
+ ex:Type2Diabetes a semiotics:Meaning . # specific
+ ex:Diabetes hriv:hasBroaderMeaningThan ex:Type2Diabetes .
+- Rationale: The semantics are determined by a general diabetes meaning (e.g., DiabetesMellitus) that is a superclass of Type2Diabetes."""@en .
+
+### Inverse: hriv:isNarrowerMeaningFor
+hriv:isNarrowerMeaningFor
+  a                 owl:ObjectProperty ;
+  rdfs:label        "isNarrowerMeaningFor"@en ;
+  rdfs:isDefinedBy  <https://w3id.org/health-ri/mapping-vocabulary> ;
+  rdfs:domain       semiotics:Meaning ;
+  rdfs:range        semiotics:Expression ;
+  owl:inverseOf     hriv:hasBroaderMeaningThan ;
+  rdfs:comment      "Inverse of hriv:hasBroaderMeaningThan."@en .
+
+
+### Core: hriv:hasNarrowerMeaningThan
+hriv:hasNarrowerMeaningThan
+  rdf:type          owl:ObjectProperty ;
+  rdfs:label        "hasNarrowerMeaningThan"@en ;
+  rdfs:isDefinedBy  <https://w3id.org/health-ri/mapping-vocabulary> ;
+  rdfs:domain       semiotics:Expression ;
+  rdfs:range        semiotics:Meaning ;
+  owl:inverseOf       hriv:isBroaderMeaningFor ;
+  rdfs:comment """Indicates that the semantics of an expression are defined by a more specific meaning—one that specializes the linked meaning (triple's object). If an expression A hasNarrowerMeaningThan B, then there exists a specialization B′ of B such that A hriv:hasExactMeaning B′. This property is used when the semantics of an expression are determined not by a general meaning, but by a more specific meaning.
+
+In relation to hriv:hasExactMeaning, hriv:hasNarrowerMeaningThan captures a weaker, less precise form: while hriv:hasExactMeaning asserts a precise definitional link between an expression and a meaning, hriv:hasNarrowerMeaningThan establishes the link through a specialization of the referenced meaning (i.e., A → B′ where B′ ⊑ B).
+
+This property differs conceptually from skos:broadMatch, which aligns a concept to a more general one across vocabularies, and from skos:narrowMatch, which aligns a concept to a more specific one across vocabularies; by contrast, hriv:hasNarrowerMeaningThan links an expression to a meaning that is more general than the expression’s own meaning, indicating that the expression’s meaning serves as a specialization of the linked meaning."""@en ;
+  skos:example """CASE 'Anatomical specificity unavailable'
+- Context: “Left femur fracture” must map where laterality isn’t modeled.
+- Triples:
+ ex:LeftFemurFracture a semiotics:Expression .
+ ex:BoneFracture a semiotics:Meaning . # broader site-agnostic
+ ex:LeftFemurFracture hriv:hasNarrowerMeaningThan ex:BoneFracture .
+- Rationale: Semantics of ex:LeftFemurFracture are defined by a specialized meaning of ex:BoneFracture."""@en ,
+               """CASE 'Specific condition mapped to a broader disorder'
+- Context: Target vocabulary lacks “Acute myocardial infarction” (AMI).
+- Triples:
+ ex:AMI_term a semiotics:Expression .
+ ex:MyocardialInfarction a semiotics:Meaning . # broader than “acute MI”
+ ex:AMI_term hriv:hasNarrowerMeaningThan ex:MyocardialInfarction .
+- Rationale: Semantics of ex:AMI_term are defined by a specialized meaning of ex:MyocardialInfarction."""@en ,
+               """CASE 'Stage-qualified neoplasm'
+- Context: “Breast cancer stage II” where stages are modeled.
+- Triples:
+ ex:BreastCancerStageII a semiotics:Expression .
+ ex:BreastCancer a semiotics:Meaning .
+ ex:BreastCancerStageII hriv:hasNarrowerMeaningThan ex:BreastCancer .
+- Rationale: Semantics of ex:BreastCancerStageII are defined by a specialized meaning of ex:BreastCancer."""@en .
+
+### Inverse: hriv:isBroaderMeaningFor
+hriv:isBroaderMeaningFor
+  a                 owl:ObjectProperty ;
+  rdfs:label        "isBroaderMeaningFor"@en ;
+  rdfs:isDefinedBy  <https://w3id.org/health-ri/mapping-vocabulary> ;
+  rdfs:domain       semiotics:Meaning ;
+  rdfs:range        semiotics:Expression ;
+  owl:inverseOf     hriv:hasNarrowerMeaningThan ;
+  rdfs:comment      "Inverse of hriv:hasNarrowerMeaningThan."@en .
+
+
+#################################################################
+#  Global Property Constraints
+#################################################################
+
+[] a owl:AllDisjointProperties ;
+  owl:members ( hriv:hasExactMeaning
+                hriv:hasBroaderMeaningThan
+                hriv:hasNarrowerMeaningThan ) ;
+  rdfs:comment """Declares that hriv:hasExactMeaning, hriv:hasBroaderMeaningThan, and hriv:hasNarrowerMeaningThan are pairwise disjoint object properties. Under OWL 2 semantics, disjoint properties have non-overlapping extensions: no single ordered pair (s, o) may be related by more than one of these properties.
+
+Consequences:
+- Inconsistent if the same pair is linked by two different properties, e.g., (X hriv:hasExactMeaning Y) and (X hriv:hasBroaderMeaningThan Y).
+- Allowed when the objects differ, e.g., (X hriv:hasExactMeaning Y) and (X hriv:hasBroaderMeaningThan Z), with Y different from Z.
+- This axiom does not forbid multiple mappings from the same expression to different meanings; it only forbids assigning two different link types to the same (Expression, Meaning) pair.
+
+Rationale in this vocabulary:
+- hriv:hasExactMeaning specializes semiotics:expresses and denotes the precise meaning an expression actually expresses.
+- hriv:hasBroaderMeaningThan and hriv:hasNarrowerMeaningThan are comparative links via a super/sub-meaning of the referenced meaning and do not themselves assert that the expression expresses that referenced meaning."""@en .
