@@ -1009,6 +1009,108 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sssom-mappings-pids" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSSOM Mappings (PIDs)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSSOM Mappings (PIDs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#latest-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Latest Mappings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Latest Mappings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-vocabulary-pids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping Vocabulary (PIDs)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapping Vocabulary (PIDs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#latest-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Latest Vocabulary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Latest Vocabulary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versioned-vocabulary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioned Vocabulary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Versioned Vocabulary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#overview-of-persistent-identifiers" class="md-nav__link">
     <span class="md-ellipsis">
       Overview of Persistent Identifiers
@@ -1249,7 +1351,7 @@
 <h3 id="uri-httpsw3idorghealth-riontology">URI: <code>https://w3id.org/health-ri/ontology</code></h3>
 <p>This is the <strong>main identifier for the Health-RI Ontology</strong>, which always resolves to the ontology's most recent version.</p>
 <h3 id="identifiers-for-the-latest-ontology-version">Identifiers for the <strong>Latest Ontology Version</strong></h3>
-<p>These URIs point to the <strong>most recent release</strong> of the Health-RI Ontology and related documentation formats. The different URIs supports HTTP content negotiation to serve either machine-readable ontology files (e.g., Turtle) or human-readable documentation (HTML specification).</p>
+<p>These URIs point to the <strong>most recent release</strong> of the Health-RI Ontology and related documentation formats. The different URIs support HTTP content negotiation to serve either machine-readable ontology files (e.g., Turtle) or human-readable documentation (HTML specification).</p>
 <table>
 <thead>
 <tr>
@@ -1286,21 +1388,22 @@
 <p>You can use either <code>/doc</code> or <code>/documentation</code>, and <code>/spec</code> or <code>/specification</code> — both forms are valid and equivalent.</p>
 </div>
 <h3 id="identifiers-for-versioned-ontology-releases">Identifiers for <strong>Versioned Ontology Releases</strong></h3>
-<p>Each versioned release of the Health-RI Ontology is identified by its own dedicated URI in the format <strong><code>https://w3id.org/health-ri/ontology/vX.Y.Z</code></strong>. This URI is used as the <code>owl:versionIRI</code> in the ontology metadata.</p>
-<p>To support traceability and reproducibility, each ontology release is also available via <strong>version-specific URIs</strong>.</p>
+<p>To support traceability and reproducibility, each ontology release is also available via <strong>version-specific URIs</strong>. Each versioned release of the Health-RI Ontology is identified by its own dedicated URI in the format <strong><code>https://w3id.org/health-ri/ontology/vX.Y.Z</code></strong>. This URI is used as the <code>owl:versionIRI</code> in the ontology metadata.</p>
 <h4 id="format">Format</h4>
 <p><code>https://w3id.org/health-ri/ontology/vX.Y.Z/{format}</code></p>
 <p>Where:</p>
 <ul>
 <li><code>X.Y.Z</code> is the semantic version (e.g., <code>2.0.0</code>)</li>
-<li><code>{format}</code> is one of:<ul>
-<li><code>ttl</code> — OWL ontology (Turtle)</li>
+<li>
+<p><code>{format}</code> is one of:</p>
+</li>
+<li>
+<p><code>ttl</code> — OWL ontology (Turtle)</p>
+</li>
 <li><code>vpp</code> — OntoUML model (Visual Paradigm)</li>
 <li><code>json</code> — OntoUML model (JSON)</li>
 <li><code>documentation</code> — Markdown documentation</li>
 <li><code>specification</code> — HTML specification</li>
-</ul>
-</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1323,6 +1426,87 @@
 <li>
 <p><code>https://w3id.org/health-ri/ontology/v0.6.0/specification</code>
   → HTML specification for version 0.6.0</p>
+</li>
+</ul>
+<h2 id="sssom-mappings-pids">SSSOM Mappings (PIDs)</h2>
+<p>The following PIDs provide <strong>stable access to the latest SSSOM mapping set</strong> produced by the initiative, in both Turtle (TTL) and TSV formats.</p>
+<h3 id="latest-mappings">Latest Mappings</h3>
+<ul>
+<li>
+<p><strong>URI (default/TTL):</strong>
+  <code>https://w3id.org/health-ri/semantic-interoperability/mappings</code>
+  <em>(also available explicitly as <code>/mappings/ttl</code>)</em></p>
+</li>
+<li>
+<p><strong>URI (TSV):</strong>
+  <code>https://w3id.org/health-ri/semantic-interoperability/mappings/tsv</code></p>
+</li>
+</ul>
+<p>These PIDs redirect to the canonical files in the Health-RI GitHub repository (branch <code>main</code>), ensuring that citations remain stable while the underlying files can be updated as needed.</p>
+<h4 id="examples_1">Examples</h4>
+<ul>
+<li>
+<p><code>https://w3id.org/health-ri/semantic-interoperability/mappings</code>
+  → Latest SSSOM mappings in Turtle (<code>.ttl</code>)</p>
+</li>
+<li>
+<p><code>https://w3id.org/health-ri/semantic-interoperability/mappings/tsv</code>
+  → Latest SSSOM mappings in TSV (<code>.tsv</code>)</p>
+</li>
+</ul>
+<h2 id="mapping-vocabulary-pids">Mapping Vocabulary (PIDs)</h2>
+<p>The <strong>Health-RI Mapping Vocabulary</strong> defines terms used in our mapping work. The PIDs below provide stable access to the latest vocabulary and to versioned snapshots.</p>
+<h3 id="latest-vocabulary">Latest Vocabulary</h3>
+<ul>
+<li>
+<p><strong>URI (TTL):</strong>
+  <code>https://w3id.org/health-ri/mapping-vocabulary</code>
+  <em>(also available explicitly as <code>/mapping-vocabulary/ttl</code>)</em></p>
+</li>
+<li>
+<p><strong>URI (HTML specification):</strong>
+  <code>https://w3id.org/health-ri/mapping-vocabulary/specification</code>
+  <em>(alias: <code>/mapping-vocabulary/spec</code>)</em></p>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+</div>
+<p>Both <code>/spec</code> and <code>/specification</code> are valid and equivalent for the vocabulary specification.</p>
+<h4 id="examples_2">Examples</h4>
+<ul>
+<li>
+<p><code>https://w3id.org/health-ri/mapping-vocabulary</code>
+  → Latest vocabulary in Turtle (<code>.ttl</code>)</p>
+</li>
+<li>
+<p><code>https://w3id.org/health-ri/mapping-vocabulary/spec</code>
+  → Latest HTML specification</p>
+</li>
+</ul>
+<h3 id="versioned-vocabulary">Versioned Vocabulary</h3>
+<p>Versioned PIDs follow semantic versioning and resolve to immutable artifacts for that release.</p>
+<ul>
+<li>
+<p><strong>URI (TTL):</strong>
+  <code>https://w3id.org/health-ri/mapping-vocabulary/vX.Y.Z</code>
+  <em>(also available explicitly as <code>/vX.Y.Z/ttl</code>)</em></p>
+</li>
+<li>
+<p><strong>URI (HTML specification):</strong>
+  <code>https://w3id.org/health-ri/mapping-vocabulary/vX.Y.Z/specification</code>
+  <em>(alias: <code>/vX.Y.Z/spec</code>)</em></p>
+</li>
+</ul>
+<h4 id="examples_3">Examples</h4>
+<ul>
+<li>
+<p><code>https://w3id.org/health-ri/mapping-vocabulary/v1.0.0</code>
+  → Vocabulary in Turtle for version <code>v1.0.0</code></p>
+</li>
+<li>
+<p><code>https://w3id.org/health-ri/mapping-vocabulary/v1.0.0/spec</code>
+  → HTML specification for version <code>v1.0.0</code></p>
 </li>
 </ul>
 <h2 id="overview-of-persistent-identifiers">Overview of Persistent Identifiers</h2>
@@ -1389,6 +1573,54 @@
 <td>Source code and data repository</td>
 <td>Redirects to GitHub</td>
 <td><a href="https://w3id.org/health-ri/semantic-interoperability/git">https://w3id.org/health-ri/semantic-interoperability/git</a></td>
+</tr>
+<tr>
+<td><code>/semantic-interoperability/mappings</code></td>
+<td>Latest SSSOM mappings (TTL)</td>
+<td>Redirects to latest <code>.ttl</code></td>
+<td><a href="https://w3id.org/health-ri/semantic-interoperability/mappings">https://w3id.org/health-ri/semantic-interoperability/mappings</a></td>
+</tr>
+<tr>
+<td><code>/semantic-interoperability/mappings/ttl</code></td>
+<td>Latest SSSOM mappings (TTL, explicit)</td>
+<td>Redirects to latest <code>.ttl</code></td>
+<td><a href="https://w3id.org/health-ri/semantic-interoperability/mappings/ttl">https://w3id.org/health-ri/semantic-interoperability/mappings/ttl</a></td>
+</tr>
+<tr>
+<td><code>/semantic-interoperability/mappings/tsv</code></td>
+<td>Latest SSSOM mappings (TSV)</td>
+<td>Redirects to latest <code>.tsv</code></td>
+<td><a href="https://w3id.org/health-ri/semantic-interoperability/mappings/tsv">https://w3id.org/health-ri/semantic-interoperability/mappings/tsv</a></td>
+</tr>
+<tr>
+<td><code>/mapping-vocabulary</code></td>
+<td>Latest Mapping Vocabulary (TTL)</td>
+<td>Redirects to latest <code>.ttl</code></td>
+<td><a href="https://w3id.org/health-ri/mapping-vocabulary">https://w3id.org/health-ri/mapping-vocabulary</a></td>
+</tr>
+<tr>
+<td><code>/mapping-vocabulary/ttl</code></td>
+<td>Latest Mapping Vocabulary (TTL, explicit)</td>
+<td>Redirects to latest <code>.ttl</code></td>
+<td><a href="https://w3id.org/health-ri/mapping-vocabulary/ttl">https://w3id.org/health-ri/mapping-vocabulary/ttl</a></td>
+</tr>
+<tr>
+<td><code>/mapping-vocabulary/specification</code></td>
+<td>Latest Mapping Vocabulary HTML specification</td>
+<td>Redirects to latest spec page</td>
+<td><a href="https://w3id.org/health-ri/mapping-vocabulary/specification">https://w3id.org/health-ri/mapping-vocabulary/specification</a></td>
+</tr>
+<tr>
+<td><code>/mapping-vocabulary/vX.Y.Z</code></td>
+<td>Versioned Mapping Vocabulary (TTL)</td>
+<td>Redirects to version-specific <code>.ttl</code></td>
+<td><a href="https://w3id.org/health-ri/mapping-vocabulary/v1.0.0">https://w3id.org/health-ri/mapping-vocabulary/v1.0.0</a></td>
+</tr>
+<tr>
+<td><code>/mapping-vocabulary/vX.Y.Z/specification</code></td>
+<td>Versioned Mapping Vocabulary specification</td>
+<td>Redirects to version-specific HTML spec</td>
+<td><a href="https://w3id.org/health-ri/mapping-vocabulary/v1.0.0/specification">https://w3id.org/health-ri/mapping-vocabulary/v1.0.0/specification</a></td>
 </tr>
 </tbody>
 </table>

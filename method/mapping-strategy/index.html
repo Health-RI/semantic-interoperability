@@ -1317,14 +1317,14 @@
 <p>Even though the OntoUML model is not executable, it defines the core meaning that gUFO classes implement. This semantic grounding improves trust, clarity, and alignment in data integration.</p>
 </div>
 <h2 id="aligning-third-party-ontologies">Aligning Third-Party Ontologies</h2>
-<p>Our common reference model provides authoritative semantics to external concept definitions. When another ontology defines <code>onto:Person</code>, it may be semantically aligned with our <code>hrio:Person</code>. To make this relationship explicit, a <strong><code>hriv:hasSemantics</code></strong> link can be asserted—either by the Health-RI mapping team (e.g., in SSSOM format), or by the owners of the external ontology within their artifact—signifying that the external concept carries the same meaning.</p>
+<p>Our common reference model provides authoritative semantics to external concept definitions. When another ontology defines <code>onto:Person</code>, it may be semantically aligned with our <code>hrio:Person</code>. To make this relationship explicit, a <strong><code>hriv:isExactMeaningOf</code></strong> link can be asserted—either by the Health-RI mapping team (e.g., in SSSOM format), or by the owners of the external ontology within their artifact—signifying that the external concept carries the same meaning.</p>
 <p>There are two possible approaches for creating and maintaining such mappings:</p>
 <ul>
 <li>
 <p><strong>Mappings performed by the Health-RI team:</strong> In this case, mappings are created by Health-RI's semantic modeling team and provided in <a href="https://w3id.org/sssom/">SSSOM</a> format. This is the default strategy when the external ontology or resource is publicly available or beyond Health-RI’s editorial control (e.g., national standards, web-accessible vocabularies). These mappings are <em>non-invasive</em>, meaning they do not alter the original artifacts but describe their alignment externally. For details on how these mappings are published, versioned, and curated, see the <a href="../mapping-set/">SSSOM Mapping Set</a>.</p>
 </li>
 <li>
-<p><strong>Mappings authored by external partners:</strong> If the external artifact is under the editorial responsibility of a partner or collaborating organization, that party may directly include the mappings within their ontology. In this case, the mappings are <em>embedded</em> into the source artifact itself (e.g., adding <code>hriv:hasSemantics</code> to their RDF model pointing to Health-RI concepts), offering tighter integration and long-term maintainability by the artifact owner.</p>
+<p><strong>Mappings authored by external partners:</strong> If the external artifact is under the editorial responsibility of a partner or collaborating organization, that party may directly include the mappings within their ontology. In this case, the mappings are <em>embedded</em> into the source artifact itself (e.g., adding <code>hriv:isExactMeaningOf</code> to their RDF model pointing to Health-RI concepts), offering tighter integration and long-term maintainability by the artifact owner.</p>
 </li>
 </ul>
 <p>These complementary approaches enable semantic alignment in both centrally controlled and federated interoperability scenarios.</p>
@@ -1337,77 +1337,77 @@
 <p>For details about the schema and contribution process, see the <a href="../mapping-set/">SSSOM Mapping Set</a>.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Only one <code>hriv:hasSemantics</code> allowed</p>
-<p>Each concept may have <strong>exactly one</strong> <code>hriv:hasSemantics</code> to a Health-RI concept—<strong>and only when a perfect semantic equivalence exists</strong>. Using more than one <code>hriv:hasSemantics</code> for the same concept is not allowed, as it introduces ambiguity.</p>
+<p class="admonition-title">Only one <code>hriv:isExactMeaningOf</code> allowed</p>
+<p>Each concept may have <strong>exactly one</strong> <code>hriv:isExactMeaningOf</code> to a Health-RI concept—<strong>and only when a perfect semantic equivalence exists</strong>. Using more than one <code>hriv:isExactMeaningOf</code> for the same concept is not allowed, as it introduces ambiguity.</p>
 </div>
 <p><img alt="Deriving OntoUML semantics via mapping to Health-RI reference model" src="../assets/images/mapping-cim-pim2.png" />
-<em>Figure 2: If an external ontology defines <code>External:Patient</code> which we map via <code>hriv:hasSemantics</code> to <code>hrio:Patient</code>—and <code>hrio:Patient</code> derives its semantics from the OntoUML <code>Patient</code> concept—then we can interpret <code>External:Patient</code> as conveying the same semantics as the <code>OntoUML Patient</code> concept.</em></p>
+<em>Figure 2: If an external ontology defines <code>External:Patient</code> which we map via <code>hriv:isExactMeaningOf</code> to <code>hrio:Patient</code>—and <code>hrio:Patient</code> derives its semantics from the OntoUML <code>Patient</code> concept—then we can interpret <code>External:Patient</code> as conveying the same semantics as the <code>OntoUML Patient</code> concept.</em></p>
 <h2 id="mapping-properties-for-cross-scheme-alignment">Mapping Properties for Cross-Scheme Alignment</h2>
-<p>The Health-RI Mapping Vocabulary was created to provide a set of mapping properties designed for expressing alignments between concepts in different concept schemes (e.g. external vocabularies and our Health-RI ontology). The principal properties are: <code>hriv:hasSemantics</code>, <code>hriv:hasSemanticsBroad</code>, and <code>hriv:hasSemanticsNarrow</code>.</p>
+<p>The <a href="../specification.html">Health-RI Mapping Vocabulary</a> was created to provide a set of mapping properties designed for expressing alignments between concepts in different concept schemes (e.g. external vocabularies and our Health-RI ontology). The principal properties are: <code>hriv:isExactMeaningOf</code>, <code>hriv:hasBroaderMeaningThan</code>, and <code>hriv:hasNarrowerMeaningThan</code>.</p>
 <h3 id="our-strategy-choosing-the-right-mapping-property">Our Strategy: Choosing the Right Mapping Property</h3>
 <ul>
-<li><strong><code>hriv:hasSemantics</code></strong> is used when the external concept is fully equivalent in meaning to our reference concept.</li>
-<li>Each external concept may have <strong>only one</strong> <code>hriv:hasSemantics</code>.</li>
-<li><strong><code>hriv:hasSemanticsBroad</code></strong> is used when the external concept is <strong>broader</strong> than our reference concept (i.e., it includes our concept and possibly more).</li>
-<li><strong><code>hriv:hasSemanticsNarrow</code></strong> is used when the external concept is <strong>narrower</strong> than our reference concept (i.e., it captures a more specific notion).</li>
+<li><strong><a href="../specification.html#hasExactMeaning"><code>hriv:isExactMeaningOf</code></a></strong> is used when the external concept is fully equivalent in meaning to our reference concept.</li>
+<li>Each external concept may have <strong>only one</strong> <code>hriv:isExactMeaningOf</code>.</li>
+<li><strong><a href="../specification.html#hasBroaderMeaningThan"><code>hriv:hasBroaderMeaningThan</code></a></strong> is used when the external concept is <strong>broader</strong> than our reference concept (i.e., it includes our concept and possibly more).</li>
+<li><strong><a href="../specification.html#hasNarrowerMeaningThan"><code>hriv:hasNarrowerMeaningThan</code></a></strong> is used when the external concept is <strong>narrower</strong> than our reference concept (i.e., it captures a more specific notion).</li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Clarifying hriv:hasSemantics semantics</p>
-<p>Although <code>hriv:hasSemantics</code> can be treated like a strong semantic alignment <strong>in meaning</strong>, it does <strong>not imply logical equivalence</strong> (such as <code>owl:equivalentClass</code>). It is intended to capture a strong semantic alignment <strong>in meaning</strong>, not in logical entailment. This allows semantic interoperability without risking unintended reasoning consequences in OWL-based systems.</p>
+<p class="admonition-title">Clarifying hriv:isExactMeaningOf semantics</p>
+<p>Although <code>hriv:isExactMeaningOf</code> can be treated like a strong semantic alignment <strong>in meaning</strong>, it does <strong>not imply logical equivalence</strong> (such as <code>owl:equivalentClass</code>). It is intended to capture a strong semantic alignment <strong>in meaning</strong>, not in logical entailment. This allows semantic interoperability without risking unintended reasoning consequences in OWL-based systems.</p>
 </div>
-<p>In contrast to <code>hriv:hasSemantics</code>, both <code>hriv:hasSemanticsNarrow</code> and <code>hriv:hasSemanticsBroad</code> allow <strong>multiple mappings per concept</strong> to express partial or hierarchical semantic overlaps.</p>
+<p>In contrast to <code>hriv:isExactMeaningOf</code>, both <code>hriv:hasNarrowerMeaningThan</code> and <code>hriv:hasBroaderMeaningThan</code> allow <strong>multiple mappings per concept</strong> to express partial or hierarchical semantic overlaps.</p>
 <p>These mappings are only to be used when <strong>no perfect equivalence exists</strong> and a semantic approximation must be made to the <strong>closest reference concept</strong> in the Health-RI ontology.</p>
 <h3 id="visual-example-exact-semantic-alignment">Visual Example: Exact Semantic Alignment</h3>
-<p><img alt="Cross-ontology mapping using hriv:hasSemantics and rdfs:subClassOf" src="../assets/images/example-mapping.png" />
-<em>Figure 3: External ontologies (e.g., HealthCare and Veterinary) map their local concepts to reference concepts in the Health-RI Ontology via <code>hriv:hasSemantics</code> (red). These reference concepts are also semantically structured via <code>rdfs:subClassOf</code> (brown), enabling consistent classification across domains.</em></p>
+<p><img alt="Cross-ontology mapping using hriv:isExactMeaningOf and rdfs:subClassOf" src="../assets/images/example-mapping.png" />
+<em>Figure 3: External ontologies (e.g., HealthCare and Veterinary) map their local concepts to reference concepts in the Health-RI Ontology via <code>hriv:isExactMeaningOf</code> (red). These reference concepts are also semantically structured via <code>rdfs:subClassOf</code> (brown), enabling consistent classification across domains.</em></p>
 <p>This figure illustrates how concepts such as <code>hc:Patient</code> and <code>vet:Patient</code> are mapped to <code>hrio:HealthcarePatient</code> and <code>hrio:VeterinaryPatient</code> respectively. These are in turn subsumed by higher-level concepts like <code>hrio:Human</code> or <code>hrio:NonHumanAnimal</code>, ultimately aligning under <code>hrio:Animal</code>. This modeling strategy ensures that semantic alignments preserve domain distinctions while enabling unified interpretation under a shared reference ontology.</p>
 <div class="admonition tip">
 <p class="admonition-title">How to assert an exact match in your OWL file</p>
-<p>To assign that a concept in your ontology has its semantics defined by a concept in the <strong>latest version</strong> of the Health-RI Ontology, use <code>hriv:hasSemantics</code> as shown below:</p>
+<p>To assign that a concept in your ontology has its semantics defined by a concept in the <strong>latest version</strong> of the Health-RI Ontology, use <code>hriv:isExactMeaningOf</code> as shown below:</p>
 <ul>
-<li><code>hc:Patient hriv:hasSemantics &lt;https://w3id.org/health-ri/ontology#HealthcarePatient&gt; .</code></li>
+<li><code>hc:Patient hriv:isExactMeaningOf &lt;https://w3id.org/health-ri/ontology#HealthcarePatient&gt; .</code></li>
 </ul>
 <p>Or, if you've defined the prefix <code>hrio: &lt;https://w3id.org/health-ri/ontology#&gt;</code>, you can simply write:</p>
 <ul>
-<li><code>hc:Patient hriv:hasSemantics hrio:HealthcarePatient .</code></li>
+<li><code>hc:Patient hriv:isExactMeaningOf hrio:HealthcarePatient .</code></li>
 </ul>
 <p>To align with a <strong>specific version</strong> of a Health-RI Ontology's concept (e.g., <code>v2.0.0</code>), use:</p>
 <ul>
-<li><code>hc:Patient hriv:hasSemantics &lt;https://w3id.org/health-ri/ontology/v2.0.0#HealthcarePatient&gt; .</code></li>
+<li><code>hc:Patient hriv:isExactMeaningOf &lt;https://w3id.org/health-ri/ontology/v2.0.0#HealthcarePatient&gt; .</code></li>
 </ul>
 </div>
 <h3 id="visual-example-broader-and-narrower-semantic-alignments">Visual Example: Broader and Narrower Semantic Alignments</h3>
-<p><img alt="Cross-ontology mapping using hriv:hasSemantics, hriv:hasSemanticsNarrow, and hriv:hasSemanticsBroad" src="../assets/images/example-mapping2.png" />
-<em>Figure 4: Mapping external concepts from GeneralHealth and PetVeterinary ontologies to the Health-RI ontology. This example evolves from Figure 3 by incorporating <code>hriv:hasSemanticsNarrow</code> (magenta) and <code>hriv:hasSemanticsBroad</code> (blue) mappings in addition to <code>hriv:hasSemantics</code> (red).</em></p>
+<p><img alt="Cross-ontology mapping using hriv:isExactMeaningOf, hriv:hasNarrowerMeaningThan, and hriv:hasBroaderMeaningThan" src="../assets/images/example-mapping2.png" />
+<em>Figure 4: Mapping external concepts from GeneralHealth and PetVeterinary ontologies to the Health-RI ontology. This example evolves from Figure 3 by incorporating <code>hriv:hasNarrowerMeaningThan</code> (magenta) and <code>hriv:hasBroaderMeaningThan</code> (blue) mappings in addition to <code>hriv:isExactMeaningOf</code> (red).</em></p>
 <ul>
-<li><code>ghc:Patient</code> and <code>pvet:Patient</code> are both linked via <code>hriv:hasSemanticsNarrow</code> to <code>hrio:VeterinaryPatient</code>, indicating that each of these patients represents a specialized kind of patient in the Health-RI ontology.</li>
-<li><code>pvet:PetAnimal</code> is linked via <code>hriv:hasSemanticsBroad</code> to <code>hrio:NonHumanAnimal</code>, signaling that the external concept is broader in scope.</li>
-<li>The figure also maintains <code>hriv:hasSemantics</code> mappings for concepts that are fully equivalent (e.g., <code>ghc:Animal</code> and <code>hrio:Animal</code>).</li>
+<li><code>ghc:Patient</code> and <code>pvet:Patient</code> are both linked via <code>hriv:hasBroaderMeaningThan</code> to <code>hrio:VeterinaryPatient</code>, indicating that each of these patients represents a has a broader meaning than the concept patient in the Health-RI ontology.</li>
+<li><code>pvet:PetAnimal</code> is linked via <code>hriv:hasNarrowerMeaningThan</code> to <code>hrio:NonHumanAnimal</code>, signaling that the external concept has narrower meaning.</li>
+<li>The figure also maintains <code>hriv:isExactMeaningOf</code> mappings for concepts that are fully equivalent (e.g., <code>ghc:Animal</code> and <code>hrio:Animal</code>).</li>
 <li>Internal hierarchical structure is preserved via <code>rdfs:subClassOf</code> to allow consistent classification across ontologies.</li>
 </ul>
 <p>This more flexible mapping strategy supports gradual alignment of external ontologies to our reference model even in cases where semantic overlap is partial rather than complete.</p>
 <div class="admonition tip">
 <p class="admonition-title">How to assert broader or narrower mappings in your OWL file</p>
-<p>After having defined the <code>hri</code> prefix, to express an approximate mapping using <code>hriv:hasSemanticsNarrow</code> or <code>hriv:hasSemanticsBroad</code>, use:</p>
+<p>After having defined the <code>hri</code> prefix, to express an approximate mapping using <code>hriv:hasNarrowerMeaningThan</code> or <code>hriv:hasBroaderMeaningThan</code>, use:</p>
 <ul>
-<li><code>ghc:Patient hriv:hasSemanticsNarrow hrio:VeterinaryPatient .</code></li>
-<li><code>pvet:PetAnimal hriv:hasSemanticsBroad hrio:NonHumanAnimal .</code></li>
+<li><code>ghc:Patient hriv:hasBroaderMeaningThan hrio:VeterinaryPatient .</code></li>
+<li><code>pvet:PetAnimal hriv:hasNarrowerMeaningThan hrio:NonHumanAnimal .</code></li>
 </ul>
 <p>You may also reference a specific version using the full ontology's URI (e.g., for v2.0.0):</p>
 <ul>
-<li><code>ghc:Patient hriv:hasSemanticsNarrow &lt;https://w3id.org/health-ri/ontology/v2.0.0#VeterinaryPatient&gt; .</code></li>
+<li><code>ghc:Patient hriv:hasBroaderMeaningThan &lt;https://w3id.org/health-ri/ontology/v2.0.0#VeterinaryPatient&gt; .</code></li>
 </ul>
 </div>
 <h4 id="visual-example-completing-the-ontology-via-semantic-gaps">Visual Example: Completing the Ontology via Semantic Gaps</h4>
 <p><img alt="Cross-ontology mapping after enriching the reference ontology" src="../assets/images/example-mapping3.png" />
-<em>Figure 5: Following the scenario from Figure 4, new intermediate concepts (in green) were added to the Health-RI ontology to bridge semantic gaps and enable the replacement of approximate mappings (<code>hriv:hasSemanticsNarrow</code>, <code>hriv:hasSemanticsBroad</code>) with exact ones.</em></p>
-<p>In cases where an external ontology cannot be mapped via <code>hriv:hasSemantics</code> due to a lack of equivalent concepts, we encourage internal teams and external partners to <strong>contact the Health-RI modeling team</strong>. By collaboratively extending the reference ontology with <strong>missing intermediate concepts</strong>, we support:</p>
+<em>Figure 5: Following the scenario from Figure 4, new intermediate concepts (in green) were added to the Health-RI ontology to bridge semantic gaps and enable the replacement of approximate mappings (<code>hriv:hasNarrowerMeaningThan</code>, <code>hriv:hasBroaderMeaningThan</code>) with exact ones.</em></p>
+<p>In cases where an external ontology cannot be mapped via <code>hriv:isExactMeaningOf</code> due to a lack of equivalent concepts, we encourage internal teams and external partners to <strong>contact the Health-RI modeling team</strong>. By collaboratively extending the reference ontology with <strong>missing intermediate concepts</strong>, we support:</p>
 <ul>
-<li>The replacement of <code>hriv:hasSemanticsNarrow</code> and <code>hriv:hasSemanticsBroad</code> with <code>hriv:hasSemantics</code>,</li>
+<li>The replacement of <code>hriv:hasNarrowerMeaningThan</code> and <code>hriv:hasBroaderMeaningThan</code> with <code>hriv:isExactMeaningOf</code>,</li>
 <li>A more <strong>complete and semantically precise reference model</strong>,</li>
 <li>And clearer, more actionable mappings for downstream reasoning and integration.</li>
 </ul>
-<p>In the figure above, concepts like <code>hrio:PetVet.Patient</code> and <code>hrio:PetAnimal</code> were introduced to bridge the gap between <code>pvet:Patient</code>/<code>pvet:PetAnimal</code> and broader Health-RI categories. These new concepts enable the creation of precise <code>hriv:hasSemantics</code> relationships, improving the coherence and utility of both the reference ontology and the external ontology being mapped.</p>
+<p>In the figure above, concepts like <code>hrio:PetVet.Patient</code> and <code>hrio:PetAnimal</code> were introduced to bridge the gap between <code>pvet:Patient</code>/<code>pvet:PetAnimal</code> and broader Health-RI categories. These new concepts enable the creation of precise <code>hriv:isExactMeaningOf</code> relationships, improving the coherence and utility of both the reference ontology and the external ontology being mapped.</p>
 <h2 id="references">References</h2>
 <p><a id="ref1"></a><br />
 <strong>[1]</strong> Object Management Group. <em>MDA Guide rev. 2.0</em>. OMG Document ormsc/14-06-01, 2014. <a href="https://www.omg.org/cgi-bin/doc?ormsc/14-06-01"><strong>Access</strong></a>
