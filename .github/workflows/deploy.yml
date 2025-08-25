@@ -41,7 +41,7 @@ jobs:
       - name: Generate OntoUML documentation
         run: python scripts/ontouml-docgen.py
 
-      - name: Generate PyLODE Specification
+      - name: Generate PyLODE Specifications for Ontology and Vocabulary
         run: python scripts/pylode-docgen.py
 
       - name: Commit and push generated files
@@ -50,6 +50,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           shopt -s globstar
           git add ontologies/versioned/** ontologies/latest/** || true
+          git add vocabulary/versioned/** vocabulary/latest/** || true
           git diff --cached --quiet || git commit -m "docs: update generated documentation and specifications"
           git push origin main
 

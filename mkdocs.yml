@@ -47,7 +47,6 @@ plugins:
   - search
   - table-reader
 
-
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -58,7 +57,6 @@ markdown_extensions:
 extra_css:
   - assets/stylesheets/colors.css
   - ontology/assets/stylesheets/extra.css
-
 
 nav:
   - Home: index.md
@@ -74,6 +72,7 @@ nav:
   - The Health-RI Method:
       - Overview: method/index.md
       - Mapping Strategy: method/mapping-strategy.md
+      - Mapping Vocabulary: method/specification.html
       - Mapping Set: method/mapping-set.md
       - Publishing: method/publication.md
       - Permanent Identifiers (PIDs): method/permanent-ids.md
@@ -89,7 +88,7 @@ nav:
   #     - Overview: output/index.md
 
 extra:
-  generator: false    # disables "Made with Material for MkDocs" line
+  generator: false # disables "Made with Material for MkDocs" line
   social:
     - icon: fontawesome/solid/envelope
       link: mailto:pedro.barcelos@health-ri.nl

@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import shutil
 
 
-def get_latest_ttl_file(directory: Path):
+def get_latest_ontology_ttl_file(directory: Path):
     """
     Finds the latest versioned TTL file in the given directory based on semantic versioning
     embedded in the filename (e.g., 'health-ri-ontology-v1.2.3.ttl').
@@ -33,6 +33,24 @@ def get_latest_ttl_file(directory: Path):
 
     return latest_file, latest_version
 
+def get_latest_vocabulary_ttl_file(directory: Path):
+    """
+    Finds the latest versioned TTL file for the vocabulary based on semantic versioning
+    embedded in the filename (e.g., 'health-ri-vocabulary-v1.2.3.ttl').
+    """
+    pattern = r"health-ri-vocabulary-v(\d+\.\d+\.\d+)\.ttl"
+    latest_file = None
+    latest_version = None
+
+    for file in directory.glob("health-ri-vocabulary-v*.ttl"):
+        match = re.match(pattern, file.name)
+        if match:
+            file_version = version.parse(match.group(1))
+            if latest_version is None or file_version > latest_version:
+                latest_version = file_version
+                latest_file = file
+
+    return latest_file, latest_version
 
 def fix_internal_links_in_html(file_path: Path):
     """
@@ -137,8 +155,10 @@ def main():
     base_dir = Path(__file__).resolve().parent.parent
     ttl_dir = base_dir / "ontologies" / "versioned"
     output_file = base_dir / "docs/ontology/specification.html"
+    output_file.parent.mkdir(parents=True, exist_ok=True)
 
-    latest_ttl, latest_version = get_latest_ttl_file(ttl_dir)
+
+    latest_ttl, latest_version = get_latest_ontology_ttl_file(ttl_dir)
     if not latest_ttl:
         logging.warning(
             "No valid TTL files found in 'ontologies/versioned/'. No specification will be produced."
@@ -173,6 +193,49 @@ def main():
 
     except subprocess.CalledProcessError as e:
         logging.error(f"PyLODE generation failed: {e}")
+
+    # Generate specification for the Mapping Vocabulary ===
+    vocab_ttl_dir = base_dir / "vocabulary" / "versioned"
+    vocab_output_file = base_dir / "docs/method/specification.html"
+    vocab_output_file.parent.mkdir(parents=True, exist_ok=True)
+
+    vocab_ttl, vocab_version = get_latest_vocabulary_ttl_file(vocab_ttl_dir)
+    if not vocab_ttl:
+        logging.warning(
+            "No valid TTL files found in 'vocabulary/versioned/'. No vocabulary specification will be produced."
+        )
+    else:
+        logging.info(f"Generating vocabulary specification from: {vocab_ttl}")
+        try:
+            subprocess.run(
+                ["pylode", str(vocab_ttl), "-o", str(vocab_output_file)],
+                check=True,
+            )
+            logging.info(f"Vocabulary specification generated at: {vocab_output_file}")
+
+            # Post-process the file
+            fix_internal_links_in_html(vocab_output_file)
+            sort_toc_sections_in_html(vocab_output_file)
+            insert_logo_in_html(vocab_output_file)
+
+            # Save versioned copy
+            vocab_version_str = str(vocab_version)
+            vocab_versioned_output = (
+                base_dir
+                / f"vocabulary/versioned/documentations/specification-v{vocab_version_str}.html"
+            )
+            vocab_versioned_output.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(vocab_output_file, vocab_versioned_output)
+            logging.info(f"Copied versioned vocabulary specification to: {vocab_versioned_output}")
+
+            # Save latest copy
+            vocab_latest_output = base_dir / "vocabulary/latest/documentations/specification.html"
+            vocab_latest_output.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(vocab_output_file, vocab_latest_output)
+            logging.info(f"Copied vocabulary specification to: {vocab_latest_output}")
+
+        except subprocess.CalledProcessError as e:
+            logging.error(f"PyLODE generation for vocabulary failed: {e}")
 
 
 if __name__ == "__main__":
