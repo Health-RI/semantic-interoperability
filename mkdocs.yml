@@ -53,10 +53,12 @@ markdown_extensions:
   - pymdownx.superfences
   - footnotes
   - attr_list
+  - md_in_html
 
 extra_css:
   - assets/stylesheets/colors.css
   - ontology/assets/stylesheets/extra.css
+  - assets/stylesheets/extra.css
 
 nav:
   - Home: index.md

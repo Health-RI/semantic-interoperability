@@ -4,8 +4,17 @@ We welcome community feedback and contributions to help improve the quality, cov
 
 To streamline the contribution process, we provide structured submission forms that help ensure your input is reviewed and addressed efficiently. Choose one of the options below to open the appropriate GitHub Issue form:
 
-[Report an Ontology Error](https://github.com/health-ri/semantic-interoperability/issues/new?template=ontology-error-report.yml){ .md-button } [Request a New Concept](https://github.com/health-ri/semantic-interoperability/issues/new?template=concept-request.yml){ .md-button } [Other Contribution or Request](https://github.com/health-ri/semantic-interoperability/issues/new?template=other-contribution.yml){ .md-button }
+<div class="button-grid" markdown>
+
+[Report an Ontology Error](https://github.com/health-ri/semantic-interoperability/issues/new?template=ontology-error-report.yml){ .md-button }
+
+[Request a New Concept](https://github.com/health-ri/semantic-interoperability/issues/new?template=concept-request.yml){ .md-button }
+
+[Other Contribution or Request](https://github.com/health-ri/semantic-interoperability/issues/new?template=other-contribution.yml){ .md-button }
+
 [Propose a SSSOM Mapping](https://github.com/Health-RI/semantic-interoperability/issues/new?template=sssom-new-mapping.yml){ .md-button }
+
+</div>
 
 The sections below explain each type of contribution in more detail and link to the corresponding submission form.
 
