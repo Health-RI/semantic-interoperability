@@ -1,8 +1,12 @@
 # Initiative Publications
 
-This repository follows a structured and transparent publishing approach to support traceability, stability, and reuse of the Health-RI Ontology and its artifacts.
+This repository implements a structured, transparent publishing process for both the Health-RI Ontology and its SSSOM mapping sets, ensuring all artifacts are traceable, stable, and reusable, and supporting FAIR-aligned interoperability.
 
-## Versioning Policy
+## Publishing the Ontology
+
+Before diving into specific files and artifacts, we first outline how ontology versions are tracked and the policy guiding version numbering.
+
+### Versioning Policy
 
 We use an **adapted semantic versioning** scheme to indicate the type and impact of changes:
 
@@ -20,7 +24,7 @@ While inspired by [Semantic Versioning](https://semver.org/), this adapted strat
 !!! info
     We adopt a **fast versioning strategy**: files are made available in the `/ontology` folder as soon as possible, even when they may present smaller completion or consistency issues. This enables early access and collaboration, while stability is guaranteed only for major releases.
 
-## Published Artifacts
+### Published Artifacts
 
 For each ontology release, the following artifacts are published — always in both `ontologies/latest/` and `ontologies/versioned/` folders.
 
@@ -58,7 +62,7 @@ For each ontology release, the following artifacts are published — always in b
 !!! info "Mapping Artifacts – Coming Soon"
     Information about the mapping outputs will be added in a future update. Their design and structure are still under discussion and will be published once finalized.
 
-## Repository Structure
+### Repository Structure
 
 All current artifacts are made available in the `/ontologies` folder:
 
@@ -94,7 +98,7 @@ ontologies/
     The `images/` folder — containing exported PNG versions of all OntoUML diagrams — is only provided under the `latest/` folder.  
     These images are always generated from the most recent `.vpp` file and are not versioned individually.
 
-## Archive and Change History
+### Archive and Change History
 
 - Only the **latest version** of each artifact is visible directly in the `ontologies/latest/` folder.
 - **All previous versions** are organized in the `ontologies/versioned/` directory for transparency and reproducibility.
@@ -104,3 +108,17 @@ ontologies/
 
 !!! tip "Looking for PID details?"
     The full description of all Permanent Identifiers (PIDs) — including format-specific URIs for each version — is documented separately. Access the complete description at: [Permanent Identifiers](permanent-ids.md).
+
+## Publishing SSSOM Mappings
+
+This section describes the publication process for our **SSSOM mapping sets** (cross-ontology alignments), which follow a different versioning strategy than the ontology artifacts described above.
+
+The SSSOM mapping set uses date-based versions in the format `YYYY-MM-DD` (at most one version per day).  
+Published mappings are **append-only**: existing rows are not deleted. To correct or supersede a row, add a new one using the `replaces` field to reference the previous record.
+
+- **SSSOM Mapping Set (TSV & TTL)**  
+  Curated cross-ontology alignments published as a tabular SSSOM set and as RDF/Turtle.
+  - `https://github.com/Health-RI/semantic-interoperability/mappings` — redirects to the **TTL** version  
+  - `https://github.com/Health-RI/semantic-interoperability/mappings/ttl` — **TTL** version  
+  - `https://github.com/Health-RI/semantic-interoperability/mappings/tsv` — **TSV** version  
+  - Human-readable table: `docs/ontology/mappings.md`
