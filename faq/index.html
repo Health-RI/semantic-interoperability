@@ -1220,7 +1220,7 @@
 </details>
 <details class="question">
 <summary>What exactly are we trying to achieve with semantic interoperability?</summary>
-<p>We aim to align external and internal ontologies to a shared reference model, ensuring that semantic definitions are preserved across conceptual and computational layers. This is achieved through structured mappings (e.g., <code>hriv:hasSemantics</code>) from third-party concepts to Health-RI’s reference ontology (OntoUML) and its computational counterpart (gUFO).</p>
+<p>We aim to align external and internal ontologies to a shared reference model, ensuring that semantic definitions are preserved across conceptual and computational layers. This is achieved through structured mappings (e.g., <code>hriv:hasExactMeaning</code>) from third-party concepts to Health-RI’s reference ontology (OntoUML) and its computational counterpart (gUFO).</p>
 </details>
 <details class="question">
 <summary>Why is semantic interoperability important in healthcare and life sciences?</summary>
@@ -1244,7 +1244,7 @@
 </details>
 <details class="question">
 <summary>What does success look like for this project?</summary>
-<p>Success means having a robust reference model (OntoUML) and executable OWL artifacts (gUFO) in place, with external ontologies semantically aligned through precise mappings. It also includes supporting community contributions, replacing approximate mappings (e.g., <code>hriv:hasSemantics</code>) with exact ones where possible, and continuously refining the model to bridge semantic gaps.</p>
+<p>Success means having a robust reference model (OntoUML) and executable OWL artifacts (gUFO) in place, with external ontologies semantically aligned through precise mappings. It also includes supporting community contributions, replacing approximate mappings (e.g., <code>hriv:hasExactMeaning</code>) with exact ones where possible, and continuously refining the model to bridge semantic gaps.</p>
 </details>
 <details class="question">
 <summary>Who will benefit from or use the developed solutions?</summary>
@@ -1264,11 +1264,11 @@
 </details>
 <details class="question">
 <summary>What are some examples of current successes or progress?</summary>
-<p>The development of the OntoUML conceptual model, its implementation as the gUFO OWL ontology, and the strategy for semantically aligning third-party ontologies using Health-RI Mapping Vocabulary properties are all concrete milestones achieved. Figures and examples in the documentation illustrate successful alignment strategies already in use.</p>
+<p>The development of the OntoUML conceptual model, its implementation as the gUFO OWL ontology, and the strategy for semantically aligning third-party ontologies using <a href="../method/specification.html">Health-RI Mapping Vocabulary</a> properties are all concrete milestones achieved. Figures and examples in the documentation illustrate successful alignment strategies already in use.</p>
 </details>
 <details class="question">
 <summary>What challenges are currently being faced?</summary>
-<p>One challenge is when no exact match exists between external concepts and the reference ontology. This requires approximate mappings and motivates the need to expand the Health-RI ontology to bridge gaps. Another challenge is managing transitivity and ambiguity in mappings (e.g., limiting to a single <code>hriv:hasSemantics</code> per concept).</p>
+<p>One challenge is when no exact match exists between external concepts and the reference ontology. This requires approximate mappings and motivates the need to expand the Health-RI ontology to bridge gaps. Another challenge is managing transitivity and ambiguity in mappings (e.g., limiting to a single <code>hriv:hasExactMeaning</code> per concept).</p>
 </details>
 <details class="question">
 <summary>What risks and limitations should be considered? (TBD)</summary>
@@ -1361,39 +1361,39 @@
 <a href="../ontouml-gufo/ontouml">OntoUML</a> • <a href="../ontouml-gufo/gufo">gUFO</a></p>
 </details>
 <h2 id="mapping-and-alignment-strategy">Mapping and Alignment Strategy</h2>
-<p><em>Questions about how external concepts are aligned to the Health-RI reference model using dedicated mapping properties from the Health-RI Mapping Vocabulary.</em></p>
+<p><em>Questions about how external concepts are aligned to the Health-RI reference model using dedicated mapping properties from the <a href="../method/specification.html">Health-RI Mapping Vocabulary</a>.</em></p>
 <details class="question">
 <summary>How are mappings from local schemas to the reference model created?</summary>
 <p>If schemas are OWL/RDF-based, mappings can be embedded directly using standard RDF properties. Otherwise, external mappings are created using <a href="https://mapping-commons.github.io/sssom/">SSSOM</a>.</p>
-<p>Mappings follow the Health-RI Mapping Vocabulary and can be asserted using:</p>
+<p>Mappings follow the <a href="../method/specification.html">Health-RI Mapping Vocabulary</a> and can be asserted using:</p>
 <ul>
-<li><code>hriv:hasSemantics</code> for perfect semantic alignment (only one allowed),</li>
-<li><code>hriv:hasSemanticsBroad</code> or <code>hriv:hasSemanticsNarrow</code> when the match is approximate.</li>
+<li><a href="../method/specification.html#hasExactMeaning"><code>hriv:hasExactMeaning</code></a> for perfect semantic alignment (only one allowed),</li>
+<li><a href="../method/specification.html#hasExactMeaning"><code>hriv:hasBroaderMeaningThan</code></a> or <a href="../method/specification.html#hasExactMeaning"><code>hriv:hasNarrowerMeaningThan</code></a> when the match is approximate.</li>
 </ul>
 <p>These mappings support semantic alignment without requiring modification to the original schema and are managed either by Health-RI (non-invasively in SSSOM) or by partners (embedded in their own RDF models).</p>
 <p><a href="../method/mapping-strategy">Full explanation</a></p>
 </details>
 <details class="question">
-<summary>What is <code>hriv:hasSemantics</code>, and how is it different from <code>owl:equivalentClass</code> or <code>skos:exactMatch</code>?</summary>
-<p><code>hriv:hasSemantics</code> (equivalent to <code>semiotics:expresses</code>) is used to state that an external concept carries the same intended meaning as a concept in the Health-RI reference model. It expresses a strong semantic alignment in terms of <strong>shared meaning</strong>, but it does not imply logical equivalence.</p>
+<summary>What is <code>hriv:hasExactMeaning</code>, and how is it different from <code>owl:equivalentClass</code> or <code>skos:exactMatch</code>?</summary>
+<p><code>hriv:hasExactMeaning</code> (equivalent to <code>semiotics:expresses</code>) is used to state that an external concept carries the same intended meaning as a concept in the Health-RI reference model. It expresses a strong semantic alignment in terms of <strong>shared meaning</strong>, but it does not imply logical equivalence.</p>
 <ul>
 <li>Unlike <code>owl:equivalentClass</code>, it does not entail formal logical equivalence and therefore avoids unintended reasoning consequences when integrating ontologies with different logical foundations.</li>
-<li>Unlike <code>skos:exactMatch</code>, which is often used for linking concepts across vocabularies in a looser, less formally grounded way, <code>hriv:hasSemantics</code> is tied to an explicit semantic grounding in a reference ontology. This makes it more precise for interoperability scenarios where meaning—not logical entailment—is the key requirement.</li>
+<li>Unlike <code>skos:exactMatch</code>, which is often used for linking concepts across vocabularies in a looser, less formally grounded way, <code>hriv:hasExactMeaning</code> is tied to an explicit semantic grounding in a reference ontology. This makes it more precise for interoperability scenarios where meaning—not logical entailment—is the key requirement.</li>
 </ul>
-<p>In summary, <code>hriv:hasSemantics</code> is intended for strong semantic alignment without the risks of logical overcommitment (<code>owl:equivalentClass</code>) or the potential ambiguity of generic lexical alignment (<code>skos:exactMatch</code>).</p>
+<p>In summary, <code>hriv:hasExactMeaning</code> is intended for strong semantic alignment without the risks of logical overcommitment (<code>owl:equivalentClass</code>) or the potential ambiguity of generic lexical alignment (<code>skos:exactMatch</code>).</p>
 </details>
 <details class="question">
-<summary>Why is there a rule that only one <code>hriv:hasSemantics</code> is allowed per concept?</summary>
-<p>To avoid semantic ambiguity. Allowing multiple <code>hriv:hasSemantics</code> assertions for the same concept would imply conflicting definitions and hinder consistent interpretation. Each external concept must match only one Health-RI concept with perfect equivalence.</p>
+<summary>Why is there a rule that only one <code>hriv:hasExactMeaning</code> is allowed per concept?</summary>
+<p>To avoid semantic ambiguity. Allowing multiple <code>hriv:hasExactMeaning</code> assertions for the same concept would imply conflicting definitions and hinder consistent interpretation. Each external concept must match only one Health-RI concept with perfect equivalence.</p>
 </details>
 <details class="question">
 <summary>What should I do if no exact match exists between my concept and the Health-RI ontology?</summary>
-<p>If your concept is broader or narrower than any existing reference concept, use <code>hriv:hasSemanticsBroad</code> or <code>hriv:hasSemanticsNarrow</code> accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future (<a href="../contributing">read more.</a>).</p>
+<p>If your concept is broader or narrower than any existing reference concept, use <code>hriv:hasBroaderMeaningThan</code> or <code>hriv:hasNarrowerMeaningThan</code> accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future (<a href="../contributing">read more.</a>).</p>
 </details>
 <details class="question">
 <summary>Can new concepts be added to the Health-RI ontology to improve mapping precision?</summary>
-<p>Yes. When <code>hriv:hasSemantics</code> cannot be used due to missing concepts, we encourage you to contact the Health-RI modeling team (<a href="../contributing">read more.</a>).</p>
-<p>If justified, new intermediate concepts may be added to the reference ontology. This helps replace approximate mappings (<code>hriv:hasSemanticsBroad</code>, <code>hriv:hasSemanticsNarrow</code>) with exact ones and ensures better semantic precision for reasoning, integration, and long-term alignment.</p>
+<p>Yes. When <code>hriv:hasExactMeaning</code> cannot be used due to missing concepts, we encourage you to contact the Health-RI modeling team (<a href="../contributing">read more.</a>).</p>
+<p>If justified, new intermediate concepts may be added to the reference ontology. This helps replace approximate mappings (<code>hriv:hasBroaderMeaningThan</code>, <code>hriv:hasNarrowerMeaningThan</code>) with exact ones and ensures better semantic precision for reasoning, integration, and long-term alignment.</p>
 <p><a href="../method/mapping-strategy">See example</a></p>
 </details>
 <details class="question">
@@ -1401,7 +1401,7 @@
 <p>Mappings can be authored by:</p>
 <ul>
 <li><strong>Health-RI</strong> (non-invasive, published in SSSOM format), for public or external ontologies;</li>
-<li><strong>External partners</strong>, by embedding <code>hriv:hasSemantics*</code> statements directly in their ontology files, especially when they control the editorial process of the external artifact.</li>
+<li><strong>External partners</strong>, by embedding <code>hriv:hasExactMeaning*</code> statements directly in their ontology files, especially when they control the editorial process of the external artifact.</li>
 </ul>
 </details>
 <details class="question">
@@ -1413,7 +1413,7 @@
 <p>Mappings can be created and maintained by:</p>
 <ul>
 <li>The <strong>Health-RI team</strong>, which curates non-invasive mappings using the <a href="https://w3id.org/sssom/">SSSOM</a> format. These mappings are published externally and do not alter the original third-party ontologies.</li>
-<li><strong>External partners</strong>, who can embed mappings directly in their own ontology files using Health-RI Mapping Vocabulary properties (e.g., <code>hriv:hasSemantics</code>).</li>
+<li><strong>External partners</strong>, who can embed mappings directly in their own ontology files using <a href="../method/specification.html">Health-RI Mapping Vocabulary</a> properties (e.g., <code>hriv:hasExactMeaning</code>).</li>
 </ul>
 <p><a href="../method/mapping-strategy">Read more.</a></p>
 </details>
@@ -1465,14 +1465,14 @@
 <li>
 <p>Positive mapping: "fhir:Patient has its semantics defined by hrio:Patient"
   <code>subject_id = fhir:Patient</code>
-  <code>predicate_id = hriv:hasSemantics</code>
+  <code>predicate_id = hriv:hasExactMeaning</code>
   <code>object_id = hrio:Patient</code>
   <code>predicate_modifier =</code> (empty)</p>
 </li>
 <li>
 <p>Negative mapping: "vet:Patient DOES NOT have its semantics defined by hrio:Patient"
   <code>subject_id = vet:Patient</code>
-  <code>predicate_id = hriv:hasSemantics</code>
+  <code>predicate_id = hriv:hasExactMeaning</code>
   <code>object_id = hrio:Patient</code>
   <code>predicate_modifier = Not</code></p>
 </li>
@@ -1499,9 +1499,8 @@ In the template, headers for mandatory fields are black, and optional ones are g
 <p><em>Questions about how the ontology is released, versioned, and maintained over time.</em></p>
 <details class="question">
 <summary>Where can I find the latest version of the Health-RI ontology?</summary>
-<p>All published versions are available in the <code>/ontologies/</code> folder. The most recent major release is always accessible via:
-<a href="https://w3id.org/health-ri/ontology/latest">https://w3id.org/health-ri/ontology/latest</a>
-<a href="../method/publication">More on versioning</a></p>
+<p>All published versions are available in the <code>/ontologies/</code> folder. The most recent major release is always accessible via: <a href="https://w3id.org/health-ri/ontology">https://w3id.org/health-ri/ontology</a></p>
+<p><a href="../method/publication">More on versioning</a></p>
 </details>
 <details class="question">
 <summary>What is the difference between major, minor, and patch versions in your versioning policy?</summary>
@@ -1514,18 +1513,20 @@ Only major versions trigger a formal release and a published specification.</p>
 </details>
 <details class="question">
 <summary>What does the 'latest' folder contain and how is it maintained?</summary>
-<p>The <code>ontologies/latest/</code> folder always mirrors the highest available published version of each artifact.
-It provides stable access to the most recent files without needing to specify a version number.
-Each new release automatically updates the <code>latest/</code> folder to reflect its content.</p>
+<p>The <code>ontologies/latest/</code> folder and the <a href="https://w3id.org/health-ri/ontology">ontology's PID</a> always resolves to the most recent available release.
+They provides stable access to the most recent files without needing to specify a version number.
+Each new release automatically updates the <code>latest/</code> folder and the file related to the ontology's PID to target the latest content.</p>
 </details>
 <details class="question">
-<summary>How do I cite or refer to the Health-RI initiative and its ontology?</summary>
-<p>You can use the following permanent, stable, and dereferenceable URIs to cite the initiative and its semantic artifacts:</p>
+<summary>How do I cite or refer to the Health-RI initiative and its artifacts?</summary>
+<p>You can use the following persistent identifiers (PIDs) to cite the initiative and its semantic artifacts:</p>
 <ul>
 <li><strong>Initiative-wide identifier</strong>: <code>https://w3id.org/health-ri/semantic-interoperability</code></li>
-<li><strong>Health-RI Ontology root</strong>: <code>https://w3id.org/health-ri/ontology</code></li>
+<li><strong>Health-RI Ontology</strong>: <code>https://w3id.org/health-ri/ontology</code></li>
+<li><strong>Health-RI SSOM Mapping Set</strong>: <code>https://w3id.org/health-ri/semantic-interoperability/mappings</code></li>
+<li><strong>Health-RI Mapping Vocabulary</strong>: <code>https://w3id.org/health-ri/mapping-vocabulary</code></li>
 </ul>
-<p>These PIDs support long-term access, are suitable for citations, and follow FAIR practices.</p>
+<p>These PIDs are stable, dereferenceable, and aligned with FAIR principles. They are suitable for use in citations, publications, and metadata records.</p>
 <p><a href="../method/permanent-ids">Read more.</a></p>
 </details>
 <details class="question">
@@ -1562,15 +1563,15 @@ The OWL file includes a <code>dcterms:conformsTo</code> triple that explicitly l
 <p>Use the versioned PID format: <code>https://w3id.org/health-ri/ontology/vX.Y.Z/{format}</code></p>
 <p>Replace <code>X.Y.Z</code> with the version number (e.g., <code>v0.6.0</code>) and <code>{format}</code> with one of:</p>
 <ul>
-<li><code>ttl</code> for the ontology file (Turtle)</li>
-<li><code>vpp</code> for the OntoUML Visual Paradigm file</li>
-<li><code>json</code> for the OntoUML JSON export</li>
-<li><code>specification</code> for the HTML spec</li>
-<li><code>documentation</code> for the Markdown documentation</li>
+<li><code>ttl</code>: OWL ontology in Turtle format</li>
+<li><code>vpp</code>: OntoUML model in Visual Paradigm format</li>
+<li><code>json</code>: OntoUML model in JSON format</li>
+<li><code>specification</code>: Human-readable specification (HTML)</li>
+<li><code>documentation</code>: Human-readable documentation (Markdown)</li>
 </ul>
-<p>Example:
-<code>https://w3id.org/health-ri/ontology/v0.6.0/ttl</code> → Ontology file for version 0.6.0
-<code>https://w3id.org/health-ri/ontology/v0.6.0/specification</code> → Human-readable specification</p>
+<p><strong>Examples:</strong>
+- <code>https://w3id.org/health-ri/ontology/v0.6.0/ttl</code> — Ontology in Turtle for version 0.6.0
+- <code>https://w3id.org/health-ri/ontology/v0.6.0/specification</code> — HTML specification for version 0.6.0</p>
 <p><a href="../method/permanent-ids">Details here.</a></p>
 </details>
 <details class="question">
@@ -1620,6 +1621,12 @@ The OWL file includes a <code>dcterms:conformsTo</code> triple that explicitly l
 <summary>How will the solution be tested and accepted? (TBD)</summary>
 <p>TBD.</p>
 </details>
+<details class="question">
+<summary>Where can I find an overview of all persistent identifiers provided by the initiative?</summary>
+<p>The initiative maintains a consolidated table of all PIDs, covering the ontology, mapping set, and mapping vocabulary.<br />
+This table describes the behavior of each PID (e.g., redirects, format-specific access) and provides examples.  </p>
+<p><a href="../method/permanent-ids">See the full overview.</a></p>
+</details>
 <h3 id="community-contributions-and-feedback_1">Community Contributions and Feedback</h3>
 <p><em>Questions about how users can provide input, report issues, or contribute to the ontology and mappings.</em></p>
 <details class="question">
@@ -1633,7 +1640,7 @@ The OWL file includes a <code>dcterms:conformsTo</code> triple that explicitly l
 <li>Suggesting improvements to documentation or mappings</li>
 <li>Proposing example use cases or general feedback</li>
 </ul>
-<p>For details, visit the <a href="../contributing/">Contributing page</a>.</p>
+<p>For details, visit the <a href="../contributing/">Contributing page.</a>.</p>
 </details>
 <details class="question">
 <summary>How can I contribute to the Health-RI Semantic Interoperability Initiative?</summary>
