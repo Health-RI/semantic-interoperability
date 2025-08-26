@@ -59,8 +59,6 @@ For each ontology release, the following artifacts are published — always in b
     The version numbers of the `.vpp`/`.json` (OntoUML) and `.ttl` (OWL/gUFO) files are managed independently. The `.ttl` file includes a `dcterms:conformsTo` metadata relation to indicate which OntoUML version it corresponds to.
 
     `<https://w3id.org/health-ri/ontology#> dcterms:conformsTo <https://w3id.org/health-ri/ontouml-v0.3.0> .`
-!!! info "Mapping Artifacts – Coming Soon"
-    Information about the mapping outputs will be added in a future update. Their design and structure are still under discussion and will be published once finalized.
 
 ### Repository Structure
 
