@@ -261,7 +261,7 @@
 ??? question "Where can I find the latest version of the Health-RI ontology?"
     All published versions are available in the `/ontologies/` folder. The most recent major release is always accessible via: <https://w3id.org/health-ri/ontology>
 
-    [More on versioning](../method/publication)
+    [More on versioning](../method/publications)
 
 ??? question "What is the difference between major, minor, and patch versions in your versioning policy?"
     We follow an adapted semantic versioning scheme: `<major>.<minor>.<patch>`.
@@ -270,7 +270,7 @@
     - **Patch** versions address fixes or clarifications without modifying the established scope.
     Only major versions trigger a formal release and a published specification.
 
-    [Read more.](../method/publication)
+    [Read more.](../method/publications)
 
 ??? question "What does the 'latest' folder contain and how is it maintained?"
     The `ontologies/latest/` folder and the [ontology's PID](https://w3id.org/health-ri/ontology) always resolves to the most recent available release.
@@ -300,7 +300,7 @@
     - `.png`: Diagram images (only in the `latest/` folder)
 
     These are published under both `ontologies/latest/` (most recent version) and `ontologies/versioned/` (versioned archive).
-    [More details here.](../method/publication)
+    [More details here.](../method/publications)
 
 ??? question "Where can I find the exported images of the ontology diagrams?"
     Exported PNG images of all OntoUML diagrams are available in the `ontologies/latest/images/` folder.
@@ -356,11 +356,11 @@
 
 ??? question "What is the publishing strategy for ontology releases?"
     A fast versioning strategy is adopted, where only major versions are considered stable and published with full documentation. Minor/patch versions are published for collaboration and traceability.
-    [More info.](../method/publication)
+    [More info.](../method/publications)
 
 ??? question "How are the OntoUML and gUFO ontologies and the produced semantic mappings maintained over time?"
     Ontologies and semantic mappings are maintained in version-controlled repositories and released through a structured publishing pipeline. Each release is assigned a permanent, citable URL, with both a persistent identifier (PURL) and a timestamped version. Ontologies are published in multiple formats (e.g., RDF/Turtle, JSON) and validated prior to release. This process ensures transparency, long-term accessibility, and semantic stability across versions.
-    [Read more.](../method/publication)
+    [Read more.](../method/publications)
 
 ??? question "Who is responsible for maintaining the ontology and its associated mappings?"
     The Health-RI team is responsible for maintaining the core ontologies and mappings produced within the initiative. This work is carried out in close collaboration with external partners who contribute ideas, suggestions, and mappings. Contributions are reviewed and integrated through a structured, version-controlled process.
