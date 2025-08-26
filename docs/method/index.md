@@ -1,6 +1,6 @@
 # The Health-RI Method
 
-The **Health-RI Method** section provides a structured overview of how semantic interoperability is achieved and maintained within the Health-RI initiative. It outlines the principles, practices, and technical resources that support the creation, publication, and use of our semantic (meta)data models.
+The **Health-RI Method** section provides a structured overview of how semantic interoperability is achieved and maintained within the Health-RI initiative. It outlines the principles, practices, and technical resources that support the creation, publication, and use of our artifacts.
 
 Readers will find here:
 
@@ -10,4 +10,4 @@ Readers will find here:
 - **Persistent Identifiers** – the policy and practices behind persistent and resolvable identifiers for ontologies, vocabularies, and mappings.  
 - **Publications** – details on release and versioning practices, including how specifications and ontology files are published and referenced over time.
 
-Together, these pages form the methodological backbone of our semantic interoperability framework. They explain not only **what** artifacts are available, but also **how** they are developed, governed, and kept FAIR for the health and life sciences community.
+Together, these pages form the methodological backbone of our semantic interoperability initiative. They explain not only **what** artifacts are available, but also **how** they are developed, governed, and kept FAIR for the health and life sciences community.
