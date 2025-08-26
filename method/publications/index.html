@@ -12,7 +12,7 @@
         <meta name="author" content="Pedro Paulo F. Barcelos">
       
       
-        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/publication/">
+        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/publications/">
       
       
         <link rel="prev" href="../mapping-set/">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Publishing - Health-RI Semantic Interoperability</title>
+        <title>Publications - Health-RI Semantic Interoperability</title>
       
     
     
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Publishing
+              Publications
             
           </span>
         </div>
@@ -860,7 +860,7 @@
   
   
   <span class="md-ellipsis">
-    Publishing
+    Publications
     
   </span>
   
@@ -873,7 +873,7 @@
   
   
   <span class="md-ellipsis">
-    Publishing
+    Publications
     
   </span>
   
@@ -896,6 +896,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#publishing-the-ontology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publishing the Ontology
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publishing the Ontology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#versioning-policy" class="md-nav__link">
     <span class="md-ellipsis">
       Versioning Policy
@@ -903,8 +913,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#published-artifacts" class="md-nav__link">
     <span class="md-ellipsis">
       Published Artifacts
@@ -912,8 +922,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#repository-structure" class="md-nav__link">
     <span class="md-ellipsis">
       Repository Structure
@@ -921,11 +931,25 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#archive-and-change-history" class="md-nav__link">
     <span class="md-ellipsis">
       Archive and Change History
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publishing-sssom-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publishing SSSOM Mappings
     </span>
   </a>
   
@@ -1178,8 +1202,10 @@
 
 
 <h1 id="initiative-publications">Initiative Publications</h1>
-<p>This repository follows a structured and transparent publishing approach to support traceability, stability, and reuse of the Health-RI Ontology and its artifacts.</p>
-<h2 id="versioning-policy">Versioning Policy</h2>
+<p>This repository implements a structured, transparent publishing process for both the Health-RI Ontology and its SSSOM mapping sets, ensuring all artifacts are traceable, stable, and reusable, and supporting FAIR-aligned interoperability.</p>
+<h2 id="publishing-the-ontology">Publishing the Ontology</h2>
+<p>Before diving into specific files and artifacts, we first outline how ontology versions are tracked and the policy guiding version numbering.</p>
+<h3 id="versioning-policy">Versioning Policy</h3>
 <p>We use an <strong>adapted semantic versioning</strong> scheme to indicate the type and impact of changes:</p>
 <p><strong>Format</strong>: <code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code></p>
 <ul>
@@ -1196,7 +1222,7 @@
 <p class="admonition-title">Info</p>
 <p>We adopt a <strong>fast versioning strategy</strong>: files are made available in the <code>/ontology</code> folder as soon as possible, even when they may present smaller completion or consistency issues. This enables early access and collaboration, while stability is guaranteed only for major releases.</p>
 </div>
-<h2 id="published-artifacts">Published Artifacts</h2>
+<h3 id="published-artifacts">Published Artifacts</h3>
 <p>For each ontology release, the following artifacts are published — always in both <code>ontologies/latest/</code> and <code>ontologies/versioned/</code> folders.</p>
 <ul>
 <li><strong>OntoUML conceptual model (Visual Paradigm)</strong>
@@ -1248,7 +1274,7 @@ As a result, no <code>.ttl</code> file will be provided for versions that are st
 <p class="admonition-title">Mapping Artifacts – Coming Soon</p>
 <p>Information about the mapping outputs will be added in a future update. Their design and structure are still under discussion and will be published once finalized.</p>
 </div>
-<h2 id="repository-structure">Repository Structure</h2>
+<h3 id="repository-structure">Repository Structure</h3>
 <p>All current artifacts are made available in the <code>/ontologies</code> folder:</p>
 <div class="highlight"><pre><span></span><code>ontologies/
 │
@@ -1282,7 +1308,7 @@ As a result, no <code>.ttl</code> file will be provided for versions that are st
 <p>The <code>images/</code> folder — containing exported PNG versions of all OntoUML diagrams — is only provided under the <code>latest/</code> folder.<br />
 These images are always generated from the most recent <code>.vpp</code> file and are not versioned individually.</p>
 </div>
-<h2 id="archive-and-change-history">Archive and Change History</h2>
+<h3 id="archive-and-change-history">Archive and Change History</h3>
 <ul>
 <li>Only the <strong>latest version</strong> of each artifact is visible directly in the <code>ontologies/latest/</code> folder.</li>
 <li><strong>All previous versions</strong> are organized in the <code>ontologies/versioned/</code> directory for transparency and reproducibility.</li>
@@ -1294,6 +1320,18 @@ These images are always generated from the most recent <code>.vpp</code> file an
 <p class="admonition-title">Looking for PID details?</p>
 <p>The full description of all Permanent Identifiers (PIDs) — including format-specific URIs for each version — is documented separately. Access the complete description at: <a href="../permanent-ids/">Permanent Identifiers</a>.</p>
 </div>
+<h2 id="publishing-sssom-mappings">Publishing SSSOM Mappings</h2>
+<p>This section describes the publication process for our <strong>SSSOM mapping sets</strong> (cross-ontology alignments), which follow a different versioning strategy than the ontology artifacts described above.</p>
+<p>The SSSOM mapping set uses date-based versions in the format <code>YYYY-MM-DD</code> (at most one version per day).<br />
+Published mappings are <strong>append-only</strong>: existing rows are not deleted. To correct or supersede a row, add a new one using the <code>replaces</code> field to reference the previous record.</p>
+<ul>
+<li><strong>SSSOM Mapping Set (TSV &amp; TTL)</strong><br />
+  Curated cross-ontology alignments published as a tabular SSSOM set and as RDF/Turtle.</li>
+<li><code>https://github.com/Health-RI/semantic-interoperability/mappings</code> — redirects to the <strong>TTL</strong> version  </li>
+<li><code>https://github.com/Health-RI/semantic-interoperability/mappings/ttl</code> — <strong>TTL</strong> version  </li>
+<li><code>https://github.com/Health-RI/semantic-interoperability/mappings/tsv</code> — <strong>TSV</strong> version  </li>
+<li>Human-readable table: <code>docs/ontology/mappings.md</code></li>
+</ul>
 
 
 
