@@ -11,7 +11,7 @@
     To enable meaningful data integration across health and life sciences institutions by aligning data semantically, not just structurally. This is achieved through the development and adoption of a common reference model that captures domain meaning explicitly.
 
 ??? question "What exactly are we trying to achieve with semantic interoperability?"
-    We aim to align external and internal ontologies to a shared reference model, ensuring that semantic definitions are preserved across conceptual and computational layers. This is achieved through structured mappings (e.g., `hriv:hasSemantics`) from third-party concepts to Health-RI’s reference ontology (OntoUML) and its computational counterpart (gUFO).
+    We aim to align external and internal ontologies to a shared reference model, ensuring that semantic definitions are preserved across conceptual and computational layers. This is achieved through structured mappings (e.g., `hriv:hasExactMeaning`) from third-party concepts to Health-RI’s reference ontology (OntoUML) and its computational counterpart (gUFO).
 
 ??? question "Why is semantic interoperability important in healthcare and life sciences?"
     Because it ensures that data from diverse sources is interpreted consistently, reducing the risk of misinterpretation and improving reusability, reproducibility, and trust. It supports FAIR data practices and accelerates data-driven innovation.
@@ -32,7 +32,7 @@
     Other approaches may offer faster implementation or simpler integration but often fail to ensure semantic consistency over time. By contrast, our approach prioritizes long-term semantic precision and interoperability.
 
 ??? question "What does success look like for this project?"
-    Success means having a robust reference model (OntoUML) and executable OWL artifacts (gUFO) in place, with external ontologies semantically aligned through precise mappings. It also includes supporting community contributions, replacing approximate mappings (e.g., `hriv:hasSemantics`) with exact ones where possible, and continuously refining the model to bridge semantic gaps.
+    Success means having a robust reference model (OntoUML) and executable OWL artifacts (gUFO) in place, with external ontologies semantically aligned through precise mappings. It also includes supporting community contributions, replacing approximate mappings (e.g., `hriv:hasExactMeaning`) with exact ones where possible, and continuously refining the model to bridge semantic gaps.
 
 ??? question "Who will benefit from or use the developed solutions?"
     Researchers, clinicians, developers, and data stewards who need to align datasets from different systems and institutions while preserving domain meaning.
@@ -47,10 +47,10 @@
     Without semantic alignment, systems may use the same term for different concepts or different terms for the same concept, causing ambiguity and inconsistency.
 
 ??? question "What are some examples of current successes or progress?"
-    The development of the OntoUML conceptual model, its implementation as the gUFO OWL ontology, and the strategy for semantically aligning third-party ontologies using Health-RI Mapping Vocabulary properties are all concrete milestones achieved. Figures and examples in the documentation illustrate successful alignment strategies already in use.
+    The development of the OntoUML conceptual model, its implementation as the gUFO OWL ontology, and the strategy for semantically aligning third-party ontologies using [Health-RI Mapping Vocabulary](../method/specification.html) properties are all concrete milestones achieved. Figures and examples in the documentation illustrate successful alignment strategies already in use.
 
 ??? question "What challenges are currently being faced?"
-    One challenge is when no exact match exists between external concepts and the reference ontology. This requires approximate mappings and motivates the need to expand the Health-RI ontology to bridge gaps. Another challenge is managing transitivity and ambiguity in mappings (e.g., limiting to a single `hriv:hasSemantics` per concept).
+    One challenge is when no exact match exists between external concepts and the reference ontology. This requires approximate mappings and motivates the need to expand the Health-RI ontology to bridge gaps. Another challenge is managing transitivity and ambiguity in mappings (e.g., limiting to a single `hriv:hasExactMeaning` per concept).
 
 ??? question "What risks and limitations should be considered? (TBD)"
     TBD.
@@ -134,38 +134,38 @@
 
 ## Mapping and Alignment Strategy
 
-*Questions about how external concepts are aligned to the Health-RI reference model using dedicated mapping properties from the Health-RI Mapping Vocabulary.*
+*Questions about how external concepts are aligned to the Health-RI reference model using dedicated mapping properties from the [Health-RI Mapping Vocabulary](../method/specification.html).*
 
 ??? question "How are mappings from local schemas to the reference model created?"
     If schemas are OWL/RDF-based, mappings can be embedded directly using standard RDF properties. Otherwise, external mappings are created using [SSSOM](https://mapping-commons.github.io/sssom/).
 
-    Mappings follow the Health-RI Mapping Vocabulary and can be asserted using:
+    Mappings follow the [Health-RI Mapping Vocabulary](../method/specification.html) and can be asserted using:
 
-    - `hriv:hasSemantics` for perfect semantic alignment (only one allowed),
-    - `hriv:hasSemanticsBroad` or `hriv:hasSemanticsNarrow` when the match is approximate.
+    - [`hriv:hasExactMeaning`](../method/specification.html#hasExactMeaning) for perfect semantic alignment (only one allowed),
+    - [`hriv:hasBroaderMeaningThan`](../method/specification.html#hasExactMeaning) or [`hriv:hasNarrowerMeaningThan`](../method/specification.html#hasExactMeaning) when the match is approximate.
 
     These mappings support semantic alignment without requiring modification to the original schema and are managed either by Health-RI (non-invasively in SSSOM) or by partners (embedded in their own RDF models).
 
     [Full explanation](../method/mapping-strategy)
 
-??? question "What is `hriv:hasSemantics`, and how is it different from `owl:equivalentClass` or `skos:exactMatch`?"
-    `hriv:hasSemantics` (equivalent to `semiotics:expresses`) is used to state that an external concept carries the same intended meaning as a concept in the Health-RI reference model. It expresses a strong semantic alignment in terms of **shared meaning**, but it does not imply logical equivalence.
+??? question "What is `hriv:hasExactMeaning`, and how is it different from `owl:equivalentClass` or `skos:exactMatch`?"
+    `hriv:hasExactMeaning` (equivalent to `semiotics:expresses`) is used to state that an external concept carries the same intended meaning as a concept in the Health-RI reference model. It expresses a strong semantic alignment in terms of **shared meaning**, but it does not imply logical equivalence.
 
     - Unlike `owl:equivalentClass`, it does not entail formal logical equivalence and therefore avoids unintended reasoning consequences when integrating ontologies with different logical foundations.
-    - Unlike `skos:exactMatch`, which is often used for linking concepts across vocabularies in a looser, less formally grounded way, `hriv:hasSemantics` is tied to an explicit semantic grounding in a reference ontology. This makes it more precise for interoperability scenarios where meaning—not logical entailment—is the key requirement.
+    - Unlike `skos:exactMatch`, which is often used for linking concepts across vocabularies in a looser, less formally grounded way, `hriv:hasExactMeaning` is tied to an explicit semantic grounding in a reference ontology. This makes it more precise for interoperability scenarios where meaning—not logical entailment—is the key requirement.
 
-    In summary, `hriv:hasSemantics` is intended for strong semantic alignment without the risks of logical overcommitment (`owl:equivalentClass`) or the potential ambiguity of generic lexical alignment (`skos:exactMatch`).
+    In summary, `hriv:hasExactMeaning` is intended for strong semantic alignment without the risks of logical overcommitment (`owl:equivalentClass`) or the potential ambiguity of generic lexical alignment (`skos:exactMatch`).
 
-??? question "Why is there a rule that only one `hriv:hasSemantics` is allowed per concept?"
-    To avoid semantic ambiguity. Allowing multiple `hriv:hasSemantics` assertions for the same concept would imply conflicting definitions and hinder consistent interpretation. Each external concept must match only one Health-RI concept with perfect equivalence.
+??? question "Why is there a rule that only one `hriv:hasExactMeaning` is allowed per concept?"
+    To avoid semantic ambiguity. Allowing multiple `hriv:hasExactMeaning` assertions for the same concept would imply conflicting definitions and hinder consistent interpretation. Each external concept must match only one Health-RI concept with perfect equivalence.
 
 ??? question "What should I do if no exact match exists between my concept and the Health-RI ontology?"
-    If your concept is broader or narrower than any existing reference concept, use `hriv:hasSemanticsBroad` or `hriv:hasSemanticsNarrow` accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future ([read more.](../contributing)).
+    If your concept is broader or narrower than any existing reference concept, use `hriv:hasBroaderMeaningThan` or `hriv:hasNarrowerMeaningThan` accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future ([read more.](../contributing)).
 
 ??? question "Can new concepts be added to the Health-RI ontology to improve mapping precision?"
-    Yes. When `hriv:hasSemantics` cannot be used due to missing concepts, we encourage you to contact the Health-RI modeling team ([read more.](../contributing)).
+    Yes. When `hriv:hasExactMeaning` cannot be used due to missing concepts, we encourage you to contact the Health-RI modeling team ([read more.](../contributing)).
 
-    If justified, new intermediate concepts may be added to the reference ontology. This helps replace approximate mappings (`hriv:hasSemanticsBroad`, `hriv:hasSemanticsNarrow`) with exact ones and ensures better semantic precision for reasoning, integration, and long-term alignment.
+    If justified, new intermediate concepts may be added to the reference ontology. This helps replace approximate mappings (`hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`) with exact ones and ensures better semantic precision for reasoning, integration, and long-term alignment.
 
     [See example](../method/mapping-strategy)
 
@@ -173,7 +173,7 @@
     Mappings can be authored by:
 
     - **Health-RI** (non-invasive, published in SSSOM format), for public or external ontologies;
-    - **External partners**, by embedding `hriv:hasSemantics*` statements directly in their ontology files, especially when they control the editorial process of the external artifact.
+    - **External partners**, by embedding `hriv:hasExactMeaning*` statements directly in their ontology files, especially when they control the editorial process of the external artifact.
 
 ??? question "Can I request new reference concepts if needed for mapping?"
     Yes. If you find that no suitable concept exists in the Health-RI ontology to match yours, you can propose new reference concepts. These requests are welcome and reviewed by the modeling team. If accepted, new concepts may be added to enable stronger mappings in the future.
@@ -182,7 +182,7 @@
     Mappings can be created and maintained by:
 
     - The **Health-RI team**, which curates non-invasive mappings using the [SSSOM](https://w3id.org/sssom/) format. These mappings are published externally and do not alter the original third-party ontologies.
-    - **External partners**, who can embed mappings directly in their own ontology files using Health-RI Mapping Vocabulary properties (e.g., `hriv:hasSemantics`).
+    - **External partners**, who can embed mappings directly in their own ontology files using [Health-RI Mapping Vocabulary](../method/specification.html) properties (e.g., `hriv:hasExactMeaning`).
 
     [Read more.](../method/mapping-strategy)
 
@@ -228,13 +228,13 @@
 
     - Positive mapping: "fhir:Patient has its semantics defined by hrio:Patient"
       `subject_id = fhir:Patient`
-      `predicate_id = hriv:hasSemantics`
+      `predicate_id = hriv:hasExactMeaning`
       `object_id = hrio:Patient`
       `predicate_modifier =` (empty)
 
     - Negative mapping: "vet:Patient DOES NOT have its semantics defined by hrio:Patient"
       `subject_id = vet:Patient`
-      `predicate_id = hriv:hasSemantics`
+      `predicate_id = hriv:hasExactMeaning`
       `object_id = hrio:Patient`
       `predicate_modifier = Not`
 
@@ -259,8 +259,8 @@
 *Questions about how the ontology is released, versioned, and maintained over time.*
 
 ??? question "Where can I find the latest version of the Health-RI ontology?"
-    All published versions are available in the `/ontologies/` folder. The most recent major release is always accessible via:
-    <https://w3id.org/health-ri/ontology/latest>
+    All published versions are available in the `/ontologies/` folder. The most recent major release is always accessible via: <https://w3id.org/health-ri/ontology>
+
     [More on versioning](../method/publication)
 
 ??? question "What is the difference between major, minor, and patch versions in your versioning policy?"
@@ -273,17 +273,19 @@
     [Read more.](../method/publication)
 
 ??? question "What does the 'latest' folder contain and how is it maintained?"
-    The `ontologies/latest/` folder always mirrors the highest available published version of each artifact.
-    It provides stable access to the most recent files without needing to specify a version number.
-    Each new release automatically updates the `latest/` folder to reflect its content.
+    The `ontologies/latest/` folder and the [ontology's PID](https://w3id.org/health-ri/ontology) always resolves to the most recent available release.
+    They provides stable access to the most recent files without needing to specify a version number.
+    Each new release automatically updates the `latest/` folder and the file related to the ontology's PID to target the latest content.
 
-??? question "How do I cite or refer to the Health-RI initiative and its ontology?"
-    You can use the following permanent, stable, and dereferenceable URIs to cite the initiative and its semantic artifacts:
+??? question "How do I cite or refer to the Health-RI initiative and its artifacts?"
+    You can use the following persistent identifiers (PIDs) to cite the initiative and its semantic artifacts:
 
     - **Initiative-wide identifier**: `https://w3id.org/health-ri/semantic-interoperability`
-    - **Health-RI Ontology root**: `https://w3id.org/health-ri/ontology`
+    - **Health-RI Ontology**: `https://w3id.org/health-ri/ontology`
+    - **Health-RI SSOM Mapping Set**: `https://w3id.org/health-ri/semantic-interoperability/mappings`
+    - **Health-RI Mapping Vocabulary**: `https://w3id.org/health-ri/mapping-vocabulary`
 
-    These PIDs support long-term access, are suitable for citations, and follow FAIR practices.
+    These PIDs are stable, dereferenceable, and aligned with FAIR principles. They are suitable for use in citations, publications, and metadata records.
 
     [Read more.](../method/permanent-ids)
 
@@ -317,15 +319,15 @@
 
     Replace `X.Y.Z` with the version number (e.g., `v0.6.0`) and `{format}` with one of:
 
-    - `ttl` for the ontology file (Turtle)
-    - `vpp` for the OntoUML Visual Paradigm file
-    - `json` for the OntoUML JSON export
-    - `specification` for the HTML spec
-    - `documentation` for the Markdown documentation
+    - `ttl`: OWL ontology in Turtle format
+    - `vpp`: OntoUML model in Visual Paradigm format
+    - `json`: OntoUML model in JSON format
+    - `specification`: Human-readable specification (HTML)
+    - `documentation`: Human-readable documentation (Markdown)
 
-    Example:
-    `https://w3id.org/health-ri/ontology/v0.6.0/ttl` → Ontology file for version 0.6.0
-    `https://w3id.org/health-ri/ontology/v0.6.0/specification` → Human-readable specification
+    **Examples:**
+    - `https://w3id.org/health-ri/ontology/v0.6.0/ttl` — Ontology in Turtle for version 0.6.0
+    - `https://w3id.org/health-ri/ontology/v0.6.0/specification` — HTML specification for version 0.6.0
 
     [Details here.](../method/permanent-ids)
 
@@ -370,6 +372,12 @@
 ??? question "How will the solution be tested and accepted? (TBD)"
     TBD.
 
+??? question "Where can I find an overview of all persistent identifiers provided by the initiative?"
+    The initiative maintains a consolidated table of all PIDs, covering the ontology, mapping set, and mapping vocabulary.  
+    This table describes the behavior of each PID (e.g., redirects, format-specific access) and provides examples.  
+
+    [See the full overview.](../method/permanent-ids)
+
 ### Community Contributions and Feedback
 
 *Questions about how users can provide input, report issues, or contribute to the ontology and mappings.*
@@ -386,7 +394,7 @@
     - Suggesting improvements to documentation or mappings
     - Proposing example use cases or general feedback
 
-    For details, visit the [Contributing page](../contributing/).
+    For details, visit the [Contributing page.](../contributing/).
 
 ??? question "How can I contribute to the Health-RI Semantic Interoperability Initiative?"
     You can contribute by submitting structured feedback using one of our GitHub Issue Forms. We currently support the following contribution types:

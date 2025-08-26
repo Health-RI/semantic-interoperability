@@ -16,7 +16,7 @@ This is the **main identifier for the Health-RI Ontology**, which always resolve
 
 ### Identifiers for the **Latest Ontology Version**
 
-These URIs point to the **most recent release** of the Health-RI Ontology and related documentation formats. The different URIs support HTTP content negotiation to serve either machine-readable ontology files (e.g., Turtle) or human-readable documentation (HTML specification).
+These URIs point to the **most recent release** of the Health-RI Ontology and related documentation formats.
 
 | PID                       | Description                                  |
 | ------------------------- | -------------------------------------------- |
@@ -67,7 +67,7 @@ Where:
 - `https://w3id.org/health-ri/ontology/v0.6.0/specification`
   → HTML specification for version 0.6.0
 
-## SSSOM Mappings (PIDs)
+## SSSOM Mappings PIDs
 
 The following PIDs provide **stable access to the latest SSSOM mapping set** produced by the initiative, in both Turtle (TTL) and TSV formats.
 
@@ -90,7 +90,7 @@ These PIDs redirect to the canonical files in the Health-RI GitHub repository (b
 - `https://w3id.org/health-ri/semantic-interoperability/mappings/tsv`
   → Latest SSSOM mappings in TSV (`.tsv`)
 
-## Mapping Vocabulary (PIDs)
+## Mapping Vocabulary PIDs
 
 The **Health-RI Mapping Vocabulary** defines terms used in our mapping work. The PIDs below provide stable access to the latest vocabulary and to versioned snapshots.
 
@@ -105,7 +105,7 @@ The **Health-RI Mapping Vocabulary** defines terms used in our mapping work. The
   *(alias: `/mapping-vocabulary/spec`)*
 
 !!! tip
-Both `/spec` and `/specification` are valid and equivalent for the vocabulary specification.
+    Both `/spec` and `/specification` are valid and equivalent for the vocabulary specification.
 
 #### Examples
 
@@ -139,7 +139,7 @@ Versioned PIDs follow semantic versioning and resolve to immutable artifacts for
 
 | PID                                        | Description                                  | Behavior                                | Example                                                                                                                                  |
 | ------------------------------------------ | -------------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `/ontology`                                | Ontology root                                | Content negotiation (RDF or HTML)       | [https://w3id.org/health-ri/ontology](https://w3id.org/health-ri/ontology)                                                               |
+| `/ontology`                                | Ontology root                                | Redirects to raw `.ttl` file            | [https://w3id.org/health-ri/ontology](https://w3id.org/health-ri/ontology)                                                               |
 | `/ontology/ttl`                            | Latest ontology in Turtle format             | Redirects to raw `.ttl` file            | [https://w3id.org/health-ri/ontology/ttl](https://w3id.org/health-ri/ontology/ttl)                                                       |
 | `/ontology/specification`                  | Latest HTML specification                    | Human-readable documentation            | [https://w3id.org/health-ri/ontology/specification](https://w3id.org/health-ri/ontology/specification)                                   |
 | `/ontology/documentation`                  | Markdown documentation                       | Redirects to `.md`                      | [https://w3id.org/health-ri/ontology/documentation](https://w3id.org/health-ri/ontology/documentation)                                   |
