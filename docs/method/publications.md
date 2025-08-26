@@ -93,7 +93,7 @@ ontologies/
     The `latest/` folder always mirrors the contents of the highest published version. This provides stable, convenient access to the most recent files without needing to specify a version number.
 
 !!! note "Where are the images of the diagrams?"
-    The `images/` folder — containing exported PNG versions of all OntoUML diagrams — is only provided under the `latest/` folder.  
+    The `images/` folder — containing exported PNG versions of all OntoUML diagrams — is only provided under the `latest/` folder.
     These images are always generated from the most recent `.vpp` file and are not versioned individually.
 
 ### Archive and Change History
@@ -111,12 +111,12 @@ ontologies/
 
 This section describes the publication process for our **SSSOM mapping sets** (cross-ontology alignments), which follow a different versioning strategy than the ontology artifacts described above.
 
-The SSSOM mapping set uses date-based versions in the format `YYYY-MM-DD` (at most one version per day).  
+The SSSOM mapping set uses date-based versions in the format `YYYY-MM-DD` (at most one version per day).
 Published mappings are **append-only**: existing rows are not deleted. To correct or supersede a row, add a new one using the `replaces` field to reference the previous record.
 
-- **SSSOM Mapping Set (TSV & TTL)**  
+- **SSSOM Mapping Set (TSV & TTL)**
   Curated cross-ontology alignments published as a tabular SSSOM set and as RDF/Turtle.
-  - `https://github.com/Health-RI/semantic-interoperability/mappings` — redirects to the **TTL** version  
-  - `https://github.com/Health-RI/semantic-interoperability/mappings/ttl` — **TTL** version  
-  - `https://github.com/Health-RI/semantic-interoperability/mappings/tsv` — **TSV** version  
+  - `https://github.com/Health-RI/semantic-interoperability/mappings` — redirects to the **TTL** version
+  - `https://github.com/Health-RI/semantic-interoperability/mappings/ttl` — **TTL** version
+  - `https://github.com/Health-RI/semantic-interoperability/mappings/tsv` — **TSV** version
   - Human-readable table: `docs/ontology/mappings.md`

@@ -373,8 +373,8 @@
     TBD.
 
 ??? question "Where can I find an overview of all persistent identifiers provided by the initiative?"
-    The initiative maintains a consolidated table of all PIDs, covering the ontology, mapping set, and mapping vocabulary.  
-    This table describes the behavior of each PID (e.g., redirects, format-specific access) and provides examples.  
+    The initiative maintains a consolidated table of all PIDs, covering the ontology, mapping set, and mapping vocabulary.
+    This table describes the behavior of each PID (e.g., redirects, format-specific access) and provides examples.
 
     [See the full overview.](../method/persistent-ids)
 

@@ -69,22 +69,22 @@ nav:
       - OntoUML: ontouml-gufo/ontouml.md
       - OntoUML Stereotypes: ontouml-gufo/ontouml-stereotypes.md
       - OntoUML/UFO Catalog: ontouml-gufo/ontouml-ufo-catalog.md
-      - How to Create an OntoUML Model: ontouml-gufo/how-to-create-ontouml-model.md
+      - Creating OntoUML Models: ontouml-gufo/creating-ontouml-models.md
       - gUFO: ontouml-gufo/gufo.md
   - The Health-RI Method:
       - Introduction: method/index.md
       - Method Overview: method/overview.md
       - Mapping Strategy: method/mapping-strategy.md
-      - Mapping Vocabulary: method/specification.html
-      - Mapping Set: method/mapping-set.md
+      - Mapping Vocabulary Specification: method/specification.html
+      - SSSOM Mapping Set: method/mapping-set.md
       - Publications: method/publications.md
-      - Persistent Identifiers (PIDs): method/persistent-ids.md
-  - The Health-RI Ontology:
+      - Persistent Identifiers: method/persistent-ids.md
+  - Deliverables:
       - Overview: ontology/index.md
-      - Documentation: ontology/documentation.md
-      - Specification: ontology/specification.html
-      - Changelog: ontology/changelog.md
-      # - Mappings: ontology/mappings.md
+      - Ontology Documentation: ontology/documentation.md
+      - Ontology Specification: ontology/specification.html
+      - Ontology Changelog: ontology/changelog.md
+      # - SSSOM Mapping Set: ontology/mappings.md
   - FAQ: faq.md
   - Contributing: contributing.md
   # - Output:

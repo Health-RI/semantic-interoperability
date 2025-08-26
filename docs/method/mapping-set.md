@@ -87,14 +87,14 @@ Some fields in the schema have predefined default values automatically assigned 
 
 We welcome contributions to expand and refine the mapping set. You can contribute in two ways:
 
-1. **Preferred: Submit the Issue Form**  
+1. **Preferred: Submit the Issue Form**
    Use our **[SSSOM mapping issue form](https://github.com/Health-RI/semantic-interoperability/issues/new?template=sssom-new-mapping.yml)** to add a single mapping row. Fill in the required fields and submit; Health-RI curators will review and integrate your contribution.
 
-2. **Alternative: Use the Excel template**  
+2. **Alternative: Use the Excel template**
 
 Download the **[XLSX template](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx)** and enter:
 
-- the mapping row(s) in the mappings sheet, and  
+- the mapping row(s) in the mappings sheet, and
 - all CURIE prefix bindings in the prefix sheet.
 
 Attach the completed file to a new issue and we’ll review and add it.

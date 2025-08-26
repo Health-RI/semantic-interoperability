@@ -26,10 +26,10 @@ This decentralized development model can pose challenges for newcomers, making t
 
 There are, however, two major online resources that offer learning materials for OntoUML:
 
-- The official OntoUML portal: [https://ontouml.org/](https://ontouml.org/)  
+- The official OntoUML portal: [https://ontouml.org/](https://ontouml.org/)
   > While this is the main site, much of its content is outdated and has not been maintained in recent years.
 
-- The documentation project at Read the Docs: [https://ontouml.readthedocs.io/en/latest/](https://ontouml.readthedocs.io/en/latest/)  
+- The documentation project at Read the Docs: [https://ontouml.readthedocs.io/en/latest/](https://ontouml.readthedocs.io/en/latest/)
   > This version is more comprehensive and somewhat more recent, but it still contains outdated content and should be read with caution.
 
 Despite their limitations, these resources remain valuable for learning the language. However, users should remain aware of their partial and outdated nature and supplement them with insights from more recent academic publications.
@@ -50,9 +50,9 @@ Since its inception, OntoUML has been adopted by various academic, corporate, an
 
 Several research groups have contributed to the development and dissemination of OntoUML, including:
 
-- The [Semantics, Cybersecurity & Services (SCS)](https://www.utwente.nl/en/eemcs/scs/) group at the University of Twente, the Netherlands  
-- The [Ontology & Conceptual Modeling Research Group (NEMO)](https://nemo.inf.ufes.br/en/) at the Federal University of Espírito Santo, Brazil  
-- The [KRDB Research Centre for Knowledge-based Artificial Intelligence](https://www.inf.unibz.it/krdb/) at the Free University of Bozen-Bolzano, Italy  
+- The [Semantics, Cybersecurity & Services (SCS)](https://www.utwente.nl/en/eemcs/scs/) group at the University of Twente, the Netherlands
+- The [Ontology & Conceptual Modeling Research Group (NEMO)](https://nemo.inf.ufes.br/en/) at the Federal University of Espírito Santo, Brazil
+- The [KRDB Research Centre for Knowledge-based Artificial Intelligence](https://www.inf.unibz.it/krdb/) at the Free University of Bozen-Bolzano, Italy
 - The [Center for Conceptual Modelling and Implementation (CCMi)](https://ccmi.fit.cvut.cz/en/) at the Faculty of Information Technology, Czechia
 
 ## Supporting Tools and Developments

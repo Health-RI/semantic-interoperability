@@ -110,7 +110,7 @@ This is another manifestation of the false agreement problem: syntactic compatib
 - **Cause**: The lack of a shared conceptualization and the absence of a common ontological grounding. System B allows too much; System C allows too little.
 - **Consequence**: **Semantic interoperability fails**. The data exchanged may technically conform to both systems' schemas, but the systems **draw different conclusions** from the same input. This may result in errors, misclassification, data loss, or rejected inputs.
 
-This scenario illustrates why Guarino argues that **semantic interoperability requires agreement not just on representation syntax or surface ontologies**, but on the deeper **conceptual structures** and **intended models**. Without this alignment, even systems that validate data successfully may still fail to understand each other. 
+This scenario illustrates why Guarino argues that **semantic interoperability requires agreement not just on representation syntax or surface ontologies**, but on the deeper **conceptual structures** and **intended models**. Without this alignment, even systems that validate data successfully may still fail to understand each other.
 
 These examples underscore the importance of designing systems that share not only data but also the underlying conceptual frameworks that give that data meaning. Semantic interoperability is ultimately a matter of shared understanding, not just shared syntax.
 

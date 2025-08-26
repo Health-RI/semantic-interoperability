@@ -1,4 +1,4 @@
-# How to Create an OntoUML Model
+# Creating OntoUML Models
 
 Creating an OntoUML model requires a modeling tool that supports UML class diagrams. Since an OntoUML model is a valid UML class diagram enriched with specific stereotypes, it can, in principle, be created using any standard UML modeling tool that allows users to define custom stereotypes.
 
@@ -54,35 +54,35 @@ After installing the plugin, follow the steps below to create your first OntoUML
 
 #### 3.1 Create a New Project
 
-Go to the **Project** tab and click **New** to create a new modeling project.  
+Go to the **Project** tab and click **New** to create a new modeling project.
 This will initialize your workspace.
 
 ![Step 1 – Create New Project](./assets/images/vp-step1.png)
 
-In the pop-up window that appears, enter a name for your project and the author’s name.  
+In the pop-up window that appears, enter a name for your project and the author’s name.
 Then click on **Create Blank Project** to proceed.
 
 #### 3.2 Create a New Model Inside the Project
 
-In the **Model Explorer**, right-click on `My Project` and select  
-**Model → New Model…**.  
+In the **Model Explorer**, right-click on `My Project` and select
+**Model → New Model…**.
 Give your model a name such as “My Model”.
 
 ![Step 2 – Create New Model](./assets/images/vp-step2.png)
 
 #### 3.3 Add a New Diagram to the Model
 
-Right-click on your newly created model (e.g., “My Model”), go to  
+Right-click on your newly created model (e.g., “My Model”), go to
 **Sub Diagrams → Add → New Diagram…**.
 
 ![Step 3 – Add New Diagram](./assets/images/vp-step3.png)
 
-In the dialog that opens, select **Class Diagram** as the diagram type.  
+In the dialog that opens, select **Class Diagram** as the diagram type.
 Then give your diagram a name (e.g., “My Model Class Diagram”) and click **OK**.
 
 #### 3.4 Start Modeling with OntoUML Stereotypes
 
-Once the diagram opens, use the class diagram tools to create elements.  
+Once the diagram opens, use the class diagram tools to create elements.
 Right-click on a class, go to **OntoUML Stereotypes**, and choose the appropriate stereotype from the list (e.g., `Kind`, `Role`, `Relator`, `Phase`, etc.).
 
 These stereotypes correspond to the ontological distinctions defined by the Unified Foundational Ontology (UFO).
@@ -123,5 +123,5 @@ The plugin also includes a dedicated OntoUML menu with tools to manage and analy
 
 These tools assist in ensuring semantic consistency, enable data exchange across tools, and facilitate publishing and reuse of OntoUML models.
 
-For more details, see the plugin documentation:  
+For more details, see the plugin documentation:
 [https://w3id.org/ontouml/vp-plugin#readme](https://w3id.org/ontouml/vp-plugin#readme)
