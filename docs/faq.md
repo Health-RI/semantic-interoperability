@@ -278,7 +278,7 @@
     Each new release automatically updates the `latest/` folder and the file related to the ontology's PID to target the latest content.
 
 ??? question "How do I cite or refer to the Health-RI initiative and its artifacts?"
-    You can use the following persistent identifiers (PIDs) to cite the initiative and its semantic artifacts:
+    You can use the following Persistent Identifiers (PIDs) to cite the initiative and its semantic artifacts:
 
     - **Initiative-wide identifier**: `https://w3id.org/health-ri/semantic-interoperability`
     - **Health-RI Ontology**: `https://w3id.org/health-ri/ontology`
@@ -287,7 +287,7 @@
 
     These PIDs are stable, dereferenceable, and aligned with FAIR principles. They are suitable for use in citations, publications, and metadata records.
 
-    [Read more.](../method/permanent-ids)
+    [Read more.](../method/persistent-ids)
 
 ??? question "What types of files are published with each ontology version?"
     Each ontology version includes the following artifacts:
@@ -329,7 +329,7 @@
     - `https://w3id.org/health-ri/ontology/v0.6.0/ttl` — Ontology in Turtle for version 0.6.0
     - `https://w3id.org/health-ri/ontology/v0.6.0/specification` — HTML specification for version 0.6.0
 
-    [Details here.](../method/permanent-ids)
+    [Details here.](../method/persistent-ids)
 
 ??? question "What’s the difference between the latest and versioned ontology URIs?"
     - The **latest URI** (`https://w3id.org/health-ri/ontology`) always points to the most recent stable release. Its content may change over time as new versions are published.
@@ -339,7 +339,7 @@
 
     Use the **latest URI** when you want to stay aligned with the most up-to-date ontology version and future improvements.
 
-    [More info](../method/permanent-ids)
+    [More info](../method/persistent-ids)
 
 ??? question "Which URI should I use in my mapping: the latest or a versioned one?"
     Use the **latest URI** (e.g., `https://w3id.org/health-ri/ontology#HealthcarePatient`) when:
@@ -352,14 +352,14 @@
     - You need traceability and reproducibility (e.g., publications, data provenance).
     - You want to avoid semantic drift caused by future updates.
 
-    [Best practices.](../method/permanent-ids)
+    [Best practices.](../method/persistent-ids)
 
 ??? question "What is the publishing strategy for ontology releases?"
     A fast versioning strategy is adopted, where only major versions are considered stable and published with full documentation. Minor/patch versions are published for collaboration and traceability.
     [More info.](../method/publications)
 
 ??? question "How are the OntoUML and gUFO ontologies and the produced semantic mappings maintained over time?"
-    Ontologies and semantic mappings are maintained in version-controlled repositories and released through a structured publishing pipeline. Each release is assigned a permanent, citable URL, with both a persistent identifier (PURL) and a timestamped version. Ontologies are published in multiple formats (e.g., RDF/Turtle, JSON) and validated prior to release. This process ensures transparency, long-term accessibility, and semantic stability across versions.
+    Ontologies and semantic mappings are maintained in version-controlled repositories and released through a structured publishing pipeline. Each release is assigned a permanent, citable URL, with both a Persistent Identifier (PI). Ontologies are published in multiple formats (e.g., RDF/Turtle, JSON) and validated prior to release. This process ensures transparency, long-term accessibility, and semantic stability across versions.
     [Read more.](../method/publications)
 
 ??? question "Who is responsible for maintaining the ontology and its associated mappings?"
@@ -376,7 +376,7 @@
     The initiative maintains a consolidated table of all PIDs, covering the ontology, mapping set, and mapping vocabulary.  
     This table describes the behavior of each PID (e.g., redirects, format-specific access) and provides examples.  
 
-    [See the full overview.](../method/permanent-ids)
+    [See the full overview.](../method/persistent-ids)
 
 ### Community Contributions and Feedback
 

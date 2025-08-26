@@ -72,14 +72,15 @@ nav:
       - How to Create an OntoUML Model: ontouml-gufo/how-to-create-ontouml-model.md
       - gUFO: ontouml-gufo/gufo.md
   - The Health-RI Method:
-      - Overview: method/index.md
+      - Introduction: method/index.md
+      - Method Overview: method/overview.md
       - Mapping Strategy: method/mapping-strategy.md
       - Mapping Vocabulary: method/specification.html
       - Mapping Set: method/mapping-set.md
       - Publications: method/publications.md
-      - Permanent Identifiers (PIDs): method/permanent-ids.md
+      - Persistent Identifiers (PIDs): method/persistent-ids.md
   - The Health-RI Ontology:
-      - Home: ontology/index.md
+      - Overview: ontology/index.md
       - Documentation: ontology/documentation.md
       - Specification: ontology/specification.html
       - Changelog: ontology/changelog.md

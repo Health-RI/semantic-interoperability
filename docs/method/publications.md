@@ -105,7 +105,7 @@ ontologies/
   - It is generated and maintained with the support of an AI-assisted tool to ensure consistency and clarity.
 
 !!! tip "Looking for PID details?"
-    The full description of all Permanent Identifiers (PIDs) — including format-specific URIs for each version — is documented separately. Access the complete description at: [Permanent Identifiers](permanent-ids.md).
+    The full description of all Persistent Identifiers (PIDs) — including format-specific URIs for each version — is documented separately. Access the complete description at: [Persistent Identifiers](persistent-ids.md).
 
 ## Publishing SSSOM Mappings
 

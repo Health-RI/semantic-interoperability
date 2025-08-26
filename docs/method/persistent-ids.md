@@ -1,4 +1,4 @@
-# Permanent Identifiers (PIDs)
+# Persistent Identifiers (PIDs)
 
 This page lists the **persistent, stable, and dereferenceable identifiers (PIDs)** established by the Health-RI Semantic Interoperability Initiative. These URIs support semantic interoperability, long-term accessibility, and alignment with FAIR principles.
 
