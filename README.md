@@ -6,7 +6,7 @@
 ![GitHub Release](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability)
 ![GitHub Release Date](https://img.shields.io/github/release-date/Health-RI/semantic-interoperability)
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/Health-RI/semantic-interoperability/latest)
-[![Build Status](https://github.com/Health-RI/semantic-interoperability/actions/workflows/ci.yml/badge.svg)](https://github.com/Health-RI/semantic-interoperability/actions)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/health-ri/semantic-interoperability/deploy.yml)
 [![Documentation](https://img.shields.io/badge/Docs-Specification-blue.svg)](https://health-ri.github.io/semantic-interoperability/)
 
 <!-- Vocabulary latest release -->
