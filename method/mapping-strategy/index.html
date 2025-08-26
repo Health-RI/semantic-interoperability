@@ -871,6 +871,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#conceptualization-implementation-and-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptualization, Implementation, and Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#aligning-third-party-ontologies" class="md-nav__link">
     <span class="md-ellipsis">
       Aligning Third-Party Ontologies
@@ -1318,6 +1327,20 @@
 <p class="admonition-title">Why the CIM-PIM link matters</p>
 <p>Even though the OntoUML model is not executable, it defines the core meaning that gUFO classes implement. This semantic grounding improves trust, clarity, and alignment in data integration.</p>
 </div>
+<h2 id="conceptualization-implementation-and-mapping">Conceptualization, Implementation, and Mapping</h2>
+<p>To make the semantic link between OntoUML, gUFO, and external ontologies more explicit, it is useful to consider the semiotic perspective shown in Figure 2.</p>
+<p><img alt="Linking OntoUML conceptualization, gUFO implementation, and external mappings" src="../assets/images/theory.png" />
+<em>Figure 2: OntoUML (CIM) provides the conceptualization, which gUFO (PIM) implements. External ontologies aligned through the Health-RI Mapping Vocabulary (<code>hriv</code>) can then be interpreted as sharing the same underlying conceptualization defined by OntoUML. This ensures that both meaning and representation remain consistent across models and ontologies.</em></p>
+<p>In this diagram:</p>
+<ul>
+<li><strong>Real-world referents (globe and people, top-right):</strong> indicate the actual entities in the domain (e.g., human beings) that the conceptualization is about. These are the things to which all conceptualizations ultimately refer.</li>
+<li><strong>Shared Conceptualization (top, cloud icon):</strong> represents the underlying domain meaning (e.g., <em>Person</em>) that is shared across different artifacts. This is the abstract conceptualization formalized in OntoUML, implemented computationally in gUFO, and explicitly anchored when an external ontology concept is mapped through the Health-RI Mapping Vocabulary.</li>
+<li><strong>OntoUML class (<code>&lt;&lt;kind&gt;&gt; Person</code>, left):</strong> formalizes this conceptualization at the CIM layer, providing precise ontological grounding (in UFO) for what it means to be a <em>Person</em>.</li>
+<li><strong>gUFO implementation (<code>hrio:Person</code>, bottom):</strong> expresses the same meaning in computational terms at the PIM layer, making it machine-readable and interoperable. gUFO classes always inherit their semantics from the OntoUML concepts they implement.</li>
+<li><strong>External ontology concept (<code>ont:Human</code>, right):</strong> denotes how a third-party ontology may define a similar concept. When mapped via the Health-RI Mapping Vocabulary (e.g., <code>hriv:isExactMeaningOf</code>), such an external concept is explicitly anchored to the gUFO representation and, by transitivity, to the original OntoUML conceptualization.</li>
+</ul>
+<p>Taken together, the diagram shows that <em>(i)</em> the Health-RI OntoUML model provides the authoritative conceptual meaning, <em>(ii)</em> the gUFO implementation operationalizes this meaning computationally, and <em>(iii)</em> external mappings assert that third-party ontologies share this meaning.</p>
+<p>This guarantees that when a partner ontology concept is mapped to the Health-RI ontology using <code>hriv</code>, it is not only aligned with the gUFO class but is also understood to embody the same <strong>conceptualization</strong> originally defined in OntoUML. In this way, interoperability extends beyond structural matching to the preservation of intended meaning.</p>
 <h2 id="aligning-third-party-ontologies">Aligning Third-Party Ontologies</h2>
 <p>Our common reference model provides authoritative semantics to external concept definitions. When another ontology defines <code>onto:Person</code>, it may be semantically aligned with our <code>hrio:Person</code>. To make this relationship explicit, a <strong><code>hriv:isExactMeaningOf</code></strong> link can be asserted—either by the Health-RI mapping team (e.g., in SSSOM format), or by the owners of the external ontology within their artifact—signifying that the external concept carries the same meaning.</p>
 <p>There are two possible approaches for creating and maintaining such mappings:</p>
@@ -1343,7 +1366,7 @@
 <p>Each concept may have <strong>exactly one</strong> <code>hriv:isExactMeaningOf</code> to a Health-RI concept—<strong>and only when a perfect semantic equivalence exists</strong>. Using more than one <code>hriv:isExactMeaningOf</code> for the same concept is not allowed, as it introduces ambiguity.</p>
 </div>
 <p><img alt="Deriving OntoUML semantics via mapping to Health-RI reference model" src="../assets/images/mapping-cim-pim2.png" />
-<em>Figure 2: If an external ontology defines <code>External:Patient</code> which we map via <code>hriv:isExactMeaningOf</code> to <code>hrio:Patient</code>—and <code>hrio:Patient</code> derives its semantics from the OntoUML <code>Patient</code> concept—then we can interpret <code>External:Patient</code> as conveying the same semantics as the <code>OntoUML Patient</code> concept.</em></p>
+<em>Figure 3: If an external ontology defines <code>External:Patient</code> which we map via <code>hriv:isExactMeaningOf</code> to <code>hrio:Patient</code>—and <code>hrio:Patient</code> derives its semantics from the OntoUML <code>Patient</code> concept—then we can interpret <code>External:Patient</code> as conveying the same semantics as the <code>OntoUML Patient</code> concept.</em></p>
 <h2 id="mapping-properties-for-cross-scheme-alignment">Mapping Properties for Cross-Scheme Alignment</h2>
 <p>The <a href="../specification.html">Health-RI Mapping Vocabulary</a> was created to provide a set of mapping properties designed for expressing alignments between concepts in different concept schemes (e.g. external vocabularies and our Health-RI ontology). The principal properties are: <code>hriv:isExactMeaningOf</code>, <code>hriv:hasBroaderMeaningThan</code>, and <code>hriv:hasNarrowerMeaningThan</code>.</p>
 <h3 id="our-strategy-choosing-the-right-mapping-property">Our Strategy: Choosing the Right Mapping Property</h3>
@@ -1361,7 +1384,7 @@
 <p>These mappings are only to be used when <strong>no perfect equivalence exists</strong> and a semantic approximation must be made to the <strong>closest reference concept</strong> in the Health-RI ontology.</p>
 <h3 id="visual-example-exact-semantic-alignment">Visual Example: Exact Semantic Alignment</h3>
 <p><img alt="Cross-ontology mapping using hriv:isExactMeaningOf and rdfs:subClassOf" src="../assets/images/example-mapping.png" />
-<em>Figure 3: External ontologies (e.g., HealthCare and Veterinary) map their local concepts to reference concepts in the Health-RI Ontology via <code>hriv:isExactMeaningOf</code> (red). These reference concepts are also semantically structured via <code>rdfs:subClassOf</code> (brown), enabling consistent classification across domains.</em></p>
+<em>Figure 4: External ontologies (e.g., HealthCare and Veterinary) map their local concepts to reference concepts in the Health-RI Ontology via <code>hriv:isExactMeaningOf</code> (red). These reference concepts are also semantically structured via <code>rdfs:subClassOf</code> (brown), enabling consistent classification across domains.</em></p>
 <p>This figure illustrates how concepts such as <code>hc:Patient</code> and <code>vet:Patient</code> are mapped to <code>hrio:HealthcarePatient</code> and <code>hrio:VeterinaryPatient</code> respectively. These are in turn subsumed by higher-level concepts like <code>hrio:Human</code> or <code>hrio:NonHumanAnimal</code>, ultimately aligning under <code>hrio:Animal</code>. This modeling strategy ensures that semantic alignments preserve domain distinctions while enabling unified interpretation under a shared reference ontology.</p>
 <div class="admonition tip">
 <p class="admonition-title">How to assert an exact match in your OWL file</p>
@@ -1380,7 +1403,7 @@
 </div>
 <h3 id="visual-example-broader-and-narrower-semantic-alignments">Visual Example: Broader and Narrower Semantic Alignments</h3>
 <p><img alt="Cross-ontology mapping using hriv:isExactMeaningOf, hriv:hasNarrowerMeaningThan, and hriv:hasBroaderMeaningThan" src="../assets/images/example-mapping2.png" />
-<em>Figure 4: Mapping external concepts from GeneralHealth and PetVeterinary ontologies to the Health-RI ontology. This example evolves from Figure 3 by incorporating <code>hriv:hasNarrowerMeaningThan</code> (magenta) and <code>hriv:hasBroaderMeaningThan</code> (blue) mappings in addition to <code>hriv:isExactMeaningOf</code> (red).</em></p>
+<em>Figure 5: Mapping external concepts from GeneralHealth and PetVeterinary ontologies to the Health-RI ontology. This example evolves from Figure 4 by incorporating <code>hriv:hasNarrowerMeaningThan</code> (magenta) and <code>hriv:hasBroaderMeaningThan</code> (blue) mappings in addition to <code>hriv:isExactMeaningOf</code> (red).</em></p>
 <ul>
 <li><code>ghc:Patient</code> and <code>pvet:Patient</code> are both linked via <code>hriv:hasBroaderMeaningThan</code> to <code>hrio:VeterinaryPatient</code>, indicating that each of these patients represents a has a broader meaning than the concept patient in the Health-RI ontology.</li>
 <li><code>pvet:PetAnimal</code> is linked via <code>hriv:hasNarrowerMeaningThan</code> to <code>hrio:NonHumanAnimal</code>, signaling that the external concept has narrower meaning.</li>
@@ -1402,7 +1425,7 @@
 </div>
 <h4 id="visual-example-completing-the-ontology-via-semantic-gaps">Visual Example: Completing the Ontology via Semantic Gaps</h4>
 <p><img alt="Cross-ontology mapping after enriching the reference ontology" src="../assets/images/example-mapping3.png" />
-<em>Figure 5: Following the scenario from Figure 4, new intermediate concepts (in green) were added to the Health-RI ontology to bridge semantic gaps and enable the replacement of approximate mappings (<code>hriv:hasNarrowerMeaningThan</code>, <code>hriv:hasBroaderMeaningThan</code>) with exact ones.</em></p>
+<em>Figure 6: Following the scenario from Figure 5, new intermediate concepts (in green) were added to the Health-RI ontology to bridge semantic gaps and enable the replacement of approximate mappings (<code>hriv:hasNarrowerMeaningThan</code>, <code>hriv:hasBroaderMeaningThan</code>) with exact ones.</em></p>
 <p>In cases where an external ontology cannot be mapped via <code>hriv:isExactMeaningOf</code> due to a lack of equivalent concepts, we encourage internal teams and external partners to <strong>contact the Health-RI modeling team</strong>. By collaboratively extending the reference ontology with <strong>missing intermediate concepts</strong>, we support:</p>
 <ul>
 <li>The replacement of <code>hriv:hasNarrowerMeaningThan</code> and <code>hriv:hasBroaderMeaningThan</code> with <code>hriv:isExactMeaningOf</code>,</li>
@@ -1411,11 +1434,11 @@
 </ul>
 <p>In the figure above, concepts like <code>hrio:PetVet.Patient</code> and <code>hrio:PetAnimal</code> were introduced to bridge the gap between <code>pvet:Patient</code>/<code>pvet:PetAnimal</code> and broader Health-RI categories. These new concepts enable the creation of precise <code>hriv:isExactMeaningOf</code> relationships, improving the coherence and utility of both the reference ontology and the external ontology being mapped.</p>
 <h2 id="references">References</h2>
-<p><a id="ref1"></a><br />
+<p><a id="ref1"></a>
 <strong>[1]</strong> Object Management Group. <em>MDA Guide rev. 2.0</em>. OMG Document ormsc/14-06-01, 2014. <a href="https://www.omg.org/cgi-bin/doc?ormsc/14-06-01"><strong>Access</strong></a>
-<a id="ref2"></a><br />
+<a id="ref2"></a>
 <strong>[2]</strong> Brambilla, M., Cabot, J., Wimmer, M. <em>Model-Driven Software Engineering in Practice</em>. Morgan &amp; Claypool, 2017.
-<a id="ref3"></a><br />
+<a id="ref3"></a>
 <strong>[3]</strong> Guizzardi, G. <em>On Ontology, Ontologies, Conceptualizations and the Reality of Categories</em>. Applied Ontology, 16(2), 2021.</p>
 
 
