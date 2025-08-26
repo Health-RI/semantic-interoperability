@@ -72,8 +72,8 @@ nav:
       - Creating OntoUML Models: ontouml-gufo/creating-ontouml-models.md
       - gUFO: ontouml-gufo/gufo.md
   - The Health-RI Method:
-      - Introduction: method/index.md
-      - Method Overview: method/overview.md
+      - Overview: method/index.md
+      - Introduction: method/introduction.md
       - Mapping Strategy: method/mapping-strategy.md
       - Mapping Vocabulary Specification: method/specification.html
       - SSSOM Mapping Set: method/mapping-set.md
