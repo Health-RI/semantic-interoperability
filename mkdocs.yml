@@ -71,7 +71,7 @@ nav:
       - OntoUML/UFO Catalog: ontouml-gufo/ontouml-ufo-catalog.md
       - Creating OntoUML Models: ontouml-gufo/creating-ontouml-models.md
       - gUFO: ontouml-gufo/gufo.md
-  - The Health-RI Method:
+  - Method:
       - Overview: method/index.md
       - Introduction: method/introduction.md
       - Mapping Strategy: method/mapping-strategy.md

@@ -2,13 +2,7 @@
 
 # Health-RI Semantic Interoperability Initiative
 
-Welcome to the official documentation site for the Health-RI Semantic Interoperability Initiative.
-
-This site serves as a central resource for:
-- Understanding what **semantic interoperability** is and why it matters,
-- Learning about **ontologies** and **ontology engineering** approaches,
-- Exploring **OntoUML** and **gUFO**, the modeling foundations selected for our efforts,
-- Documenting the **method** developed and applied at Health-RI to achieve semantic integration across datasets and systems.
+This site documents how Health-RI achieves semantic interoperability across health and life-sciences data: our concepts, modeling foundations (OntoUML & gUFO), the method and mapping vocabulary we use, and the published ontology deliverables (specs, docs, changelog).
 
 ## About Health-RI
 
@@ -16,10 +10,15 @@ This site serves as a central resource for:
 
 Semantic interoperability plays a foundational role in this mission by ensuring that data from diverse sources can be aligned and understood consistently — not just technically, but conceptually.
 
-## What You'll Find Here
+## What’s on this site
 
-This site documents Health-RI's efforts to enable semantic interoperability in health data by providing foundational concepts, modeling techniques, and methodological guidance. It is designed to support researchers, data stewards, and engineers working to align data meaningfully across systems.
+- **Semantic Interoperability**: [Overview](semantic-interoperability/index.md)
+- **OntoUML & gUFO**: [Overview](ontouml-gufo/index.md) · [OntoUML](ontouml-gufo/ontouml.md) · [OntoUML Stereotypes](ontouml-gufo/ontouml-stereotypes.md) · [OntoUML/UFO Catalog](ontouml-gufo/ontouml-ufo-catalog.md) · [Creating OntoUML Models](ontouml-gufo/creating-ontouml-models.md) · [gUFO](ontouml-gufo/gufo.md)
+- **Method**: [Overview](method/index.md) · [Introduction](method/introduction.md) · [Mapping Strategy](method/mapping-strategy.md) · [Mapping Vocabulary Specification](method/specification.html) · [SSSOM Mapping Set](method/mapping-set.md) · [Publications](method/publications.md) · [Persistent Identifiers](method/persistent-ids.md)
+- **Deliverables**: [Overview](ontology/index.md) · [Ontology Documentation](ontology/documentation.md) · [Ontology Specification](ontology/specification.html) · [Ontology Changelog](ontology/changelog.md)
+- **Help & Contributions**: [FAQ](faq.md) · [Contributing](contributing.md)
 
-- [Semantic Interoperability](semantic-interoperability/index.md): Key principles and motivations behind semantic interoperability.
-- [OntoUML & gUFO](ontouml-gufo/index.md): Ontologically grounded modeling tools and their application in semantic infrastructures.
-- [The Health-RI Method](method/index.md): A structured approach for creating reference models and mappings in collaborative environments.
+## Who this is for
+Data stewards, modelers, and engineers who need stable, shared meaning across systems—using a common reference model (OntoUML → gUFO) and mappings that align external ontologies to it.
+
+> Looking for stable links and how to cite or reference our artifacts? See [Persistent Identifiers](method/persistent-ids.md) and [Publications](method/publications.md).
