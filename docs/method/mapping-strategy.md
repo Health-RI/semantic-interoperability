@@ -17,11 +17,13 @@ OMG defines three main abstraction layers <a href="#ref1">[1</a>, <a href="#ref2
 
 Within our semantic interoperability framework:
 
-- The **OntoUML ontology** sits at the CIM layer: it defines conceptual domain entities and relationships grounded in the Unified Foundational Ontology (UFO) <a href="#ref3">[3]</a>.
-- The **gUFO representation** (OWL-based lightweight implementation of UFO) resides at the PIM layer: it expresses those same concepts as an executable OWL 2 DL ontology, suitable for reasoning and integration with Semantic Web tools <a href="#ref3">[3]</a>.
+- The **OntoUML ontology** sits at the [CIM layer](https://cio-wiki.org/wiki/Computation-Independent_Model_(CIM)): it defines conceptual domain entities and relationships grounded in the Unified Foundational Ontology (UFO) <a href="#ref3">[3]</a>.
+- The **gUFO representation** (OWL-based lightweight implementation of UFO) resides at the [PIM layer](https://cio-wiki.org/wiki/Platform_Independent_Model_(PIM)): it expresses those same concepts as an executable OWL 2 DL ontology, suitable for reasoning and integration with Semantic Web tools <a href="#ref3">[3]</a>.
 
 ![Mapping from OntoUML at CIM to gUFO/OWL at PIM](./assets/images/mapping-cim-pim.png)
 *Figure 1: OntoUML at the CIM layer defines the semantics that are implemented in gUFO/OWL at the PIM layer.*
+
+This separation is crucial because it ensures clarity about what we mean versus how we represent it. By explicitly considering this, each element in the ontology has a well-defined meaning behind it, rather than being just an arbitrary label or technical construct. By identifying the original meaning (conceptualization) of "Person" (for example) and separating it from any one representation, we follow the prescription that real-world semantics should guide the modeling. This aligns with knowledge engineering practices: every knowledge base or ontology implicitly commits to some conceptualization of the domain, and making that conceptualization explicit is critical for correctness.
 
 This visual clarifies that OntoUML provides the conceptual meaning, which the gUFO artifact operationalizes—while preserving semantic integrity across layers.
 
@@ -48,11 +50,11 @@ To make the semantic link between OntoUML, gUFO, and external ontologies more ex
 ![Linking OntoUML conceptualization, gUFO implementation, and external mappings](./assets/images/theory.png)
 *Figure 2: OntoUML (CIM) provides the conceptualization, which gUFO (PIM) implements. External ontologies aligned through the Health-RI Mapping Vocabulary (`hriv`) can then be interpreted as sharing the same underlying conceptualization defined by OntoUML. This ensures that both meaning and representation remain consistent across models and ontologies.*
 
-In this diagram:
+In this Figure:
 
 - **Real-world referents (globe and people, top-right):** indicate the actual entities in the domain (e.g., human beings) that the conceptualization is about. These are the things to which all conceptualizations ultimately refer.
 - **Shared Conceptualization (top, cloud icon):** represents the underlying domain meaning (e.g., *Person*) that is shared across different artifacts. This is the abstract conceptualization formalized in OntoUML, implemented computationally in gUFO, and explicitly anchored when an external ontology concept is mapped through the Health-RI Mapping Vocabulary.
-- **OntoUML class (`<<kind>> Person`, left):** formalizes this conceptualization at the CIM layer, providing precise ontological grounding (in UFO) for what it means to be a *Person*.
+- **OntoUML class (`<<kind>> Person`, left):** formalizes this conceptualization at the CIM layer, providing precise ontological grounding (in UFO) for what it means to be a *Person*. When we create a class `<<kind>> Person` in OntoUML, we are doing more than drawing a box labeled "Person." We are encoding the meaning of Person in a structured way that the modeling language understands. In this sense, the OntoUML concept plays the role of a meaningful representation: it carries intentional meaning (e.g., the notion of a person as an entity with essential properties, understood via UFO’s category of Kind) and it is also an explicit element in a model.
 - **gUFO implementation (`hrio:Person`, bottom):** expresses the same meaning in computational terms at the PIM layer, making it machine-readable and interoperable. gUFO classes always inherit their semantics from the OntoUML concepts they implement.
 - **External ontology concept (`ont:Human`, right):** denotes how a third-party ontology may define a similar concept. When mapped via the Health-RI Mapping Vocabulary (e.g., `hriv:hasExactMeaning`), such an external concept is explicitly anchored to the gUFO representation and, by transitivity, to the original OntoUML conceptualization.
 
@@ -60,9 +62,13 @@ Taken together, the diagram shows that *(i)* the Health-RI OntoUML model provide
 
 This guarantees that when a partner ontology concept is mapped to the Health-RI ontology using `hriv`, it is not only aligned with the gUFO class but is also understood to embody the same **conceptualization** originally defined in OntoUML. In this way, interoperability extends beyond structural matching to the preservation of intended meaning.
 
+OntoUML and OWL are complementary in that they operate at different knowledge representation levels. OntoUML is a conceptual modeling language—closer to human cognition and domain semantics—whereas OWL is a computational ontology language—suited for machine tractability and reasoning. Designing at the conceptual level first ensures the meaning is captured correctly before committing to OWL’s computational restrictions.
+
+Theories of formal semantics tell us that an OWL class gets its meaning from two sources: the formal semantics of the logic (which treats Person as a set of individuals with certain properties) and the intended interpretation by the modeler (the conceptualization of Person). By explicitly maintaining the link (`hriv:hasExactMeaning`) between `ont:Human` and `hrio:Person` (which is anchored in the conceptualization), we ensure that the formal artifact is interpreted correctly. By grounding both the OntoUML and OWL representations in the same meaning, we mitigate the risk of the OWL ontology drifting from the original intent. This establishes a **traceability of semantics**—from the real-world domain, to the conceptual model, to the formal ontology—which is a characteristic of rigorous ontology engineering. Nothing is introduced in OWL that was not conceptually established first.
+
 ## Aligning Third-Party Ontologies
 
-Our common reference model provides authoritative semantics to external concept definitions. When another ontology defines `onto:Person`, it may be semantically aligned with our `hrio:Person`. To make this relationship explicit, a **`hriv:hasExactMeaning`** link can be asserted—either by the Health-RI mapping team (e.g., in SSSOM format), or by the owners of the external ontology within their artifact—signifying that the external concept carries the same meaning.
+Our common reference model provides authoritative semantics to external concept definitions. When another ontology defines `ont:Human`, it may be semantically aligned with our `hrio:Person`. To make this relationship explicit, a **`hriv:hasExactMeaning`** link can be asserted—either by the Health-RI mapping team (e.g., in SSSOM format), or by the owners of the external ontology within their artifact—signifying that the external concept carries the same meaning.
 
 There are two possible approaches for creating and maintaining such mappings:
 
