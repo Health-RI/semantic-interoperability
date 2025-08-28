@@ -21,7 +21,8 @@ Semantic interoperability plays a foundational role in this mission by ensuring 
 ## Who this is for
 Data stewards, modelers, and engineers who need stable, shared meaning across systems—using a common reference model (OntoUML → gUFO) and mappings that align external ontologies to it.
 
-> Looking for stable links and how to cite or reference our artifacts? See [Persistent Identifiers](method/persistent-ids.md) and [Publications](method/publications.md).
+!!! tip
+    Looking for stable links and how to cite or reference our artifacts? See [Persistent Identifiers](method/persistent-ids.md) and [Publications](method/publications.md).
 
 ## License
 
