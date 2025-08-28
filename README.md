@@ -9,15 +9,15 @@
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/health-ri/semantic-interoperability/deploy.yml)
 [![Documentation](https://img.shields.io/badge/Docs-Specification-blue.svg)](https://health-ri.github.io/semantic-interoperability/)
 
-<!-- Vocabulary latest release -->
-[![Vocabulary Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=vocabulary-v*&sort=semver)](https://github.com/Health-RI/semantic-interoperability/releases?q=tag%3Avocabulary-) [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
-
 <!-- Ontology latest release -->
 <!-- [![Ontology Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=ontology-v*&sort=semver)](https://github.com/Health-RI/semantic-interoperability/releases?q=tag%3Aontology-) [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 -->
 
+<!-- Vocabulary latest release -->
+[![Vocabulary Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=vocabulary-v*&sort=semver)](https://github.com/Health-RI/semantic-interoperability/releases?q=tag%3Avocabulary-) [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 <!-- Mapping Set latest release -->
-<!-- [![Mapping Set Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=mapping-v*&sort=semver)](https://github.com/Health-RI/semantic-interoperability/releases?q=tag%3Amapping-) -->
+[![Mapping Set Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=mappings-v*&sort=semver)](https://github.com/Health-RI/semantic-interoperability/releases?q=tag%3Amappings-)
 
 This repository hosts the source files for the [Health-RI Semantic Interoperability Initiative documentation site](https://health-ri.github.io/semantic-interoperability/), which presents our approach to enabling semantic interoperability in health and life sciences.
 
