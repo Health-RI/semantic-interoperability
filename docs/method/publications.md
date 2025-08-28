@@ -120,3 +120,11 @@ Published mappings are **append-only**: existing rows are not deleted. To correc
   - `https://github.com/Health-RI/semantic-interoperability/mappings/ttl` — **TTL** version
   - `https://github.com/Health-RI/semantic-interoperability/mappings/tsv` — **TSV** version
   - Human-readable table: `docs/ontology/mappings.md`
+
+!!! note
+    Both serializations of the SSSOM Mapping Set — **TSV** and **TTL** — are stored in the `/mappings` folder of this repository.  
+    The redirect links above provide stable access to these files, while the folder itself contains the recorded versions.
+
+!!! warning "TTL version not yet available"
+    The TTL version of the mapping set will **not be published for now**, as its generation requires additional implementation work that is currently in progress.  
+    For the time being, only the TSV version is available.

@@ -12,6 +12,10 @@ We offer several stable and accessible URIs for accessing the mapping set in dif
 - `https://github.com/Health-RI/semantic-interoperability/mappings/ttl` — Redirects to the **TTL** version of the SSSOM mappings.
 - `https://github.com/Health-RI/semantic-interoperability/mappings/tsv` — Redirects to the **TSV** version of the SSSOM mappings.
 
+!!! warning "TTL version not yet available"
+    The TTL version of the mapping set will **not be published for now**, as its generation requires additional implementation work that is currently in progress.  
+    For the time being, only the TSV version is available.
+
 ## Versioning Strategy
 
 Unlike the Health-RI Ontology (which may use semantic versioning or other schemes), the **mapping set versioning** is based on the **YYYY-MM-DD** format, corresponding to its **publication date**.
