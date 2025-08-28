@@ -22,3 +22,9 @@
 This repository hosts the source files for the [Health-RI Semantic Interoperability Initiative documentation site](https://health-ri.github.io/semantic-interoperability/), which presents our approach to enabling semantic interoperability in health and life sciences.
 
 Visit the documentation: [health-ri.github.io/semantic-interoperability](https://health-ri.github.io/semantic-interoperability/)
+
+## License
+
+**Semantic Artifacts & Documentation:** All ontologies, vocabularies, mapping files, documentation, templates, and other semantic artifacts in this repository (e.g., `ontologies/`, `mappings/`, `vocabulary/`, and related subfolders) are licensed under the [**Creative Commons Attribution 4.0 International (CC BY 4.0)**](https://creativecommons.org/licenses/by/4.0/) license.
+
+**Auxiliary Code:** Any code scripts or auxiliary utilities (e.g., in `/scripts/`) are licensed under the [**MIT License**](https://spdx.org/licenses/MIT.html).

@@ -22,3 +22,9 @@ Semantic interoperability plays a foundational role in this mission by ensuring 
 Data stewards, modelers, and engineers who need stable, shared meaning across systems—using a common reference model (OntoUML → gUFO) and mappings that align external ontologies to it.
 
 > Looking for stable links and how to cite or reference our artifacts? See [Persistent Identifiers](method/persistent-ids.md) and [Publications](method/publications.md).
+
+## License
+
+**Semantic Artifacts & Documentation**: All ontologies, vocabularies, mapping files, documentation, templates, and other semantic artifacts in this repository (e.g., `ontologies/`, `mappings/`, `vocabulary/`, and related subfolders) are licensed under the [**Creative Commons Attribution 4.0 International (CC BY 4.0)**](https://creativecommons.org/licenses/by/4.0/) license.
+
+**Auxiliary Code**: Any code scripts or auxiliary utilities (e.g., in `/scripts/`) are licensed under the [**MIT License**](https://spdx.org/licenses/MIT.html).
