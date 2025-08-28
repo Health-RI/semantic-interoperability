@@ -13,15 +13,16 @@
 <!-- [![Ontology Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=ontology-v*&sort=semver)](https://github.com/Health-RI/semantic-interoperability/releases?q=tag%3Aontology-) [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 -->
 
-<!-- Vocabulary latest release -->
-[![Vocabulary Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=vocabulary-v*&sort=semver)](https://github.com/Health-RI/semantic-interoperability/releases?q=tag%3Avocabulary-) [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
-
-<!-- Mapping Set latest release -->
-[![Mapping Set Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=mappings-v*&sort=semver)](https://github.com/Health-RI/semantic-interoperability/releases?q=tag%3Amappings-)
-
 This repository hosts the source files for the [Health-RI Semantic Interoperability Initiative documentation site](https://health-ri.github.io/semantic-interoperability/), which presents our approach to enabling semantic interoperability in health and life sciences.
 
-Visit the documentation: [health-ri.github.io/semantic-interoperability](https://health-ri.github.io/semantic-interoperability/)
+Visit the documentation at: **<https://health-ri.github.io/semantic-interoperability/>**
+
+## Releases
+
+| Deliverable                  | Version                                                                                                                                                                                                                    | License                                                                                                                          |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **SSSOM Mapping Vocabulary** | [![Mapping Set Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=mappings-v*&sort=semver)](https://github.com/Health-RI/semantic-interoperability/releases?q=tag%3Amappings-)    | [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/) |
+| **Mapping Vocabulary**       | [![Vocabulary Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=vocabulary-v*&sort=semver)](https://github.com/Health-RI/semantic-interoperability/releases?q=tag%3Avocabulary-) | [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/) |
 
 ## License
 
