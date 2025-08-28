@@ -1,0 +1,31 @@
+#comment: This mapping set is part of the Health-RI Semantic Interoperability Initiative, which supports the development of shared ontologies and mappings to align heterogeneous data sources conceptually and semantically.
+#sssom_version: 1.1
+#mapping_set_id: https://w3id.org/health-ri/semantic-interoperability/mappings
+#mapping_set_version: 2025-08-28
+#mapping_set_title: Health-RI Ontology Mappings
+#mapping_set_description: Manually curated mappings aligning key concepts from external artifacts to the Health-RI Ontology.
+#creator_id: orcid:0000-0003-2736-7817
+#creator_label: Pedro Paulo Favato Barcelos
+#publication_date: 2025-08-28
+#license: https://creativecommons.org/licenses/by/4.0/
+#issue_tracker: https://github.com/Health-RI/semantic-interoperability/issues
+#see_also: https://w3id.org/health-ri/semantic-interoperability
+#curie_map:
+#  dcterms: http://purl.org/dc/terms/
+#  hrio: https://w3id.org/health-ri/ontology#
+#  hrim: https://w3id.org/health-ri/semantic-interoperability/mappings#
+#  orcid: https://orcid.org/
+#  prov: http://www.w3.org/ns/prov#
+#  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+#  rdfs: http://www.w3.org/2000/01/rdf-schema#
+#  semapv: https://w3id.org/semapv/vocab/
+#  skos: http://www.w3.org/2004/02/skos/core#
+#  sssom: https://w3id.org/sssom/
+#extension_definitions:
+#  - slot_name: replaces
+#    property: dcterms:replaces
+#    type_hint: sssom:record_id
+#  - slot_name: isReplacedBy
+#    property: dcterms:isReplacedBy
+#    type_hint: sssom:record_id
+subject_id	subject_label	predicate_id	predicate_modifier	object_id	object_label	object_category	mapping_justification	author_id	author_label	reviewer_id	reviewer_label	license	subject_type	subject_source	subject_source_version	object_source	mapping_date	replaces	isReplacedBy	comment
