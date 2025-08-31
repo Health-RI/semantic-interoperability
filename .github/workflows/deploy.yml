@@ -31,7 +31,7 @@ jobs:
       - name: Copy changelog to docs folder
         run: |
           mkdir -p docs/ontology
-          cp ontologies/changelog.md docs/ontology/changelog.md
+          cp ontologies/changelog-ontology.md docs/ontology/changelog-ontology.md
 
       - name: Remove old and copy new images
         run: |

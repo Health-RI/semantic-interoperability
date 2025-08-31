@@ -83,7 +83,7 @@ nav:
       - Overview: ontology/index.md
       - Ontology Documentation: ontology/documentation.md
       - Ontology Specification: ontology/specification.html
-      - Ontology Changelog: ontology/changelog.md
+      - Ontology Changelog: ontology/changelog-ontology.md
       # - SSSOM Mapping Set: ontology/mappings.md
   - FAQ: faq.md
   - Contributing: contributing.md

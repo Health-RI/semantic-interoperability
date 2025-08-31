@@ -85,7 +85,7 @@ ontologies/
 │       ├── documentation-vX.Y.Z.md
 │       └── specification-vX.Y.Z.html
 │
-├── changelog.md
+├── changelog-ontology.md
 └── ...
 ```
 
@@ -100,7 +100,7 @@ ontologies/
 
 - Only the **latest version** of each artifact is visible directly in the `ontologies/latest/` folder.
 - **All previous versions** are organized in the `ontologies/versioned/` directory for transparency and reproducibility.
-- A **changelog file (`changelog.md`)** summarizes all version changes and links them to their respective files and semantic impact.
+- A **changelog file (`changelog-ontology.md`)** summarizes all version changes and links them to their respective files and semantic impact.
   - The changelog follows the [Keep a Changelog](https://keepachangelog.com/) format.
   - It is generated and maintained with the support of an AI-assisted tool to ensure consistency and clarity.
 
