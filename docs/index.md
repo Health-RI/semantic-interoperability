@@ -26,6 +26,6 @@ Data stewards, modelers, and engineers who need stable, shared meaning across sy
 
 ## License
 
-**Semantic Artifacts & Documentation**: All ontologies, vocabularies, mapping files, documentation, templates, and other semantic artifacts in this repository (e.g., `ontologies/`, `mappings/`, `vocabulary/`, and related subfolders) are licensed under the [**Creative Commons Attribution 4.0 International (CC BY 4.0)**](https://creativecommons.org/licenses/by/4.0/) license.
+**Semantic Artifacts & Documentation**: All ontologies, vocabularies, mapping files, documentation, templates, and other semantic artifacts are licensed under the [**Creative Commons Attribution 4.0 International (CC BY 4.0)**](https://creativecommons.org/licenses/by/4.0/) license.
 
-**Auxiliary Code**: Any code scripts or auxiliary utilities (e.g., in `/scripts/`) are licensed under the [**MIT License**](https://spdx.org/licenses/MIT.html).
+**Auxiliary Code**: Any code scripts or auxiliary utilities are licensed under the [**MIT License**](https://spdx.org/licenses/MIT.html).
