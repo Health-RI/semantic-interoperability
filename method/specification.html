@@ -307,10 +307,20 @@ td {
         "@value": "2025-08-25"
       }
     ],
+    "https://schema.org/dateModified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-08-31"
+      }
+    ],
     "https://schema.org/description": [
       {
         "@language": "en",
         "@value": "This vocabulary is part of the Health-RI Semantic Interoperability Initiative. It provides properties for aligning local concepts to reference concepts in the Health-RI Ontology, enabling non-invasive mappings (e.g., via SSSOM) or embedded annotations in ontologies."
+      },
+      {
+        "@language": "en",
+        "@value": "This vocabulary adopts a hybrid semantic strategy:\n- The semantics of the mapping properties are grounded in an **intentional interpretation**, based on the imported semiotic vocabulary.\n- At the same time, for pragmatic reasons, the vocabulary supports **set-theoretic reasoning**, consistent with OWL and SKOS semantics. In this view, the properties are interpreted as set inclusions or similarity mappings between extensionally defined categories.\nThis dual approach ensures ontological clarity for semantic grounding, while supporting pragmatic alignment across schemes in SKOS-like mapping workflows."
       }
     ],
     "https://schema.org/license": [
@@ -390,6 +400,12 @@ td {
 </div>
 <div>
 <dt>
+<a class="hover_property" href="http://purl.org/dc/terms/modified" title="Date on which the resource was changed. Defined in DCMI Metadata Terms">Date Modified</a>
+</dt>
+<dd><p>2025-08-31</p></dd>
+</div>
+<div>
+<dt>
 <a class="hover_property" href="http://purl.org/dc/terms/issued" title="Date of formal issuance of the resource. Defined in DCMI Metadata Terms">Date Issued</a>
 </dt>
 <dd><p>2025-08-25</p></dd>
@@ -407,14 +423,16 @@ td {
 <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionIRI" title="The property that identifies the version IRI of an ontology. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Iri</a>
 </dt>
 <dd>
-<a href="https://w3id.org/health-ri/mapping-vocabulary/v1.0.0">https://w3id.org/health-ri/mapping-vocabulary/v1.0.0</a>
+<a href="https://w3id.org/health-ri/mapping-vocabulary/v1.1.0">https://w3id.org/health-ri/mapping-vocabulary/v1.1.0</a>
 </dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionInfo" title="The annotation property that provides version information for an ontology or another OWL construct. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Info</a>
 </dt>
-<dd><p>1.0.0</p></dd>
+<dd><p>Version 1.1.0 – Introduced the abstract superproperty hriv:meaningMappingRelation as a closed, non-assertable category for meaning-level alignments.
+  Added alignment with SKOS (relatedMatch, exactMatch, narrowMatch, broadMatch) for pragmatic interoperability.
+  Refined comments for clarity and introduced a hybrid interpretation combining intentional semantics with pragmatic set-theoretic reasoning.</p></dd>
 </div>
 <div>
 <dt>
@@ -434,12 +452,85 @@ td {
 <dt>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </dt>
-<dd><p>This vocabulary is part of the Health-RI Semantic Interoperability Initiative. It provides properties for aligning local concepts to reference concepts in the Health-RI Ontology, enabling non-invasive mappings (e.g., via SSSOM) or embedded annotations in ontologies.</p></dd>
+<dd>
+<ul>
+<li><p>This vocabulary is part of the Health-RI Semantic Interoperability Initiative. It provides properties for aligning local concepts to reference concepts in the Health-RI Ontology, enabling non-invasive mappings (e.g., via SSSOM) or embedded annotations in ontologies.</p></li>
+<li><p>This vocabulary adopts a hybrid semantic strategy:
+- The semantics of the mapping properties are grounded in an <strong>intentional interpretation</strong>, based on the imported semiotic vocabulary.
+- At the same time, for pragmatic reasons, the vocabulary supports <strong>set-theoretic reasoning</strong>, consistent with OWL and SKOS semantics. In this view, the properties are interpreted as set inclusions or similarity mappings between extensionally defined categories.
+This dual approach ensures ontological clarity for semantic grounding, while supporting pragmatic alignment across schemes in SKOS-like mapping workflows.</p></li>
+</ul>
+</dd>
 </div>
 </dl>
 </div>
 <div class="section" id="objectproperties">
 <h2>Object Properties</h2>
+<div class="property entity" id="meaningMappingRelation">
+<h3>meaningMappingRelation
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/health-ri/mapping-vocabulary#meaningMappingRelation</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A general semantic mapping relation between a semiotic expression and a meaning.
+No other subproperties are permitted under this vocabulary besides the ones here declared. The property hierarchy is closed and controlled explicitly to ensure semantic precision.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superPropertyOf" title="Inverse of RDFS' subPropertyOf. Defined in Ontology Documentation Profile">Super Property Of</a>
+</th>
+<td>
+<ul>
+<li>
+<span>
+<a href="#hasExactMeaning">hasExactMeaning</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#isExactMeaningOf">isExactMeaningOf</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#hasBroaderMeaningThan">hasBroaderMeaningThan</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#isNarrowerMeaningFor">isNarrowerMeaningFor</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#hasNarrowerMeaningThan">hasNarrowerMeaningThan</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#isBroaderMeaningFor">isBroaderMeaningFor</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
 <div class="property entity" id="hasExactMeaning">
 <h3>hasExactMeaning
             <sup class="sup-op" title="OWL Object Property">op</sup>
@@ -463,9 +554,14 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>A specialized subproperty of semiotics:expresses indicating that the meaning is formally and fully defined by the expression—i.e., the expression’s semantics are precisely determined by the associated meaning, rather than merely conveyed. It is used when an expression's semantics are unambiguously and exclusively defined by a specific meaning.</p>
-<p>Unlike owl:equivalentClass—which asserts full logical equivalence between two classes—this property is meant to capture a definitional relation between an expression and a meaning. It conveys semantic definition without declaring classes to be interchangeable under all logical inferences. While the former establishes full semantic equivalence between classes, enabling bi-directional inference of class membership, the latter models a one-way definitional relation from an expression to a meaning, rather than interchangeability of classes.</p>
-<p>This property also differs conceptually from skos:exactMatch. skos:exactMatch serves to align semantically similar concepts across systems (potentially without shared logic), indicating that two concepts may be used interchangeably across vocabularies without guaranteeing logical equivalence. hriv:hasExactMeaning encodes a precise, definitional link—the expression’s semantics are directly and unambiguously defined by the associated meaning.</p></td>
+<td>
+<ul>
+<li><p>A specialized subproperty of semiotics:expresses indicating that the meaning is formally and fully defined by the expression—i.e., the expression’s semantics are precisely determined by the associated meaning, rather than merely conveyed. It is used when an expression's semantics are unambiguously and exclusively defined by a specific meaning.</p></li>
+<li><p>Unlike owl:equivalentClass—which asserts full logical equivalence between two classes—this property is meant to capture a definitional relation between an expression and a meaning. It conveys semantic definition without declaring classes to be interchangeable under all logical inferences. While the former establishes full semantic equivalence between classes, enabling bi-directional inference of class membership, the latter models a one-way definitional relation from an expression to a meaning, rather than interchangeability of classes.
+  This property also differs conceptually from skos:exactMatch. skos:exactMatch serves to align semantically similar concepts across systems (potentially without shared logic), indicating that two concepts may be used interchangeably across vocabularies without guaranteeing logical equivalence. hriv:hasExactMeaning encodes a precise, definitional link—the expression’s semantics are directly and unambiguously defined by the associated meaning.</p></li>
+<li><p>This property is aligned with a SKOS mapping relation for pragmatic reasons. In this context, the relation is interpreted as a set inclusion or similarity mapping between extensionally defined categories.</p></li>
+</ul>
+</td>
 </tr>
 <tr>
 <th>
@@ -508,7 +604,23 @@ td {
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
 </th>
 <td>
+<ul>
+<li>
+<span>
+<a href="#meaningMappingRelation">meaningMappingRelation</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
 <a href="http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl#expresses">semiotics:expresses</a>
+</li>
+<li>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#exactMatch">has exact match</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 <tr>
@@ -556,6 +668,17 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+</th>
+<td>
+<span>
+<a href="#meaningMappingRelation">meaningMappingRelation</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
 </th>
 <td>
@@ -595,9 +718,14 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>Indicates that the semantics of an expression are defined by a generalized meaning—one that generalizes the linked meaning (triple's object). If an expression A hasBroaderMeaningThan B, then there exists a generalization B′ of B such that A hriv:hasExactMeaning B′. This property is used when the semantics of an expression are determined not by the object meaning itself, but by a more general meaning of it.</p>
-<p>In relation to hriv:hasExactMeaning, hriv:hasBroaderMeaningThan captures a weaker, less precise form: while hriv:hasExactMeaning asserts a precise definitional link between an expression and a meaning, hriv:hasBroaderMeaningThan establishes the link through a generalization of the referenced meaning (i.e., A → B′ where B′ ⊒ B).</p>
-<p>This property differs conceptually from skos:broadMatch, which aligns a concept to a more general one across vocabularies, and from skos:narrowMatch, which aligns a concept to a more specific one across vocabularies; by contrast, hriv:hasBroaderMeaningThan links an expression to a meaning that is more specific than the expression’s own meaning, indicating that the expression’s meaning serves as a generalization of the linked meaning.</p></td>
+<td>
+<ul>
+<li><p>This property is aligned with a SKOS mapping relation for pragmatic reasons. In this context, the relation is interpreted as a set inclusion or similarity mapping between extensionally defined categories.</p></li>
+<li><p>Indicates that the semantics of an expression are defined by a generalized meaning—one that generalizes the linked meaning (triple's object). If an expression A hasBroaderMeaningThan B, then there exists a generalization B′ of B such that A hriv:hasExactMeaning B′. This property is used when the semantics of an expression are determined not by the object meaning itself, but by a more general meaning of it.</p></li>
+<li><p>In relation to hriv:hasExactMeaning, hriv:hasBroaderMeaningThan captures a weaker, less precise form: while hriv:hasExactMeaning asserts a precise definitional link between an expression and a meaning, hriv:hasBroaderMeaningThan establishes the link through a generalization of the referenced meaning (i.e., A → B′ where B′ ⊒ B).
+  This property differs conceptually from skos:broadMatch, which aligns a concept to a more general one across vocabularies, and from skos:narrowMatch, which aligns a concept to a more specific one across vocabularies; by contrast, hriv:hasBroaderMeaningThan links an expression to a meaning that is more specific than the expression’s own meaning, indicating that the expression’s meaning serves as a generalization of the linked meaning.</p></li>
+</ul>
+</td>
 </tr>
 <tr>
 <th>
@@ -631,6 +759,27 @@ td {
  ex:Type2Diabetes a semiotics:Meaning . # specific
  ex:Diabetes hriv:hasBroaderMeaningThan ex:Type2Diabetes .
 - Rationale: The semantics are determined by a general diabetes meaning (e.g., DiabetesMellitus) that is a superclass of Type2Diabetes.</pre>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+</th>
+<td>
+<ul>
+<li>
+<span>
+<a href="#meaningMappingRelation">meaningMappingRelation</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#narrowMatch">has narrower match</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
 </li>
 </ul>
 </td>
@@ -680,6 +829,17 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+</th>
+<td>
+<span>
+<a href="#meaningMappingRelation">meaningMappingRelation</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
 </th>
 <td>
@@ -719,9 +879,14 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>Indicates that the semantics of an expression are defined by a more specific meaning—one that specializes the linked meaning (triple's object). If an expression A hasNarrowerMeaningThan B, then there exists a specialization B′ of B such that A hriv:hasExactMeaning B′. This property is used when the semantics of an expression are determined not by a general meaning, but by a more specific meaning.</p>
-<p>In relation to hriv:hasExactMeaning, hriv:hasNarrowerMeaningThan captures a weaker, less precise form: while hriv:hasExactMeaning asserts a precise definitional link between an expression and a meaning, hriv:hasNarrowerMeaningThan establishes the link through a specialization of the referenced meaning (i.e., A → B′ where B′ ⊑ B).</p>
-<p>This property differs conceptually from skos:broadMatch, which aligns a concept to a more general one across vocabularies, and from skos:narrowMatch, which aligns a concept to a more specific one across vocabularies; by contrast, hriv:hasNarrowerMeaningThan links an expression to a meaning that is more general than the expression’s own meaning, indicating that the expression’s meaning serves as a specialization of the linked meaning.</p></td>
+<td>
+<ul>
+<li><p>This property is aligned with a SKOS mapping relation for pragmatic reasons. In this context, the relation is interpreted as a set inclusion or similarity mapping between extensionally defined categories.</p></li>
+<li><p>Indicates that the semantics of an expression are defined by a more specific meaning—one that specializes the linked meaning (triple's object). If an expression A hasNarrowerMeaningThan B, then there exists a specialization B′ of B such that A hriv:hasExactMeaning B′. This property is used when the semantics of an expression are determined not by a general meaning, but by a more specific meaning.</p></li>
+<li><p>In relation to hriv:hasExactMeaning, hriv:hasNarrowerMeaningThan captures a weaker, less precise form: while hriv:hasExactMeaning asserts a precise definitional link between an expression and a meaning, hriv:hasNarrowerMeaningThan establishes the link through a specialization of the referenced meaning (i.e., A → B′ where B′ ⊑ B).
+  This property differs conceptually from skos:broadMatch, which aligns a concept to a more general one across vocabularies, and from skos:narrowMatch, which aligns a concept to a more specific one across vocabularies; by contrast, hriv:hasNarrowerMeaningThan links an expression to a meaning that is more general than the expression’s own meaning, indicating that the expression’s meaning serves as a specialization of the linked meaning.</p></li>
+</ul>
+</td>
 </tr>
 <tr>
 <th>
@@ -755,6 +920,27 @@ td {
  ex:BreastCancer a semiotics:Meaning .
  ex:BreastCancerStageII hriv:hasNarrowerMeaningThan ex:BreastCancer .
 - Rationale: Semantics of ex:BreastCancerStageII are defined by a specialized meaning of ex:BreastCancer.</pre>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+</th>
+<td>
+<ul>
+<li>
+<span>
+<a href="#meaningMappingRelation">meaningMappingRelation</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#broadMatch">has broader match</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
 </li>
 </ul>
 </td>
@@ -801,6 +987,17 @@ td {
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
 <td><p>Inverse of hriv:hasNarrowerMeaningThan.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+</th>
+<td>
+<span>
+<a href="#meaningMappingRelation">meaningMappingRelation</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</td>
 </tr>
 <tr>
 <th>
@@ -908,6 +1105,9 @@ td {
 <a href="#objectproperties">Object Properties</a>
 </h4>
 <ul class="second">
+<li>
+<a href="#meaningMappingRelation">meaningMappingRelation</a>
+</li>
 <li>
 <a href="#hasExactMeaning">hasExactMeaning</a>
 </li>
