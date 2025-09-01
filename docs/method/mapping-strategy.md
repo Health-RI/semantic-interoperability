@@ -94,6 +94,14 @@ These complementary approaches enable semantic alignment in both centrally contr
 
 The [Health-RI Mapping Vocabulary](./specification.html) was created to provide a set of mapping properties designed for expressing alignments between concepts in different concept schemes (e.g. external vocabularies and our Health-RI ontology). The principal properties are: `hriv:hasExactMeaning`, `hriv:hasBroaderMeaningThan`, and `hriv:hasNarrowerMeaningThan`.
 
+The Health-RI mapping relations are declared as specializations of SKOS mapping properties. Importantly, this does not change the semantics explained above: Health-RI relations remain meaning-centric (intentional) while SKOS relations are similarity mappings between extensionally defined categories. The `rdfs:subPropertyOf` alignment simply ensures that whenever you assert an `hriv` mapping, a reasoner (or any RDFS-aware tool) can automatically derive the corresponding SKOS mapping. This improves interoperability with tools that expect SKOS, while preserving the stricter intent of the Health-RI semantics.
+
+**Entailment summary (via `rdfs:subPropertyOf`):**
+
+- [`hriv:hasExactMeaning`](./specification.html#hasExactMeaning) ⟶ `skos:exactMatch`
+- [`hriv:hasBroaderMeaningThan`](./specification.html#hasBroaderMeaningThan) ⟶ `skos:narrowMatch`
+- [`hriv:hasNarrowerMeaningThan`](./specification.html#hasNarrowerMeaningThan) ⟶ `skos:broadMatch`
+
 ### Our Strategy: Choosing the Right Mapping Property
 
 - **[`hriv:hasExactMeaning`](./specification.html#hasExactMeaning)** is used when the external concept is fully equivalent in meaning to our reference concept.

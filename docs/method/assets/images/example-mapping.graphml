@@ -931,7 +931,7 @@
 					<data key="d0">2</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hriv:isExactMeaningOf" LayoutParameter="{y:GraphMLReference 28}">
+							<y:Label Text="hriv:hasExactMeaning" LayoutParameter="{y:GraphMLReference 28}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -2025,7 +2025,7 @@
 					<data key="d0">6</data>
 					<data key="d4">
 						<x:List>
-							<y:Label Text="hriv:isExactMeaningOf" LayoutParameter="{y:GraphMLReference 65}">
+							<y:Label Text="hriv:hasExactMeaning" LayoutParameter="{y:GraphMLReference 65}">
 								<y:Label.Style>
 									<yjs:LabelStyle verticalTextAlignment="CENTER" wrapping="NONE" font="{y:GraphMLReference 2}"/>
 								</y:Label.Style>
@@ -3635,7 +3635,7 @@
 			<data key="d12">
 				<x:List>
 					<y:Bend Location="-152.5,-142.625"/>
-					<y:Bend Location="366.25,-142.625"/>
+					<y:Bend Location="368.875,-142.625"/>
 				</x:List>
 			</data>
 			<data key="d13">
