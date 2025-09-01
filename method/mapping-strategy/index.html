@@ -1391,6 +1391,13 @@
 <em>Figure 3: If an external ontology defines <code>External:Patient</code> which we map via <code>hriv:hasExactMeaning</code> to <code>hrio:Patient</code>—and <code>hrio:Patient</code> derives its semantics from the OntoUML <code>Patient</code> concept—then we can interpret <code>External:Patient</code> as conveying the same semantics as the <code>OntoUML Patient</code> concept.</em></p>
 <h2 id="mapping-properties-for-cross-scheme-alignment">Mapping Properties for Cross-Scheme Alignment</h2>
 <p>The <a href="../specification.html">Health-RI Mapping Vocabulary</a> was created to provide a set of mapping properties designed for expressing alignments between concepts in different concept schemes (e.g. external vocabularies and our Health-RI ontology). The principal properties are: <code>hriv:hasExactMeaning</code>, <code>hriv:hasBroaderMeaningThan</code>, and <code>hriv:hasNarrowerMeaningThan</code>.</p>
+<p>The Health-RI mapping relations are declared as specializations of SKOS mapping properties. Importantly, this does not change the semantics explained above: Health-RI relations remain meaning-centric (intentional) while SKOS relations are similarity mappings between extensionally defined categories. The <code>rdfs:subPropertyOf</code> alignment simply ensures that whenever you assert an <code>hriv</code> mapping, a reasoner (or any RDFS-aware tool) can automatically derive the corresponding SKOS mapping. This improves interoperability with tools that expect SKOS, while preserving the stricter intent of the Health-RI semantics.</p>
+<p><strong>Entailment summary (via <code>rdfs:subPropertyOf</code>):</strong></p>
+<ul>
+<li><a href="../specification.html#hasExactMeaning"><code>hriv:hasExactMeaning</code></a> ⟶ <code>skos:exactMatch</code></li>
+<li><a href="../specification.html#hasBroaderMeaningThan"><code>hriv:hasBroaderMeaningThan</code></a> ⟶ <code>skos:narrowMatch</code></li>
+<li><a href="../specification.html#hasNarrowerMeaningThan"><code>hriv:hasNarrowerMeaningThan</code></a> ⟶ <code>skos:broadMatch</code></li>
+</ul>
 <h3 id="our-strategy-choosing-the-right-mapping-property">Our Strategy: Choosing the Right Mapping Property</h3>
 <ul>
 <li><strong><a href="../specification.html#hasExactMeaning"><code>hriv:hasExactMeaning</code></a></strong> is used when the external concept is fully equivalent in meaning to our reference concept.</li>
