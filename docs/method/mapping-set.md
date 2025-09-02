@@ -33,11 +33,11 @@ Below is the schema for the SSSOM TSV file, with each field’s link to the spec
 | [subject_id](https://mapping-commons.github.io/sssom/subject_id/)                                    | EntityReference       | 1           | Yes       | Identifier of the subject entity                              | `fhir:Patient`                                         | Contributor              |
 | [subject_label](https://mapping-commons.github.io/sssom/subject_label/)                              | String                | 0..1        | No        | Label of the subject entity                                   | `Patient`                                              | Contributor              |
 | [predicate_id](https://mapping-commons.github.io/sssom/predicate_id/)                                | EntityReference       | 1           | Yes       | Relation linking subject and object                           | `hriv:hasExactMeaning`                                 | Contributor              |
-| [predicate_modifier](https://mapping-commons.github.io/sssom/predicate_modifier/)                    | PredicateModifierEnum | 0..1        | No        | A modifier for negating the predicate[^1]                     | `Not`                                                  | Contributor (Optional)   |
+| [predicate_modifier](https://mapping-commons.github.io/sssom/predicate_modifier/)                    | PredicateModifierEnum | 0..1        | No        | A modifier for negating the predicate[^1]                     | `Not`                                                  | Contributor              |
 | [object_id](https://mapping-commons.github.io/sssom/object_id/)                                      | EntityReference       | 1           | Yes       | Identifier of the object entity                               | `hrio:Person`                                          | Contributor              |
 | [object_label](https://mapping-commons.github.io/sssom/object_label/)                                | String                | 0..1        | No        | Label of the object entity                                    | `Person`                                               | Contributor              |
 | [object_category](https://mapping-commons.github.io/sssom/object_category/)                          | String                | 0..1        | No        | OntoUML stereotype of the object                              | `Kind`                                                 | Contributor              |
-| [mapping_justification](https://mapping-commons.github.io/sssom/mapping_justification/)              | EntityReference       | 1           | Yes       | Method or rationale for creating a mapping[^2]                | `semapv:ManualMappingCuration`                         | Contributor (or Default) |
+| [mapping_justification](https://mapping-commons.github.io/sssom/mapping_justification/)              | EntityReference       | Ö1          | Yes       | Method or rationale for creating a mapping[^2]                | `semapv:ManualMappingCuration`                         | Contributor (or Default) |
 | [author_id](https://mapping-commons.github.io/sssom/author_id/)                                      | EntityReference(s)    | 1..*        | Yes       | Identifier(s) of who created the mapping                      | `orcid:0000-0003-2736-7817`                            | Contributor              |
 | [author_label](https://mapping-commons.github.io/sssom/author_label/)                                | String(s)             | 0..*        | No        | Name(s) of the mapping author(s)                              | `Pedro P. F. Barcelos`                                 | Contributor              |
 | [reviewer_id](https://mapping-commons.github.io/sssom/reviewer_id/)                                  | EntityReference(s)    | 0..*        | No        | Identifier(s) of mapping reviewer(s)                          | `orcid:0000-0001-2345-6789`                            | Contributor              |
@@ -49,11 +49,12 @@ Below is the schema for the SSSOM TSV file, with each field’s link to the spec
 | [subject_source](https://mapping-commons.github.io/sssom/subject_source/)                            | EntityReference       | 0..1        | No        | Source vocabulary of the subject entity                       | `http://hl7.org/fhir`                                  | Contributor              |
 | [subject_source_version](https://mapping-commons.github.io/sssom/subject_source_version/)            | String                | 0..1        | No        | Version of the subject source                                 | `R4`                                                   | Contributor              |
 | [object_source](https://mapping-commons.github.io/sssom/object_source/)                              | EntityReference       | 1           | Yes       | Source vocabulary of the object[^3]                           | `hrio:http://w3id.org/health-ri/ontology/v0.9.1`       | Contributor (or Default) |
+| [object_source_version](https://mapping-commons.github.io/sssom/object_source_version/)              | String                | 0..1        | No        | Version of the Health-RI ontology used for the mapping        | `0.9.1`                                                | Contributor (or Default) |
 | [mapping_date](https://mapping-commons.github.io/sssom/mapping_date/)                                | Date                  | 1           | Yes       | Date when mapping was created (format: YYYY-MM-DD)            | `2025-07-02`                                           | Contributor              |
 | [publication_date](https://mapping-commons.github.io/sssom/publication_date/)                        | Date                  | 1           | Yes       | Date when mapping was published (format: YYYY-MM-DD)          | `2025-07-30`                                           | System (Generated)       |
+| [comment](https://mapping-commons.github.io/sssom/comment/)                                          | String                | 0..1        | No        | Free-text notes about the mapping                             | `Reviewed for consistency with ontology v0.9.1.`       | Contributor              |
 | [replaces](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/replaces/)         | EntityReference(s)    | 0..*        | No        | Indicates that this mapping record replaces another           | `http://health-ri.org/mappings/rec122`                 | Contributor              |
 | [isReplacedBy](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/isReplacedBy/) | EntityReference(s)    | 0..*        | No        | Indicates that this mapping record is replaced by another[^4] | `http://health-ri.org/mappings/rec124`                 | System (Generated)       |
-| [comment](https://mapping-commons.github.io/sssom/comment/)                                          | String                | 0..1        | No        | Free-text notes about the mapping                             | `Reviewed for consistency with ontology v0.9.1.`       | Contributor              |
 
 ### Responsibility Legend
 
@@ -86,6 +87,7 @@ Some fields in the schema have predefined default values automatically assigned 
 - **mapping_justification** – Defaults to `semapv:ManualMappingCuration`
 - **license** – Defaults to `https://creativecommons.org/licenses/by/4.0/`
 - **object_source** – Defaults to `http://w3id.org/health-ri/ontology`
+- **object_source_version** – Defaults to the ontology's latest version number. E.g., `1.0.0`.
 
 ## How to Contribute
 
@@ -101,8 +103,12 @@ Download the **[XLSX template](https://raw.githubusercontent.com/Health-RI/seman
 - the mapping row(s) in the mappings sheet, and
 - all CURIE prefix bindings in the prefix sheet.
 
-Attach the completed file to a new issue and we’ll review and add it.
-In the template, all mandatory fields's headers are in black background, while the optional ones are in green.
+Attach the completed file to a new issue and we will review and add it. In the template, field headers are color-coded as follows:
+
+- mandatory with no default have a black background;
+- mandatory with a fixed default are purple and pre-filled;
+- mandatory with a variable default are purple and not pre-filled;
+- optional are green.
 
 Both methods ensure your contribution is reviewed and incorporated into the official Health-RI SSSOM mapping set.
 
@@ -119,3 +125,8 @@ Before submitting, please verify the following to ensure your contribution is co
 [^2]: Currently, the only acceptable value for `mapping_justification` is `semapv:ManualMappingCuration`, or a comparable alternative subject to curator evaluation. This constraint is essential for maintaining the necessary semantic alignment.
 [^3]: When using the default, it always resolves to the Health-RI ontology (latest version). If contributors provide a value, it **must** be either a specific version URI or the latest version URI.
 [^4]: It is automatically calculated and asserted at publication time. When a new mapping entry uses the `replaces` field to supersede an older one, the system assigns the corresponding `isReplacedBy` value to the replaced entry, ensuring both directions of the relation are represented.
+
+<!-- TODO 
+1. add default values in template
+2. add default to mapping_date (= date the contribution is received)
+-->
