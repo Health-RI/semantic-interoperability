@@ -237,3 +237,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Corrected typographic artifacts in textual descriptions for sex and gender constructs that previously used escaped HTML-like formatting (`**<<mode>>**`, `**<<phase>>**`, etc.). These are now consistently rendered.
 - Minor cleanup in markdown-style syntax within descriptions, ensuring accurate rendering in downstream documentation tools.
 
+## [0.9.2] - 2025-09-02
+
+### Added
+
+- Expanded the allowed `restrictedTo` values for several constructs:
+  - Beyond `functional-complex`, now explicitly includes `collective`, `quantity`, `relator`, `intrinsic-mode`, `extrinsic-mode`, and `quality`.
+- Introduced `restrictedTo` constraints to clarify permissible ontological kinds.
+
+### Changed
+
+- Updated `isExtensional` values from `null` to explicit `false` for improved clarity in multiple classes.
+- Adjusted internal identifiers (`id` fields) for consistency across classes, relations, and generalizations.
+
+### Fixed
+
+- Corrected the stereotypes of three classes, changing them from `role` to `subkind` to better reflect their ontological nature.
