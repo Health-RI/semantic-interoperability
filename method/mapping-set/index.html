@@ -1359,7 +1359,7 @@ There will be <strong>at most one version released per day</strong>.</p>
 <tr>
 <td><a href="https://mapping-commons.github.io/sssom/mapping_justification/">mapping_justification</a></td>
 <td>EntityReference</td>
-<td>Ö1</td>
+<td>1</td>
 <td>Yes</td>
 <td>Method or rationale for creating a mapping<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
 <td><code>semapv:ManualMappingCuration</code></td>
@@ -1580,10 +1580,11 @@ There will be <strong>at most one version released per day</strong>.</p>
 <h3 id="default-values">Default Values</h3>
 <p>Some fields in the schema have predefined default values automatically assigned when contributors do not provide them:</p>
 <ul>
-<li><strong>mapping_justification</strong> – Defaults to <code>semapv:ManualMappingCuration</code></li>
-<li><strong>license</strong> – Defaults to <code>https://creativecommons.org/licenses/by/4.0/</code></li>
-<li><strong>object_source</strong> – Defaults to <code>http://w3id.org/health-ri/ontology</code></li>
+<li><strong>mapping_justification</strong> – Defaults to <code>semapv:ManualMappingCuration</code>.</li>
+<li><strong>license</strong> – Defaults to <code>https://creativecommons.org/licenses/by/4.0/</code>.</li>
+<li><strong>object_source</strong> – Defaults to <code>http://w3id.org/health-ri/ontology</code>.</li>
 <li><strong>object_source_version</strong> – Defaults to the ontology's latest version number. E.g., <code>1.0.0</code>.</li>
+<li><strong>mapping_date</strong> - Defaults to the date the contribution was received via GitHub issue.</li>
 </ul>
 <h2 id="how-to-contribute">How to Contribute</h2>
 <p>We welcome contributions to expand and refine the mapping set. You can contribute in two ways:</p>
@@ -1614,14 +1615,9 @@ There will be <strong>at most one version released per day</strong>.</p>
 <ul>
 <li>All <strong>mandatory</strong> contributor fields are present and correctly formatted.</li>
 <li>Any optional values provided use valid identifiers (e.g., ORCIDs, resolvable URIs, SEMAPV terms).</li>
-<li>If pinning a version, <code>object_source</code> is a <strong>specific</strong> version URI (not a generic one).</li>
+<li>If pinning a version, <code>object_source</code> is a specific version URI (not a generic one).</li>
 </ul>
 <!-- Footnotes -->
-<!-- TODO 
-1. add default values in template
-2. add default to mapping_date (= date the contribution is received)
--->
-
 <div class="footnote">
 <hr />
 <ol>
