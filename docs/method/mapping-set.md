@@ -37,7 +37,7 @@ Below is the schema for the SSSOM TSV file, with each field’s link to the spec
 | [object_id](https://mapping-commons.github.io/sssom/object_id/)                                      | EntityReference       | 1           | Yes       | Identifier of the object entity                               | `hrio:Person`                                          | Contributor              |
 | [object_label](https://mapping-commons.github.io/sssom/object_label/)                                | String                | 0..1        | No        | Label of the object entity                                    | `Person`                                               | Contributor              |
 | [object_category](https://mapping-commons.github.io/sssom/object_category/)                          | String                | 0..1        | No        | OntoUML stereotype of the object                              | `Kind`                                                 | Contributor              |
-| [mapping_justification](https://mapping-commons.github.io/sssom/mapping_justification/)              | EntityReference       | Ö1          | Yes       | Method or rationale for creating a mapping[^2]                | `semapv:ManualMappingCuration`                         | Contributor (or Default) |
+| [mapping_justification](https://mapping-commons.github.io/sssom/mapping_justification/)              | EntityReference       | 1           | Yes       | Method or rationale for creating a mapping[^2]                | `semapv:ManualMappingCuration`                         | Contributor (or Default) |
 | [author_id](https://mapping-commons.github.io/sssom/author_id/)                                      | EntityReference(s)    | 1..*        | Yes       | Identifier(s) of who created the mapping                      | `orcid:0000-0003-2736-7817`                            | Contributor              |
 | [author_label](https://mapping-commons.github.io/sssom/author_label/)                                | String(s)             | 0..*        | No        | Name(s) of the mapping author(s)                              | `Pedro P. F. Barcelos`                                 | Contributor              |
 | [reviewer_id](https://mapping-commons.github.io/sssom/reviewer_id/)                                  | EntityReference(s)    | 0..*        | No        | Identifier(s) of mapping reviewer(s)                          | `orcid:0000-0001-2345-6789`                            | Contributor              |
@@ -84,10 +84,11 @@ The following table lists and defines all datatypes used in the schema above, ac
 
 Some fields in the schema have predefined default values automatically assigned when contributors do not provide them:
 
-- **mapping_justification** – Defaults to `semapv:ManualMappingCuration`
-- **license** – Defaults to `https://creativecommons.org/licenses/by/4.0/`
-- **object_source** – Defaults to `http://w3id.org/health-ri/ontology`
+- **mapping_justification** – Defaults to `semapv:ManualMappingCuration`.
+- **license** – Defaults to `https://creativecommons.org/licenses/by/4.0/`.
+- **object_source** – Defaults to `http://w3id.org/health-ri/ontology`.
 - **object_source_version** – Defaults to the ontology's latest version number. E.g., `1.0.0`.
+- **mapping_date** - Defaults to the date the contribution was received via GitHub issue.
 
 ## How to Contribute
 
@@ -118,15 +119,10 @@ Before submitting, please verify the following to ensure your contribution is co
 
 - All **mandatory** contributor fields are present and correctly formatted.
 - Any optional values provided use valid identifiers (e.g., ORCIDs, resolvable URIs, SEMAPV terms).
-- If pinning a version, `object_source` is a **specific** version URI (not a generic one).
+- If pinning a version, `object_source` is a specific version URI (not a generic one).
 
 <!-- Footnotes -->
 [^1]: May either be set to `Not` (its only valid value) or left empty. It is used specifically to express a negated mapping predicate.
 [^2]: Currently, the only acceptable value for `mapping_justification` is `semapv:ManualMappingCuration`, or a comparable alternative subject to curator evaluation. This constraint is essential for maintaining the necessary semantic alignment.
 [^3]: When using the default, it always resolves to the Health-RI ontology (latest version). If contributors provide a value, it **must** be either a specific version URI or the latest version URI.
 [^4]: It is automatically calculated and asserted at publication time. When a new mapping entry uses the `replaces` field to supersede an older one, the system assigns the corresponding `isReplacedBy` value to the replaced entry, ensuring both directions of the relation are represented.
-
-<!-- TODO 
-1. add default values in template
-2. add default to mapping_date (= date the contribution is received)
--->

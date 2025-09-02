@@ -14,16 +14,16 @@ body:
         - `license` and `object_source` are required by the schema, but this project applies defaults if omitted.
         - `object_category` (if provided) must be the **OntoUML stereotype** of `object_id`.
         - Dates must be ISO format: `YYYY-MM-DD`.
-        - If you use any CURIEs other than `dcterms`, `hri`, `orcid`, `prov`, `rdf`, `rdfs`, `semapv`, `skos`, or `sssom` in any field, you **must** declare each prefix's binding (e.g., `abc` -> `https://www.abc.com/`) in the **Prefix Map** section below.
+        - If you use any CURIEs other than `dcterms`, `hriv`, `orcid`, `prov`, `rdf`, `rdfs`, `semapv`, `skos`, or `sssom` in any field, you **must** declare each prefix's binding (e.g., `abc` -> `https://www.abc.com/`) in the **Prefix Map** section below.
 
   ####################################################################
-  # SUBJECT
+  # SSSOM MAPPING FIELDS
   ####################################################################
   - type: input
     id: subject_id
     attributes:
-      label: subject_id (Required)
-      description: "ID of the subject entity - spec: https://mapping-commons.github.io/sssom/subject_id/"
+      label: subject_id (Required, 1, EntityReference)
+      description: "Identifier of the subject entity - spec: https://mapping-commons.github.io/sssom/subject_id/"
       placeholder: "e.g., fhir:Patient"
     validations:
       required: true
@@ -31,17 +31,124 @@ body:
   - type: input
     id: subject_label
     attributes:
-      label: subject_label
-      description: "Human-readable subject label - spec: https://mapping-commons.github.io/sssom/subject_label/"
+      label: subject_label (0..1, String)
+      description: "Label of the subject entity - spec: https://mapping-commons.github.io/sssom/subject_label/"
       placeholder: "e.g., Patient"
+    validations:
+      required: false
+
+  - type: input
+    id: predicate_id
+    attributes:
+      label: predicate_id (Required, 1, EntityReference)
+      description: "Relation linking subject and object - spec: https://mapping-commons.github.io/sssom/predicate_id/"
+      placeholder: "e.g., hriv:hasExactMeaning"
+    validations:
+      required: true
+
+  - type: input
+    id: predicate_modifier
+    attributes:
+      label: predicate_modifier (0..1, PredicateModifierEnum)
+      description: "A modifier for negating the predicate - spec: https://mapping-commons.github.io/sssom/predicate_modifier/"
+      placeholder: "e.g., Not"
+    validations:
+      required: false
+
+  - type: input
+    id: object_id
+    attributes:
+      label: object_id (Required, 1, EntityReference)
+      description: "Identifier of the object entity - spec: https://mapping-commons.github.io/sssom/object_id/"
+      placeholder: "e.g., hrio:Person"
+    validations:
+      required: true
+
+  - type: input
+    id: object_label
+    attributes:
+      label: object_label (0..1, String)
+      description: "Label of the object entity - spec: https://mapping-commons.github.io/sssom/object_label/"
+      placeholder: "e.g., Person"
+    validations:
+      required: false
+
+  - type: input
+    id: object_category
+    attributes:
+      label: object_category (0..1, String)
+      description: "OntoUML stereotype of the object - spec: https://mapping-commons.github.io/sssom/object_category/"
+      placeholder: "e.g., Kind"
+    validations:
+      required: false
+
+  - type: input
+    id: mapping_justification
+    attributes:
+      label: mapping_justification (Required, 1, EntityReference)
+      description: "Method or rationale for creating a mapping - spec: https://mapping-commons.github.io/sssom/mapping_justification/"
+      placeholder: "e.g., semapv:ManualMappingCuration"
+      value: "semapv:ManualMappingCuration"
+    validations:
+      required: true
+
+  - type: textarea
+    id: author_id
+    attributes:
+      label: author_id (Required, 1..*, EntityReference(s))
+      description: |
+        Identifier(s) of who created the mapping - spec: https://mapping-commons.github.io/sssom/author_id/
+        Provide one per line. Prefer persistent IDs (e.g., ORCID).
+      placeholder: |
+        orcid:0000-0003-2736-7817
+    validations:
+      required: true
+
+  - type: textarea
+    id: author_label
+    attributes:
+      label: author_label (0..*, String(s))
+      description: "Name(s) of the mapping author(s) - spec: https://mapping-commons.github.io/sssom/author_label/"
+      placeholder: |
+        Pedro P. F. Barcelos
+    validations:
+      required: false
+
+  - type: textarea
+    id: reviewer_id
+    attributes:
+      label: reviewer_id (0..*, EntityReference(s))
+      description: "Identifier(s) of mapping reviewer(s) - spec: https://mapping-commons.github.io/sssom/reviewer_id/"
+      placeholder: |
+        orcid:0000-0001-2345-6789
+    validations:
+      required: false
+
+  - type: textarea
+    id: reviewer_label
+    attributes:
+      label: reviewer_label (0..*, String(s))
+      description: "Name(s) of the mapping reviewer(s) - spec: https://mapping-commons.github.io/sssom/reviewer_label/"
+      placeholder: |
+        Jane Doe
+    validations:
+      required: false
+
+  - type: input
+    id: license
+    attributes:
+      label: license (1, NonRelativeURI)
+      description: "License governing mapping use - spec: https://mapping-commons.github.io/sssom/license/"
+      placeholder: "e.g., https://creativecommons.org/licenses/by/4.0/"
+      value: "https://creativecommons.org/licenses/by/4.0/"
     validations:
       required: false
 
   - type: dropdown
     id: subject_type
     attributes:
-      label: subject_type
-      description: "Type of subject entity - spec: https://mapping-commons.github.io/sssom/subject_type/"
+      label: subject_type (0..1, EntityTypeEnum)
+      description: "Type of the subject entity - spec: https://mapping-commons.github.io/sssom/subject_type/"
       options:
         - ""
         - owl:Class
@@ -57,159 +164,64 @@ body:
   - type: input
     id: subject_source
     attributes:
-      label: subject_source
-      description: "Source vocabulary of subject - spec: https://mapping-commons.github.io/sssom/subject_source/"
-      placeholder: "e.g., fhir:http://hl7.org/fhir"
+      label: subject_source (0..1, EntityReference)
+      description: "Source vocabulary of the subject entity - spec: https://mapping-commons.github.io/sssom/subject_source/"
+      placeholder: "e.g., http://hl7.org/fhir"
     validations:
       required: false
 
   - type: input
     id: subject_source_version
     attributes:
-      label: subject_source_version
-      description: "Version of subject source - spec: https://mapping-commons.github.io/sssom/subject_source_version/"
+      label: subject_source_version (0..1, String)
+      description: "Version of the subject source - spec: https://mapping-commons.github.io/sssom/subject_source_version/"
       placeholder: "e.g., R4"
-    validations:
-      required: false
-
-  ####################################################################
-  # PREDICATE
-  ####################################################################
-  - type: input
-    id: predicate_id
-    attributes:
-      label: predicate_id (Required)
-      description: "Relation linking subject & object - spec: https://mapping-commons.github.io/sssom/predicate_id/"
-      placeholder: "e.g., skos:exactMatch"
-    validations:
-      required: true
-
-  - type: input
-    id: predicate_modifier
-    attributes:
-      label: predicate_modifier
-      description: "Optional modifier for the predicate—for negation, use 'Not' (spec: https://mapping-commons.github.io/sssom/predicate_modifier/)"
-      placeholder: "e.g., Not"
-    validations:
-      required: false
-
-  ####################################################################
-  # OBJECT
-  ####################################################################
-  - type: input
-    id: object_id
-    attributes:
-      label: object_id (Required)
-      description: "ID of the object entity - spec: https://mapping-commons.github.io/sssom/object_id/"
-      placeholder: "e.g., hrio:Person"
-    validations:
-      required: true
-
-  - type: input
-    id: object_label
-    attributes:
-      label: object_label
-      description: "Human-readable object label - spec: https://mapping-commons.github.io/sssom/object_label/"
-      placeholder: "e.g., Person"
-    validations:
-      required: false
-
-  - type: input
-    id: object_category
-    attributes:
-      label: object_category
-      description: "OntoUML stereotype of object - spec: https://mapping-commons.github.io/sssom/object_category/ (must be the stereotype of `object_id`)"
-      placeholder: "e.g., Kind | Role | Phase | Category | ..."
     validations:
       required: false
 
   - type: input
     id: object_source
     attributes:
-      label: object_source
-      description: |
-        Source vocabulary of object - spec: https://mapping-commons.github.io/sssom/object_source/
-        If left blank, the project default (latest Health-RI ontology URI) will be applied.
-      placeholder: "e.g., http://w3id.org/health-ri/ontology/v0.9.1/ttl"
+      label: object_source (1, EntityReference)
+      description: "Source vocabulary of the object - spec: https://mapping-commons.github.io/sssom/object_source/"
+      placeholder: "e.g., https://w3id.org/health-ri/ontology/v0.9.1"
+      value: "https://w3id.org/health-ri/ontology"
     validations:
       required: false
 
-  ####################################################################
-  # JUSTIFICATION & PROVENANCE
-  ####################################################################
   - type: input
-    id: mapping_justification
+    id: object_source_version
     attributes:
-      label: mapping_justification (Required)
-      description: |
-        Activity or rationale that supports why a given mapping is considered correct or appropriate - spec: https://mapping-commons.github.io/sssom/mapping_justification/
-        Examples: semapv:ManualMappingCuration
-      placeholder: "e.g., semapv:ManualMappingCuration"
-    validations:
-      required: true
-
-  - type: textarea
-    id: author_id
-    attributes:
-      label: author_id (Required, one or more)
-      description: |
-        Who asserted the mapping - spec: https://mapping-commons.github.io/sssom/author_id/
-        Provide one per line. Prefer persistent IDs (e.g., ORCID).
-      placeholder: |
-        orcid:0000-0003-2736-7817
-        orcid:0000-0001-2345-6789
-    validations:
-      required: true
-
-  - type: textarea
-    id: author_label
-    attributes:
-      label: author_label (0..*)
-      description: "Human-readable author name(s) - spec: https://mapping-commons.github.io/sssom/author_label/ (one per line; align with author_id order if multiple)"
-      placeholder: |
-        Pedro P. F. Barcelos
-        Jane Doe
-    validations:
-      required: false
-
-  - type: textarea
-    id: reviewer_id
-    attributes:
-      label: reviewer_id (0..*)
-      description: "Who reviewed the mapping - spec: https://mapping-commons.github.io/sssom/reviewer_id/ (one per line)"
-      placeholder: |
-        orcid:0000-0001-2345-6789
-    validations:
-      required: false
-
-  - type: textarea
-    id: reviewer_label
-    attributes:
-      label: reviewer_label (0..*)
-      description: "Human-readable reviewer name(s) - spec: https://mapping-commons.github.io/sssom/reviewer_label/ (one per line)"
-      placeholder: |
-        Jane Doe
+      label: object_source_version (0..1, String)
+      description: "Version of the Health-RI ontology used for the mapping - spec: https://mapping-commons.github.io/sssom/object_source_version/"
+      placeholder: "e.g., 0.9.1"
     validations:
       required: false
 
   - type: input
     id: mapping_date
     attributes:
-      label: mapping_date (Required)
-      description: "When the mapping was asserted - spec: https://mapping-commons.github.io/sssom/mapping_date/ (ISO: YYYY-MM-DD)"
+      label: mapping_date (Required, 1, Date)
+      description: "Date when mapping was created (format: YYYY-MM-DD) - spec: https://mapping-commons.github.io/sssom/mapping_date/"
       placeholder: "e.g., 2025-07-02"
     validations:
       required: true
 
   - type: textarea
+    id: comment
+    attributes:
+      label: comment (0..1, String)
+      description: "Free-text notes about the mapping - spec: https://mapping-commons.github.io/sssom/comment/"
+      placeholder: "e.g., Reviewed for consistency with ontology v0.9.1."
+    validations:
+      required: false
+
+  - type: textarea
     id: replaces
     attributes:
-      label: replaces (0..*)
-      description: |
-        Indicates that this mapping record replaces another - spec: https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/replaces/
-        Provide one per line. Use full URIs.
-      placeholder: |
-        http://health-ri.org/mappings/rec122
+      label: replaces (0..*, EntityReference(s))
+      description: "Indicates that this mapping record replaces another - spec: https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/replaces/"
+      placeholder: "e.g., http://health-ri.org/mappings/rec122"
     validations:
       required: false
 
@@ -239,36 +251,12 @@ body:
         Notes:
         - Do **not** list `http` or `https` as prefixes; those are IRIs, not CURIEs.
         - Always include a trailing slash or hash in the BASE_IRI as appropriate.
-        - Include bindings for all prefixes you used (e.g., `fhir`, `hri`, `skos`, `orcid`, etc.).
+        - Include bindings for all prefixes you used (e.g., `fhir`, `hriv`, `skos`, `orcid`, etc.).
       placeholder: |
         fhir: "http://hl7.org/fhir/"
         hrio: "https://w3id.org/health-ri/ontology/"
         skos: "http://www.w3.org/2004/02/skos/core#"
         orcid: "https://orcid.org/"
-    validations:
-      required: false
-
-  ####################################################################
-  # LICENSE & NOTES
-  ####################################################################
-  - type: input
-    id: license
-    attributes:
-      label: license
-      description: |
-        License for the mapping - spec: https://mapping-commons.github.io/sssom/license/
-        Must be an absolute (NonRelativeURI). If omitted, the default will be applied: https://creativecommons.org/licenses/by/4.0/
-      placeholder: "e.g., https://creativecommons.org/licenses/by/4.0/"
-      value: "https://creativecommons.org/licenses/by/4.0/"
-    validations:
-      required: false
-
-  - type: textarea
-    id: comment
-    attributes:
-      label: comment
-      description: "Contributor's free-text notes - spec: https://mapping-commons.github.io/sssom/comment/"
-      placeholder: "e.g., Reviewed for consistency with ontology v0.9.1."
     validations:
       required: false
 
@@ -284,7 +272,7 @@ body:
           required: true
         - label: "I confirm `mapping_date` is in ISO format (YYYY-MM-DD)."
           required: true
-        - label: "If I used any CURIEs other than `dcterms`, `hri`, `orcid`, `prov`, `rdf`, `rdfs`, `semapv`, `skos`, or `sssom`, I included a Prefix Map that binds every prefix to its `base IRI`."
+        - label: "If I used any CURIEs other than `dcterms`, `hriv`, `orcid`, `prov`, `rdf`, `rdfs`, `semapv`, `skos`, or `sssom`, I included a Prefix Map that binds every prefix to its `base IRI`."
           required: true
         - label: "If `license` is left blank, I accept the default CC BY 4.0."
           required: true
