@@ -202,9 +202,11 @@ Thumbs.db
 # Protege
 **/catalog-v*.xml
 
-# Ignore all .bat files except those inside the /script folder
+# Ignore all .bat files anywhere
 *.bat
-!script/*.bat
+# BUT keep .bat files under the root /script folder and its subfolders
+!/script/*.bat
+!/script/**/*.bat
 
 # Ignore all diff.path files
 **/diff.path
@@ -212,4 +214,5 @@ Thumbs.db
 # Ignore all .del files
 **/*.del
 
+# Ignore all vs code settings
 .vscode/
