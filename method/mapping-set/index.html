@@ -1327,7 +1327,7 @@ There will be <strong>at most one version released per day</strong>.</p>
 <td>No</td>
 <td>A modifier for negating the predicate<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
 <td><code>Not</code></td>
-<td>Contributor (Optional)</td>
+<td>Contributor</td>
 </tr>
 <tr>
 <td><a href="https://mapping-commons.github.io/sssom/object_id/">object_id</a></td>
@@ -1359,7 +1359,7 @@ There will be <strong>at most one version released per day</strong>.</p>
 <tr>
 <td><a href="https://mapping-commons.github.io/sssom/mapping_justification/">mapping_justification</a></td>
 <td>EntityReference</td>
-<td>1</td>
+<td>Ö1</td>
 <td>Yes</td>
 <td>Method or rationale for creating a mapping<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
 <td><code>semapv:ManualMappingCuration</code></td>
@@ -1465,6 +1465,15 @@ There will be <strong>at most one version released per day</strong>.</p>
 <td>Contributor (or Default)</td>
 </tr>
 <tr>
+<td><a href="https://mapping-commons.github.io/sssom/object_source_version/">object_source_version</a></td>
+<td>String</td>
+<td>0..1</td>
+<td>No</td>
+<td>Version of the Health-RI ontology used for the mapping</td>
+<td><code>0.9.1</code></td>
+<td>Contributor (or Default)</td>
+</tr>
+<tr>
 <td><a href="https://mapping-commons.github.io/sssom/mapping_date/">mapping_date</a></td>
 <td>Date</td>
 <td>1</td>
@@ -1483,6 +1492,15 @@ There will be <strong>at most one version released per day</strong>.</p>
 <td>System (Generated)</td>
 </tr>
 <tr>
+<td><a href="https://mapping-commons.github.io/sssom/comment/">comment</a></td>
+<td>String</td>
+<td>0..1</td>
+<td>No</td>
+<td>Free-text notes about the mapping</td>
+<td><code>Reviewed for consistency with ontology v0.9.1.</code></td>
+<td>Contributor</td>
+</tr>
+<tr>
 <td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/replaces/">replaces</a></td>
 <td>EntityReference(s)</td>
 <td>0..*</td>
@@ -1499,15 +1517,6 @@ There will be <strong>at most one version released per day</strong>.</p>
 <td>Indicates that this mapping record is replaced by another<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></td>
 <td><code>http://health-ri.org/mappings/rec124</code></td>
 <td>System (Generated)</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/comment/">comment</a></td>
-<td>String</td>
-<td>0..1</td>
-<td>No</td>
-<td>Free-text notes about the mapping</td>
-<td><code>Reviewed for consistency with ontology v0.9.1.</code></td>
-<td>Contributor</td>
 </tr>
 </tbody>
 </table>
@@ -1574,6 +1583,7 @@ There will be <strong>at most one version released per day</strong>.</p>
 <li><strong>mapping_justification</strong> – Defaults to <code>semapv:ManualMappingCuration</code></li>
 <li><strong>license</strong> – Defaults to <code>https://creativecommons.org/licenses/by/4.0/</code></li>
 <li><strong>object_source</strong> – Defaults to <code>http://w3id.org/health-ri/ontology</code></li>
+<li><strong>object_source_version</strong> – Defaults to the ontology's latest version number. E.g., <code>1.0.0</code>.</li>
 </ul>
 <h2 id="how-to-contribute">How to Contribute</h2>
 <p>We welcome contributions to expand and refine the mapping set. You can contribute in two ways:</p>
@@ -1591,8 +1601,13 @@ There will be <strong>at most one version released per day</strong>.</p>
 <li>the mapping row(s) in the mappings sheet, and</li>
 <li>all CURIE prefix bindings in the prefix sheet.</li>
 </ul>
-<p>Attach the completed file to a new issue and we’ll review and add it.
-In the template, all mandatory fields's headers are in black background, while the optional ones are in green.</p>
+<p>Attach the completed file to a new issue and we will review and add it. In the template, field headers are color-coded as follows:</p>
+<ul>
+<li>mandatory with no default have a black background;</li>
+<li>mandatory with a fixed default are purple and pre-filled;</li>
+<li>mandatory with a variable default are purple and not pre-filled;</li>
+<li>optional are green.</li>
+</ul>
 <p>Both methods ensure your contribution is reviewed and incorporated into the official Health-RI SSSOM mapping set.</p>
 <h3 id="submission-checklist-for-contributors"><strong>Submission checklist (for contributors)</strong></h3>
 <p>Before submitting, please verify the following to ensure your contribution is complete and compliant with the schema:</p>
@@ -1602,6 +1617,11 @@ In the template, all mandatory fields's headers are in black background, while t
 <li>If pinning a version, <code>object_source</code> is a <strong>specific</strong> version URI (not a generic one).</li>
 </ul>
 <!-- Footnotes -->
+<!-- TODO 
+1. add default values in template
+2. add default to mapping_date (= date the contribution is received)
+-->
+
 <div class="footnote">
 <hr />
 <ol>
