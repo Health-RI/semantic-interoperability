@@ -1,4 +1,4 @@
-@prefix hrio: <https://w3id.org/health-ri/ontology##>.
+@prefix hrio: <https://w3id.org/health-ri/ontology#>.
 @prefix gufo: <http://purl.org/nemo/gufo#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
@@ -546,164 +546,164 @@ hrio:Agent rdfs:subClassOf hrio:Substantial.
 hrio:Endurant rdfs:subClassOf hrio:Particular.
 hrio:DiagnosedEntity rdfs:subClassOf hrio:Substantial.
 hrio:Animal rdfs:subClassOf hrio:Substantial.
-[ rdf:type owl:AllDisjointClasses ] owl:members (:GenderIdentity hrio:AdministrativeGender).
-[ rdf:type owl:AllDisjointClasses ] owl:members (:PhenotypicSex hrio:KaryotypicalSex).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:GenderIdentity hrio:AdministrativeGender).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:PhenotypicSex hrio:KaryotypicalSex).
 hrio:Person owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:PersonWithUnassignedSexAtBirth hrio:PersonWithAssignedSexAtBirth)
+  owl:unionOf (hrio:PersonWithUnassignedSexAtBirth hrio:PersonWithAssignedSexAtBirth)
 ].
 hrio:PersonWithAssignedSexAtBirth owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:PersonWithIndeterminateSexAtBirth hrio:PersonWithMaleSexAtBirth hrio:PersonWithFemaleSexAtBirth)
+  owl:unionOf (hrio:PersonWithIndeterminateSexAtBirth hrio:PersonWithMaleSexAtBirth hrio:PersonWithFemaleSexAtBirth)
 ].
 hrio:PersonWithAssessedPhenotypicSex owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:FemalePhenotypicPerson hrio:AmbiguousPhenotypicPerson hrio:MalePhenotypicPerson)
+  owl:unionOf (hrio:FemalePhenotypicPerson hrio:AmbiguousPhenotypicPerson hrio:MalePhenotypicPerson)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:IndeterminateDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:IndeterminateDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic).
 hrio:SexualDimorphicCharacteristic owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:IndeterminateDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic)
+  owl:unionOf (hrio:IndeterminateDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:FemaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic hrio:MaleTypicalVisualSexCharacteristic).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:FemaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic hrio:MaleTypicalVisualSexCharacteristic).
 hrio:VisualSexCharacteristic owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:FemaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic hrio:MaleTypicalVisualSexCharacteristic)
+  owl:unionOf (hrio:FemaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic hrio:MaleTypicalVisualSexCharacteristic)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:FemaleBiologicalPerson hrio:IndeterminateBiologicalPerson hrio:MaleBiologicalPerson).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:FemaleBiologicalPerson hrio:IndeterminateBiologicalPerson hrio:MaleBiologicalPerson).
 hrio:Person owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:FemaleBiologicalPerson hrio:IndeterminateBiologicalPerson hrio:MaleBiologicalPerson)
+  owl:unionOf (hrio:FemaleBiologicalPerson hrio:IndeterminateBiologicalPerson hrio:MaleBiologicalPerson)
 ].
 hrio:PersonWithRecognizedLegalGender owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:LegalNonBinaryPerson hrio:LegalMalePerson hrio:LegalFemalePerson hrio:PersonWithUnassignedLegalGender)
+  owl:unionOf (hrio:LegalNonBinaryPerson hrio:LegalMalePerson hrio:LegalFemalePerson hrio:PersonWithUnassignedLegalGender)
 ].
 hrio:GenderIdentity owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:NonBinaryGenderIdentity hrio:FemaleGenderIdentity hrio:MaleGenderIdentity)
+  owl:unionOf (hrio:NonBinaryGenderIdentity hrio:FemaleGenderIdentity hrio:MaleGenderIdentity)
 ].
 hrio:PersonWithRecognizedAdministrativeGender owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:PersonWithFemaleAdministrativeGender hrio:PersonWithMaleAdministrativeGender hrio:PersonWithNonBinaryAdministrativeGender)
+  owl:unionOf (hrio:PersonWithFemaleAdministrativeGender hrio:PersonWithMaleAdministrativeGender hrio:PersonWithNonBinaryAdministrativeGender)
 ].
 hrio:AdministrativeGender owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:MaleAdministrativeGender hrio:NonBinaryAdministrativeGender hrio:FemaleAdministrativeGender)
+  owl:unionOf (hrio:MaleAdministrativeGender hrio:NonBinaryAdministrativeGender hrio:FemaleAdministrativeGender)
 ].
 hrio:Person owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:SelfAwarePerson hrio:NonSelfAwarePerson)
+  owl:unionOf (hrio:SelfAwarePerson hrio:NonSelfAwarePerson)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:AllosomeX hrio:AllosomeY).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:AllosomeX hrio:AllosomeY).
 hrio:Allosome owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:AllosomeX hrio:AllosomeY)
+  owl:unionOf (hrio:AllosomeX hrio:AllosomeY)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:DiploidCell hrio:HaploidCell).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:DiploidCell hrio:HaploidCell).
 hrio:HumanCell owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:DiploidCell hrio:HaploidCell)
+  owl:unionOf (hrio:DiploidCell hrio:HaploidCell)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:RegularKaryotypicalMale hrio:RegularKaryotypicalFemale).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:RegularKaryotypicalMale hrio:RegularKaryotypicalFemale).
 hrio:PersonWithRegularSexChromosome owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:RegularKaryotypicalMale hrio:RegularKaryotypicalFemale)
+  owl:unionOf (hrio:RegularKaryotypicalMale hrio:RegularKaryotypicalFemale)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:PersonWithVariantSexChromosome hrio:PersonWithRegularSexChromosome).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:PersonWithVariantSexChromosome hrio:PersonWithRegularSexChromosome).
 hrio:Person owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:PersonWithVariantSexChromosome hrio:PersonWithRegularSexChromosome)
+  owl:unionOf (hrio:PersonWithVariantSexChromosome hrio:PersonWithRegularSexChromosome)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:VariantKaryotypicalMale hrio:KaryotypicalIndeterminatePerson hrio:VariantKaryotypicalFemale).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:VariantKaryotypicalMale hrio:KaryotypicalIndeterminatePerson hrio:VariantKaryotypicalFemale).
 hrio:PersonWithVariantSexChromosome owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:VariantKaryotypicalMale hrio:KaryotypicalIndeterminatePerson hrio:VariantKaryotypicalFemale)
+  owl:unionOf (hrio:VariantKaryotypicalMale hrio:KaryotypicalIndeterminatePerson hrio:VariantKaryotypicalFemale)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:KaryotypicalFemale hrio:KaryotypicalMale).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:KaryotypicalFemale hrio:KaryotypicalMale).
 hrio:Person owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:KaryotypicalFemale hrio:KaryotypicalMale)
+  owl:unionOf (hrio:KaryotypicalFemale hrio:KaryotypicalMale)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:RegularKaryotypicalFemale hrio:VariantKaryotypicalFemale).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:RegularKaryotypicalFemale hrio:VariantKaryotypicalFemale).
 hrio:KaryotypicalFemale owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:RegularKaryotypicalFemale hrio:VariantKaryotypicalFemale)
+  owl:unionOf (hrio:RegularKaryotypicalFemale hrio:VariantKaryotypicalFemale)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:VariantKaryotypicalMale hrio:RegularKaryotypicalMale).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:VariantKaryotypicalMale hrio:RegularKaryotypicalMale).
 hrio:KaryotypicalMale owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:VariantKaryotypicalMale hrio:RegularKaryotypicalMale)
+  owl:unionOf (hrio:VariantKaryotypicalMale hrio:RegularKaryotypicalMale)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:NonHumanAnimal hrio:Person).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:NonHumanAnimal hrio:Person).
 hrio:Animal owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:NonHumanAnimal hrio:Person)
+  owl:unionOf (hrio:NonHumanAnimal hrio:Person)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:ExposureBasedHealthCondition hrio:Injury hrio:RiskBasedHealthCondition hrio:InherentHealthCondition).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:ExposureBasedHealthCondition hrio:Injury hrio:RiskBasedHealthCondition hrio:InherentHealthCondition).
 hrio:HealthCondition owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:ExposureBasedHealthCondition hrio:Injury hrio:RiskBasedHealthCondition hrio:InherentHealthCondition)
+  owl:unionOf (hrio:ExposureBasedHealthCondition hrio:Injury hrio:RiskBasedHealthCondition hrio:InherentHealthCondition)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:TraumaticHealthCondition hrio:NonTraumaticHealthCondition).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:TraumaticHealthCondition hrio:NonTraumaticHealthCondition).
 hrio:HealthCondition owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:TraumaticHealthCondition hrio:NonTraumaticHealthCondition)
+  owl:unionOf (hrio:TraumaticHealthCondition hrio:NonTraumaticHealthCondition)
 ].
 hrio:CellularEntity owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:LivingCellularEntity hrio:DeadCellularEntity)
+  owl:unionOf (hrio:LivingCellularEntity hrio:DeadCellularEntity)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:Organization hrio:Animal hrio:ArtificialAgent).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:Organization hrio:Animal hrio:ArtificialAgent).
 hrio:DiagnosingAgent owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:DiagnosingArtificialAgent hrio:DiagnosingPerson)
+  owl:unionOf (hrio:DiagnosingArtificialAgent hrio:DiagnosingPerson)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:NoDiagnosisOutcome hrio:Diagnosis).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:NoDiagnosisOutcome hrio:Diagnosis).
 hrio:DiagnosticAssessmentOutcome owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:NoDiagnosisOutcome hrio:Diagnosis)
+  owl:unionOf (hrio:NoDiagnosisOutcome hrio:Diagnosis)
 ].
 hrio:DiagnosingPerson owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:ProfessionalDiagnosingAgent hrio:LaypersonDiagnosingAgent)
+  owl:unionOf (hrio:ProfessionalDiagnosingAgent hrio:LaypersonDiagnosingAgent)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:InconclusiveDiagnosticAssessment hrio:ConclusiveDiagnosticAssessment).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:InconclusiveDiagnosticAssessment hrio:ConclusiveDiagnosticAssessment).
 hrio:DiagnosticAssessment owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:InconclusiveDiagnosticAssessment hrio:ConclusiveDiagnosticAssessment)
+  owl:unionOf (hrio:InconclusiveDiagnosticAssessment hrio:ConclusiveDiagnosticAssessment)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:NegativeDiagnosisAssessment hrio:PositiveDiagnosisAssessment).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:NegativeDiagnosisAssessment hrio:PositiveDiagnosisAssessment).
 hrio:ConclusiveDiagnosticAssessment owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:NegativeDiagnosisAssessment hrio:PositiveDiagnosisAssessment)
+  owl:unionOf (hrio:NegativeDiagnosisAssessment hrio:PositiveDiagnosisAssessment)
 ].
 hrio:DiagnosedEntity owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:DiagnosedGroup hrio:DiagnosedSpecimen hrio:DiagnosedCellularEntity hrio:DiagnosedBiologicalPart)
+  owl:unionOf (hrio:DiagnosedGroup hrio:DiagnosedSpecimen hrio:DiagnosedCellularEntity hrio:DiagnosedBiologicalPart)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:AntemortemDiagnosis hrio:PostmortemDiagnosis).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:AntemortemDiagnosis hrio:PostmortemDiagnosis).
 hrio:CellularEntityDiagnosis owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:AntemortemDiagnosis hrio:PostmortemDiagnosis)
+  owl:unionOf (hrio:AntemortemDiagnosis hrio:PostmortemDiagnosis)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:EpidemiologicalDiagnosis hrio:ClinicalDiagnosis hrio:AdministrativeCodingDiagnosis hrio:RadiologicalDiagnosis hrio:LaboratoryDiagnosis).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:EpidemiologicalDiagnosis hrio:ClinicalDiagnosis hrio:AdministrativeCodingDiagnosis hrio:RadiologicalDiagnosis hrio:LaboratoryDiagnosis).
 hrio:HealthcareDiagnosis owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:EpidemiologicalDiagnosis hrio:ClinicalDiagnosis hrio:AdministrativeCodingDiagnosis hrio:RadiologicalDiagnosis hrio:LaboratoryDiagnosis)
+  owl:unionOf (hrio:EpidemiologicalDiagnosis hrio:ClinicalDiagnosis hrio:AdministrativeCodingDiagnosis hrio:RadiologicalDiagnosis hrio:LaboratoryDiagnosis)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:HumanHealthcareDiagnosis hrio:VeterinaryDiagnosis).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:HumanHealthcareDiagnosis hrio:VeterinaryDiagnosis).
 hrio:HealthcareDiagnosis owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:HumanHealthcareDiagnosis hrio:VeterinaryDiagnosis)
+  owl:unionOf (hrio:HumanHealthcareDiagnosis hrio:VeterinaryDiagnosis)
 ], [
   rdf:type owl:Class;
-  owl:unionOf (:CareOrientedDiagnosis hrio:ResearchDiagnosis hrio:SurveillanceDiagnosis)
+  owl:unionOf (hrio:CareOrientedDiagnosis hrio:ResearchDiagnosis hrio:SurveillanceDiagnosis)
 ].
-[ rdf:type owl:AllDisjointClasses ] owl:members (:Object hrio:Agent).
+[ rdf:type owl:AllDisjointClasses ] owl:members (hrio:Object hrio:Agent).
 hrio:Substantial owl:equivalentClass [
   rdf:type owl:Class;
-  owl:unionOf (:Object hrio:Agent)
+  owl:unionOf (hrio:Object hrio:Agent)
 ].
 hrio:HealthConditionType gufo:categorizes hrio:HealthCondition.
 hrio:SexAtBirthAssigner rdfs:subClassOf [
