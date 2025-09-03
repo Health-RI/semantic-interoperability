@@ -122,5 +122,3 @@ Before submitting, please verify the following to ensure your contribution is co
 <!-- Footnotes -->
 [^1]: May either be set to `Not` (its only valid value) or left empty. It is used specifically to express a negated mapping predicate.
 [^2]: Currently, the only acceptable value for `mapping_justification` is `semapv:ManualMappingCuration`, or a comparable alternative subject to curator evaluation. This constraint is essential for maintaining the necessary semantic alignment.
-[^3]: When using the default, it always resolves to the Health-RI ontology (latest version). If contributors provide a value, it **must** be either a specific version URI or the latest version URI.
-[^4]: It is automatically calculated and asserted at publication time. When a new mapping entry uses the `replaces` field to supersede an older one, the system assigns the corresponding `isReplacedBy` value to the replaced entry, ensuring both directions of the relation are represented.
