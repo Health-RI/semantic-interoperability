@@ -11,10 +11,10 @@ body:
         Links below point to the SSSOM specification pages for each field.
 
         **Notes**
-        - `license` and `object_source` are required by the schema, but this project applies defaults if omitted.
+        - `license` is required by the schema, but this project applies its default value if omitted.
         - `object_category` (if provided) must be the **OntoUML stereotype** of `object_id`.
         - Dates must be ISO format: `YYYY-MM-DD`.
-        - If you use any CURIEs other than `dcterms`, `hriv`, `orcid`, `prov`, `rdf`, `rdfs`, `semapv`, `skos`, or `sssom` in any field, you **must** declare each prefix's binding (e.g., `abc` -> `https://www.abc.com/`) in the **Prefix Map** section below.
+        - If you use any CURIEs other than `dcterms`, `hrim`, `hrio`, `hriv`, `orcid`, `prov`, `rdf`, `rdfs`, `semapv`, `skos`, or `sssom` in any field, you **must** declare each prefix's binding (e.g., `abc` -> `https://www.abc.com/`) in the **Prefix Map** section below.
 
   ####################################################################
   # SSSOM MAPPING FIELDS
@@ -176,16 +176,6 @@ body:
       label: subject_source_version (0..1, String)
       description: "Version of the subject source - spec: https://mapping-commons.github.io/sssom/subject_source_version/"
       placeholder: "e.g., R4"
-    validations:
-      required: false
-
-  - type: input
-    id: object_source
-    attributes:
-      label: object_source (1, EntityReference)
-      description: "Source vocabulary of the object - spec: https://mapping-commons.github.io/sssom/object_source/"
-      placeholder: "e.g., https://w3id.org/health-ri/ontology/v0.9.1"
-      value: "https://w3id.org/health-ri/ontology"
     validations:
       required: false
 
