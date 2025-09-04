@@ -1,9 +1,6 @@
-# Health-RI Mappings
+# Health-RI SSSOM Mapping Set
 
-!!! warning "Preliminary Mapping Examples"
-    The mappings provided below are **illustrative examples only**. They do not represent finalized alignments. The content is still under development.
-
-[Download the full SSSOM mapping.](./assets/sssom_mappings.tsv)
+[Download the full SSSOM mapping.](../../mappings/health-ri-mappings.tsv)
 
 This table is automatically generated from the SSSOM TSV:
 
@@ -11,4 +8,4 @@ This table is automatically generated from the SSSOM TSV:
 
 <div id="columnToggles"></div>
 
-{{ read_csv('./assets/sssom_mappings.tsv', delimiter='\t') }}
+{{ read_csv('ontology/assets/health-ri-mappings.tsv', sep='\t') }}
