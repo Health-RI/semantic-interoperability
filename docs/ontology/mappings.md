@@ -1,6 +1,6 @@
 # Health-RI SSSOM Mapping Set
 
-[Download the full SSSOM mapping.](../../mappings/health-ri-mappings.tsv)
+<!-- [Download the full SSSOM mapping.](../../mappings/health-ri-mappings.tsv) -->
 
 This table is automatically generated from the SSSOM TSV:
 
