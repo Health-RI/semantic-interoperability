@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/ontology/mappings/">
       
       
+        <link rel="prev" href="../changelog-ontology/">
+      
+      
+        <link rel="next" href="../../faq/">
       
       
       <link rel="icon" href="../../assets/images/health-ri-favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Health-RI Mappings - Health-RI Semantic Interoperability</title>
+        <title>SSSOM Mapping Set - Health-RI Semantic Interoperability</title>
       
     
     
@@ -80,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#health-ri-mappings" class="md-skip">
+        <a href="#health-ri-sssom-mapping-set" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Health-RI Mappings
+              SSSOM Mapping Set
             
           </span>
         </div>
@@ -302,10 +306,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -912,28 +918,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -946,7 +955,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Deliverables
@@ -1045,6 +1054,39 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    SSSOM Mapping Set
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1115,12 +1157,9 @@
   
 
 
-<h1 id="health-ri-mappings">Health-RI Mappings</h1>
-<div class="admonition warning">
-<p class="admonition-title">Preliminary Mapping Examples</p>
-<p>The mappings provided below are <strong>illustrative examples only</strong>. They do not represent finalized alignments. The content is still under development.</p>
-</div>
-<p><a href="../assets/sssom_mappings.tsv">Download the full SSSOM mapping.</a></p>
+<h1 id="health-ri-sssom-mapping-set">Health-RI SSSOM Mapping Set</h1>
+<!-- [Download the full SSSOM mapping.](../../mappings/health-ri-mappings.tsv) -->
+
 <p>This table is automatically generated from the SSSOM TSV:</p>
 <p><input type="text" id="tableSearchInput" placeholder="Search mappings..."></p>
 <div id="columnToggles"></div>
@@ -1128,76 +1167,292 @@
 <table>
 <thead>
 <tr>
+<th style="text-align: left;">record_id</th>
 <th style="text-align: left;">subject_id</th>
 <th style="text-align: left;">subject_label</th>
+<th style="text-align: left;">predicate_id</th>
+<th style="text-align: right;">predicate_modifier</th>
 <th style="text-align: left;">object_id</th>
 <th style="text-align: left;">object_label</th>
-<th style="text-align: left;">predicate_id</th>
+<th style="text-align: left;">object_category</th>
 <th style="text-align: left;">mapping_justification</th>
 <th style="text-align: left;">author_id</th>
+<th style="text-align: left;">author_label</th>
+<th style="text-align: right;">reviewer_id</th>
+<th style="text-align: right;">reviewer_label</th>
+<th style="text-align: left;">creator_id</th>
+<th style="text-align: left;">creator_label</th>
+<th style="text-align: left;">license</th>
+<th style="text-align: left;">subject_type</th>
+<th style="text-align: left;">subject_source</th>
+<th style="text-align: left;">subject_source_version</th>
+<th style="text-align: left;">object_source_version</th>
 <th style="text-align: left;">mapping_date</th>
+<th style="text-align: left;">publication_date</th>
+<th style="text-align: right;">comment</th>
+<th style="text-align: right;">replaces</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">fhir:birth_sex</td>
-<td style="text-align: left;">The sex of a person at birth (and recorded on the birth certificate).</td>
-<td style="text-align: left;">health-ri:SexAtBirth</td>
-<td style="text-align: left;">Sex at Birth</td>
-<td style="text-align: left;">rdfs:subClassOf</td>
+<td style="text-align: left;">hrim:1c56bebe</td>
+<td style="text-align: left;">onz-g:Man</td>
+<td style="text-align: left;">"Man"@nl</td>
+<td style="text-align: left;">hriv:hasExactMeaning</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">hrio:MaleBiologicalPerson</td>
+<td style="text-align: left;">"Male Biological Person"@en</td>
+<td style="text-align: left;">subkind</td>
 <td style="text-align: left;">semapv:ManualMappingCuration</td>
-<td style="text-align: left;">https://orcid.org/0000-0003-2736-7817</td>
-<td style="text-align: left;">2025-07-02</td>
+<td style="text-align: left;">orcid:0000-0003-2736-7817</td>
+<td style="text-align: left;">Pedro Paulo F. Barcelos</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">https://w3id.org/health-ri/semantic-interoperability</td>
+<td style="text-align: left;">Health-RI Semantic Interoperability Initiative</td>
+<td style="text-align: left;">https://creativecommons.org/licenses/by/4.0/</td>
+<td style="text-align: left;">owl:Class</td>
+<td style="text-align: left;">http://purl.org/ozo/onz-g#</td>
+<td style="text-align: left;">2.8.1</td>
+<td style="text-align: left;">0.9.2</td>
+<td style="text-align: left;">2025-09-02</td>
+<td style="text-align: left;">2025-09-03</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
 </tr>
 <tr>
-<td style="text-align: left;">omop:gender_concept_id</td>
-<td style="text-align: left;">The biological sex of a person at birth.</td>
-<td style="text-align: left;">health-ri:SexAtBirth</td>
-<td style="text-align: left;">Sex at Birth</td>
-<td style="text-align: left;">rdfs:subClassOf</td>
+<td style="text-align: left;">hrim:1ce9d055</td>
+<td style="text-align: left;">onz-g:Woman</td>
+<td style="text-align: left;">"Vrouw"@nl</td>
+<td style="text-align: left;">hriv:hasExactMeaning</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">hrio:FemaleBiologicalPerson</td>
+<td style="text-align: left;">"Female Biological Person"@en</td>
+<td style="text-align: left;">subkind</td>
 <td style="text-align: left;">semapv:ManualMappingCuration</td>
-<td style="text-align: left;">https://orcid.org/0000-0003-2736-7817</td>
-<td style="text-align: left;">2025-07-02</td>
+<td style="text-align: left;">orcid:0000-0003-2736-7817</td>
+<td style="text-align: left;">Pedro Paulo F. Barcelos</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">https://w3id.org/health-ri/semantic-interoperability</td>
+<td style="text-align: left;">Health-RI Semantic Interoperability Initiative</td>
+<td style="text-align: left;">https://creativecommons.org/licenses/by/4.0/</td>
+<td style="text-align: left;">owl:Class</td>
+<td style="text-align: left;">http://purl.org/ozo/onz-g#</td>
+<td style="text-align: left;">2.8.1</td>
+<td style="text-align: left;">0.9.2</td>
+<td style="text-align: left;">2025-09-02</td>
+<td style="text-align: left;">2025-09-03</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
 </tr>
 <tr>
-<td style="text-align: left;">openehr:sex_assigned_at_birth</td>
-<td style="text-align: left;">The sex of an individual determined by anatomical characteristics observed and registered at birth.</td>
-<td style="text-align: left;">health-ri:SexAtBirth</td>
-<td style="text-align: left;">Sex at Birth</td>
-<td style="text-align: left;">rdfs:subClassOf</td>
+<td style="text-align: left;">hrim:639c6016</td>
+<td style="text-align: left;">onz-g:IntersexPerson</td>
+<td style="text-align: left;">"Intersekse persoon"@nl</td>
+<td style="text-align: left;">hriv:hasExactMeaning</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">hrio:IndeterminateBiologicalPerson</td>
+<td style="text-align: left;">"Indeterminate Biological Person"@en</td>
+<td style="text-align: left;">subkind</td>
 <td style="text-align: left;">semapv:ManualMappingCuration</td>
-<td style="text-align: left;">https://orcid.org/0000-0003-2736-7817</td>
-<td style="text-align: left;">2025-07-02</td>
+<td style="text-align: left;">orcid:0000-0003-2736-7817</td>
+<td style="text-align: left;">Pedro Paulo F. Barcelos</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">https://w3id.org/health-ri/semantic-interoperability</td>
+<td style="text-align: left;">Health-RI Semantic Interoperability Initiative</td>
+<td style="text-align: left;">https://creativecommons.org/licenses/by/4.0/</td>
+<td style="text-align: left;">owl:Class</td>
+<td style="text-align: left;">http://purl.org/ozo/onz-g#</td>
+<td style="text-align: left;">2.8.1</td>
+<td style="text-align: left;">0.9.2</td>
+<td style="text-align: left;">2025-09-02</td>
+<td style="text-align: left;">2025-09-03</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
 </tr>
 <tr>
-<td style="text-align: left;">omop:observation_concept_id_as_gender</td>
-<td style="text-align: left;">Gender (Observable entity)</td>
-<td style="text-align: left;">health-ri:Gender</td>
-<td style="text-align: left;">Gender</td>
-<td style="text-align: left;">rdfs:subClassOf</td>
+<td style="text-align: left;">hrim:57f0e74d</td>
+<td style="text-align: left;">onz-g:BiologicalSex</td>
+<td style="text-align: left;">"Geslacht"@nl</td>
+<td style="text-align: left;">hriv:hasExactMeaning</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">hrio:Sex</td>
+<td style="text-align: left;">"Sex"@en</td>
+<td style="text-align: left;">category</td>
 <td style="text-align: left;">semapv:ManualMappingCuration</td>
-<td style="text-align: left;">https://orcid.org/0000-0003-2736-7817</td>
-<td style="text-align: left;">2025-07-02</td>
+<td style="text-align: left;">orcid:0000-0003-2736-7817</td>
+<td style="text-align: left;">Pedro Paulo F. Barcelos</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">https://w3id.org/health-ri/semantic-interoperability</td>
+<td style="text-align: left;">Health-RI Semantic Interoperability Initiative</td>
+<td style="text-align: left;">https://creativecommons.org/licenses/by/4.0/</td>
+<td style="text-align: left;">owl:Class</td>
+<td style="text-align: left;">http://purl.org/ozo/onz-g#</td>
+<td style="text-align: left;">2.8.1</td>
+<td style="text-align: left;">0.9.2</td>
+<td style="text-align: left;">2025-09-02</td>
+<td style="text-align: left;">2025-09-03</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
 </tr>
 <tr>
-<td style="text-align: left;">openehr:administrative_gender</td>
-<td style="text-align: left;">The gender of an individual for administrative purposes.</td>
-<td style="text-align: left;">health-ri:AdministrativeGender</td>
-<td style="text-align: left;">Administrative Gender</td>
-<td style="text-align: left;">rdfs:subClassOf</td>
+<td style="text-align: left;">hrim:267fb4be</td>
+<td style="text-align: left;">onz-g:Human</td>
+<td style="text-align: left;">"Mens"@nl</td>
+<td style="text-align: left;">hriv:hasExactMeaning</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">hrio:Person</td>
+<td style="text-align: left;">"Person"@en</td>
+<td style="text-align: left;">kind</td>
 <td style="text-align: left;">semapv:ManualMappingCuration</td>
-<td style="text-align: left;">https://orcid.org/0000-0003-2736-7817</td>
-<td style="text-align: left;">2025-07-02</td>
+<td style="text-align: left;">orcid:0000-0003-2736-7817</td>
+<td style="text-align: left;">Pedro Paulo F. Barcelos</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">https://w3id.org/health-ri/semantic-interoperability</td>
+<td style="text-align: left;">Health-RI Semantic Interoperability Initiative</td>
+<td style="text-align: left;">https://creativecommons.org/licenses/by/4.0/</td>
+<td style="text-align: left;">owl:Class</td>
+<td style="text-align: left;">http://purl.org/ozo/onz-g#</td>
+<td style="text-align: left;">2.8.1</td>
+<td style="text-align: left;">0.9.2</td>
+<td style="text-align: left;">2025-09-02</td>
+<td style="text-align: left;">2025-09-03</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
 </tr>
 <tr>
-<td style="text-align: left;">fhir:administrative_gender</td>
-<td style="text-align: left;">The gender of a patient for administration and record keeping purposes.</td>
-<td style="text-align: left;">health-ri:AdministrativeGender</td>
-<td style="text-align: left;">Administrative Gender</td>
-<td style="text-align: left;">rdfs:subClassOf</td>
+<td style="text-align: left;">hrim:4a3ce4ed</td>
+<td style="text-align: left;">onz-g:GenderIdentity</td>
+<td style="text-align: left;">"Genderidentiteit"@nl</td>
+<td style="text-align: left;">hriv:hasExactMeaning</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">hrio:GenderIdentity</td>
+<td style="text-align: left;">"Gender Identity"@en</td>
+<td style="text-align: left;">mode</td>
 <td style="text-align: left;">semapv:ManualMappingCuration</td>
-<td style="text-align: left;">https://orcid.org/0000-0003-2736-7817</td>
-<td style="text-align: left;">2025-07-02</td>
+<td style="text-align: left;">orcid:0000-0003-2736-7817</td>
+<td style="text-align: left;">Pedro Paulo F. Barcelos</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">https://w3id.org/health-ri/semantic-interoperability</td>
+<td style="text-align: left;">Health-RI Semantic Interoperability Initiative</td>
+<td style="text-align: left;">https://creativecommons.org/licenses/by/4.0/</td>
+<td style="text-align: left;">owl:Class</td>
+<td style="text-align: left;">http://purl.org/ozo/onz-g#</td>
+<td style="text-align: left;">2.8.1</td>
+<td style="text-align: left;">0.9.2</td>
+<td style="text-align: left;">2025-09-02</td>
+<td style="text-align: left;">2025-09-03</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">hrim:8e48980e</td>
+<td style="text-align: left;">onz-g:Organism</td>
+<td style="text-align: left;">"Organisme"@nl</td>
+<td style="text-align: left;">hriv:hasNarrowerMeaningThan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">hrio:CellularEntity</td>
+<td style="text-align: left;">"Cellular Entity"@en</td>
+<td style="text-align: left;">category</td>
+<td style="text-align: left;">semapv:ManualMappingCuration</td>
+<td style="text-align: left;">orcid:0000-0003-2736-7817</td>
+<td style="text-align: left;">Pedro Paulo F. Barcelos</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">https://w3id.org/health-ri/semantic-interoperability</td>
+<td style="text-align: left;">Health-RI Semantic Interoperability Initiative</td>
+<td style="text-align: left;">https://creativecommons.org/licenses/by/4.0/</td>
+<td style="text-align: left;">owl:Class</td>
+<td style="text-align: left;">http://purl.org/ozo/onz-g#</td>
+<td style="text-align: left;">2.8.1</td>
+<td style="text-align: left;">0.9.2</td>
+<td style="text-align: left;">2025-09-02</td>
+<td style="text-align: left;">2025-09-03</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">hrim:4382f22d</td>
+<td style="text-align: left;">onz-g:Animal</td>
+<td style="text-align: left;">"Dier"@nl</td>
+<td style="text-align: left;">hriv:hasExactMeaning</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">hrio:Animal</td>
+<td style="text-align: left;">"Animal"@en</td>
+<td style="text-align: left;">category</td>
+<td style="text-align: left;">semapv:ManualMappingCuration</td>
+<td style="text-align: left;">orcid:0000-0003-2736-7817</td>
+<td style="text-align: left;">Pedro Paulo F. Barcelos</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">https://w3id.org/health-ri/semantic-interoperability</td>
+<td style="text-align: left;">Health-RI Semantic Interoperability Initiative</td>
+<td style="text-align: left;">https://creativecommons.org/licenses/by/4.0/</td>
+<td style="text-align: left;">owl:Class</td>
+<td style="text-align: left;">http://purl.org/ozo/onz-g#</td>
+<td style="text-align: left;">2.8.1</td>
+<td style="text-align: left;">0.9.2</td>
+<td style="text-align: left;">2025-09-02</td>
+<td style="text-align: left;">2025-09-03</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">hrim:074fbbc2</td>
+<td style="text-align: left;">onz-g:Mammal</td>
+<td style="text-align: left;">"Zoogdier"@nl</td>
+<td style="text-align: left;">hriv:hasNarrowerMeaningThan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">hrio:Animal</td>
+<td style="text-align: left;">"Animal"@en</td>
+<td style="text-align: left;">category</td>
+<td style="text-align: left;">semapv:ManualMappingCuration</td>
+<td style="text-align: left;">orcid:0000-0003-2736-7817</td>
+<td style="text-align: left;">Pedro Paulo F. Barcelos</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">https://w3id.org/health-ri/semantic-interoperability</td>
+<td style="text-align: left;">Health-RI Semantic Interoperability Initiative</td>
+<td style="text-align: left;">https://creativecommons.org/licenses/by/4.0/</td>
+<td style="text-align: left;">owl:Class</td>
+<td style="text-align: left;">http://purl.org/ozo/onz-g#</td>
+<td style="text-align: left;">2.8.1</td>
+<td style="text-align: left;">0.9.2</td>
+<td style="text-align: left;">2025-09-02</td>
+<td style="text-align: left;">2025-09-03</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">hrim:fdc61ced</td>
+<td style="text-align: left;">onz-g:Mammal</td>
+<td style="text-align: left;">"Zoogdier"@nl</td>
+<td style="text-align: left;">hriv:hasBroaderMeaningThan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">hrio:Person</td>
+<td style="text-align: left;">"Person"@en</td>
+<td style="text-align: left;">kind</td>
+<td style="text-align: left;">semapv:ManualMappingCuration</td>
+<td style="text-align: left;">orcid:0000-0003-2736-7817</td>
+<td style="text-align: left;">Pedro Paulo F. Barcelos</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: left;">https://w3id.org/health-ri/semantic-interoperability</td>
+<td style="text-align: left;">Health-RI Semantic Interoperability Initiative</td>
+<td style="text-align: left;">https://creativecommons.org/licenses/by/4.0/</td>
+<td style="text-align: left;">owl:Class</td>
+<td style="text-align: left;">http://purl.org/ozo/onz-g#</td>
+<td style="text-align: left;">2.8.1</td>
+<td style="text-align: left;">0.9.2</td>
+<td style="text-align: left;">2025-09-02</td>
+<td style="text-align: left;">2025-09-03</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
 </tr>
 </tbody>
 </table>
