@@ -194,15 +194,15 @@
 ??? question "Where can I download the SSSOM Mapping Set, and in which formats?"
     Use the stable URIs:
 
-    - `https://github.com/Health-RI/semantic-interoperability/mappings` → TTL
-    - `https://github.com/Health-RI/semantic-interoperability/mappings/ttl` → TTL
-    - `https://github.com/Health-RI/semantic-interoperability/mappings/tsv` → TSV.
+    - `https://w3id.org/health-ri/semantic-interoperability/mappings` → TTL
+    - `https://w3id.org/health-ri/semantic-interoperability/mappings/ttl` → TTL
+    - `https://w3id.org/health-ri/semantic-interoperability/mappings/tsv` → TSV.
 
 ??? question "How is the mapping set versioned?"
     The mapping set uses date-based versions (YYYY-MM-DD) tied to the publication date, with at most one release per day.
 
 ??? question "Can a published mapping be deleted? How are corrections handled?"
-    Published mappings **cannot be removed**. To revise an entry, create a new record that uses `replaces` to supersede the old one; the system will automatically add the corresponding `isReplacedBy` link to the replaced record at publication time.
+    Published mappings **cannot be removed**. To revise an entry, create a new record that uses `replaces` to supersede the old one.
 
 ??? question "Which SSSOM fields are mandatory, optional, or system-assigned?"
     Fields are divided by responsibility:

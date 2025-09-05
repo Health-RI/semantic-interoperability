@@ -8,13 +8,9 @@ This page documents the mappings curated and published by Health-RI. Partners ma
 
 We offer several stable and accessible URIs for accessing the mapping set in different formats:
 
-- `https://github.com/Health-RI/semantic-interoperability/mappings` — Redirects to the **TTL** version of the SSSOM mappings.
-- `https://github.com/Health-RI/semantic-interoperability/mappings/ttl` — Redirects to the **TTL** version of the SSSOM mappings.
-- `https://github.com/Health-RI/semantic-interoperability/mappings/tsv` — Redirects to the **TSV** version of the SSSOM mappings.
-
-!!! warning "TTL version not yet available"
-    The TTL version of the mapping set will **not be published for now**, as its generation requires additional implementation work that is currently in progress.  
-    For the time being, only the TSV version is available.
+- `https://w3id.org/health-ri/semantic-interoperability/mappings` — Redirects to the **TTL** version of the SSSOM mappings.
+- `https://w3id.org/health-ri/semantic-interoperability/mappings/ttl` — Redirects to the **TTL** version of the SSSOM mappings.
+- `https://w3id.org/health-ri/semantic-interoperability/mappings/tsv` — Redirects to the **TSV** version of the SSSOM mappings.
 
 ## Versioning Strategy
 

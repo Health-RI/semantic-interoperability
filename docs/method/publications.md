@@ -116,15 +116,13 @@ Published mappings are **append-only**: existing rows are not deleted. To correc
 
 - **SSSOM Mapping Set (TSV & TTL)**
   Curated cross-ontology alignments published as a tabular SSSOM set and as RDF/Turtle.
-  - `https://github.com/Health-RI/semantic-interoperability/mappings` — redirects to the **TTL** version
-  - `https://github.com/Health-RI/semantic-interoperability/mappings/ttl` — **TTL** version
-  - `https://github.com/Health-RI/semantic-interoperability/mappings/tsv` — **TSV** version
-  - Human-readable table: `docs/ontology/mappings.md`
+  - `https://w3id.org/health-ri/semantic-interoperability/mappings` — redirects to the **TTL** version
+  - `https://w3id.org/health-ri/semantic-interoperability/mappings/ttl` — **TTL** version
+  - `https://w3id.org/health-ri/semantic-interoperability/mappings/tsv` — **TSV** version
+  
+!!! tip
+    A human-readable version of the mappings [can be accessed in this link](https://health-ri.github.io/semantic-interoperability/ontology/mappings/).
 
 !!! note
     Both serializations of the SSSOM Mapping Set — **TSV** and **TTL** — are stored in the `/mappings` folder of this repository.  
     The redirect links above provide stable access to these files, while the folder itself contains the recorded versions.
-
-!!! warning "TTL version not yet available"
-    The TTL version of the mapping set will **not be published for now**, as its generation requires additional implementation work that is currently in progress.  
-    For the time being, only the TSV version is available.
