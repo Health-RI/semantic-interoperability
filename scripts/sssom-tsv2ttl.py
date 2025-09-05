@@ -726,8 +726,8 @@ def main():
     ../mappings/health-ri-mappings.tsv → ../mappings/health-ri-mappings.ttl
     """
     try:
-        tsv_path = Path("../mappings/health-ri-mappings.tsv")
-        out_path = Path("../mappings/health-ri-mappings.ttl")
+        tsv_path = Path("./mappings/health-ri-mappings.tsv")
+        out_path = Path("./mappings/health-ri-mappings.ttl")
 
         if not tsv_path.exists():
             logger.error("Input not found: %s", tsv_path)
