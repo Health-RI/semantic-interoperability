@@ -1,0 +1,294 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix hrim: <https://w3id.org/health-ri/semantic-interoperability/mappings#> .
+@prefix hrio: <https://w3id.org/health-ri/ontology#> .
+@prefix hriv: <https://w3id.org/health-ri/mapping-vocabulary#> .
+@prefix onz-g: <http://purl.org/ozo/onz-g#> .
+@prefix orcid: <https://orcid.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix semapv: <https://w3id.org/semapv/vocab/> .
+@prefix sssom: <https://w3id.org/sssom/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+hrim: a sssom:MappingSet ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:description "Manually curated mappings aligning key concepts from external artifacts to the Health-RI Ontology."@en ;
+    dcterms:identifier "https://w3id.org/health-ri/semantic-interoperability/mappings"^^xsd:anyURI ;
+    dcterms:issued "2025-08-28"^^xsd:date ;
+    dcterms:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    dcterms:title "Health-RI Ontology Mappings"@en ;
+    rdfs:comment "This mapping set is part of the Health-RI Semantic Interoperability Initiative"@en,
+        "which supports the development of shared ontologies and mappings to align heterogeneous data sources conceptually and semantically."@en ;
+    rdfs:seeAlso <https://w3id.org/health-ri/semantic-interoperability> ;
+    owl:versionInfo "2025-09-05" ;
+    sssom:issue_tracker "https://github.com/Health-RI/semantic-interoperability/issues"^^xsd:anyURI ;
+    sssom:mapping_set_id "https://w3id.org/health-ri/semantic-interoperability/mappings"^^xsd:anyURI ;
+    sssom:mappings hrim:074fbbc2,
+        hrim:1c56bebe,
+        hrim:1ce9d055,
+        hrim:267fb4be,
+        hrim:4382f22d,
+        hrim:4a3ce4ed,
+        hrim:57f0e74d,
+        hrim:639c6016,
+        hrim:8e48980e,
+        hrim:8f3d75d9,
+        hrim:fdc61ced ;
+    sssom:sssom_version "1.1" .
+
+hrim:074fbbc2 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:074fbbc2"^^xsd:anyURI ;
+    dcterms:issued "2025-09-03"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2025-09-02"^^xsd:date ;
+    owl:annotatedProperty hriv:hasNarrowerMeaningThan ;
+    owl:annotatedSource onz-g:Mammal ;
+    owl:annotatedTarget hrio:Animal ;
+    sssom:author_label "Pedro Paulo F. Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Animal"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "0.9.2" ;
+    sssom:record_id "hrim:074fbbc2"^^xsd:anyURI ;
+    sssom:subject_label "Zoogdier"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" ;
+    sssom:subject_type owl:Class .
+
+hrim:1c56bebe a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:1c56bebe"^^xsd:anyURI ;
+    dcterms:issued "2025-09-03"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2025-09-02"^^xsd:date ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:Man ;
+    owl:annotatedTarget hrio:MaleBiologicalPerson ;
+    sssom:author_label "Pedro Paulo F. Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Male Biological Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "0.9.2" ;
+    sssom:record_id "hrim:1c56bebe"^^xsd:anyURI ;
+    sssom:subject_label "Man"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" ;
+    sssom:subject_type owl:Class .
+
+hrim:1ce9d055 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:1ce9d055"^^xsd:anyURI ;
+    dcterms:issued "2025-09-03"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2025-09-02"^^xsd:date ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:Woman ;
+    owl:annotatedTarget hrio:FemaleBiologicalPerson ;
+    sssom:author_label "Pedro Paulo F. Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Female Biological Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "0.9.2" ;
+    sssom:record_id "hrim:1ce9d055"^^xsd:anyURI ;
+    sssom:subject_label "Vrouw"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" ;
+    sssom:subject_type owl:Class .
+
+hrim:267fb4be a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:267fb4be"^^xsd:anyURI ;
+    dcterms:issued "2025-09-03"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2025-09-02"^^xsd:date ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:Human ;
+    owl:annotatedTarget hrio:Person ;
+    sssom:author_label "Pedro Paulo F. Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "kind" ;
+    sssom:object_label "Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "0.9.2" ;
+    sssom:record_id "hrim:267fb4be"^^xsd:anyURI ;
+    sssom:subject_label "Mens"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" ;
+    sssom:subject_type owl:Class .
+
+hrim:4382f22d a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:4382f22d"^^xsd:anyURI ;
+    dcterms:issued "2025-09-03"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2025-09-02"^^xsd:date ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:Animal ;
+    owl:annotatedTarget hrio:Animal ;
+    sssom:author_label "Pedro Paulo F. Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Animal"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "0.9.2" ;
+    sssom:record_id "hrim:4382f22d"^^xsd:anyURI ;
+    sssom:subject_label "Dier"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" ;
+    sssom:subject_type owl:Class .
+
+hrim:4a3ce4ed a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:4a3ce4ed"^^xsd:anyURI ;
+    dcterms:issued "2025-09-03"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2025-09-02"^^xsd:date ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:GenderIdentity ;
+    owl:annotatedTarget hrio:GenderIdentity ;
+    sssom:author_label "Pedro Paulo F. Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "mode" ;
+    sssom:object_label "Gender Identity"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "0.9.2" ;
+    sssom:record_id "hrim:4a3ce4ed"^^xsd:anyURI ;
+    sssom:subject_label "Genderidentiteit"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" ;
+    sssom:subject_type owl:Class .
+
+hrim:57f0e74d a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:57f0e74d"^^xsd:anyURI ;
+    dcterms:issued "2025-09-03"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2025-09-02"^^xsd:date ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:BiologicalSex ;
+    owl:annotatedTarget hrio:Sex ;
+    sssom:author_label "Pedro Paulo F. Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "0.9.2" ;
+    sssom:record_id "hrim:57f0e74d"^^xsd:anyURI ;
+    sssom:subject_label "Geslacht"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" ;
+    sssom:subject_type owl:Class .
+
+hrim:639c6016 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:639c6016"^^xsd:anyURI ;
+    dcterms:issued "2025-09-03"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2025-09-02"^^xsd:date ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:IntersexPerson ;
+    owl:annotatedTarget hrio:IndeterminateBiologicalPerson ;
+    sssom:author_label "Pedro Paulo F. Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Indeterminate Biological Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "0.9.2" ;
+    sssom:record_id "hrim:639c6016"^^xsd:anyURI ;
+    sssom:subject_label "Intersekse persoon"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" ;
+    sssom:subject_type owl:Class .
+
+hrim:8e48980e a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:8e48980e"^^xsd:anyURI ;
+    dcterms:issued "2025-09-03"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2025-09-02"^^xsd:date ;
+    owl:annotatedProperty hriv:hasNarrowerMeaningThan ;
+    owl:annotatedSource onz-g:Organism ;
+    owl:annotatedTarget hrio:CellularEntity ;
+    sssom:author_label "Pedro Paulo F. Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Cellular Entity"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "0.9.2" ;
+    sssom:record_id "hrim:8e48980e"^^xsd:anyURI ;
+    sssom:subject_label "Organisme"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" ;
+    sssom:subject_type owl:Class .
+
+hrim:8f3d75d9 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:8f3d75d9"^^xsd:anyURI ;
+    dcterms:issued "2025-09-05"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2025-09-02"^^xsd:date ;
+    owl:annotatedProperty hriv:hasBroaderMeaningThan ;
+    owl:annotatedSource onz-g:Organism ;
+    owl:annotatedTarget hrio:Animal ;
+    sssom:author_label "Pedro Paulo F. Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Animal"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "0.9.2" ;
+    sssom:record_id "hrim:8f3d75d9"^^xsd:anyURI ;
+    sssom:subject_label "Organisme"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" ;
+    sssom:subject_type owl:Class .
+
+hrim:fdc61ced a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:fdc61ced"^^xsd:anyURI ;
+    dcterms:issued "2025-09-03"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2025-09-02"^^xsd:date ;
+    owl:annotatedProperty hriv:hasBroaderMeaningThan ;
+    owl:annotatedSource onz-g:Mammal ;
+    owl:annotatedTarget hrio:Person ;
+    sssom:author_label "Pedro Paulo F. Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "kind" ;
+    sssom:object_label "Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "0.9.2" ;
+    sssom:record_id "hrim:fdc61ced"^^xsd:anyURI ;
+    sssom:subject_label "Zoogdier"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" ;
+    sssom:subject_type owl:Class .
