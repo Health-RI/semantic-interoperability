@@ -44,6 +44,9 @@ jobs:
       - name: Generate PyLODE Specifications for Ontology and Vocabulary
         run: python scripts/pylode-docgen.py
 
+      - name: Create TTL serialization of SSSOM TSV file
+        run: python scripts/sssom-tsv2ttl.py
+
       - name: Commit and push generated files
         run: |
           git config user.name "github-actions[bot]"
@@ -51,6 +54,7 @@ jobs:
           shopt -s globstar
           git add ontologies/versioned/** ontologies/latest/** || true
           git add vocabulary/versioned/** vocabulary/latest/** || true
+          git add mappings/** || true
           git diff --cached --quiet || git commit -m "docs: update generated documentation and specifications"
           git push origin main
 
