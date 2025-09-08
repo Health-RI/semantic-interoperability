@@ -1,0 +1,16 @@
+# .github/dependabot.yml — Actions only (no pip manifests in this repo)
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:15"
+      timezone: "Europe/Amsterdam"
+    groups:
+      gha-all:
+        patterns: ["*"]
+    commit-message:
+      prefix: "deps"
+      include: "scope"
