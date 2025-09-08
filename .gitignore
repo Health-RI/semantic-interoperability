@@ -216,3 +216,6 @@ Thumbs.db
 
 # Ignore all vs code settings
 .vscode/
+
+# Internal files for self-organization
+.internal/**
