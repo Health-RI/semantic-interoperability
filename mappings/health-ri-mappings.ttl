@@ -25,7 +25,7 @@ hrim: a sssom:MappingSet ;
     rdfs:comment "This mapping set is part of the Health-RI Semantic Interoperability Initiative"@en,
         "which supports the development of shared ontologies and mappings to align heterogeneous data sources conceptually and semantically."@en ;
     rdfs:seeAlso <https://w3id.org/health-ri/semantic-interoperability> ;
-    owl:versionInfo "2025-09-05" ;
+    owl:versionInfo "2025-09-08" ;
     sssom:issue_tracker "https://github.com/Health-RI/semantic-interoperability/issues"^^xsd:anyURI ;
     sssom:mapping_set_id "https://w3id.org/health-ri/semantic-interoperability/mappings"^^xsd:anyURI ;
     sssom:mappings hrim:074fbbc2,
