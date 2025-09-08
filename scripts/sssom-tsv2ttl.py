@@ -322,6 +322,42 @@ def render_prefix_block(prefix_map: Dict[str, str]) -> str:
     return "\n".join([f"@prefix {pfx}: <{iri}> ." for pfx, iri in items]) + "\n\n"
 
 
+ENTITY_TYPE_MAP = {
+    # canonical SSSOM values (case-insensitive, collapse spaces)
+    "owl class":"owl:Class",
+    "owl object property":"owl:ObjectProperty",
+    "owl data property":"owl:DataProperty",
+    "owl annotation property":"owl:AnnotationProperty",
+    "owl named individual":"owl:NamedIndividual",
+    "skos concept":"skos:Concept",
+    "rdfs resource":"rdfs:Resource",
+    "rdfs class":"rdfs:Class",
+    "rdfs literal":"rdfs:Literal",
+    "rdfs datatype":"rdfs:Datatype",
+    "rdf property":"rdf:Property",
+    "composed entity expression":"sssom:ComposedEntityExpression",
+}
+
+
+
+def normalize_entity_type(value: Optional[str]) -> str:
+    """
+    Accepts either:
+      - SSSOM EntityTypeEnum *value* (e.g., 'owl class') -> returns CURIE (e.g., 'owl:Class')
+      - Already a CURIE/IRI (contains ':') -> returned as-is
+      - Empty/unknown -> returns '' (caller skips adding)
+    """
+    if not value:
+        return ""
+    v = value.strip()
+    if ":" in v:
+        # looks like CURIE/IRI; keep
+        return v
+    # normalize spaces and lowercase for lookup
+    key = re.sub(r"\s+", " ", v).lower()
+    return ENTITY_TYPE_MAP.get(key, "")
+
+
 def to_hrim_curie(rid: str) -> str:
     """Normalize a record identifier to an `hrim:` CURIE if needed.
 
@@ -391,6 +427,7 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
         "xsd": str(XSD),
         "pav": str(PAV),
         "dcat": str(DCAT),
+        "skos": "http://www.w3.org/2004/02/skos/core#",
     }
     for k, iri in required_prefixes.items():
         prefix_map.setdefault(k, iri)
@@ -531,10 +568,10 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
             parts[col_idx.get("license", -1)].strip() if col_idx.get("license") else "",
         )
 
-        add_resource(
-            "sssom:subject_type",
-            (parts[col_idx.get("subject_type", -1)].strip() if col_idx.get("subject_type") else ""),
-        )
+        raw_subj_type = parts[col_idx.get("subject_type", -1)].strip() if col_idx.get("subject_type") else ""
+        norm_subj_type = normalize_entity_type(raw_subj_type)
+        add_resource("sssom:subject_type", norm_subj_type)
+
         add_resource(
             "sssom:subject_source",
             (parts[col_idx.get("subject_source", -1)].strip() if col_idx.get("subject_source") else ""),

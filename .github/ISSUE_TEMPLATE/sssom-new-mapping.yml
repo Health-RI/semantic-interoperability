@@ -151,12 +151,18 @@ body:
       description: "Type of the subject entity - spec: https://mapping-commons.github.io/sssom/subject_type/"
       options:
         - ""
-        - owl:Class
-        - rdfs:Property
-        - owl:ObjectProperty
-        - owl:DatatypeProperty
-        - skos:Concept
-        - owl:NamedIndividual
+        - owl class
+        - owl object property
+        - owl data property
+        - owl annotation property
+        - owl named individual
+        - skos concept
+        - rdfs resource
+        - rdfs class
+        - rdfs literal
+        - rdfs datatype
+        - rdf property
+        - composed entity expression
       default: 0
     validations:
       required: false
