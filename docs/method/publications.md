@@ -29,24 +29,24 @@ While inspired by [Semantic Versioning](https://semver.org/), this adapted strat
 For each ontology release, the following artifacts are published — always in both `ontologies/latest/` and `ontologies/versioned/` folders.
 
 - **OntoUML conceptual model (Visual Paradigm)**: Includes all OntoUML constructs and diagrams.
-  - [`ontologies/latest/health-ri-ontology.vpp`](https://w3id.org/health-ri/ontology/vpp)
-  - `ontologies/versioned/health-ri-ontology-v<version>.vpp`
+    - [`ontologies/latest/health-ri-ontology.vpp`](https://w3id.org/health-ri/ontology/vpp)
+    - `ontologies/versioned/health-ri-ontology-v<version>.vpp`
 
 - **OntoUML JSON export**: Conforms to the [OntoUML Schema](https://w3id.org/ontouml/schema).
-  - [`ontologies/latest/health-ri-ontology.json`](https://w3id.org/health-ri/ontology/json)
-  - `ontologies/versioned/health-ri-ontology-v<version>.json`
+    - [`ontologies/latest/health-ri-ontology.json`](https://w3id.org/health-ri/ontology/json)
+    - `ontologies/versioned/health-ri-ontology-v<version>.json`
 
 - **gUFO OWL ontology (Turtle)**: OWL serialization that imports or reflects gUFO axioms.
-  - [`ontologies/latest/health-ri-ontology.ttl`](https://w3id.org/health-ri/ontology/ttl)
-  - `ontologies/versioned/health-ri-ontology-v<version>.ttl`
+    - [`ontologies/latest/health-ri-ontology.ttl`](https://w3id.org/health-ri/ontology/ttl)
+    - `ontologies/versioned/health-ri-ontology-v<version>.ttl`
 
 - **Markdown documentation**: Textual documentation of the OntoUML ontology.
-  - [`ontologies/latest/documentations/documentation.md`](https://w3id.org/health-ri/ontology/documentation)
-  - `ontologies/versioned/documentations/documentation-v<version>.md`
+    - [`ontologies/latest/documentations/documentation.md`](https://w3id.org/health-ri/ontology/documentation)
+    - `ontologies/versioned/documentations/documentation-v<version>.md`
 
 - **HTML specification**: Documentation of the gUFO ontology.
-  - [`ontologies/latest/documentations/specification.html`](https://w3id.org/health-ri/ontology/specification)
-  - `ontologies/versioned/documentations/specification-v<version>.html`
+    - [`ontologies/latest/documentations/specification.html`](https://w3id.org/health-ri/ontology/specification)
+    - `ontologies/versioned/documentations/specification-v<version>.html`
 
 !!! note
     gUFO files are only generated for versions of the model that are **syntactically valid**.
