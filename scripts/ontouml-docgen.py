@@ -81,7 +81,9 @@ def index_diagrams_by_owner(diagrams):
     """
     diagrams_by_owner = {}
     for diagram in diagrams:
-        owner_id = diagram["owner"]["id"]
+        owner_id = diagram.get("owner", {}).get("id")
+        if owner_id is None:
+            continue
         diagrams_by_owner.setdefault(owner_id, []).append(diagram)
     return diagrams_by_owner
 
@@ -248,7 +250,8 @@ def generate_markdown(
         lines.extend(content_lines)
         return lines
 
-    lines = [f"# {clean_text(data['name'])}", f"*Version {version_str}*", ""]
+    title = clean_text(data.get("name", "(unnamed model)"))
+    lines = [f"# {title}", f"*Version {version_str}*", ""]
     model = data.get("model", {})
     contents = model.get("contents") or []
     diagrams_by_owner = index_diagrams_by_owner(data.get("diagrams", []))
@@ -320,10 +323,40 @@ def main():
     latest_json, version_str = get_latest_json_file(ontologies_dir)
     if latest_json and version_str:
         logging.info(f"Using latest JSON file: {latest_json}")
-        data = load_json(latest_json)
     else:
         logging.info("No valid JSON files found.")
         return
+
+    # Paths that depend on the detected version
+    versioned_md_name = f"documentation-v{version_str}.md"
+    versioned_md_path = versioned_docs_dir / versioned_md_name
+    latest_md_path = latest_docs_dir / "documentation.md"
+    output_path_main = Path("docs/ontology/documentation.md")  # keep this path
+
+    # --- Early exit gate: if this version is already documented, skip generation ---
+    if versioned_md_path.exists():
+        # Optionally ensure "latest" exists; create it if missing (idempotent repair)
+        if not latest_md_path.exists():
+            data = load_json(latest_json)
+            markdown_latest = generate_markdown(
+                data,
+                version_str,
+                images_folder,
+                image_path_prefix="../images",
+                encode_image_path=True,
+            )
+            latest_md_path.write_text(markdown_latest, encoding="utf-8")
+            logging.info(f"Repaired missing latest doc: {latest_md_path}")
+        else:
+            logging.info(
+                f"Documentation for v{version_str} already exists "
+                f"({versioned_md_path}). Skipping generation."
+            )
+        return
+    # ------------------------------------------------------------------------------
+
+    # Only load & generate if we actually need to write new docs
+    data = load_json(latest_json)
 
     # 1. Main Markdown output (original path)
     markdown_main = generate_markdown(data, version_str, images_folder)
@@ -331,12 +364,10 @@ def main():
     logging.info(f"Main documentation written to: {output_path_main}")
 
     # 2. Versioned Markdown copy
-    versioned_md_name = f"documentation-v{version_str}.md"
-    versioned_md_path = versioned_docs_dir / versioned_md_name
     versioned_md_path.write_text(markdown_main, encoding="utf-8")
     logging.info(f"Versioned documentation written to: {versioned_md_path}")
 
-    # 3. Latest Markdown copy with "images/" paths
+    # 3. Latest Markdown copy with "../images" paths
     markdown_latest = generate_markdown(
         data,
         version_str,
@@ -344,7 +375,6 @@ def main():
         image_path_prefix="../images",
         encode_image_path=True,
     )
-    latest_md_path = latest_docs_dir / "documentation.md"
     latest_md_path.write_text(markdown_latest, encoding="utf-8")
     logging.info(f"Latest documentation written to: {latest_md_path}")
 
