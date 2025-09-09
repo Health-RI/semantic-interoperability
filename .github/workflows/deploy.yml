@@ -21,7 +21,7 @@ jobs:
     steps:
       # --- Checkout repo files so we can build & run scripts ---
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       # --- Install Python with pip cache for faster subsequent runs ---
       - name: Set up Python 3.x with pip cache
@@ -29,17 +29,11 @@ jobs:
         with:
           python-version: '3.x'
           cache: pip
+          cache-dependency-path: scripts/requirements.txt
 
       # --- Install all required Python packages for docs & tooling ---
-      - name: Install Python dependencies (MkDocs, PyLODE, etc.)
-        run: |
-          pip install \
-            mkdocs \
-            mkdocs-material \
-            mkdocs-table-reader-plugin \
-            packaging \
-            pylode \
-            beautifulsoup4
+      - name: Install Python dependencies
+        run: pip install -r scripts/requirements.txt
 
       # --- Clean up repo-specific detritus before generating docs ---
       - name: Clean unwanted files
@@ -94,10 +88,6 @@ jobs:
       # --- Build MkDocs site into ./site ---
       - name: Build MkDocs site
         run: mkdocs build
-
-      # --- Install LinkChecker for internal link validation ---
-      - name: Install LinkChecker
-        run: sudo apt-get install -y linkchecker
 
       # --- Check internal links (ignore ephemeral hash-like URLs) ---
       - name: Check links in built site

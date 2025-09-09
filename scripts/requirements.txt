@@ -1,0 +1,7 @@
+mkdocs
+mkdocs-material
+mkdocs-table-reader-plugin
+packaging
+pylode
+beautifulsoup4
+linkchecker
