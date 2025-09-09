@@ -329,7 +329,11 @@ def main():
 
     # --- Early exit gate: if this version is already documented, skip generation ---
     if versioned_md_path.exists():
-        # Optionally ensure "latest" exists; create it if missing (idempotent repair)
+        # Ensure parents exist (defensive)
+        output_path_main.parent.mkdir(parents=True, exist_ok=True)
+        latest_md_path.parent.mkdir(parents=True, exist_ok=True)
+
+        # Repair "latest" copy if missing (uses ../images + percent-encoding)
         if not latest_md_path.exists():
             data = load_json(latest_json)
             markdown_latest = generate_markdown(
@@ -341,11 +345,15 @@ def main():
             )
             latest_md_path.write_text(markdown_latest, encoding="utf-8")
             logging.info(f"Repaired missing latest doc: {latest_md_path}")
-        else:
-            logging.info(
-                f"Documentation for v{version_str} already exists " f"({versioned_md_path}). Skipping generation."
-            )
+
+        # NEW: Repair docs copy if missing (exact content from versioned markdown)
+        if not output_path_main.exists():
+            output_path_main.write_text(versioned_md_path.read_text(encoding="utf-8"), encoding="utf-8")
+            logging.info(f"Repaired missing docs doc: {output_path_main}")
+
+        logging.info(f"Documentation for v{version_str} already exists ({versioned_md_path}). Skipping generation.")
         return
+
     # ------------------------------------------------------------------------------
 
     # Only load & generate if we actually need to write new docs
