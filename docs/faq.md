@@ -47,7 +47,7 @@
     Without semantic alignment, systems may use the same term for different concepts or different terms for the same concept, causing ambiguity and inconsistency.
 
 ??? question "What are some examples of current successes or progress?"
-    The development of the OntoUML conceptual model, its implementation as the gUFO OWL ontology, and the strategy for semantically aligning third-party ontologies using [Health-RI Mapping Vocabulary](../method/specification.html) properties are all concrete milestones achieved. Figures and examples in the documentation illustrate successful alignment strategies already in use.
+    The development of the OntoUML conceptual model, its implementation as the gUFO OWL ontology, and the strategy for semantically aligning third-party ontologies using [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html) properties are all concrete milestones achieved. Figures and examples in the documentation illustrate successful alignment strategies already in use.
 
 ??? question "What challenges are currently being faced?"
     One challenge is when no exact match exists between external concepts and the reference ontology. This requires approximate mappings and motivates the need to expand the Health-RI ontology to bridge gaps. Another challenge is managing transitivity and ambiguity in mappings (e.g., limiting to a single `hriv:hasExactMeaning` per concept).
@@ -134,15 +134,15 @@
 
 ## Mapping and Alignment Strategy
 
-*Questions about how external concepts are aligned to the Health-RI reference model using dedicated mapping properties from the [Health-RI Mapping Vocabulary](../method/specification.html).*
+*Questions about how external concepts are aligned to the Health-RI reference model using dedicated mapping properties from the [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html).*
 
 ??? question "How are mappings from local schemas to the reference model created?"
     If schemas are OWL/RDF-based, mappings can be embedded directly using standard RDF properties. Otherwise, external mappings are created using [SSSOM](https://mapping-commons.github.io/sssom/).
 
-    Mappings follow the [Health-RI Mapping Vocabulary](../method/specification.html) and can be asserted using:
+    Mappings follow the [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html) and can be asserted using:
 
-    - [`hriv:hasExactMeaning`](../method/specification.html#hasExactMeaning) for perfect semantic alignment (only one allowed),
-    - [`hriv:hasBroaderMeaningThan`](../method/specification.html#hasExactMeaning) or [`hriv:hasNarrowerMeaningThan`](../method/specification.html#hasExactMeaning) when the match is approximate.
+    - [`hriv:hasExactMeaning`](../method/specification-vocabulary.html#hasExactMeaning) for perfect semantic alignment (only one allowed),
+    - [`hriv:hasBroaderMeaningThan`](../method/specification-vocabulary.html#hasExactMeaning) or [`hriv:hasNarrowerMeaningThan`](../method/specification-vocabulary.html#hasExactMeaning) when the match is approximate.
 
     These mappings support semantic alignment without requiring modification to the original schema and are managed either by Health-RI (non-invasively in SSSOM) or by partners (embedded in their own RDF models).
 
@@ -182,7 +182,7 @@
     Mappings can be created and maintained by:
 
     - The **Health-RI team**, which curates non-invasive mappings using the [SSSOM](https://w3id.org/sssom/) format. These mappings are published externally and do not alter the original third-party ontologies.
-    - **External partners**, who can embed mappings directly in their own ontology files using [Health-RI Mapping Vocabulary](../method/specification.html) properties (e.g., `hriv:hasExactMeaning`).
+    - **External partners**, who can embed mappings directly in their own ontology files using [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html) properties (e.g., `hriv:hasExactMeaning`).
 
     [Read more.](../method/mapping-strategy)
 

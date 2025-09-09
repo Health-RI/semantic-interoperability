@@ -143,7 +143,7 @@ def main():
     latest versioned TTL file, applies post-processing (link fixing, ToC sorting, logo insertion),
     and saves the result to:
 
-    - docs/ontology/specification.html
+    - docs/ontology/specification-ontology.html
     - ontologies/latest/documentations/specification.html
     - ontologies/versioned/documentations/specification-v<version>.html
 

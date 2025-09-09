@@ -14,8 +14,8 @@ Semantic interoperability plays a foundational role in this mission by ensuring 
 
 - **Semantic Interoperability**: [Overview](semantic-interoperability/index.md)
 - **OntoUML & gUFO**: [Overview](ontouml-gufo/index.md) · [OntoUML](ontouml-gufo/ontouml.md) · [OntoUML Stereotypes](ontouml-gufo/ontouml-stereotypes.md) · [OntoUML/UFO Catalog](ontouml-gufo/ontouml-ufo-catalog.md) · [Creating OntoUML Models](ontouml-gufo/creating-ontouml-models.md) · [gUFO](ontouml-gufo/gufo.md)
-- **Method**: [Overview](method/index.md) · [Introduction](method/introduction.md) · [Mapping Strategy](method/mapping-strategy.md) · [Mapping Vocabulary Specification](method/specification.html) · [SSSOM Mapping Set](method/mapping-set.md) · [Publications](method/publications.md) · [Persistent Identifiers](method/persistent-ids.md)
-- **Deliverables**: [Overview](ontology/index.md) · [Ontology Documentation](ontology/documentation.md) · [Ontology Specification](ontology/specification.html) · [Ontology Changelog](ontology/changelog-ontology.md)
+- **Method**: [Overview](method/index.md) · [Introduction](method/introduction.md) · [Mapping Strategy](method/mapping-strategy.md) · [Mapping Vocabulary Specification](method/specification-vocabulary.html) · [SSSOM Mapping Set](method/mapping-set.md) · [Publications](method/publications.md) · [Persistent Identifiers](method/persistent-ids.md)
+- **Deliverables**: [Overview](ontology/index.md) · [Ontology Documentation](ontology/documentation.md) · [Ontology Specification](ontology/specification-ontology.html) · [Ontology Changelog](ontology/changelog-ontology.md)
 - **Help & Contributions**: [FAQ](faq.md) · [Contributing](contributing.md)
 
 ## Who this is for
