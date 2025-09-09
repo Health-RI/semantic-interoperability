@@ -822,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../method/specification.html" class="md-nav__link">
+      <a href="../method/specification-vocabulary.html" class="md-nav__link">
         
   
   
@@ -1012,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ontology/specification.html" class="md-nav__link">
+      <a href="../ontology/specification-ontology.html" class="md-nav__link">
         
   
   
@@ -1312,7 +1312,7 @@
 </details>
 <details class="question">
 <summary>What are some examples of current successes or progress?</summary>
-<p>The development of the OntoUML conceptual model, its implementation as the gUFO OWL ontology, and the strategy for semantically aligning third-party ontologies using <a href="../method/specification.html">Health-RI Mapping Vocabulary</a> properties are all concrete milestones achieved. Figures and examples in the documentation illustrate successful alignment strategies already in use.</p>
+<p>The development of the OntoUML conceptual model, its implementation as the gUFO OWL ontology, and the strategy for semantically aligning third-party ontologies using <a href="../method/specification-vocabulary.html">Health-RI Mapping Vocabulary</a> properties are all concrete milestones achieved. Figures and examples in the documentation illustrate successful alignment strategies already in use.</p>
 </details>
 <details class="question">
 <summary>What challenges are currently being faced?</summary>
@@ -1409,14 +1409,14 @@
 <a href="../ontouml-gufo/ontouml">OntoUML</a> • <a href="../ontouml-gufo/gufo">gUFO</a></p>
 </details>
 <h2 id="mapping-and-alignment-strategy">Mapping and Alignment Strategy</h2>
-<p><em>Questions about how external concepts are aligned to the Health-RI reference model using dedicated mapping properties from the <a href="../method/specification.html">Health-RI Mapping Vocabulary</a>.</em></p>
+<p><em>Questions about how external concepts are aligned to the Health-RI reference model using dedicated mapping properties from the <a href="../method/specification-vocabulary.html">Health-RI Mapping Vocabulary</a>.</em></p>
 <details class="question">
 <summary>How are mappings from local schemas to the reference model created?</summary>
 <p>If schemas are OWL/RDF-based, mappings can be embedded directly using standard RDF properties. Otherwise, external mappings are created using <a href="https://mapping-commons.github.io/sssom/">SSSOM</a>.</p>
-<p>Mappings follow the <a href="../method/specification.html">Health-RI Mapping Vocabulary</a> and can be asserted using:</p>
+<p>Mappings follow the <a href="../method/specification-vocabulary.html">Health-RI Mapping Vocabulary</a> and can be asserted using:</p>
 <ul>
-<li><a href="../method/specification.html#hasExactMeaning"><code>hriv:hasExactMeaning</code></a> for perfect semantic alignment (only one allowed),</li>
-<li><a href="../method/specification.html#hasExactMeaning"><code>hriv:hasBroaderMeaningThan</code></a> or <a href="../method/specification.html#hasExactMeaning"><code>hriv:hasNarrowerMeaningThan</code></a> when the match is approximate.</li>
+<li><a href="../method/specification-vocabulary.html#hasExactMeaning"><code>hriv:hasExactMeaning</code></a> for perfect semantic alignment (only one allowed),</li>
+<li><a href="../method/specification-vocabulary.html#hasExactMeaning"><code>hriv:hasBroaderMeaningThan</code></a> or <a href="../method/specification-vocabulary.html#hasExactMeaning"><code>hriv:hasNarrowerMeaningThan</code></a> when the match is approximate.</li>
 </ul>
 <p>These mappings support semantic alignment without requiring modification to the original schema and are managed either by Health-RI (non-invasively in SSSOM) or by partners (embedded in their own RDF models).</p>
 <p><a href="../method/mapping-strategy">Full explanation</a></p>
@@ -1461,7 +1461,7 @@
 <p>Mappings can be created and maintained by:</p>
 <ul>
 <li>The <strong>Health-RI team</strong>, which curates non-invasive mappings using the <a href="https://w3id.org/sssom/">SSSOM</a> format. These mappings are published externally and do not alter the original third-party ontologies.</li>
-<li><strong>External partners</strong>, who can embed mappings directly in their own ontology files using <a href="../method/specification.html">Health-RI Mapping Vocabulary</a> properties (e.g., <code>hriv:hasExactMeaning</code>).</li>
+<li><strong>External partners</strong>, who can embed mappings directly in their own ontology files using <a href="../method/specification-vocabulary.html">Health-RI Mapping Vocabulary</a> properties (e.g., <code>hriv:hasExactMeaning</code>).</li>
 </ul>
 <p><a href="../method/mapping-strategy">Read more.</a></p>
 </details>
