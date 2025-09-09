@@ -5,27 +5,28 @@ import logging
 logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
 # Base directory: parent of this script's folder
-base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 # Patterns to delete everywhere except .bat (which has special rule)
 file_patterns_to_remove = [
-    '*vpp.bak*',
-    '*vpp.lck*',
-    '~$*',
-    '*.tmp',
-    '*.bak',
-    '*.wbk',
-    '*.asd',
-    '*.lnk',
-    '*.lock',
-    '*.log',
-    '*.ds_store',
-    '*.sln.docstates',
-    'Thumbs.db',
-    'diff.path',
-    '*.del',
-    'catalog-v*.xml'
+    "*vpp.bak*",
+    "*vpp.lck*",
+    "~$*",
+    "*.tmp",
+    "*.bak",
+    "*.wbk",
+    "*.asd",
+    "*.lnk",
+    "*.lock",
+    "*.log",
+    "*.ds_store",
+    "*.sln.docstates",
+    "Thumbs.db",
+    "diff.path",
+    "*.del",
+    "catalog-v*.xml",
 ]
+
 
 def is_bat_in_scripts_folder(file_path):
     """
@@ -39,8 +40,8 @@ def is_bat_in_scripts_folder(file_path):
         bool: True if the file is a .bat inside 'scripts', False otherwise.
     """
     rel_path = os.path.relpath(file_path, base_dir)
-    parts = rel_path.replace("\\", "/").split('/')
-    return 'scripts' in parts and rel_path.lower().endswith('.bat')
+    parts = rel_path.replace("\\", "/").split("/")
+    return "scripts" in parts and rel_path.lower().endswith(".bat")
 
 
 def should_delete(file_path, filename):
@@ -55,9 +56,9 @@ def should_delete(file_path, filename):
     Returns:
         bool: True if the file should be deleted, False otherwise.
     """
-    if filename.lower().endswith('.bat'):
+    if filename.lower().endswith(".bat"):
         return not is_bat_in_scripts_folder(file_path)
-    
+
     for pattern in file_patterns_to_remove:
         if fnmatch.fnmatch(filename, pattern):
             return True

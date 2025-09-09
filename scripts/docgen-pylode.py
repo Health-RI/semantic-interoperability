@@ -33,6 +33,7 @@ def get_latest_ontology_ttl_file(directory: Path):
 
     return latest_file, latest_version
 
+
 def get_latest_vocabulary_ttl_file(directory: Path):
     """
     Finds the latest versioned TTL file for the vocabulary based on semantic versioning
@@ -52,6 +53,7 @@ def get_latest_vocabulary_ttl_file(directory: Path):
 
     return latest_file, latest_version
 
+
 def fix_internal_links_in_html(file_path: Path):
     """
     Fixes PyLODE-generated HTML links that use absolute `file://` paths, converting them
@@ -63,18 +65,14 @@ def fix_internal_links_in_html(file_path: Path):
     try:
         html = file_path.read_text(encoding="utf-8")
         # Replace href="file:///.../specification.html#SomeAnchor" → href="#SomeAnchor"
-        fixed_html = re.sub(
-            r'href="file://[^"]*/specification\.html#([^"]+)"', r'href="#\1"', html
-        )
+        fixed_html = re.sub(r'href="file://[^"]*/specification\.html#([^"]+)"', r'href="#\1"', html)
         file_path.write_text(fixed_html, encoding="utf-8")
         logging.info("Patched internal file:// links to use relative anchors (#...).")
     except Exception as e:
         logging.warning(f"Could not patch internal links: {e}")
 
 
-def sort_toc_sections_in_html(
-    file_path: Path, section_ids=("classes", "annotationproperties")
-):
+def sort_toc_sections_in_html(file_path: Path, section_ids=("classes", "annotationproperties")):
     """
     Sorts the entries in the Table of Contents (ToC) for specified sections
     (e.g., 'Classes', 'Annotation Properties') alphabetically by label text.
@@ -163,9 +161,7 @@ def main():
 
     latest_ttl, latest_version = get_latest_ontology_ttl_file(ttl_dir)
     if not latest_ttl:
-        logging.warning(
-            "No valid TTL files found in 'ontologies/versioned/'. No specification will be produced."
-        )
+        logging.warning("No valid TTL files found in 'ontologies/versioned/'. No specification will be produced.")
         # Continue on to vocabulary below even if ontology is missing
     else:
         # Paths that depend on ontology version
@@ -224,7 +220,9 @@ def main():
         )
     else:
         vocab_version_str = str(vocab_version)
-        vocab_versioned_output = base_dir / f"vocabulary/versioned/documentations/specification-v{vocab_version_str}.html"
+        vocab_versioned_output = (
+            base_dir / f"vocabulary/versioned/documentations/specification-v{vocab_version_str}.html"
+        )
         vocab_latest_output = base_dir / "vocabulary/latest/documentations/specification.html"
         vocab_versioned_output.parent.mkdir(parents=True, exist_ok=True)
         vocab_latest_output.parent.mkdir(parents=True, exist_ok=True)

@@ -27,7 +27,7 @@ jobs:
       - name: Set up Python 3.x with pip cache
         uses: actions/setup-python@v6
         with:
-          python-version: '3.x'
+          python-version: "3.x"
           cache: pip
           cache-dependency-path: scripts/requirements.txt
 
@@ -100,9 +100,9 @@ jobs:
       - name: Upload built site artifact
         uses: actions/upload-artifact@v4
         with:
-            name: site
-            path: site
-            retention-days: 7
+          name: site
+          path: site
+          retention-days: 7
 
       # --- Upload generated content that should be committed on main ---
       - name: Upload generated content artifact (to commit on main)

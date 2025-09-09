@@ -324,20 +324,19 @@ def render_prefix_block(prefix_map: Dict[str, str]) -> str:
 
 ENTITY_TYPE_MAP = {
     # canonical SSSOM values (case-insensitive, collapse spaces)
-    "owl class":"owl:Class",
-    "owl object property":"owl:ObjectProperty",
-    "owl data property":"owl:DataProperty",
-    "owl annotation property":"owl:AnnotationProperty",
-    "owl named individual":"owl:NamedIndividual",
-    "skos concept":"skos:Concept",
-    "rdfs resource":"rdfs:Resource",
-    "rdfs class":"rdfs:Class",
-    "rdfs literal":"rdfs:Literal",
-    "rdfs datatype":"rdfs:Datatype",
-    "rdf property":"rdf:Property",
-    "composed entity expression":"sssom:ComposedEntityExpression",
+    "owl class": "owl:Class",
+    "owl object property": "owl:ObjectProperty",
+    "owl data property": "owl:DataProperty",
+    "owl annotation property": "owl:AnnotationProperty",
+    "owl named individual": "owl:NamedIndividual",
+    "skos concept": "skos:Concept",
+    "rdfs resource": "rdfs:Resource",
+    "rdfs class": "rdfs:Class",
+    "rdfs literal": "rdfs:Literal",
+    "rdfs datatype": "rdfs:Datatype",
+    "rdf property": "rdf:Property",
+    "composed entity expression": "sssom:ComposedEntityExpression",
 }
-
 
 
 def normalize_entity_type(value: Optional[str]) -> str:
@@ -616,7 +615,7 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
     # Deduplicate record_ids while preserving order
 
     record_ids = list(dict.fromkeys(record_ids))
-    logger.info("Mappings to emit: %d", len(record_ids))    
+    logger.info("Mappings to emit: %d", len(record_ids))
 
     # Add the MappingSet declaration ONCE, after collecting all record_ids
 

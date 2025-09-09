@@ -101,9 +101,7 @@ def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
     ontology_uri = URIRef("https://w3id.org/health-ri/ontology")
     version_iri = URIRef(f"https://w3id.org/health-ri/ontology/v{version_str}")
     conforms_to_vpp = URIRef(f"https://w3id.org/health-ri/ontology/v{version_str}/vpp")
-    conforms_to_json = URIRef(
-        f"https://w3id.org/health-ri/ontology/v{version_str}/json"
-    )
+    conforms_to_json = URIRef(f"https://w3id.org/health-ri/ontology/v{version_str}/json")
 
     g_a.add((ontology_uri, DCTERMS.modified, Literal(today, datatype=XSD.date)))
     g_a.add((ontology_uri, OWL.versionInfo, Literal(version_str)))
@@ -139,6 +137,4 @@ if __name__ == "__main__":
         if not latest_gufo_path:
             logging.warning(f"No valid TTL file found in: {directory}")
         if not ttl_metadata_path.exists():
-            logging.warning(
-                f"Metadata file not found at: {ttl_metadata_path.resolve()}"
-            )
+            logging.warning(f"Metadata file not found at: {ttl_metadata_path.resolve()}")

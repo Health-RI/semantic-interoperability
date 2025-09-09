@@ -157,9 +157,7 @@ def process_package(pkg, diagrams_by_owner, images_folder, level=2):
     content_lines = []
     for content in pkg.get("contents") or []:
         if content.get("type") == "Package":
-            sub_output = process_package(
-                content, diagrams_by_owner, images_folder, level + 1
-            )
+            sub_output = process_package(content, diagrams_by_owner, images_folder, level + 1)
             if sub_output:
                 content_lines.extend(sub_output)
 
@@ -232,9 +230,7 @@ def generate_markdown(
         content_lines = []
         for content in pkg.get("contents") or []:
             if content.get("type") == "Package":
-                sub_output = process_package_with_prefix(
-                    content, diagrams_by_owner, images_folder, level + 1
-                )
+                sub_output = process_package_with_prefix(content, diagrams_by_owner, images_folder, level + 1)
                 if sub_output:
                     content_lines.extend(sub_output)
 
@@ -257,9 +253,7 @@ def generate_markdown(
     diagrams_by_owner = index_diagrams_by_owner(data.get("diagrams", []))
 
     for top_level_pkg in contents:
-        section = process_package_with_prefix(
-            top_level_pkg, diagrams_by_owner, images_folder
-        )
+        section = process_package_with_prefix(top_level_pkg, diagrams_by_owner, images_folder)
         if section:
             lines.extend(section)
 
@@ -349,8 +343,7 @@ def main():
             logging.info(f"Repaired missing latest doc: {latest_md_path}")
         else:
             logging.info(
-                f"Documentation for v{version_str} already exists "
-                f"({versioned_md_path}). Skipping generation."
+                f"Documentation for v{version_str} already exists " f"({versioned_md_path}). Skipping generation."
             )
         return
     # ------------------------------------------------------------------------------
