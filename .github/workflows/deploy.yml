@@ -61,11 +61,11 @@ jobs:
 
       # --- Generate OntoUML documentation (custom script) ---
       - name: Generate OntoUML documentation
-        run: python scripts/ontouml-docgen.py
+        run: python scripts/docgen-ontouml.py
 
       # --- Generate PyLODE HTML specs for ontology and vocabulary ---
       - name: Generate PyLODE specifications
-        run: python scripts/pylode-docgen.py
+        run: python scripts/docgen-pylode.py
 
       # --- Convert SSSOM TSV to TTL (kept in repo + used in site) ---
       - name: Create TTL serialization of SSSOM TSV

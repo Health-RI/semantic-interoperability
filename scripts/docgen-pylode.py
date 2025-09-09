@@ -148,55 +148,73 @@ def main():
     - docs/ontology/specification.html
     - ontologies/latest/documentations/specification.html
     - ontologies/versioned/documentations/specification-v<version>.html
+
+    It will only execute PyLODE if the versioned output for the detected version
+    does not already exist. Otherwise, it will skip generation and (idempotently)
+    repair missing "latest" and "docs" copies from the versioned file.
     """
     logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
     # Define directories
     base_dir = Path(__file__).resolve().parent.parent
     ttl_dir = base_dir / "ontologies" / "versioned"
-    output_file = base_dir / "docs/ontology/specification.html"
+    output_file = base_dir / "docs/ontology/specification-ontology.html"
     output_file.parent.mkdir(parents=True, exist_ok=True)
-
 
     latest_ttl, latest_version = get_latest_ontology_ttl_file(ttl_dir)
     if not latest_ttl:
         logging.warning(
             "No valid TTL files found in 'ontologies/versioned/'. No specification will be produced."
         )
-        return
-
-    logging.info(f"Generating specification from: {latest_ttl}")
-    try:
-        subprocess.run(["pylode", str(latest_ttl), "-o", str(output_file)], check=True)
-        logging.info(f"Specification generated at: {output_file}")
-
-        # Post-process the file to fix broken internal links
-        fix_internal_links_in_html(output_file)
-        sort_toc_sections_in_html(output_file)
-        insert_logo_in_html(output_file)
-
-        # Save versioned copy
+        # Continue on to vocabulary below even if ontology is missing
+    else:
+        # Paths that depend on ontology version
         version_str = str(latest_version)
-        versioned_output = (
-            base_dir
-            / f"ontologies/versioned/documentations/specification-v{version_str}.html"
-        )
-        versioned_output.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(output_file, versioned_output)
-        logging.info(f"Copied versioned specification to: {versioned_output}")
-
-        # Save latest copy
+        versioned_output = base_dir / f"ontologies/versioned/documentations/specification-v{version_str}.html"
         latest_output = base_dir / "ontologies/latest/documentations/specification.html"
         latest_output.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(output_file, latest_output)
-        logging.info(f"Copied specification to: {latest_output}")
+        versioned_output.parent.mkdir(parents=True, exist_ok=True)
 
-    except subprocess.CalledProcessError as e:
-        logging.error(f"PyLODE generation failed: {e}")
+        # --- Early-exit gate for ontology spec ---
+        if versioned_output.exists():
+            # Repair "latest" copy if missing
+            if not latest_output.exists():
+                shutil.copyfile(versioned_output, latest_output)
+                logging.info(f"Repaired missing latest ontology spec: {latest_output}")
+            # Repair "docs" copy if missing (site build convenience)
+            if not output_file.exists():
+                shutil.copyfile(versioned_output, output_file)
+                logging.info(f"Repaired missing docs ontology spec: {output_file}")
+
+            logging.info(
+                f"Ontology specification for v{version_str} already exists "
+                f"({versioned_output}). Skipping generation."
+            )
+        else:
+            # Run PyLODE only when the versioned file does not exist
+            logging.info(f"Generating specification from: {latest_ttl}")
+            try:
+                subprocess.run(["pylode", str(latest_ttl), "-o", str(output_file)], check=True)
+                logging.info(f"Specification generated at: {output_file}")
+
+                # Post-process the file to fix broken internal links
+                fix_internal_links_in_html(output_file)
+                sort_toc_sections_in_html(output_file)
+                insert_logo_in_html(output_file)
+
+                # Save versioned + latest copies
+                shutil.copyfile(output_file, versioned_output)
+                logging.info(f"Copied versioned specification to: {versioned_output}")
+
+                shutil.copyfile(output_file, latest_output)
+                logging.info(f"Copied specification to: {latest_output}")
+
+            except subprocess.CalledProcessError as e:
+                logging.error(f"PyLODE generation failed: {e}")
 
     # Generate specification for the Mapping Vocabulary ===
     vocab_ttl_dir = base_dir / "vocabulary" / "versioned"
-    vocab_output_file = base_dir / "docs/method/specification.html"
+    vocab_output_file = base_dir / "docs/method/specification-vocabulary.html"
     vocab_output_file.parent.mkdir(parents=True, exist_ok=True)
 
     vocab_ttl, vocab_version = get_latest_vocabulary_ttl_file(vocab_ttl_dir)
@@ -205,37 +223,50 @@ def main():
             "No valid TTL files found in 'vocabulary/versioned/'. No vocabulary specification will be produced."
         )
     else:
-        logging.info(f"Generating vocabulary specification from: {vocab_ttl}")
-        try:
-            subprocess.run(
-                ["pylode", str(vocab_ttl), "-o", str(vocab_output_file)],
-                check=True,
+        vocab_version_str = str(vocab_version)
+        vocab_versioned_output = base_dir / f"vocabulary/versioned/documentations/specification-v{vocab_version_str}.html"
+        vocab_latest_output = base_dir / "vocabulary/latest/documentations/specification.html"
+        vocab_versioned_output.parent.mkdir(parents=True, exist_ok=True)
+        vocab_latest_output.parent.mkdir(parents=True, exist_ok=True)
+
+        # --- Early-exit gate for vocabulary spec ---
+        if vocab_versioned_output.exists():
+            # Repair "latest" copy if missing
+            if not vocab_latest_output.exists():
+                shutil.copyfile(vocab_versioned_output, vocab_latest_output)
+                logging.info(f"Repaired missing latest vocabulary spec: {vocab_latest_output}")
+            # Repair "docs" copy if missing
+            if not vocab_output_file.exists():
+                shutil.copyfile(vocab_versioned_output, vocab_output_file)
+                logging.info(f"Repaired missing docs vocabulary spec: {vocab_output_file}")
+
+            logging.info(
+                f"Vocabulary specification for v{vocab_version_str} already exists "
+                f"({vocab_versioned_output}). Skipping generation."
             )
-            logging.info(f"Vocabulary specification generated at: {vocab_output_file}")
+        else:
+            logging.info(f"Generating vocabulary specification from: {vocab_ttl}")
+            try:
+                subprocess.run(
+                    ["pylode", str(vocab_ttl), "-o", str(vocab_output_file)],
+                    check=True,
+                )
+                logging.info(f"Vocabulary specification generated at: {vocab_output_file}")
 
-            # Post-process the file
-            fix_internal_links_in_html(vocab_output_file)
-            sort_toc_sections_in_html(vocab_output_file)
-            insert_logo_in_html(vocab_output_file)
+                # Post-process the file
+                fix_internal_links_in_html(vocab_output_file)
+                sort_toc_sections_in_html(vocab_output_file)
+                insert_logo_in_html(vocab_output_file)
 
-            # Save versioned copy
-            vocab_version_str = str(vocab_version)
-            vocab_versioned_output = (
-                base_dir
-                / f"vocabulary/versioned/documentations/specification-v{vocab_version_str}.html"
-            )
-            vocab_versioned_output.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(vocab_output_file, vocab_versioned_output)
-            logging.info(f"Copied versioned vocabulary specification to: {vocab_versioned_output}")
+                # Save versioned + latest copies
+                shutil.copyfile(vocab_output_file, vocab_versioned_output)
+                logging.info(f"Copied versioned vocabulary specification to: {vocab_versioned_output}")
 
-            # Save latest copy
-            vocab_latest_output = base_dir / "vocabulary/latest/documentations/specification.html"
-            vocab_latest_output.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(vocab_output_file, vocab_latest_output)
-            logging.info(f"Copied vocabulary specification to: {vocab_latest_output}")
+                shutil.copyfile(vocab_output_file, vocab_latest_output)
+                logging.info(f"Copied vocabulary specification to: {vocab_latest_output}")
 
-        except subprocess.CalledProcessError as e:
-            logging.error(f"PyLODE generation for vocabulary failed: {e}")
+            except subprocess.CalledProcessError as e:
+                logging.error(f"PyLODE generation for vocabulary failed: {e}")
 
 
 if __name__ == "__main__":

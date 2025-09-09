@@ -75,14 +75,14 @@ nav:
       - Overview: method/index.md
       - Introduction: method/introduction.md
       - Mapping Strategy: method/mapping-strategy.md
-      - Mapping Vocabulary Specification: method/specification.html
+      - Mapping Vocabulary Specification: method/specification-vocabulary.html
       - SSSOM Mapping Set: method/mapping-set.md
       - Publications: method/publications.md
       - Persistent Identifiers: method/persistent-ids.md
   - Deliverables:
       - Overview: ontology/index.md
       - Ontology Documentation: ontology/documentation.md
-      - Ontology Specification: ontology/specification.html
+      - Ontology Specification: ontology/specification-ontology.html
       - Ontology Changelog: ontology/changelog-ontology.md
       - SSSOM Mapping Set: ontology/mappings.md
   - FAQ: faq.md
