@@ -9,7 +9,7 @@ This distinction is crucial to properly model the social, legal, and biological 
 
 ### Person's Sex and Gender
 
-![Person's Sex and Gender](../images/Person%27s%20Sex%20and%20Gender.png)
+![Person's Sex and Gender](assets/images/Person's Sex and Gender.png)
 
 This integrated diagram brings together all the sex and gender modes that characterize a **Person**:
 
@@ -24,7 +24,7 @@ This unified view underlines the model s goal: to provide a clear, precise, and 
 
 #### Sex at Birth
 
-![Sex at Birth](../images/Sex%20at%20Birth.png)
+![Sex at Birth](assets/images/Sex at Birth.png)
 
 Sex at birth is also modeled as an **extrinsic mode**, but it emphasizes its formal **assignment** during birth registration. While it typically relies on the newborn s phenotypical features, it is a legal and administrative act involving professionals who record this classification on official documents.
 
@@ -38,7 +38,7 @@ By modeling sex at birth explicitly as an assignment, the ontology makes clear t
 
 #### Karyotypical Sex
 
-![Karyotypical Sex](../images/Karyotypical%20Sex.png)
+![Karyotypical Sex](assets/images/Karyotypical Sex.png)
 
 Karyotypical sex is an **intrinsic mode**: it depends solely on the person s genetic makeup and is present from birth. It is defined by the composition of **allosomes** (sex chromosomes) such as XX, XY, or variations like XXY or X0. This model distinguishes **regular** (XX or XY) and **variant** karyotypical patterns, capturing the biological diversity observed in human populations.
 
@@ -46,7 +46,7 @@ In practice, karyotypical sex is often viewed as the "genetic sex" of a person r
 
 #### Phenotypic Sex
 
-![Phenotypic Sex](../images/Phenotypic%20Sex.png)
+![Phenotypic Sex](assets/images/Phenotypic Sex.png)
 
 Phenotypic sex is an **extrinsic mode**: while it refers to the person's own anatomical and morphological features, it depends on **external assessment** by healthcare professionals. It includes visible anatomical traits such as genitalia, secondary sexual characteristics, and body morphology.
 
@@ -56,7 +56,7 @@ This concept allows us to capture the important fact that biological sex is not 
 
 #### Sex
 
-![Sex](../images/Sex.png)
+![Sex](assets/images/Sex.png)
 
 Sex is modeled here as **biological sex**, conceptualized as a **<<mode>>** an intrinsic property of a person that depends on their biology. Importantly, the ontology acknowledges that sex is not a single, unitary notion but an umbrella for several dimensions, such as chromosomal, anatomical, phenotypical, hormonal, and gonadal sex.
 
@@ -80,7 +80,7 @@ This structure acknowledges that while gender always resides in the person, its 
 
 #### Legal Gender
 
-![Legal Gender](../images/Legal%20Gender.png)
+![Legal Gender](assets/images/Legal Gender.png)
 
 **Legal Gender** is an **extrinsic mode** and a **subkind of Administrative Gender**. It refers to the gender category officially recognized by a **government**. It typically appears in legal documents like birth certificates, IDs, or passports, and has formal consequences for rights and obligations.
 
@@ -94,7 +94,7 @@ This modeling clarifies the distinction between personal identity and state reco
 
 #### Administrative Gender
 
-![Administrative Gender](../images/Administrative%20Gender.png)
+![Administrative Gender](assets/images/Administrative Gender.png)
 
 **Administrative Gender** generalizes the notion of formal assignment beyond governments to **any organization**. Hospitals, schools, and companies may record or assign gender categories for their own administrative purposes.
 
@@ -108,7 +108,7 @@ By situating legal gender as a **subkind** of administrative gender, the model s
 
 #### Gender Identity
 
-![Gender Identity](../images/Gender%20Identity.png)
+![Gender Identity](assets/images/Gender Identity.png)
 
 **Gender Identity** represents the **intrinsic mode** of gender the personally defined and experienced sense of being male, female, non-binary, or other identities. This dimension is internal to the person and does not depend on external assignment or recognition.
 
@@ -122,6 +122,6 @@ This approach supports inclusive modeling of diverse gender identities while rec
 
 ### Chromosomes
 
-![Chromosomes](../images/Chromosomes.png)
+![Chromosomes](assets/images/Chromosomes.png)
 
 This diagram shows how allosomes (X and Y chromosomes) combine to form the karyotypical makeup of human cells. Different allosome combinations lead to distinct karyotypical categories.
