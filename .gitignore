@@ -202,9 +202,7 @@ Thumbs.db
 # Protege
 **/catalog-v*.xml
 
-# Ignore all .bat files anywhere
-*.bat
-# BUT keep .bat files under the root /script folder and its subfolders
+# Ignore all .bat files anywhere, BUT keep .bat files under the root /script folder and its subfolders
 !/script/*.bat
 !/script/**/*.bat
 
