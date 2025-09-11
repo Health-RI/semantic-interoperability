@@ -253,3 +253,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Fixed
 
 - Corrected the stereotypes of three classes, changing them from `role` to `subkind` to better reflect their ontological nature.
+
+## [0.10.1] - 2025-09-10
+
+### Added
+
+- Multiple new ontology constructs introduced, including:
+  - Additional health condition types and refinements of diagnostic categories
+  - New generalization sets expanding classification coverage
+  - Supplemental relations between diagnostic entities and health conditions
+
+### Removed
+
+- Deprecated constructs and outdated classification elements that overlapped with the new health condition and diagnostic modules.
+
+### Changed
+
+- Adjusted internal identifiers (`id` fields) to maintain serialization consistency after the additions and removals.
+- Updated generalization structures to align with the refined health condition taxonomy.
