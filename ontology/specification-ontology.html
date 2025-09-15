@@ -284,6 +284,12 @@ td {
 <script id="schema.org" type="application/ld+json">
 [
   {
+    "@id": "https://w3id.org/health-ri/ontology#",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ]
+  },
+  {
     "@id": "https://w3id.org/health-ri/ontology",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -313,7 +319,7 @@ td {
     "https://schema.org/dateModified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-09-11"
+        "@value": "2025-09-02"
       }
     ],
     "https://schema.org/description": [
@@ -353,7 +359,7 @@ td {
 <strong>IRI</strong>
 </dt>
 <dd>
-<code>https://w3id.org/health-ri/ontology</code>
+<code>https://w3id.org/health-ri/ontology#</code>
 </dd>
 </div>
 <div>
@@ -406,7 +412,7 @@ td {
 <dt>
 <a class="hover_property" href="http://purl.org/dc/terms/modified" title="Date on which the resource was changed. Defined in DCMI Metadata Terms">Date Modified</a>
 </dt>
-<dd><p>2025-09-11</p></dd>
+<dd><p>2025-09-02</p></dd>
 </div>
 <div>
 <dt>
@@ -427,14 +433,14 @@ td {
 <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionIRI" title="The property that identifies the version IRI of an ontology. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Iri</a>
 </dt>
 <dd>
-<a href="https://w3id.org/health-ri/ontology/v0.11.0">https://w3id.org/health-ri/ontology/v0.11.0</a>
+<a href="https://w3id.org/health-ri/ontology/v0.9.2">https://w3id.org/health-ri/ontology/v0.9.2</a>
 </dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionInfo" title="The annotation property that provides version information for an ontology or another OWL construct. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Info</a>
 </dt>
-<dd><p>0.11.0</p></dd>
+<dd><p>0.9.2</p></dd>
 </div>
 <div>
 <dt>
@@ -460,46 +466,6 @@ td {
 </div>
 <div class="section" id="classes">
 <h2>Classes</h2>
-<div class="property entity" id="Disease">
-<h3>Disease
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#Disease</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#EstablishedHealthCondition">Established Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#NonTraumaticHealthCondition">Non-traumatic Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#PathologicalHealthCondition">Pathological Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
 <div class="property entity" id="ExternalDiagnosis">
 <h3>External Diagnosis
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -554,6 +520,43 @@ td {
 </tr>
 </table>
 </div>
+<div class="property entity" id="ProblemIndicator">
+<h3>Problem Indicator
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/health-ri/ontology#ProblemIndicator</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+</th>
+<td>
+<span>
+<span>
+<a href="http://purl.org/nemo/gufo#inheresIn">gufo:inheresIn</a>
+<span>
+<span class="cardinality">min</span>
+<span>1</span>
+</span><br/>
+</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
 <div class="property entity" id="Self-diagnosis">
 <h3>Self-diagnosis
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -572,54 +575,6 @@ td {
 <td>
 <span>
 <a href="#Diagnosis">Diagnosis</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="Adolescent">
-<h3>Adolescent
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#Adolescent</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#LivingPerson">Living Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="Adult">
-<h3>Adult
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#Adult</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#LivingPerson">Living Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -689,7 +644,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b2">nbda863559cfa4535984a1c3dd6584cf5b2</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b3">nc63120596ade4058ac76b1cf3f8e1731b3</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -830,105 +785,6 @@ td {
 </span><br/>
 </span>
 </span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="Condition">
-<h3>Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#Condition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<a href="http://purl.org/nemo/gufo#Aspect">gufo:Aspect</a>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-</th>
-<td>
-<span>
-<span>
-<a href="http://purl.org/nemo/gufo#inheresIn">gufo:inheresIn</a>
-<span>
-<span class="cardinality">min</span>
-<span>1</span>
-</span><br/>
-</span>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
-<span>
-<a href="#HealthCondition">Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="ConditionIndicator">
-<h3>Condition Indicator
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#ConditionIndicator</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<a href="http://purl.org/nemo/gufo#Aspect">gufo:Aspect</a>
-</li>
-</ul>
 </td>
 </tr>
 </table>
@@ -1158,6 +1014,48 @@ td {
 </tr>
 </table>
 </div>
+<div class="property entity" id="DiagnosticMethod">
+<h3>Diagnostic Method
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/health-ri/ontology#DiagnosticMethod</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<a href="http://purl.org/nemo/gufo#FunctionalComplex">gufo:FunctionalComplex</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+</th>
+<td>
+<span>
+<span>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b7">nc63120596ade4058ac76b1cf3f8e1731b7</a>
+<span>
+<span class="cardinality">some</span>
+<span>
+<span>
+<a href="#DiagnosticRelation">Diagnostic Relation</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</span>
+</span><br/>
+</span>
+</span>
+</td>
+</tr>
+</table>
+</div>
 <div class="property entity" id="DiagnosticOutcomeIssuer">
 <h3>Diagnostic Outcome Issuer
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -1187,7 +1085,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b13">nbda863559cfa4535984a1c3dd6584cf5b13</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b9">nc63120596ade4058ac76b1cf3f8e1731b9</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -1336,30 +1234,6 @@ td {
 </tr>
 </table>
 </div>
-<div class="property entity" id="FunctionalHealthCondition">
-<h3>Functional Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#FunctionalHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#NonStructuralHealthCondition">Non-structural Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
 <div class="property entity" id="GenderRecognitionDocument">
 <h3>Gender Recognition Document
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -1395,7 +1269,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b15">nbda863559cfa4535984a1c3dd6584cf5b15</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b11">nc63120596ade4058ac76b1cf3f8e1731b11</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -1536,7 +1410,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b17">nbda863559cfa4535984a1c3dd6584cf5b17</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b13">nc63120596ade4058ac76b1cf3f8e1731b13</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -1597,7 +1471,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b19">nbda863559cfa4535984a1c3dd6584cf5b19</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b15">nc63120596ade4058ac76b1cf3f8e1731b15</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -1999,43 +1873,6 @@ td {
 </tr>
 </table>
 </div>
-<div class="property entity" id="Person'sDeath">
-<h3>Person's Death
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#PersonsDeath</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#Event">gufo:Event</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-</th>
-<td>
-<span>
-<span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b21">nbda863559cfa4535984a1c3dd6584cf5b21</a>
-<span>
-<span class="cardinality">exactly</span>
-<span>1</span>
-</span><br/>
-</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
 <div class="property entity" id="PhenotypicSexAssessor">
 <h3>Phenotypic Sex Assessor
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -2107,40 +1944,6 @@ td {
 <a href="#DiagnosingPerson">Diagnosing Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="PsychologicalHealthCondition">
-<h3>Psychological Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#PsychologicalHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#NonInjuryHealthCondition">Non-injury Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#NonStructuralHealthCondition">Non-structural Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
 </td>
 </tr>
 </table>
@@ -2250,7 +2053,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b25">nbda863559cfa4535984a1c3dd6584cf5b25</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b19">nc63120596ade4058ac76b1cf3f8e1731b19</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -2286,40 +2089,6 @@ td {
 <a href="#HealthcareDiagnosis">Healthcare Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="AcquiredHealthCondition">
-<h3>Acquired Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#AcquiredHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#ExternallyCausedHealthCondition">Externally-caused Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#KnownOriginHealthCondition">Known-Origin Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
 </td>
 </tr>
 </table>
@@ -2383,7 +2152,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b27">nbda863559cfa4535984a1c3dd6584cf5b27</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b21">nc63120596ade4058ac76b1cf3f8e1731b21</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -2645,108 +2414,6 @@ td {
 </tr>
 </table>
 </div>
-<div class="property entity" id="BiologicalFather">
-<h3>Biological Father
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#BiologicalFather</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#FemaleBiologicalPerson">Female Biological Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
-</th>
-<td>
-<span>
-<a href="#isBiologicalFatherOf">is biological father of</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-</th>
-<td>
-<span>
-<span>
-<a href="http://purl.org/nemo/gufo#mediates">gufo:mediates</a>
-<span>
-<span class="cardinality">min</span>
-<span>1</span>
-</span><br/>
-</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="BiologicalMother">
-<h3>Biological Mother
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#BiologicalMother</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#MaleBiologicalPerson">Male Biological Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
-</th>
-<td>
-<span>
-<a href="#isBiologicalMotherOf">is biological mother of</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-</th>
-<td>
-<span>
-<span>
-<a href="http://purl.org/nemo/gufo#mediates">gufo:mediates</a>
-<span>
-<span class="cardinality">min</span>
-<span>1</span>
-</span><br/>
-</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
 <div class="property entity" id="CellularEntityDiagnosis">
 <h3>Cellular Entity Diagnosis
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -2775,12 +2442,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#PostmortemDiagnosis">Postmortem Diagnosis</a>
+<a href="#AntemortemDiagnosis">Antemortem Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#AntemortemDiagnosis">Antemortem Diagnosis</a>
+<a href="#PostmortemDiagnosis">Postmortem Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2827,77 +2494,6 @@ td {
 <span>
 <a href="#HealthcareDiagnosis">Healthcare Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="CongenitalHealthCondition">
-<h3>Congenital Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#CongenitalHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#KnownOriginHealthCondition">Known-Origin Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#NonTraumaticHealthCondition">Non-traumatic Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="DiagnosticMethod">
-<h3>Diagnostic Method
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#DiagnosticMethod</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-</th>
-<td>
-<span>
-<span>
-<a href="http://purl.org/nemo/gufo#inheresIn">gufo:inheresIn</a>
-<span>
-<span class="cardinality">min</span>
-<span>1</span>
-</span><br/>
-</span>
 </span>
 </td>
 </tr>
@@ -2957,6 +2553,37 @@ td {
 </tr>
 </table>
 </div>
+<div class="property entity" id="Exposure-basedHealthCondition">
+<h3>Exposure-based Health Condition
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/health-ri/ontology#ExposureBasedHealthCondition</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<ul>
+<li>
+<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
+</li>
+<li>
+<span>
+<a href="#HealthCondition">Health Condition</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
 <div class="property entity" id="FemaleAdministrativeGender">
 <h3>Female Administrative Gender
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -2998,6 +2625,36 @@ td {
 <span>1</span>
 </span><br/>
 </span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="FemaleBiologicalPerson">
+<h3>Female Biological Person
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/health-ri/ontology#FemaleBiologicalPerson</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Refers to a person whose sexual dimorphic characteristics align more strongly with those typically classified as female. The classification is based on the predominance of female-typical features in the overall assessment.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="#Person">Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
 </tr>
@@ -3208,12 +2865,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#DiploidCell">Diploid Cell</a>
+<a href="#HaploidCell">Haploid Cell</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#HaploidCell">Haploid Cell</a>
+<a href="#DiploidCell">Diploid Cell</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3261,40 +2918,6 @@ td {
 <a href="#HealthcareDiagnosis">Healthcare Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="IdiopathicHealthCondition">
-<h3>Idiopathic Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#IdiopathicHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#EstablishedHealthCondition">Established Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#NonTraumaticHealthCondition">Non-traumatic Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
 </td>
 </tr>
 </table>
@@ -3413,6 +3036,43 @@ td {
 </tr>
 </table>
 </div>
+<div class="property entity" id="InherentHealthCondition">
+<h3>Inherent Health Condition
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/health-ri/ontology#InherentHealthCondition</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<ul>
+<li>
+<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
+</li>
+<li>
+<span>
+<a href="#HealthCondition">Health Condition</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#NonTraumaticHealthCondition">Non-traumatic Health Condition</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
 <div class="property entity" id="Injury">
 <h3>Injury
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -3429,21 +3089,20 @@ td {
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
+<ul>
+<li>
 <span>
-<a href="#ExternallyCausedHealthCondition">Externally-caused Health Condition</a>
+<a href="#HealthCondition">Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
+</li>
+<li>
 <span>
 <a href="#TraumaticHealthCondition">Traumatic Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
+</li>
+</ul>
 </td>
 </tr>
 </table>
@@ -3520,7 +3179,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b45">nbda863559cfa4535984a1c3dd6584cf5b45</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b36">nc63120596ade4058ac76b1cf3f8e1731b36</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -3596,6 +3255,36 @@ td {
 <span>1</span>
 </span><br/>
 </span>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="MaleBiologicalPerson">
+<h3>Male Biological Person
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/health-ri/ontology#MaleBiologicalPerson</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Describes a person whose overall set of sexual dimorphic characteristics aligns more strongly with those typically classified as male. This classification relies on counting or weighting traits that are conventionally considered male-typical.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="#Person">Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
 </tr>
@@ -3731,30 +3420,6 @@ td {
 </tr>
 </table>
 </div>
-<div class="property entity" id="Non-PathologicalHealthCondition">
-<h3>Non-Pathological Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#NonPathologicalHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#HealthCondition">Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
 <div class="property entity" id="Object">
 <h3>Object
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -3779,81 +3444,6 @@ td {
 <span>
 <a href="#Substantial">Substantial</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="Offspring">
-<h3>Offspring
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#Offspring</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#Child">Child</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#Person">Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<span>
-<a href="http://purl.org/nemo/gufo#mediates">gufo:mediates</a>
-<span>
-<span class="cardinality">some</span>
-<span>
-<span>
-<a href="#ParentChildRelation">Parent-Child Relation</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</span>
-</span><br/>
-</span>
-</span>
-</li>
-<li>
-<span>
-<span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b50">nbda863559cfa4535984a1c3dd6584cf5b50</a>
-<span>
-<span class="cardinality">some</span>
-<span>
-<span>
-<a href="#PersonsBirth">Person's Birth</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</span>
-</span><br/>
-</span>
 </span>
 </li>
 </ul>
@@ -3896,7 +3486,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b52">nbda863559cfa4535984a1c3dd6584cf5b52</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b40">nc63120596ade4058ac76b1cf3f8e1731b40</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -3947,7 +3537,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b54">nbda863559cfa4535984a1c3dd6584cf5b54</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b42">nc63120596ade4058ac76b1cf3f8e1731b42</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -3998,7 +3588,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b56">nbda863559cfa4535984a1c3dd6584cf5b56</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b44">nc63120596ade4058ac76b1cf3f8e1731b44</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4007,43 +3597,6 @@ td {
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </span>
-</span><br/>
-</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="Person'sDeathCause">
-<h3>Person's Death Cause
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#PersonsDeathCause</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-</th>
-<td>
-<span>
-<span>
-<a href="http://purl.org/nemo/gufo#inheresIn">gufo:inheresIn</a>
-<span>
-<span class="cardinality">min</span>
-<span>1</span>
 </span><br/>
 </span>
 </span>
@@ -4085,7 +3638,7 @@ td {
 <li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b59">nbda863559cfa4535984a1c3dd6584cf5b59</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b46">nc63120596ade4058ac76b1cf3f8e1731b46</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4138,6 +3691,53 @@ td {
 </tr>
 </table>
 </div>
+<div class="property entity" id="Problem">
+<h3>Problem
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/health-ri/ontology#Problem</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<ul>
+<li>
+<span>
+<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<a href="http://purl.org/nemo/gufo#Aspect">gufo:Aspect</a>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+</th>
+<td>
+<span>
+<a href="#HealthCondition">Health Condition</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
 <div class="property entity" id="RadiologicalDiagnosis">
 <h3>Radiological Diagnosis
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -4172,12 +3772,6 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#RiskBasedHealthCondition</code>
 </td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>An example is predisposition.</p></td>
 </tr>
 <tr>
 <th>
@@ -4234,71 +3828,13 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b62">nbda863559cfa4535984a1c3dd6584cf5b62</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b52">nc63120596ade4058ac76b1cf3f8e1731b52</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
 </span><br/>
 </span>
 </span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="StructuralHealthCondition">
-<h3>Structural Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#StructuralHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#EstablishedHealthCondition">Established Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="TraumaticHealthCondition">
-<h3>Traumatic Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#TraumaticHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#EstablishedHealthCondition">Established Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#Injury">Injury</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
 </td>
 </tr>
 </table>
@@ -4494,61 +4030,6 @@ td {
 </tr>
 </table>
 </div>
-<div class="property entity" id="DeadPerson">
-<h3>Dead Person
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#DeadPerson</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#Person">Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b70">nbda863559cfa4535984a1c3dd6584cf5b70</a>
-<span>
-<span class="cardinality">exactly</span>
-<span>1</span>
-</span><br/>
-</span>
-</span>
-</li>
-<li>
-<span>
-<span>
-<a href="http://purl.org/nemo/gufo#wasTerminatedIn">gufo:wasTerminatedIn</a>
-<span>
-<span class="cardinality">exactly</span>
-<span>1</span>
-</span><br/>
-</span>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
 <div class="property entity" id="DiagnosingPerson">
 <h3>Diagnosing Person
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -4662,7 +4143,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b76">nbda863559cfa4535984a1c3dd6584cf5b76</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b63">nc63120596ade4058ac76b1cf3f8e1731b63</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -4767,81 +4248,6 @@ td {
 </span>
 </li>
 </ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="Exposure-basedHealthCondition">
-<h3>Exposure-based Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#ExposureBasedHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#ExternallyCausedHealthCondition">Externally-caused Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#NonInjuryHealthCondition">Non-injury Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="FemaleBiologicalPerson">
-<h3>Female Biological Person
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#FemaleBiologicalPerson</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Refers to a person whose sexual dimorphic characteristics align more strongly with those typically classified as female. The classification is based on the predominance of female-typical features in the overall assessment.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#Person">Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
-<span>
-<a href="#BiologicalFather">Biological Father</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
 </td>
 </tr>
 </table>
@@ -4959,47 +4365,6 @@ td {
 </tr>
 </table>
 </div>
-<div class="property entity" id="MaleBiologicalPerson">
-<h3>Male Biological Person
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#MaleBiologicalPerson</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Describes a person whose overall set of sexual dimorphic characteristics aligns more strongly with those typically classified as male. This classification relies on counting or weighting traits that are conventionally considered male-typical.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#Person">Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
-<span>
-<a href="#BiologicalMother">Biological Mother</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
 <div class="property entity" id="NegativeDiagnosisAssessment">
 <h3>Negative Diagnosis Assessment
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -5069,7 +4434,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b89">nbda863559cfa4535984a1c3dd6584cf5b89</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b76">nc63120596ade4058ac76b1cf3f8e1731b76</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -5080,15 +4445,15 @@ td {
 </tr>
 </table>
 </div>
-<div class="property entity" id="NonInjuryHealthCondition">
-<h3>Non-injury Health Condition
+<div class="property entity" id="NonTraumaticHealthCondition">
+<h3>Non-traumatic Health Condition
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </h3>
 <table>
 <tr>
 <th>IRI</th>
 <td>
-<code>https://w3id.org/health-ri/ontology#NonInjuryHealthCondition</code>
+<code>https://w3id.org/health-ri/ontology#NonTraumaticHealthCondition</code>
 </td>
 </tr>
 <tr>
@@ -5096,36 +4461,8 @@ td {
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
-<ul>
-<li>
 <span>
-<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<a href="http://purl.org/nemo/gufo#Aspect">gufo:Aspect</a>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
-</th>
-<td>
-<span>
-<a href="#InherentHealthCondition">Inherent Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a>
+<a href="#HealthCondition">Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -5135,26 +4472,10 @@ td {
 <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
 </th>
 <td>
-<ul>
-<li>
-<span>
-<a href="#PsychologicalHealthCondition">Psychological Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
 <span>
 <a href="#InherentHealthCondition">Inherent Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
-</li>
-</ul>
 </td>
 </tr>
 </table>
@@ -5213,41 +4534,6 @@ td {
 </span>
 </li>
 </ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="PathologicalHealthCondition">
-<h3>Pathological Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#PathologicalHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#HealthCondition">Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
-<span>
-<a href="#Disease">Disease</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
 </td>
 </tr>
 </table>
@@ -5381,12 +4667,12 @@ td {
 <ul>
 <li>
 <span>
-<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
+<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
+<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -5600,6 +4886,48 @@ td {
 </tr>
 </table>
 </div>
+<div class="property entity" id="TraumaticHealthCondition">
+<h3>Traumatic Health Condition
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/health-ri/ontology#TraumaticHealthCondition</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<ul>
+<li>
+<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
+</li>
+<li>
+<span>
+<a href="#HealthCondition">Health Condition</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+</th>
+<td>
+<span>
+<a href="#Injury">Injury</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
 <div class="property entity" id="VisualSexCharacteristic">
 <h3>Visual Sex Characteristic
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -5636,12 +4964,12 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Female-typicalVisualSexCharacteristic">Female-typical Visual Sex Characteristic</a>
+<a href="#IndeterminateVisualSexCharacteristic">Indeterminate Visual Sex Characteristic</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#IndeterminateVisualSexCharacteristic">Indeterminate Visual Sex Characteristic</a>
+<a href="#Female-typicalVisualSexCharacteristic">Female-typical Visual Sex Characteristic</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -5745,62 +5073,6 @@ td {
 </tr>
 </table>
 </div>
-<div class="property entity" id="Child">
-<h3>Child
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#Child</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#LivingPerson">Living Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#isBiologicalFatherOf">is biological father of</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#isBiologicalMotherOf">is biological mother of</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
-<span>
-<a href="#Offspring">Offspring</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
 <div class="property entity" id="ConclusiveDiagnosticAssessment">
 <h3>Conclusive Diagnostic Assessment
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -5862,65 +5134,6 @@ td {
 </tr>
 </table>
 </div>
-<div class="property entity" id="Date">
-<h3>Date
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#Date</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#QualityValue">gufo:QualityValue</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#day">day</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#month">month</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#year_1">year</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
-</th>
-<td>
-<span>
-<a href="#dateOfBirth">date of birth</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
 <div class="property entity" id="DiagnosticRelation">
 <h3>Diagnostic Relation
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -5976,10 +5189,15 @@ td {
 <li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b123">nbda863559cfa4535984a1c3dd6584cf5b123</a>
+<a href="http://purl.org/nemo/gufo#mediates">gufo:mediates</a>
 <span>
-<span class="cardinality">exactly</span>
-<span>1</span>
+<span class="cardinality">some</span>
+<span>
+<span>
+<a href="#DiagnosticMethod">Diagnostic Method</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</span>
 </span><br/>
 </span>
 </span>
@@ -5996,43 +5214,6 @@ td {
 <a href="#ConcludedDiagnosticRelation">Concluded Diagnostic Relation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="InherentHealthCondition">
-<h3>Inherent Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#InherentHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
-</li>
-<li>
-<span>
-<a href="#KnownOriginHealthCondition">Known-Origin Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#NonInjuryHealthCondition">Non-injury Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
 </td>
 </tr>
 </table>
@@ -6065,12 +5246,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#VariantKaryotypicalFemale">Variant Karyotypical Female</a>
+<a href="#RegularKaryotypicalFemale">Regular Karyotypical Female</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#RegularKaryotypicalFemale">Regular Karyotypical Female</a>
+<a href="#VariantKaryotypicalFemale">Variant Karyotypical Female</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -6126,80 +5307,14 @@ td {
 </th>
 <td>
 <span>
-<a href="#VariantKaryotypicalMale">Variant Karyotypical Male</a>
+<a href="#RegularKaryotypicalMale">Regular Karyotypical Male</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
-<span>
-<a href="#RegularKaryotypicalMale">Regular Karyotypical Male</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#RegularKaryotypicalMale">Regular Karyotypical Male</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
 <span>
 <a href="#VariantKaryotypicalMale">Variant Karyotypical Male</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="LivingPerson">
-<h3>Living Person
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#LivingPerson</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#Person">Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
-</th>
-<td>
-<span>
-<a href="#Child">Child</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#Adolescent">Adolescent</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#Adult">Adult</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
 </td>
 </tr>
 <tr>
@@ -6210,165 +5325,14 @@ td {
 <ul>
 <li>
 <span>
-<a href="#Adolescent">Adolescent</a>
+<a href="#RegularKaryotypicalMale">Regular Karyotypical Male</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#Adult">Adult</a>
+<a href="#VariantKaryotypicalMale">Variant Karyotypical Male</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#Child">Child</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="NonStructuralHealthCondition">
-<h3>Non-structural Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#NonStructuralHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#EstablishedHealthCondition">Established Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
-</th>
-<td>
-<span>
-<a href="#PsychologicalHealthCondition">Psychological Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#FunctionalHealthCondition">Functional Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#FunctionalHealthCondition">Functional Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#PsychologicalHealthCondition">Psychological Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="ParentChildRelation">
-<h3>Parent-Child Relation
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#ParentChildRelation</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#Relator">gufo:Relator</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b138">nbda863559cfa4535984a1c3dd6584cf5b138</a>
-<span>
-<span class="cardinality">some</span>
-<span>
-<span>
-<a href="#BiologicalMother">Biological Mother</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</span>
-</span><br/>
-</span>
-</span>
-</li>
-<li>
-<span>
-<span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b140">nbda863559cfa4535984a1c3dd6584cf5b140</a>
-<span>
-<span class="cardinality">some</span>
-<span>
-<span>
-<a href="#BiologicalFather">Biological Father</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</span>
-</span><br/>
-</span>
-</span>
-</li>
-<li>
-<span>
-<span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b142">nbda863559cfa4535984a1c3dd6584cf5b142</a>
-<span>
-<span class="cardinality">exactly</span>
-<span>1</span>
-</span><br/>
-</span>
-</span>
-</li>
-<li>
-<span>
-<span>
-<a href="http://purl.org/nemo/gufo#manifestedIn">gufo:manifestedIn</a>
-<span>
-<span class="cardinality">exactly</span>
-<span>1</span>
-</span><br/>
-</span>
 </span>
 </li>
 </ul>
@@ -6436,79 +5400,6 @@ td {
 <span>
 <a href="#RegularKaryotypicalMale">Regular Karyotypical Male</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="PersonsBirth">
-<h3>Person's Birth
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#PersonsBirth</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#Event">gufo:Event</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#end">end</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#start">start</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b148">nbda863559cfa4535984a1c3dd6584cf5b148</a>
-<span>
-<span class="cardinality">min</span>
-<span>1</span>
-</span><br/>
-</span>
-</span>
-</li>
-<li>
-<span>
-<span>
-<a href="http://purl.org/nemo/gufo#wasCreatedIn">gufo:wasCreatedIn</a>
-<span>
-<span class="cardinality">exactly</span>
-<span>1</span>
-</span><br/>
-</span>
 </span>
 </li>
 </ul>
@@ -6704,11 +5595,6 @@ td {
 </th>
 <td>
 <span>
-<a href="#DiagnosedCellularEntity">Diagnosed Cellular Entity</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
 <a href="#DiagnosedBiologicalPart">Diagnosed Biological Part</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
@@ -6722,6 +5608,11 @@ td {
 <a href="#DiagnosedSpecimen">Diagnosed Specimen</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
+<span class="cardinality">or</span>
+<span>
+<a href="#DiagnosedCellularEntity">Diagnosed Cellular Entity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
 </td>
 </tr>
 <tr>
@@ -6729,11 +5620,9 @@ td {
 <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
 </th>
 <td>
-<ul>
-<li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b151">nbda863559cfa4535984a1c3dd6584cf5b151</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b114">nc63120596ade4058ac76b1cf3f8e1731b114</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -6745,19 +5634,6 @@ td {
 </span><br/>
 </span>
 </span>
-</li>
-<li>
-<span>
-<span>
-<a href="http://purl.org/nemo/gufo#inheresIn">gufo:inheresIn</a>
-<span>
-<span class="cardinality">min</span>
-<span>1</span>
-</span><br/>
-</span>
-</span>
-</li>
-</ul>
 </td>
 </tr>
 <tr>
@@ -6849,7 +5725,7 @@ td {
 <li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b159">nbda863559cfa4535984a1c3dd6584cf5b159</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b121">nc63120596ade4058ac76b1cf3f8e1731b121</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -6865,7 +5741,7 @@ td {
 <li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b161">nbda863559cfa4535984a1c3dd6584cf5b161</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b123">nc63120596ade4058ac76b1cf3f8e1731b123</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -6902,80 +5778,6 @@ td {
 <li>
 <span>
 <a href="#DiagnosingPerson">Diagnosing Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="ExternallyCausedHealthCondition">
-<h3>Externally-caused Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#ExternallyCausedHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
-</li>
-<li>
-<span>
-<a href="#KnownOriginHealthCondition">Known-Origin Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
-</th>
-<td>
-<span>
-<a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#Injury">Injury</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#AcquiredHealthCondition">Acquired Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#Injury">Injury</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -7025,17 +5827,17 @@ td {
 </th>
 <td>
 <span>
-<a href="#Non-binaryGenderIdentity">Non-binary Gender Identity</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
 <a href="#MaleGenderIdentity">Male Gender Identity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#FemaleGenderIdentity">Female Gender Identity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#Non-binaryGenderIdentity">Non-binary Gender Identity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -7085,63 +5887,6 @@ td {
 </tr>
 </table>
 </div>
-<div class="property entity" id="NonTraumaticHealthCondition">
-<h3>Non-traumatic Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#NonTraumaticHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Examples of non-traumatic injuries are, e.g., radiation injury, hypoxic-ischemic brain injury, many iatrogenic injuries.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#EstablishedHealthCondition">Established Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#Disease">Disease</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#CongenitalHealthCondition">Congenital Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#IdiopathicHealthCondition">Idiopathic Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
 <div class="property entity" id="PersonWithAssessedPhenotypicSex">
 <h3>Person with Assessed Phenotypic Sex
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -7176,7 +5921,7 @@ td {
 </th>
 <td>
 <span>
-<a href="#FemalePhenotypicPerson">Female Phenotypic Person</a>
+<a href="#MalePhenotypicPerson">Male Phenotypic Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -7186,7 +5931,7 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#MalePhenotypicPerson">Male Phenotypic Person</a>
+<a href="#FemalePhenotypicPerson">Female Phenotypic Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -7200,7 +5945,7 @@ td {
 <li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b174">nbda863559cfa4535984a1c3dd6584cf5b174</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b133">nc63120596ade4058ac76b1cf3f8e1731b133</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -7216,7 +5961,7 @@ td {
 <li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b176">nbda863559cfa4535984a1c3dd6584cf5b176</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b135">nc63120596ade4058ac76b1cf3f8e1731b135</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -7295,17 +6040,17 @@ td {
 </th>
 <td>
 <span>
+<a href="#KaryotypicalIndeterminatePerson">Karyotypical Indeterminate Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
 <a href="#VariantKaryotypicalFemale">Variant Karyotypical Female</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#VariantKaryotypicalMale">Variant Karyotypical Male</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#KaryotypicalIndeterminatePerson">Karyotypical Indeterminate Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -7381,6 +6126,22 @@ td {
 <span>
 <a href="#Object">Object</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+</th>
+<td>
+<span>
+<span>
+<a href="http://purl.org/nemo/gufo#inheresIn">gufo:inheresIn</a>
+<span>
+<span class="cardinality">min</span>
+<span>1</span>
+</span><br/>
+</span>
 </span>
 </td>
 </tr>
@@ -7619,7 +6380,7 @@ td {
 <td>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b194">nbda863559cfa4535984a1c3dd6584cf5b194</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b154">nc63120596ade4058ac76b1cf3f8e1731b154</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -7649,182 +6410,6 @@ td {
 <li>
 <span>
 <a href="#HealthcareDiagnosis">Healthcare Diagnosis</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="HealthCondition">
-<h3>Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#HealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#Condition">Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#EstablishedHealthCondition">Established Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#Risk-basedHealthCondition">Risk-based Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#Non-PathologicalHealthCondition">Non-Pathological Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#PathologicalHealthCondition">Pathological Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#Non-PathologicalHealthCondition">Non-Pathological Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#Risk-basedHealthCondition">Risk-based Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#PathologicalHealthCondition">Pathological Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#EstablishedHealthCondition">Established Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="KnownOriginHealthCondition">
-<h3>Known-Origin Health Condition
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#KnownOriginHealthCondition</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#EstablishedHealthCondition">Established Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#CongenitalHealthCondition">Congenital Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#AcquiredHealthCondition">Acquired Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#InherentHealthCondition">Inherent Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#ExternallyCausedHealthCondition">Externally-caused Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#AcquiredHealthCondition">Acquired Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#CongenitalHealthCondition">Congenital Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#InherentHealthCondition">Inherent Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#ExternallyCausedHealthCondition">Externally-caused Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -7891,7 +6476,7 @@ td {
 <li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b208">nbda863559cfa4535984a1c3dd6584cf5b208</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b156">nc63120596ade4058ac76b1cf3f8e1731b156</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -7907,7 +6492,7 @@ td {
 <li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b210">nbda863559cfa4535984a1c3dd6584cf5b210</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b158">nc63120596ade4058ac76b1cf3f8e1731b158</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -7981,17 +6566,17 @@ td {
 </th>
 <td>
 <span>
-<a href="#PersonwithNon-binaryAdministrativeGender">Person with Non-binary Administrative Gender</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
 <a href="#PersonwithMaleAdministrativeGender">Person with Male Administrative Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#PersonwithFemaleAdministrativeGender">Person with Female Administrative Gender</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#PersonwithNon-binaryAdministrativeGender">Person with Non-binary Administrative Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -8005,7 +6590,7 @@ td {
 <li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b216">nbda863559cfa4535984a1c3dd6584cf5b216</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b164">nc63120596ade4058ac76b1cf3f8e1731b164</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8021,7 +6606,7 @@ td {
 <li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b218">nbda863559cfa4535984a1c3dd6584cf5b218</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b166">nc63120596ade4058ac76b1cf3f8e1731b166</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8116,22 +6701,22 @@ td {
 </th>
 <td>
 <span>
-<a href="#PersonwithUnassignedLegalGender">Person with Unassigned Legal Gender</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
 <a href="#LegalFemalePerson">Legal Female Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#LegalMalePerson">Legal Male Person</a>
+<a href="#PersonwithUnassignedLegalGender">Person with Unassigned Legal Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#LegalNon-binaryPerson">Legal Non-binary Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#LegalMalePerson">Legal Male Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -8145,7 +6730,7 @@ td {
 <li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b224">nbda863559cfa4535984a1c3dd6584cf5b224</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b172">nc63120596ade4058ac76b1cf3f8e1731b172</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8207,15 +6792,15 @@ td {
 </tr>
 </table>
 </div>
-<div class="property entity" id="EstablishedHealthCondition">
-<h3>Established Health Condition
+<div class="property entity" id="HealthCondition">
+<h3>Health Condition
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </h3>
 <table>
 <tr>
 <th>IRI</th>
 <td>
-<code>https://w3id.org/health-ri/ontology#EstablishedHealthCondition</code>
+<code>https://w3id.org/health-ri/ontology#HealthCondition</code>
 </td>
 </tr>
 <tr>
@@ -8224,7 +6809,7 @@ td {
 </th>
 <td>
 <span>
-<a href="#HealthCondition">Health Condition</a>
+<a href="#Problem">Problem</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -8237,34 +6822,33 @@ td {
 <ul>
 <li>
 <span>
-<a href="#TraumaticHealthCondition">Traumatic Health Condition</a>
+<a href="#InherentHealthCondition">Inherent Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
+<span>
+<a href="#Injury">Injury</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#Risk-basedHealthCondition">Risk-based Health Condition</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
 <span>
 <a href="#NonTraumaticHealthCondition">Non-traumatic Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
-</li>
-<li>
-<span>
-<a href="#StructuralHealthCondition">Structural Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
 <span class="cardinality">or</span>
 <span>
-<a href="#NonStructuralHealthCondition">Non-structural Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#KnownOriginHealthCondition">Known-Origin Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#IdiopathicHealthCondition">Idiopathic Health Condition</a>
+<a href="#TraumaticHealthCondition">Traumatic Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -8279,31 +6863,25 @@ td {
 <ul>
 <li>
 <span>
-<a href="#Disease">Disease</a>
+<a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#IdiopathicHealthCondition">Idiopathic Health Condition</a>
+<a href="#InherentHealthCondition">Inherent Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#StructuralHealthCondition">Structural Health Condition</a>
+<a href="#Injury">Injury</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#TraumaticHealthCondition">Traumatic Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#NonStructuralHealthCondition">Non-structural Health Condition</a>
+<a href="#Risk-basedHealthCondition">Risk-based Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -8315,171 +6893,8 @@ td {
 </li>
 <li>
 <span>
-<a href="#KnownOriginHealthCondition">Known-Origin Health Condition</a>
+<a href="#TraumaticHealthCondition">Traumatic Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="Timestamp">
-<h3>Timestamp
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#Timestamp</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Attributes and constraints:</p>
-<ul>
-<li>year : Integer [1]</li>
-<li>Range: proleptic Gregorian calendar years (negative and positive allowed).</li>
-<li>
-<p>Typical system range: -4712 up to &gt;= 9999.</p>
-</li>
-<li>
-<p>month : Integer [1]</p>
-</li>
-<li>
-<p>Range: 1..12.</p>
-</li>
-<li>
-<p>day : Integer [1]</p>
-</li>
-<li>Range: 1..31, restricted by month and leap year:</li>
-<li>If month = 2 (February): 1..29, with 29 only if leap year.</li>
-<li>If month ? {4, 6, 9, 11}: 1..30.</li>
-<li>
-<p>Otherwise: 1..31.</p>
-</li>
-<li>
-<p>hour : Integer [1]</p>
-</li>
-<li>
-<p>Range: 0..23.</p>
-</li>
-<li>
-<p>minute : Integer [1]</p>
-</li>
-<li>
-<p>Range: 0..59.</p>
-</li>
-<li>
-<p>second : Integer [1]</p>
-</li>
-<li>Range: 0..59.</li>
-<li>
-<p>Value 60 allowed only to represent a leap second.</p>
-</li>
-<li>
-<p>subSecond : Decimal [0..1]</p>
-</li>
-<li>Optional.</li>
-<li>Range: &gt;= 0.0 and &lt; 1.0.</li>
-<li>
-<p>Precision: 1 to 9 decimal digits (milliseconds to nanoseconds).</p>
-</li>
-<li>
-<p>timeZone : String [1]</p>
-</li>
-<li>Must be either:</li>
-<li>"Z" (UTC), or</li>
-<li>�hh:mm with:</li>
-<li>hh ? 00..14</li>
-<li>mm ? 00..59</li>
-<li>Examples: "Z", "+02:00", "-05:30".</li>
-</ul></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#QualityValue">gufo:QualityValue</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#day_1">day</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#hour">hour</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#minute">minute</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#month_1">month</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#second">second</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#subsecond">subsecond</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#timezone">timezone</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#year">year</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
-</th>
-<td>
-<ul>
-<li>
-<span>
-<a href="#end">end</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#start">start</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
 </ul>
@@ -8517,7 +6932,7 @@ td {
 <ul>
 <li>
 <span>
-<a href="#LaboratoryDiagnosis">Laboratory Diagnosis</a>
+<a href="#AdministrativeCodingDiagnosis">Administrative Coding Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -8527,12 +6942,12 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#EpidemiologicalDiagnosis">Epidemiological Diagnosis</a>
+<a href="#LaboratoryDiagnosis">Laboratory Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#AdministrativeCodingDiagnosis">Administrative Coding Diagnosis</a>
+<a href="#EpidemiologicalDiagnosis">Epidemiological Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -8543,21 +6958,16 @@ td {
 </li>
 <li>
 <span>
-<a href="#HumanHealthcareDiagnosis">Human Healthcare Diagnosis</a>
+<a href="#VeterinaryDiagnosis">Veterinary Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#VeterinaryDiagnosis">Veterinary Diagnosis</a>
+<a href="#HumanHealthcareDiagnosis">Human Healthcare Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
-<span>
-<a href="#Care-orientedDiagnosis">Care-oriented Diagnosis</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
 <span>
 <a href="#ResearchDiagnosis">Research Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -8565,6 +6975,11 @@ td {
 <span class="cardinality">or</span>
 <span>
 <a href="#SurveillanceDiagnosis">Surveillance Diagnosis</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#Care-orientedDiagnosis">Care-oriented Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -8706,28 +7121,17 @@ td {
 </li>
 <li>
 <span>
-<a href="#DeadPerson">Dead Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#LivingPerson">Living Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#IndeterminateBiologicalPerson">Indeterminate Biological Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
 <a href="#MaleBiologicalPerson">Male Biological Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#FemaleBiologicalPerson">Female Biological Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#IndeterminateBiologicalPerson">Indeterminate Biological Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -8758,17 +7162,6 @@ td {
 </tr>
 <tr>
 <th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
-</th>
-<td>
-<span>
-<a href="#dateOfBirth">date of birth</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
 <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
 </th>
 <td>
@@ -8787,7 +7180,7 @@ td {
 <li>
 <span>
 <span>
-<a href="nbda863559cfa4535984a1c3dd6584cf5b255">nbda863559cfa4535984a1c3dd6584cf5b255</a>
+<a href="nc63120596ade4058ac76b1cf3f8e1731b202">nc63120596ade4058ac76b1cf3f8e1731b202</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8823,6 +7216,12 @@ td {
 </li>
 <li>
 <span>
+<a href="#FemaleBiologicalPerson">Female Biological Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
 <a href="#HealthcareProfessional">Healthcare Professional</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
@@ -8835,7 +7234,7 @@ td {
 </li>
 <li>
 <span>
-<a href="#Offspring">Offspring</a>
+<a href="#MaleBiologicalPerson">Male Biological Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -8847,25 +7246,7 @@ td {
 </li>
 <li>
 <span>
-<a href="#DeadPerson">Dead Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
 <a href="#DiagnosingPerson">Diagnosing Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#FemaleBiologicalPerson">Female Biological Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#MaleBiologicalPerson">Male Biological Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -8878,12 +7259,6 @@ td {
 <li>
 <span>
 <a href="#KaryotypicalMale">Karyotypical Male</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#LivingPerson">Living Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -8924,651 +7299,6 @@ td {
 </span>
 </li>
 </ul>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="section" id="objectproperties">
-<h2>Object Properties</h2>
-<div class="property entity" id="dateOfBirth">
-<h3>date of birth
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#dateOfBirth</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasReifiedQualityValue">gufo:hasReifiedQualityValue</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Person">Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<span>
-<a href="#Date">Date</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="end">
-<h3>end
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#end</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasReifiedQualityValue">gufo:hasReifiedQualityValue</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#PersonsBirth">Person's Birth</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<span>
-<a href="#Timestamp">Timestamp</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="isBiologicalFatherOf">
-<h3>is biological father of
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#isBiologicalFatherOf</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#BiologicalFather">Biological Father</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<span>
-<a href="#Child">Child</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="isBiologicalMotherOf">
-<h3>is biological mother of
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#isBiologicalMotherOf</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#BiologicalMother">Biological Mother</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<span>
-<a href="#Child">Child</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="start">
-<h3>start
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#start</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasReifiedQualityValue">gufo:hasReifiedQualityValue</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#PersonsBirth">Person's Birth</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<span>
-<a href="#Timestamp">Timestamp</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="section" id="datatypeproperties">
-<h2>Datatype Properties</h2>
-<div class="property entity" id="day">
-<h3>day
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#day</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasValueComponent">gufo:hasValueComponent</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Date">Date</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="day_1">
-<h3>day
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#day_1</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasValueComponent">gufo:hasValueComponent</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Timestamp">Timestamp</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="hour">
-<h3>hour
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#hour</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasValueComponent">gufo:hasValueComponent</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Timestamp">Timestamp</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="minute">
-<h3>minute
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#minute</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasValueComponent">gufo:hasValueComponent</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Timestamp">Timestamp</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="month">
-<h3>month
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#month</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasValueComponent">gufo:hasValueComponent</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Date">Date</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="month_1">
-<h3>month
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#month_1</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasValueComponent">gufo:hasValueComponent</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Timestamp">Timestamp</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="second">
-<h3>second
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#second</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasValueComponent">gufo:hasValueComponent</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Timestamp">Timestamp</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="subsecond">
-<h3>subsecond
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#subsecond</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasValueComponent">gufo:hasValueComponent</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Timestamp">Timestamp</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="timezone">
-<h3>timezone
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#timezone</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasValueComponent">gufo:hasValueComponent</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Timestamp">Timestamp</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="year">
-<h3>year
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#year</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasValueComponent">gufo:hasValueComponent</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Timestamp">Timestamp</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="year_1">
-<h3>year
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/health-ri/ontology#year_1</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-</th>
-<td>
-<a href="http://purl.org/nemo/gufo#hasValueComponent">gufo:hasValueComponent</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Date">Date</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/2001/XMLSchema#int">xsd:int</a>
 </td>
 </tr>
 </table>
@@ -9617,10 +7347,6 @@ td {
 <dd>
 <code>http://purl.org/vocab/vann/</code>
 </dd>
-<dt id="xsd">xsd</dt>
-<dd>
-<code>http://www.w3.org/2001/XMLSchema#</code>
-</dd>
 </dl>
 </div>
 <div id="legend">
@@ -9631,18 +7357,6 @@ td {
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </td>
 <td>Classes</td>
-</tr>
-<tr>
-<td>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</td>
-<td>Object Properties</td>
-</tr>
-<tr>
-<td>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</td>
-<td>Datatype Properties</td>
 </tr>
 </table>
 </div>
@@ -9673,8 +7387,6 @@ td {
 <a href="#classes">Classes</a>
 </h4>
 <ul class="second"><li>
-<a href="#AcquiredHealthCondition">Acquired Health Condition</a>
-</li><li>
 <a href="#AdministrativeCodingDiagnosis">Administrative Coding Diagnosis</a>
 </li><li>
 <a href="#AdministrativeGender">Administrative Gender</a>
@@ -9682,10 +7394,6 @@ td {
 <a href="#AdministrativeGenderRecognition">Administrative Gender Recognition</a>
 </li><li>
 <a href="#AdministrativeGenderRecognizer">Administrative Gender Recognizer</a>
-</li><li>
-<a href="#Adolescent">Adolescent</a>
-</li><li>
-<a href="#Adult">Adult</a>
 </li><li>
 <a href="#Agent">Agent</a>
 </li><li>
@@ -9705,10 +7413,6 @@ td {
 </li><li>
 <a href="#Belief">Belief</a>
 </li><li>
-<a href="#BiologicalFather">Biological Father</a>
-</li><li>
-<a href="#BiologicalMother">Biological Mother</a>
-</li><li>
 <a href="#BirthNotification">Birth Notification</a>
 </li><li>
 <a href="#Birth-relatedLegislationRule">Birth-related Legislation Rule</a>
@@ -9719,8 +7423,6 @@ td {
 </li><li>
 <a href="#CellularEntityDiagnosis">Cellular Entity Diagnosis</a>
 </li><li>
-<a href="#Child">Child</a>
-</li><li>
 <a href="#Chromosome">Chromosome</a>
 </li><li>
 <a href="#ClinicalDiagnosis">Clinical Diagnosis</a>
@@ -9729,17 +7431,7 @@ td {
 </li><li>
 <a href="#ConclusiveDiagnosticAssessment">Conclusive Diagnostic Assessment</a>
 </li><li>
-<a href="#Condition">Condition</a>
-</li><li>
-<a href="#ConditionIndicator">Condition Indicator</a>
-</li><li>
-<a href="#CongenitalHealthCondition">Congenital Health Condition</a>
-</li><li>
-<a href="#Date">Date</a>
-</li><li>
 <a href="#DeadCellularEntity">Dead Cellular Entity</a>
-</li><li>
-<a href="#DeadPerson">Dead Person</a>
 </li><li>
 <a href="#DiagnosedBiologicalPart">Diagnosed Biological Part</a>
 </li><li>
@@ -9773,21 +7465,15 @@ td {
 </li><li>
 <a href="#DiploidCell">Diploid Cell</a>
 </li><li>
-<a href="#Disease">Disease</a>
-</li><li>
 <a href="#Document">Document</a>
 </li><li>
 <a href="#Endurant">Endurant</a>
 </li><li>
 <a href="#EpidemiologicalDiagnosis">Epidemiological Diagnosis</a>
 </li><li>
-<a href="#EstablishedHealthCondition">Established Health Condition</a>
-</li><li>
 <a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a>
 </li><li>
 <a href="#ExternalDiagnosis">External Diagnosis</a>
-</li><li>
-<a href="#ExternallyCausedHealthCondition">Externally-caused Health Condition</a>
 </li><li>
 <a href="#FemaleAdministrativeGender">Female Administrative Gender</a>
 </li><li>
@@ -9800,8 +7486,6 @@ td {
 <a href="#Female-typicalDimorphicCharacteristic">Female-typical Dimorphic Characteristic</a>
 </li><li>
 <a href="#Female-typicalVisualSexCharacteristic">Female-typical Visual Sex Characteristic</a>
-</li><li>
-<a href="#FunctionalHealthCondition">Functional Health Condition</a>
 </li><li>
 <a href="#Gamete">Gamete</a>
 </li><li>
@@ -9825,8 +7509,6 @@ td {
 </li><li>
 <a href="#HumanHealthcareDiagnosis">Human Healthcare Diagnosis</a>
 </li><li>
-<a href="#IdiopathicHealthCondition">Idiopathic Health Condition</a>
-</li><li>
 <a href="#InconclusiveDiagnosticAssessment">Inconclusive Diagnostic Assessment</a>
 </li><li>
 <a href="#IndeterminateBiologicalPerson">Indeterminate Biological Person</a>
@@ -9847,8 +7529,6 @@ td {
 </li><li>
 <a href="#KaryotypicalSex">Karyotypical Sex</a>
 </li><li>
-<a href="#KnownOriginHealthCondition">Known-Origin Health Condition</a>
-</li><li>
 <a href="#LaboratoryDiagnosis">Laboratory Diagnosis</a>
 </li><li>
 <a href="#LaypersonDiagnosingAgent">Layperson Diagnosing Agent</a>
@@ -9866,8 +7546,6 @@ td {
 <a href="#LegalNon-binaryPerson">Legal Non-binary Person</a>
 </li><li>
 <a href="#LivingCellularEntity">Living Cellular Entity</a>
-</li><li>
-<a href="#LivingPerson">Living Person</a>
 </li><li>
 <a href="#MaleAdministrativeGender">Male Administrative Gender</a>
 </li><li>
@@ -9891,27 +7569,15 @@ td {
 </li><li>
 <a href="#Non-HumanAnimal">Non-Human Animal</a>
 </li><li>
-<a href="#NonInjuryHealthCondition">Non-injury Health Condition</a>
-</li><li>
-<a href="#Non-PathologicalHealthCondition">Non-Pathological Health Condition</a>
-</li><li>
 <a href="#Non-self-awarePerson">Non-self-aware Person</a>
-</li><li>
-<a href="#NonStructuralHealthCondition">Non-structural Health Condition</a>
 </li><li>
 <a href="#NonTraumaticHealthCondition">Non-traumatic Health Condition</a>
 </li><li>
 <a href="#Object">Object</a>
 </li><li>
-<a href="#Offspring">Offspring</a>
-</li><li>
 <a href="#Organization">Organization</a>
 </li><li>
-<a href="#ParentChildRelation">Parent-Child Relation</a>
-</li><li>
 <a href="#Particular">Particular</a>
-</li><li>
-<a href="#PathologicalHealthCondition">Pathological Health Condition</a>
 </li><li>
 <a href="#Person">Person</a>
 </li><li>
@@ -9943,12 +7609,6 @@ td {
 </li><li>
 <a href="#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a>
 </li><li>
-<a href="#PersonsBirth">Person's Birth</a>
-</li><li>
-<a href="#Person'sDeath">Person's Death</a>
-</li><li>
-<a href="#Person'sDeathCause">Person's Death Cause</a>
-</li><li>
 <a href="#PhenotypicSex">Phenotypic Sex</a>
 </li><li>
 <a href="#PhenotypicSexAssessment">Phenotypic Sex Assessment</a>
@@ -9959,9 +7619,11 @@ td {
 </li><li>
 <a href="#PostmortemDiagnosis">Postmortem Diagnosis</a>
 </li><li>
-<a href="#ProfessionalDiagnosingAgent">Professional Diagnosing Agent</a>
+<a href="#Problem">Problem</a>
 </li><li>
-<a href="#PsychologicalHealthCondition">Psychological Health Condition</a>
+<a href="#ProblemIndicator">Problem Indicator</a>
+</li><li>
+<a href="#ProfessionalDiagnosingAgent">Professional Diagnosing Agent</a>
 </li><li>
 <a href="#RadiologicalDiagnosis">Radiological Diagnosis</a>
 </li><li>
@@ -9987,13 +7649,9 @@ td {
 </li><li>
 <a href="#SexualDimorphicCharacteristic">Sexual Dimorphic Characteristic</a>
 </li><li>
-<a href="#StructuralHealthCondition">Structural Health Condition</a>
-</li><li>
 <a href="#Substantial">Substantial</a>
 </li><li>
 <a href="#SurveillanceDiagnosis">Surveillance Diagnosis</a>
-</li><li>
-<a href="#Timestamp">Timestamp</a>
 </li><li>
 <a href="#TraumaticHealthCondition">Traumatic Health Condition</a>
 </li><li>
@@ -10005,68 +7663,6 @@ td {
 </li><li>
 <a href="#VisualSexCharacteristic">Visual Sex Characteristic</a>
 </li></ul>
-</li>
-<li>
-<h4>
-<a href="#objectproperties">Object Properties</a>
-</h4>
-<ul class="second">
-<li>
-<a href="#dateOfBirth">date of birth</a>
-</li>
-<li>
-<a href="#end">end</a>
-</li>
-<li>
-<a href="#isBiologicalFatherOf">is biological father of</a>
-</li>
-<li>
-<a href="#isBiologicalMotherOf">is biological mother of</a>
-</li>
-<li>
-<a href="#start">start</a>
-</li>
-</ul>
-</li>
-<li>
-<h4>
-<a href="#datatypeproperties">Datatype Properties</a>
-</h4>
-<ul class="second">
-<li>
-<a href="#day">day</a>
-</li>
-<li>
-<a href="#day_1">day</a>
-</li>
-<li>
-<a href="#hour">hour</a>
-</li>
-<li>
-<a href="#minute">minute</a>
-</li>
-<li>
-<a href="#month">month</a>
-</li>
-<li>
-<a href="#month_1">month</a>
-</li>
-<li>
-<a href="#second">second</a>
-</li>
-<li>
-<a href="#subsecond">subsecond</a>
-</li>
-<li>
-<a href="#timezone">timezone</a>
-</li>
-<li>
-<a href="#year">year</a>
-</li>
-<li>
-<a href="#year_1">year</a>
-</li>
-</ul>
 </li>
 <li>
 <h4>
@@ -10102,9 +7698,6 @@ td {
 </li>
 <li>
 <a href="#vann">vann</a>
-</li>
-<li>
-<a href="#xsd">xsd</a>
 </li>
 </ul>
 </li>
