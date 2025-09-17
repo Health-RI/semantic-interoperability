@@ -4,7 +4,7 @@ set answer=
 cls
 echo Running script...
 pushd "%~dp0"
-python clean_unwanted_files.py
+python clean-unwanted-files.py
 popd
 
 echo.
