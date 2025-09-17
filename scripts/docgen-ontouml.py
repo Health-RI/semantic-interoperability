@@ -327,32 +327,33 @@ def main():
     latest_md_path = latest_docs_dir / "documentation.md"
     output_path_main = Path("docs/ontology/documentation.md")  # keep this path
 
-    # --- Early exit gate: if this version is already documented, skip generation ---
+    # --- Early exit gate: if this version is already documented, skip regeneration but always sync copies ---
     if versioned_md_path.exists():
         # Ensure parents exist (defensive)
         output_path_main.parent.mkdir(parents=True, exist_ok=True)
         latest_md_path.parent.mkdir(parents=True, exist_ok=True)
 
-        # Repair "latest" copy if missing (uses ../images + percent-encoding)
-        if not latest_md_path.exists():
-            data = load_json(latest_json)
-            markdown_latest = generate_markdown(
-                data,
-                version_str,
-                images_folder,
-                image_path_prefix="../images",
-                encode_image_path=True,
-            )
-            latest_md_path.write_text(markdown_latest, encoding="utf-8")
-            logging.info(f"Repaired missing latest doc: {latest_md_path}")
+        # 1) Always sync docs copy from canonical versioned file
+        versioned_text = versioned_md_path.read_text(encoding="utf-8")
+        output_path_main.write_text(versioned_text, encoding="utf-8")
+        logging.info(f"Synced docs copy from versioned: {output_path_main}")
 
-        # NEW: Repair docs copy if missing (exact content from versioned markdown)
-        if not output_path_main.exists():
-            output_path_main.write_text(versioned_md_path.read_text(encoding="utf-8"), encoding="utf-8")
-            logging.info(f"Repaired missing docs doc: {output_path_main}")
+        # 2) Always refresh latest copy (needs ../images + encoding)
+        data = load_json(latest_json)
+        markdown_latest = generate_markdown(
+            data,
+            version_str,
+            images_folder,
+            image_path_prefix="../images",
+            encode_image_path=True,
+        )
+        latest_md_path.write_text(markdown_latest, encoding="utf-8")
+        logging.info(f"Refreshed latest documentation at: {latest_md_path}")
 
-        logging.info(f"Documentation for v{version_str} already exists ({versioned_md_path}). Skipping generation.")
+        logging.info(f"Documentation for v{version_str} already exists ({versioned_md_path}). Skipped regeneration; synced docs/latest.")
         return
+
+
 
     # ------------------------------------------------------------------------------
 
