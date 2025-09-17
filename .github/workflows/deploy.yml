@@ -122,6 +122,8 @@ jobs:
             vocabulary/latest/**
             mappings/**
             docs/ontology/assets/health-ri-mappings.tsv
+            docs/ontology/specification-ontology.html
+            docs/method/specification-vocabulary.html
           retention-days: 7
 
   deploy:
@@ -165,6 +167,8 @@ jobs:
           git add vocabulary/versioned/** vocabulary/latest/** || true
           git add mappings/** || true
           git add docs/ontology/assets/health-ri-mappings.tsv || true
+          git add docs/ontology/specification-ontology.html || true
+          git add docs/method/specification-vocabulary.html || true
           git diff --cached --quiet || git commit -m "docs: update generated documentation and specifications"
           git push origin main
 
