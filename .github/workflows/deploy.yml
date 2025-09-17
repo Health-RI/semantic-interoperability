@@ -53,6 +53,12 @@ jobs:
           mkdir -p docs/ontology
           cp ontologies/changelog-ontology.md docs/ontology/changelog-ontology.md
 
+      # --- ensure no stale PyLODE HTML remains ---
+      - name: Remove stale PyLODE HTML (forces clean sync)
+        run: |
+          rm -f docs/ontology/specification-ontology.html
+          rm -f docs/method/specification-vocabulary.html
+
       # --- Refresh images in docs from latest ontology assets ---
       - name: Replace ontology images in docs with latest
         run: |

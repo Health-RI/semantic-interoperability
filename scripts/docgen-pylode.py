@@ -173,18 +173,12 @@ def main():
 
         # --- Early-exit gate for ontology spec ---
         if versioned_output.exists():
-            # Repair "latest" copy if missing
-            if not latest_output.exists():
-                shutil.copyfile(versioned_output, latest_output)
-                logging.info(f"Repaired missing latest ontology spec: {latest_output}")
-            # Repair "docs" copy if missing (site build convenience)
-            if not output_file.exists():
-                shutil.copyfile(versioned_output, output_file)
-                logging.info(f"Repaired missing docs ontology spec: {output_file}")
-
+            # Always sync "latest" and "docs" from the canonical versioned file
+            shutil.copyfile(versioned_output, latest_output)
+            shutil.copyfile(versioned_output, output_file)
             logging.info(
                 f"Ontology specification for v{version_str} already exists "
-                f"({versioned_output}). Skipping generation."
+                f"({versioned_output}). Skipped regeneration; synced latest/docs."
             )
         else:
             # Run PyLODE only when the versioned file does not exist
@@ -229,18 +223,12 @@ def main():
 
         # --- Early-exit gate for vocabulary spec ---
         if vocab_versioned_output.exists():
-            # Repair "latest" copy if missing
-            if not vocab_latest_output.exists():
-                shutil.copyfile(vocab_versioned_output, vocab_latest_output)
-                logging.info(f"Repaired missing latest vocabulary spec: {vocab_latest_output}")
-            # Repair "docs" copy if missing
-            if not vocab_output_file.exists():
-                shutil.copyfile(vocab_versioned_output, vocab_output_file)
-                logging.info(f"Repaired missing docs vocabulary spec: {vocab_output_file}")
-
+            # Always sync "latest" and "docs" from the canonical versioned file
+            shutil.copyfile(vocab_versioned_output, vocab_latest_output)
+            shutil.copyfile(vocab_versioned_output, vocab_output_file)
             logging.info(
                 f"Vocabulary specification for v{vocab_version_str} already exists "
-                f"({vocab_versioned_output}). Skipping generation."
+                f"({vocab_versioned_output}). Skipped regeneration; synced latest/docs."
             )
         else:
             logging.info(f"Generating vocabulary specification from: {vocab_ttl}")
