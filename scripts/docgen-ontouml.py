@@ -302,7 +302,7 @@ def main():
     os.chdir(Path(__file__).parent.parent.resolve())
 
     # Define paths
-    images_folder = Path("docs/ontology/assets/images")
+    images_folder = Path("ontologies/latest/images")
     images_folder.mkdir(parents=True, exist_ok=True)
 
     ontologies_dir = Path("ontologies/versioned")
@@ -333,13 +333,20 @@ def main():
         output_path_main.parent.mkdir(parents=True, exist_ok=True)
         latest_md_path.parent.mkdir(parents=True, exist_ok=True)
 
-        # 1) Always sync docs copy from canonical versioned file
-        versioned_text = versioned_md_path.read_text(encoding="utf-8")
-        output_path_main.write_text(versioned_text, encoding="utf-8")
-        logging.info(f"Synced docs copy from versioned: {output_path_main}")
-
-        # 2) Always refresh latest copy (needs ../images + encoding)
+        # Rebuild docs copy with new image prefix (../../ontologies/latest/images)
         data = load_json(latest_json)
+
+        markdown_main = generate_markdown(
+            data,
+            version_str,
+            images_folder,
+            image_path_prefix="../../ontologies/latest/images",
+            encode_image_path=True,
+        )
+        output_path_main.write_text(markdown_main, encoding="utf-8")
+        logging.info(f"Rebuilt docs copy with unified image path: {output_path_main}")
+
+        # Rebuild latest copy (../images)
         markdown_latest = generate_markdown(
             data,
             version_str,
@@ -360,16 +367,27 @@ def main():
     # Only load & generate if we actually need to write new docs
     data = load_json(latest_json)
 
-    # 1. Main Markdown output (original path)
-    markdown_main = generate_markdown(data, version_str, images_folder)
+    # 1. Main Markdown output (docs/ontology/documentation.md)
+    markdown_main = generate_markdown(
+        data,
+        version_str,
+        images_folder,
+        image_path_prefix="../../ontologies/latest/images",
+        encode_image_path=True,
+    )
     output_path_main.write_text(markdown_main, encoding="utf-8")
-    logging.info(f"Main documentation written to: {output_path_main}")
 
-    # 2. Versioned Markdown copy
-    versioned_md_path.write_text(markdown_main, encoding="utf-8")
-    logging.info(f"Versioned documentation written to: {versioned_md_path}")
+    # 2. Versioned Markdown copy (ontologies/versioned/documentations/...)
+    markdown_versioned = generate_markdown(
+        data,
+        version_str,
+        images_folder,
+        image_path_prefix="../../latest/images",
+        encode_image_path=True,
+    )
+    versioned_md_path.write_text(markdown_versioned, encoding="utf-8")
 
-    # 3. Latest Markdown copy with "../images" paths
+    # 3. Latest Markdown copy (ontologies/latest/documentations/documentation.md)
     markdown_latest = generate_markdown(
         data,
         version_str,
@@ -378,7 +396,6 @@ def main():
         encode_image_path=True,
     )
     latest_md_path.write_text(markdown_latest, encoding="utf-8")
-    logging.info(f"Latest documentation written to: {latest_md_path}")
 
 
 if __name__ == "__main__":
