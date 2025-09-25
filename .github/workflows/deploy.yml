@@ -60,12 +60,6 @@ jobs:
           rm -f docs/method/specification-vocabulary.html
           rm -f docs/ontology/documentation.md
 
-      # --- Refresh images in docs from latest ontology assets ---
-      - name: Replace ontology images in docs with latest
-        run: |
-          rm -rf docs/ontology/assets/images/*
-          cp -r ontologies/latest/images/* docs/ontology/assets/images/
-
       # --- Generate OntoUML documentation (custom script) ---
       - name: Generate OntoUML documentation
         run: python scripts/docgen-ontouml.py

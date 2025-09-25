@@ -357,6 +357,17 @@ def main():
         latest_md_path.write_text(markdown_latest, encoding="utf-8")
         logging.info(f"Refreshed latest documentation at: {latest_md_path}")
 
+        # Rebuild versioned copy (../../latest/images) so archives also use unified paths
+        markdown_versioned = generate_markdown(
+            data,
+            version_str,
+            images_folder,
+            image_path_prefix="../../latest/images",
+            encode_image_path=True,
+        )
+        versioned_md_path.write_text(markdown_versioned, encoding="utf-8")
+        logging.info(f"Rebuilt versioned documentation with unified image path: {versioned_md_path}")
+
         logging.info(
             f"Documentation for v{version_str} already exists ({versioned_md_path}). Skipped regeneration; synced docs/latest."
         )
