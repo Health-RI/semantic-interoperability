@@ -271,3 +271,110 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Adjusted internal identifiers (`id` fields) to maintain serialization consistency after the additions and removals.
 - Updated generalization structures to align with the refined health condition taxonomy.
+
+## [0.11.0] - 2025-09-11
+
+### Added
+
+- Ontology metadata for release `0.11.0`:
+  - `owl:versionIRI`, `owl:versionInfo`, and `dcterms:modified`.
+  - `dcterms:conformsTo` links to `v0.11.0/json` and `v0.11.0/vpp`.
+- Prefix for gUFO: `ns1: <http://purl.org/nemo/gufo#>`.
+- Time and date value model:
+  - Classes: `Timestamp`, `Date`.
+  - Datatype properties on `Timestamp`: `year`, `month_1`, `day_1`, `hour`, `minute`, `second`, `subsecond`, `timezone`.
+  - Datatype properties on `Date`: `year_1`, `month`, `day`.
+- Birth / death / kinship model:
+  - Classes and roles: `PersonsBirth`, `PersonsDeath`, `PersonsDeathCause`, `PersonsDeathCauseType`, `ParentChildRelation`, `Offspring`, `BiologicalFather`, `BiologicalMother`, `DeadPerson`, `LivingPerson`, `Child`, `Adolescent`, `Adult`.
+  - Object properties: `start`, `end`, `dateOfBirth`, `isBiologicalFatherOf`, `isBiologicalMotherOf`.
+  - Qualified cardinality restrictions connecting persons, roles, relators, and events (e.g., `wasCreatedIn`, `wasTerminatedIn`, `mediates`, `manifestedIn`).
+- New/explicit `owl:equivalentClass` unions for:
+  - `Person`, `LivingPerson`, `AdministrativeGender`, `HealthcareDiagnosis`, `HumanCell`,
+    `CellularEntity`, `CellularEntityDiagnosis`, `DiagnosedEntity`, `DiagnosingAgent`,
+    `ExternallyCausedHealthCondition`, `NonInjuryHealthCondition`, `NonStructuralHealthCondition`,
+    `PersonWithAssessedPhenotypicSex`, `PersonWithRecognizedAdministrativeGender`,
+    `PersonWithRecognizedLegalGender`, `PersonWithRegularSexChromosome`, `PersonWithVariantSexChromosome`,
+    `SexualDimorphicCharacteristic`, `VisualSexCharacteristic`, `Substantial`, `Animal`.
+- Additional `owl:AllDisjointClasses` axioms aligning with the above unions.
+
+### Changed
+
+- Diagnostic modeling refactor (gUFO-aligned):
+  - `DiagnosticMethod` reclassified from `gufo:Category`/`gufo:FunctionalComplex` to `ns1:Kind` and `ns1:ExtrinsicMode`, with a qualified restriction to `DiagnosticRelation` via `ns1:inheresIn`.
+  - `DiagnosticRelation` now uses the inverse qualified restriction of `ns1:inheresIn` (replacing earlier `gufo:mediates` pattern).
+- Normalized ordering of several `owl:unionOf` and `owl:AllDisjointClasses` lists for consistency (no semantic change intended).
+
+### Removed
+
+- Previous `DiagnosticMethod` axioms based on `gufo:Category`, `gufo:FunctionalComplex`, and `gufo:mediates`.
+- Prior `DiagnosticRelation` restriction using `gufo:mediates`.
+
+## [0.11.3] - 2025-09-25
+
+### Added
+
+- Ontology metadata for release `0.11.3`:
+  - `owl:versionIRI`, `owl:versionInfo`, `dcterms:modified`, and `dcterms:conformsTo` links to `v0.11.3/json` and `v0.11.3/vpp`.
+- Administrative/Legal gender recognition model:
+  - `AdministrativeGenderRecognizingOrganization` (role) with mediation to `AdministrativeGenderRecognition`.
+  - `LegalGenderRecognizer` aligned as a subclass of `AdministrativeGenderRecognizingOrganization`.
+  - `LegalGenderRecognitionDocument` (role mixin) mediating `LegalGenderRecognition` and specializing `AdministrativeGenderRecognitionDocument`.
+  - New object properties: `createsOnBehalfOf` (agent → recognizing organization) and `parentOf` (person → person).
+- Agent/document taxonomy:
+  - `IndividualAgent` (category) introduced; `ArtificialAgent` and `Person` now refine under it.
+  - `Document` now equivalent to `DigitalDocument ⊔ PhysicalDocument`; both classes added with Functional Complex grounding and updated comment.
+- New/explicit `owl:equivalentClass` unions or partitions for:
+  - `Allosome` (`AllosomeX ⊔ AllosomeY`), `DiagnosedEntity`, `DiagnosingAgent`,
+    `DiagnosticAssessmentOutcome`, `HealthCondition`, `HealthcareDiagnosis` (three orthogonal partitions),
+    `KnownOriginHealthCondition` (`Inherent ⊔ ExternallyCaused`),
+    `PersonWithAssessedPhenotypicSex`, `PersonWithAssignedSexAtBirth`,
+    `PersonWithRecognizedAdministrativeGender`, `PersonWithRecognizedLegalGender`,
+    `Substantial`, `LivingPerson` (awareness and life-phase partitions), and `Person` (karyotype, sex-chromosome, life/death, and legal-gender facets).
+- Additional `owl:AllDisjointClasses` axioms consistent with the above unions.
+
+### Changed
+
+- Broadened ranges:
+  - `isBiologicalFatherOf` and `isBiologicalMotherOf` now range over `Person` (previously `Child`).
+- Property alignment:
+  - `legalGenderRecognitionMediatesLegalGenderRecognizer ⊑ recognizedBy` and
+    `legalGenderRecognitionMediatesPersonWithRecognizedLegalGender ⊑ recognizes`
+    (replacing prior subproperties under administrative-gender mediation).
+- Person/agent hierarchy:
+  - `Person` is now a subclass of `IndividualAgent`; `ArtificialAgent` refactored under `IndividualAgent` (instead of directly under Functional Complex).
+  - `SelfAwarePerson` and `NonSelfAwarePerson` now specialize `LivingPerson` (previously under `Person`).
+- Health condition partitions:
+  - `EstablishedHealthCondition` explicitly partitioned by `Structural ⊔ NonStructural` and by `Traumatic ⊔ NonTraumatic` (clarified, preserving intent).
+- Textual refinements:
+  - Shortened/clarified `rdfs:comment` for `AdministrativeGender`.
+- Consistency edits:
+  - Normalized ordering of several `owl:unionOf` and `owl:AllDisjointClasses` lists (no semantic change intended).
+
+### Removed
+
+- `AdministrativeGenderRecognizer` (role) and related mediation restriction on `AdministrativeGenderRecognition` (superseded by recognizing organization pattern).
+- `GenderRecognitionDocument` (kind) and its mediation restriction (replaced by `LegalGenderRecognitionDocument` role-mixin approach).
+- Assertion `ArtificialAgent ⊑ gufo:FunctionalComplex` (replaced by alignment under `IndividualAgent`).
+
+## [0.11.5] - 2025-10-15
+
+### Added
+
+- Ontology metadata for release `0.11.5`:
+  - `owl:versionIRI`, `owl:versionInfo`, `dcterms:modified`, and `dcterms:conformsTo` links to `v0.11.5/json` and `v0.11.5/vpp`.
+- Diagnostic belief & assessment layer:
+  - `Belief`, `DiagnosisSuspicion`, `DiagnosticAssessmentOutcome` (partition including `NoDiagnosisOutcome` and `Diagnosis`), `PositiveDiagnosisAssessment`, and `ConcludedDiagnosticRelation`.
+  - `ProfessionalDiagnosingAgent` and `SelfDiagnosis` to capture professional vs. self-assessment contexts.
+- Health condition origin refinements:
+  - `AcquiredHealthCondition` and `CongenitalHealthCondition`, plus supporting `Condition`/`ConditionIndicator` scaffolding.
+- Expanded commentary:
+  - Rich `rdfs:comment` documentation added across agents, chromosomes/allosomes, diagnosis types, and person/role facets to clarify intended use and contrasts.
+
+### Changed
+
+- Clarified and consolidated definitions using `owl:equivalentClass` partitions (e.g., for `Allosome`, `DiagnosedEntity`, `DiagnosingAgent`, `HealthcareDiagnosis`, `HealthCondition`) without altering intended semantics.
+- Textual improvements to multiple `rdfs:comment` notes for precision and consistency (e.g., administrative/legal gender recognition patterns, agent/document scopes).
+
+### Removed
+
+- No removals in this release; previous constructs are retained while documentation and partitions were refined.
