@@ -313,7 +313,7 @@ td {
     "https://schema.org/dateModified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-09-25"
+        "@value": "2025-10-15"
       }
     ],
     "https://schema.org/description": [
@@ -406,7 +406,7 @@ td {
 <dt>
 <a class="hover_property" href="http://purl.org/dc/terms/modified" title="Date on which the resource was changed. Defined in DCMI Metadata Terms">Date Modified</a>
 </dt>
-<dd><p>2025-09-25</p></dd>
+<dd><p>2025-10-15</p></dd>
 </div>
 <div>
 <dt>
@@ -427,14 +427,14 @@ td {
 <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionIRI" title="The property that identifies the version IRI of an ontology. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Iri</a>
 </dt>
 <dd>
-<a href="https://w3id.org/health-ri/ontology/v0.11.3">https://w3id.org/health-ri/ontology/v0.11.3</a>
+<a href="https://w3id.org/health-ri/ontology/v0.11.5">https://w3id.org/health-ri/ontology/v0.11.5</a>
 </dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionInfo" title="The annotation property that provides version information for an ontology or another OWL construct. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Info</a>
 </dt>
-<dd><p>0.11.3</p></dd>
+<dd><p>0.11.5</p></dd>
 </div>
 <div>
 <dt>
@@ -470,6 +470,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#Disease</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Disease is represented as a specialization of Pathological Health Condition. In the model it captures a subset of pathological conditions that are formally identified as diseases, ensuring that such cases are explicitly represented within the broader pathological category.</p></td>
 </tr>
 <tr>
 <th>
@@ -513,6 +519,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>External Diagnosis is a Diagnosis established by a diagnosing agent who is not identical to the diagnosed entity. It is contrasted with Self-diagnosis, where a single individual plays both Diagnosing Agent and Diagnosed Entity roles; the distinction is based on agent-role separation, independent of method, source, or intended use.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -539,7 +551,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>A mature reproductive cell (sperm or egg) that is haploid in nature. Gametes carry half the number of chromosomes of a diploid cell and combine during fertilization to form a diploid zygote, restoring the full chromosome set.</p></td>
+<td><p>A Gamete is represented as a specific subkind of Haploid Cell. In the model it inherits the single chromosome set characteristic of haploid cells and is positioned as the mature form used in reproductive processes. The diagram shows it as a specialization, clarifying its placement in the ontology as the reproductive entity derived from haploid cellular structures.</p></td>
 </tr>
 <tr>
 <th>
@@ -567,6 +579,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnosis made by an individual about themself, where the same individual plays the Diagnosing Agent and the Diagnosed Entity roles. It contrasts with External Diagnosis, which presupposes different individuals in those roles.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -591,6 +609,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Adolescent denotes the life stage of a living person between childhood and adulthood. It is one of the mutually exclusive life-stage categories Child, Adolescent, and Adult shown as a complete set. In the progression constraints indicated, no person can be an adolescent without first being a child.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -612,6 +636,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#Adult</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Adult denotes the life stage of a living person after adolescence. It is one of the mutually exclusive life-stage categories Child, Adolescent, and Adult shown as a complete set. In the progression constraints indicated, no person can be an adult without first being an adolescent.</p></td>
 </tr>
 <tr>
 <th>
@@ -689,7 +719,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b2">naf9fbf0eb2dd4c048da450e513b0abf6b2</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b2">nd397b8ebc4a6476b8fa98944b7ce05c9b2</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -740,6 +770,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A healthcare diagnosis whose use is oriented to direct care. Its purpose is to inform decisions for an identified patient or group in a care context, as opposed to surveillance or research uses.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -766,7 +802,8 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>A thread-like structure of nucleic acids and proteins carrying genetic information. Chromosomes are fundamental units of heredity and exist in pairs in most human cells, encoding the instructions for development, functioning, and reproduction.</p></td>
+<td><p>Chromosome is a kind that denotes the thread-like structures composed of nucleic acids and proteins that carry genetic information within human cells. They are the structural units in which genes are organized and transmitted across cell divisions, ensuring the preservation of hereditary information.</p>
+<p>In human diploid cells, chromosomes occur in pairs and collectively encode the instructions necessary for development, biological functioning, and reproduction. Chromosomes are further distinguished into categories such as allosomes, which determine chromosomal sex, and autosomes, which are not directly involved in sex determination.</p></td>
 </tr>
 <tr>
 <th>
@@ -799,6 +836,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#ConcludedDiagnosticRelation</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A temporally subsequent state of a Diagnostic Relation after the diagnostic process has been completed. It is a historical role taken by the relation once it has been determined through Diagnostic Assessment events, and is therefore manifested by such assessments.</p></td>
 </tr>
 <tr>
 <th>
@@ -844,6 +887,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#Condition</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Condition is a category used to represent a state that inheres in an individual animal as its bearer. In the model, Health Condition specializes Condition, and Condition can be characterized by Condition Indicators that describe or evidence the state in diagnostic contexts.</p></td>
 </tr>
 <tr>
 <th>
@@ -910,18 +959,24 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An information-bearing item that serves as an indicator about a Condition and characterizes a diagnosed entity. It captures observable or reported features used as evidence during diagnosis, without committing to any particular diagnostic result.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
 <ul>
 <li>
 <span>
-<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
+<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
+<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -946,6 +1001,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A Dead Cellular Entity is represented as a phase of a cellular entity in which biological activity is no longer present. In the model it complements the living state as part of a complete and disjoint partition, ensuring that both conditions of cellular existence are accounted for. This class makes explicit that cellular entities remain identifiable even after death within the ontology.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -967,6 +1028,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#DiagnosedBiologicalPart</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnosed entity that is a biological part of an organism. The role applies when the diagnostic focus is a component such as an organ, tissue, or other anatomical part rather than the whole organism.</p></td>
 </tr>
 <tr>
 <th>
@@ -998,6 +1065,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#DiagnosedCellularEntity</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnosed entity that is a cellular entity. The role applies when the diagnostic focus is at cell level or below, covering cells and their subcellular structures.</p></td>
 </tr>
 <tr>
 <th>
@@ -1035,6 +1108,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnosed entity that is a group considered as the diagnostic focus. The role applies when the assessment concerns a set of individuals as a group rather than each member separately.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -1063,6 +1142,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#DiagnosedSpecimen</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnosed entity that is a specimen used for diagnostic purposes. The role applies to collected biological material that serves as the focus of assessment.</p></td>
 </tr>
 <tr>
 <th>
@@ -1097,6 +1182,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An artificial agent that bears the diagnosing role in a diagnostic process. It participates as a diagnosing agent when a system or device performs diagnostic activities within a Diagnostic Relation.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -1128,6 +1219,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#DiagnosisSuspicion</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A belief held by a diagnosing agent that characterizes that agent regarding the possibility of a Condition in a diagnosed entity. It reflects a preliminary cognitive stance prior to or during assessment.</p></td>
 </tr>
 <tr>
 <th>
@@ -1171,6 +1268,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An agent that bears the role of issuing a diagnostic assessment outcome. It is responsible for producing or communicating the outcome that characterizes the result of a diagnostic assessment.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -1187,7 +1290,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b13">naf9fbf0eb2dd4c048da450e513b0abf6b13</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b13">nd397b8ebc4a6476b8fa98944b7ce05c9b13</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -1213,6 +1316,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#Endurant</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Endurant is an individual that is wholly present whenever it exists and can persist through time while undergoing change. It provides the upper-level basis from which more specific substantial categories are specialized.</p></td>
 </tr>
 <tr>
 <th>
@@ -1311,6 +1420,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Functional Health Condition is a category of Non-injury Health Condition used to group conditions characterized by an alteration in the functional performance of psychological, physiological, or bodily processes. Its placement under the non-structural axis highlights that the classification is based on how a health condition affects operation or activity, rather than on structural damage or the presence of an injury.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -1373,6 +1488,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#LaypersonDiagnosingAgent</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnosing person whose professional status is layperson. The role applies when a person acts as a diagnosing agent without holding a professional status in the relevant domain.</p></td>
 </tr>
 <tr>
 <th>
@@ -1452,7 +1573,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b15">naf9fbf0eb2dd4c048da450e513b0abf6b15</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b15">nd397b8ebc4a6476b8fa98944b7ce05c9b15</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -1510,7 +1631,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b17">naf9fbf0eb2dd4c048da450e513b0abf6b17</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b17">nd397b8ebc4a6476b8fa98944b7ce05c9b17</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -1571,7 +1692,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b19">naf9fbf0eb2dd4c048da450e513b0abf6b19</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b19">nd397b8ebc4a6476b8fa98944b7ce05c9b19</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -1657,6 +1778,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#LivingCellularEntity</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A Living Cellular Entity is represented as a phase of a cellular entity characterized by the presence of biological activity. In the model it appears as part of a complete and disjoint partition of cellular entity states, capturing the condition in which cells, embryos, or organisms are biologically active. This class clarifies that the living state is explicitly represented in contrast to its dead counterpart.</p></td>
 </tr>
 <tr>
 <th>
@@ -1801,6 +1928,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#Particular</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Particular is the most general notion of an individual entity. It refers to any concrete, single entity that can be the bearer of properties and participate in relations.</p></td>
 </tr>
 <tr>
 <th>
@@ -1986,6 +2119,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Person's Death is a temporally bounded event in which an individual person's life ends. It marks the transition of that person from living to dead and stands in a termination relation to exactly one person.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -1999,7 +2138,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b21">naf9fbf0eb2dd4c048da450e513b0abf6b21</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b21">nd397b8ebc4a6476b8fa98944b7ce05c9b21</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -2074,6 +2213,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnosing person whose professional status is professional. The role applies when a person acts as a diagnosing agent with a recognized professional status in the relevant domain.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -2095,6 +2240,13 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#PsychologicalHealthCondition</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Psychological Health Condition is a category of Non-injury Health Condition used to classify conditions by their primary psychological manifestation within the model's non-structural axis. It groups health conditions whose salient features concern mental, affective, cognitive, or behavioral aspects rather than structural tissue damage or an injury event.</p>
+<p>Placement in this hierarchy does not determine etiology, dependence, or origin. A Psychological Health Condition may also be specialized along those other axes where applicable in the diagrams, since the generalization sets there can be complete and overlapping. The category therefore provides a focused, non-injury, non-structural reading of a condition while remaining compatible with the other classifications present in the model.</p></td>
 </tr>
 <tr>
 <th>
@@ -2129,6 +2281,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#ResearchDiagnosis</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A healthcare diagnosis whose use is oriented to research. It serves as a diagnostic assertion used to support study design, data analysis, or methodological evaluation, rather than to guide direct care for a specific patient.</p></td>
 </tr>
 <tr>
 <th>
@@ -2224,7 +2382,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b25">naf9fbf0eb2dd4c048da450e513b0abf6b25</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b25">nd397b8ebc4a6476b8fa98944b7ce05c9b25</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -2253,6 +2411,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A healthcare diagnosis whose use is oriented to surveillance. It functions as a diagnostic assertion used for monitoring, reporting, or population-level oversight, rather than for immediate care decisions about a specific patient.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -2274,6 +2438,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#AcquiredHealthCondition</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An Acquired Health Condition is a category used to denote health conditions that develop after birth. In the model, it is treated as a subtype of known-origin conditions, emphasizing that their identifiable cause emerges during the individual's life course. This classification complements congenital conditions by capturing the contrast between pre-birth and post-birth origins of known health conditions.</p></td>
 </tr>
 <tr>
 <th>
@@ -2311,6 +2481,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Administrative Coding Diagnosis is a Healthcare Diagnosis defined by having an administrative coding record as its source. The diagnostic statement is taken from the administrative code representation rather than from clinical examination, laboratory measurement, or imaging as sources.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -2332,6 +2508,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#AdministrativeGenderRecognitionAgent</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Administrative Gender Recognition Agent is an individual who acts on behalf of an Administrative Gender Recognizing Organization in the context of an Administrative Gender Recognition. The agent is mediated by one or more Administrative Gender Recognitions and is created by a recognizing organization to operate on its behalf.</p></td>
 </tr>
 <tr>
 <th>
@@ -2391,6 +2573,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Administrative Gender Recognition Document is a documentary artifact that records an administrative gender recognition. It specializes Document, is created by an Administrative Gender Recognition Agent, and participates in an Administrative Gender Recognition through a mediating relation.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -2407,7 +2595,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b28">naf9fbf0eb2dd4c048da450e513b0abf6b28</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b28">nd397b8ebc4a6476b8fa98944b7ce05c9b28</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -2449,7 +2637,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>Refers to the sex chromosomes that determine an individual�s chromosomal sex. Humans typically have two allosomes per diploid cell, which can be combinations of X and Y chromosomes. Allosomes carry genes that influence sexual development and related traits.</p></td>
+<td><p>Allosome is a subkind of Chromosome that denotes the sex chromosomes present in human cells. Allosomes are responsible for determining chromosomal sex and also contribute to sexual development and related biological traits. In humans, diploid cells typically contain two allosomes, which may occur in the combinations XX or XY.</p></td>
 </tr>
 <tr>
 <th>
@@ -2516,7 +2704,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>One of the two types of human sex chromosomes. The X chromosome contains many essential genes unrelated to sex determination but is also critical for sexual development. It is present in both males and females, usually as XX in females and XY in males.</p></td>
+<td><p>Allosome X is a subkind of Allosome representing the X chromosome. It contains a large number of genes, many of which are not directly related to sex determination but are essential for general biological functions. The X chromosome is present in both males and females, typically as XX in females and as XY in males.</p></td>
 </tr>
 <tr>
 <th>
@@ -2546,7 +2734,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>The sex chromosome that determines male development in humans when paired with an X chromosome. The Y chromosome carries genes responsible for initiating male sex differentiation but contains fewer genes overall than the X chromosome. It can only occur in combination with at least one X chromosome in viable human cells.</p></td>
+<td><p>Allosome Y is a subkind of Allosome representing the Y chromosome. It carries genes critical for initiating male sex differentiation and development but contains fewer genes than the X chromosome. In viable human cells, the Y chromosome never occurs alone and must be paired with at least one X chromosome.</p></td>
 </tr>
 <tr>
 <th>
@@ -2574,6 +2762,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Antemortem Diagnosis is a Cellular Entity Diagnosis concerning material obtained from a living organism before death. The temporal qualifier applies to the organism's life status at specimen collection or observation time, regardless of when the diagnostic conclusion is formulated, and contrasts with Postmortem Diagnosis in the same set.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -2595,6 +2789,13 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#Belief</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A general type of mental state that can characterize an agent and guide reasoning about a situation. In the diagnostic context it serves as the common category for the beliefs that arise during or from diagnostic activities.</p>
+<p>Belief subsumes Diagnosis Suspicion and Diagnostic Assessment Outcome as specialized kinds of belief used in the model. The class captures the agent's cognitive stance without itself committing to whether that stance is correct or incorrect.</p></td>
 </tr>
 <tr>
 <th>
@@ -2640,11 +2841,17 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Biological Father is the parental capacity of a person who is the genetic father of a specific child. It is realized within a Parent-Child Relation that connects this parent with that child, who participates as Offspring. The capacity is child-specific: one person may bear it for multiple children, each through its own relation.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
 <span>
-<a href="#FemaleBiologicalPerson">Female Biological Person</a>
+<a href="#MaleBiologicalPerson">Male Biological Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2691,11 +2898,17 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Biological Mother is the parental capacity of a person who is the genetic mother of a specific child. It is realized within a Parent-Child Relation that connects this parent with that child, who participates as Offspring. The capacity is child-specific: one person may bear it for multiple children, each through its own relation.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
 <span>
-<a href="#MaleBiologicalPerson">Male Biological Person</a>
+<a href="#FemaleBiologicalPerson">Female Biological Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2739,6 +2952,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#CellularEntityDiagnosis</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnosis whose focus is a cellular entity as the diagnosed entity, rather than an organism-level subject. It organizes diagnosis types that concern cellular-level objects and is separate from organism-focused healthcare diagnosis types.</p></td>
 </tr>
 <tr>
 <th>
@@ -2803,6 +3022,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Child denotes the life stage of a living person prior to adolescence. It identifies persons who are not yet adolescents or adults and may bear roles that depend on being a child.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -2848,6 +3073,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Clinical Diagnosis is a Healthcare Diagnosis whose source is clinical evaluation of the individual, grounded primarily in history, signs, and examination, possibly considering test results. Its scope is distinguished from diagnoses whose source is exclusively laboratory, imaging, or administrative coding.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -2869,6 +3100,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#CongenitalHealthCondition</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A Congenital Health Condition is a category used to denote health conditions that are present at birth. In the model, it is treated as a subtype of known-origin conditions, emphasizing that their identifiable cause lies in factors affecting development before or during birth. This classification situates congenital conditions within the broader framework of etiological distinctions.</p></td>
 </tr>
 <tr>
 <th>
@@ -2903,6 +3140,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#DiagnosticMethod</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A mode that characterizes a diagnostic relation by specifying the concrete procedure or approach applied in that relation. Each diagnostic method instantiates a diagnostic method type that classifies the kind of procedure used.</p></td>
 </tr>
 <tr>
 <th>
@@ -2943,6 +3186,13 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A document whose embodiment is digital. Its content is represented in an electronic information structure that can be stored, processed, or transmitted by computing systems. The definition is independent of any specific file format or storage technology.</p>
+<p>Digital Document specializes Document and is disjoint from Physical Document.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -2976,7 +3226,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>A type of human cell containing two complete sets of chromosomes�one from each parent. In humans, diploid cells include somatic cells and have 46 chromosomes, including two allosomes that determine chromosomal sex (e.g., XX or XY).</p></td>
+<td><p>A Diploid Cell is a human cell characterized by the presence of two chromosome sets. It is modeled as a subkind of Human Cell that includes chromosomes as components, with the number of chromosomes distinguishing it from other cell types in the model. In this representation, the diploid structure is complete and disjoint relative to the haploid alternative, reflecting its role in forming the ordinary chromosomal basis of human somatic cells.</p></td>
 </tr>
 <tr>
 <th>
@@ -3001,6 +3251,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#EpidemiologicalDiagnosis</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Epidemiological Diagnosis is a Healthcare Diagnosis defined by reliance on an epidemiological case definition as its source. The diagnostic assertion is derived from population-oriented criteria specified in the case definition, rather than from individual laboratory, imaging, or administrative coding sources.</p></td>
 </tr>
 <tr>
 <th>
@@ -3250,7 +3506,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>The fundamental structural and functional unit of the human body. Human cells vary in type and function, but all contain genetic material in the form of chromosomes, including sex chromosomes that help determine biological sex.</p></td>
+<td><p>The fundamental structural and functional unit of the human body. A Human Cell is modeled as a kind that provides the basis for distinguishing between diploid and haploid cell types in the ontology. It is represented as the container of chromosomes, with its structural variation expressed through the number of chromosomes it includes.</p></td>
 </tr>
 <tr>
 <th>
@@ -3266,12 +3522,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#DiploidCell">Diploid Cell</a>
+<a href="#HaploidCell">Haploid Cell</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#HaploidCell">Haploid Cell</a>
+<a href="#DiploidCell">Diploid Cell</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3312,6 +3568,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnosis concerning a human patient in a healthcare context. Its scope is human health rather than veterinary care.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -3333,6 +3595,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#IdiopathicHealthCondition</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An Idiopathic Health Condition is a category used to represent health conditions for which no specific cause can be identified. In the model, it is contrasted with conditions of known origin, highlighting the absence of a clear etiological explanation.</p></td>
 </tr>
 <tr>
 <th>
@@ -3367,6 +3635,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#InconclusiveDiagnosticAssessment</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnostic assessment that does not reach a definitive determination. It completes without yielding a conclusive diagnostic assessment outcome.</p></td>
 </tr>
 <tr>
 <th>
@@ -3484,6 +3758,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Injury is a category used to represent health conditions that result from traumatic events or exposures. In the model, it is treated as a subtype of externally-caused health conditions, with trauma or harmful exposure identified as the relevant basis for its occurrence.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -3551,7 +3831,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>Refers to the classification of a person�s sex based on their chromosomal composition, specifically the configuration of sex chromosomes (allosomes). It provides a genetic basis for categorizing individuals as male, female, or variants, supporting a biological understanding of sex that is stable across a person�s life.</p></td>
+<td><p>Refers to the classification of a person's sex based on their chromosomal composition, specifically the configuration of sex chromosomes (allosomes). It provides a genetic basis for categorizing individuals as male, female, or variants, supporting a biological understanding of sex that is stable across a person's life.</p></td>
 </tr>
 <tr>
 <th>
@@ -3578,7 +3858,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b46">naf9fbf0eb2dd4c048da450e513b0abf6b46</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b46">nd397b8ebc4a6476b8fa98944b7ce05c9b46</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -3599,6 +3879,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#LaboratoryDiagnosis</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A healthcare diagnosis established primarily from laboratory analyses of specimens such as blood or tissue.</p></td>
 </tr>
 <tr>
 <th>
@@ -3778,6 +4064,13 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The class /Non-Human Animal represents every animal that is not a Person. It is modeled as the complement of the class Person with respect to the more general class Animal. This includes all biological animals outside the human species, independent of their specific taxonomy or characteristics.</p>
+<p>The class abstracts from distinctions among different animal groups, serving instead to delimit the scope of Person within the Animal category. It ensures that the ontology can clearly separate human individuals from all other animals, while still maintaining their common status as animals under the broader hierarchy.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -3802,6 +4095,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A Non-Pathological Health Condition is represented as a condition that does not fall under the pathological category. It complements pathological health conditions as part of a complete and disjoint partition, ensuring that the ontology accounts for conditions that may affect health without being classified as pathological.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -3823,6 +4122,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#Object</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Object is a substantial that lacks agency. It is the non-agentive counterpart to Agent and captures material or conceptual individuals that do not act as agents.</p></td>
 </tr>
 <tr>
 <th>
@@ -3854,6 +4159,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#Offspring</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Offspring is the role a child bears relative to their biological parents. A person bears this role within a Parent-Child Relation that ties the child to a Biological Mother and/or a Biological Father, and the role is created at the child's Person's Birth event.</p></td>
 </tr>
 <tr>
 <th>
@@ -3901,7 +4212,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b51">naf9fbf0eb2dd4c048da450e513b0abf6b51</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b51">nd397b8ebc4a6476b8fa98944b7ce05c9b51</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -3954,7 +4265,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b53">naf9fbf0eb2dd4c048da450e513b0abf6b53</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b53">nd397b8ebc4a6476b8fa98944b7ce05c9b53</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4005,7 +4316,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b55">naf9fbf0eb2dd4c048da450e513b0abf6b55</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b55">nd397b8ebc4a6476b8fa98944b7ce05c9b55</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4056,7 +4367,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b57">naf9fbf0eb2dd4c048da450e513b0abf6b57</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b57">nd397b8ebc4a6476b8fa98944b7ce05c9b57</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4082,6 +4393,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#PersonsDeathCause</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Person's Death Cause is the specific cause attributed to a dead person. It characterizes exactly one dead person and is an instance of exactly one Person's Death Cause Type; a type may correspond to many concrete death causes.</p></td>
 </tr>
 <tr>
 <th>
@@ -4143,7 +4460,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b60">naf9fbf0eb2dd4c048da450e513b0abf6b60</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b60">nd397b8ebc4a6476b8fa98944b7ce05c9b60</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4185,6 +4502,13 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A document whose embodiment is a tangible artifact. Its content is carried by a physical medium that is created, stored, and exchanged through physical handling. The definition is independent of the particular material used.</p>
+<p>Physical Document specializes Document and is disjoint from Digital Document.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -4216,6 +4540,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnosis established after the death of the organism to which it refers. It contrasts with Antemortem Diagnosis by being determined in a post-death context.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -4237,6 +4567,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#RadiologicalDiagnosis</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A healthcare diagnosis for which the determining evidence originates from diagnostic imaging performed by radiology. Typical sources include X-ray, CT, and MRI images.</p></td>
 </tr>
 <tr>
 <th>
@@ -4266,7 +4602,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>An example is predisposition.</p></td>
+<td><p>A Risk-based Health Condition is represented as a condition that captures the probability or predisposition of future illness rather than an existing disorder. In the model it complements established health conditions, ensuring that the ontology incorporates preventive and epidemiological perspectives alongside diagnostic ones.</p></td>
 </tr>
 <tr>
 <th>
@@ -4323,7 +4659,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b63">naf9fbf0eb2dd4c048da450e513b0abf6b63</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b63">nd397b8ebc4a6476b8fa98944b7ce05c9b63</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -4344,6 +4680,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#StructuralHealthCondition</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Structural Health Condition is a category of Non-injury Health Condition used to group conditions identified by structural manifestations in tissues, organs, or other physical components of the body. Its role in the model is to emphasize that a health condition may be classified by its material or anatomical expression, independent of its etiology or dependence relations. This structural axis provides a complementary view to the functional classification, allowing conditions to be interpreted within multiple overlapping categories as specified in the diagrams.</p></td>
 </tr>
 <tr>
 <th>
@@ -4368,6 +4710,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#TraumaticHealthCondition</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A Traumatic Health Condition is a category used to describe health conditions that result from traumatic events, such as physical injuries or exposure to harmful forces. In the model, it serves to contrast with non-traumatic cases by emphasizing the causal role of trauma in the condition's origin.</p></td>
 </tr>
 <tr>
 <th>
@@ -4405,6 +4753,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnosis concerning non-human animals within veterinary care. Its scope is animal health and care rather than human healthcare.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -4431,7 +4785,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>Represents the role played by an organization when it is responsible for assigning or recognizing a person�s administrative gender. This role formalizes the authority to make or record gender-related determinations within an administrative context.</p></td>
+<td><p>Administrative Gender Recognizing Organization is the organizational role of the authority that recognizes a person's administrative gender. It participates in an Administrative Gender Recognition as the recognizing organization and may delegate operational activities to an Administrative Gender Recognition Agent that acts on its behalf, including creating the associated recognition document.</p></td>
 </tr>
 <tr>
 <th>
@@ -4462,7 +4816,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b65">naf9fbf0eb2dd4c048da450e513b0abf6b65</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b65">nd397b8ebc4a6476b8fa98944b7ce05c9b65</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4499,6 +4853,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#Animal</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An Animal is represented as a general category that specializes Cellular Entity and provides the basis for distinguishing humans from other living beings. In the model it subsumes both persons and non-human animals, forming a complete and disjoint partition of animal types. As a biological entity, it is also connected to the representation of health conditions, ensuring that conditions are grounded in organisms with a cellular structure. In addition, Animal is modeled as a type of agent, allowing it to participate in actions and interactions alongside other agents such as organizations and artificial agents. This position highlights its dual role as both a biological and an agentive category within the ontology.</p></td>
 </tr>
 <tr>
 <th>
@@ -4595,6 +4955,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Dead Person denotes the life-status phase of a person whose life has ended. This phase begins at exactly one Person's Death event and is mutually exclusive with being a Living Person. Each dead person is characterized by exactly one Person's Death Cause.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -4613,7 +4979,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b71">naf9fbf0eb2dd4c048da450e513b0abf6b71</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b71">nd397b8ebc4a6476b8fa98944b7ce05c9b71</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -4647,6 +5013,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#DiagnosingPerson</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A person that bears the diagnosing role in a diagnostic process. This role may be taken by individuals with different professional statuses, which are further specialized as layperson or professional diagnosing agents.</p></td>
 </tr>
 <tr>
 <th>
@@ -4721,6 +5093,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An event in which a diagnostic process is carried out to determine an assessment result type. It manifests a concluded diagnostic relation and may yield a diagnostic assessment outcome that characterizes the result.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -4750,7 +5128,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b77">naf9fbf0eb2dd4c048da450e513b0abf6b77</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b77">nd397b8ebc4a6476b8fa98944b7ce05c9b77</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -4795,6 +5173,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A mode that records the result of a diagnostic assessment. It is the issued outcome of the assessment and can be of different kinds, such as a Diagnosis or a No-Diagnosis Outcome, reflecting the conclusive determination reached by the diagnosing process. Each outcome is issued by an agent acting as a Diagnostic Outcome Issuer.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -4810,12 +5194,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#NoDiagnosisOutcome">No-Diagnosis Outcome</a>
+<a href="#Diagnosis">Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Diagnosis">Diagnosis</a>
+<a href="#NoDiagnosisOutcome">No-Diagnosis Outcome</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -4942,6 +5326,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An Exposure-based Health Condition is a category used to represent health conditions that arise from contact with or presence of external agents or environments. In the model, it is shown as a subtype of externally-caused health conditions, distinguished from injury by its basis in exposure rather than direct traumatic events.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -4997,7 +5387,7 @@ td {
 </th>
 <td>
 <span>
-<a href="#BiologicalFather">Biological Father</a>
+<a href="#BiologicalMother">Biological Mother</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -5019,7 +5409,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>A cell with only one set of chromosomes. In humans, these are the reproductive cells (gametes) with 23 chromosomes total, including one allosome. Haploid cells are essential for sexual reproduction, ensuring that chromosome numbers remain stable across generations.</p></td>
+<td><p>A Haploid Cell is a human cell that contains a single set of chromosomes. It is modeled as a subkind of Human Cell, disjoint and complete with the diploid alternative, and participates in the componentOf relation with chromosomes. Its reduced chromosomal count is essential for distinguishing it from diploid cells, and in the model it also serves as the basis from which gametes are defined.</p></td>
 </tr>
 <tr>
 <th>
@@ -5058,6 +5448,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A single bearer of agency that can act as one countable unit. It is a subtype of Agent and excludes collective entities such as organizations. Individual Agent is specialized by Person and Artificial Agent, which partition the space of individual agents. It serves as the general type from which individual participants in recognition or other agentive relations are taken.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -5080,12 +5476,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#Person">Person</a>
+<a href="#ArtificialAgent">Artificial Agent</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#ArtificialAgent">Artificial Agent</a>
+<a href="#Person">Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -5225,7 +5621,7 @@ td {
 </th>
 <td>
 <span>
-<a href="#BiologicalMother">Biological Mother</a>
+<a href="#BiologicalFather">Biological Father</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -5242,6 +5638,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#NegativeDiagnosisAssessment</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A conclusive diagnostic assessment whose result determines the absence of a diagnosis for the case at hand. It yields a No-Diagnosis Outcome.</p></td>
 </tr>
 <tr>
 <th>
@@ -5285,6 +5687,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnostic assessment outcome indicating that the assessment concluded without establishing a diagnosis. It records the negative result of a conclusive assessment.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -5301,7 +5709,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b96">naf9fbf0eb2dd4c048da450e513b0abf6b96</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b96">nd397b8ebc4a6476b8fa98944b7ce05c9b96</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -5325,18 +5733,24 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Non-injury Health Condition is an abstract category that serves as a top-level grouping for conditions not defined by injury events. It functions as a root point in the model from which further classifications, such as non-structural, functional, structural, or etiology-based categories, are derived. This abstraction clarifies the distinction between conditions arising without injury and those grouped under Injury, ensuring that subsequent classifications remain consistent across the different axes represented in the diagrams.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
 <ul>
 <li>
 <span>
-<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
+<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
+<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -5462,6 +5876,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A Pathological Health Condition is represented as a condition that qualifies as pathological in nature. It forms one side of the complete and disjoint partition of health conditions, capturing disorders or diseases that are clinically recognized as pathological. This class serves as the basis for further specialization into categories such as disease or non-traumatic health condition.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -5561,6 +5981,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A conclusive diagnostic assessment whose result determines a diagnosis for the case at hand. It yields a Diagnosis.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -5613,12 +6039,12 @@ td {
 <ul>
 <li>
 <span>
-<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
+<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="http://purl.org/nemo/gufo#IntrinsicMode">gufo:IntrinsicMode</a>
+<a href="http://purl.org/nemo/gufo#ExtrinsicMode">gufo:ExtrinsicMode</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -5788,7 +6214,7 @@ td {
 </th>
 <td>
 <span>
-<a href="#Male-typicalDimorphicCharacteristic">Male-typical Dimorphic Characteristic</a>
+<a href="#Female-typicalDimorphicCharacteristic">Female-typical Dimorphic Characteristic</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -5798,7 +6224,7 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Female-typicalDimorphicCharacteristic">Female-typical Dimorphic Characteristic</a>
+<a href="#Male-typicalDimorphicCharacteristic">Male-typical Dimorphic Characteristic</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -5920,6 +6346,13 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An individual agent realized by an artifact-based system rather than by a human person. It falls under the broader class Agent and under Individual Agent, and is disjoint from Person in the individual-agent partition. The class serves as a common type for machines or software-controlled systems that can act, perceive, or decide in ways that count as agency for the purposes of this model.</p>
+<p>Artificial Agent provides the basis for role-specific specializations in particular contexts. For example, when participating in diagnostic activities an instance can instantiate the Diagnosing Artificial Agent role.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -5965,6 +6398,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A Cellular Entity is represented as a general category that encompasses entities defined by a cellular structure. In the model it subsumes both living and dead cellular entities through a complete and disjoint partition, ensuring that all possible cellular states are covered. The class provides the foundation for including not only organisms but also embryos, fetuses, and cells as part of the ontology.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -5977,12 +6416,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#LivingCellularEntity">Living Cellular Entity</a>
+<a href="#DeadCellularEntity">Dead Cellular Entity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#DeadCellularEntity">Dead Cellular Entity</a>
+<a href="#LivingCellularEntity">Living Cellular Entity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -6035,6 +6474,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A Diagnostic Assessment event that reaches a definitive result. It determines the diagnostic outcome without remaining uncertainty, distinguishing it from Inconclusive Diagnostic Assessment and providing the basis for the corresponding outcome type.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -6050,12 +6495,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#NegativeDiagnosisAssessment">Negative Diagnosis Assessment</a>
+<a href="#PositiveDiagnosisAssessment">Positive Diagnosis Assessment</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#PositiveDiagnosisAssessment">Positive Diagnosis Assessment</a>
+<a href="#NegativeDiagnosisAssessment">Negative Diagnosis Assessment</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -6155,6 +6600,13 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A relator that mediates the participation of a diagnosing agent and a diagnosed entity in a diagnostic process. It is characterized by a diagnostic method that specifies how the relation is conducted.</p>
+<p>When the process is finished, the relation can be in a concluded state, and such a concluded diagnostic relation is manifested by diagnostic assessment events that determine the assessment result type.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -6197,7 +6649,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b130">naf9fbf0eb2dd4c048da450e513b0abf6b130</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b130">nd397b8ebc4a6476b8fa98944b7ce05c9b130</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -6231,6 +6683,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#InherentHealthCondition</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An Inherent Health Condition is a category used to represent health conditions that arise independently of external causal factors. In the model, it is placed as a subtype of known-origin health conditions, contrasted with externally-caused cases, and reflects conditions understood as intrinsic to the individual.</p></td>
 </tr>
 <tr>
 <th>
@@ -6271,6 +6729,13 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A person whose karyotypical sex is female, determined by the sex chromosome complement. This class classifies persons by karyotype only and does not depend on phenotypic traits or on any sex assigned or assessed at birth or later.</p>
+<p>Karyotypical Female subsumes both regular and variant karyotypic presentations that are categorized as female in the model. It is exclusive with Karyotypical Male within the karyotypical-sex classification of persons.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -6286,12 +6751,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#RegularKaryotypicalFemale">Regular Karyotypical Female</a>
+<a href="#VariantKaryotypicalFemale">Variant Karyotypical Female</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#VariantKaryotypicalFemale">Variant Karyotypical Female</a>
+<a href="#RegularKaryotypicalFemale">Regular Karyotypical Female</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -6329,6 +6794,13 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#KaryotypicalMale</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A person whose karyotypical sex is male, determined by the sex chromosome complement. This class classifies persons by karyotype only and does not depend on phenotypic traits or on any sex assigned or assessed at birth or later.</p>
+<p>Karyotypical Male subsumes both regular and variant karyotypic presentations that are categorized as male in the model. It is exclusive with Karyotypical Female within the karyotypical-sex classification of persons.</p></td>
 </tr>
 <tr>
 <th>
@@ -6393,6 +6865,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Non-structural Health Condition is an abstract, derived category under Established Health Condition used on the aspect axis to classify conditions not identified by structural manifestation. It stands as the complement of Structural Health Condition within a complete, disjoint generalization and is further specialized by Psychological Health Condition and Functional Health Condition in a complete, overlapping set. This classification is organizational only and does not determine origin, etiology, dependence, or trauma status, which are handled on other axes.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -6454,6 +6932,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Parent-Child Relation is the relation that connects a specific child with their biological parent roles. It mediates the participation of a Biological Mother and/or a Biological Father together with the child who bears the Offspring role, and it is manifested by a Person's Birth event that brings this relation into existence.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -6469,7 +6953,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b141">naf9fbf0eb2dd4c048da450e513b0abf6b141</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b141">nd397b8ebc4a6476b8fa98944b7ce05c9b141</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -6485,7 +6969,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b143">naf9fbf0eb2dd4c048da450e513b0abf6b143</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b143">nd397b8ebc4a6476b8fa98944b7ce05c9b143</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -6501,7 +6985,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b145">naf9fbf0eb2dd4c048da450e513b0abf6b145</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b145">nd397b8ebc4a6476b8fa98944b7ce05c9b145</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -6540,7 +7024,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>Describes individuals whose sex chromosome composition follows typical patterns without significant variations. Commonly corresponds to XX (female) or XY (male) karyotypes, reflecting the most frequent chromosomal configurations in the human population.</p></td>
+<td><p>A Person with Regular Sex Chromosome is represented as an individual whose sex chromosomes conform to the most frequent configurations in the population. In the model this class specializes Person and is disjoint and complete with its variant counterpart, capturing the regular chromosomal patterns used to define standard karyotypical categories. Its role is to provide the structural basis for distinguishing the commonly occurring XX and XY arrangements from other possibilities.</p></td>
 </tr>
 <tr>
 <th>
@@ -6559,12 +7043,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#RegularKaryotypicalFemale">Regular Karyotypical Female</a>
+<a href="#RegularKaryotypicalMale">Regular Karyotypical Male</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#RegularKaryotypicalMale">Regular Karyotypical Male</a>
+<a href="#RegularKaryotypicalFemale">Regular Karyotypical Female</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -6605,6 +7089,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Person's Birth is the event in which a person comes into existence as a child. It creates the Offspring role for that child and is the manifestation of exactly one Parent-Child Relation that connects the child with their biological parent roles. The event has exactly one start timestamp and one end timestamp; the person's date of birth equals the date portion of the end timestamp.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -6641,7 +7131,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b151">naf9fbf0eb2dd4c048da450e513b0abf6b151</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b151">nd397b8ebc4a6476b8fa98944b7ce05c9b151</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -6886,7 +7376,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b156">naf9fbf0eb2dd4c048da450e513b0abf6b156</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b156">nd397b8ebc4a6476b8fa98944b7ce05c9b156</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -6939,6 +7429,13 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A substantial that plays the diagnosed role within a Diagnostic Relation. It is the thing about which a diagnosis is formed and is connected to the relation that mediates the diagnostic process.</p>
+<p>A diagnosed entity may be characterized by conditions and by condition indicators, and it can be instantiated by varied bearers such as an organism, a biological part, a cellular entity, a specimen, or a group.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -6964,12 +7461,12 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#DiagnosedSpecimen">Diagnosed Specimen</a>
+<a href="#DiagnosedGroup">Diagnosed Group</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#DiagnosedGroup">Diagnosed Group</a>
+<a href="#DiagnosedSpecimen">Diagnosed Specimen</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -6983,7 +7480,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b159">naf9fbf0eb2dd4c048da450e513b0abf6b159</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b159">nd397b8ebc4a6476b8fa98944b7ce05c9b159</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -7058,6 +7555,13 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An agent that bears the diagnosing role in a diagnostic process. It participates by being mediated by a Diagnostic Relation and may be a person or an artificial agent, as indicated by the specialized types.</p>
+<p>A diagnosing agent can be characterized by diagnosis suspicions it holds, and may also serve as an outcome issuer that issues a Diagnostic Assessment Outcome.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -7099,7 +7603,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b167">naf9fbf0eb2dd4c048da450e513b0abf6b167</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b167">nd397b8ebc4a6476b8fa98944b7ce05c9b167</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -7115,7 +7619,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b169">naf9fbf0eb2dd4c048da450e513b0abf6b169</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b169">nd397b8ebc4a6476b8fa98944b7ce05c9b169</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -7173,6 +7677,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An Externally-caused Health Condition is a category used to represent health conditions that depend on external factors for their occurrence. In the model, it appears as a subtype of known-origin health conditions, contrasted with inherent ones, and includes cases where exposure or injury is the determining cause.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -7195,12 +7705,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a>
+<a href="#Injury">Injury</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Injury">Injury</a>
+<a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -7275,12 +7785,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#Non-binaryGenderIdentity">Non-binary Gender Identity</a>
+<a href="#FemaleGenderIdentity">Female Gender Identity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#FemaleGenderIdentity">Female Gender Identity</a>
+<a href="#Non-binaryGenderIdentity">Non-binary Gender Identity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -7350,7 +7860,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>Examples of non-traumatic injuries are, e.g., radiation injury, hypoxic-ischemic brain injury, many iatrogenic injuries.</p></td>
+<td><p>A Non-traumatic Health Condition is a category used to characterize health conditions that arise without a direct causal link to trauma. In the model, it groups together conditions that may have idiopathic or known origins, including congenital or acquired forms, thereby distinguishing them from conditions that are explicitly the result of injury or traumatic events.</p></td>
 </tr>
 <tr>
 <th>
@@ -7450,7 +7960,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b182">naf9fbf0eb2dd4c048da450e513b0abf6b182</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b182">nd397b8ebc4a6476b8fa98944b7ce05c9b182</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -7466,7 +7976,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b184">naf9fbf0eb2dd4c048da450e513b0abf6b184</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b184">nd397b8ebc4a6476b8fa98944b7ce05c9b184</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -7526,7 +8036,7 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>Includes individuals whose chromosomal composition deviates from the typical XX or XY patterns. Examples might include XXY, X0, or other variations that contribute to diverse biological presentations of sex. This classification ensures the model accommodates chromosomal diversity.</p></td>
+<td><p>A Person with Variant Sex Chromosome is represented as an individual whose chromosomal composition departs from the most common XX or XY configurations. In the model this class complements the regular category, ensuring that cases of chromosomal variation are consistently represented. It specializes Person and accounts for less frequent patterns, maintaining completeness and disjointness with the regular classification to capture chromosomal diversity in a systematic way.</p></td>
 </tr>
 <tr>
 <th>
@@ -7545,17 +8055,17 @@ td {
 </th>
 <td>
 <span>
-<a href="#VariantKaryotypicalFemale">Variant Karyotypical Female</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
 <a href="#KaryotypicalIndeterminatePerson">Karyotypical Indeterminate Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#VariantKaryotypicalMale">Variant Karyotypical Male</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#VariantKaryotypicalFemale">Variant Karyotypical Female</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -7602,6 +8112,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Particular is the most general notion of an individual entity. It refers to any single concrete entity that can bear properties and participate in relations, covering endurant entities such as Substantial and its non-agentive and agentive forms (Object and Agent).</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -7624,12 +8140,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#Object">Object</a>
+<a href="#Agent">Agent</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Agent">Agent</a>
+<a href="#Object">Object</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -7710,17 +8226,17 @@ td {
 </th>
 <td>
 <span>
+<a href="#MaleAdministrativeGender">Male Administrative Gender</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
 <a href="#FemaleAdministrativeGender">Female Administrative Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#Non-binaryAdministrativeGender">Non-binary Administrative Gender</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#MaleAdministrativeGender">Male Administrative Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -7789,6 +8305,13 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnostic assessment outcome that asserts the presence of a condition for a diagnosed entity. It results from a positive diagnosis assessment and serves as the recorded outcome of the diagnostic process for the case at hand.</p>
+<p>As an outcome, it stands in contrast to a No-Diagnosis Outcome and provides the basis for classifying specific kinds of diagnoses used in practice.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -7805,7 +8328,7 @@ td {
 <td>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b202">naf9fbf0eb2dd4c048da450e513b0abf6b202</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b202">nd397b8ebc4a6476b8fa98944b7ce05c9b202</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -7856,6 +8379,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A Health Condition is represented as a specialization of Condition associated with an animal entity. In the model it serves as the general category from which more specific health-related distinctions are derived. It provides the structural basis for differentiating pathological, non-pathological, risk-based, and established conditions.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -7873,23 +8402,23 @@ td {
 <ul>
 <li>
 <span>
-<a href="#EstablishedHealthCondition">Established Health Condition</a>
+<a href="#Risk-basedHealthCondition">Risk-based Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Risk-basedHealthCondition">Risk-based Health Condition</a>
+<a href="#EstablishedHealthCondition">Established Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#Non-PathologicalHealthCondition">Non-Pathological Health Condition</a>
+<a href="#PathologicalHealthCondition">Pathological Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#PathologicalHealthCondition">Pathological Health Condition</a>
+<a href="#Non-PathologicalHealthCondition">Non-Pathological Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -7944,6 +8473,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A Known-Origin Health Condition is a category used to represent health conditions for which a specific cause can be identified. In the model, it is contrasted with idiopathic cases, emphasizing the distinction between conditions explained by their etiology and those without a clear causal account.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -7961,23 +8496,23 @@ td {
 <ul>
 <li>
 <span>
-<a href="#CongenitalHealthCondition">Congenital Health Condition</a>
+<a href="#AcquiredHealthCondition">Acquired Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#AcquiredHealthCondition">Acquired Health Condition</a>
+<a href="#CongenitalHealthCondition">Congenital Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#InherentHealthCondition">Inherent Health Condition</a>
+<a href="#ExternallyCausedHealthCondition">Externally-caused Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#ExternallyCausedHealthCondition">Externally-caused Health Condition</a>
+<a href="#InherentHealthCondition">Inherent Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -8032,6 +8567,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Living Person denotes the life-status phase of a person whose life is ongoing. Together with Dead Person it forms a complete and disjoint partition of persons by living status. Within this phase, the life-stage subclasses Child, Adolescent, and Adult form a complete and disjoint specialization, and the self-awareness subclasses Self-aware Person and Non-self-aware Person form a complete and disjoint specialization.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -8049,12 +8590,12 @@ td {
 <ul>
 <li>
 <span>
-<a href="#Adult">Adult</a>
+<a href="#Child">Child</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Child">Child</a>
+<a href="#Adult">Adult</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -8065,12 +8606,12 @@ td {
 </li>
 <li>
 <span>
-<a href="#Non-self-awarePerson">Non-self-aware Person</a>
+<a href="#Self-awarePerson">Self-aware Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Self-awarePerson">Self-aware Person</a>
+<a href="#Non-self-awarePerson">Non-self-aware Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -8152,17 +8693,17 @@ td {
 </th>
 <td>
 <span>
+<a href="#PersonwithMaleSexatBirth">Person with Male Sex at Birth</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
 <a href="#PersonwithIndeterminateSexatBirth">Person with Indeterminate Sex at Birth</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#PersonwithFemaleSexatBirth">Person with Female Sex at Birth</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#PersonwithMaleSexatBirth">Person with Male Sex at Birth</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -8176,7 +8717,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b223">naf9fbf0eb2dd4c048da450e513b0abf6b223</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b223">nd397b8ebc4a6476b8fa98944b7ce05c9b223</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8192,7 +8733,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b225">naf9fbf0eb2dd4c048da450e513b0abf6b225</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b225">nd397b8ebc4a6476b8fa98944b7ce05c9b225</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -8266,17 +8807,17 @@ td {
 </th>
 <td>
 <span>
-<a href="#PersonwithMaleAdministrativeGender">Person with Male Administrative Gender</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
 <a href="#PersonwithNon-binaryAdministrativeGender">Person with Non-binary Administrative Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#PersonwithFemaleAdministrativeGender">Person with Female Administrative Gender</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#PersonwithMaleAdministrativeGender">Person with Male Administrative Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -8290,7 +8831,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b231">naf9fbf0eb2dd4c048da450e513b0abf6b231</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b231">nd397b8ebc4a6476b8fa98944b7ce05c9b231</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8306,7 +8847,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b233">naf9fbf0eb2dd4c048da450e513b0abf6b233</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b233">nd397b8ebc4a6476b8fa98944b7ce05c9b233</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8401,17 +8942,17 @@ td {
 </th>
 <td>
 <span>
+<a href="#LegalMalePerson">Legal Male Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
 <a href="#LegalFemalePerson">Legal Female Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#LegalNon-binaryPerson">Legal Non-binary Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#LegalMalePerson">Legal Male Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -8425,7 +8966,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b239">naf9fbf0eb2dd4c048da450e513b0abf6b239</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b239">nd397b8ebc4a6476b8fa98944b7ce05c9b239</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8491,6 +9032,12 @@ td {
 <td>
 <code>https://w3id.org/health-ri/ontology#Agent</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Agent is a substantial capable of acting and participating in goal-directed interactions. It subsumes organizations and individual agents, the latter including persons and artificial agents. Agents may bear agentive roles such as Diagnosing Agent when engaged in domain-specific activities.</p></td>
 </tr>
 <tr>
 <th>
@@ -8564,6 +9111,12 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An Established Health Condition is represented as a condition that is already present and identifiable, as opposed to a risk or predisposition. In the model it stands in contrast to risk-based health conditions, forming part of a complete and disjoint partition of health condition nature types. It provides the structural basis for organizing conditions that have been diagnosed or are otherwise clinically recognized, supporting their classification according to structural, functional, psychological, or etiological aspects.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -8581,34 +9134,34 @@ td {
 <ul>
 <li>
 <span>
-<a href="#NonTraumaticHealthCondition">Non-traumatic Health Condition</a>
+<a href="#TraumaticHealthCondition">Traumatic Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#TraumaticHealthCondition">Traumatic Health Condition</a>
+<a href="#NonTraumaticHealthCondition">Non-traumatic Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
-<span>
-<a href="#StructuralHealthCondition">Structural Health Condition</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
 <span>
 <a href="#NonStructuralHealthCondition">Non-structural Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
+<span class="cardinality">or</span>
+<span>
+<a href="#StructuralHealthCondition">Structural Health Condition</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
 </li>
 <li>
 <span>
-<a href="#KnownOriginHealthCondition">Known-Origin Health Condition</a>
+<a href="#IdiopathicHealthCondition">Idiopathic Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#IdiopathicHealthCondition">Idiopathic Health Condition</a>
+<a href="#KnownOriginHealthCondition">Known-Origin Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -8844,6 +9397,13 @@ td {
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A diagnosis formulated within healthcare practice about an organism-level case. It concerns a patient or animal as a whole, rather than cellular-level objects.</p>
+<p>In the model it is organized by focus (human or veterinary), by source of evidence (for example clinical, laboratory, radiological, epidemiological, or administrative coding origins), and by use (care-oriented, surveillance, or research).</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
@@ -8866,12 +9426,12 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#LaboratoryDiagnosis">Laboratory Diagnosis</a>
+<a href="#AdministrativeCodingDiagnosis">Administrative Coding Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#AdministrativeCodingDiagnosis">Administrative Coding Diagnosis</a>
+<a href="#RadiologicalDiagnosis">Radiological Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -8881,7 +9441,7 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#RadiologicalDiagnosis">Radiological Diagnosis</a>
+<a href="#LaboratoryDiagnosis">Laboratory Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -8903,12 +9463,12 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Care-orientedDiagnosis">Care-oriented Diagnosis</a>
+<a href="#SurveillanceDiagnosis">Surveillance Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#SurveillanceDiagnosis">Surveillance Diagnosis</a>
+<a href="#Care-orientedDiagnosis">Care-oriented Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -9007,7 +9567,8 @@ td {
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>Represents an individual human being, considered as a whole entity with biological, psychological, and social dimensions. This concept serves as the foundational unit in the ontology, providing the bearer of various properties, roles, and classifications such as sex and gender. It abstracts from specific contexts or classifications to describe any human subject capable of having intrinsic traits and participating in social and administrative systems.</p></td>
+<td><p>Person is a kind that denotes a single human individual as an agentive biological individual. Within the Agent hierarchy it is treated as an Individual Agent and a biological animal. The class provides the enduring identity of the human across time and contexts and abstracts from specific classifications or statuses.</p>
+<p>A Person may bear intrinsic modes such as Sex and Gender Identity, which can be assessed, assigned, or institutionally recognized and give rise to roles including Person with Assessed Phenotypic Sex, Person with Assigned Sex at Birth, Person with Recognized Legal Gender, and Person with Recognized Administrative Gender. A Person may also instantiate phases such as Living Person and Dead Person, and may play social or professional roles such as Offspring, Diagnosing Person, or Healthcare Professional.</p></td>
 </tr>
 <tr>
 <th>
@@ -9038,34 +9599,34 @@ td {
 <ul>
 <li>
 <span>
-<a href="#PersonwithRegularSexChromosome">Person with Regular Sex Chromosome</a>
+<a href="#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a>
+<a href="#PersonwithRegularSexChromosome">Person with Regular Sex Chromosome</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
-<span>
-<a href="#KaryotypicalMale">Karyotypical Male</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
 <span>
 <a href="#KaryotypicalFemale">Karyotypical Female</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
+<span class="cardinality">or</span>
+<span>
+<a href="#KaryotypicalMale">Karyotypical Male</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
 </li>
 <li>
 <span>
-<a href="#PersonWithAssignedSexAtBirth">Person with Assigned Sex at Birth</a>
+<a href="#PersonwithUnassignedSexatBirth">Person with Unassigned Sex at Birth</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#PersonwithUnassignedSexatBirth">Person with Unassigned Sex at Birth</a>
+<a href="#PersonWithAssignedSexAtBirth">Person with Assigned Sex at Birth</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -9082,7 +9643,7 @@ td {
 </li>
 <li>
 <span>
-<a href="#IndeterminateBiologicalPerson">Indeterminate Biological Person</a>
+<a href="#FemaleBiologicalPerson">Female Biological Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -9092,18 +9653,18 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#FemaleBiologicalPerson">Female Biological Person</a>
+<a href="#IndeterminateBiologicalPerson">Indeterminate Biological Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#PersonWithRecognizedLegalGender">Person with Recognized Legal Gender</a>
+<a href="#PersonwithUnassignedLegalGender">Person with Unassigned Legal Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#PersonwithUnassignedLegalGender">Person with Unassigned Legal Gender</a>
+<a href="#PersonWithRecognizedLegalGender">Person with Recognized Legal Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -9178,7 +9739,7 @@ td {
 <li>
 <span>
 <span>
-<a href="naf9fbf0eb2dd4c048da450e513b0abf6b269">naf9fbf0eb2dd4c048da450e513b0abf6b269</a>
+<a href="nd397b8ebc4a6476b8fa98944b7ce05c9b269">nd397b8ebc4a6476b8fa98944b7ce05c9b269</a>
 <span>
 <span class="cardinality">some</span>
 <span>
