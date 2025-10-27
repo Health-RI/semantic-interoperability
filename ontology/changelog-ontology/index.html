@@ -1696,6 +1696,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#0116-2025-10-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      [0.11.6] - 2025-10-27
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[0.11.6] - 2025-10-27">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Added
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0117-2025-10-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      [0.11.7] - 2025-10-27
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[0.11.7] - 2025-10-27">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Added
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2169,6 +2244,72 @@
 <h3 id="removed_6">Removed</h3>
 <ul>
 <li>No removals in this release; previous constructs are retained while documentation and partitions were refined.</li>
+</ul>
+<h2 id="0116-2025-10-27">[0.11.6] - 2025-10-27</h2>
+<h3 id="added_14">Added</h3>
+<ul>
+<li>Ontology metadata for release <code>0.11.6</code>:</li>
+<li>
+<p><code>owl:versionIRI</code>, <code>owl:versionInfo</code>, <code>dcterms:modified</code>, and <code>dcterms:conformsTo</code> links to <code>v0.11.6/json</code> and <code>v0.11.6/vpp</code>.</p>
+</li>
+<li>
+<p>Temporal value model (refactor and extensions):</p>
+</li>
+<li>Introduced <code>OffsetDateTime</code> (as a <code>gufo:QualityValue</code>) with documented constraints for calendar fields, including explicit allowance of <code>second = 60</code> only to represent a leap second.</li>
+<li>Introduced <code>Month</code> as an enumerated value type with individuals <code>January</code> … <code>December</code>.</li>
+<li>
+<p>New properties tied to the refactor:</p>
+<ul>
+<li><code>date</code> (object property; domain <code>OffsetDateTime</code>, range <code>Date</code>).</li>
+<li><code>utcOffsetMinutes</code> and <code>nanosecond</code> (data properties on <code>OffsetDateTime</code>).</li>
+</ul>
+</li>
+<li>
+<p>Documentation:</p>
+</li>
+<li>Rich <code>rdfs:comment</code> added for <code>OffsetDateTime</code> describing field ranges (year/month/day, leap-year rules, hour/minute/second, fractional second precision) and timezone offset format.</li>
+</ul>
+<h3 id="changed_15">Changed</h3>
+<ul>
+<li>Temporal properties and ranges/domains aligned to the new model:</li>
+<li><code>start</code> / <code>end</code>: range changed from <code>Timestamp</code> to <code>OffsetDateTime</code>.</li>
+<li><code>hour</code>, <code>minute</code>, <code>second</code>: domain changed from <code>Timestamp</code> to <code>OffsetDateTime</code>.</li>
+<li><code>year</code>: domain changed from <code>Timestamp</code> to <code>Date</code>.</li>
+<li>
+<p><code>month</code>: <strong>now an object property</strong> to <code>Month</code> (previously <code>xsd:int</code>).</p>
+</li>
+<li>
+<p>Diagnostic/sex-related formalizations:</p>
+</li>
+<li>
+<p>Minor refinements to partitions/disjointness/equivalences across diagnostic outcomes (<code>Diagnosis</code> vs <code>NoDiagnosisOutcome</code>), karyotypical classes, and dimorphic characteristics; definitions tightened without changing intended semantics.</p>
+</li>
+<li>
+<p>Textual improvements:</p>
+</li>
+<li>Clarified wording in several <code>rdfs:comment</code> notes across diagnosing agents/persons, gender/sex facets, and health condition groupings for precision and consistency.</li>
+</ul>
+<h3 id="removed_7">Removed</h3>
+<ul>
+<li>Legacy temporal artifacts deprecated by the refactor:</li>
+<li><code>day_1</code> and <code>month_1</code> (duplicate integer-valued properties on <code>Timestamp</code>).</li>
+<li>The prior integer-valued <code>month</code> (<code>xsd:int</code>) property on <code>Timestamp</code> (fully replaced by the object property to <code>Month</code>).</li>
+</ul>
+<h2 id="0117-2025-10-27">[0.11.7] - 2025-10-27</h2>
+<h3 id="added_15">Added</h3>
+<ul>
+<li>Ontology metadata for release <code>0.11.7</code>:</li>
+<li>
+<p><code>owl:versionIRI</code>, <code>owl:versionInfo</code>, <code>dcterms:modified</code>, and <code>dcterms:conformsTo</code> links to <code>v0.11.7/json</code> and <code>v0.11.7/vpp</code>.</p>
+</li>
+<li>
+<p>Documentation:</p>
+</li>
+<li>Additional <code>rdfs:comment</code> clarifications on <code>Date</code>, <code>Month</code>, and <code>OffsetDateTime</code> retained and cross-checked (field ranges, leap-year rules, offset semantics).</li>
+</ul>
+<h3 id="removed_8">Removed</h3>
+<ul>
+<li>No classes were removed in this release.</li>
 </ul>
 
 
