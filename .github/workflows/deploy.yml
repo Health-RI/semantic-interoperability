@@ -105,7 +105,7 @@ jobs:
 
       # --- Upload built site as artifact for deploy job ---
       - name: Upload built site artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: site
           path: site
@@ -113,7 +113,7 @@ jobs:
 
       # --- Upload generated content that should be committed on main ---
       - name: Upload generated content artifact (to commit on main)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: generated
           path: |
@@ -146,14 +146,14 @@ jobs:
 
       # --- Retrieve generated files produced by the build job ---
       - name: Download generated content artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: generated
           path: .
 
       # --- Retrieve the already-built site folder ---
       - name: Download built site artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: site
           path: ./site
