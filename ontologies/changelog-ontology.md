@@ -429,3 +429,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Removed
 
 - No classes were removed in this release.
+
+## [0.11.8] - 2025-10-28
+
+### Changed
+
+- Applied the **UML Note Classification (color coding)** policy across the ontology diagrams in the Visual Paradigm model:
+  - All notes now follow the standardized categories (**SEMI**, **CNST**, **RATL**, **SCOP**, **TRAC**, **EXMP**, **TODO**) with the prescribed colors and formatting.
+  - This is a **visual/editorial** update only and does **not** change the ontology’s logical content.
+
+### Not serialized
+
+- Note colors and formatting are editor metadata and are **not exported** to the `.json` or `.ttl` artifacts.  
+  They are visible only in the **`.vpp`** (OntoUML/Visual Paradigm) model.
