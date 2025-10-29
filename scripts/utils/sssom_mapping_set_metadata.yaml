@@ -74,7 +74,7 @@ curie_map:
   sssom: https://w3id.org/sssom/
 
 # ---------------------------------------------------------------------------
-# Definition of non-SSSOM slots 
+# Definition of non-SSSOM slots
 # ---------------------------------------------------------------------------
 
 extension_definitions:

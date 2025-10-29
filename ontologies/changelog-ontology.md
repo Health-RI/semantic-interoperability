@@ -378,3 +378,67 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Removed
 
 - No removals in this release; previous constructs are retained while documentation and partitions were refined.
+
+## [0.11.6] - 2025-10-27
+
+### Added
+
+- Ontology metadata for release `0.11.6`:
+  - `owl:versionIRI`, `owl:versionInfo`, `dcterms:modified`, and `dcterms:conformsTo` links to `v0.11.6/json` and `v0.11.6/vpp`.
+
+- Temporal value model (refactor and extensions):
+  - Introduced `OffsetDateTime` (as a `gufo:QualityValue`) with documented constraints for calendar fields, including explicit allowance of `second = 60` only to represent a leap second.
+  - Introduced `Month` as an enumerated value type with individuals `January` … `December`.
+  - New properties tied to the refactor:
+    - `date` (object property; domain `OffsetDateTime`, range `Date`).
+    - `utcOffsetMinutes` and `nanosecond` (data properties on `OffsetDateTime`).
+
+- Documentation:
+  - Rich `rdfs:comment` added for `OffsetDateTime` describing field ranges (year/month/day, leap-year rules, hour/minute/second, fractional second precision) and timezone offset format.
+
+### Changed
+
+- Temporal properties and ranges/domains aligned to the new model:
+  - `start` / `end`: range changed from `Timestamp` to `OffsetDateTime`.
+  - `hour`, `minute`, `second`: domain changed from `Timestamp` to `OffsetDateTime`.
+  - `year`: domain changed from `Timestamp` to `Date`.
+  - `month`: **now an object property** to `Month` (previously `xsd:int`).
+
+- Diagnostic/sex-related formalizations:
+  - Minor refinements to partitions/disjointness/equivalences across diagnostic outcomes (`Diagnosis` vs `NoDiagnosisOutcome`), karyotypical classes, and dimorphic characteristics; definitions tightened without changing intended semantics.
+
+- Textual improvements:
+  - Clarified wording in several `rdfs:comment` notes across diagnosing agents/persons, gender/sex facets, and health condition groupings for precision and consistency.
+
+### Removed
+
+- Legacy temporal artifacts deprecated by the refactor:
+  - `day_1` and `month_1` (duplicate integer-valued properties on `Timestamp`).
+  - The prior integer-valued `month` (`xsd:int`) property on `Timestamp` (fully replaced by the object property to `Month`).
+
+## [0.11.7] - 2025-10-27
+
+### Added
+
+- Ontology metadata for release `0.11.7`:
+  - `owl:versionIRI`, `owl:versionInfo`, `dcterms:modified`, and `dcterms:conformsTo` links to `v0.11.7/json` and `v0.11.7/vpp`.
+
+- Documentation:
+  - Additional `rdfs:comment` clarifications on `Date`, `Month`, and `OffsetDateTime` retained and cross-checked (field ranges, leap-year rules, offset semantics).
+
+### Removed
+
+- No classes were removed in this release.
+
+## [0.11.8] - 2025-10-28
+
+### Changed
+
+- Applied the **UML Note Classification (color coding)** policy across the ontology diagrams in the Visual Paradigm model:
+  - All notes now follow the standardized categories (**SEMI**, **CNST**, **RATL**, **SCOP**, **TRAC**, **EXMP**, **TODO**) with the prescribed colors and formatting.
+  - This is a **visual/editorial** update only and does **not** change the ontology’s logical content.
+
+### Not serialized
+
+- Note colors and formatting are editor metadata and are **not exported** to the `.json` or `.ttl` artifacts.
+  They are visible only in the **`.vpp`** (OntoUML/Visual Paradigm) model.

@@ -9,7 +9,7 @@ This distinction is crucial to properly model the social, legal, and biological 
 
 ### Person's Sex and Gender
 
-![Person's Sex and Gender](../images/Person%27s%20Sex%20and%20Gender.png)
+![Person's Sex and Gender](assets/images/Person's Sex and Gender.png)
 
 This integrated diagram brings together all the sex and gender modes that characterize a **Person**:
 
@@ -24,7 +24,7 @@ This unified view underlines the model s goal: to provide a clear, precise, and 
 
 #### Sex at Birth
 
-![Sex at Birth](../images/Sex%20at%20Birth.png)
+![Sex at Birth](assets/images/Sex at Birth.png)
 
 The diagram models Sex at Birth as an extrinsic mode that is determined through a process of formal assignment at the time of birth registration. While such assignments often rely on the newborn s phenotypical features, they are not merely descriptive but the outcome of a social and administrative act recorded in official documents.
 
@@ -34,7 +34,7 @@ The assignment is also tied to a Birth Notification, which documents the registr
 
 #### Karyotypical Sex
 
-![Karyotypical Sex](../images/Karyotypical%20Sex.png)
+![Karyotypical Sex](assets/images/Karyotypical Sex.png)
 
 The diagram represents Karyotypical Sex as a mode that characterizes every Person according to their chromosomal configuration. This intrinsic determination is grounded in the composition of sex chromosomes and is present from birth, independently of later developmental or interpretive factors.
 
@@ -44,7 +44,7 @@ At the level of persons, the ontology separates Person with Regular Sex Chromoso
 
 #### Phenotypic Sex
 
-![Phenotypic Sex](../images/Phenotypic%20Sex.png)
+![Phenotypic Sex](assets/images/Phenotypic Sex.png)
 
 The diagram models Phenotypic Sex as a mode that characterizes a Person based on their observable anatomical and morphological traits. Unlike karyotypical sex, phenotypic sex is extrinsic, as it arises through assessment by others rather than being solely determined by genetic makeup. This assessment is represented through the relator Phenotypic Sex Assessment, which mediates the interaction between the Person with Assessed Phenotypic Sex and the Phenotypic Sex Assessor, a role typically played by a healthcare professional.
 
@@ -54,7 +54,7 @@ The ontology makes explicit use of Visual Sex Characteristics as the basis for a
 
 #### Sex
 
-![Sex](../images/Sex.png)
+![Sex](assets/images/Sex.png)
 
 The diagram models Sex as a biological property that characterizes every Person. In this context, sex is represented as a mode, understood as an intrinsic property grounded in the person s biological makeup. The ontology acknowledges, however, that biological sex is not a single or unitary concept but rather an umbrella encompassing multiple dimensions, such as chromosomal, gonadal, hormonal, anatomical, and phenotypical aspects.
 
@@ -68,7 +68,7 @@ By organizing sex in this way, the ontology establishes biological sex as a mult
 
 ##### Person's Sex Taxonomy
 
-![Person's Sex Taxonomy](../images/Person%27s%20Sex%20Taxonomy.png)
+![Person's Sex Taxonomy](assets/images/Person's Sex Taxonomy.png)
 
 The diagram presents an updated consolidated view of the taxonomy of sex classifications modeled within the Sex subpackage. It does not introduce new constructs but integrates, in a single structure, the different categories and roles established in the package s detailed diagrams.
 
@@ -86,7 +86,7 @@ This structure acknowledges that while gender always resides in the person, its 
 
 #### Legal Gender
 
-![Legal Gender](../images/Legal%20Gender.png)
+![Legal Gender](assets/images/Legal Gender.png)
 
 The diagram models Legal Gender as an extrinsic mode that characterizes a Person through state-based recognition. Legal gender is determined externally and typically formalized in official documents such as birth certificates, identity cards, or passports. It carries direct implications for a person s rights, obligations, and access to services.
 
@@ -98,7 +98,7 @@ This modeling distinguishes clearly between personal or intrinsic aspects of gen
 
 #### Administrative Gender
 
-![Administrative Gender](../images/Administrative%20Gender.png)
+![Administrative Gender](assets/images/Administrative Gender.png)
 
 The diagram models Administrative Gender as an extrinsic mode that reflects the gender categories assigned or recognized by organizations for institutional purposes. Unlike legal gender, which is state-based, administrative gender encompasses a broader range of contexts, including hospitals, schools, companies, and other organizations that may require gender information for registration, service provision, or record-keeping.
 
@@ -110,7 +110,7 @@ By explicitly generalizing gender recognition to organizational contexts, the mo
 
 #### Gender Identity
 
-![Gender Identity](../images/Gender%20Identity.png)
+![Gender Identity](assets/images/Gender Identity.png)
 
 The diagram models Gender Identity as a mode characterizing a Self-aware Person. It captures the intrinsic dimension of gender, understood as a person s own internal sense of self. Unlike extrinsically assigned forms of classification, gender identity is personally defined and experienced, and it can evolve throughout an individual s life.
 The taxonomy distinguishes three disjoint phases of gender identity: Male Gender Identity, Female Gender Identity, and Non-binary Gender Identity. The use of phases reflects that gender identity is a property of self-aware persons that can change over time, supporting the representation of diverse and dynamic personal experiences of gender.
@@ -119,7 +119,7 @@ The taxonomy distinguishes three disjoint phases of gender identity: Male Gender
 
 ##### Administrative-Legal Gender
 
-![Administrative-Legal Gender](../images/Administrative-Legal%20Gender.png)
+![Administrative-Legal Gender](assets/images/Administrative-Legal Gender.png)
 
 The diagram provides an auxiliary view that clarifies the relationship between Administrative Gender and Legal Gender within the ontology. It does not introduce new constructs but integrates the roles, recognizers, and mediations already defined in the Administrative Gender and Legal Gender diagrams.
 
@@ -131,7 +131,7 @@ On the characterization side, recognized persons are linked to the modes Adminis
 
 ##### Person's Gender Taxonomy
 
-![Person's Gender Taxonomy](../images/Person%27s%20Gender%20Taxonomy.png)
+![Person's Gender Taxonomy](assets/images/Person's Gender Taxonomy.png)
 
 The diagram provides an auxiliary view that consolidates the taxonomy of gender-related roles modeled in the Gender subpackage. It does not introduce new elements but organizes the categories defined in the Administrative Gender and Legal Gender diagrams into a single integrated hierarchy.
 
@@ -141,7 +141,7 @@ At the top level, Person is specialized into roles that reflect recognized admin
 
 ### Chromosomes
 
-![Chromosomes](../images/Chromosomes.png)
+![Chromosomes](assets/images/Chromosomes.png)
 
 The diagram models chromosomes and their role in human cells and persons. At its core, Chromosome is specialized into the subkind Allosome, which is further partitioned into Allosome X and Allosome Y. A note clarifies that an allosome set can never consist of only Y, preventing biologically inconsistent representations. The model enforces that allosome type is complete and disjoint.
 
@@ -151,7 +151,7 @@ On the organismal level, Person is represented as composed of two or more human 
 
 ### Cellular Entities
 
-![Cellular Entities](../images/Cellular%20Entities.png)
+![Cellular Entities](assets/images/Cellular Entities.png)
 
 The diagram represents the high-level modeling of cellular entities and their relation to broader biological categories. At the core is the category Cellular Entity, which generalizes living beings composed of cells, including both individual organisms and more specific cellular components. This category is specialized according to the complete and disjoint states Living Cellular Entity and Dead Cellular Entity, capturing the essential life-state distinction relevant to medical and biological contexts.
 
@@ -163,7 +163,7 @@ From a taxonomic perspective, Cellular Entity subsumes Animal, which is further 
 
 #### Health Condition Overview
 
-![Health Condition Overview](../images/Health%20Condition%20Overview.png)
+![Health Condition Overview](assets/images/Health Condition Overview.png)
 
 The diagram Health Condition Overview provides a high-level structure for representing health conditions and their main distinctions. It introduces Health Condition as a specialization of Condition, associated with Animal entities, and instantiated through Health Condition Types. This establishes the general framework in which health conditions are characterized and classified within the ontology.
 
@@ -173,7 +173,7 @@ Together, these partitions provide a coherent schema for distinguishing between 
 
 #### Established Health Condition Types
 
-![Established Health Condition Types](../images/Established%20Health%20Condition%20Types.png)
+![Established Health Condition Types](assets/images/Established Health Condition Types.png)
 
 The diagram Established Health Condition Types organizes the classification of health conditions based on structural, functional, psychological, and etiological aspects. It provides a structured view of how different categories of conditions are related, ensuring that all relevant perspectives on health conditions are consistently represented. The model distinguishes between structural and non-structural conditions, including functional and psychological conditions, and connects them to broader classifications of established health conditions. It also incorporates etiological distinctions, such as idiopathic and known-origin conditions, with the latter further divided into congenital and acquired types.
 
@@ -185,7 +185,7 @@ Overall, the diagram provides a comprehensive schema for differentiating establi
 
 ### Agents
 
-![Agents](../images/Agents.png)
+![Agents](assets/images/Agents.png)
 
 The diagram organizes the ontology of Agents, rooted in the UFO-based category Agent. Agents are understood as entities capable of acting or exercising agency in a system. The diagram distinguishes between collective and individual forms of agency.
 
@@ -195,13 +195,13 @@ The diagram specifies that types of agents as a whole are incomplete and disjoin
 
 ### Datatypes
 
-![Datatypes](../images/Datatypes.png)
+![Datatypes](assets/images/Datatypes.png)
 
 A coherent set of datatypes for calendar and civil time. It includes an enumeration Month with twelve named values, a Date datatype that combines year, month, and day in the proleptic Gregorian calendar, and an OffsetDateTime that reuses Date and adds hour, minute, second, optional nanosecond, and a UTC offset in whole minutes. The separation between Date and OffsetDateTime supports reuse of calendar dates where no time-of-day or offset is needed and enables precise timestamping where an explicit offset is required.
 
 ### Documents
 
-![Documents](../images/Documents.png)
+![Documents](assets/images/Documents.png)
 
 The diagram introduces the general category Document, encompassing entities that serve as carriers of information. This category is specialized into two complete and disjoint subcategories: Physical Document and Digital Document.
 
@@ -213,7 +213,7 @@ This distinction supports consistent representation of information artifacts acr
 
 ### Diagnostic Assessments
 
-![Diagnostic Assessments](../images/Diagnostic%20Assessments.png)
+![Diagnostic Assessments](assets/images/Diagnostic Assessments.png)
 
 The diagram represents the structure and results of diagnostic processes. At the top, a Diagnostic Relation connects diagnosing agents and diagnosed entities. Once a diagnostic process has been completed, this relation becomes a Concluded Diagnostic Relation, which manifests in one or more Diagnostic Assessments. These assessments classify the determination of diagnostic results into complete and disjoint categories.
 
@@ -223,7 +223,7 @@ The model also includes a connection from Diagnostic Assessment Outcome to the g
 
 ### Diagnostic Relations
 
-![Diagnostic Relations](../images/Diagnostic%20Relations.png)
+![Diagnostic Relations](assets/images/Diagnostic Relations.png)
 
 The diagram presents the structural components and mediations that constitute a Diagnostic Relation. This relator connects a Diagnosing Agent and a Diagnosed Entity, ensuring that diagnostic activities are explicitly grounded in the participation of both an agent and a target entity.
 
@@ -235,7 +235,7 @@ On the side of the diagnosed entity, the diagram shows that each diagnosed entit
 
 ### Diagnosing Agents
 
-![Diagnosing Agents](../images/Diagnosing%20Agents.png)
+![Diagnosing Agents](assets/images/Diagnosing Agents.png)
 
 The diagram specifies the agents responsible for performing diagnostic activities and issuing diagnostic outcomes. At its root, the general category Agent is specialized through the role mixin Diagnosing Agent, representing any entity capable of carrying out a diagnostic process. This general type is further specialized into two disjoint roles: Diagnosing Artificial Agent and Diagnosing Person.
 
@@ -245,7 +245,7 @@ In addition, diagnosing agents are linked to the role mixin Diagnostic Outcome I
 
 ### Diagnosis Types
 
-![Diagnosis Types](../images/Diagnosis%20Types.png)
+![Diagnosis Types](assets/images/Diagnosis Types.png)
 
 The diagram structures the taxonomy of Diagnosis, identifying different types according to their object, focus, source, and use. A general subkind Diagnosis is specialized into Cellular Entity Diagnosis and Healthcare Diagnosis, ensuring coverage of both cellular-level and broader healthcare-oriented diagnostic contexts.
 
@@ -255,7 +255,7 @@ The model also incorporates the distinction between Self-diagnosis and External 
 
 ### Diagnosed Entities
 
-![Diagnosed Entities](../images/Diagnosed%20Entities.png)
+![Diagnosed Entities](assets/images/Diagnosed Entities.png)
 
 The diagram defines the abstract notion of a Diagnosed Entity, capturing the range of entities that may be the subject of a diagnostic process. This is partitioned into four disjoint and complete types, ensuring that all diagnosed entities fall into one of these categories.
 
@@ -265,7 +265,7 @@ The specialization includes Diagnosed Cellular Entity, which is explicitly linke
 
 ### Endurant
 
-![Endurant](../images/Endurant.png)
+![Endurant](assets/images/Endurant.png)
 
 The diagram presents the high-level taxonomy of Endurants as conceptualized in UFO. At the top, Particular is introduced as a general mixin that subsumes all individual entities. From this root, the category Endurant captures entities that persist through time while possibly undergoing changes in their properties.
 
@@ -275,7 +275,7 @@ Substantial is modeled as a specialization of endurants, representing entities t
 
 ### Person's Living Status
 
-![Person's Living Status](../images/Person%27s%20Living%20Status.png)
+![Person's Living Status](assets/images/Person's Living Status.png)
 
 The diagram models the temporal and biological aspects of a person s existence, capturing both life stages and living status. At its center is the kind Person, which includes an attribute date of birth that records the individual's birth date. A constraint ensures consistency by requiring that the date of birth matches the date portion of the end attribute of the associated Person s Birth event.
 
@@ -287,7 +287,7 @@ By connecting life stages, birth and death events, and cause of death, the diagr
 
 ### Person's Birth
 
-![Person's Birth](../images/Person%27s%20Birth.png)
+![Person's Birth](assets/images/Person's Birth.png)
 
 The diagram models biological parenthood through the Parent-Child Relation, a relator that mediates the link between persons in parental and offspring roles. At its core, every Person may take on the Child phase, which represents the life stage during which the individual participates as Offspring in a parent child relation. This mediation ensures that the role of offspring is explicitly tied to a person s life cycle.
 
