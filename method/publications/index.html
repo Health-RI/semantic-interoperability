@@ -801,13 +801,186 @@
   
   
   
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ontology
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ontology
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation-ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lifecycle and Validation Policy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policy-ontology-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Note Classification and Visual Conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versioning-ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Versioning Strategy for Ontology Releases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Mapping
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Mapping
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../mapping-strategy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Mapping Strategy
+    Strategy
     
   </span>
   
@@ -830,7 +1003,7 @@
   
   
   <span class="md-ellipsis">
-    Mapping Vocabulary Specification
+    Vocabulary Specification
     
   </span>
   
@@ -859,6 +1032,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1254,22 +1435,7 @@
 <h2 id="publishing-the-ontology">Publishing the Ontology</h2>
 <p>Before diving into specific files and artifacts, we first outline how ontology versions are tracked and the policy guiding version numbering.</p>
 <h3 id="versioning-policy">Versioning Policy</h3>
-<p>We use an <strong>adapted semantic versioning</strong> scheme to indicate the type and impact of changes:</p>
-<p><strong>Format</strong>: <code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code></p>
-<ul>
-<li><strong>Major</strong>: Conceptual milestones or structural overhauls.</li>
-<li><strong>Minor</strong>: Any scoped modifications, including additions, refinements, or reorganizations that preserve semantic compatibility.</li>
-<li><strong>Patch</strong>: Fixes or clarifications that stay within the established scope (e.g., label corrections, comment improvements).</li>
-</ul>
-<p>While inspired by <a href="https://semver.org/">Semantic Versioning</a>, this adapted strategy is tailored for ontology and conceptual model management.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Only <strong>major versions</strong> will trigger a formal release and will have a corresponding published specification webpage. These releases are considered <strong>stable versions</strong>, and intended for broader reuse and citation.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>We adopt a <strong>fast versioning strategy</strong>: files are made available in the <code>/ontology</code> folder as soon as possible, even when they may present smaller completion or consistency issues. This enables early access and collaboration, while stability is guaranteed only for major releases.</p>
-</div>
+<p>Please refer to the <a href="../versioning-ontology/">Ontology Versioning Policy</a> page for full details.</p>
 <h3 id="published-artifacts">Published Artifacts</h3>
 <p>For each ontology release, the following artifacts are published — always in both <code>ontologies/latest/</code> and <code>ontologies/versioned/</code> folders.</p>
 <ul>
@@ -1357,9 +1523,11 @@ These images are always generated from the most recent <code>.vpp</code> file an
 <ul>
 <li>Only the <strong>latest version</strong> of each artifact is visible directly in the <code>ontologies/latest/</code> folder.</li>
 <li><strong>All previous versions</strong> are organized in the <code>ontologies/versioned/</code> directory for transparency and reproducibility.</li>
-<li>A <strong>changelog file (<code>changelog-ontology.md</code>)</strong> summarizes all version changes and links them to their respective files and semantic impact.</li>
+<li>A <strong>changelog file (<code>changelog-ontology.md</code>)</strong> summarizes all version changes and links them to their respective files and semantic impact.<ul>
 <li>The changelog follows the <a href="https://keepachangelog.com/">Keep a Changelog</a> format.</li>
 <li>It is generated and maintained with the support of an AI-assisted tool to ensure consistency and clarity.</li>
+</ul>
+</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Looking for PID details?</p>
@@ -1371,10 +1539,12 @@ These images are always generated from the most recent <code>.vpp</code> file an
 Published mappings are <strong>append-only</strong>: existing rows are not deleted. To correct or supersede a row, add a new one using the <code>replaces</code> field to reference the previous record.</p>
 <ul>
 <li><strong>SSSOM Mapping Set (TSV &amp; TTL)</strong>
-  Curated cross-ontology alignments published as a tabular SSSOM set and as RDF/Turtle.</li>
+  Curated cross-ontology alignments published as a tabular SSSOM set and as RDF/Turtle.<ul>
 <li><code>https://w3id.org/health-ri/semantic-interoperability/mappings</code> — redirects to the <strong>TTL</strong> version</li>
 <li><code>https://w3id.org/health-ri/semantic-interoperability/mappings/ttl</code> — <strong>TTL</strong> version</li>
 <li><code>https://w3id.org/health-ri/semantic-interoperability/mappings/tsv</code> — <strong>TSV</strong> version</li>
+</ul>
+</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1382,7 +1552,7 @@ Published mappings are <strong>append-only</strong>: existing rows are not delet
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Both serializations of the SSSOM Mapping Set — <strong>TSV</strong> and <strong>TTL</strong> — are stored in the <code>/mappings</code> folder of this repository.<br />
+<p>Both serializations of the SSSOM Mapping Set — <strong>TSV</strong> and <strong>TTL</strong> — are stored in the <code>/mappings</code> folder of this repository.
 The redirect links above provide stable access to these files, while the folder itself contains the recorded versions.</p>
 </div>
 

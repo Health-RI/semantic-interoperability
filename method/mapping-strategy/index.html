@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/mapping-strategy/">
       
       
-        <link rel="prev" href="../introduction/">
+        <link rel="prev" href="../versioning-ontology/">
       
       
         <link rel="next" href="../specification-vocabulary.html">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Mapping Strategy - Health-RI Semantic Interoperability</title>
+        <title>Strategy - Health-RI Semantic Interoperability</title>
       
     
     
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mapping Strategy
+              Strategy
             
           </span>
         </div>
@@ -799,6 +799,179 @@
                 
   
   
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ontology
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ontology
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation-ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lifecycle and Validation Policy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policy-ontology-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Note Classification and Visual Conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versioning-ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Versioning Strategy for Ontology Releases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Mapping
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Mapping
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
     
   
   
@@ -816,7 +989,7 @@
   
   
   <span class="md-ellipsis">
-    Mapping Strategy
+    Strategy
     
   </span>
   
@@ -829,7 +1002,7 @@
   
   
   <span class="md-ellipsis">
-    Mapping Strategy
+    Strategy
     
   </span>
   
@@ -998,7 +1171,7 @@
   
   
   <span class="md-ellipsis">
-    Mapping Vocabulary Specification
+    Vocabulary Specification
     
   </span>
   
@@ -1027,6 +1200,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1423,8 +1604,10 @@
 </ul>
 <h3 id="our-strategy-choosing-the-right-mapping-property">Our Strategy: Choosing the Right Mapping Property</h3>
 <ul>
-<li><strong><a href="../specification-vocabulary.html#hasExactMeaning"><code>hriv:hasExactMeaning</code></a></strong> is used when the external concept is fully equivalent in meaning to our reference concept.</li>
+<li><strong><a href="../specification-vocabulary.html#hasExactMeaning"><code>hriv:hasExactMeaning</code></a></strong> is used when the external concept is fully equivalent in meaning to our reference concept.<ul>
 <li>Each external concept may have <strong>only one</strong> <code>hriv:hasExactMeaning</code>.</li>
+</ul>
+</li>
 <li><strong><a href="../specification-vocabulary.html#hasBroaderMeaningThan"><code>hriv:hasBroaderMeaningThan</code></a></strong> is used when the external concept is <strong>broader</strong> than our reference concept (i.e., it includes our concept and possibly more).</li>
 <li><strong><a href="../specification-vocabulary.html#hasNarrowerMeaningThan"><code>hriv:hasNarrowerMeaningThan</code></a></strong> is used when the external concept is <strong>narrower</strong> than our reference concept (i.e., it captures a more specific notion).</li>
 </ul>
