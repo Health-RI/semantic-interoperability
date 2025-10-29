@@ -105,7 +105,7 @@ The Health-RI mapping relations are declared as specializations of SKOS mapping 
 ### Our Strategy: Choosing the Right Mapping Property
 
 - **[`hriv:hasExactMeaning`](./specification-vocabulary.html#hasExactMeaning)** is used when the external concept is fully equivalent in meaning to our reference concept.
-  - Each external concept may have **only one** `hriv:hasExactMeaning`.
+    - Each external concept may have **only one** `hriv:hasExactMeaning`.
 - **[`hriv:hasBroaderMeaningThan`](./specification-vocabulary.html#hasBroaderMeaningThan)** is used when the external concept is **broader** than our reference concept (i.e., it includes our concept and possibly more).
 - **[`hriv:hasNarrowerMeaningThan`](./specification-vocabulary.html#hasNarrowerMeaningThan)** is used when the external concept is **narrower** than our reference concept (i.e., it captures a more specific notion).
 

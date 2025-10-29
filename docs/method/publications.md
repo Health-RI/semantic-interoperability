@@ -8,21 +8,7 @@ Before diving into specific files and artifacts, we first outline how ontology v
 
 ### Versioning Policy
 
-We use an **adapted semantic versioning** scheme to indicate the type and impact of changes:
-
-**Format**: `<major>.<minor>.<patch>`
-
-- **Major**: Conceptual milestones or structural overhauls.
-- **Minor**: Any scoped modifications, including additions, refinements, or reorganizations that preserve semantic compatibility.
-- **Patch**: Fixes or clarifications that stay within the established scope (e.g., label corrections, comment improvements).
-
-While inspired by [Semantic Versioning](https://semver.org/), this adapted strategy is tailored for ontology and conceptual model management.
-
-!!! note
-    Only **major versions** will trigger a formal release and will have a corresponding published specification webpage. These releases are considered **stable versions**, and intended for broader reuse and citation.
-
-!!! info
-    We adopt a **fast versioning strategy**: files are made available in the `/ontology` folder as soon as possible, even when they may present smaller completion or consistency issues. This enables early access and collaboration, while stability is guaranteed only for major releases.
+Please refer to the [Versioning Policy](versioning.md) page for full details.
 
 ### Published Artifacts
 
@@ -98,8 +84,8 @@ ontologies/
 - Only the **latest version** of each artifact is visible directly in the `ontologies/latest/` folder.
 - **All previous versions** are organized in the `ontologies/versioned/` directory for transparency and reproducibility.
 - A **changelog file (`changelog-ontology.md`)** summarizes all version changes and links them to their respective files and semantic impact.
-  - The changelog follows the [Keep a Changelog](https://keepachangelog.com/) format.
-  - It is generated and maintained with the support of an AI-assisted tool to ensure consistency and clarity.
+    - The changelog follows the [Keep a Changelog](https://keepachangelog.com/) format.
+    - It is generated and maintained with the support of an AI-assisted tool to ensure consistency and clarity.
 
 !!! tip "Looking for PID details?"
     The full description of all Persistent Identifiers (PIDs) — including format-specific URIs for each version — is documented separately. Access the complete description at: [Persistent Identifiers](persistent-ids.md).
@@ -113,13 +99,13 @@ Published mappings are **append-only**: existing rows are not deleted. To correc
 
 - **SSSOM Mapping Set (TSV & TTL)**
   Curated cross-ontology alignments published as a tabular SSSOM set and as RDF/Turtle.
-  - `https://w3id.org/health-ri/semantic-interoperability/mappings` — redirects to the **TTL** version
-  - `https://w3id.org/health-ri/semantic-interoperability/mappings/ttl` — **TTL** version
-  - `https://w3id.org/health-ri/semantic-interoperability/mappings/tsv` — **TSV** version
-  
+    - `https://w3id.org/health-ri/semantic-interoperability/mappings` — redirects to the **TTL** version
+    - `https://w3id.org/health-ri/semantic-interoperability/mappings/ttl` — **TTL** version
+    - `https://w3id.org/health-ri/semantic-interoperability/mappings/tsv` — **TSV** version
+
 !!! tip
     A human-readable version of the mappings [can be accessed in this link](https://health-ri.github.io/semantic-interoperability/ontology/mappings/).
 
 !!! note
-    Both serializations of the SSSOM Mapping Set — **TSV** and **TTL** — are stored in the `/mappings` folder of this repository.  
+    Both serializations of the SSSOM Mapping Set — **TSV** and **TTL** — are stored in the `/mappings` folder of this repository.
     The redirect links above provide stable access to these files, while the folder itself contains the recorded versions.

@@ -43,7 +43,6 @@ Where:
 
 - `X.Y.Z` is the semantic version (e.g., `2.0.0`)
 - `{format}` is one of:
-
   - `ttl` — OWL ontology (Turtle)
   - `vpp` — OntoUML model (Visual Paradigm)
   - `json` — OntoUML model (JSON)

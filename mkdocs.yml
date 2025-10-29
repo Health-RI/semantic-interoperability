@@ -78,6 +78,8 @@ nav:
   - Method:
       - Overview: method/index.md
       - Introduction: method/introduction.md
+      - Ontology Lifecycle and Validation Policy: method/validation-ontology.md
+      - Versioning Strategy for Ontology Releases: method/versioning-ontology.md
       - Mapping Strategy: method/mapping-strategy.md
       - Mapping Vocabulary Specification: method/specification-vocabulary.html
       - SSSOM Mapping Set: method/mapping-set.md

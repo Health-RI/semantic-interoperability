@@ -440,5 +440,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Not serialized
 
-- Note colors and formatting are editor metadata and are **not exported** to the `.json` or `.ttl` artifacts.  
+- Note colors and formatting are editor metadata and are **not exported** to the `.json` or `.ttl` artifacts.
   They are visible only in the **`.vpp`** (OntoUML/Visual Paradigm) model.
