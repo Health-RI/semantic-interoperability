@@ -20,15 +20,15 @@ This section introduces OntoUML, an ontologically well-founded conceptual modeli
 <span style="font-size: 2.0em">[How to Create an OntoUML Model](creating-ontouml-models.md#)</span>
 
 - [Installation Guide for Visual Paradigm and the OntoUML Plugin](creating-ontouml-models.md#installation-guide-for-visual-paradigm-and-the-ontouml-plugin)
-  - [Step 1: Install Visual Paradigm](creating-ontouml-models.md#step-1-install-visual-paradigm)
-  - [Step 2: Install the OntoUML Plugin](creating-ontouml-models.md#step-2-install-the-ontouml-plugin)
-  - [Step 3: Create an OntoUML Diagram](creating-ontouml-models.md#step-3-create-an-ontouml-diagram)
+    - [Step 1: Install Visual Paradigm](creating-ontouml-models.md#step-1-install-visual-paradigm)
+    - [Step 2: Install the OntoUML Plugin](creating-ontouml-models.md#step-2-install-the-ontouml-plugin)
+    - [Step 3: Create an OntoUML Diagram](creating-ontouml-models.md#step-3-create-an-ontouml-diagram)
 - [Additional Features of the Plugin](creating-ontouml-models.md#additional-features-of-the-plugin)
 
 <span style="font-size: 2.0em">[OntoUML/UFO Catalog](ontouml-ufo-catalog.md)</span>
 
 - [Access and Structure](ontouml-ufo-catalog.md#access-and-structure)
-  - [Directory Structure Overview](ontouml-ufo-catalog.md#directory-structure-overview)
+    - [Directory Structure Overview](ontouml-ufo-catalog.md#directory-structure-overview)
 - [Catalog's Persistent URLs](ontouml-ufo-catalog.md#catalogs-persistent-urls)
 - [References](ontouml-ufo-catalog.md#references)
 

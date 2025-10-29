@@ -43,11 +43,11 @@ Where:
 
 - `X.Y.Z` is the semantic version (e.g., `2.0.0`)
 - `{format}` is one of:
-  - `ttl` — OWL ontology (Turtle)
-  - `vpp` — OntoUML model (Visual Paradigm)
-  - `json` — OntoUML model (JSON)
-  - `documentation` — Markdown documentation
-  - `specification` — HTML specification
+    - `ttl` — OWL ontology (Turtle)
+    - `vpp` — OntoUML model (Visual Paradigm)
+    - `json` — OntoUML model (JSON)
+    - `documentation` — Markdown documentation
+    - `specification` — HTML specification
 
 !!! tip
     You can also use the version URI without a `{format}` (e.g., `/v0.6.0`) to directly access the `.ttl` file.
