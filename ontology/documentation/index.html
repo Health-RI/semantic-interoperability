@@ -1604,7 +1604,7 @@
 
 
 <h1 id="health-ri-ontology">Health-RI Ontology</h1>
-<p><em>Version 0.11.5</em></p>
+<p><em>Version 0.11.8</em></p>
 <h2 id="sex-and-gender">Sex and Gender</h2>
 <p>This document describes the OntoUML conceptual model of Sex and Gender, detailing its structure, types, and relationships. The model follows the ontological notion of <strong>&lt;<mode>&gt;</strong>, representing intrinsic properties of a <em>Person</em>. However, while these modes always depend on the bearer (they are properties of them), their determination can be either intrinsic depending only on the person s own features or extrinsic requiring assessment or assignment by external agents.</p>
 <p>This distinction is crucial to properly model the social, legal, and biological complexity of sex and gender in human contexts.</p>
@@ -1709,10 +1709,7 @@ The taxonomy distinguishes three disjoint phases of gender identity: Male Gender
 <p>The diagram specifies that types of agents as a whole are incomplete and disjoint, clarifying that while the current taxonomy covers key distinctions, the classification is not exhaustive. By contrast, types of individual agents are modeled as complete and disjoint, ensuring that every individual agent must be classified as either artificial or animal, with no overlap.</p>
 <h3 id="datatypes">Datatypes</h3>
 <p><img alt="Datatypes" src="../assets/images/Datatypes.png" /></p>
-<p>The diagram defines two datatypes essential for temporal information representation: Date and Timestamp. Both datatypes follow the proleptic Gregorian calendar, with support for negative and positive years, and system ranges extending from the year  4712 up to and including years beyond 9999.</p>
-<p>The Date datatype captures calendar dates using three attributes: year, month, and day. Constraints ensure validity of values, with months restricted to the range 1 12, and days constrained according to the month and leap year rules (e.g., February allows 1 29 days depending on leap years; months with 30 or 31 days follow their respective ranges). This provides precise modeling of day-level temporal granularity.</p>
-<p>The Timestamp datatype extends the structure of Date with attributes for hour, minute, second, subsecond, and timezone. Hours range from 0 23, minutes and seconds from 0 59, with the explicit constraint that the value 60 is not allowed for leap seconds. The subsecond attribute is optional, represented as a decimal value with precision up to nine digits, allowing millisecond to nanosecond resolution. Timezone is specified either as  Z  (UTC) or as an offset in hours and minutes relative to UTC. Examples such as  Z ,  +02:00 , or   05:30  illustrate its valid use.</p>
-<p>By distinguishing Date and Timestamp, the ontology enables flexible representation of temporal information at different levels of precision, from simple day-level references to full timepoint specifications with fractional seconds and timezone offsets.</p>
+<p>A coherent set of datatypes for calendar and civil time. It includes an enumeration Month with twelve named values, a Date datatype that combines year, month, and day in the proleptic Gregorian calendar, and an OffsetDateTime that reuses Date and adds hour, minute, second, optional nanosecond, and a UTC offset in whole minutes. The separation between Date and OffsetDateTime supports reuse of calendar dates where no time-of-day or offset is needed and enables precise timestamping where an explicit offset is required.</p>
 <h3 id="documents">Documents</h3>
 <p><img alt="Documents" src="../assets/images/Documents.png" /></p>
 <p>The diagram introduces the general category Document, encompassing entities that serve as carriers of information. This category is specialized into two complete and disjoint subcategories: Physical Document and Digital Document.</p>
