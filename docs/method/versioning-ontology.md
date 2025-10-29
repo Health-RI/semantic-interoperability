@@ -149,19 +149,32 @@ flowchart LR
     no3    --> N
   end
 
-  classDef stage fill:#0f5d73,stroke:#e6f2f6,color:#ffffff;
-  classDef pub   fill:#1f6f2a,stroke:#e6f2f6,color:#ffffff;
+  %% Node styling (Option A adjustments)
+  %% - Semi-transparent fills improve readability on any theme
+  %% - Bold font, rounded corners, small padding
+  classDef stage fill:#0f5d73cc,stroke:#e6f2f6,color:inherit,font-weight:bold,rx:6,ry:6,padding:4;
+  classDef pub   fill:#1f6f2acc,stroke:#e6f2f6,color:inherit,font-weight:bold,rx:6,ry:6,padding:4;
+  classDef yes   fill:#1f6f2acc,stroke:#1f6f2a,color:inherit,font-weight:bold,rx:6,ry:6,padding:4;
+  classDef no    fill:#8B0000cc,stroke:#8B0000,color:inherit,font-weight:bold,rx:6,ry:6,padding:4;
+  classDef result fill:#009fadcc,stroke:#e6f2f6,color:inherit,font-weight:bold,rx:6,ry:6,padding:4;
+
   class B,C,D stage;
   class S,X,Y,Z,N pub;
-
-  classDef yes fill:#1f6f2a,stroke:#1f6f2a,color:#ffffff;
-  classDef no  fill:#8B0000,stroke:#8B0000,color:#ffffff;
-
-  linkStyle default stroke:#000000,stroke-width:2px;
-
-  %% New result style
-  classDef result fill:#009fad,stroke:#e6f2f6,color:#ffffff;
   class X,Y,Z,N result;
+
+  %% Soft text halo for light themes (increases contrast slightly)
+  style S text-shadow:0px 0px 3px #00000033
+  style B text-shadow:0px 0px 3px #00000033
+  style C text-shadow:0px 0px 3px #00000033
+  style D text-shadow:0px 0px 3px #00000033
+  style X text-shadow:0px 0px 3px #00000033
+  style Y text-shadow:0px 0px 3px #00000033
+  style Z text-shadow:0px 0px 3px #00000033
+  style N text-shadow:0px 0px 3px #00000033
+
+  %% Edge styling
+  linkStyle default stroke:#000000,stroke-width:2px;
+  linkStyle 3,4,5 stroke:#8B0000,stroke-width:2px;
 ```
 
 ## Edge Cases & Notes
