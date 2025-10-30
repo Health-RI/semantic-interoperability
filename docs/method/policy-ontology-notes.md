@@ -18,7 +18,7 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
 **Palette convention (RxCy):** Visual Paradigm (VP) defines a fixed color grid within its Formats window, shown below.
 
 <figure>
-  <img src="./assets/images/color-table.png" alt="Visual Paradigm formatting window showing the color grid. The top row (R1), highlighted in red, contains the color options used for note categories." width="720">
+  <img src="../assets/images/color-table.png" alt="Visual Paradigm formatting window showing the color grid. The top row (R1), highlighted in red, contains the color options used for note categories." width="720">
   <figcaption><em>Figure.</em> Visual Paradigm formatting window with the color grid.
   The top row (R1), marked in red, shows the color options used for note categories (columns C2–C8).</figcaption>
 </figure>
