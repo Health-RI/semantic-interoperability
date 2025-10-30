@@ -1,4 +1,7 @@
-/* Contribution buttons: single column, centered */
+/* =============================================================================
+   1. CONTRIBUTION BUTTONS
+   Single-column layout, centered buttons with consistent spacing and width.
+============================================================================= */
 .md-typeset .button-grid {
   display: flex;
   flex-direction: column;
@@ -15,4 +18,30 @@
   width: 320px;           /* fixed width for all buttons */
   text-align: center;
   padding: 0.9rem 1rem;
+}
+
+/* =============================================================================
+   2. FOOTNOTE COLOR OVERRIDE
+   Ensures footnote reference numbers are always golden (#D4AF37) in both
+   light and dark modes. Overrides default Material color variables.
+============================================================================= */
+
+/* Universal footnote link styling */
+.md-typeset a.footnote-ref,
+.md-typeset sup a.footnote-ref {
+  color: #D4AF37 !important;  /* Metallic gold — consistent across themes */
+  text-decoration: none;      /* Remove underline for cleaner look */
+}
+
+/* Hover state for better visibility */
+.md-typeset a.footnote-ref:hover,
+.md-typeset sup a.footnote-ref:hover {
+  color: #FFD700 !important;  /* Brighter gold (Gold Standard) */
+  text-decoration: underline;
+}
+
+/* Explicit dark-mode reinforcement (optional but safe) */
+[data-md-color-scheme="slate"] .md-typeset a.footnote-ref,
+[data-md-color-scheme="slate"] .md-typeset sup a.footnote-ref {
+  color: #D4AF37 !important;
 }

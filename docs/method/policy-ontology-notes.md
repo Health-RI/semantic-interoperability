@@ -15,18 +15,27 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
 
 ## Note Categories and Colors
 
-| Tag  | Category               | What goes here                                | Typical contents                                                                       | Color (VP slot[^rxcy] — Name[^name]  • HEX) |
-| ---- | ---------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------- | ------------------------------------------- |
-| SEMI | Semantics & intent     | Clarify meaning beyond the stereotype/name    | term definition, conceptual nuance, OntoUML meaning, disambiguation                    | R1C7 — Lavender Blue • #C0C0FF              |
-| CNST | Constraints & rules    | Plain-text paraphrase of constraints (no OCL) | paraphrase of OCL constraints, invariants, pre/postconditions, multiplicity rationales | R1C2 — Spanish Pink • #FFC0C0               |
-| RATL | Rationale              | Why a design choice was made                  | trade-offs, rejected alternatives, decision logs                                       | R1C8 — Brilliant Lavender • #FFC0FF         |
-| SCOP | Scope & assumptions    | Boundaries of what the model covers           | simplifying assumptions, context limits, applicability conditions                      | R1C6 — Celeste • #C0FFFF                    |
-| TRAC | Traceability & sources | Where a model element comes from              | requirement IDs, standards clauses, tickets, citations                                 | R1C3 — Very Pale Orange • #FFE0C0           |
-| EXMP | Examples & usage       | Small, concrete examples                      | valid/invalid instances, mini sequence snippets                                        | R1C4 — Very Pale Yellow • #FFFFC0           |
-| TODO | Action items           | Work to do on the model                       | “rename this,” “split class,” “add scenario X”                                         | R1C5 — Tea Green • #C0FFC0                  |
+**Palette convention (RxCy):** Visual Paradigm (VP) defines a fixed color grid within its Formats window, shown below.
 
-Color selection rule:
-Use the first row of the VP color palette and select the indicated column (R1C2…R1C8). The first column is white—skip it[^no-default-blue].
+<figure>
+  <img src="./assets/images/color-table.png" alt="Visual Paradigm formatting window showing the color grid. The top row (R1), highlighted in red, contains the color options used for note categories." width="720">
+  <figcaption><em>Figure.</em> Visual Paradigm formatting window with the color grid.
+  The top row (R1), marked in red, shows the color options used for note categories (columns C2–C8).</figcaption>
+</figure>
+
+Each cell in the grid can be identified using a Row × Column notation (RxCy), where R1C1 means “Row 1, Column 1.” The top row (R1) contains the main palette options, and the first column (R1C1) is white—this one is not used in our convention. The highlighted red rectangle in the image marks that top row (R1), from which all category colors are selected.
+
+| Tag  | Category               | What goes here                                | Typical contents                                                                       | Color (VP slot — Name[^name] — HEX) |
+| ---- | ---------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------- | ----------------------------------- |
+| **SEMI** | Semantics & intent     | Clarify meaning beyond the stereotype/name    | term definition, conceptual nuance, OntoUML meaning, disambiguation                    | R1C7 — Lavender Blue — <div style="background-color:#C0C0FF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0C0FF</div> |
+| **CNST** | Constraints & rules    | Plain-text paraphrase of constraints (no OCL) | paraphrase of OCL constraints, invariants, pre/postconditions, multiplicity rationales | R1C2 — Spanish Pink — <div style="background-color:#FFC0C0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFC0C0</div> |
+| **RATL** | Rationale              | Why a design choice was made                  | trade-offs, rejected alternatives, decision logs                                       | R1C8 — Brilliant Lavender — <div style="background-color:#FFC0FF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFC0FF</div> |
+| **SCOP** | Scope & assumptions    | Boundaries of what the model covers           | simplifying assumptions, context limits, applicability conditions                      | R1C6 — Celeste — <div style="background-color:#C0FFFF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFFF</div> |
+| **TRAC** | Traceability & sources | Where a model element comes from              | requirement IDs, standards clauses, tickets, citations                                 | R1C3 — Very Pale Orange — <div style="background-color:#FFE0C0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFE0C0</div> |
+| **EXMP** | Examples & usage       | Small, concrete examples                      | valid/invalid instances, mini sequence snippets                                        | R1C4 — Very Pale Yellow — <div style="background-color:#FFFFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFFFC0</div> |
+| **TODO** | Action items           | Work to do on the model                       | “rename this,” “split class,” “add scenario X”                                         | R1C5 — Tea Green — <div style="background-color:#C0FFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFC0</div> |
+
+**Color selection rule**: Use the top row (R1) of the VP color palette, choosing columns C2–C8 as indicated in the table above.   The first slot (R1C1, white) must be skipped[^no-default-blue].
 
 ## Note Usage and Diagramming Rules
 
@@ -76,5 +85,4 @@ Use the first row of the VP color palette and select the indicated column (R1C2�
 ## References
 
 [^name]: Names obtained from the [color-name website](https://www.color-name.com/).
-[^rxcy]: RxCy indicate the row and column of Visual Paradigm’s default color table.
 [^no-default-blue]: The VP default note color (blue) is intentionally excluded so each note gets a unique category color.
