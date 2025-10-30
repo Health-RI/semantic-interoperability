@@ -1486,6 +1486,14 @@ It ensures consistent visual annotation, semantic clarity, and readability acros
 <p>The scope covers all ontology-related UML diagrams, including those representing OntoUML, HRIO, or HRIV concepts.
 It excludes notation for OCL syntax itself or purely graphical conventions unrelated to note usage.</p>
 <h2 id="note-categories-and-colors">Note Categories and Colors</h2>
+<p><strong>Palette convention (RxCy):</strong> Visual Paradigm (VP) defines a fixed color grid within its Formats window, shown below.</p>
+<figure>
+  <img src="../assets/images/color-table.png" alt="Visual Paradigm formatting window showing the color grid. The top row (R1), highlighted in red, contains the color options used for note categories." width="720">
+  <figcaption><em>Figure.</em> Visual Paradigm formatting window with the color grid.
+  The top row (R1), marked in red, shows the color options used for note categories (columns C2–C8).</figcaption>
+</figure>
+
+<p>Each cell in the grid can be identified using a Row × Column notation (RxCy), where R1C1 means “Row 1, Column 1.” The top row (R1) contains the main palette options, and the first column (R1C1) is white—this one is not used in our convention. The highlighted red rectangle in the image marks that top row (R1), from which all category colors are selected.</p>
 <table>
 <thead>
 <tr>
@@ -1493,63 +1501,62 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
 <th>Category</th>
 <th>What goes here</th>
 <th>Typical contents</th>
-<th>Color (VP slot<sup id="fnref:rxcy"><a class="footnote-ref" href="#fn:rxcy">2</a></sup> — Name<sup id="fnref:name"><a class="footnote-ref" href="#fn:name">3</a></sup>  • HEX)</th>
+<th>Color (VP slot — Name<sup id="fnref:name"><a class="footnote-ref" href="#fn:name">2</a></sup> — HEX)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>SEMI</td>
+<td><strong>SEMI</strong></td>
 <td>Semantics &amp; intent</td>
 <td>Clarify meaning beyond the stereotype/name</td>
 <td>term definition, conceptual nuance, OntoUML meaning, disambiguation</td>
-<td>R1C7 — Lavender Blue • #C0C0FF</td>
+<td>R1C7 — Lavender Blue — <div style="background-color:#C0C0FF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0C0FF</div></td>
 </tr>
 <tr>
-<td>CNST</td>
+<td><strong>CNST</strong></td>
 <td>Constraints &amp; rules</td>
 <td>Plain-text paraphrase of constraints (no OCL)</td>
 <td>paraphrase of OCL constraints, invariants, pre/postconditions, multiplicity rationales</td>
-<td>R1C2 — Spanish Pink • #FFC0C0</td>
+<td>R1C2 — Spanish Pink — <div style="background-color:#FFC0C0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFC0C0</div></td>
 </tr>
 <tr>
-<td>RATL</td>
+<td><strong>RATL</strong></td>
 <td>Rationale</td>
 <td>Why a design choice was made</td>
 <td>trade-offs, rejected alternatives, decision logs</td>
-<td>R1C8 — Brilliant Lavender • #FFC0FF</td>
+<td>R1C8 — Brilliant Lavender — <div style="background-color:#FFC0FF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFC0FF</div></td>
 </tr>
 <tr>
-<td>SCOP</td>
+<td><strong>SCOP</strong></td>
 <td>Scope &amp; assumptions</td>
 <td>Boundaries of what the model covers</td>
 <td>simplifying assumptions, context limits, applicability conditions</td>
-<td>R1C6 — Celeste • #C0FFFF</td>
+<td>R1C6 — Celeste — <div style="background-color:#C0FFFF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFFF</div></td>
 </tr>
 <tr>
-<td>TRAC</td>
+<td><strong>TRAC</strong></td>
 <td>Traceability &amp; sources</td>
 <td>Where a model element comes from</td>
 <td>requirement IDs, standards clauses, tickets, citations</td>
-<td>R1C3 — Very Pale Orange • #FFE0C0</td>
+<td>R1C3 — Very Pale Orange — <div style="background-color:#FFE0C0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFE0C0</div></td>
 </tr>
 <tr>
-<td>EXMP</td>
+<td><strong>EXMP</strong></td>
 <td>Examples &amp; usage</td>
 <td>Small, concrete examples</td>
 <td>valid/invalid instances, mini sequence snippets</td>
-<td>R1C4 — Very Pale Yellow • #FFFFC0</td>
+<td>R1C4 — Very Pale Yellow — <div style="background-color:#FFFFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFFFC0</div></td>
 </tr>
 <tr>
-<td>TODO</td>
+<td><strong>TODO</strong></td>
 <td>Action items</td>
 <td>Work to do on the model</td>
 <td>“rename this,” “split class,” “add scenario X”</td>
-<td>R1C5 — Tea Green • #C0FFC0</td>
+<td>R1C5 — Tea Green — <div style="background-color:#C0FFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFC0</div></td>
 </tr>
 </tbody>
 </table>
-<p>Color selection rule:
-Use the first row of the VP color palette and select the indicated column (R1C2…R1C8). The first column is white—skip it<sup id="fnref:no-default-blue"><a class="footnote-ref" href="#fn:no-default-blue">1</a></sup>.</p>
+<p><strong>Color selection rule</strong>: Use the top row (R1) of the VP color palette, choosing columns C2–C8 as indicated in the table above.   The first slot (R1C1, white) must be skipped<sup id="fnref:no-default-blue"><a class="footnote-ref" href="#fn:no-default-blue">1</a></sup>.</p>
 <h2 id="note-usage-and-diagramming-rules">Note Usage and Diagramming Rules</h2>
 <h3 id="categories-content">Categories &amp; Content</h3>
 <ul>
@@ -1607,11 +1614,8 @@ Use the first row of the VP color palette and select the indicated column (R1C2�
 <li id="fn:no-default-blue">
 <p>The VP default note color (blue) is intentionally excluded so each note gets a unique category color.&#160;<a class="footnote-backref" href="#fnref:no-default-blue" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:rxcy">
-<p>RxCy indicate the row and column of Visual Paradigm’s default color table.&#160;<a class="footnote-backref" href="#fnref:rxcy" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
 <li id="fn:name">
-<p>Names obtained from the <a href="https://www.color-name.com/">color-name website</a>.&#160;<a class="footnote-backref" href="#fnref:name" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Names obtained from the <a href="https://www.color-name.com/">color-name website</a>.&#160;<a class="footnote-backref" href="#fnref:name" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
