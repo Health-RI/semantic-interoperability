@@ -4,8 +4,13 @@
 
 *Questions about the initiative’s purpose, strategic goals, expected impact, and broader context.*
 
+**Further reading:**
+
+- [Overview of methods and approach](../method/)
+- [FAIR & semantic interoperability context](../semantic-interoperability/)
+
 !!! warning "Disclaimer"
-    The answers in this section are part of an ongoing effort to address strategic questions about the initiative. They are based on initial interpretations and should be used with caution. All entries are marked as **drafts** and will be further refined and validated in collaboration with stakeholders.
+    The answers in this section are part of an ongoing effort to address strategic questions about the initiative. They are based on initial interpretations and should be used with caution. All entries are marked as drafts and will be further refined and validated in collaboration with stakeholders.
 
 ??? question "What is the goal of Health-RI’s semantic interoperability initiative?"
     To enable meaningful data integration across health and life sciences institutions by aligning data semantically, not just structurally. This is achieved through the development and adoption of a common reference model that captures domain meaning explicitly.
@@ -72,18 +77,13 @@
 
     OntoUML defines the domain-level semantics, while gUFO implements those concepts in OWL. This layered architecture ensures that semantic meaning is preserved from human-level models to machine-readable artifacts.
 
-    [Read more.](../method/)
-
 ??? question "How does this initiative relate to the FAIR principles?"
-    It supports the 'I' in FAIR—Interoperability—by grounding vocabularies and schemas in shared ontologies and ontological commitments.
-    [Learn more](../semantic-interoperability/)
+    It supports the 'I' in FAIR—Interoperability—by grounding vocabularies and schemas in shared ontologies and ontological commitments (see [FAIR & semantic interoperability](../semantic-interoperability/)).
 
 ??? question "What are the main components of the approach?"
-    - OntoUML conceptual modeling
-    - gUFO OWL-based computational ontologies
-    - Schema-to-ontology mappings using tools like SSSOM
-
-    [Read more.](../method)
+    - [OntoUML](../ontouml-gufo/ontouml) conceptual modeling
+    - [gUFO](../ontouml-gufo/gufo) OWL-based computational ontologies
+    - Schema-to-ontology mappings using tools like [SSSOM](https://mapping-commons.github.io/sssom/)
 
 ??? question "Why do we need the semantic interoperability initiative if standards like HL7, OMOP, or DCAT-AP already exist? Isn’t this duplicating existing efforts?"
     This initiative complements existing standards like HL7, OMOP, and DCAT by focusing on semantic precision, ontological clarity, and interoperability at the conceptual level. While HL7 and OMOP define syntactic and structural specifications for health data, this initiative addresses foundational semantics to align and reason over data models meaningfully. It:
@@ -110,12 +110,15 @@
 
 *Questions about the internal modeling framework, layers, and implementation choices.*
 
+**Further reading:**
+
+- [OntoUML overview](../ontouml-gufo/ontouml)
+- [gUFO details](../ontouml-gufo/gufo)
+
 ??? question "What are OntoUML and gUFO, and why are they used?"
     OntoUML is a conceptual modeling language grounded in the foundational ontology named Unified Foundational Ontology (UFO). gUFO is its OWL counterpart, enabling computational use. Together, they ensure semantic precision and machine-actionable models.
 
     OntoUML operates at MDA's CIM layer to capture conceptual semantics, while gUFO provides a platform-independent OWL implementation at the PIM layer. This ensures a traceable and interoperable flow from conceptualization to deployment.
-
-    [OntoUML overview](../ontouml-gufo/ontouml) • [gUFO details](../ontouml-gufo/gufo)
 
 ??? question "OntoUML and gUFO seem very complex. Isn’t that a barrier to adoption?"
     This is a common concern. Foundational ontologies like UFO are indeed complex—because they aim to capture real-world meaning with a high level of precision and avoid ambiguity across domains. Some complexity is simply inherent to the task: when we model the real-life elements, especially across institutions or sectors, we cannot always rely on overly simplistic representations.
@@ -125,16 +128,20 @@
     This layered approach lets modelers benefit from UFO’s expressive power without being overwhelmed by its formal depth. The complexity is managed by the modeling framework and supported by tools like Visual Paradigm and the OntoUML plugin. In fact, these languages have already been applied successfully in domains like public health, law, and digital humanities—demonstrating that the approach is both practical and scalable.
 
 ??? question "How is the OntoUML model converted to OWL?"
-    The OntoUML model is exported to OWL using the gUFO specification via plugin tooling. The resulting ontology retains the original semantics in a format suitable for Semantic Web technologies.
-    [More info.](../ontouml-gufo/gufo)
+    The OntoUML model is exported to OWL using the [gUFO specification](../ontouml-gufo/gufo) via plugin tooling. The resulting ontology retains the original semantics in a format suitable for Semantic Web technologies.
 
 ??? question "What is the difference between OntoUML and gUFO?"
     OntoUML is a conceptual modeling language for humans; gUFO is its OWL-based computational counterpart used in Semantic Web technologies.
-    [OntoUML](../ontouml-gufo/ontouml) • [gUFO](../ontouml-gufo/gufo)
 
 ## Mapping and Alignment Strategy
 
-*Questions about how external concepts are aligned to the Health-RI reference model using dedicated mapping properties from the [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html).*
+*Questions about how external concepts are aligned to the Health-RI reference model using dedicated mapping properties from the Health-RI Mapping Vocabulary.*
+
+Further reading:
+
+- [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html)
+- [Mapping strategy guide](../method/mapping-strategy)
+- [How to contribute concepts/mappings](../contributing/)
 
 ??? question "How are mappings from local schemas to the reference model created?"
     If schemas are OWL/RDF-based, mappings can be embedded directly using standard RDF properties. Otherwise, external mappings are created using [SSSOM](https://mapping-commons.github.io/sssom/).
@@ -142,14 +149,12 @@
     Mappings follow the [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html) and can be asserted using:
 
     - [`hriv:hasExactMeaning`](../method/specification-vocabulary.html#hasExactMeaning) for perfect semantic alignment (only one allowed),
-    - [`hriv:hasBroaderMeaningThan`](../method/specification-vocabulary.html#hasExactMeaning) or [`hriv:hasNarrowerMeaningThan`](../method/specification-vocabulary.html#hasExactMeaning) when the match is approximate.
+    - [`hriv:hasBroaderMeaningThan`](../method/specification-vocabulary.html#hasBroaderMeaningThan) or [`hriv:hasNarrowerMeaningThan`](../method/specification-vocabulary.html#hasNarrowerMeaningThan) when the match is approximate.
 
     These mappings support semantic alignment without requiring modification to the original schema and are managed either by Health-RI (non-invasively in SSSOM) or by partners (embedded in their own RDF models).
 
-    [Full explanation](../method/mapping-strategy)
-
 ??? question "What is `hriv:hasExactMeaning`, and how is it different from `owl:equivalentClass` or `skos:exactMatch`?"
-    `hriv:hasExactMeaning` (equivalent to `semiotics:expresses`) is used to state that an external concept carries the same intended meaning as a concept in the Health-RI reference model. It expresses a strong semantic alignment in terms of **shared meaning**, but it does not imply logical equivalence.
+    `hriv:hasExactMeaning` (equivalent to `semiotics:expresses`) is used to state that an external concept carries the same intended meaning as a concept in the Health-RI reference model. It expresses a strong semantic alignment in terms of shared meaning, but it does not imply logical equivalence.
 
     - Unlike `owl:equivalentClass`, it does not entail formal logical equivalence and therefore avoids unintended reasoning consequences when integrating ontologies with different logical foundations.
     - Unlike `skos:exactMatch`, which is often used for linking concepts across vocabularies in a looser, less formally grounded way, `hriv:hasExactMeaning` is tied to an explicit semantic grounding in a reference ontology. This makes it more precise for interoperability scenarios where meaning—not logical entailment—is the key requirement.
@@ -160,36 +165,23 @@
     To avoid semantic ambiguity. Allowing multiple `hriv:hasExactMeaning` assertions for the same concept would imply conflicting definitions and hinder consistent interpretation. Each external concept must match only one Health-RI concept with perfect equivalence.
 
 ??? question "What should I do if no exact match exists between my concept and the Health-RI ontology?"
-    If your concept is broader or narrower than any existing reference concept, use `hriv:hasBroaderMeaningThan` or `hriv:hasNarrowerMeaningThan` accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future ([read more.](../contributing)).
+    If your concept is broader or narrower than any existing reference concept, use `hriv:hasBroaderMeaningThan` or `hriv:hasNarrowerMeaningThan` accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future.
 
 ??? question "Can new concepts be added to the Health-RI ontology to improve mapping precision?"
-    Yes. When `hriv:hasExactMeaning` cannot be used due to missing concepts, we encourage you to contact the Health-RI modeling team ([read more.](../contributing)).
+    Yes. When `hriv:hasExactMeaning` cannot be used due to missing concepts, we encourage you to contact the Health-RI modeling team.
 
-    If justified, new intermediate concepts may be added to the reference ontology. This helps replace approximate mappings (`hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`) with exact ones and ensures better semantic precision for reasoning, integration, and long-term alignment.
-
-    [See example](../method/mapping-strategy)
-
-??? question "Who can create or host the semantic mappings?"
-    Mappings can be authored by:
-
-    - **Health-RI** (non-invasive, published in SSSOM format), for public or external ontologies;
-    - **External partners**, by embedding `hriv:hasExactMeaning*` statements directly in their ontology files, especially when they control the editorial process of the external artifact.
-
-??? question "Can I request new reference concepts if needed for mapping?"
-    Yes. If you find that no suitable concept exists in the Health-RI ontology to match yours, you can propose new reference concepts. These requests are welcome and reviewed by the modeling team. If accepted, new concepts may be added to enable stronger mappings in the future.
+    If justified, new intermediate concepts may be added to the reference ontology. This helps replace approximate mappings (`hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`) with exact ones and ensures better semantic precision for reasoning, integration, and long-term alignment. Requests are welcome and reviewed by the Health-RI modeling team; if accepted, new concepts may be added to enable stronger future mappings.
 
 ??? question "Who creates and maintains the semantic mappings to the Health-RI ontology?"
     Mappings can be created and maintained by:
 
-    - The **Health-RI team**, which curates non-invasive mappings using the [SSSOM](https://w3id.org/sssom/) format. These mappings are published externally and do not alter the original third-party ontologies.
-    - **External partners**, who can embed mappings directly in their own ontology files using [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html) properties (e.g., `hriv:hasExactMeaning`).
-
-    [Read more.](../method/mapping-strategy)
+    - The Health-RI team, which curates non-invasive mappings using the [SSSOM](https://w3id.org/sssom/) format, for public or external ontologies. These mappings are published externally and do not alter the original third-party ontologies.
+    - External partners, who can embed mappings directly in their own ontology files using Health-RI Mapping Vocabulary properties (e.g., `hriv:hasExactMeaning`), especially when they control the editorial process of the external artifact.
 
 ## SSSOM Mapping Set
 
 ??? question "Is the Health-RI SSSOM Mapping Set manually curated or automatically generated?"
-    It is **manually curated** by the Health-RI mapping team with input from external collaborators.
+    It is manually curated by the Health-RI mapping team with input from external collaborators.
 
 ??? question "Where can I download the SSSOM Mapping Set, and in which formats?"
     Use the stable URIs:
@@ -202,7 +194,7 @@
     The mapping set uses date-based versions (YYYY-MM-DD) tied to the publication date, with at most one release per day.
 
 ??? question "Can a published mapping be deleted? How are corrections handled?"
-    Published mappings **cannot be removed**. To revise an entry, create a new record that uses `replaces` to supersede the old one.
+    Published mappings cannot be removed. To revise an entry, create a new record that uses `replaces` to supersede the old one.
 
 ??? question "Which SSSOM fields are mandatory, optional, or system-assigned?"
     Fields are divided by responsibility:
@@ -222,7 +214,7 @@
     For the complete specification of all fields and their roles, see the Mapping Set Schema Reference page.
 
 ??? question "Besides creating positive assertions, can I also create negative ones?"
-    Yes. Most mappings are positive, where you state that two concepts are related. But sometimes you may want to explicitly say that a mapping should **not** hold. For that, use the field `predicate_modifier` with the value `Not`. If your mapping is positive, just leave this field empty.
+    Yes. Most mappings are positive, where you state that two concepts are related. But sometimes you may want to explicitly say that a mapping should not hold. For that, use the field `predicate_modifier` with the value `Not`. If your mapping is positive, just leave this field empty.
 
     **Examples**
 
@@ -240,11 +232,17 @@
 
 ## Community Contributions and Feedback
 
+**Further reading:**
+
+- [Contributing page](../contributing/)
+- [GitHub Issue Forms](https://github.com/health-ri/semantic-interoperability/issues/new/choose)
+- [Mappings template (XLSX)](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx)
+
 ??? question "What are the supported ways to contribute a new mapping row?"
     There are two options:
 
-    1) **Issue form (preferred)** — submit the SSSOM mapping issue form for a single row.
-    2) **Excel template** — fill in the `mappings` sheet (rows) and the `prefix` sheet (CURIE bindings) in the [provided XLSX](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx), then attach it to a new issue.
+    1) Issue form (preferred) — submit the SSSOM mapping issue form for a single row.
+    2) Excel template — fill in the `mappings` sheet (rows) and the `prefix` sheet (CURIE bindings) in the provided XLSX, then attach it to a new issue.
     In the template, headers for mandatory fields are black, and optional ones are green. Both methods are curator-reviewed and integrated into the official mapping set.
 
 ??? question "What should I check before submitting a mapping?"
@@ -254,40 +252,99 @@
     - Optional values (if any) use valid identifiers (e.g., ORCID, resolvable URIs, SEMAPV terms).
     - If you pin a version, ensure `object_source` is a specific version URI (not a generic one).
 
+??? question "Can external parties contribute to the modeling or mapping process?"
+    Yes. External contributions are welcome and encouraged.
+
+    Community members can submit suggestions, error reports, or collaboration proposals directly via our [GitHub Issue Forms](https://github.com/health-ri/semantic-interoperability/issues/new/choose).
+
+    Available contribution types include:
+
+    - Reporting errors or inconsistencies in the OntoUML/gUFO models
+    - Proposing new ontology concepts
+    - Suggesting improvements to documentation or mappings
+    - Proposing example use cases or general feedback
+
+    For details, visit the [Contributing page](../contributing/).
+
+??? question "How can I contribute to the Health-RI Semantic Interoperability Initiative?"
+    You can contribute by submitting structured feedback using one of our [GitHub Issue Forms](https://github.com/health-ri/semantic-interoperability/issues/new/choose). We currently support the following contribution types:
+
+    - Report an error in the OntoUML or gUFO-based ontology
+    - Request a new concept to be added to the reference model
+    - Submit other input such as documentation improvements, mapping suggestions, or collaboration proposals
+
+    Start here: [Contribute via GitHub](https://github.com/health-ri/semantic-interoperability/issues/new/choose). Or visit our [Contributing page](../contributing/) for more guidance.
+
+??? question "Do I need to check the ontology version before submitting a contribution?"
+    Yes, we ask contributors to indicate which version of the ontology or artifact they reviewed before submitting a request — especially when reporting issues or suggesting new concepts.
+
+    This helps us avoid duplicates, understand the context of your feedback, and keep the review process efficient.
+
+    You’ll find a field for this information in the contribution forms.
+
+??? question "Where can I find more information on how to submit feedback?"
+    See our [Contributing page](../contributing/), which outlines how to submit structured input, what types of feedback are accepted, and how your suggestions will be reviewed.
+
+    All community input is tracked as GitHub Issues and reviewed by the modeling and coordination teams.
+
 ## Ontology Lifecycle and Publishing
 
 *Questions about how the ontology is released, versioned, and maintained over time.*
 
+**Further reading:**
+
+- [Publications & operations](../method/publications)
+- [Ontology versioning](./method/versioning-ontology.md)
+- [Validation & stage gates](./method/validation-ontology.md)
+- [Persistent identifiers (PIDs)](../method/persistent-ids)
+
+??? question "What are the ontology lifecycle stages (`int`, `irv`, `erv`, `pub`)?"
+    - `int` — internal work (drafting, labeling, layout).
+    - `irv` — internal review by team members not involved in modeling.
+    - `erv` — external review with invited community input.
+    - `pub` — published; release operations (e.g., GitHub Release, DOI) are executed while remaining in `pub`.
+
+??? question "Who validates at each stage?"
+    - `irv`: independent internal reviewers (not the authors).
+    - `erv`: domain and modeling specialists (community call invites participation).
+
+??? question "How long do reviews take?"
+    Target one sprint for internal and one sprint for external review; either may extend to two depending on scope/availability.
+
+??? question "How is the community involved in external review?"
+    A Call for Community Review is issued when a package enters `erv`; feedback is collected during the external-review sprint.
+
+??? question "What triggers a stage reversion (e.g., `pub → int`) and what happens then?"
+    Critical defects or major scope changes can revert to `int`; the package then re-passes the stage gates before moving forward again.
+
 ??? question "Where can I find the latest version of the Health-RI ontology?"
-    All published versions are available in the `/ontologies/` folder. The most recent major release is always accessible via: <https://w3id.org/health-ri/ontology>
+    All published versions are available in the `/ontologies/` folder. The most recent release is always accessible via: <https://w3id.org/health-ri/ontology>
 
-    [More on versioning](../method/publications)
+??? question "How does versioning work for the ontology (X.Y.Z)?"
+    Format: `X.Y.Z` with strict priority X > Y > Z — only one component increments per release; lower components reset.
 
-??? question "What is the difference between major, minor, and patch versions in your versioning policy?"
-    We follow an adapted semantic versioning scheme: `<major>.<minor>.<patch>`.
-    - **Major** versions mark conceptual milestones or structural overhauls and are considered stable and citable.
-    - **Minor** versions include scoped improvements that preserve semantic compatibility.
-    - **Patch** versions address fixes or clarifications without modifying the established scope.
-    Only major versions trigger a formal release and a published specification.
+    Meanings:
+    - X — package index: add/remove a package → X++; then `Y = 0`, `Z = 0`.
+    - Y — stage/semantic: any stage change (`int ↔ irv ↔ erv ↔ pub`) or semantic modeling change → Y++; then `Z = 0`.
+    - Z — non-semantic: labels/typos, diagram/layout, links/docs → Z++.
 
-    [Read more.](../method/publications)
+    Rules: No skipping numbers; exactly one single-step bump per release.
+    Scope: Applies to the ontology; the mapping set and mapping vocabulary are versioned separately.
 
 ??? question "What does the 'latest' folder contain and how is it maintained?"
-    The `ontologies/latest/` folder and the [ontology's PID](https://w3id.org/health-ri/ontology) always resolves to the most recent available release.
-    They provides stable access to the most recent files without needing to specify a version number.
+    The `ontologies/latest/` folder and the ontology's PID always resolves to the most recent available release.
+    They provide stable access to the most recent files without needing to specify a version number.
     Each new release automatically updates the `latest/` folder and the file related to the ontology's PID to target the latest content.
 
 ??? question "How do I cite or refer to the Health-RI initiative and its artifacts?"
     You can use the following Persistent Identifiers (PIDs) to cite the initiative and its semantic artifacts:
 
-    - **Initiative-wide identifier**: `https://w3id.org/health-ri/semantic-interoperability`
-    - **Health-RI Ontology**: `https://w3id.org/health-ri/ontology`
-    - **Health-RI SSOM Mapping Set**: `https://w3id.org/health-ri/semantic-interoperability/mappings`
-    - **Health-RI Mapping Vocabulary**: `https://w3id.org/health-ri/mapping-vocabulary`
+    - Initiative-wide identifier: `https://w3id.org/health-ri/semantic-interoperability`
+    - Health-RI Ontology: `https://w3id.org/health-ri/ontology`
+    - Health-RI SSOM Mapping Set: `https://w3id.org/health-ri/semantic-interoperability/mappings`
+    - Health-RI Mapping Vocabulary: `https://w3id.org/health-ri/mapping-vocabulary`
 
     These PIDs are stable, dereferenceable, and aligned with FAIR principles. They are suitable for use in citations, publications, and metadata records.
-
-    [Read more.](../method/persistent-ids)
 
 ??? question "What types of files are published with each ontology version?"
     Each ontology version includes the following artifacts:
@@ -300,7 +357,6 @@
     - `.png`: Diagram images (only in the `latest/` folder)
 
     These are published under both `ontologies/latest/` (most recent version) and `ontologies/versioned/` (versioned archive).
-    [More details here.](../method/publications)
 
 ??? question "Where can I find the exported images of the ontology diagrams?"
     Exported PNG images of all OntoUML diagrams are available in the `ontologies/latest/images/` folder.
@@ -329,91 +385,64 @@
     - `https://w3id.org/health-ri/ontology/v0.6.0/ttl` — Ontology in Turtle for version 0.6.0
     - `https://w3id.org/health-ri/ontology/v0.6.0/specification` — HTML specification for version 0.6.0
 
-    [Details here.](../method/persistent-ids)
-
 ??? question "What’s the difference between the latest and versioned ontology URIs?"
-    - The **latest URI** (`https://w3id.org/health-ri/ontology`) always points to the most recent stable release. Its content may change over time as new versions are published.
-    - A **versioned URI** (e.g., `https://w3id.org/health-ri/ontology/v2.0.0`) points to a specific, immutable release. Its content will never change, ensuring long-term consistency.
+    - The latest URI (`https://w3id.org/health-ri/ontology`) always points to the most recent stable release. Its content may change over time as new versions are published.
+    - A versioned URI (e.g., `https://w3id.org/health-ri/ontology/v2.0.0`) points to a specific, immutable release. Its content will never change, ensuring long-term consistency.
 
-    Use the **versioned URI** when immutability is essential — for example, in scientific publications, formal mappings, or regulatory documentation. This guarantees that your references always point to the same version of the ontology.
+    Use the versioned URI when immutability is essential — for example, in scientific publications, formal mappings, or regulatory documentation. This guarantees that your references always point to the same version of the ontology.
 
-    Use the **latest URI** when you want to stay aligned with the most up-to-date ontology version and future improvements.
-
-    [More info](../method/persistent-ids)
-
-??? question "Which URI should I use in my mapping: the latest or a versioned one?"
-    Use the **latest URI** (e.g., `https://w3id.org/health-ri/ontology#HealthcarePatient`) when:
-
-    - You want to always point to the most up-to-date definition.
-    - Your use case allows future updates without breaking dependencies.
-
-    Use the **versioned URI** (e.g., `https://w3id.org/health-ri/ontology/v2.0.0#HealthcarePatient`) when:
-
-    - You need traceability and reproducibility (e.g., publications, data provenance).
-    - You want to avoid semantic drift caused by future updates.
-
-    [Best practices.](../method/persistent-ids)
+    Use the latest URI when you want to stay aligned with the most up-to-date ontology version and future improvements.
 
 ??? question "What is the publishing strategy for ontology releases?"
-    A fast versioning strategy is adopted, where only major versions are considered stable and published with full documentation. Minor/patch versions are published for collaboration and traceability.
-    [More info.](../method/publications)
+    What we publish (per release):
+    - A tagged GitHub Release with packaged artifacts (Technical Report PDF, exported figures) and detailed notes.
+    - An archived snapshot on Zenodo with a minted DOI (referenced from the Release notes).
+    - Artifacts exposed under w3id PIDs and repository folders:
+        - Latest: `https://w3id.org/health-ri/ontology` and `ontologies/latest/` (most recent release).
+        - Versioned: `https://w3id.org/health-ri/ontology/vX.Y.Z/...` and `ontologies/versioned/` (immutable per release).
+    - Catalog and discoverability records: OntoUML/UFO Catalog entry/update; Technical Report on ResearchGate; announcements on LinkedIn.
+
+    Where to get the files:
+    - GitHub Release page (exact packaged artifacts and notes).
+    - Zenodo record (DOI) for a preserved, citable snapshot.
+    - w3id PIDs and repository folders for “latest” and “versioned” access; images (`.png`) live under `ontologies/latest/`.
 
 ??? question "How are the OntoUML and gUFO ontologies and the produced semantic mappings maintained over time?"
     Ontologies and semantic mappings are maintained in version-controlled repositories and released through a structured publishing pipeline. Each release is assigned a permanent, citable URL, with both a Persistent Identifier (PI). Ontologies are published in multiple formats (e.g., RDF/Turtle, JSON) and validated prior to release. This process ensures transparency, long-term accessibility, and semantic stability across versions.
-    [Read more.](../method/publications)
 
 ??? question "Who is responsible for maintaining the ontology and its associated mappings?"
     The Health-RI team is responsible for maintaining the core ontologies and mappings produced within the initiative. This work is carried out in close collaboration with external partners who contribute ideas, suggestions, and mappings. Contributions are reviewed and integrated through a structured, version-controlled process.
-    [Read more.](../contributing)
 
-??? question "How will the new solutions be maintained and supported? (TBD)"
-    TBD.
+??? question "How will the new solutions be maintained and supported?"
+    After a package reaches `pub`, we run the Publication Stage Operations Checklist while remaining in `pub`:
 
-??? question "How will the solution be tested and accepted? (TBD)"
-    TBD.
+    - Release and preservation: publish a GitHub Release (tag, notes) including the package report (PDF) and figures; trigger Zenodo and record the DOI.
+    - Catalog and discoverability: update the OntoUML/UFO Catalog; upload the report to ResearchGate; announce publication and follow-ups (e.g., DOI/catalog) on LinkedIn.
+    - Academic publication (optional): consider a peer-reviewed venue; when accepted, add the formal citation and publisher DOI to the docs and Release.
+
+    Ongoing support and feedback: GitHub Issues remain open as a standing channel; substantive issues can lead to a stage reversion for corrective work.
+    Scope: This operational checklist is specific to the ontology.
+
+??? question "What happens right after a package is published (`pub`)?"
+    While remaining in `pub`, we:
+    - Publish a GitHub Release (tag, notes, packaged artifacts) and mint a Zenodo DOI.
+    - Update the OntoUML/UFO Catalog and upload the Technical Report to ResearchGate.
+    - Post announcements and follow-ups (e.g., DOI/catalog) on LinkedIn.
+    Feedback continues via GitHub Issues; substantive issues may trigger a reversion to `int`.
+
+??? question "How will the ontology be tested and accepted?"
+    Acceptance is tied to passing the stage gate checklists:
+
+    - `int → irv` gate (author self-check + modeling/diagram/metadata readiness).
+      Entry into `irv` happens only after all Internal Stage Gate items pass.
+    - `irv → erv` gate (independent internal review).
+      Reviewers execute the Internal Review Stage Gate; evidence is recorded in the review issue.
+    - `erv → pub` outcome (independent external review).
+      When the package passes external review, the modeler records `<erv → pub>`; then the Publication Stage Operations Checklist is executed while remaining in `pub`.
+
+    Timelines: internal and external reviews are planned as sprint activities; the target is one sprint, optionally extended to two depending on scope and availability.
+    Note: Substantive defects or scope changes at any stage can revert the package to `int` for rework; advancement then follows the same gates again.
 
 ??? question "Where can I find an overview of all persistent identifiers provided by the initiative?"
     The initiative maintains a consolidated table of all PIDs, covering the ontology, mapping set, and mapping vocabulary.
     This table describes the behavior of each PID (e.g., redirects, format-specific access) and provides examples.
-
-    [See the full overview.](../method/persistent-ids)
-
-### Community Contributions and Feedback
-
-*Questions about how users can provide input, report issues, or contribute to the ontology and mappings.*
-
-??? question "Can external parties contribute to the modeling or mapping process?"
-    Yes. External contributions are welcome and encouraged.
-
-    Community members can submit suggestions, error reports, or collaboration proposals directly via our [GitHub Issue Forms](https://github.com/health-ri/semantic-interoperability/issues/new/choose).
-
-    Available contribution types include:
-
-    - Reporting errors or inconsistencies in the OntoUML/gUFO models
-    - Proposing new ontology concepts
-    - Suggesting improvements to documentation or mappings
-    - Proposing example use cases or general feedback
-
-    For details, visit the [Contributing page.](../contributing/).
-
-??? question "How can I contribute to the Health-RI Semantic Interoperability Initiative?"
-    You can contribute by submitting structured feedback using one of our GitHub Issue Forms. We currently support the following contribution types:
-
-    - **Report an error** in the OntoUML or gUFO-based ontology
-    - **Request a new concept** to be added to the reference model
-    - **Submit other input** such as documentation improvements, mapping suggestions, or collaboration proposals
-
-    Start here: [Contribute via GitHub](https://github.com/health-ri/semantic-interoperability/issues/new/choose)
-    Or visit our [Contributing page](../contributing/) for more guidance.
-
-??? question "Do I need to check the ontology version before submitting a contribution?"
-    Yes, we ask contributors to indicate which version of the ontology or artifact they reviewed before submitting a request — especially when reporting issues or suggesting new concepts.
-
-    This helps us avoid duplicates, understand the context of your feedback, and keep the review process efficient.
-
-    You’ll find a field for this information in the contribution forms.
-
-??? question "Where can I find more information on how to submit feedback?"
-    See our [Contributing page](../contributing/), which outlines how to submit structured input, what types of feedback are accepted, and how your suggestions will be reviewed.
-
-    All community input is tracked as GitHub Issues and reviewed by the modeling and coordination teams.
