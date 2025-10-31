@@ -442,3 +442,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Note colors and formatting are editor metadata and are **not exported** to the `.json` or `.ttl` artifacts.
   They are visible only in the **`.vpp`** (OntoUML/Visual Paradigm) model.
+
+## [0.11.9] - 2025-10-29
+
+### Changed
+
+- Completed the **UML Note Classification (color coding)** rollout:
+  - Fixed remaining notes in Visual Paradigm diagrams that were not updated in the previous release.
+  - Ensured all notes consistently follow the standardized categories (**SEMI**, **CNST**, **RATL**, **SCOP**, **TRAC**, **EXMP**, **TODO**) with the prescribed colors and formatting.
+
+### Added
+
+- Introduced **tagged values for versioning and validation control**:
+  - Each package now includes tagged values for:
+    - `introducedInVersion`
+    - `lastChangedInVersion`
+    - `lastPublishedInVersion`
+    - `reviewedBy`
+  - Enables precise lifecycle tracking and validation according to the *Ontology Lifecycle and Validation Policy*.
+
+### Not serialized
+
+- Tagged values and note color data are part of the `.vpp` (Visual Paradigm) model and are **not exported** to `.json` or `.ttl` artifacts.
+  These remain **editor metadata** supporting governance and visual consistency.
