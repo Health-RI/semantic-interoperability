@@ -139,9 +139,10 @@ This figure illustrates how concepts such as `hc:Patient` and `vet:Patient` are 
 ### Visual Example: Broader and Narrower Semantic Alignments
 
 ![Cross-ontology mapping using hriv:hasExactMeaning, hriv:hasNarrowerMeaningThan, and hriv:hasBroaderMeaningThan](./assets/images/example-mapping2.png)
-*Figure 5: Mapping external concepts from GeneralHealth and PetVeterinary ontologies to the Health-RI ontology. This example evolves from Figure 4 by incorporating `hriv:hasNarrowerMeaningThan` (magenta) and `hriv:hasBroaderMeaningThan` (blue) mappings in addition to `hriv:hasExactMeaning` (red).*
+*Figure 5: Mapping external concepts from GeneralHealth (`ghc`) and PetVeterinary (`pvet`) ontologies to the Health-RI ontology. This example evolves from Figure 4 by incorporating `hriv:hasNarrowerMeaningThan` (magenta) and `hriv:hasBroaderMeaningThan` (blue) mappings in addition to `hriv:hasExactMeaning` (red).*
 
-- `ghc:Patient` and `pvet:Patient` are both linked via `hriv:hasBroaderMeaningThan` to `hrio:VeterinaryPatient`, indicating that each of these patients represents a has a broader meaning than the concept patient in the Health-RI ontology.
+- `ghc:Patient hriv:hasBroaderMeaningThan hrio:HealthcarePatient` and `ghc:Patient hriv:hasBroaderMeaningThan hrio:VeterinaryPatient`. The concept `Patient` in the GeneralHealth ontology has broader meaning than the two target classes in the Health-RI Ontology.
+- `pvet:Patient hriv:hasNarrowerMeaningThan hrio:VeterinaryPatient`. Pet-veterinary patients have a more restricted meaning than that of Health-RI's veterinary patients.
 - `pvet:PetAnimal` is linked via `hriv:hasNarrowerMeaningThan` to `hrio:NonHumanAnimal`, signaling that the external concept has narrower meaning.
 - The figure also maintains `hriv:hasExactMeaning` mappings for concepts that are fully equivalent (e.g., `ghc:Animal` and `hrio:Animal`).
 - Internal hierarchical structure is preserved via `rdfs:subClassOf` to allow consistent classification across ontologies.
@@ -149,7 +150,7 @@ This figure illustrates how concepts such as `hc:Patient` and `vet:Patient` are 
 This more flexible mapping strategy supports gradual alignment of external ontologies to our reference model even in cases where semantic overlap is partial rather than complete.
 
 !!! tip "How to assert broader or narrower mappings in your OWL file"
-    After having defined the `hri` prefix, to express an approximate mapping using `hriv:hasNarrowerMeaningThan` or `hriv:hasBroaderMeaningThan`, use:
+    After having defined the `hriv` prefix, to express an approximate mapping using `hriv:hasNarrowerMeaningThan` or `hriv:hasBroaderMeaningThan`, use:
 
       - `ghc:Patient hriv:hasBroaderMeaningThan hrio:VeterinaryPatient .`
       - `pvet:PetAnimal hriv:hasNarrowerMeaningThan hrio:NonHumanAnimal .`
