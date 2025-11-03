@@ -137,7 +137,7 @@
 
 *Questions about how external concepts are aligned to the Health-RI reference model using dedicated mapping properties from the Health-RI Mapping Vocabulary.*
 
-Further reading:
+**Further reading:**
 
 - [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html)
 - [Mapping strategy guide](../method/mapping-strategy)
