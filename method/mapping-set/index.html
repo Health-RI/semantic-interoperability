@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/mapping-set/">
       
       
-        <link rel="prev" href="../specification-vocabulary.html">
+        <link rel="prev" href="../mapping-strategy/">
       
       
-        <link rel="next" href="../publications/">
+        <link rel="next" href="../specification-vocabulary.html">
       
       
       <link rel="icon" href="../../assets/images/health-ri-favicon.png">
@@ -994,7 +994,7 @@
   
   
   <span class="md-ellipsis">
-    Mapping
+    Mappings
     
   </span>
   
@@ -1005,7 +1005,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
-            Mapping
+            Mappings
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1022,29 +1022,6 @@
   
   <span class="md-ellipsis">
     Strategy
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../specification-vocabulary.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Vocabulary Specification
     
   </span>
   
@@ -1199,6 +1176,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification-vocabulary.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vocabulary Specification
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1545,7 +1545,7 @@
 <td>1</td>
 <td>Yes</td>
 <td>Unique ID of the mapping record</td>
-<td><code>http://health-ri.org/mappings/rec123</code></td>
+<td><code>https://health-ri.org/mappings/rec123</code></td>
 <td>Curator</td>
 </tr>
 <tr>
@@ -1567,11 +1567,11 @@
 <td>Contributor</td>
 </tr>
 <tr>
-<td><a href="https://mapping-commons.github.io/sssom/predicate_id/">predicate_id</a></td>
+<td><a href="https://mapping-commons.github.io/sssom/predicate_id/">predicate_id</a><sup id="fnref:predicate_id_allowed"><a class="footnote-ref" href="#fn:predicate_id_allowed">1</a></sup></td>
 <td>EntityReference</td>
 <td>1</td>
 <td>Yes</td>
-<td>Relation linking subject and object</td>
+<td>A Health-RI Vocabulary's object property linking subject and object</td>
 <td><code>hriv:hasExactMeaning</code></td>
 <td>Contributor</td>
 </tr>
@@ -1580,7 +1580,7 @@
 <td>PredicateModifierEnum</td>
 <td>0..1</td>
 <td>No</td>
-<td>A modifier for negating the predicate<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+<td>A modifier for negating the predicate<sup id="fnref:predicate_modifier"><a class="footnote-ref" href="#fn:predicate_modifier">2</a></sup></td>
 <td><code>Not</code></td>
 <td>Contributor</td>
 </tr>
@@ -1616,7 +1616,7 @@
 <td>EntityReference</td>
 <td>1</td>
 <td>Yes</td>
-<td>Method or rationale for creating a mapping<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td>Method or rationale for creating a mapping<sup id="fnref:mapping_justification"><a class="footnote-ref" href="#fn:mapping_justification">3</a></sup></td>
 <td><code>semapv:ManualMappingCuration</code></td>
 <td>Contributor (or Default)</td>
 </tr>
@@ -1698,7 +1698,7 @@
 <td>0..1</td>
 <td>No</td>
 <td>Source vocabulary of the subject entity</td>
-<td><code>http://hl7.org/fhir</code></td>
+<td><code>https://hl7.org/fhir</code></td>
 <td>Contributor</td>
 </tr>
 <tr>
@@ -1752,7 +1752,7 @@
 <td>0..*</td>
 <td>No</td>
 <td>Indicates that this mapping record replaces another</td>
-<td><code>http://health-ri.org/mappings/rec122</code></td>
+<td><code>https://health-ri.org/mappings/rec122</code></td>
 <td>Contributor</td>
 </tr>
 </tbody>
@@ -1779,7 +1779,7 @@
 <tbody>
 <tr>
 <td><a href="https://mapping-commons.github.io/sssom/EntityReference/">EntityReference</a></td>
-<td>A CURIE<sup id="fnref:curie"><a class="footnote-ref" href="#fn:curie">3</a></sup> or URI referring to an entity in a vocabulary or ontology.</td>
+<td>A CURIE<sup id="fnref:curie"><a class="footnote-ref" href="#fn:curie">4</a></sup> or URI referring to an entity in a vocabulary or ontology.</td>
 <td><code>fhir:Patient</code></td>
 </tr>
 <tr>
@@ -1819,7 +1819,6 @@
 <ul>
 <li><strong>mapping_justification</strong> – Defaults to <code>semapv:ManualMappingCuration</code>.</li>
 <li><strong>license</strong> – Defaults to <code>https://creativecommons.org/licenses/by/4.0/</code>.</li>
-<li><strong>object_source</strong> – Defaults to <code>http://w3id.org/health-ri/ontology</code>.</li>
 <li><strong>object_source_version</strong> – Defaults to the ontology's latest version number. E.g., <code>1.0.0</code>.</li>
 <li><strong>mapping_date</strong> - Defaults to the date the contribution was received via GitHub issue.</li>
 </ul>
@@ -1857,20 +1856,22 @@
 <li>All <strong>mandatory</strong> contributor fields are present and correctly formatted.</li>
 <li>All <code>subject_label</code> and <code>object_label</code> fields you provide are language-tagged (e.g., <code>Patient@en</code>, <code>Patiënt@nl</code>).</li>
 <li>Any optional values provided use valid identifiers (e.g., ORCIDs, resolvable URIs, SEMAPV terms).</li>
-<li>If pinning a version, <code>object_source</code> is a specific version URI (not a generic one).</li>
 </ul>
 <!-- Footnotes -->
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:1">
-<p>May either be set to <code>Not</code> (its only valid value) or left empty. It is used specifically to express a negated mapping predicate.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn:predicate_id_allowed">
+<p>Allowed values: <code>hriv:hasExactMeaning</code>, <code>hriv:hasBroaderMeaningThan</code>, <code>hriv:hasNarrowerMeaningThan</code>.&#160;<a class="footnote-backref" href="#fnref:predicate_id_allowed" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:2">
-<p>Currently, the only acceptable value for <code>mapping_justification</code> is <code>semapv:ManualMappingCuration</code>, or a comparable alternative subject to curator evaluation. This constraint is essential for maintaining the necessary semantic alignment.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:predicate_modifier">
+<p>May either be set to <code>Not</code> (its only valid value) or left empty. It is used specifically to express a negated mapping predicate.&#160;<a class="footnote-backref" href="#fnref:predicate_modifier" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:mapping_justification">
+<p>Currently, the only acceptable value for <code>mapping_justification</code> is <code>semapv:ManualMappingCuration</code>, or a comparable alternative subject to curator evaluation. This constraint is essential for maintaining the necessary semantic alignment.&#160;<a class="footnote-backref" href="#fnref:mapping_justification" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:curie">
-<p>W3C CURIE Syntax 1.0 (compact URIs): <a href="https://www.w3.org/TR/curie/">https://www.w3.org/TR/curie/</a>&#160;<a class="footnote-backref" href="#fnref:curie" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>W3C CURIE Syntax 1.0 (compact URIs): <a href="https://www.w3.org/TR/curie/">https://www.w3.org/TR/curie/</a>&#160;<a class="footnote-backref" href="#fnref:curie" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
