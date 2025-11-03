@@ -83,10 +83,10 @@ nav:
           - Lifecycle and Validation Policy: method/validation-ontology.md
           - Note Classification and Visual Conventions: method/policy-ontology-notes.md
           - Versioning Strategy for Ontology Releases: method/versioning-ontology.md
-      - Mapping:
+      - Mappings:
           - Strategy: method/mapping-strategy.md
-          - Vocabulary Specification: method/specification-vocabulary.html
           - SSSOM Mapping Set: method/mapping-set.md
+          - Vocabulary Specification: method/specification-vocabulary.html
       - Publications: method/publications.md
       - Persistent Identifiers: method/persistent-ids.md
   - Deliverables:
