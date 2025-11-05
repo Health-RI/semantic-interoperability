@@ -12,10 +12,10 @@
         <meta name="author" content="Pedro Paulo F. Barcelos">
       
       
-        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/mapping-set/">
+        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/mapping-governance/">
       
       
-        <link rel="prev" href="../mapping-strategy/">
+        <link rel="prev" href="../mapping-schema/">
       
       
         <link rel="next" href="../specification-vocabulary.html">
@@ -26,7 +26,7 @@
     
     
       
-        <title>SSSOM Mapping Set - Health-RI Semantic Interoperability</title>
+        <title>Governance, Lifecycle, and Validation - Health-RI Semantic Interoperability</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sssom-mapping-set" class="md-skip">
+        <a href="#governance-lifecycle-and-validation-of-the-health-ri-sssom-mapping-set" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SSSOM Mapping Set
+              Governance, Lifecycle, and Validation
             
           </span>
         </div>
@@ -891,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../validation-ontology/" class="md-nav__link">
+      <a href="../ontology-validation/" class="md-nav__link">
         
   
   
@@ -914,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../policy-ontology-notes/" class="md-nav__link">
+      <a href="../ontology-notes-policy/" class="md-nav__link">
         
   
   
@@ -937,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../versioning-ontology/" class="md-nav__link">
+      <a href="../ontology-versioning/" class="md-nav__link">
         
   
   
@@ -1036,6 +1036,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapping-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1053,7 +1076,7 @@
   
   
   <span class="md-ellipsis">
-    SSSOM Mapping Set
+    Governance, Lifecycle, and Validation
     
   </span>
   
@@ -1066,7 +1089,7 @@
   
   
   <span class="md-ellipsis">
-    SSSOM Mapping Set
+    Governance, Lifecycle, and Validation
     
   </span>
   
@@ -1089,55 +1112,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#permanent-uris" class="md-nav__link">
+  <a href="#purpose-and-scope" class="md-nav__link">
     <span class="md-ellipsis">
-      Permanent URIs
+      Purpose and Scope
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#versioning-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Versioning Strategy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sssom-file-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      SSSOM File Schema
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="SSSOM File Schema">
+    <nav class="md-nav" aria-label="Purpose and Scope">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#responsibility-legend" class="md-nav__link">
+  <a href="#objectives" class="md-nav__link">
     <span class="md-ellipsis">
-      Responsibility Legend
+      Objectives
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#type-legend" class="md-nav__link">
+  <a href="#applicability" class="md-nav__link">
     <span class="md-ellipsis">
-      Type Legend
+      Applicability
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#default-values" class="md-nav__link">
+  <a href="#in-scope" class="md-nav__link">
     <span class="md-ellipsis">
-      Default Values
+      In Scope
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Out of Scope
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-outcomes-conformance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expected Outcomes (Conformance)
     </span>
   </a>
   
@@ -1149,19 +1172,94 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-contribute" class="md-nav__link">
+  <a href="#roles-and-responsibilities" class="md-nav__link">
     <span class="md-ellipsis">
-      How to Contribute
+      Roles and Responsibilities
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How to Contribute">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-states-and-promotion-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lifecycle States and Promotion Gates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifecycle States and Promotion Gates">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#submission-checklist-for-contributors" class="md-nav__link">
+  <a href="#lifecycle-states" class="md-nav__link">
     <span class="md-ellipsis">
-      Submission checklist for contributors
+      Lifecycle states
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versioning-and-change-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versioning and Change Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantic Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#justification-and-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Justification and Evidence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publication-and-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publication and Discovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publication and Discovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-standard-community-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      External standard community alignment
     </span>
   </a>
   
@@ -1495,383 +1593,294 @@
   
 
 
-<h1 id="sssom-mapping-set">SSSOM Mapping Set</h1>
-<p>One of the key deliverables of the Health-RI Semantic Interoperability Initiative is a SSSOM mapping set. This mapping set is manually curated, reflecting the efforts of both the dedicated mapping team and external collaborators. For the conceptual background and rationale behind our mappings, see the <a href="../mapping-strategy/">Mapping Strategy</a>.</p>
-<p>This page documents the mappings curated and published by Health-RI. Partners may also embed mappings directly into their own ontologies, as explained in the <a href="../mapping-strategy/">Mapping Strategy</a>.</p>
-<h2 id="permanent-uris">Permanent URIs</h2>
-<p>We offer several stable and accessible URIs for accessing the mapping set in different formats:</p>
+<h1 id="governance-lifecycle-and-validation-of-the-health-ri-sssom-mapping-set">Governance, Lifecycle, and Validation of the Health-RI SSSOM Mapping Set</h1>
+<p>This page sets the governance, lifecycle, validation, and release policy for the Health-RI SSSOM Mapping Set. It complements the <a href="../mapping-schema/">Mapping Set</a> page (schema, field semantics, URIs) and the <a href="../mapping-strategy/">Semantic Mapping Strategy</a> page (methodology and scope).</p>
+<h2 id="purpose-and-scope">Purpose and Scope</h2>
+<p>This policy defines how the Health-RI SSSOM Mapping Set is governed, validated, versioned, and released so that mappings are trustworthy, reproducible, and easy to discover.</p>
+<h3 id="objectives">Objectives</h3>
 <ul>
-<li><code>https://w3id.org/health-ri/semantic-interoperability/mappings</code> — Redirects to the TTL version of the SSSOM mappings.</li>
-<li><code>https://w3id.org/health-ri/semantic-interoperability/mappings/ttl</code> — Redirects to the TTL version of the SSSOM mappings.</li>
-<li><code>https://w3id.org/health-ri/semantic-interoperability/mappings/tsv</code> — Redirects to the TSV version of the SSSOM mappings.</li>
+<li>Enforce clear roles with separation of duties (Mapper, Reviewer, Curator) and independent human approvals (two-person rule).</li>
+<li>Run a stateful lifecycle with explicit promotion gates and an append-only supersession model.</li>
+<li>Guarantee provenance, reproducibility, and transparent release management.</li>
+<li>Align with external standard communities where applicable (e.g., OMOP) and record outcomes.</li>
 </ul>
-<div class="admonition tip">
-<p class="admonition-title">What are Permanent (Persistent) URIs?</p>
-<p>See <a href="https://www.w3.org/Provider/Style/URI">W3C Cool URIs don't change</a> for the design principles behind stable, resolvable identifiers, and the <a href="https://w3id.org/">w3id community service</a> for implementing them in practice.</p>
+<h3 id="applicability">Applicability</h3>
+<ul>
+<li>Applies to all mapping records proposed for or included in Health-RI mapping artifacts (TSV/TTL) and their metadata as defined on the <a href="../mapping-schema/">Mapping Set</a> page.</li>
+<li>Covers all submission routes referenced on the <a href="../mapping-schema/">Mapping Set</a> page (e.g., issue form or XLSX) and the end-to-end path to publication.</li>
+</ul>
+<h3 id="in-scope">In Scope</h3>
+<ul>
+<li>Role definitions and two-person rule.</li>
+<li><a href="#lifecycle-states-and-promotion-gates">Lifecycle states and promotion gates</a> (Draft → Review → Curation → Published → Superseded).</li>
+<li>Validation criteria: schema and completeness, predicate policy (Health-RI Mapping Vocabulary, HRIV), CURIE/URI hygiene, supersession integrity, and temporal/provenance checks.</li>
+<li><a href="#versioning-and-change-control">Versioning and change control</a> (daily-dated releases <code>YYYY-MM-DD</code>, at most one per calendar day; append-only <code>replaces</code> chains; immutable history).</li>
+<li><a href="#publication-and-discovery">Publication and discovery</a> (stable w3id endpoints; artifacts listed on the <a href="../mapping-schema/">Mapping Set</a> page).</li>
+<li><a href="#external-standard-community-alignment">External standard community alignment</a> and traceability of submissions.</li>
+</ul>
+<h3 id="out-of-scope">Out of Scope</h3>
+<ul>
+<li>Per-row schema, allowed values, justification vocabulary, and field semantics (see the <a href="../mapping-schema/">Mapping Set</a> page).</li>
+<li>Mapping methodology and domain-specific modeling guidance (see the <a href="../mapping-strategy/">Semantic Mapping Strategy</a> page).</li>
+<li>Tool-specific implementation details beyond what is needed to satisfy the policy.</li>
+</ul>
+<h3 id="expected-outcomes-conformance">Expected Outcomes (Conformance)</h3>
+<ul>
+<li>Every published record:<ul>
+<li>Has independent approvals by Reviewer and Curator.</li>
+<li>The Reviewer approval is recorded per row in SSSOM via reviewer_id.</li>
+<li>The Curator approval is recorded in the repository publication workflow (in git logs); SSSOM does not define a per-row curator slot.</li>
+<li>Appears in a dated release (<code>YYYY-MM-DD</code>), with release notes summarizing additions, changes, and supersessions.</li>
+<li>Is reachable via stable w3id URIs and traceable via <code>record_id</code> and the <code>replaces</code> chain (as defined and linked on the <a href="../mapping-schema/">Mapping Set</a> page).</li>
+</ul>
+</li>
+<li>Historical states are discoverable within the single canonical, append-only artifact via dated entries (see <a href="#versioning-and-change-control">Versioning and Change Control</a>).</li>
+</ul>
+<h2 id="roles-and-responsibilities">Roles and Responsibilities</h2>
+<ul>
+<li>
+<p><strong>Mapper</strong></p>
+<ul>
+<li>Acts as the primary owner and creator of the mapping record.</li>
+<li>Analyzes the source standard concept and the target Health-RI Ontology (HRIO) concept in context (definitions, scope notes, relations, etc.), evaluates semantic fit, and selects the appropriate HRIV predicate and, where applicable, a modifier.</li>
+<li>Drafts mapping records with clear comments/rationale for non-obvious choices so mappings are understandable to users.</li>
+<li>Ensures that all mandatory fields defined on the <a href="../mapping-schema/">Mapping Set</a> page are present and both semantically and syntactically valid before submission.</li>
+<li>Implements modifications requested by the Reviewer and Curator and resubmits until approval.</li>
+</ul>
+</li>
+<li>
+<p><strong>Reviewer</strong></p>
+<ul>
+<li>A domain expert or mapper, independent from the author.</li>
+<li>Acknowledges submission, evaluates semantic and syntactical correctness, and either approves for curation or requests changes back to the Mapper.</li>
+<li>Records rationale when non-obvious or when using any negation (<code>predicate_modifier = Not</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Curator</strong></p>
+<ul>
+<li>Performs curation (including format/schema checks, CURIE/URI hygiene, and supersession integrity); may perform minor syntactic fixes when appropriate.</li>
+<li>Optionally serves as a secondary semantic reviewer when needed.</li>
+<li>Decides on approval for publication or requests fixes back to the Mapper.</li>
+<li>Publishes approved mappings.</li>
+</ul>
+</li>
+<li>
+<p><strong>Separation of duties</strong></p>
+<ul>
+<li>The author and reviewer must be different people (two-person rule).</li>
+<li>Publication requires independent human approvals by the Reviewer and Curator.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Two-person rule is mandatory</p>
+<p>The author of a mapping cannot also act as Reviewer or Curator for that same record.
+If staffing is limited, reschedule publication rather than collapsing roles.</p>
 </div>
-<h2 id="versioning-strategy">Versioning Strategy</h2>
-<p>The mapping set versioning is based on the YYYY-MM-DD format, corresponding to its publication date. There will be at most one version released per day.</p>
-<p>The mapping records themselves are <strong>append-only</strong>: once a record is published, it is never deleted or edited. If a mapping needs correction or refinement, add a new record that <em>supersedes</em> the old one using the <code>replaces</code> field. This creates a clear history: consumers can follow the <code>replaces</code> chain and use the latest entry for any given mapping.</p>
+<div class="admonition note">
+<p class="admonition-title">Curator Approval: Workflow, Not Per-Row</p>
+<p>Curator approval is captured as workflow evidence (in git logs), not as a per-row SSSOM field. Per-row approval in SSSOM is recorded via <code>reviewer_id</code>.</p>
+</div>
+<h2 id="lifecycle-states-and-promotion-gates">Lifecycle States and Promotion Gates</h2>
+<p>The lifecycle follows the flow below.</p>
+<div class="admonition info">
+<p class="admonition-title">Promotion gates at a glance</p>
+<ul>
+<li>Draft → Review: All mandatory fields present; rationale captured for non-obvious choices.</li>
+<li>Review → Curation: Independent Reviewer confirms semantic fit and predicate choice.</li>
+<li>Curation → Published: Curator confirms schema, CURIE/URI hygiene, and supersession integrity.</li>
+<li>Published → Superseded: New record must reference the prior via <code>replaces</code> (append-only).</li>
+</ul>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Timeboxes (SLA) summary</p>
+<ul>
+<li><strong>Reviewer:</strong> Concludes within <strong>one sprint</strong> from receipt; extendable to <strong>two sprints</strong> with documented justification.</li>
+<li><strong>Curator:</strong> Provides an outcome (<strong>return to Mapper</strong> or <strong>publish</strong>) within <strong>one sprint</strong> from receipt.</li>
+<li><strong>External submission:</strong> Initiate community submission within <strong>one sprint</strong> of publication.</li>
+</ul>
+</div>
+<pre class="mermaid"><code>flowchart LR
+  subgraph M[Mapper]
+    D[Draft mapping]
+  end
+
+  subgraph R[Reviewer]
+    S[Submission received]
+    A{Approve?}
+  end
+
+  subgraph C[Curator]
+    U[Curation]
+    V{Approve?}
+    P[Published]
+  end
+
+  N{Replaced?}
+  X[Superseded]
+
+  D --&gt;|submit for review| S
+  S --&gt; A
+  A -- yes --&gt; U
+  A -. "request changes" .-&gt; D
+
+  U --&gt;|validate format| V
+  V -- yes --&gt; P
+  V -. "request fixes" .-&gt; D
+
+  P --&gt; N
+  N -- yes --&gt; X
+  N -- no --&gt; P
+
+  classDef mapper fill:#eef7ff,stroke:#1d4ed8,stroke-width:1px,rx:6,ry:6
+  classDef reviewer fill:#fff7ed,stroke:#b45309,stroke-width:1px,rx:6,ry:6
+  classDef curator fill:#f0fdf4,stroke:#16a34a,stroke-width:1px,rx:6,ry:6
+  classDef superseded fill:#FDE2E2,stroke:#B91C1C,stroke-width:1px,rx:8,ry:8
+  classDef decision fill:#FEF3C7,stroke:#CA8A04,stroke-width:1px,rx:6,ry:6
+
+  class D mapper
+  class S,A reviewer
+  class U,V,P,N curator
+  class X superseded
+  class A,V,N decision</code></pre>
+<h3 id="lifecycle-states">Lifecycle states</h3>
+<ol>
+<li>
+<p>Draft mapping (Mapper)</p>
+<ul>
+<li>Mapper prepares the record with mandatory fields; CURIEs/URIs well-formed; rationale captured for non-obvious choices.</li>
+</ul>
+</li>
+<li>
+<p>Submission received (Reviewer)</p>
+<ul>
+<li>Reviewer acknowledges intake, evaluates meaning and scope.</li>
+<li><strong>Timeline:</strong> Within <strong>one sprint</strong> from receipt of the mapping from the Mapper, the Reviewer concludes the review; this may be extended to <strong>two sprints</strong> with documented justification.</li>
+<li>Decision (Approve?)</li>
+<li>Yes → Curation</li>
+<li>Request changes → back to Draft</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Extensions</p>
+<p>Extensions to two sprints are possible when justified.</p>
+</div>
+</li>
+</ol>
+<p>!!! success "Reviewer quick-check"
+    - [ ] Predicate choice justified on the concepts' semantics, not label similarity
+    - [ ] Rationale present for contentious cases or any <code>predicate_modifier = Not</code>
+    - [ ] Mandatory fields complete per the <a href="../mapping-schema/">Mapping Set</a> page</p>
+<ol>
+<li>
+<p>Curation (Curator)</p>
+<ul>
+<li>Curator checks field completeness per the <a href="../mapping-schema/">Mapping Set</a> page, CURIE/URI hygiene, and supersession integrity; applies minor syntactic fixes if safe.</li>
+<li><strong>Timeline:</strong> Within <strong>one sprint</strong> from receipt, the Curator analyzes the mapping and provides an outcome (<strong>return to Mapper</strong> or <strong>publish</strong>).</li>
+<li>Decision (Approve?)</li>
+<li>Yes → Published</li>
+<li>Request fixes → back to Draft</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Curator quick-check</p>
+<ul>
+<li>[ ] Required columns</li>
+<li>[ ] Allowed HRIV predicates and valid (optional) <code>predicate_modifier</code></li>
+<li>[ ] CURIE/URI hygiene (resolves with 2xx/3xx where applicable)</li>
+<li>[ ] <code>replaces</code> points to an existing record</li>
+<li>[ ] <code>mapping_date ≤ publication_date</code></li>
+<li>[ ] Uniqueness (Exact Meaning): For each <code>subject_id</code>, ensure no more than one current row has <code>predicate_id = hriv:hasExactMeaning</code> and no <code>predicate_modifier = Not</code> (use the <code>replaces</code> chain to determine which row is current).</li>
+<li>[ ] Per-record identifiers: <code>record_id</code> and any <code>replaces</code> URIs use the <code>hrim</code> prefix<sup id="fnref:hrim"><a class="footnote-ref" href="#fn:hrim">1</a></sup>.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Published (Curator)</p>
+<ul>
+<li>Merged to main, included in a dated release, and exposed via stable w3id endpoints listed on the <a href="../mapping-schema/">Mapping Set</a> page.</li>
+</ul>
+</li>
+<li>
+<p>Superseded</p>
+<ul>
+<li>When Replaced? is Yes, a newer record references the prior via <code>replaces</code>. Append-only: older records remain in the canonical artifact; consumers should follow the latest in the <code>replaces</code> chain.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">How to resolve to the current mapping</p>
+<p>When multiple rows exist for the same source-target pair, follow the latest entry in the <code>replaces</code> chain. Do not assume the highest <code>record_id</code> is the current mapping.</p>
+</div>
+<h2 id="versioning-and-change-control">Versioning and Change Control</h2>
+<ul>
+<li>Release cadence: At most one release per calendar day, versioned as <code>YYYY-MM-DD</code>.</li>
+<li>Append-only records: No in-place edits to published rows. Corrections create a new record that references the prior via <code>replaces</code>.</li>
+<li>Reproducibility: The canonical artifact is a single append-only TSV/TTL; prior states are recoverable via dated rows. Current validity can be assessed using <code>replaces</code> chains.</li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">Why append-only?</p>
 <p>An append-only approach (immutable log) preserves a complete audit trail, makes releases reproducible, and avoids ambiguity about which version of a mapping was used.</p>
 </div>
-<h2 id="sssom-file-schema">SSSOM File Schema</h2>
-<div class="admonition note">
-<p class="admonition-title">Language tags for labels</p>
-<p>The <code>subject_label</code> and <code>object_label</code> fields <strong>must</strong> be language-tagged (RDF langstrings), e.g., <code>Patient@en</code>, <code>Patiënt@nl</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">No in-place edits to published rows</p>
+<p>Fixes must be new records that point to the prior one via <code>replaces</code>. Editing a published row is not possible, as it would break reproducibility and the audit trail.</p>
 </div>
-<div class="admonition info">
-<p class="admonition-title">What is a language-tagged string?</p>
-<p>In RDF, a <em>language-tagged string</em> is a literal paired with a BCP 47 language tag (e.g., <code>Patient@en</code>, <code>Patiënt@nl</code>). See: <a href="https://www.w3.org/TR/rdf-schema/">W3C RDF Schema 1.1 (<code>rdf:langString</code>)</a> and <a href="https://datatracker.ietf.org/doc/html/rfc5646">RFC 5646 (BCP 47 tags)</a>.</p>
-</div>
-<p>Below is the schema for the SSSOM TSV file, with each field's link to the specification, expected datatype, cardinality, mandatory status, a concise description, and an illustrative example:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Cardinality</th>
-<th>Mandatory</th>
-<th>Description</th>
-<th>Example</th>
-<th>Provided by</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/record_id/">record_id</a></td>
-<td>EntityReference</td>
-<td>1</td>
-<td>Yes</td>
-<td>Unique ID of the mapping record</td>
-<td><code>https://health-ri.org/mappings/rec123</code></td>
-<td>Curator</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/subject_id/">subject_id</a></td>
-<td>EntityReference</td>
-<td>1</td>
-<td>Yes</td>
-<td>Identifier of the subject entity</td>
-<td><code>fhir:Patient</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/subject_label/">subject_label</a></td>
-<td>String</td>
-<td>0..1</td>
-<td>No</td>
-<td>Language-tagged label of the subject entity</td>
-<td><code>Patient@en</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/predicate_id/">predicate_id</a><sup id="fnref:predicate_id_allowed"><a class="footnote-ref" href="#fn:predicate_id_allowed">1</a></sup></td>
-<td>EntityReference</td>
-<td>1</td>
-<td>Yes</td>
-<td>A Health-RI Vocabulary's object property linking subject and object</td>
-<td><code>hriv:hasExactMeaning</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/predicate_modifier/">predicate_modifier</a></td>
-<td>PredicateModifierEnum</td>
-<td>0..1</td>
-<td>No</td>
-<td>A modifier for negating the predicate<sup id="fnref:predicate_modifier"><a class="footnote-ref" href="#fn:predicate_modifier">2</a></sup></td>
-<td><code>Not</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/object_id/">object_id</a></td>
-<td>EntityReference</td>
-<td>1</td>
-<td>Yes</td>
-<td>Identifier of the object entity</td>
-<td><code>hrio:Person</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/object_label/">object_label</a></td>
-<td>String</td>
-<td>0..1</td>
-<td>No</td>
-<td>Language-tagged label of the object entity</td>
-<td><code>Person@en</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/object_category/">object_category</a></td>
-<td>String</td>
-<td>0..1</td>
-<td>No</td>
-<td>OntoUML stereotype of the object</td>
-<td><code>Kind</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/mapping_justification/">mapping_justification</a></td>
-<td>EntityReference</td>
-<td>1</td>
-<td>Yes</td>
-<td>Method or rationale for creating a mapping<sup id="fnref:mapping_justification"><a class="footnote-ref" href="#fn:mapping_justification">3</a></sup></td>
-<td><code>semapv:ManualMappingCuration</code></td>
-<td>Contributor (or Default)</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/author_id/">author_id</a></td>
-<td>EntityReference(s)</td>
-<td>1..*</td>
-<td>Yes</td>
-<td>Identifier(s) of who created the mapping</td>
-<td><code>orcid:0000-0003-2736-7817</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/author_label/">author_label</a></td>
-<td>String(s)</td>
-<td>0..*</td>
-<td>No</td>
-<td>Name(s) of the mapping author(s)</td>
-<td><code>Pedro P. F. Barcelos</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/reviewer_id/">reviewer_id</a></td>
-<td>EntityReference(s)</td>
-<td>1..*</td>
-<td>Yes</td>
-<td>Identifier(s) of mapping reviewer(s) (at least one required)</td>
-<td><code>orcid:0000-0001-2345-6789</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/reviewer_label/">reviewer_label</a></td>
-<td>String(s)</td>
-<td>0..*</td>
-<td>No</td>
-<td>Name(s) of the mapping reviewer(s)</td>
-<td><code>Jane Doe</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/creator_id/">creator_id</a></td>
-<td>EntityReference</td>
-<td>1</td>
-<td>Yes</td>
-<td>Agent responsible for publishing the mapping</td>
-<td><code>https://w3id.org/health-ri/semantic-interoperability</code></td>
-<td>System (Fixed)</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/creator_label/">creator_label</a></td>
-<td>String</td>
-<td>1</td>
-<td>Yes</td>
-<td>Name of the publishing agent</td>
-<td><code>Health-RI Semantic Interoperability Initiative</code></td>
-<td>System (Fixed)</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/license/">license</a></td>
-<td>NonRelativeURI</td>
-<td>1</td>
-<td>Yes</td>
-<td>License governing mapping use</td>
-<td><code>https://creativecommons.org/licenses/by/4.0/</code></td>
-<td>Contributor (or Default)</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/subject_type/">subject_type</a></td>
-<td>EntityTypeEnum</td>
-<td>0..1</td>
-<td>No</td>
-<td>Type of the subject entity</td>
-<td><code>owl class</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/subject_source/">subject_source</a></td>
-<td>EntityReference</td>
-<td>0..1</td>
-<td>No</td>
-<td>Source vocabulary of the subject entity</td>
-<td><code>https://hl7.org/fhir</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/subject_source_version/">subject_source_version</a></td>
-<td>String</td>
-<td>0..1</td>
-<td>No</td>
-<td>Version of the subject source</td>
-<td><code>R4</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/object_source_version/">object_source_version</a></td>
-<td>String</td>
-<td>0..1</td>
-<td>No</td>
-<td>Version of the Health-RI ontology used for the mapping</td>
-<td><code>0.9.1</code></td>
-<td>Contributor (or Default)</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/mapping_date/">mapping_date</a></td>
-<td>Date</td>
-<td>1</td>
-<td>Yes</td>
-<td>Date when mapping was created (format: YYYY-MM-DD)</td>
-<td><code>2025-07-02</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/publication_date/">publication_date</a></td>
-<td>Date</td>
-<td>1</td>
-<td>Yes</td>
-<td>Date when mapping was published (format: YYYY-MM-DD)</td>
-<td><code>2025-07-30</code></td>
-<td>System (Generated)</td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/comment/">comment</a></td>
-<td>String</td>
-<td>0..1</td>
-<td>No</td>
-<td>Free-text notes about the mapping</td>
-<td><code>Reviewed for consistency with ontology v0.9.1.</code></td>
-<td>Contributor</td>
-</tr>
-<tr>
-<td><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/replaces/">replaces</a></td>
-<td>EntityReference(s)</td>
-<td>0..*</td>
-<td>No</td>
-<td>Indicates that this mapping record replaces another</td>
-<td><code>https://health-ri.org/mappings/rec122</code></td>
-<td>Contributor</td>
-</tr>
-</tbody>
-</table>
-<h3 id="responsibility-legend">Responsibility Legend</h3>
-<p>The following legend explains who is responsible for providing or assigning each field in the schema, clarifying whether values come from contributors, curators, or are system-generated:</p>
+<h2 id="semantic-requirements">Semantic Requirements</h2>
+<p>Normative, per-row schema constraints (e.g., allowed predicates, label language tags, justification vocabulary) are defined on the <a href="../mapping-schema/">Mapping Set</a> page. This section provides usage guidance only.</p>
+<h3 id="justification-and-evidence">Justification and Evidence</h3>
 <ul>
-<li><strong>Contributor</strong> – Must be provided in PRs.</li>
-<li><strong>Curator</strong> – Added manually by Health-RI curators.</li>
-<li><strong>Contributor (or Default)</strong> – Contributor should provide this; if omitted, the system assigns a default.</li>
-<li><strong>System (Fixed)</strong> – Always set to a fixed value, cannot be changed.</li>
-<li><strong>System (Generated)</strong> – Automatically assigned at publication time, not editable.</li>
+<li>Set <code>mapping_justification</code> to the appropriate method indicator. By default (and currently the only generally acceptable value) it is <code>semapv:ManualMappingCuration</code> (a curator-approved alternative may be used when explicitly evaluated). This field records the method/rationale category for how the mapping was produced, not the semantic relation itself.</li>
+<li>Capture the concrete reasoning for your choice of HRIV <code>predicate_id</code> (e.g., <code>hriv:hasExactMeaning</code>, <code>hriv:hasBroaderMeaningThan</code>, <code>hriv:hasNarrowerMeaningThan</code>) in the <code>comment</code> field. When justifying, use definitional/semantic arguments (notes, formal definitions) over label similarity.</li>
+<li>When using a negation, set <code>predicate_modifier</code> to <code>Not</code> (its only valid value) and add a brief rationale in <code>comment</code>.</li>
+<li>For borderline hierarchical mappings, add a brief rationale in <code>comment</code> explaining why you selected broader or narrower.</li>
 </ul>
-<h3 id="type-legend">Type Legend</h3>
-<p>The following table lists and defines all datatypes used in the schema above, according to the <a href="https://mapping-commons.github.io/sssom/">SSSOM specification</a>:</p>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Definition</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/EntityReference/">EntityReference</a></td>
-<td>A CURIE<sup id="fnref:curie"><a class="footnote-ref" href="#fn:curie">4</a></sup> or URI referring to an entity in a vocabulary or ontology.</td>
-<td><code>fhir:Patient</code></td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/EntityReference/">EntityReference(s)</a></td>
-<td>One or more CURIEs or URIs referring to entities in vocabularies or ontologies.</td>
-<td><code>orcid:0000-0003-2736-7817 \| orcid:0000-0001-2345-6789</code></td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/String/">String</a></td>
-<td>A literal string value, typically plain text.</td>
-<td><code>Patient</code></td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/String/">String(s)</a></td>
-<td>One or more literal string values, typically plain text.</td>
-<td><code>Pedro P. F. Barcelos \| Jane Doe</code></td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/NonRelativeURI/">NonRelativeURI</a></td>
-<td>An absolute URI (non-relative), typically identifying a web resource.</td>
-<td><code>https://creativecommons.org/licenses/by/4.0/</code></td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/EntityTypeEnum/">EntityTypeEnum</a></td>
-<td>A controlled vocabulary of entity types (e.g., <code>owl class</code>, <code>rdf property</code>).</td>
-<td><code>owl class</code></td>
-</tr>
-<tr>
-<td><a href="https://mapping-commons.github.io/sssom/Date/">Date</a></td>
-<td>A calendar date in ISO 8601 format (YYYY-MM-DD).</td>
-<td><code>2025-07-02</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="default-values">Default Values</h3>
-<p>Some fields in the schema have predefined default values automatically assigned when contributors do not provide them:</p>
+<h2 id="validation">Validation</h2>
 <ul>
-<li><strong>mapping_justification</strong> – Defaults to <code>semapv:ManualMappingCuration</code>.</li>
-<li><strong>license</strong> – Defaults to <code>https://creativecommons.org/licenses/by/4.0/</code>.</li>
-<li><strong>object_source_version</strong> – Defaults to the ontology's latest version number. E.g., <code>1.0.0</code>.</li>
-<li><strong>mapping_date</strong> - Defaults to the date the contribution was received via GitHub issue.</li>
+<li>
+<p><strong>Reviewer (independent from author):</strong></p>
+<ul>
+<li>Apply the predicate selection policy in <a href="#semantic-requirements">Semantic Requirements</a>; base decisions on definitions, scope notes, and modeled relations (not label similarity).</li>
+<li>Ensure rationale is recorded for contentious cases or any <code>Not</code>.</li>
+<li>Approve or request changes (back to Draft).</li>
 </ul>
-<h2 id="how-to-contribute">How to Contribute</h2>
-<p>We welcome contributions to expand and refine the mapping set. You can contribute in two ways:</p>
+</li>
+<li>
+<p><strong>Curator:</strong></p>
+<ul>
+<li><strong>Schema &amp; completeness:</strong> required columns present; datatypes valid; unique <code>record_id</code>; valid prefixes (per the <a href="../mapping-schema/">Mapping Set</a> page).</li>
+<li><strong>Predicate policy:</strong> conformance to allowed HRIV predicates and modifier rules (per the <a href="../mapping-schema/">Mapping Set</a> page).</li>
+<li><strong>URI hygiene:</strong> HTTP URIs well-formed and (where applicable) dereference with a 2xx/3xx response.</li>
+<li><strong>Supersession integrity:</strong> <code>replaces</code> points to an existing record.</li>
+<li><strong>Temporal/provenance consistency:</strong> <code>mapping_date ≤ publication_date</code>.</li>
+<li>Approve for Published or request fixes (back to Draft).</li>
+<li><strong>Identity distinctness:</strong> verify that the set of <code>author_id</code> values is disjoint from the set of <code>reviewer_id</code> values within each row (enforcing two-person rule).</li>
+</ul>
+</li>
+</ul>
+<h2 id="publication-and-discovery">Publication and Discovery</h2>
+<ul>
+<li>Only mappings that have passed Reviewer and Curator approvals are published.</li>
+<li>Published artifacts and stable URIs are exactly those listed on the <a href="../mapping-schema/">Mapping Set</a> page.</li>
+</ul>
+<p>For submission methods (issue form/XLSX) and the contributor checklist, see the <a href="../mapping-schema/">Mapping Set</a> page ("How to Contribute").</p>
+<h3 id="external-standard-community-alignment">External standard community alignment</h3>
+<p>When a source or target standard maintains an official mapping registry or acceptance process (e.g., OHDSI/OMOP), Health-RI shall:</p>
 <ol>
-<li>
-<p><strong>Preferred: Submit the Issue Form</strong>
-   Use our <strong><a href="https://github.com/Health-RI/semantic-interoperability/issues/new?template=sssom-new-mapping.yml">SSSOM mapping issue form</a></strong> to add a single mapping row. Fill in the required fields and submit; Health-RI curators will review and integrate your contribution.</p>
-</li>
-<li>
-<p><strong>Alternative: Use the Excel template</strong></p>
-</li>
+<li>Submit after publication: Within <strong>one sprint</strong> of publication, notify/submit the mapping(s) to the standard's community channel or registry.</li>
+<li>Provide traceable facts: Include the Health-RI release date (<code>publication_date</code>), affected <code>record_id</code>(s), chosen HRIV predicate (<code>predicate_id</code>), and <code>mapping_justification</code>.</li>
+<li>Record the submission: Add the submission URL or ticket ID in release notes; optionally place a per-row link in the <code>comment</code> field.</li>
+<li>Handle outcomes via supersession: If the external review requests changes, publish a new record that supersedes the previous one using <code>replaces</code> (append-only), with a short rationale.</li>
 </ol>
-<p>Download the <strong><a href="https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx">XLSX template</a></strong> and enter:</p>
-<ul>
-<li>the mapping row(s) in the mappings sheet, and</li>
-<li>all CURIE prefix bindings in the prefix sheet.</li>
-</ul>
-<p>Attach the completed file to a new issue and we will review and add it. In the template, field headers are color-coded as follows:</p>
-<ul>
-<li>mandatory with no default have a black background;</li>
-<li>mandatory with a fixed default are purple and pre-filled;</li>
-<li>mandatory with a variable default are purple and not pre-filled;</li>
-<li>optional are green.</li>
-</ul>
-<p>Both methods ensure your contribution is reviewed and incorporated into the official Health-RI SSSOM mapping set.</p>
-<h3 id="submission-checklist-for-contributors">Submission checklist for contributors</h3>
-<div class="admonition tip">
-<p class="admonition-title">Quick check: are your URIs valid?</p>
-<p>Before submitting, verify that all HTTP URIs resolve and are well-formed. A simple online check: <a href="https://0mg.github.io/tools/uri/">https://0mg.github.io/tools/uri/</a></p>
+<div class="admonition important">
+<p class="admonition-title">Submission SLA</p>
+<p>Submissions to external registries (e.g., OHDSI/OMOP) must be initiated within <strong>one sprint</strong> of publication.</p>
 </div>
-<p>Before submitting, please verify the following to ensure your contribution is complete and compliant with the schema:</p>
-<ul>
-<li>All <strong>mandatory</strong> contributor fields are present and correctly formatted.</li>
-<li>All <code>subject_label</code> and <code>object_label</code> fields you provide are language-tagged (e.g., <code>Patient@en</code>, <code>Patiënt@nl</code>).</li>
-<li>Any optional values provided use valid identifiers (e.g., ORCIDs, resolvable URIs, SEMAPV terms).</li>
-</ul>
-<!-- Footnotes -->
+<!-- footnotes -->
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:predicate_id_allowed">
-<p>Allowed values: <code>hriv:hasExactMeaning</code>, <code>hriv:hasBroaderMeaningThan</code>, <code>hriv:hasNarrowerMeaningThan</code>.&#160;<a class="footnote-backref" href="#fnref:predicate_id_allowed" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:predicate_modifier">
-<p>May either be set to <code>Not</code> (its only valid value) or left empty. It is used specifically to express a negated mapping predicate.&#160;<a class="footnote-backref" href="#fnref:predicate_modifier" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:mapping_justification">
-<p>Currently, the only acceptable value for <code>mapping_justification</code> is <code>semapv:ManualMappingCuration</code>, or a comparable alternative subject to curator evaluation. This constraint is essential for maintaining the necessary semantic alignment.&#160;<a class="footnote-backref" href="#fnref:mapping_justification" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-<li id="fn:curie">
-<p>W3C CURIE Syntax 1.0 (compact URIs): <a href="https://www.w3.org/TR/curie/">https://www.w3.org/TR/curie/</a>&#160;<a class="footnote-backref" href="#fnref:curie" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<li id="fn:hrim">
+<p><code>hrim</code> is the prefix for <a href="https://w3id.org/health-ri/semantic-interoperability/mappings#">https://w3id.org/health-ri/semantic-interoperability/mappings#</a>&#160;<a class="footnote-backref" href="#fnref:hrim" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

@@ -885,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../method/validation-ontology/" class="md-nav__link">
+      <a href="../method/ontology-validation/" class="md-nav__link">
         
   
   
@@ -908,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../method/policy-ontology-notes/" class="md-nav__link">
+      <a href="../method/ontology-notes-policy/" class="md-nav__link">
         
   
   
@@ -931,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../method/versioning-ontology/" class="md-nav__link">
+      <a href="../method/ontology-versioning/" class="md-nav__link">
         
   
   
@@ -1030,12 +1030,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../method/mapping-set/" class="md-nav__link">
+      <a href="../method/mapping-schema/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SSSOM Mapping Set
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../method/mapping-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Governance, Lifecycle, and Validation
     
   </span>
   
@@ -1458,7 +1481,7 @@
 
 <h1 id="frequently-asked-questions-faq">Frequently Asked Questions (FAQ)</h1>
 <h2 id="project-overview-and-strategic-context">Project Overview and Strategic Context</h2>
-<p><em>Questions about the initiative’s purpose, strategic goals, expected impact, and broader context.</em></p>
+<p><em>Questions about the initiative's purpose, strategic goals, expected impact, and broader context.</em></p>
 <p><strong>Further reading:</strong></p>
 <ul>
 <li><a href="../method/">Overview of methods and approach</a></li>
@@ -1469,12 +1492,12 @@
 <p>The answers in this section are part of an ongoing effort to address strategic questions about the initiative. They are based on initial interpretations and should be used with caution. All entries are marked as drafts and will be further refined and validated in collaboration with stakeholders.</p>
 </div>
 <details class="question">
-<summary>What is the goal of Health-RI’s semantic interoperability initiative?</summary>
+<summary>What is the goal of Health-RI's semantic interoperability initiative?</summary>
 <p>To enable meaningful data integration across health and life sciences institutions by aligning data semantically, not just structurally. This is achieved through the development and adoption of a common reference model that captures domain meaning explicitly.</p>
 </details>
 <details class="question">
 <summary>What exactly are we trying to achieve with semantic interoperability?</summary>
-<p>We aim to align external and internal ontologies to a shared reference model, ensuring that semantic definitions are preserved across conceptual and computational layers. This is achieved through structured mappings (e.g., <code>hriv:hasExactMeaning</code>) from third-party concepts to Health-RI’s reference ontology (OntoUML) and its computational counterpart (gUFO).</p>
+<p>We aim to align external and internal ontologies to a shared reference model, ensuring that semantic definitions are preserved across conceptual and computational layers. This is achieved through structured mappings (e.g., <code>hriv:hasExactMeaning</code>) from third-party concepts to Health-RI's reference ontology (OntoUML) and its computational counterpart (gUFO).</p>
 </details>
 <details class="question">
 <summary>Why is semantic interoperability important in healthcare and life sciences?</summary>
@@ -1546,7 +1569,7 @@
 </details>
 <details class="question">
 <summary>What is the common reference model and why is it needed?</summary>
-<p>It’s a conceptual model created using OntoUML to serve as a semantic anchor for all participating data schemas. Instead of replacing local schemas, it provides a shared foundation for mapping and aligning meaning.</p>
+<p>It's a conceptual model created using OntoUML to serve as a semantic anchor for all participating data schemas. Instead of replacing local schemas, it provides a shared foundation for mapping and aligning meaning.</p>
 <p>OntoUML defines the domain-level semantics, while gUFO implements those concepts in OWL. This layered architecture ensures that semantic meaning is preserved from human-level models to machine-readable artifacts.</p>
 </details>
 <details class="question">
@@ -1562,7 +1585,7 @@
 </ul>
 </details>
 <details class="question">
-<summary>Why do we need the semantic interoperability initiative if standards like HL7, OMOP, or DCAT-AP already exist? Isn’t this duplicating existing efforts?</summary>
+<summary>Why do we need the semantic interoperability initiative if standards like HL7, OMOP, or DCAT-AP already exist? Isn't this duplicating existing efforts?</summary>
 <p>This initiative complements existing standards like HL7, OMOP, and DCAT by focusing on semantic precision, ontological clarity, and interoperability at the conceptual level. While HL7 and OMOP define syntactic and structural specifications for health data, this initiative addresses foundational semantics to align and reason over data models meaningfully. It:</p>
 <ul>
 <li>Provides foundational ontological grounding that is missing in most standards.</li>
@@ -1584,7 +1607,7 @@
 <p>TBD.</p>
 </details>
 <details class="question">
-<summary>Given that many life sciences ontologies adopt the Basic Formal Ontology (BFO), what motivated the use of UFO rather than BFO as the foundation for this initiative’s ontology? (TBD)</summary>
+<summary>Given that many life sciences ontologies adopt the Basic Formal Ontology (BFO), what motivated the use of UFO rather than BFO as the foundation for this initiative's ontology? (TBD)</summary>
 <p>TBD.</p>
 </details>
 <h2 id="modeling-approach-ontouml-and-gufo">Modeling Approach: OntoUML and gUFO</h2>
@@ -1600,10 +1623,10 @@
 <p>OntoUML operates at MDA's CIM layer to capture conceptual semantics, while gUFO provides a platform-independent OWL implementation at the PIM layer. This ensures a traceable and interoperable flow from conceptualization to deployment.</p>
 </details>
 <details class="question">
-<summary>OntoUML and gUFO seem very complex. Isn’t that a barrier to adoption?</summary>
+<summary>OntoUML and gUFO seem very complex. Isn't that a barrier to adoption?</summary>
 <p>This is a common concern. Foundational ontologies like UFO are indeed complex—because they aim to capture real-world meaning with a high level of precision and avoid ambiguity across domains. Some complexity is simply inherent to the task: when we model the real-life elements, especially across institutions or sectors, we cannot always rely on overly simplistic representations.</p>
 <p>That said, this initiative does not require users to engage directly with UFO. Instead, we rely on OntoUML and gUFO to make that foundational theory accessible in practice. OntoUML provides intuitive modeling constructs grounded in UFO, while gUFO offers a lightweight OWL implementation suitable for real-world applications.</p>
-<p>This layered approach lets modelers benefit from UFO’s expressive power without being overwhelmed by its formal depth. The complexity is managed by the modeling framework and supported by tools like Visual Paradigm and the OntoUML plugin. In fact, these languages have already been applied successfully in domains like public health, law, and digital humanities—demonstrating that the approach is both practical and scalable.</p>
+<p>This layered approach lets modelers benefit from UFO's expressive power without being overwhelmed by its formal depth. The complexity is managed by the modeling framework and supported by tools like Visual Paradigm and the OntoUML plugin. In fact, these languages have already been applied successfully in domains like public health, law, and digital humanities—demonstrating that the approach is both practical and scalable.</p>
 </details>
 <details class="question">
 <summary>How is the OntoUML model converted to OWL?</summary>
@@ -1772,7 +1795,7 @@ In the template, headers for mandatory fields are black, and optional ones are g
 <summary>Do I need to check the ontology version before submitting a contribution?</summary>
 <p>Yes, we ask contributors to indicate which version of the ontology or artifact they reviewed before submitting a request — especially when reporting issues or suggesting new concepts.</p>
 <p>This helps us avoid duplicates, understand the context of your feedback, and keep the review process efficient.</p>
-<p>You’ll find a field for this information in the contribution forms.</p>
+<p>You'll find a field for this information in the contribution forms.</p>
 </details>
 <details class="question">
 <summary>Where can I find more information on how to submit feedback?</summary>
@@ -1784,8 +1807,8 @@ In the template, headers for mandatory fields are black, and optional ones are g
 <p><strong>Further reading:</strong></p>
 <ul>
 <li><a href="../method/publications">Publications &amp; operations</a></li>
-<li><a href="../method/versioning-ontology/">Ontology versioning</a></li>
-<li><a href="../method/validation-ontology/">Validation &amp; stage gates</a></li>
+<li><a href="../method/ontology-versioning/">Ontology versioning</a></li>
+<li><a href="../method/ontology-validation/">Validation &amp; stage gates</a></li>
 <li><a href="../method/persistent-ids">Persistent identifiers (PIDs)</a></li>
 </ul>
 <details class="question">
@@ -1891,7 +1914,7 @@ The OWL file includes a <code>dcterms:conformsTo</code> triple that explicitly l
 - <code>https://w3id.org/health-ri/ontology/v0.6.0/specification</code> — HTML specification for version 0.6.0</p>
 </details>
 <details class="question">
-<summary>What’s the difference between the latest and versioned ontology URIs?</summary>
+<summary>What's the difference between the latest and versioned ontology URIs?</summary>
 <ul>
 <li>The latest URI (<code>https://w3id.org/health-ri/ontology</code>) always points to the most recent stable release. Its content may change over time as new versions are published.</li>
 <li>A versioned URI (e.g., <code>https://w3id.org/health-ri/ontology/v2.0.0</code>) points to a specific, immutable release. Its content will never change, ensuring long-term consistency.</li>
@@ -1911,7 +1934,7 @@ The OWL file includes a <code>dcterms:conformsTo</code> triple that explicitly l
 <p>Where to get the files:
 - GitHub Release page (exact packaged artifacts and notes).
 - Zenodo record (DOI) for a preserved, citable snapshot.
-- w3id PIDs and repository folders for “latest” and “versioned” access; images (<code>.png</code>) live under <code>ontologies/latest/</code>.</p>
+- w3id PIDs and repository folders for "latest" and "versioned" access; images (<code>.png</code>) live under <code>ontologies/latest/</code>.</p>
 </details>
 <details class="question">
 <summary>How are the OntoUML and gUFO ontologies and the produced semantic mappings maintained over time?</summary>

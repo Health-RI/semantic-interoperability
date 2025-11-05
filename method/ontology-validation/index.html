@@ -12,13 +12,13 @@
         <meta name="author" content="Pedro Paulo F. Barcelos">
       
       
-        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/mapping-strategy/">
+        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/ontology-validation/">
       
       
-        <link rel="prev" href="../ontology-versioning/">
+        <link rel="prev" href="../introduction/">
       
       
-        <link rel="next" href="../mapping-schema/">
+        <link rel="next" href="../ontology-notes-policy/">
       
       
       <link rel="icon" href="../../assets/images/health-ri-favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Strategy - Health-RI Semantic Interoperability</title>
+        <title>Lifecycle and Validation Policy - Health-RI Semantic Interoperability</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#semantic-mapping-strategy" class="md-skip">
+        <a href="#ontology-lifecycle-and-validation-policy" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Strategy
+              Lifecycle and Validation Policy
             
           </span>
         </div>
@@ -840,8 +840,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -855,13 +857,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
@@ -877,7 +877,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             Ontology
@@ -888,10 +888,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ontology-validation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lifecycle and Validation Policy
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -902,6 +924,179 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose &amp; Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions-glossary-stages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definitions &amp; Glossary (Stages)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-procedures-by-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Procedures by Stage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Procedures by Stage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#internal-review-irv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Review (irv)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-review-erv" class="md-nav__link">
+    <span class="md-ellipsis">
+      External Review (erv)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-specific-checklists" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stage-specific Checklists
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stage-specific Checklists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#internal-stage-gate-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Stage Gate Checklist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-review-stage-gate-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Review Stage Gate Checklist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publication-stage-operations-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publication Stage Operations Checklist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-publication-validation-ongoing-feedback-pub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Post-Publication Validation &amp; Ongoing Feedback (pub)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-reversions-why-and-when" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stage Reversions — Why and When
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policy-for-semantic-modifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy for Semantic Modifications
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Figures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Figures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stage Changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-cases-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edge Cases &amp; Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -965,8 +1160,6 @@
                 
   
   
-    
-  
   
   
     
@@ -982,11 +1175,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
         
           
           <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
@@ -1002,7 +1197,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             Mappings
@@ -1013,32 +1208,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Strategy
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../mapping-strategy/" class="md-nav__link">
         
   
   
@@ -1049,152 +1222,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#model-driven-techniques-mda-mdd-and-mde" class="md-nav__link">
-    <span class="md-ellipsis">
-      Model-Driven Techniques: MDA, MDD, and MDE
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cim-and-pim-in-our-ontology-artifacts" class="md-nav__link">
-    <span class="md-ellipsis">
-      CIM and PIM in Our Ontology Artifacts
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CIM and PIM in Our Ontology Artifacts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#roles-of-the-artifacts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Roles of the Artifacts
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#semantic-reference-defining-cim-to-pim-semantics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Semantic Reference: Defining CIM-to-PIM Semantics
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conceptualization-implementation-and-mapping" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conceptualization, Implementation, and Mapping
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aligning-third-party-ontologies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Aligning Third-Party Ontologies
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mapping-properties-for-cross-scheme-alignment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mapping Properties for Cross-Scheme Alignment
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mapping Properties for Cross-Scheme Alignment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#our-strategy-choosing-the-right-mapping-property" class="md-nav__link">
-    <span class="md-ellipsis">
-      Our Strategy: Choosing the Right Mapping Property
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#visual-example-exact-semantic-alignment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visual Example: Exact Semantic Alignment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#visual-example-broader-and-narrower-semantic-alignments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visual Example: Broader and Narrower Semantic Alignments
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Visual Example: Broader and Narrower Semantic Alignments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#visual-example-completing-the-ontology-via-semantic-gaps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visual Example: Completing the Ontology via Semantic Gaps
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1560,190 +1587,315 @@
   
 
 
-<h1 id="semantic-mapping-strategy">Semantic Mapping Strategy</h1>
-<h2 id="model-driven-techniques-mda-mdd-and-mde">Model-Driven Techniques: MDA, MDD, and MDE</h2>
-<p>The <strong><a href="http://www.omg.org/mda/">Model-Driven Architecture (MDA)</a></strong>, defined by the Object Management Group (OMG), is an architectural framework that structures system modeling into abstract layers—promoting interoperability, portability, and reuse by separating domain concerns from technical implementation <a href="#ref1">[1</a>, <a href="#ref2">2]</a>.</p>
+<h1 id="ontology-lifecycle-and-validation-policy">Ontology Lifecycle and Validation Policy</h1>
+<p>This document defines the per-package stages (<code>int</code>, <code>irv</code>, <code>erv</code>, <code>pub</code>), how transitions and reversions are recorded in Visual Paradigm, when/why reversions happen, and the mandatory policy for semantic modifications. It also specifies who validates at each stage, how reviews are initiated, and the expected review timelines. Version effects (Y++) are included where relevant.</p>
+<h2 id="purpose-scope">Purpose &amp; Scope</h2>
+<p>Specifies stage governance for ontology packages: how stage states are tracked, transitioned, and reverted, and how those transitions are recorded. It also defines who performs validation and reviews, when they occur, and how version increments (Y++) are applied. Version impacts are acknowledged where stages drive them; see <a href="../ontology-versioning/">Versioning Strategy</a> for the full versioning logic. This policy applies to all modelers and reviewers involved in ontology development and maintenance.</p>
+<h2 id="definitions-glossary-stages">Definitions &amp; Glossary (Stages)</h2>
+<p>Stages are tracked per package inside the Visual Paradigm project as tagged values on packages and displayed in documentation.</p>
 <ul>
-<li><strong>Model-Driven Development (MDD)</strong> denotes development processes guided by high-level models; MDA is one such OMG-conforming realization <a href="#ref2">[2]</a>.</li>
-<li><strong>Model-Driven Engineering (MDE)</strong> is an overarching paradigm including model creation, transformation, code generation, reverse-engineering, and lifecycle evolution <a href="#ref2">[2]</a>.</li>
+<li><code>int</code> – internal work (draft modeling, layout, labels, notes).</li>
+<li><code>irv</code> – submitted for internal review.</li>
+<li><code>erv</code> – submitted for external review.</li>
+<li><code>pub</code> – external review window closed and package is published.</li>
 </ul>
-<p>OMG defines three main abstraction layers <a href="#ref1">[1</a>, <a href="#ref2">2]</a>:</p>
+<p>Rule. Stage changes happen at package level (not diagram/class). Packages can move through stages independently, and multiple stage transitions may be combined into one release; the version still changes at most once per release following the priority X &gt; Y &gt; Z.
+Version note. A stage transition triggers Y++ and Z → 0 (see <a href="../ontology-versioning/">Versioning Strategy</a>).</p>
+<p><strong>Checklists: gate vs operations.</strong> Stage gate checklists list <strong>exit criteria</strong> to leave stage X and enter stage Y (they are pass/fail gates). The <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a> is <strong>not</strong> a gate; it lists actions to perform <strong>after</strong> entering <code>pub</code> and while remaining there.</p>
+<h2 id="validation-procedures-by-stage">Validation Procedures by Stage</h2>
+<p>Stages <code>int</code> and <code>irv</code> have exit gate checklists that control advancement (see <a href="#stage-specific-checklists">Stage-specific Checklists</a>). Entry into <code>irv</code> requires passing the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a>; advancement from <code>irv</code> to <code>erv</code> requires passing the <a href="#internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</a>. The only in-stage checklist is the <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a>, executed upon entering <code>pub</code> and maintained while in <code>pub</code>.</p>
+<h3 id="internal-review-irv">Internal Review (<code>irv</code>)</h3>
+<p><strong>Who validates.</strong> Members of the modeling and mappings teams who were not directly involved in modeling the package.</p>
+<p><strong>Objective.</strong> Perform an internal completeness and quality sanity check from a non-domain-specialist perspective. Reviewers verify:</p>
 <ul>
-<li><strong>Computation-Independent Model (CIM)</strong>: captures domain context and system requirements in business terms, without specifying implementation structure.</li>
-<li><strong>Platform-Independent Model (PIM)</strong>: defines structural and behavioral aspects—such as classes and relationships—in a technology-agnostic way, without committing to any particular implementation platform.</li>
-<li><strong>Platform-Specific Model (PSM)</strong>: refines the PIM with technology-specific information (e.g. database schemas, APIs, frameworks) to enable implementation.</li>
+<li>Documentation hygiene (descriptions, definitions, provenance, IDs, stage tagged value).</li>
+<li>Clear and consistent naming (including class and relation names).</li>
+<li>Presence of mandatory items and required metadata.</li>
+<li>Basic modeling soundness (typing, obvious constraint issues).</li>
+<li>Diagram readability (labels, legends, layout) and terminology consistency.</li>
+<li>Cross-package references are resolvable and unambiguous.</li>
 </ul>
-<h2 id="cim-and-pim-in-our-ontology-artifacts">CIM and PIM in Our Ontology Artifacts</h2>
-<p>Within our semantic interoperability framework:</p>
-<ul>
-<li>The <strong>OntoUML ontology</strong> sits at the <a href="https://cio-wiki.org/wiki/Computation-Independent_Model_(CIM)">CIM layer</a>: it defines conceptual domain entities and relationships grounded in the Unified Foundational Ontology (UFO) <a href="#ref3">[3]</a>.</li>
-<li>The <strong>gUFO representation</strong> (OWL-based lightweight implementation of UFO) resides at the <a href="https://cio-wiki.org/wiki/Platform_Independent_Model_(PIM)">PIM layer</a>: it expresses those same concepts as an executable OWL 2 DL ontology, suitable for reasoning and integration with Semantic Web tools <a href="#ref3">[3]</a>.</li>
-</ul>
-<p><img alt="Mapping from OntoUML at CIM to gUFO/OWL at PIM" src="../assets/images/mapping-cim-pim.png" />
-<em>Figure 1: OntoUML at the CIM layer defines the semantics that are implemented in gUFO/OWL at the PIM layer.</em></p>
-<p>This separation is crucial because it ensures clarity about what we mean versus how we represent it. By explicitly considering this, each element in the ontology has a well-defined meaning behind it, rather than being just an arbitrary label or technical construct. By identifying the original meaning (conceptualization) of "Person" (for example) and separating it from any one representation, we follow the prescription that real-world semantics should guide the modeling. This aligns with knowledge engineering practices: every knowledge base or ontology implicitly commits to some conceptualization of the domain, and making that conceptualization explicit is critical for correctness.</p>
-<p>This visual clarifies that OntoUML provides the conceptual meaning, which the gUFO artifact operationalizes—while preserving semantic integrity across layers.</p>
-<h3 id="roles-of-the-artifacts">Roles of the Artifacts</h3>
-<table>
-<thead>
-<tr>
-<th>Artifact</th>
-<th>Layer</th>
-<th>Purpose</th>
-<th>Practical Role</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>OntoUML</strong></td>
-<td>CIM</td>
-<td>Provides clarity about domain-specific concepts by offering clear and precise definitions, supporting conceptual validation and enabling expert communication</td>
-<td>Serves as a semantic map and meaning contract to align domain terms for interoperability</td>
-</tr>
-<tr>
-<td><strong>gUFO</strong> (OWL)</td>
-<td>PIM</td>
-<td>Provides machine-readable semantics, supporting automated reasoning and tool interoperability</td>
-<td>Enables integration and alignment of RDF-based artifacts within semantic web and linked data contexts</td>
-</tr>
-</tbody>
-</table>
-<p>Maintaining both artifacts ensures clear traceability from domain concepts (OntoUML/CIM) to executable ontology structures (gUFO/PIM) <a href="#ref3">[3]</a>.</p>
-<h2 id="semantic-reference-defining-cim-to-pim-semantics">Semantic Reference: Defining CIM-to-PIM Semantics</h2>
-<p>In the Health-RI architecture, every class in the gUFO ontology (PIM) is implicitly semantically defined by its counterpart in OntoUML (CIM). For example, the class <code>hrio:Person</code> in gUFO borrows its semantics from the <code>Person</code> class in the OntoUML model. Because the CIM is not computational, this semantic linkage remains implicit and is <em>not formally encoded</em> <a href="#ref3">[3]</a>.</p>
-<div class="admonition tip">
-<p class="admonition-title">Why the CIM-PIM link matters</p>
-<p>Even though the OntoUML model is not executable, it defines the core meaning that gUFO classes implement. This semantic grounding improves trust, clarity, and alignment in data integration.</p>
+<p>Reviewers must execute the IRV checklist in section <a href="#internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</a> and record evidence in the review issue.</p>
+<p><strong>Start condition.</strong> The package has passed the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a>; the modeler sets the stage tagged value to <code>irv</code> and notifies internal reviewers.</p>
+<p><strong>Planning &amp; timeline.</strong> A review activity is created and scheduled into a sprint. Internal reviewers have one sprint to complete the review. Depending on model complexity, team availability, and other factors, this may be extended to two sprints.</p>
+<div class="admonition info">
+<p class="admonition-title">Terminology</p>
+<p><strong>Sprint</strong> refers to the organization's standard sprint length as defined by the project board. This policy intentionally avoids a fixed day count.</p>
 </div>
-<h2 id="conceptualization-implementation-and-mapping">Conceptualization, Implementation, and Mapping</h2>
-<p>To make the semantic link between OntoUML, gUFO, and external ontologies more explicit, it is useful to consider the semiotic perspective shown in Figure 2.</p>
-<p><img alt="Linking OntoUML conceptualization, gUFO implementation, and external mappings" src="../assets/images/theory.png" />
-<em>Figure 2: OntoUML (CIM) provides the conceptualization, which gUFO (PIM) implements. External ontologies aligned through the Health-RI Mapping Vocabulary (<code>hriv</code>) can then be interpreted as sharing the same underlying conceptualization defined by OntoUML. This ensures that both meaning and representation remain consistent across models and ontologies.</em></p>
-<p>In this Figure:</p>
-<ul>
-<li><strong>Real-world referents (globe and people, top-right):</strong> indicate the actual entities in the domain (e.g., human beings) that the conceptualization is about. These are the things to which all conceptualizations ultimately refer.</li>
-<li><strong>Shared Conceptualization (top, cloud icon):</strong> represents the underlying domain meaning (e.g., <em>Person</em>) that is shared across different artifacts. This is the abstract conceptualization formalized in OntoUML, implemented computationally in gUFO, and explicitly anchored when an external ontology concept is mapped through the Health-RI Mapping Vocabulary.</li>
-<li><strong>OntoUML class (<code>&lt;&lt;kind&gt;&gt; Person</code>, left):</strong> formalizes this conceptualization at the CIM layer, providing precise ontological grounding (in UFO) for what it means to be a <em>Person</em>. When we create a class <code>&lt;&lt;kind&gt;&gt; Person</code> in OntoUML, we are doing more than drawing a box labeled "Person." We are encoding the meaning of Person in a structured way that the modeling language understands. In this sense, the OntoUML concept plays the role of a meaningful representation: it carries intentional meaning (e.g., the notion of a person as an entity with essential properties, understood via UFO's category of Kind) and it is also an explicit element in a model.</li>
-<li><strong>gUFO implementation (<code>hrio:Person</code>, bottom):</strong> expresses the same meaning in computational terms at the PIM layer, making it machine-readable and interoperable. gUFO classes always inherit their semantics from the OntoUML concepts they implement.</li>
-<li><strong>External ontology concept (<code>ont:Human</code>, right):</strong> denotes how a third-party ontology may define a similar concept. When mapped via the Health-RI Mapping Vocabulary (e.g., <code>hriv:hasExactMeaning</code>), such an external concept is explicitly anchored to the gUFO representation and, by transitivity, to the original OntoUML conceptualization.</li>
-</ul>
-<p>Taken together, the diagram shows that <em>(i)</em> the Health-RI OntoUML model provides the authoritative conceptual meaning, <em>(ii)</em> the gUFO implementation operationalizes this meaning computationally, and <em>(iii)</em> external mappings assert that third-party ontologies share this meaning.</p>
-<p>This guarantees that when a partner ontology concept is mapped to the Health-RI ontology using <code>hriv</code>, it is not only aligned with the gUFO class but is also understood to embody the same <strong>conceptualization</strong> originally defined in OntoUML. In this way, interoperability extends beyond structural matching to the preservation of intended meaning.</p>
-<p>OntoUML and OWL are complementary in that they operate at different knowledge representation levels. OntoUML is a conceptual modeling language—closer to human cognition and domain semantics—whereas OWL is a computational ontology language—suited for machine tractability and reasoning. Designing at the conceptual level first ensures the meaning is captured correctly before committing to OWL's computational restrictions.</p>
-<p>Theories of formal semantics tell us that an OWL class gets its meaning from two sources: the formal semantics of the logic (which treats Person as a set of individuals with certain properties) and the intended interpretation by the modeler (the conceptualization of Person). By explicitly maintaining the link (<code>hriv:hasExactMeaning</code>) between <code>ont:Human</code> and <code>hrio:Person</code> (which is anchored in the conceptualization), we ensure that the formal artifact is interpreted correctly. By grounding both the OntoUML and OWL representations in the same meaning, we mitigate the risk of the OWL ontology drifting from the original intent. This establishes a <strong>traceability of semantics</strong>—from the real-world domain, to the conceptual model, to the formal ontology—which is a characteristic of rigorous ontology engineering. Nothing is introduced in OWL that was not conceptually established first.</p>
-<h2 id="aligning-third-party-ontologies">Aligning Third-Party Ontologies</h2>
-<p>Our common reference model provides authoritative semantics to external concept definitions. When another ontology defines <code>ont:Human</code>, it may be semantically aligned with our <code>hrio:Person</code>. To make this relationship explicit, a <strong><code>hriv:hasExactMeaning</code></strong> link can be asserted—either by the Health-RI mapping team (e.g., in SSSOM format), or by the owners of the external ontology within their artifact—signifying that the external concept carries the same meaning.</p>
-<p>There are two possible approaches for creating and maintaining such mappings:</p>
+<p><strong>Outcome.</strong> If the review passes (no semantic changes required), the modeler updates the stage tagged value to <code>erv</code> and records the transition <code>&lt;irv → erv&gt;</code>. Per the <a href="../ontology-versioning/">Versioning Strategy</a>, this contributes Y++ and resets Z → 0 for the release (subject to X &gt; Y &gt; Z precedence). Advancement to <code>erv</code> is permitted only after a passed <a href="#internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</a>.</p>
+<h3 id="external-review-erv">External Review (<code>erv</code>)</h3>
+<p><strong>Who validates.</strong> An expanded reviewer pool of domain specialists, modeling specialists, and informed non-specialists.</p>
+<p><strong>Objective.</strong> Conduct an independent, deeper assessment of domain correctness and conceptual rigor. Reviewers check for inconsistencies, incorrectness, incompleteness, ambiguities, hidden assumptions, and coverage gaps, and validate definitions, constraints/multiplicities, and example use-cases/queries, including implications for interoperability and mappings.</p>
+<p><strong>Community call.</strong> The internal team publishes a LinkedIn post entitled "Call for Community Review: [Model Name]". Members of the (future) D12 task group are encouraged to repost this call on their LinkedIn profiles to broaden reach.</p>
+<p><strong>Start condition.</strong> Begins only after a passed <a href="#internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</a>.</p>
+<p><strong>Planning &amp; timeline.</strong> A review activity is created and scheduled into a sprint. External reviewers have one sprint to provide feedback; this may be extended to two sprints based on package complexity, community availability, and other factors.</p>
+<p><strong>Outcome.</strong> If the review passes (no semantic changes required), the modeler updates the stage tagged value to <code>pub</code> and records the transition <code>&lt;erv → pub&gt;</code>. Per the <a href="../ontology-versioning/">Versioning Strategy</a>, this contributes Y++ and resets Z → 0 for the release (subject to X &gt; Y &gt; Z precedence). Upon entering <code>pub</code>, immediately execute the <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a>.</p>
+<h2 id="stage-specific-checklists">Stage-specific Checklists</h2>
+<p>These checklists function strictly as exit gates: the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a> controls exit from <code>int</code> to <code>irv</code>, and the <a href="#internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</a> controls exit from <code>irv</code> to <code>erv</code>. Reviewers must execute the relevant checklist and record evidence (links, notes) in the associated review issue. The <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a> is intentionally non-gate and applies <strong>after</strong> <code>&lt;erv → pub&gt;</code>; use it to run publication and ongoing <code>pub</code> tasks.</p>
+<h3 id="internal-stage-gate-checklist">Internal Stage Gate Checklist</h3>
+<p><strong>Exit criteria for <code>int → irv</code>.</strong> All items below must be satisfied to leave <code>int</code> and enter <code>irv</code>.</p>
 <ul>
 <li>
-<p><strong>Mappings performed by the Health-RI team:</strong> In this case, mappings are created by Health-RI's semantic modeling team and provided in <a href="https://w3id.org/sssom/">SSSOM</a> format. This is the default strategy when the external ontology or resource is publicly available or beyond Health-RI's editorial control (e.g., national standards, web-accessible vocabularies). These mappings are <em>non-invasive</em>, meaning they do not alter the original artifacts but describe their alignment externally. For details on how these mappings are published, versioned, and curated, see the <a href="../mapping-schema/">SSSOM Mapping Set</a>.</p>
+<p>[ ] <strong>Stage &amp; package setup</strong></p>
+<ul>
+<li>[ ] Package stage is set to <code>int</code>.</li>
+<li>[ ] Title and Description filled using Visual Paradigm's default fields (not tags).</li>
+<li>[ ] Package metadata initialized with <code>introducedInVersion</code> and possibly <code>lastChangedInVersion</code>.</li>
+</ul>
 </li>
 <li>
-<p><strong>Mappings authored by external partners:</strong> If the external artifact is under the editorial responsibility of a partner or collaborating organization, that party may directly include the mappings within their ontology. In this case, the mappings are <em>embedded</em> into the source artifact itself (e.g., adding <code>hriv:hasExactMeaning</code> to their RDF model pointing to Health-RI concepts), offering tighter integration and long-term maintainability by the artifact owner.</p>
-</li>
-</ul>
-<p>These complementary approaches enable semantic alignment in both centrally controlled and federated interoperability scenarios.</p>
-<div class="admonition info">
-<p class="admonition-title">Mapping Set Structure &amp; Stable Artifacts</p>
-<p>See the <a href="../mapping-schema/">SSSOM Mapping Set</a> page for the structure, schema, and <strong>stable w3id artifact URIs</strong>.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Browse the Created Mappings</p>
-<p>Explore and visualize the mappings that have already been created in the <a href="../../ontology/mappings/">Mappings</a> page. (Convenience view; for normative artifacts see the Mapping Set page.)</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>For details about the schema and contribution process, see the <a href="../mapping-schema/">SSSOM Mapping Set</a>.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Only one <code>hriv:hasExactMeaning</code> allowed</p>
-<p>Each concept may have <strong>exactly one</strong> <code>hriv:hasExactMeaning</code> to a Health-RI concept—<strong>and only when a perfect semantic equivalence exists</strong>. Using more than one <code>hriv:hasExactMeaning</code> for the same concept is not allowed, as it introduces ambiguity.</p>
-</div>
-<p><img alt="Deriving OntoUML semantics via mapping to Health-RI reference model" src="../assets/images/mapping-cim-pim2.png" />
-<em>Figure 3: If an external ontology defines <code>External:Patient</code> which we map via <code>hriv:hasExactMeaning</code> to <code>hrio:Patient</code>—and <code>hrio:Patient</code> derives its semantics from the OntoUML <code>Patient</code> concept—then we can interpret <code>External:Patient</code> as conveying the same semantics as the <code>OntoUML Patient</code> concept.</em></p>
-<h2 id="mapping-properties-for-cross-scheme-alignment">Mapping Properties for Cross-Scheme Alignment</h2>
-<p>The <a href="../specification-vocabulary.html">Health-RI Mapping Vocabulary</a> was created to provide a set of mapping properties designed for expressing alignments between concepts in different concept schemes (e.g. external vocabularies and our Health-RI ontology). The principal properties are: <code>hriv:hasExactMeaning</code>, <code>hriv:hasBroaderMeaningThan</code>, and <code>hriv:hasNarrowerMeaningThan</code>.</p>
-<p>The Health-RI mapping relations are declared as specializations of SKOS mapping properties. Importantly, this does not change the semantics explained above: Health-RI relations remain meaning-centric (intentional) while SKOS relations are similarity mappings between extensionally defined categories. The <code>rdfs:subPropertyOf</code> alignment simply ensures that whenever you assert an <code>hriv</code> mapping, a reasoner (or any RDFS-aware tool) can automatically derive the corresponding SKOS mapping. This improves interoperability with tools that expect SKOS, while preserving the stricter intent of the Health-RI semantics.</p>
-<p><strong>Entailment summary (via <code>rdfs:subPropertyOf</code>):</strong></p>
+<p>[ ] <strong>Modeling prepared (OntoUML → gUFO)</strong></p>
 <ul>
-<li><a href="../specification-vocabulary.html#hasExactMeaning"><code>hriv:hasExactMeaning</code></a> ⟶ <code>skos:exactMatch</code></li>
-<li><a href="../specification-vocabulary.html#hasBroaderMeaningThan"><code>hriv:hasBroaderMeaningThan</code></a> ⟶ <code>skos:narrowMatch</code></li>
-<li><a href="../specification-vocabulary.html#hasNarrowerMeaningThan"><code>hriv:hasNarrowerMeaningThan</code></a> ⟶ <code>skos:broadMatch</code></li>
-</ul>
-<h3 id="our-strategy-choosing-the-right-mapping-property">Our Strategy: Choosing the Right Mapping Property</h3>
-<ul>
-<li><strong><a href="../specification-vocabulary.html#hasExactMeaning"><code>hriv:hasExactMeaning</code></a></strong> is used when the external concept is fully equivalent in meaning to our reference concept.<ul>
-<li>Each external concept may have <strong>only one</strong> <code>hriv:hasExactMeaning</code>.</li>
+<li>[ ] Classes and relations carry appropriate OntoUML stereotypes (no obvious anti-patterns).</li>
+<li>[ ] Multiplicities and constraints are specified and justified.</li>
+<li>[ ] All generalization sets show <code>isDisjoint</code> and <code>isCovering</code> in every diagram occurrence.</li>
+<li>[ ] Relation naming applied per (or aligned with the draft) naming strategy; directionality is explicit.</li>
 </ul>
 </li>
-<li><strong><a href="../specification-vocabulary.html#hasBroaderMeaningThan"><code>hriv:hasBroaderMeaningThan</code></a></strong> is used when the external concept is <strong>broader</strong> than our reference concept (i.e., it includes our concept and possibly more).</li>
-<li><strong><a href="../specification-vocabulary.html#hasNarrowerMeaningThan"><code>hriv:hasNarrowerMeaningThan</code></a></strong> is used when the external concept is <strong>narrower</strong> than our reference concept (i.e., it captures a more specific notion).</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Clarifying hriv:hasExactMeaning semantics</p>
-<p>Although <code>hriv:hasExactMeaning</code> can be treated like a strong semantic alignment <strong>in meaning</strong>, it does <strong>not imply logical equivalence</strong> (such as <code>owl:equivalentClass</code>). It is intended to capture a strong semantic alignment <strong>in meaning</strong>, not in logical entailment. This allows semantic interoperability without risking unintended reasoning consequences in OWL-based systems.</p>
-</div>
-<p>In contrast to <code>hriv:hasExactMeaning</code>, both <code>hriv:hasNarrowerMeaningThan</code> and <code>hriv:hasBroaderMeaningThan</code> allow <strong>multiple mappings per concept</strong> to express partial or hierarchical semantic overlaps.</p>
-<p>These mappings are only to be used when <strong>no perfect equivalence exists</strong> and a semantic approximation must be made to the <strong>closest reference concept</strong> in the Health-RI ontology.</p>
-<h3 id="visual-example-exact-semantic-alignment">Visual Example: Exact Semantic Alignment</h3>
-<p><img alt="Cross-ontology mapping using hriv:hasExactMeaning and rdfs:subClassOf" src="../assets/images/example-mapping.png" />
-<em>Figure 4: External ontologies (e.g., HealthCare and Veterinary) map their local concepts to reference concepts in the Health-RI Ontology via <code>hriv:hasExactMeaning</code> (red). These reference concepts are also semantically structured via <code>rdfs:subClassOf</code> (brown), enabling consistent classification across domains.</em></p>
-<p>This figure illustrates how concepts such as <code>hc:Patient</code> and <code>vet:Patient</code> are mapped to <code>hrio:HealthcarePatient</code> and <code>hrio:VeterinaryPatient</code> respectively. These are in turn subsumed by higher-level concepts like <code>hrio:Human</code> or <code>hrio:NonHumanAnimal</code>, ultimately aligning under <code>hrio:Animal</code>. This modeling strategy ensures that semantic alignments preserve domain distinctions while enabling unified interpretation under a shared reference ontology.</p>
-<div class="admonition tip">
-<p class="admonition-title">How to assert an exact match in your OWL file</p>
-<p>To assign that a concept in your ontology has its semantics defined by a concept in the <strong>latest version</strong> of the Health-RI Ontology, use <code>hriv:hasExactMeaning</code> as shown below:</p>
+<li>
+<p>[ ] <strong>Terminology &amp; labels</strong></p>
 <ul>
-<li><code>hc:Patient hriv:hasExactMeaning &lt;https://w3id.org/health-ri/ontology#HealthcarePatient&gt; .</code></li>
+<li>[ ] Names/labels follow the nomenclature strategy (capitalization, spelling, prefixes).</li>
+<li>[ ] For classes: <code>prefLabel</code> = class Name; synonyms added to the <code>synonyms</code> tagged value to generate <code>altLabel</code>s.</li>
 </ul>
-<p>Or, if you've defined the prefix <code>hrio: &lt;https://w3id.org/health-ri/ontology#&gt;</code>, you can simply write:</p>
+</li>
+<li>
+<p>[ ] <strong>Definitions &amp; examples</strong></p>
 <ul>
-<li><code>hc:Patient hriv:hasExactMeaning hrio:HealthcarePatient .</code></li>
+<li>[ ] Each package, diagram, and class has a definition that is concise, non-circular, and free of hidden assumptions.</li>
+<li>[ ] If examples are included, they are domain-correct and consistent with the formal model.</li>
 </ul>
-<p>To align with a <strong>specific version</strong> of a Health-RI Ontology's concept (e.g., <code>v2.0.0</code>), use:</p>
+</li>
+<li>
+<p>[ ] <strong>Diagram quality &amp; traceability</strong></p>
 <ul>
-<li><code>hc:Patient hriv:hasExactMeaning &lt;https://w3id.org/health-ri/ontology/v2.0.0#HealthcarePatient&gt; .</code></li>
+<li>[ ] External element origin shown: any external/reused class displays its origin (source package) using the standard notation.</li>
+<li>[ ] Empty attribute compartment hidden: classes with no attributes hide the attribute compartment per the diagram style guide.</li>
+<li>[ ] Diagrams are readable (clear layout, legible labels, no overlapping edges/nodes).</li>
+<li>[ ] Figure titles match package names.</li>
+<li>[ ] Notes and constraints follow the standard style and placement.</li>
 </ul>
-</div>
-<h3 id="visual-example-broader-and-narrower-semantic-alignments">Visual Example: Broader and Narrower Semantic Alignments</h3>
-<p><img alt="Cross-ontology mapping using hriv:hasExactMeaning, hriv:hasNarrowerMeaningThan, and hriv:hasBroaderMeaningThan" src="../assets/images/example-mapping2.png" />
-<em>Figure 5: Mapping external concepts from GeneralHealth (<code>ghc</code>) and PetVeterinary (<code>pvet</code>) ontologies to the Health-RI ontology. This example evolves from Figure 4 by incorporating <code>hriv:hasNarrowerMeaningThan</code> (magenta) and <code>hriv:hasBroaderMeaningThan</code> (blue) mappings in addition to <code>hriv:hasExactMeaning</code> (red).</em></p>
+</li>
+<li>
+<p>[ ] <strong>OWL/TTL export &amp; header</strong></p>
 <ul>
-<li><code>ghc:Patient hriv:hasBroaderMeaningThan hrio:HealthcarePatient</code> and <code>ghc:Patient hriv:hasBroaderMeaningThan hrio:VeterinaryPatient</code>. The concept <code>Patient</code> in the GeneralHealth ontology has broader meaning than the two target classes in the Health-RI Ontology.</li>
-<li><code>pvet:Patient hriv:hasNarrowerMeaningThan hrio:VeterinaryPatient</code>. Pet-veterinary patients have a more restricted meaning than that of Health-RI's veterinary patients.</li>
-<li><code>pvet:PetAnimal</code> is linked via <code>hriv:hasNarrowerMeaningThan</code> to <code>hrio:NonHumanAnimal</code>, signaling that the external concept has narrower meaning.</li>
-<li>The figure also maintains <code>hriv:hasExactMeaning</code> mappings for concepts that are fully equivalent (e.g., <code>ghc:Animal</code> and <code>hrio:Animal</code>).</li>
-<li>Internal hierarchical structure is preserved via <code>rdfs:subClassOf</code> to allow consistent classification across ontologies.</li>
+<li>[ ] Model transforms/exports to gUFO/OWL without errors (local build).</li>
+<li>[ ] Ontology header metadata template is populated.</li>
 </ul>
-<p>This more flexible mapping strategy supports gradual alignment of external ontologies to our reference model even in cases where semantic overlap is partial rather than complete.</p>
-<div class="admonition tip">
-<p class="admonition-title">How to assert broader or narrower mappings in your OWL file</p>
-<p>After having defined the <code>hriv</code> prefix, to express an approximate mapping using <code>hriv:hasNarrowerMeaningThan</code> or <code>hriv:hasBroaderMeaningThan</code>, use:</p>
+</li>
+<li>
+<p>[ ] <strong>Basic domain consistency (author self-check)</strong></p>
 <ul>
-<li><code>ghc:Patient hriv:hasBroaderMeaningThan hrio:VeterinaryPatient .</code></li>
-<li><code>pvet:PetAnimal hriv:hasNarrowerMeaningThan hrio:NonHumanAnimal .</code></li>
+<li>[ ] Complete enough: key concepts/relations for the package scope are present.</li>
+<li>[ ] Scope fit: no out-of-scope elements introduced.</li>
+<li>[ ] No contradictions: definitions, diagrams, and OWL/TTL tell the same story.</li>
+<li>[ ] Reasonable cardinalities for the domain.</li>
 </ul>
-<p>You may also reference a specific version using the full ontology's URI (e.g., for v2.0.0):</p>
+</li>
+<li>
+<p>[ ] <strong>Docs &amp; handover</strong></p>
 <ul>
-<li><code>ghc:Patient hriv:hasBroaderMeaningThan &lt;https://w3id.org/health-ri/ontology/v2.0.0#VeterinaryPatient&gt; .</code></li>
+<li>[ ] Export diagrams: export the latest package diagrams to the Figures folder (no missing/old images).</li>
+<li>[ ] Changelog/change summary drafted for this package.</li>
 </ul>
-</div>
-<h4 id="visual-example-completing-the-ontology-via-semantic-gaps">Visual Example: Completing the Ontology via Semantic Gaps</h4>
-<p><img alt="Cross-ontology mapping after enriching the reference ontology" src="../assets/images/example-mapping3.png" />
-<em>Figure 6: Following the scenario from Figure 5, new intermediate concepts (in green) were added to the Health-RI ontology to bridge semantic gaps and enable the replacement of approximate mappings (<code>hriv:hasNarrowerMeaningThan</code>, <code>hriv:hasBroaderMeaningThan</code>) with exact ones.</em></p>
-<p>In cases where an external ontology cannot be mapped via <code>hriv:hasExactMeaning</code> due to a lack of equivalent concepts, we encourage internal teams and external partners to <strong>contact the Health-RI modeling team</strong>. By collaboratively extending the reference ontology with <strong>missing intermediate concepts</strong>, we support:</p>
+</li>
+</ul>
+<h3 id="internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</h3>
+<p><strong>Exit criteria for <code>irv → erv</code>.</strong> All items below must be satisfied to leave <code>irv</code> and enter <code>erv</code>.</p>
 <ul>
-<li>The replacement of <code>hriv:hasNarrowerMeaningThan</code> and <code>hriv:hasBroaderMeaningThan</code> with <code>hriv:hasExactMeaning</code>,</li>
-<li>A more <strong>complete and semantically precise reference model</strong>,</li>
-<li>And clearer, more actionable mappings for downstream reasoning and integration.</li>
+<li>
+<p>[ ] <strong>Stage tagging &amp; metadata present</strong></p>
+<ul>
+<li>[ ] Package has the correct stage tag (e.g., <code>irv</code>).</li>
+<li>[ ] Required package-level metadata (post-v1.0.0) is present: <code>introducedInVersion</code>, <code>lastChangedInVersion</code>, <code>lastPublishedInVersion</code>, <code>reviewedBy</code>.</li>
+<li>[ ] Title and Description are filled using Visual Paradigm's default fields (not tags).</li>
 </ul>
-<p>In the figure above, concepts like <code>hrio:PetVet.Patient</code> and <code>hrio:PetAnimal</code> were introduced to bridge the gap between <code>pvet:Patient</code>/<code>pvet:PetAnimal</code> and broader Health-RI categories. These new concepts enable the creation of precise <code>hriv:hasExactMeaning</code> relationships, improving the coherence and utility of both the reference ontology and the external ontology being mapped.</p>
-<h2 id="references">References</h2>
-<p><a id="ref1"></a>
-<strong>[1]</strong> Object Management Group. <em>MDA Guide rev. 2.0</em>. OMG Document ormsc/14-06-01, 2014. <a href="https://www.omg.org/cgi-bin/doc?ormsc/14-06-01"><strong>Access</strong></a>
-<a id="ref2"></a>
-<strong>[2]</strong> Brambilla, M., Cabot, J., Wimmer, M. <em>Model-Driven Software Engineering in Practice</em>. Morgan &amp; Claypool, 2017.
-<a id="ref3"></a>
-<strong>[3]</strong> Guizzardi, G. <em>On Ontology, Ontologies, Conceptualizations and the Reality of Categories</em>. Applied Ontology, 16(2), 2021.</p>
+</li>
+<li>
+<p>[ ] <strong>Public docs build (Semantic Interoperability site)</strong></p>
+<ul>
+<li>[ ] The package's page on the Semantic Interoperability site builds without errors.</li>
+<li>[ ] All links resolve: documentation, specification (OWL/TTL), IRIs, and release notes (no 404s).</li>
+<li>[ ] Package diagrams/images render correctly (no missing assets; labels are readable).</li>
+<li>[ ] In-page anchors/table of contents navigate to the correct sections.</li>
+<li>[ ] The OWL/TTL file includes the expected ontology header metadata according to the project standard (pass/fail only; no per-field audit).</li>
+<li>[ ] Figures folder up to date: the latest package diagrams are exported to the Figures folder (no missing/old images).</li>
+</ul>
+</li>
+<li>
+<p>[ ] <strong>Terminology consistency</strong></p>
+<ul>
+<li>[ ] Names/labels follow the adopted nomenclature strategy (capitalization, spelling, prefixes).</li>
+<li>[ ] Terminology is consistent across diagrams, package docs, and OWL/TTL (no mismatches or redefinitions).</li>
+<li>[ ] Relation naming follows the defined naming strategy (directionality, verb/preposition pattern, capitalization) and is consistent across diagrams and OWL/TTL.</li>
+</ul>
+</li>
+<li>
+<p>[ ] Labels: <code>prefLabel</code> is the most appropriate primary label (no <code>altLabel</code> would be a better choice); missing <code>altLabel</code>s (synonyms, common variants, abbreviations) are identified and proposed.</p>
+</li>
+<li>
+<p>[ ] <strong>Definitions &amp; examples (scope: packages, diagrams, classes)</strong></p>
+<ul>
+<li>[ ] Every package, diagram, and class has a definition.</li>
+<li>[ ] Definitions are concise, non-circular, and free of hidden assumptions.</li>
+<li>[ ] If examples are provided, they are domain-correct, consistent with the formal model (stereotypes, constraints, relations), and never contradict the model.</li>
+<li>[ ] Documentation is supplementary only: it explains what is modeled and must not introduce new semantics; any new information must be added via modeling, not prose.</li>
+</ul>
+</li>
+<li>
+<p>[ ] <strong>Conceptual modeling soundness (OntoUML → gUFO)</strong></p>
+<ul>
+<li>[ ] Classes and relations use appropriate OntoUML stereotypes; no obvious anti-patterns.</li>
+<li>[ ] Multiplicities and constraint choices are justified and non-contradictory.</li>
+<li>[ ] Every generalization set explicitly indicates <code>isDisjoint</code> and <code>isCovering</code>, and these settings are consistently displayed in all diagram occurrences of the set.</li>
+</ul>
+</li>
+<li>
+<p>[ ] <strong>Diagram quality &amp; traceability</strong></p>
+<ul>
+<li>[ ] External element origin shown: any external/reused class displays its origin (source package/namespace) using the standard notation.</li>
+<li>[ ] Empty attribute compartment hidden: classes with no attributes hide the attribute compartment per the diagram style guide.</li>
+<li>[ ] Clear layouts, legible labels, no overlapping edges/nodes.</li>
+<li>[ ] Figure titles match package names (consistent with the package being reviewed).</li>
+<li>[ ] All notes follow the defined standard color scheme and placement.</li>
+<li>[ ] All constraints follow the defined standard notation and placement (and are visible where applicable).</li>
+</ul>
+</li>
+<li>
+<p>[ ] <strong>Basic domain consistency (quick sanity check)</strong></p>
+<ul>
+<li>[ ] Complete enough: the key concepts/relations expected by the package scope are present (no obvious gaps).</li>
+<li>[ ] Scope fit (no extras): no out-of-scope elements are introduced; concepts that belong elsewhere are not modeled in this package.</li>
+<li>[ ] Clear wording: names and definitions are unambiguous; avoid near-synonyms/homonyms.</li>
+<li>[ ] Right categories: no obvious category errors (e.g., role vs kind; quality/event modeled as a substance).</li>
+<li>[ ] No contradictions: docs, diagrams, and OWL/TTL tell the same story; examples (if any) don't violate constraints.</li>
+<li>[ ] Reasonable cardinalities: multiplicities and disjoint/covering choices look realistic for the domain.</li>
+<li>[ ] No orphans: no unused/orphan classes or relations; no dangling cross-package references.</li>
+</ul>
+</li>
+</ul>
+<h3 id="publication-stage-operations-checklist">Publication Stage Operations Checklist</h3>
+<p><strong>In-stage operational checklist (non-gate).</strong> Use this list to run and monitor activities while the package remains in <code>pub</code>. Failure on any item does <strong>not</strong> automatically change stage; substantive issues should trigger a reversion per <a href="#stage-reversions--why-and-when">Stage Reversions — Why and When</a>.</p>
+<ul>
+<li>
+<p>[ ] <strong>Release &amp; preservation (one-time at publication)</strong></p>
+<ul>
+<li>[ ] Generate the Technical Report (PDF) for the domain ontology represented in the package. The report must summarize what was modeled, key design decisions, challenges/limitations, and relevant context (e.g., related ontologies, mappings/alignments, reuse).</li>
+<li>[ ] Create a new GitHub Release for this package version (tag, title, release notes) that includes the Technical Report PDF and the exported figures as release assets.</li>
+<li>[ ] Trigger Zenodo archiving via the release and verify the DOI is minted; record the DOI in the release notes and on the package page.</li>
+</ul>
+</li>
+<li>
+<p>[ ] <strong>Catalog &amp; discoverability (one-time at publication)</strong></p>
+<ul>
+<li>[ ] Submit/update the package in the OntoUML/UFO Catalog with the correct version and metadata (including the GitHub Release and Zenodo DOI).</li>
+<li>[ ] Upload the Technical Report PDF to ResearchGate (project item/preprint as appropriate) to improve visibility and indexing in Google Scholar and similar services; ensure the record links back to the GitHub Release and Zenodo DOI.</li>
+<li>[ ] Announce on LinkedIn that the package is published and available (link to GitHub Release and Zenodo DOI).</li>
+<li>[ ] Post follow-ups on LinkedIn when (a) the OntoUML/UFO Catalog entry is published/updated, and (b) the ResearchGate upload is live, each time linking the respective record.</li>
+</ul>
+</li>
+<li>
+<p>[ ] <strong>Academic publication</strong> (optional, but recommended)</p>
+<ul>
+<li>[ ] Identify a suitable open-access venue (scope fit, audience, licensing).</li>
+<li>[ ] Prepare a submission derived from the Technical Report (methods, results, contribution), following venue author guidelines.</li>
+<li>[ ] Submit and track peer review; if accepted, add the formal citation and publisher DOI to the GitHub Release notes, package docs, and the OntoUML/UFO Catalog entry.</li>
+<li>[ ] If allowed, post a preprint (or author accepted manuscript) and link it from the package page and release notes.</li>
+</ul>
+</li>
+</ul>
+<h2 id="post-publication-validation-ongoing-feedback-pub">Post-Publication Validation &amp; Ongoing Feedback (<code>pub</code>)</h2>
+<p>Mark the package as <code>pub</code> (in its stage tagged value) once internal and external reviews conclude. Publication does not end the package lifecycle. As described in <a href="#stage-reversions-and-semantic-modifications">Stage Reversions and Semantic Modifications</a> and in the <a href="../ontology-versioning/">Versioning Strategy</a>, packages may receive new feedback, undergo stage reversions, and re-enter previous stages. If feedback triggers a reversion to <code>int</code>, the package must re-pass the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a> before moving back to <code>irv</code>. For publication-time and ongoing <code>pub</code> tasks, execute and maintain the <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a>.</p>
+<p><strong>Active actions at <code>pub</code>.</strong> Execute the <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a>. The items below explain <em>what</em> each checklist group is about:</p>
+<ul>
+<li>
+<p><strong>Release &amp; preservation.</strong></p>
+<ul>
+<li>Create a GitHub Release for the package version (tag, title, and release notes) to make the package citable and discoverable in the repo history.</li>
+<li>Attach the PDF package report and exported figures so the exact published artifacts are preserved with the release.</li>
+<li>Verify that Zenodo archiving is triggered and that a DOI is minted; record that DOI in the release notes to provide a permanent scholarly reference.</li>
+</ul>
+</li>
+<li>
+<p><strong>Catalog &amp; discoverability.</strong></p>
+<ul>
+<li>Submit to the OntoUML/UFO Catalog entry with correct versioning and references (GitHub Release, Zenodo DOI) so users can locate and reuse the model.</li>
+<li>Upload the Technical Report to ResearchGate (with links to the Zenodo DOI and Release) to increase scholarly discoverability (e.g., Google Scholar).</li>
+<li>Communicate on LinkedIn at publication time (linking Release/DOI) and post short follow-ups when the Catalog entry and ResearchGate record go live.</li>
+</ul>
+</li>
+<li>
+<p><strong>Academic publication (optional).</strong></p>
+<ul>
+<li>Consider a peer-reviewed venue to add external validation and community contribution.</li>
+<li>If proceeding, submit and track the process; once accepted, record the publisher DOI/citation in the Release notes, package docs, and Catalog entry; keep the LinkedIn audience updated as appropriate.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Passive/standing channels (indefinite window; respond when triggered):</strong></p>
+<ul>
+<li><strong>GitHub Issues (standing channel).</strong> A public, always-open channel for internal and external collaborators to request inclusion/exclusion/modification of concepts and related changes via templates. Submissions are evaluated continuously; once a package is in <code>pub</code>, substantive issues may trigger a stage reversion per this policy.</li>
+</ul>
+<p><strong>Feedback handling.</strong> Feedback received through any channel (Catalog, GitHub, publications) is evaluated and may trigger stage reversions per the policies in this document. Once a package is in <code>pub</code>, any substantive issue may lead to a reversion to a previous stage; significant feedback requiring semantic changes will reset the package to <code>int</code> and contribute Y++ per the <a href="../ontology-versioning/">Versioning Strategy</a>.</p>
+<h2 id="stage-reversions-why-and-when">Stage Reversions — Why and When</h2>
+<p>Reversions (e.g., <code>irv → int</code>, <code>erv → int</code>, or <code>pub → int</code>) happen when the package cannot advance or remain at its current stage due to new information. Typical triggers include:</p>
+<ul>
+<li>Critical modeling defects discovered (e.g., wrong typing, invalid constraints).</li>
+<li>Review failure (internal or external) with required changes.</li>
+<li>Substantial requirement or scope changes affecting meaning.</li>
+<li>Upstream dependency changes that invalidate assumptions.</li>
+</ul>
+<p>Process. Record the explicit transition as <code>&lt;current&gt; → int</code> in the Visual Paradigm tagged value, open a rework window, and issue Y++ (Z → 0) per the versioning rules. After any reversion to <code>int</code>, the package must re-pass the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a> before re-entering <code>irv</code>.</p>
+<h2 id="policy-for-semantic-modifications">Policy for Semantic Modifications</h2>
+<p>When a package undergoes a semantic modification (e.g., adding/removing/retaxonomizing classes, retyping relations, changing multiplicities or constraints, revising authoritative definitions, introducing/removing key axioms), record an explicit stage reversion <code>&lt;current&gt; → int</code> in the Visual Paradigm tagged value.
+This mandatory reversion triggers Y++ for that release and resets Z → 0. Before resubmitting to <code>irv</code>, the package must re-pass the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a>.</p>
+<blockquote>
+<p>See <a href="../ontology-versioning/">Versioning Strategy</a> for the semantic vs. non-semantic decision tests and the full trigger matrix for X/Y/Z.</p>
+</blockquote>
+<h2 id="figures">Figures</h2>
+<h3 id="stage-changes">Stage Changes</h3>
+<pre class="mermaid"><code>flowchart LR
+
+  %% Row with even spacing
+  subgraph ROW[ ]
+    direction LR
+    INT[int]
+    IRV[irv]
+    ERV[erv]
+    PUB[pub]
+  end
+
+  %% Forward edges (black)
+  INT --&gt; IRV --&gt; ERV --&gt; PUB
+
+  %% Reversions (dark red)
+  IRV --&gt; INT
+  ERV --&gt; INT
+  PUB --&gt; INT
+
+  %% Node styling (theme-independent legibility)
+  %% - semi-transparent fills to boost contrast on any theme
+  %% - bold, slight rounding, small padding
+  classDef stage fill:#0f5d73cc,stroke:#e6f2f6,color:inherit,font-weight:bold,rx:6,ry:6,padding:4;
+  classDef pub   fill:#1f6f2acc,stroke:#e6f2f6,color:inherit,font-weight:bold,rx:6,ry:6,padding:4;
+  class INT,IRV,ERV stage;
+  class PUB pub;
+
+  %% Subtle text halo for legibility on light backgrounds
+  style INT text-shadow:0px 0px 3px #00000033
+  style IRV text-shadow:0px 0px 3px #00000033
+  style ERV text-shadow:0px 0px 3px #00000033
+  style PUB text-shadow:0px 0px 3px #00000033
+
+  %% Edge styling
+  linkStyle default stroke:#000000,stroke-width:2px;
+  linkStyle 3,4,5 stroke:#8B0000,stroke-width:2px;</code></pre>
+<h2 id="edge-cases-notes">Edge Cases &amp; Notes</h2>
+<ul>
+<li>Any recorded transition (forward or backward) increments Y and resets Z to 0 (version note).</li>
+<li>Simultaneous stage changes across many packages in one release produce at most one version increment (priority X &gt; Y &gt; Z).</li>
+<li>Semantic change at any stage (including <code>pub</code>): reset the stage to <code>int</code> (<code>&lt;current&gt; → int</code>) and issue Y++ (Z→0). If a semantic change was committed without this reset, correct the stage and bump Y in the release that fixes the record.</li>
+</ul>
 
 
 

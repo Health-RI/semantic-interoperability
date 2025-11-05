@@ -12,13 +12,13 @@
         <meta name="author" content="Pedro Paulo F. Barcelos">
       
       
-        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/policy-ontology-notes/">
+        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/ontology-notes-policy/">
       
       
-        <link rel="prev" href="../validation-ontology/">
+        <link rel="prev" href="../ontology-validation/">
       
       
-        <link rel="next" href="../versioning-ontology/">
+        <link rel="next" href="../ontology-versioning/">
       
       
       <link rel="icon" href="../../assets/images/health-ri-favicon.png">
@@ -891,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../validation-ontology/" class="md-nav__link">
+      <a href="../ontology-validation/" class="md-nav__link">
         
   
   
@@ -1084,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../versioning-ontology/" class="md-nav__link">
+      <a href="../ontology-versioning/" class="md-nav__link">
         
   
   
@@ -1186,12 +1186,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../mapping-set/" class="md-nav__link">
+      <a href="../mapping-schema/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SSSOM Mapping Set
+    Schema
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapping-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Governance, Lifecycle, and Validation
     
   </span>
   
@@ -1536,7 +1559,7 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
   The top row (R1), marked in red, shows the color options used for note categories (columns C2–C8).</figcaption>
 </figure>
 
-<p>Each cell in the grid can be identified using a Row × Column notation (RxCy), where R1C1 means “Row 1, Column 1.” The top row (R1) contains the main palette options, and the first column (R1C1) is white—this one is not used in our convention. The highlighted red rectangle in the image marks that top row (R1), from which all category colors are selected.</p>
+<p>Each cell in the grid can be identified using a Row × Column notation (RxCy), where R1C1 means "Row 1, Column 1." The top row (R1) contains the main palette options, and the first column (R1C1) is white—this one is not used in our convention. The highlighted red rectangle in the image marks that top row (R1), from which all category colors are selected.</p>
 <table>
 <thead>
 <tr>
@@ -1544,7 +1567,7 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
 <th>Category</th>
 <th>What goes here</th>
 <th>Typical contents</th>
-<th>Color (VP slot — Name<sup id="fnref:name"><a class="footnote-ref" href="#fn:name">2</a></sup> — HEX)</th>
+<th>Color (VP slot — Name<sup id="fnref:name"><a class="footnote-ref" href="#fn:name">1</a></sup> — HEX)</th>
 </tr>
 </thead>
 <tbody>
@@ -1594,12 +1617,12 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
 <td><strong>TODO</strong></td>
 <td>Action items</td>
 <td>Work to do on the model</td>
-<td>“rename this,” “split class,” “add scenario X”</td>
+<td>"rename this," "split class," "add scenario X"</td>
 <td>R1C5 — Tea Green — <div style="background-color:#C0FFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFC0</div></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Color selection rule</strong>: Use the top row (R1) of the VP color palette, choosing columns C2–C8 as indicated in the table above. The first slot (R1C1, white) must be skipped<sup id="fnref:no-default-blue"><a class="footnote-ref" href="#fn:no-default-blue">1</a></sup>.</p>
+<p><strong>Color selection rule</strong>: Use the top row (R1) of the VP color palette, choosing columns C2–C8 as indicated in the table above. The first slot (R1C1, white) must be skipped<sup id="fnref:no-default-blue"><a class="footnote-ref" href="#fn:no-default-blue">2</a></sup>.</p>
 <h2 id="note-usage-and-diagramming-rules">Note Usage and Diagramming Rules</h2>
 <h3 id="categories-content">Categories &amp; Content</h3>
 <ul>
@@ -1632,8 +1655,8 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
 </ul>
 <h3 id="positioning-routing">Positioning &amp; Routing</h3>
 <ul>
-<li>Place notes close to their target (roughly one element’s width away or less).</li>
-<li>To avoid enlarging exported images, keep notes within the diagram’s current bounds: align notes along the outer edges of the outermost elements and avoid placing notes beyond those edges so the canvas does not expand.</li>
+<li>Place notes close to their target (roughly one element's width away or less).</li>
+<li>To avoid enlarging exported images, keep notes within the diagram's current bounds: align notes along the outer edges of the outermost elements and avoid placing notes beyond those edges so the canvas does not expand.</li>
 <li>Diagram-wide (no-anchor) notes should be placed on the right side of the diagram and, when multiple, aligned vertically.</li>
 <li>Route connectors orthogonally, shortest path; avoid crossing other connectors or key diagram lines.</li>
 </ul>
@@ -1654,11 +1677,11 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:no-default-blue">
-<p>The VP default note color (blue) is intentionally excluded so each note gets a unique category color.&#160;<a class="footnote-backref" href="#fnref:no-default-blue" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
 <li id="fn:name">
-<p>Names obtained from the <a href="https://www.color-name.com/">color-name website</a>.&#160;<a class="footnote-backref" href="#fnref:name" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Names obtained from the <a href="https://www.color-name.com/">color-name website</a>.&#160;<a class="footnote-backref" href="#fnref:name" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:no-default-blue">
+<p>The VP default note color (blue) is intentionally excluded so each note gets a unique category color.&#160;<a class="footnote-backref" href="#fnref:no-default-blue" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
