@@ -3,7 +3,7 @@
 <!-- [Download the full SSSOM mapping.](../../mappings/health-ri-mappings.tsv) -->
 
 !!! note "Scope"
-    This page **visualizes** the mappings that already exist. For the Mapping Set's schema and stable PIDs, see the **[SSSOM Mapping Set](../sssom/mapping-schema.md)**.
+    This page **visualizes** the mappings that already exist. For the Mapping Set's schema and stable PIDs, see the **[SSSOM Mapping Set](../sssom/mapping-set.md)**.
 
 This table is automatically generated from the SSSOM TSV:
 
