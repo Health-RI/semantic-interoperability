@@ -59,7 +59,7 @@ You can import the official gUFO ontology from:
 - **OWL file**: [https://purl.org/nemo/gufo](https://purl.org/nemo/gufo)
 - **Documentation site**: [https://nemo-ufes.github.io/gufo/](https://nemo-ufes.github.io/gufo/)
 
-After importing gUFO into your tool, you can begin defining your own classes and properties as specializations of gUFO’s foundational categories, such as `gufo:Object`, `gufo:Event`, `gufo:Quality`, or `gufo:Situation`.
+After importing gUFO into your tool, you can begin defining your own classes and properties as specializations of gUFO's foundational categories, such as `gufo:Object`, `gufo:Event`, `gufo:Quality`, or `gufo:Situation`.
 
 This approach gives full control over ontology structure and serialization, and is ideal for applications requiring fine-grained reasoning or integration with existing linked data.
 

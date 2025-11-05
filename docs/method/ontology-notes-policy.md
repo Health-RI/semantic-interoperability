@@ -24,7 +24,7 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
   The top row (R1), marked in red, shows the color options used for note categories (columns C2–C8).</figcaption>
 </figure>
 
-Each cell in the grid can be identified using a Row × Column notation (RxCy), where R1C1 means “Row 1, Column 1.” The top row (R1) contains the main palette options, and the first column (R1C1) is white—this one is not used in our convention. The highlighted red rectangle in the image marks that top row (R1), from which all category colors are selected.
+Each cell in the grid can be identified using a Row × Column notation (RxCy), where R1C1 means "Row 1, Column 1." The top row (R1) contains the main palette options, and the first column (R1C1) is white—this one is not used in our convention. The highlighted red rectangle in the image marks that top row (R1), from which all category colors are selected.
 
 | Tag  | Category               | What goes here                                | Typical contents                                                                       | Color (VP slot — Name[^name] — HEX) |
 | ---- | ---------------------- | --------------------------------------------- | -------------------------------------------------------------------------------------- | ----------------------------------- |
@@ -34,7 +34,7 @@ Each cell in the grid can be identified using a Row × Column notation (RxCy), w
 | **SCOP** | Scope & assumptions    | Boundaries of what the model covers           | simplifying assumptions, context limits, applicability conditions                      | R1C6 — Celeste — <div style="background-color:#C0FFFF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFFF</div> |
 | **TRAC** | Traceability & sources | Where a model element comes from              | requirement IDs, standards clauses, tickets, citations                                 | R1C3 — Very Pale Orange — <div style="background-color:#FFE0C0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFE0C0</div> |
 | **EXMP** | Examples & usage       | Small, concrete examples                      | valid/invalid instances, mini sequence snippets                                        | R1C4 — Very Pale Yellow — <div style="background-color:#FFFFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFFFC0</div> |
-| **TODO** | Action items           | Work to do on the model                       | “rename this,” “split class,” “add scenario X”                                         | R1C5 — Tea Green — <div style="background-color:#C0FFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFC0</div> |
+| **TODO** | Action items           | Work to do on the model                       | "rename this," "split class," "add scenario X"                                         | R1C5 — Tea Green — <div style="background-color:#C0FFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFC0</div> |
 
 **Color selection rule**: Use the top row (R1) of the VP color palette, choosing columns C2–C8 as indicated in the table above. The first slot (R1C1, white) must be skipped[^no-default-blue].
 
@@ -71,8 +71,8 @@ Each cell in the grid can be identified using a Row × Column notation (RxCy), w
 
 ### Positioning & Routing
 
-- Place notes close to their target (roughly one element’s width away or less).
-- To avoid enlarging exported images, keep notes within the diagram’s current bounds: align notes along the outer edges of the outermost elements and avoid placing notes beyond those edges so the canvas does not expand.
+- Place notes close to their target (roughly one element's width away or less).
+- To avoid enlarging exported images, keep notes within the diagram's current bounds: align notes along the outer edges of the outermost elements and avoid placing notes beyond those edges so the canvas does not expand.
 - Diagram-wide (no-anchor) notes should be placed on the right side of the diagram and, when multiple, aligned vertically.
 - Route connectors orthogonally, shortest path; avoid crossing other connectors or key diagram lines.
 

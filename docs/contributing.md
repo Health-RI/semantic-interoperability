@@ -68,11 +68,11 @@ You can contribute to the Health-RI **SSSOM mapping set** (manually curated) in 
    Download the **[XLSX template](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx)** and enter:
    - the mapping row(s) in the **mappings** sheet, and
    - all CURIE prefix bindings in the **prefix** sheet.
-   Attach the completed file to a new issue; we’ll review and add it.
+   Attach the completed file to a new issue; we'll review and add it.
 
 Both methods ensure your contribution is reviewed and incorporated into the official Health-RI SSSOM mapping set.
 
-For more details, see the [Mapping Set documentation](method/mapping-set.md).
+For more details, see the [Mapping Set documentation](method/mapping-schema.md).
 
 #### Submission checklist (for contributors)
 

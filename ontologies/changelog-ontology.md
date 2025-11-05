@@ -436,7 +436,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Applied the **UML Note Classification (color coding)** policy across the ontology diagrams in the Visual Paradigm model:
   - All notes now follow the standardized categories (**SEMI**, **CNST**, **RATL**, **SCOP**, **TRAC**, **EXMP**, **TODO**) with the prescribed colors and formatting.
-  - This is a **visual/editorial** update only and does **not** change the ontology’s logical content.
+  - This is a **visual/editorial** update only and does **not** change the ontology's logical content.
 
 ### Not serialized
 

@@ -16,9 +16,9 @@ As Guizzardi explains, every information system necessarily reflects a particula
 
 The importance of semantic interoperability lies in its capacity to enable accurate and meaningful data exchange, which is crucial for decision-making, efficiency, and innovation. In healthcare, for instance, it allows for the seamless sharing of patient information across different electronic health record systems, improving patient outcomes and reducing costs. In public services, it supports transparency and collaboration between governmental bodies <a href="#ref5">[5]</a><a href="#ref6">[6]</a>. This need for meaningful data exchange is reflected in the FAIR principles, which highlight Interoperability as one of the four essential pillars of data stewardship <a href="#ref12">[12]</a>.
 
-## Semantic Interoperability and the “I” of FAIR
+## Semantic Interoperability and the "I" of FAIR
 
-The FAIR guiding principles identify **Interoperability** as a central pillar for maximizing the value of information artifacts <a href="#ref12">[12]</a>. According to Guizzardi, the “I” in FAIR must be understood not just as a technical property, but as a commitment to meaningful, semantically grounded data integration that supports **human interoperation mediated by machines** [11].
+The FAIR guiding principles identify **Interoperability** as a central pillar for maximizing the value of information artifacts <a href="#ref12">[12]</a>. According to Guizzardi, the "I" in FAIR must be understood not just as a technical property, but as a commitment to meaningful, semantically grounded data integration that supports **human interoperation mediated by machines** [11].
 
 The FAIR principles I1–I3 specify that:
 1. (meta)data should use a **formal, accessible, shared, and broadly applicable language** for knowledge representation;
@@ -28,14 +28,14 @@ The FAIR principles I1–I3 specify that:
 These requirements cannot be fulfilled by mere terminological resources alone. To ensure that systems interpret shared data consistently, vocabularies must be underpinned by **ontologies**—explicit and formal representations of shared conceptualizations. Guizzardi emphasizes that vocabularies must be ontologically grounded in order to properly support semantic interoperability [11].
 
 To achieve this, two levels of support are needed:
-- **Ontologies** (in the plural) serve as “meaning contracts” that clarify the domain-specific conceptualizations shared between systems;
+- **Ontologies** (in the plural) serve as "meaning contracts" that clarify the domain-specific conceptualizations shared between systems;
 - **Ontology** (as a discipline) provides the **formal methods and theories** required to build these ontologies correctly and to clarify their commitments.
 
 This ontological grounding is essential to ensure that relations between data elements reflect not only their syntactic alignment, but also their **real-world semantics**, including identity, dependence, and other ontological distinctions.
 
 Guizzardi argues that **formal ontologies**—such as the Unified Foundational Ontology (UFO)—play a key role in satisfying the interoperability requirements of FAIR. Ontology-driven representation languages like **OntoUML** allow modelers to specify their conceptualizations in a way that is formally constrained, semantically rich, and verifiable. This ontological precision is crucial to prevent the **false agreement problem**, in which systems appear interoperable at the surface level but interpret the same data differently beneath it.
 
-Ultimately, the “I” of FAIR demands more than connectivity and shared syntax. It requires a shared **worldview**—an agreement not only on the words used, but on the meanings they are intended to convey. As Guizzardi puts it: _“No ontology without Ontology”_ [11].
+Ultimately, the "I" of FAIR demands more than connectivity and shared syntax. It requires a shared **worldview**—an agreement not only on the words used, but on the meanings they are intended to convey. As Guizzardi puts it: _"No ontology without Ontology"_ [11].
 
 ## How is Semantic Interoperability Achieved?
 
@@ -51,7 +51,7 @@ To avoid misinterpretations, Guarino suggests that ontologies should not only de
 
 ## Representing the Semantic Interoperability Problem
 
-Semantic interoperability goes beyond shared data formats or common terminologies—it requires that different systems interpret exchanged data in the same way. Achieving this depends on how well each system’s ontology captures the intended meaning of the concepts it uses. The following diagrams illustrate how systems can differ in their approximation of a shared conceptualization, and how these differences impact their ability to interoperate meaningfully.
+Semantic interoperability goes beyond shared data formats or common terminologies—it requires that different systems interpret exchanged data in the same way. Achieving this depends on how well each system's ontology captures the intended meaning of the concepts it uses. The following diagrams illustrate how systems can differ in their approximation of a shared conceptualization, and how these differences impact their ability to interoperate meaningfully.
 
 <p align="center">
   <img src="assets/images/semantic-interoperability-systems-all.png" width="800" alt="Semantic Interoperability Problem">
@@ -63,7 +63,7 @@ This diagram illustrates how three different systems attempt to represent the sa
 
 2. **System B (center)** uses a more permissive ontology. The red dotted region shows unintended models that are logically consistent with System B's formalism but diverge from the intended meaning. According to Guarino, such overgeneralization can lead to **false agreement**: systems that appear to be interoperable because they use the same vocabulary, but actually interpret the terms differently.
 
-3. **System C (right)** errs in the opposite direction. Its ontology is too restrictive: the blue striped area represents valid meanings that it fails to account for. This can happen when a system’s constraints are overly narrow or incomplete, leading to the exclusion of necessary interpretations and a loss of information.
+3. **System C (right)** errs in the opposite direction. Its ontology is too restrictive: the blue striped area represents valid meanings that it fails to account for. This can happen when a system's constraints are overly narrow or incomplete, leading to the exclusion of necessary interpretations and a loss of information.
 
 As Guarino emphasizes, effective semantic interoperability is not just about using the same terms—it's about ensuring that those terms reflect the same **ontological commitments**. An ontology must constrain meaning in a way that captures the full range of intended models and excludes unintended ones. When systems fail to do this, misunderstandings arise—even if they use the same syntax.
 
@@ -82,7 +82,7 @@ This diagram shows what happens when **System A** and **System B** attempt to in
 
 There is an overlap between their model spaces, which might suggest that interoperability is possible. However, Guarino warns that such overlap can be deceptive. Because System B allows more than System A, their agreement is superficial—they **appear to be interoperable**, but actually lack a shared understanding.
 
-- **Cause**: A mismatch in ontological commitment. System B’s broadness allows interpretations that System A explicitly excludes.
+- **Cause**: A mismatch in ontological commitment. System B's broadness allows interpretations that System A explicitly excludes.
 - **Consequence**: **Semantic mismatches**. Data from System B may be misunderstood or rejected by System A, which interprets those inputs differently—or sees them as invalid altogether.
 
 This scenario exemplifies the **false agreement problem**: even when systems share data formats and logical structures, they may fail to understand each other if their ontologies do not align <a href="#ref4">[4]</a>.
@@ -126,7 +126,7 @@ These examples underscore the importance of designing systems that share not onl
 - **[3]** Guarino, N. (2009). *The Ontological Level: Revisiting 30 Years of Knowledge Representation*. In: Borgida, A.T. et al. (Eds.), Mylopoulos Festschrift, LNCS 5600, pp. 52–67. Springer. https://doi.org/10.1007/978-3-642-01907-4_6
 
 <a id="ref4"></a>
-- **[4]** Guarino, N. (1998). *Formal Ontology and Information Systems*. In: N. Guarino (ed.), FOIS’98, IOS Press, pp. 3–15. https://www.researchgate.net/publication/272169039_Formal_Ontology_and_Information_Systems
+- **[4]** Guarino, N. (1998). *Formal Ontology and Information Systems*. In: N. Guarino (ed.), FOIS'98, IOS Press, pp. 3–15. https://www.researchgate.net/publication/272169039_Formal_Ontology_and_Information_Systems
 
 <a id="ref5"></a>
 - **[5]** Interoperability: unifying and maximising data reuse within digital education ecosystems. *OECD*. Retrieved from: https://www.oecd.org/en/publications/oecd-digital-education-outlook-2023_c74f03de-en/full-report/interoperability-unifying-and-maximising-data-reuse-within-digital-education-ecosystems_660f8da1.html
@@ -147,7 +147,7 @@ These examples underscore the importance of designing systems that share not onl
 - **[10]** FAIR Semantics, Interoperability, and Services. *FAIRsFAIR*. Retrieved from: https://www.fairsfair.eu/fair-semantics-interoperability-and-services-0
 
 <a id="ref11"></a>
-- **[11]** Guizzardi, G. (2020). *Ontology, Ontologies and the “I” of FAIR*. Data Intelligence, 2(1–2), 181–191. https://doi.org/10.1162/dint_a_00040
+- **[11]** Guizzardi, G. (2020). *Ontology, Ontologies and the "I" of FAIR*. Data Intelligence, 2(1–2), 181–191. https://doi.org/10.1162/dint_a_00040
 
 <a id="ref12"></a>
 - **[12]** Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., et al. (2016). *The FAIR Guiding Principles for scientific data management and stewardship*. Scientific Data, 3, 160018. https://doi.org/10.1038/sdata.2016.18

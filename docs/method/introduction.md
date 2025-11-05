@@ -20,7 +20,7 @@ As illustrated in the figure above, each node maintains its own data schema and 
 
 This lack of clear, shared semantics introduces significant barriers to data integration and analysis. It increases the risk of misinterpretation, reduces confidence in the data, and ultimately limits reuse and impact.
 
-To address these challenges and ensure semantic alignment across Health-RI’s network, we propose a new approach centered around a shared reference model.
+To address these challenges and ensure semantic alignment across Health-RI's network, we propose a new approach centered around a shared reference model.
 
 ## Toward a Solution: Introducing a Common Reference Model
 
@@ -64,7 +64,7 @@ The Modeling Team is responsible for developing the reference model using OntoUM
 * Analyze and interpret technical materials, such as standards, protocols, and domain documentation.
 * Engage with domain specialists to gather the necessary insights for accurate modeling.
 
-The team’s objective is to produce a semantically rich and ontologically well-founded model that captures the essential structure and meaning of the domain.
+The team's objective is to produce a semantically rich and ontologically well-founded model that captures the essential structure and meaning of the domain.
 
 ### Ontology Mapping Team
 

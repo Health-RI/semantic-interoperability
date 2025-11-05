@@ -4,7 +4,7 @@ This document specifies the version number semantics (`X.Y.Z`), priority rules, 
 
 ## Purpose & Scope
 
-Defines how versions are assigned and incremented for the ontology/model releases, including precedence (`X > Y > Z`), single-step increments, and resets. Stage mechanics (`int`/`irv`/`erv`/`pub`) are covered in *Validation Strategy*; they are referenced here only where they directly affect `Y`. This strategy is effective for releases starting at `v1.0.0`; earlier releases (`< v1.0.0`) followed an [earlier versioning policy](./old-versioning.md).
+Defines how versions are assigned and incremented for the ontology/model releases, including precedence (`X > Y > Z`), single-step increments, and resets. Stage mechanics (`int`/`irv`/`erv`/`pub`) are covered in *Validation Strategy*; they are referenced here only where they directly affect `Y`. This strategy is effective for releases starting at `v1.0.0`; earlier releases (`< v1.0.0`) followed an [earlier versioning policy](./ontology-versioning-old.md).
 
 ## Definitions & Glossary
 
@@ -45,7 +45,7 @@ Defines how versions are assigned and incremented for the ontology/model release
 ### Conditions for increasing `Y`
 
 - Triggers:
-    - Any per-package stage transition: `int → irv`, `irv → erv`, `erv → pub`, or a recorded reversion (e.g., `irv → int`) via the package’s stage tagged value.
+    - Any per-package stage transition: `int → irv`, `irv → erv`, `erv → pub`, or a recorded reversion (e.g., `irv → int`) via the package's stage tagged value.
     - Any semantic change that alters model meaning within a package (e.g., adding/removing/retaxonomizing classes, retyping relations, changing multiplicities or constraints, revising authoritative definitions, introducing/removing key axioms).
         - Action: record `<current> → int` for the package (see *Validation Strategy*).
         - Result: `Y++` for that release; `Z → 0`.
@@ -81,7 +81,7 @@ Treat the change as **semantic** (counts for `Y`) if any of the following is **y
 
 | Change | Y or Z? | Rationale |
 |---|---|---|
-| Rename class label “Person” → “Individual” (label only; IRI/definition unchanged) | Z | Terminology-only; no entailment or instance impact. |
+| Rename class label "Person" → "Individual" (label only; IRI/definition unchanged) | Z | Terminology-only; no entailment or instance impact. |
 | Rename class IRI or revise textual definition to narrow/broaden scope | Y | Identity/meaning changed; instance/entailment impact possible. |
 | Add an association previously only *visually implied* by layout | Y | New relation; changes entailments/instances. |
 | Move boxes/arrows, improve diagram readability | Z | Diagram-only; model unchanged. |
@@ -103,8 +103,8 @@ Treat the change as **semantic** (counts for `Y`) if any of the following is **y
 8. Remove a package (scope contraction) from `v1.5.8` → `X++` → `v2.0.0` (`Y = 0`, `Z = 0`).
 9. `X` present with multiple `Y` events → `X++` once → `v2.0.0` (no `Y++`).
 10. `Y` present with several `Z` events → `Y++` once → `v1.6.0` (no `Z++`).
-11. Label rename only (“Person” → “Individual”) → `Z++` → `v1.5.9`.
-12. Definition/IRI change (“Person” narrowed/broadened): record `<current> → int` → `Y++` → `v1.6.0` (`Z → 0`).
+11. Label rename only ("Person" → "Individual") → `Z++` → `v1.5.9`.
+12. Definition/IRI change ("Person" narrowed/broadened): record `<current> → int` → `Y++` → `v1.6.0` (`Z → 0`).
 
 ## Figures
 

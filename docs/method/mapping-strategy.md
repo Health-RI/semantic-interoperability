@@ -54,7 +54,7 @@ In this Figure:
 
 - **Real-world referents (globe and people, top-right):** indicate the actual entities in the domain (e.g., human beings) that the conceptualization is about. These are the things to which all conceptualizations ultimately refer.
 - **Shared Conceptualization (top, cloud icon):** represents the underlying domain meaning (e.g., *Person*) that is shared across different artifacts. This is the abstract conceptualization formalized in OntoUML, implemented computationally in gUFO, and explicitly anchored when an external ontology concept is mapped through the Health-RI Mapping Vocabulary.
-- **OntoUML class (`<<kind>> Person`, left):** formalizes this conceptualization at the CIM layer, providing precise ontological grounding (in UFO) for what it means to be a *Person*. When we create a class `<<kind>> Person` in OntoUML, we are doing more than drawing a box labeled "Person." We are encoding the meaning of Person in a structured way that the modeling language understands. In this sense, the OntoUML concept plays the role of a meaningful representation: it carries intentional meaning (e.g., the notion of a person as an entity with essential properties, understood via UFO’s category of Kind) and it is also an explicit element in a model.
+- **OntoUML class (`<<kind>> Person`, left):** formalizes this conceptualization at the CIM layer, providing precise ontological grounding (in UFO) for what it means to be a *Person*. When we create a class `<<kind>> Person` in OntoUML, we are doing more than drawing a box labeled "Person." We are encoding the meaning of Person in a structured way that the modeling language understands. In this sense, the OntoUML concept plays the role of a meaningful representation: it carries intentional meaning (e.g., the notion of a person as an entity with essential properties, understood via UFO's category of Kind) and it is also an explicit element in a model.
 - **gUFO implementation (`hrio:Person`, bottom):** expresses the same meaning in computational terms at the PIM layer, making it machine-readable and interoperable. gUFO classes always inherit their semantics from the OntoUML concepts they implement.
 - **External ontology concept (`ont:Human`, right):** denotes how a third-party ontology may define a similar concept. When mapped via the Health-RI Mapping Vocabulary (e.g., `hriv:hasExactMeaning`), such an external concept is explicitly anchored to the gUFO representation and, by transitivity, to the original OntoUML conceptualization.
 
@@ -62,7 +62,7 @@ Taken together, the diagram shows that *(i)* the Health-RI OntoUML model provide
 
 This guarantees that when a partner ontology concept is mapped to the Health-RI ontology using `hriv`, it is not only aligned with the gUFO class but is also understood to embody the same **conceptualization** originally defined in OntoUML. In this way, interoperability extends beyond structural matching to the preservation of intended meaning.
 
-OntoUML and OWL are complementary in that they operate at different knowledge representation levels. OntoUML is a conceptual modeling language—closer to human cognition and domain semantics—whereas OWL is a computational ontology language—suited for machine tractability and reasoning. Designing at the conceptual level first ensures the meaning is captured correctly before committing to OWL’s computational restrictions.
+OntoUML and OWL are complementary in that they operate at different knowledge representation levels. OntoUML is a conceptual modeling language—closer to human cognition and domain semantics—whereas OWL is a computational ontology language—suited for machine tractability and reasoning. Designing at the conceptual level first ensures the meaning is captured correctly before committing to OWL's computational restrictions.
 
 Theories of formal semantics tell us that an OWL class gets its meaning from two sources: the formal semantics of the logic (which treats Person as a set of individuals with certain properties) and the intended interpretation by the modeler (the conceptualization of Person). By explicitly maintaining the link (`hriv:hasExactMeaning`) between `ont:Human` and `hrio:Person` (which is anchored in the conceptualization), we ensure that the formal artifact is interpreted correctly. By grounding both the OntoUML and OWL representations in the same meaning, we mitigate the risk of the OWL ontology drifting from the original intent. This establishes a **traceability of semantics**—from the real-world domain, to the conceptual model, to the formal ontology—which is a characteristic of rigorous ontology engineering. Nothing is introduced in OWL that was not conceptually established first.
 
@@ -72,17 +72,20 @@ Our common reference model provides authoritative semantics to external concept 
 
 There are two possible approaches for creating and maintaining such mappings:
 
-- **Mappings performed by the Health-RI team:** In this case, mappings are created by Health-RI's semantic modeling team and provided in [SSSOM](https://w3id.org/sssom/) format. This is the default strategy when the external ontology or resource is publicly available or beyond Health-RI’s editorial control (e.g., national standards, web-accessible vocabularies). These mappings are *non-invasive*, meaning they do not alter the original artifacts but describe their alignment externally. For details on how these mappings are published, versioned, and curated, see the [SSSOM Mapping Set](./mapping-set.md).
+- **Mappings performed by the Health-RI team:** In this case, mappings are created by Health-RI's semantic modeling team and provided in [SSSOM](https://w3id.org/sssom/) format. This is the default strategy when the external ontology or resource is publicly available or beyond Health-RI's editorial control (e.g., national standards, web-accessible vocabularies). These mappings are *non-invasive*, meaning they do not alter the original artifacts but describe their alignment externally. For details on how these mappings are published, versioned, and curated, see the [SSSOM Mapping Set](./mapping-schema.md).
 
 - **Mappings authored by external partners:** If the external artifact is under the editorial responsibility of a partner or collaborating organization, that party may directly include the mappings within their ontology. In this case, the mappings are *embedded* into the source artifact itself (e.g., adding `hriv:hasExactMeaning` to their RDF model pointing to Health-RI concepts), offering tighter integration and long-term maintainability by the artifact owner.
 
 These complementary approaches enable semantic alignment in both centrally controlled and federated interoperability scenarios.
 
-!!! info "View Current Mappings"
-    For a list of the mappings created by the Health-RI team, see the [Mappings page](../ontology/mappings.md).
+!!! info "Mapping Set Structure & Stable Artifacts"
+    See the [SSSOM Mapping Set](./mapping-schema.md) page for the structure, schema, and **stable w3id artifact URIs**.
+
+!!! info "Browse the Created Mappings"
+    Explore and visualize the mappings that have already been created in the [Mappings](../ontology/mappings.md) page. (Convenience view; for normative artifacts see the Mapping Set page.)
 
 !!! info
-    For details about the schema and contribution process, see the [SSSOM Mapping Set](./mapping-set.md).
+    For details about the schema and contribution process, see the [SSSOM Mapping Set](./mapping-schema.md).
 
 !!! warning "Only one `hriv:hasExactMeaning` allowed"
     Each concept may have **exactly one** `hriv:hasExactMeaning` to a Health-RI concept—**and only when a perfect semantic equivalence exists**. Using more than one `hriv:hasExactMeaning` for the same concept is not allowed, as it introduces ambiguity.

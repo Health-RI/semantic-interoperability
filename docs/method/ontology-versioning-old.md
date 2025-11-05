@@ -1,6 +1,6 @@
-### Versioning Policy
+### Ontology Old Versioning Policy
 
-We use an **adapted semantic versioning** scheme to indicate the type and impact of changes:
+Before version 1.0.0, We used an **adapted semantic versioning** scheme to indicate the type and impact of changes:
 
 **Format**: `<major>.<minor>.<patch>`
 

@@ -42,7 +42,7 @@ Each model is organized in its own folder and includes a set of standardized met
     └── SemanticArtefact-shape.ttl
 ```
 
-A public **dashboard** is available at [w3id.org/ontouml-models/dashboard](https://w3id.org/ontouml-models/dashboard), offering visualizations of the catalog’s contents. Users can explore metadata distributions by year, domain, modeling task, and stereotype usage. As of now, the catalog comprises over **190 datasets**, with more than **13.000 classes**, **9.000 relations**, and **hundreds of thousands of RDF triples**.
+A public **dashboard** is available at [w3id.org/ontouml-models/dashboard](https://w3id.org/ontouml-models/dashboard), offering visualizations of the catalog's contents. Users can explore metadata distributions by year, domain, modeling task, and stereotype usage. As of now, the catalog comprises over **190 datasets**, with more than **13.000 classes**, **9.000 relations**, and **hundreds of thousands of RDF triples**.
 
 ## Catalog's Persistent URLs
 

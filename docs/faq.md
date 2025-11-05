@@ -2,7 +2,7 @@
 
 ## Project Overview and Strategic Context
 
-*Questions about the initiative’s purpose, strategic goals, expected impact, and broader context.*
+*Questions about the initiative's purpose, strategic goals, expected impact, and broader context.*
 
 **Further reading:**
 
@@ -12,11 +12,11 @@
 !!! warning "Disclaimer"
     The answers in this section are part of an ongoing effort to address strategic questions about the initiative. They are based on initial interpretations and should be used with caution. All entries are marked as drafts and will be further refined and validated in collaboration with stakeholders.
 
-??? question "What is the goal of Health-RI’s semantic interoperability initiative?"
+??? question "What is the goal of Health-RI's semantic interoperability initiative?"
     To enable meaningful data integration across health and life sciences institutions by aligning data semantically, not just structurally. This is achieved through the development and adoption of a common reference model that captures domain meaning explicitly.
 
 ??? question "What exactly are we trying to achieve with semantic interoperability?"
-    We aim to align external and internal ontologies to a shared reference model, ensuring that semantic definitions are preserved across conceptual and computational layers. This is achieved through structured mappings (e.g., `hriv:hasExactMeaning`) from third-party concepts to Health-RI’s reference ontology (OntoUML) and its computational counterpart (gUFO).
+    We aim to align external and internal ontologies to a shared reference model, ensuring that semantic definitions are preserved across conceptual and computational layers. This is achieved through structured mappings (e.g., `hriv:hasExactMeaning`) from third-party concepts to Health-RI's reference ontology (OntoUML) and its computational counterpart (gUFO).
 
 ??? question "Why is semantic interoperability important in healthcare and life sciences?"
     Because it ensures that data from diverse sources is interpreted consistently, reducing the risk of misinterpretation and improving reusability, reproducibility, and trust. It supports FAIR data practices and accelerates data-driven innovation.
@@ -73,7 +73,7 @@
     TBD.
 
 ??? question "What is the common reference model and why is it needed?"
-    It’s a conceptual model created using OntoUML to serve as a semantic anchor for all participating data schemas. Instead of replacing local schemas, it provides a shared foundation for mapping and aligning meaning.
+    It's a conceptual model created using OntoUML to serve as a semantic anchor for all participating data schemas. Instead of replacing local schemas, it provides a shared foundation for mapping and aligning meaning.
 
     OntoUML defines the domain-level semantics, while gUFO implements those concepts in OWL. This layered architecture ensures that semantic meaning is preserved from human-level models to machine-readable artifacts.
 
@@ -85,7 +85,7 @@
     - [gUFO](../ontouml-gufo/gufo) OWL-based computational ontologies
     - Schema-to-ontology mappings using tools like [SSSOM](https://mapping-commons.github.io/sssom/)
 
-??? question "Why do we need the semantic interoperability initiative if standards like HL7, OMOP, or DCAT-AP already exist? Isn’t this duplicating existing efforts?"
+??? question "Why do we need the semantic interoperability initiative if standards like HL7, OMOP, or DCAT-AP already exist? Isn't this duplicating existing efforts?"
     This initiative complements existing standards like HL7, OMOP, and DCAT by focusing on semantic precision, ontological clarity, and interoperability at the conceptual level. While HL7 and OMOP define syntactic and structural specifications for health data, this initiative addresses foundational semantics to align and reason over data models meaningfully. It:
 
     - Provides foundational ontological grounding that is missing in most standards.
@@ -103,7 +103,7 @@
 ??? question "Does the Health-RI initiative reuse any existing biomedical or life sciences ontologies? Are external ontologies integrated or referenced within the Health-RI ontology? (TBD)"
     TBD.
 
-??? question "Given that many life sciences ontologies adopt the Basic Formal Ontology (BFO), what motivated the use of UFO rather than BFO as the foundation for this initiative’s ontology? (TBD)"
+??? question "Given that many life sciences ontologies adopt the Basic Formal Ontology (BFO), what motivated the use of UFO rather than BFO as the foundation for this initiative's ontology? (TBD)"
     TBD.
 
 ## Modeling Approach: OntoUML and gUFO
@@ -120,12 +120,12 @@
 
     OntoUML operates at MDA's CIM layer to capture conceptual semantics, while gUFO provides a platform-independent OWL implementation at the PIM layer. This ensures a traceable and interoperable flow from conceptualization to deployment.
 
-??? question "OntoUML and gUFO seem very complex. Isn’t that a barrier to adoption?"
+??? question "OntoUML and gUFO seem very complex. Isn't that a barrier to adoption?"
     This is a common concern. Foundational ontologies like UFO are indeed complex—because they aim to capture real-world meaning with a high level of precision and avoid ambiguity across domains. Some complexity is simply inherent to the task: when we model the real-life elements, especially across institutions or sectors, we cannot always rely on overly simplistic representations.
 
     That said, this initiative does not require users to engage directly with UFO. Instead, we rely on OntoUML and gUFO to make that foundational theory accessible in practice. OntoUML provides intuitive modeling constructs grounded in UFO, while gUFO offers a lightweight OWL implementation suitable for real-world applications.
 
-    This layered approach lets modelers benefit from UFO’s expressive power without being overwhelmed by its formal depth. The complexity is managed by the modeling framework and supported by tools like Visual Paradigm and the OntoUML plugin. In fact, these languages have already been applied successfully in domains like public health, law, and digital humanities—demonstrating that the approach is both practical and scalable.
+    This layered approach lets modelers benefit from UFO's expressive power without being overwhelmed by its formal depth. The complexity is managed by the modeling framework and supported by tools like Visual Paradigm and the OntoUML plugin. In fact, these languages have already been applied successfully in domains like public health, law, and digital humanities—demonstrating that the approach is both practical and scalable.
 
 ??? question "How is the OntoUML model converted to OWL?"
     The OntoUML model is exported to OWL using the [gUFO specification](../ontouml-gufo/gufo) via plugin tooling. The resulting ontology retains the original semantics in a format suitable for Semantic Web technologies.
@@ -280,7 +280,7 @@
 
     This helps us avoid duplicates, understand the context of your feedback, and keep the review process efficient.
 
-    You’ll find a field for this information in the contribution forms.
+    You'll find a field for this information in the contribution forms.
 
 ??? question "Where can I find more information on how to submit feedback?"
     See our [Contributing page](../contributing/), which outlines how to submit structured input, what types of feedback are accepted, and how your suggestions will be reviewed.
@@ -294,8 +294,8 @@
 **Further reading:**
 
 - [Publications & operations](../method/publications)
-- [Ontology versioning](./method/versioning-ontology.md)
-- [Validation & stage gates](./method/validation-ontology.md)
+- [Ontology versioning](./method/ontology-versioning.md)
+- [Validation & stage gates](./method/ontology-validation.md)
 - [Persistent identifiers (PIDs)](../method/persistent-ids)
 
 ??? question "What are the ontology lifecycle stages (`int`, `irv`, `erv`, `pub`)?"
@@ -385,7 +385,7 @@
     - `https://w3id.org/health-ri/ontology/v0.6.0/ttl` — Ontology in Turtle for version 0.6.0
     - `https://w3id.org/health-ri/ontology/v0.6.0/specification` — HTML specification for version 0.6.0
 
-??? question "What’s the difference between the latest and versioned ontology URIs?"
+??? question "What's the difference between the latest and versioned ontology URIs?"
     - The latest URI (`https://w3id.org/health-ri/ontology`) always points to the most recent stable release. Its content may change over time as new versions are published.
     - A versioned URI (e.g., `https://w3id.org/health-ri/ontology/v2.0.0`) points to a specific, immutable release. Its content will never change, ensuring long-term consistency.
 
@@ -405,7 +405,7 @@
     Where to get the files:
     - GitHub Release page (exact packaged artifacts and notes).
     - Zenodo record (DOI) for a preserved, citable snapshot.
-    - w3id PIDs and repository folders for “latest” and “versioned” access; images (`.png`) live under `ontologies/latest/`.
+    - w3id PIDs and repository folders for "latest" and "versioned" access; images (`.png`) live under `ontologies/latest/`.
 
 ??? question "How are the OntoUML and gUFO ontologies and the produced semantic mappings maintained over time?"
     Ontologies and semantic mappings are maintained in version-controlled repositories and released through a structured publishing pipeline. Each release is assigned a permanent, citable URL, with both a Persistent Identifier (PI). Ontologies are published in multiple formats (e.g., RDF/Turtle, JSON) and validated prior to release. This process ensures transparency, long-term accessibility, and semantic stability across versions.

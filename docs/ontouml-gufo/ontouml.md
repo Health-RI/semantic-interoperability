@@ -2,7 +2,7 @@
 
 <p align="left"><img src="../../assets/images/ontouml-logo.png" width="500" alt="OntoUML Logo"></p>
 
-**OntoUML** is an ontologically well-founded language designed for ontology-driven conceptual modeling. It extends the Unified Modeling Language (UML) by incorporating the ontological distinctions provided by the Unified Foundational Ontology (UFO). Through UML’s profiling mechanism, OntoUML defines a collection of class and association stereotypes that reflect the ontological distinctions present in UFO. It also establishes semantically motivated syntactical constraints to ensure that every syntactically correct model represents a sound UFO-based ontology.
+**OntoUML** is an ontologically well-founded language designed for ontology-driven conceptual modeling. It extends the Unified Modeling Language (UML) by incorporating the ontological distinctions provided by the Unified Foundational Ontology (UFO). Through UML's profiling mechanism, OntoUML defines a collection of class and association stereotypes that reflect the ontological distinctions present in UFO. It also establishes semantically motivated syntactical constraints to ensure that every syntactically correct model represents a sound UFO-based ontology.
 
 OntoUML introduced a methodological commitment to ontological analysis, helping modelers make conceptually sound modeling decisions. By aligning UML notation with foundational ontology, OntoUML became a practical and rigorous approach to ontology-driven conceptual modeling **<a href="#ref1">[1]</a>**.
 
@@ -12,7 +12,7 @@ Over time, OntoUML evolved beyond a simple UML profile: it became a community-su
 
 ## Origins
 
-The development of OntoUML is rooted in the work of [Giancarlo Guizzardi](https://www.giancarloguizzardi.com/), particularly his Ph.D. thesis titled [*Ontological Foundations for Structural Conceptual Models*](https://research.utwente.nl/files/6042428/thesis_Guizzardi.pdf) **<a href="#ref3">[3]</a>**. Although the term “OntoUML” was not used in that work, the conceptual basis for the language—its ontological foundations, modeling distinctions, and methodological approach—was thoroughly developed there. Similarly, the ontology that would later be known as the **Unified Foundational Ontology (UFO)** was introduced in substance, though not yet by name.
+The development of OntoUML is rooted in the work of [Giancarlo Guizzardi](https://www.giancarloguizzardi.com/), particularly his Ph.D. thesis titled [*Ontological Foundations for Structural Conceptual Models*](https://research.utwente.nl/files/6042428/thesis_Guizzardi.pdf) **<a href="#ref3">[3]</a>**. Although the term "OntoUML" was not used in that work, the conceptual basis for the language—its ontological foundations, modeling distinctions, and methodological approach—was thoroughly developed there. Similarly, the ontology that would later be known as the **Unified Foundational Ontology (UFO)** was introduced in substance, though not yet by name.
 
 The formal naming and definition of UFO as a unified foundational ontology appeared in a set of contemporaneous publications by Guizzardi and Wagner **<a href="#ref4">[4]</a>****<a href="#ref5">[5]</a>****<a href="#ref6">[6]</a>**. These works extended the ideas from the thesis and applied them to domains such as agent concepts and business modeling, positioning UFO as a comprehensive foundation for conceptual modeling.
 

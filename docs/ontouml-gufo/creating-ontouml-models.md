@@ -32,7 +32,7 @@ Follow the installation instructions for your operating system (Windows, macOS, 
 
 ### Step 2: Install the OntoUML Plugin
 
-To enable native support for OntoUML, you’ll need to install the open-source plugin:
+To enable native support for OntoUML, you'll need to install the open-source plugin:
 
 #### 2.1 Download the Plugin
 
@@ -59,26 +59,26 @@ This will initialize your workspace.
 
 ![Step 1 – Create New Project](./assets/images/vp-step1.png)
 
-In the pop-up window that appears, enter a name for your project and the author’s name.
+In the pop-up window that appears, enter a name for your project and the author's name.
 Then click on **Create Blank Project** to proceed.
 
 #### 3.2 Create a New Model Inside the Project
 
 In the **Model Explorer**, right-click on `My Project` and select
 **Model → New Model…**.
-Give your model a name such as “My Model”.
+Give your model a name such as "My Model".
 
 ![Step 2 – Create New Model](./assets/images/vp-step2.png)
 
 #### 3.3 Add a New Diagram to the Model
 
-Right-click on your newly created model (e.g., “My Model”), go to
+Right-click on your newly created model (e.g., "My Model"), go to
 **Sub Diagrams → Add → New Diagram…**.
 
 ![Step 3 – Add New Diagram](./assets/images/vp-step3.png)
 
 In the dialog that opens, select **Class Diagram** as the diagram type.
-Then give your diagram a name (e.g., “My Model Class Diagram”) and click **OK**.
+Then give your diagram a name (e.g., "My Model Class Diagram") and click **OK**.
 
 #### 3.4 Start Modeling with OntoUML Stereotypes
 

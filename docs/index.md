@@ -19,7 +19,7 @@ This makes the Health-RI Semantic Interoperability Initiative non-intrusive: the
 
 At this early stage, as we continue to explore alternatives and collaborations, we are already receiving valuable support and feedback from academics and professionals across Health-RI and the broader health data community. Their perspectives are helping us shape the work and ensure it stays aligned with ongoing national and international efforts toward interoperability.
 
-We invite you to explore the resources we are making available — including our [**ontology**](ontology/index.md), [**mapping vocabulary**](method/specification-vocabulary.html), and [**mapping sets**](method/mapping-set.md) — all of which are openly published and continuously improved.
+We invite you to explore the resources we are making available — including our [**ontology**](ontology/index.md), [**mapping vocabulary**](method/specification-vocabulary.html), and [**mapping sets**](method/mapping-schema.md) — all of which are openly published and continuously improved.
 
 We also welcome direct engagement, whether through sharing feedback, proposing new mappings, or discussing use cases and potential applications with us.
 
@@ -35,13 +35,13 @@ Semantic interoperability plays a foundational role in this mission by ensuring 
 
 ---
 
-## What’s on this site
+## What's on this site
 
 This site documents how Health-RI achieves semantic interoperability across health and life-sciences data: our concepts, modeling foundations (OntoUML & gUFO), the method and mapping vocabulary we use, and the published ontology deliverables (specs, docs, changelog).
 
 - **Semantic Interoperability**: [Overview](semantic-interoperability/index.md)
 - **OntoUML & gUFO**: [Overview](ontouml-gufo/index.md) · [OntoUML](ontouml-gufo/ontouml.md) · [OntoUML Stereotypes](ontouml-gufo/ontouml-stereotypes.md) · [OntoUML/UFO Catalog](ontouml-gufo/ontouml-ufo-catalog.md) · [Creating OntoUML Models](ontouml-gufo/creating-ontouml-models.md) · [gUFO](ontouml-gufo/gufo.md)
-- **Method**: [Overview](method/index.md) · [Introduction](method/introduction.md) · [Mapping Strategy](method/mapping-strategy.md) · [Mapping Vocabulary Specification](method/specification-vocabulary.html) · [SSSOM Mapping Set](method/mapping-set.md) · [Publications](method/publications.md) · [Persistent Identifiers](method/persistent-ids.md)
+- **Method**: [Overview](method/index.md) · [Introduction](method/introduction.md) · [Mapping Strategy](method/mapping-strategy.md) · [Mapping Vocabulary Specification](method/specification-vocabulary.html) · [SSSOM Mapping Set](method/mapping-schema.md) · [Publications](method/publications.md) · [Persistent Identifiers](method/persistent-ids.md)
 - **Deliverables**: [Overview](ontology/index.md) · [Ontology Documentation](ontology/documentation.md) · [Ontology Specification](ontology/specification-ontology.html) · [Ontology Changelog](ontology/changelog-ontology.md)
 - **Help & Contributions**: [FAQ](faq.md) · [Contributing](contributing.md)
 

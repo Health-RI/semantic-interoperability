@@ -4,7 +4,7 @@ This document defines the per-package stages (`int`, `irv`, `erv`, `pub`), how t
 
 ## Purpose & Scope
 
-Specifies stage governance for ontology packages: how stage states are tracked, transitioned, and reverted, and how those transitions are recorded. It also defines who performs validation and reviews, when they occur, and how version increments (Y++) are applied. Version impacts are acknowledged where stages drive them; see [Versioning Strategy](./versioning-ontology.md) for the full versioning logic. This policy applies to all modelers and reviewers involved in ontology development and maintenance.
+Specifies stage governance for ontology packages: how stage states are tracked, transitioned, and reverted, and how those transitions are recorded. It also defines who performs validation and reviews, when they occur, and how version increments (Y++) are applied. Version impacts are acknowledged where stages drive them; see [Versioning Strategy](./ontology-versioning.md) for the full versioning logic. This policy applies to all modelers and reviewers involved in ontology development and maintenance.
 
 ## Definitions & Glossary (Stages)
 
@@ -16,7 +16,7 @@ Stages are tracked per package inside the Visual Paradigm project as tagged valu
 - `pub` – external review window closed and package is published.
 
 Rule. Stage changes happen at package level (not diagram/class). Packages can move through stages independently, and multiple stage transitions may be combined into one release; the version still changes at most once per release following the priority X > Y > Z.
-Version note. A stage transition triggers Y++ and Z → 0 (see [Versioning Strategy](./versioning-ontology.md)).
+Version note. A stage transition triggers Y++ and Z → 0 (see [Versioning Strategy](./ontology-versioning.md)).
 
 **Checklists: gate vs operations.** Stage gate checklists list **exit criteria** to leave stage X and enter stage Y (they are pass/fail gates). The [Publication Stage Operations Checklist](#publication-stage-operations-checklist) is **not** a gate; it lists actions to perform **after** entering `pub` and while remaining there.
 
@@ -43,7 +43,10 @@ Reviewers must execute the IRV checklist in section [Internal Review Stage Gate 
 
 **Planning & timeline.** A review activity is created and scheduled into a sprint. Internal reviewers have one sprint to complete the review. Depending on model complexity, team availability, and other factors, this may be extended to two sprints.
 
-**Outcome.** If the review passes (no semantic changes required), the modeler updates the stage tagged value to `erv` and records the transition `<irv → erv>`. Per the [Versioning Strategy](./versioning-ontology.md), this contributes Y++ and resets Z → 0 for the release (subject to X > Y > Z precedence). Advancement to `erv` is permitted only after a passed [Internal Review Stage Gate Checklist](#internal-review-stage-gate-checklist).
+!!! info "Terminology"
+    **Sprint** refers to the organization's standard sprint length as defined by the project board. This policy intentionally avoids a fixed day count.
+
+**Outcome.** If the review passes (no semantic changes required), the modeler updates the stage tagged value to `erv` and records the transition `<irv → erv>`. Per the [Versioning Strategy](./ontology-versioning.md), this contributes Y++ and resets Z → 0 for the release (subject to X > Y > Z precedence). Advancement to `erv` is permitted only after a passed [Internal Review Stage Gate Checklist](#internal-review-stage-gate-checklist).
 
 ### External Review (`erv`)
 
@@ -57,7 +60,7 @@ Reviewers must execute the IRV checklist in section [Internal Review Stage Gate 
 
 **Planning & timeline.** A review activity is created and scheduled into a sprint. External reviewers have one sprint to provide feedback; this may be extended to two sprints based on package complexity, community availability, and other factors.
 
-**Outcome.** If the review passes (no semantic changes required), the modeler updates the stage tagged value to `pub` and records the transition `<erv → pub>`. Per the [Versioning Strategy](./versioning-ontology.md), this contributes Y++ and resets Z → 0 for the release (subject to X > Y > Z precedence). Upon entering `pub`, immediately execute the [Publication Stage Operations Checklist](#publication-stage-operations-checklist).
+**Outcome.** If the review passes (no semantic changes required), the modeler updates the stage tagged value to `pub` and records the transition `<erv → pub>`. Per the [Versioning Strategy](./ontology-versioning.md), this contributes Y++ and resets Z → 0 for the release (subject to X > Y > Z precedence). Upon entering `pub`, immediately execute the [Publication Stage Operations Checklist](#publication-stage-operations-checklist).
 
 ## Stage-specific Checklists
 
@@ -181,7 +184,7 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
 
 ## Post-Publication Validation & Ongoing Feedback (`pub`)
 
-Mark the package as `pub` (in its stage tagged value) once internal and external reviews conclude. Publication does not end the package lifecycle. As described in [Stage Reversions and Semantic Modifications](#stage-reversions-and-semantic-modifications) and in the [Versioning Strategy](./versioning-ontology.md), packages may receive new feedback, undergo stage reversions, and re-enter previous stages. If feedback triggers a reversion to `int`, the package must re-pass the [Internal Stage Gate Checklist](#internal-stage-gate-checklist) before moving back to `irv`. For publication-time and ongoing `pub` tasks, execute and maintain the [Publication Stage Operations Checklist](#publication-stage-operations-checklist).
+Mark the package as `pub` (in its stage tagged value) once internal and external reviews conclude. Publication does not end the package lifecycle. As described in [Stage Reversions and Semantic Modifications](#stage-reversions-and-semantic-modifications) and in the [Versioning Strategy](./ontology-versioning.md), packages may receive new feedback, undergo stage reversions, and re-enter previous stages. If feedback triggers a reversion to `int`, the package must re-pass the [Internal Stage Gate Checklist](#internal-stage-gate-checklist) before moving back to `irv`. For publication-time and ongoing `pub` tasks, execute and maintain the [Publication Stage Operations Checklist](#publication-stage-operations-checklist).
 
 **Active actions at `pub`.** Execute the [Publication Stage Operations Checklist](#publication-stage-operations-checklist). The items below explain *what* each checklist group is about:
 
@@ -203,7 +206,7 @@ Mark the package as `pub` (in its stage tagged value) once internal and external
 
 - **GitHub Issues (standing channel).** A public, always-open channel for internal and external collaborators to request inclusion/exclusion/modification of concepts and related changes via templates. Submissions are evaluated continuously; once a package is in `pub`, substantive issues may trigger a stage reversion per this policy.
 
-**Feedback handling.** Feedback received through any channel (Catalog, GitHub, publications) is evaluated and may trigger stage reversions per the policies in this document. Once a package is in `pub`, any substantive issue may lead to a reversion to a previous stage; significant feedback requiring semantic changes will reset the package to `int` and contribute Y++ per the [Versioning Strategy](./versioning-ontology.md).
+**Feedback handling.** Feedback received through any channel (Catalog, GitHub, publications) is evaluated and may trigger stage reversions per the policies in this document. Once a package is in `pub`, any substantive issue may lead to a reversion to a previous stage; significant feedback requiring semantic changes will reset the package to `int` and contribute Y++ per the [Versioning Strategy](./ontology-versioning.md).
 
 ## Stage Reversions — Why and When
 
@@ -221,7 +224,7 @@ Process. Record the explicit transition as `<current> → int` in the Visual Par
 When a package undergoes a semantic modification (e.g., adding/removing/retaxonomizing classes, retyping relations, changing multiplicities or constraints, revising authoritative definitions, introducing/removing key axioms), record an explicit stage reversion `<current> → int` in the Visual Paradigm tagged value.
 This mandatory reversion triggers Y++ for that release and resets Z → 0. Before resubmitting to `irv`, the package must re-pass the [Internal Stage Gate Checklist](#internal-stage-gate-checklist).
 
-> See [Versioning Strategy](./versioning-ontology.md) for the semantic vs. non-semantic decision tests and the full trigger matrix for X/Y/Z.
+> See [Versioning Strategy](./ontology-versioning.md) for the semantic vs. non-semantic decision tests and the full trigger matrix for X/Y/Z.
 
 ## Figures
 

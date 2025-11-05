@@ -8,7 +8,7 @@ Before diving into specific files and artifacts, we first outline how ontology v
 
 ### Versioning Policy
 
-Please refer to the [Ontology Versioning Policy](./versioning-ontology.md) page for full details.
+Please refer to the [Ontology Versioning Policy](./ontology-versioning.md) page for full details.
 
 ### Published Artifacts
 

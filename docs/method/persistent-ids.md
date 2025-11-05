@@ -6,7 +6,7 @@ This page lists the **persistent, stable, and dereferenceable identifiers (PIDs)
 
 ### URI: `https://w3id.org/health-ri/semantic-interoperability`
 
-This URI refers to the Semantic Interoperability Initiative as a whole. It provides persistent access to the initiative’s public-facing resources and is suitable for citing the initiative in publications, websites, and metadata records.
+This URI refers to the Semantic Interoperability Initiative as a whole. It provides persistent access to the initiative's public-facing resources and is suitable for citing the initiative in publications, websites, and metadata records.
 
 ## Ontology Identifier
 
