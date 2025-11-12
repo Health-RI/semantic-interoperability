@@ -2164,7 +2164,7 @@
 
 
 <h1 id="health-ri-ontology">Health-RI Ontology</h1>
-<p><em>Version 0.11.9</em></p>
+<p><em>Version 1.1.0</em></p>
 <h2 id="sex-and-gender">Sex and Gender</h2>
 <p>This document describes the OntoUML conceptual model of Sex and Gender, detailing its structure, types, and relationships. The model follows the ontological notion of <strong>&lt;<mode>&gt;</strong>, representing intrinsic properties of a <em>Person</em>. However, while these modes always depend on the bearer (they are properties of them), their determination can be either intrinsic depending only on the person s own features or extrinsic requiring assessment or assignment by external agents.</p>
 <p>This distinction is crucial to properly model the social, legal, and biological complexity of sex and gender in human contexts.</p>
@@ -2178,6 +2178,8 @@
 <p>It also makes explicit the mediation roles for extrinsic modes highlighting how external agents participate in assigning or recognizing these properties.</p>
 <p>This unified view underlines the model s goal: to provide a clear, precise, and inclusive conceptual framework that acknowledges both personal identity and social practices in defining sex and gender.</p>
 <h3 id="sex">Sex</h3>
+<p>The Sex package represents biological sex of persons along three axes: karyotypic sex, phenotypic sex, and sex at birth. It classifies persons by biological sex (male, female, indeterminate) using counts of sexual dimorphic characteristics and distinguishes karyotypic male and female, including regular and variant sex-chromosome composition. Phenotypic sex is treated as an observable condition of a person that can be classified as male, female, or ambiguous with reference to visual sex characteristics. Sex at birth is addressed as a registration category that distinguishes persons with assigned or unassigned sex at birth and specifies the categories male, female, or indeterminate.</p>
+<p>The package separates characterization, assessment, and registration. Phenotypic sex may be established by one or more assessments involving a healthcare professional. Sex at birth is represented as an assignment recorded on a birth notification and may be governed by birth-related legislation rules. Karyotypic sex provides a chromosome-based characterization without prescribing decision rules. This structure keeps the dimensions of sex explicit, identifies the agents and artifacts involved in assessments and assignments, and supports consistent application of categories to persons.</p>
 <h4 id="sex-at-birth">Sex at Birth</h4>
 <p><img alt="Sex at Birth" src="../assets/images/Sex%20at%20Birth.png" /></p>
 <p>The diagram models Sex at Birth as an extrinsic mode that is determined through a process of formal assignment at the time of birth registration. While such assignments often rely on the newborn s phenotypical features, they are not merely descriptive but the outcome of a social and administrative act recorded in official documents.</p>
