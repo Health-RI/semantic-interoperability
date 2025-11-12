@@ -14,6 +14,7 @@ file_patterns_to_remove = [
     "~$*",
     "*.tmp",
     "*.bak",
+    "*.vbak",
     "*.wbk",
     "*.asd",
     "*.lnk",

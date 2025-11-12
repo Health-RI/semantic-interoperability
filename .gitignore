@@ -178,6 +178,7 @@ cython_debug/
 
 # Visual Paradigm Temporary Files
 **/*vpp.bak*
+**/*vpp.vbak*
 **/*vpp.lck*
 
 # Microsoft Office temporary files
@@ -217,3 +218,5 @@ Thumbs.db
 
 # Internal files for self-organization
 .internal/**
+
+diff.txt
