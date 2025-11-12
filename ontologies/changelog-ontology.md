@@ -4,6 +4,40 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.0] - 2025-11-12
+
+### Changed
+
+- Bumped ontology metadata:
+  - `owl:versionInfo` **0.11.9 → 1.1.0**
+  - `owl:versionIRI` **…/v0.11.9 → …/v1.1.0**
+  - `dcterms:modified` **2025-10-29 → 2025-11-12**
+  - `dcterms:conformsTo` artifacts updated to **…/v1.1.0/json** and **…/v1.1.0/vpp**.
+- Reclassified **BirthRelatedLegislationRule**:
+  - `rdf:type` **gufo:Kind → gufo:Category**
+  - `rdfs:subClassOf` **gufo:IntrinsicMode → gufo:FunctionalComplex**
+- Broadened the equivalence of **HumanCell**:
+  - `owl:equivalentClass` now expresses **DiploidCell ⊔ HaploidCell ⊔ Polyploid** (previously **DiploidCell ⊔ HaploidCell**).
+- Aligned administrative gender subproperty hierarchy (property specializations now inherit from the recognized-gender property):
+  - `nonBinaryAdministrativeGenderInheresInPersonWithNonBinaryAdministrativeGender`: **subPropertyOf** `hasAdministrativeGender` → `administrativeGenderInheresInPersonWithRecognizedAdministrativeGender`
+  - `femaleAdministrativeGenderInheresInPersonWithFemaleAdministrativeGender`: **subPropertyOf** `hasAdministrativeGender` → `administrativeGenderInheresInPersonWithRecognizedAdministrativeGender`
+  - `maleAdministrativeGenderInheresInPersonWithMaleAdministrativeGender`: **subPropertyOf** `hasAdministrativeGender` → `administrativeGenderInheresInPersonWithRecognizedAdministrativeGender`
+  - `personWithRecognizedLegalGenderInheresInLegalGender`: **subPropertyOf** `hasAdministrativeGender` → `administrativeGenderInheresInPersonWithRecognizedAdministrativeGender`
+- Polished textual definitions (`rdfs:comment`) for **18** terms (no semantic change), including:
+  - *Person, PhysicalDocument, DigitalDocument, Date, OffsetDateTime, Diagnosis, DiagnosedEntity, DiagnosingAgent, DiagnosticRelation, BirthNotification, KaryotypicalMale, KaryotypicalFemale, Chromosome, HealthcareDiagnosis, PsychologicalHealthCondition, NonHumanAnimal*, and others.
+
+### Added
+
+- Introduced class **Polyploid**:
+  - `rdfs:label` “Polyploid”
+  - `rdfs:subClassOf` **HumanCell**
+  - Stereotyped as **gufo:SubKind** (declared as both `owl:Class` and `owl:NamedIndividual`).
+- Introduced object property **hasAllosome**:
+  - `rdfs:label` “has allosome”
+  - `rdfs:domain` **Person**
+  - `rdfs:range` **Allosome**
+  - Stereotyped as **gufo:MaterialRelationshipType**.
+
 ## [0.11.9] - 2025-10-29
 
 ### Changed
