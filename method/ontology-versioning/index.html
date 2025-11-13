@@ -1860,8 +1860,19 @@
 
 <h1 id="versioning-strategy-for-ontology-releases">Versioning Strategy for Ontology Releases</h1>
 <p>This document specifies the version number semantics (<code>X.Y.Z</code>), priority rules, increment/reset logic, and triggers for <code>X</code>/<code>Y</code>/<code>Z</code>. It also includes the semantic vs. non-semantic decision tests, worked examples, and the versioning flowchart. Stage concepts are referenced only insofar as they drive <code>Y</code>-level changes.</p>
+<p>This versioning strategy applies to all ontology artifacts released as part of the Health-RI Ontology. In any given release, all artifacts share the same version identifier (<code>X.Y.Z</code>) and correspond to the same underlying OntoUML model.</p>
 <h2 id="purpose-scope">Purpose &amp; Scope</h2>
 <p>Defines how versions are assigned and incremented for the ontology/model releases, including precedence (<code>X &gt; Y &gt; Z</code>), single-step increments, and resets. Stage mechanics (<code>int</code>/<code>irv</code>/<code>erv</code>/<code>pub</code>) are covered in <em>Validation Strategy</em>; they are referenced here only where they directly affect <code>Y</code>. This strategy is effective for releases starting at <code>v1.0.0</code>; earlier releases (<code>&lt; v1.0.0</code>) followed an <a href="../ontology-versioning-old/">earlier versioning policy</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Artifacts covered and alignment</p>
+<p>The <code>X.Y.Z</code> version identifier applies uniformly to the ontology artifacts released by this initiative:
+- OntoUML model in Visual Paradigm (<code>.vpp</code> project).
+- OntoUML model exported as JSON (<code>.json</code>).
+- gUFO-based OWL ontology (<code>.ttl</code>, in Turtle).
+- SHACL shapes file (<code>.shacl</code>, in Turtle).
+- Ontology documentation and specification.</p>
+<p>Model changes are authored in the OntoUML <code>.vpp</code> project first. For each release, the derived artifacts above are regenerated or updated from that source so they remain synchronized under the same version identifier.</p>
+</div>
 <h2 id="definitions-glossary">Definitions &amp; Glossary</h2>
 <ul>
 <li>Version format: <code>X.Y.Z</code><ul>

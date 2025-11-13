@@ -1952,12 +1952,20 @@
 <td><code>/ontology/vpp</code></td>
 <td>OntoUML model file in Visual Paradigm format</td>
 </tr>
+<tr>
+<td><code>/ontology/shacl</code></td>
+<td>SHACL constraint and derivation rules</td>
+</tr>
 </tbody>
 </table>
 <p>Each of these URIs redirects to the latest available version of the resource.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can use either <code>/doc</code> or <code>/documentation</code>, and <code>/spec</code> or <code>/specification</code> — both forms are valid and equivalent.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Our SHACL file uses the <code>.shacl</code> extension and Turtle serialization.</p>
 </div>
 <h3 id="identifiers-for-versioned-ontology-releases">Identifiers for <strong>Versioned Ontology Releases</strong></h3>
 <p>To support traceability and reproducibility, each ontology release is also available via <strong>version-specific URIs</strong>. Each versioned release of the Health-RI Ontology is identified by its own dedicated URI in the format <strong><code>https://w3id.org/health-ri/ontology/vX.Y.Z</code></strong>. This URI is used as the <code>owl:versionIRI</code> in the ontology metadata.</p>
@@ -1970,6 +1978,7 @@
 <li><code>ttl</code> — OWL ontology (Turtle)</li>
 <li><code>vpp</code> — OntoUML model (Visual Paradigm)</li>
 <li><code>json</code> — OntoUML model (JSON)</li>
+<li><code>shacl</code> — SHACL constraint and derivation rules (Turtle)</li>
 <li><code>documentation</code> — Markdown documentation</li>
 <li><code>specification</code> — HTML specification</li>
 </ul>
@@ -1996,6 +2005,10 @@
 <li>
 <p><code>https://w3id.org/health-ri/ontology/v0.6.0/specification</code>
   → HTML specification for version 0.6.0</p>
+</li>
+<li>
+<p><code>https://w3id.org/health-ri/ontology/v0.11.9/shacl</code>
+  → SHACL shapes for version 0.11.9</p>
 </li>
 </ul>
 <h2 id="sssom-mappings-pids">SSSOM Mappings PIDs</h2>
@@ -2091,6 +2104,18 @@
 </thead>
 <tbody>
 <tr>
+<td><code>/semantic-interoperability</code></td>
+<td>Project-level identifier</td>
+<td>Redirects to documentation site</td>
+<td><a href="https://w3id.org/health-ri/semantic-interoperability">https://w3id.org/health-ri/semantic-interoperability</a></td>
+</tr>
+<tr>
+<td><code>/semantic-interoperability/git</code></td>
+<td>Source code and data repository</td>
+<td>Redirects to GitHub</td>
+<td><a href="https://w3id.org/health-ri/semantic-interoperability/git">https://w3id.org/health-ri/semantic-interoperability/git</a></td>
+</tr>
+<tr>
 <td><code>/ontology</code></td>
 <td>Ontology root</td>
 <td>Redirects to raw <code>.ttl</code> file</td>
@@ -2101,6 +2126,12 @@
 <td>Latest ontology in Turtle format</td>
 <td>Redirects to raw <code>.ttl</code> file</td>
 <td><a href="https://w3id.org/health-ri/ontology/ttl">https://w3id.org/health-ri/ontology/ttl</a></td>
+</tr>
+<tr>
+<td><code>/ontology/shacl</code></td>
+<td>Latest SHACL shapes</td>
+<td>Redirects to latest <code>.shacl</code></td>
+<td><a href="https://w3id.org/health-ri/ontology/shacl">https://w3id.org/health-ri/ontology/shacl</a></td>
 </tr>
 <tr>
 <td><code>/ontology/specification</code></td>
@@ -2133,16 +2164,10 @@
 <td><a href="https://w3id.org/health-ri/ontology/v0.6.0/ttl">https://w3id.org/health-ri/ontology/v0.6.0/ttl</a></td>
 </tr>
 <tr>
-<td><code>/semantic-interoperability</code></td>
-<td>Project-level identifier</td>
-<td>Redirects to documentation site</td>
-<td><a href="https://w3id.org/health-ri/semantic-interoperability">https://w3id.org/health-ri/semantic-interoperability</a></td>
-</tr>
-<tr>
-<td><code>/semantic-interoperability/git</code></td>
-<td>Source code and data repository</td>
-<td>Redirects to GitHub</td>
-<td><a href="https://w3id.org/health-ri/semantic-interoperability/git">https://w3id.org/health-ri/semantic-interoperability/git</a></td>
+<td><code>/ontology/vX.Y.Z/shacl</code></td>
+<td>Versioned SHACL shapes</td>
+<td>Redirects to <code>.shacl</code> for that version</td>
+<td><a href="https://w3id.org/health-ri/ontology/v0.11.9/shacl">https://w3id.org/health-ri/ontology/v0.11.9/shacl</a></td>
 </tr>
 <tr>
 <td><code>/semantic-interoperability/mappings</code></td>
