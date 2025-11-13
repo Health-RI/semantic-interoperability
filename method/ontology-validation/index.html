@@ -1884,6 +1884,10 @@
 <p>This document defines the per-package stages (<code>int</code>, <code>irv</code>, <code>erv</code>, <code>pub</code>), how transitions and reversions are recorded in Visual Paradigm, when/why reversions happen, and the mandatory policy for semantic modifications. It also specifies who validates at each stage, how reviews are initiated, and the expected review timelines. Version effects (Y++) are included where relevant.</p>
 <h2 id="purpose-scope">Purpose &amp; Scope</h2>
 <p>Specifies stage governance for ontology packages: how stage states are tracked, transitioned, and reverted, and how those transitions are recorded. It also defines who performs validation and reviews, when they occur, and how version increments (Y++) are applied. Version impacts are acknowledged where stages drive them; see <a href="../ontology-versioning/">Versioning Strategy</a> for the full versioning logic. This policy applies to all modelers and reviewers involved in ontology development and maintenance.</p>
+<div class="admonition info">
+<p class="admonition-title">Input sources at all stages</p>
+<p>Input may arrive at any stage (<code>int</code>, <code>irv</code>, <code>erv</code>, <code>pub</code>) and from multiple sources. For example, external contributors (e.g., via GitHub Issues or community calls), the mappings team, domain experts, and other stakeholders. Such input is triaged within the current stage and it does not change the stage by itself. If accepted input entails semantic changes, apply the reversion and versioning rules in <a href="#stage-reversions--why-and-when">Stage Reversions — Why and When</a> and <a href="#policy-for-semantic-modifications">Policy for Semantic Modifications</a>.</p>
+</div>
 <h2 id="definitions-glossary-stages">Definitions &amp; Glossary (Stages)</h2>
 <p>Stages are tracked per package inside the Visual Paradigm project as tagged values on packages and displayed in documentation.</p>
 <ul>

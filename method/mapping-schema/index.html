@@ -2063,11 +2063,11 @@
 </tr>
 </tbody>
 </table>
-<div class="admonition important">
+<div class="admonition note">
 <p class="admonition-title">Identity distinctness (two-person rule)</p>
 <p>For every row, the set of <code>author_id</code> values <strong>must be disjoint</strong> from the set of <code>reviewer_id</code> values. This is validated at publication time (see the <a href="../mapping-governance/">Mappings Governance</a> page).</p>
 </div>
-<div class="admonition important">
+<div class="admonition note">
 <p class="admonition-title">Uniqueness of <code>hriv:hasExactMeaning</code> (current rows)</p>
 <p>For any given <code>subject_id</code>, there may be <strong>at most one</strong> <em>current</em> row with <code>predicate_id = hriv:hasExactMeaning</code> (i.e., not superseded via <code>replaces</code>, and with no <code>predicate_modifier = Not</code>). Rationale: Strategy requires a single exact meaning per concept; "current" follows the append-only supersession model. See the <a href="../mapping-governance/">Mappings Governance</a> page for the publication-time check.</p>
 </div>

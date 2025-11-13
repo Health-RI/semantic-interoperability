@@ -1280,6 +1280,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Applicability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-stage-for-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start stage for mappings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1902,6 +1919,9 @@
 <li>Applies to all mapping records proposed for or included in Health-RI mapping artifacts (TSV/TTL) and their metadata as defined on the <a href="../mapping-schema/">Mapping Set</a> page.</li>
 <li>Covers all submission routes referenced on the <a href="../mapping-schema/">Mapping Set</a> page (e.g., issue form or XLSX) and the end-to-end path to publication.</li>
 </ul>
+<!-- Future update will be necessary -->
+<h4 id="start-stage-for-mappings">Start stage for mappings</h4>
+<p>At the current maturity level, mapping work may begin once the relevant HRIO package reaches <code>irv</code> (internal review). Our target policy is to allow mappings only after the package is in <code>pub</code> (published). Stage definitions are described in the <a href="../ontology-validation/">Ontology Lifecycle and Validation Policy</a>.</p>
 <h3 id="in-scope">In Scope</h3>
 <ul>
 <li>Role definitions and two-person rule.</li>
@@ -1986,7 +2006,7 @@ If staffing is limited, reschedule publication rather than collapsing roles.</p>
 <li>Published → Superseded: New record must reference the prior via <code>replaces</code> (append-only).</li>
 </ul>
 </div>
-<div class="admonition important">
+<div class="admonition note">
 <p class="admonition-title">Timeboxes (SLA) summary</p>
 <ul>
 <li><strong>Reviewer:</strong> Concludes within <strong>one sprint</strong> from receipt; extendable to <strong>two sprints</strong> with documented justification.</li>
@@ -2164,7 +2184,7 @@ If staffing is limited, reschedule publication rather than collapsing roles.</p>
 <li>Record the submission: Add the submission URL or ticket ID in release notes; optionally place a per-row link in the <code>comment</code> field.</li>
 <li>Handle outcomes via supersession: If the external review requests changes, publish a new record that supersedes the previous one using <code>replaces</code> (append-only), with a short rationale.</li>
 </ol>
-<div class="admonition important">
+<div class="admonition note">
 <p class="admonition-title">Submission SLA</p>
 <p>Submissions to external registries (e.g., OHDSI/OMOP) must be initiated within <strong>one sprint</strong> of publication.</p>
 </div>

@@ -1875,6 +1875,10 @@
 <blockquote>
 <p>Note on stages. Stages are tracked per package (see <em>Validation Strategy</em>). A stage transition causes <code>Y++</code> and resets <code>Z → 0</code>, per rules below.</p>
 </blockquote>
+<div class="admonition note">
+<p class="admonition-title">Published tags are rarely "round"</p>
+<p>GitHub releases are created when the package is in <code>pub</code> stage, ocurring after stage transitions (<code>int → irv → erv → pub</code>). Stage transitions bump <code>Y</code>, so published versions are <strong>unlikely</strong> to be exactly <code>X.0.0</code> (e.g., <code>2.0.0</code>), and <code>Z</code> may be non-zero. Expect tags like <code>2.1.0</code> or <code>2.3.4</code>. "Round" versions may still occur because we version the ontology as a whole (not per package), while packages' independent state transitions influence the overall ontology version.</p>
+</div>
 <h2 id="version-numbering-semantics-increment-reset-rules">Version Numbering &amp; Semantics — Increment &amp; Reset Rules</h2>
 <ul>
 <li>Single-step per release. Exactly one component increments by <code>+1</code> per release — the highest-priority applicable one (<code>X &gt; Y &gt; Z</code>). Lower components never increment concurrently; they only reset (<code>Y → 0</code> on <code>X++</code>; <code>Z → 0</code> on <code>X++</code> or <code>Y++</code>).<ul>

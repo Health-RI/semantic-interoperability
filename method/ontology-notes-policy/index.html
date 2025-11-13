@@ -1835,9 +1835,9 @@ It ensures consistent visual annotation, semantic clarity, and readability acros
 <li>Maintain visual clarity, traceability, and stylistic uniformity across Health-RI ontology artifacts.</li>
 </ul>
 <p>The scope covers all ontology-related UML diagrams, including those representing OntoUML, HRIO, or HRIV concepts.
-It excludes notation for OCL syntax itself or purely graphical conventions unrelated to note usage.</p>
+It excludes notation for formal constraint syntax itself or purely graphical conventions unrelated to note usage.</p>
 <h2 id="note-categories-and-colors">Note Categories and Colors</h2>
-<p><strong>Palette convention (RxCy):</strong> Visual Paradigm (VP) defines a fixed color grid within its Formats window, shown below.</p>
+<p>Palette convention (RxCy): Visual Paradigm (VP) defines a fixed color grid within its Formats window, shown below.</p>
 <figure>
   <img src="../assets/images/color-table.png" alt="Visual Paradigm formatting window showing the color grid. The top row (R1), highlighted in red, contains the color options used for note categories." width="720">
   <figcaption><em>Figure.</em> Visual Paradigm formatting window with the color grid.
@@ -1866,8 +1866,8 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
 <tr>
 <td><strong>CNST</strong></td>
 <td>Constraints &amp; rules</td>
-<td>Plain-text paraphrase of constraints (no OCL)</td>
-<td>paraphrase of OCL constraints, invariants, pre/postconditions, multiplicity rationales</td>
+<td>Plain-language paraphrase of constraints</td>
+<td>paraphrase of rules, invariants, pre/postconditions, multiplicity rationales (no formal syntax)</td>
 <td>R1C2 — Spanish Pink — <div style="background-color:#FFC0C0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFC0C0</div></td>
 </tr>
 <tr>
@@ -1907,13 +1907,13 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
 </tr>
 </tbody>
 </table>
-<p><strong>Color selection rule</strong>: Use the top row (R1) of the VP color palette, choosing columns C2–C8 as indicated in the table above. The first slot (R1C1, white) must be skipped<sup id="fnref:no-default-blue"><a class="footnote-ref" href="#fn:no-default-blue">2</a></sup>.</p>
+<p>Color selection rule: Use the top row (R1) of the VP color palette, choosing columns C2–C8 as indicated in the table above. The first slot (R1C1, white) must be skipped<sup id="fnref:no-default-blue"><a class="footnote-ref" href="#fn:no-default-blue">2</a></sup>.</p>
 <h2 id="note-usage-and-diagramming-rules">Note Usage and Diagramming Rules</h2>
 <h3 id="categories-content">Categories &amp; Content</h3>
 <ul>
 <li>Exactly one category per note — never mix categories in the same note.</li>
 <li>Keep notes concise; link out for detailed context when necessary.</li>
-<li>Do not write OCL expressions inside CNST notes. These notes contain plain-text paraphrases of OCL.</li>
+<li>Do not write formal constraint syntax (e.g., SHACL, OCL) inside CNST notes. These notes contain plain-language descriptions only.</li>
 <li>Treat CNST and SEMI as authoritative; other categories are guidance.</li>
 </ul>
 <h3 id="forms-anchoring">Forms &amp; Anchoring</h3>
@@ -1923,13 +1923,16 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
 <li>Anchored to multiple classes/relations/notes.</li>
 <li>No anchor (interpreted as diagram-wide).</li>
 <li>Always anchor a note when it refers to specific elements; do not leave it anchorless if it targets a particular class, relation, or note.</li>
-<li>CNST notes must be anchored (no diagram-wide CNST). Anchor to the element that holds the OCL; the note contains the plain-text paraphrase of that OCL.</li>
-<li>Use multiple anchors only if the same content genuinely applies to several elements.</li>
+<li><strong>CNST notes must be anchored.</strong> Anchor to the element governed by the constraint that the note paraphrases.</li>
+<li>The constraint's name appears in parentheses in the CNST prefix so the note can be associated with its complete definition maintained in the SHACL constraints file. The model contains only the readable description; the formal rule lives in that external source of truth.</li>
 </ul>
 <h3 id="text-formatting">Text Formatting</h3>
 <ul>
-<li>Use plain ASCII where possible; avoid emphasis (bold, italics, underline, highlighting) except for the tag token, which must be bold.</li>
-<li>The first token must be the tag and a colon (e.g., <strong>CNST:</strong>), followed by a single space and the text.</li>
+<li>Use plain ASCII where possible; avoid emphasis (bold, italics, underline, highlighting) except for the required tokens described below.</li>
+<li>General rule (all categories except CNST): start the note with the tag and a colon, then a space, then the text. Example: <code>SEMI: This clarifies the meaning of …</code></li>
+<li><strong>CNST formatting (updated):</strong> start with a bold prefix that includes the tag and the rule name in parentheses, then a colon, then a space, then the short description. In other words:<br />
+<code>**CNST (RuleName):** short, plain-language description of the rule.</code><br />
+  Here, "RuleName" is the identifier of the rule (following the constraint naming rules) used to associate the note with its formal definition stored in the SHACL file; the remainder is the readable description shown on the diagram.</li>
 <li>Prefer short sentences; use lists only when clarity truly improves (hyphen <code>-</code> list, no nested lists).</li>
 <li>All note text must be fully visible in the diagram and in exports (PNG). Resize or wrap text instead of truncating.</li>
 </ul>
@@ -1954,11 +1957,13 @@ It excludes notation for OCL syntax itself or purely graphical conventions unrel
 <!-- TODO: Update using real examples. -->
 <ul>
 <li><code>SEMI: "Encounter" denotes a healthcare interaction episode; not a location stay.</code></li>
-<li><code>CNST: context Patient must have exactly one active Identifier.</code></li>
+<li><code>**CNST (OneActiveIdentifier):** context Patient must have exactly one active Identifier.</code></li>
 <li><code>RATL: Kept 'Episode' separate from 'Visit' to allow cross-facility grouping.</code></li>
 <li><code>TRAC: Derived from Req HRI-EPI-012 and SNOMED CT 123456.</code></li>
 </ul>
 <h2 id="references">References</h2>
+<!-- TODO: Update with links to the contstaints definitions page. -->
+
 <div class="footnote">
 <hr />
 <ol>
