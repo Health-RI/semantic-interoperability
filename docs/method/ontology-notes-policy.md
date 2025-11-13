@@ -61,8 +61,8 @@ Color selection rule: Use the top row (R1) of the VP color palette, choosing col
 
 - Use plain ASCII where possible; avoid emphasis (bold, italics, underline, highlighting) except for the required tokens described below.
 - General rule (all categories except CNST): start the note with the tag and a colon, then a space, then the text. Example: `SEMI: This clarifies the meaning of …`
-- **CNST formatting (updated):** start with a bold prefix that includes the tag and the rule name in parentheses, then a colon, then a space, then the short description. In other words:  
-  `**CNST (RuleName):** short, plain-language description of the rule.`  
+- **CNST formatting (updated):** start with a bold prefix that includes the tag and the rule name in parentheses, then a colon, then a space, then the short description. In other words:
+  `**CNST (RuleName):** short, plain-language description of the rule.`
   Here, "RuleName" is the identifier of the rule (following the constraint naming rules) used to associate the note with its formal definition stored in the SHACL file; the remainder is the readable description shown on the diagram.
 - Prefer short sentences; use lists only when clarity truly improves (hyphen `-` list, no nested lists).
 - All note text must be fully visible in the diagram and in exports (PNG). Resize or wrap text instead of truncating.

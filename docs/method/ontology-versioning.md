@@ -2,9 +2,21 @@
 
 This document specifies the version number semantics (`X.Y.Z`), priority rules, increment/reset logic, and triggers for `X`/`Y`/`Z`. It also includes the semantic vs. non-semantic decision tests, worked examples, and the versioning flowchart. Stage concepts are referenced only insofar as they drive `Y`-level changes.
 
+This versioning strategy applies to all ontology artifacts released as part of the Health-RI Ontology. In any given release, all artifacts share the same version identifier (`X.Y.Z`) and correspond to the same underlying OntoUML model.
+
 ## Purpose & Scope
 
 Defines how versions are assigned and incremented for the ontology/model releases, including precedence (`X > Y > Z`), single-step increments, and resets. Stage mechanics (`int`/`irv`/`erv`/`pub`) are covered in *Validation Strategy*; they are referenced here only where they directly affect `Y`. This strategy is effective for releases starting at `v1.0.0`; earlier releases (`< v1.0.0`) followed an [earlier versioning policy](./ontology-versioning-old.md).
+
+!!! note "Artifacts covered and alignment"
+    The `X.Y.Z` version identifier applies uniformly to the ontology artifacts released by this initiative:
+    - OntoUML model in Visual Paradigm (`.vpp` project).
+    - OntoUML model exported as JSON (`.json`).
+    - gUFO-based OWL ontology (`.ttl`, in Turtle).
+    - SHACL shapes file (`.shacl`, in Turtle).
+    - Ontology documentation and specification.
+
+    Model changes are authored in the OntoUML `.vpp` project first. For each release, the derived artifacts above are regenerated or updated from that source so they remain synchronized under the same version identifier.
 
 ## Definitions & Glossary
 

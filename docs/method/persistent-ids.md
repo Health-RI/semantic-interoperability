@@ -25,11 +25,15 @@ These URIs point to the **most recent release** of the Health-RI Ontology and re
 | `/ontology/documentation` | Markdown documentation (raw version)         |
 | `/ontology/json`          | OntoUML model exported as JSON               |
 | `/ontology/vpp`           | OntoUML model file in Visual Paradigm format |
+| `/ontology/shacl`         | SHACL constraint and derivation rules        |
 
 Each of these URIs redirects to the latest available version of the resource.
 
 !!! tip
     You can use either `/doc` or `/documentation`, and `/spec` or `/specification` — both forms are valid and equivalent.
+
+!!! note
+    Our SHACL file uses the `.shacl` extension and Turtle serialization.
 
 ### Identifiers for **Versioned Ontology Releases**
 
@@ -46,6 +50,7 @@ Where:
     - `ttl` — OWL ontology (Turtle)
     - `vpp` — OntoUML model (Visual Paradigm)
     - `json` — OntoUML model (JSON)
+    - `shacl` — SHACL constraint and derivation rules (Turtle)
     - `documentation` — Markdown documentation
     - `specification` — HTML specification
 
@@ -65,6 +70,9 @@ Where:
 
 - `https://w3id.org/health-ri/ontology/v0.6.0/specification`
   → HTML specification for version 0.6.0
+
+- `https://w3id.org/health-ri/ontology/v0.11.9/shacl`
+  → SHACL shapes for version 0.11.9
 
 ## SSSOM Mappings PIDs
 
@@ -138,15 +146,17 @@ Versioned PIDs follow semantic versioning and resolve to immutable artifacts for
 
 | PID                                        | Description                                  | Behavior                                | Example                                                                                                                                  |
 | ------------------------------------------ | -------------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `/semantic-interoperability`               | Project-level identifier                     | Redirects to documentation site         | [https://w3id.org/health-ri/semantic-interoperability](https://w3id.org/health-ri/semantic-interoperability)                             |
+| `/semantic-interoperability/git`           | Source code and data repository              | Redirects to GitHub                     | [https://w3id.org/health-ri/semantic-interoperability/git](https://w3id.org/health-ri/semantic-interoperability/git)                     |
 | `/ontology`                                | Ontology root                                | Redirects to raw `.ttl` file            | [https://w3id.org/health-ri/ontology](https://w3id.org/health-ri/ontology)                                                               |
 | `/ontology/ttl`                            | Latest ontology in Turtle format             | Redirects to raw `.ttl` file            | [https://w3id.org/health-ri/ontology/ttl](https://w3id.org/health-ri/ontology/ttl)                                                       |
+| `/ontology/shacl`                          | Latest SHACL shapes                          | Redirects to latest `.shacl`            | [https://w3id.org/health-ri/ontology/shacl](https://w3id.org/health-ri/ontology/shacl)                                                   |
 | `/ontology/specification`                  | Latest HTML specification                    | Human-readable documentation            | [https://w3id.org/health-ri/ontology/specification](https://w3id.org/health-ri/ontology/specification)                                   |
 | `/ontology/documentation`                  | Markdown documentation                       | Redirects to `.md`                      | [https://w3id.org/health-ri/ontology/documentation](https://w3id.org/health-ri/ontology/documentation)                                   |
 | `/ontology/json`                           | Latest JSON export of OntoUML                | Redirects to `.json`                    | [https://w3id.org/health-ri/ontology/json](https://w3id.org/health-ri/ontology/json)                                                     |
 | `/ontology/vpp`                            | Latest OntoUML model (`.vpp`)                | Redirects to Visual Paradigm file       | [https://w3id.org/health-ri/ontology/vpp](https://w3id.org/health-ri/ontology/vpp)                                                       |
 | `/ontology/vX.Y.Z/{format}`                | Versioned ontology release                   | Format-specific persistent access       | [https://w3id.org/health-ri/ontology/v0.6.0/ttl](https://w3id.org/health-ri/ontology/v0.6.0/ttl)                                         |
-| `/semantic-interoperability`               | Project-level identifier                     | Redirects to documentation site         | [https://w3id.org/health-ri/semantic-interoperability](https://w3id.org/health-ri/semantic-interoperability)                             |
-| `/semantic-interoperability/git`           | Source code and data repository              | Redirects to GitHub                     | [https://w3id.org/health-ri/semantic-interoperability/git](https://w3id.org/health-ri/semantic-interoperability/git)                     |
+| `/ontology/vX.Y.Z/shacl`                   | Versioned SHACL shapes                       | Redirects to `.shacl` for that version  | [https://w3id.org/health-ri/ontology/v0.11.9/shacl](https://w3id.org/health-ri/ontology/v0.11.9/shacl)                                   |
 | `/semantic-interoperability/mappings`      | Latest SSSOM mappings (TTL)                  | Redirects to latest `.ttl`              | [https://w3id.org/health-ri/semantic-interoperability/mappings](https://w3id.org/health-ri/semantic-interoperability/mappings)           |
 | `/semantic-interoperability/mappings/ttl`  | Latest SSSOM mappings (TTL, explicit)        | Redirects to latest `.ttl`              | [https://w3id.org/health-ri/semantic-interoperability/mappings/ttl](https://w3id.org/health-ri/semantic-interoperability/mappings/ttl)   |
 | `/semantic-interoperability/mappings/tsv`  | Latest SSSOM mappings (TSV)                  | Redirects to latest `.tsv`              | [https://w3id.org/health-ri/semantic-interoperability/mappings/tsv](https://w3id.org/health-ri/semantic-interoperability/mappings/tsv)   |
