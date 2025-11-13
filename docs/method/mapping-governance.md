@@ -18,6 +18,10 @@ This policy defines how the Health-RI SSSOM Mapping Set is governed, validated, 
 - Applies to all mapping records proposed for or included in Health-RI mapping artifacts (TSV/TTL) and their metadata as defined on the [Mapping Set](./mapping-schema.md) page.
 - Covers all submission routes referenced on the [Mapping Set](./mapping-schema.md) page (e.g., issue form or XLSX) and the end-to-end path to publication.
 
+<!-- Future update will be necessary -->
+#### Start stage for mappings
+At the current maturity level, mapping work may begin once the relevant HRIO package reaches `irv` (internal review). Our target policy is to allow mappings only after the package is in `pub` (published). Stage definitions are described in the [Ontology Lifecycle and Validation Policy](./ontology-validation.md).
+
 ### In Scope
 
 - Role definitions and two-person rule.
@@ -84,7 +88,7 @@ The lifecycle follows the flow below.
     - Curation → Published: Curator confirms schema, CURIE/URI hygiene, and supersession integrity.
     - Published → Superseded: New record must reference the prior via `replaces` (append-only).
 
-!!! important "Timeboxes (SLA) summary"
+!!! note "Timeboxes (SLA) summary"
     - **Reviewer:** Concludes within **one sprint** from receipt; extendable to **two sprints** with documented justification.
     - **Curator:** Provides an outcome (**return to Mapper** or **publish**) within **one sprint** from receipt.
     - **External submission:** Initiate community submission within **one sprint** of publication.
@@ -240,7 +244,7 @@ When a source or target standard maintains an official mapping registry or accep
 3. Record the submission: Add the submission URL or ticket ID in release notes; optionally place a per-row link in the `comment` field.
 4. Handle outcomes via supersession: If the external review requests changes, publish a new record that supersedes the previous one using `replaces` (append-only), with a short rationale.
 
-!!! important "Submission SLA"
+!!! note "Submission SLA"
     Submissions to external registries (e.g., OHDSI/OMOP) must be initiated within **one sprint** of publication.
 
 <!-- footnotes -->

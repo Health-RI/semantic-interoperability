@@ -64,10 +64,10 @@ Below is the schema for the SSSOM TSV file, with each field's link to the specif
 | [comment](https://mapping-commons.github.io/sssom/comment/)                                  | String                | 0..1        | No        | Free-text notes about the mapping                                   | `Reviewed for consistency with ontology v0.9.1.`       | Contributor              |
 | [replaces](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/replaces/) | EntityReference(s)    | 0..*        | No        | Indicates that this mapping record replaces another                 | `hrim:1c56bebe`                                        | Contributor              |
 
-!!! important "Identity distinctness (two-person rule)"
+!!! note "Identity distinctness (two-person rule)"
     For every row, the set of `author_id` values **must be disjoint** from the set of `reviewer_id` values. This is validated at publication time (see the [Mappings Governance](./mapping-governance.md) page).
 
-!!! important "Uniqueness of `hriv:hasExactMeaning` (current rows)"
+!!! note "Uniqueness of `hriv:hasExactMeaning` (current rows)"
     For any given `subject_id`, there may be **at most one** *current* row with `predicate_id = hriv:hasExactMeaning` (i.e., not superseded via `replaces`, and with no `predicate_modifier = Not`). Rationale: Strategy requires a single exact meaning per concept; "current" follows the append-only supersession model. See the [Mappings Governance](./mapping-governance.md) page for the publication-time check.
 
 !!! note "Responsible initiative (publisher)"

@@ -6,6 +6,9 @@ This document defines the per-package stages (`int`, `irv`, `erv`, `pub`), how t
 
 Specifies stage governance for ontology packages: how stage states are tracked, transitioned, and reverted, and how those transitions are recorded. It also defines who performs validation and reviews, when they occur, and how version increments (Y++) are applied. Version impacts are acknowledged where stages drive them; see [Versioning Strategy](./ontology-versioning.md) for the full versioning logic. This policy applies to all modelers and reviewers involved in ontology development and maintenance.
 
+!!! info "Input sources at all stages"
+    Input may arrive at any stage (`int`, `irv`, `erv`, `pub`) and from multiple sources. For example, external contributors (e.g., via GitHub Issues or community calls), the mappings team, domain experts, and other stakeholders. Such input is triaged within the current stage and it does not change the stage by itself. If accepted input entails semantic changes, apply the reversion and versioning rules in [Stage Reversions — Why and When](#stage-reversions--why-and-when) and [Policy for Semantic Modifications](#policy-for-semantic-modifications).
+
 ## Definitions & Glossary (Stages)
 
 Stages are tracked per package inside the Visual Paradigm project as tagged values on packages and displayed in documentation.

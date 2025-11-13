@@ -16,6 +16,9 @@ Defines how versions are assigned and incremented for the ontology/model release
 
 > Note on stages. Stages are tracked per package (see *Validation Strategy*). A stage transition causes `Y++` and resets `Z → 0`, per rules below.
 
+!!! note "Published tags are rarely "round""
+    GitHub releases are created when the package is in `pub` stage, ocurring after stage transitions (`int → irv → erv → pub`). Stage transitions bump `Y`, so published versions are **unlikely** to be exactly `X.0.0` (e.g., `2.0.0`), and `Z` may be non-zero. Expect tags like `2.1.0` or `2.3.4`. "Round" versions may still occur because we version the ontology as a whole (not per package), while packages' independent state transitions influence the overall ontology version.
+
 ## Version Numbering & Semantics — Increment & Reset Rules
 
 - Single-step per release. Exactly one component increments by `+1` per release — the highest-priority applicable one (`X > Y > Z`). Lower components never increment concurrently; they only reset (`Y → 0` on `X++`; `Z → 0` on `X++` or `Y++`).
