@@ -12,8 +12,8 @@
 
 <https://w3id.org/health-ri/ontology> a owl:Ontology ;
     dct:abstract "Developed by Health‑RI and collaborators, this ontology—grounded in UFO and implemented in gUFO/OWL—enables semantic interoperability across healthcare and life sciences, extending beyond systems to include institutions, research infrastructures, and services. It establishes a common reference model that harmonizes data from diverse sources by formally defining domain concepts and allowing mappings from heterogeneous sources."@en ;
-    dct:conformsTo <https://w3id.org/health-ri/ontology/v0.11.9/json>,
-        <https://w3id.org/health-ri/ontology/v0.11.9/vpp> ;
+    dct:conformsTo <https://w3id.org/health-ri/ontology/v1.1.0/json>,
+        <https://w3id.org/health-ri/ontology/v1.1.0/vpp> ;
     dct:contributor <https://orcid.org/0000-0003-0771-3516>,
         <https://orcid.org/0000-0003-1451-4240>,
         <https://orcid.org/0009-0006-1783-9082> ;
@@ -23,14 +23,14 @@
     dct:issued "2025-05-20"^^xsd:date ;
     dct:language "en"^^xsd:language ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dct:modified "2025-10-29"^^xsd:date ;
+    dct:modified "2025-11-12"^^xsd:date ;
     dct:publisher <https://w3id.org/health-ri> ;
     dct:title "Health-RI Ontology"@en ;
     vann:preferredNamespacePrefix "hrio" ;
     vann:preferredNamespaceUri "https://w3id.org/health-ri/ontology#"^^xsd:anyURI ;
     owl:imports gufo: ;
-    owl:versionIRI <https://w3id.org/health-ri/ontology/v0.11.9> ;
-    owl:versionInfo "0.11.9" ;
+    owl:versionIRI <https://w3id.org/health-ri/ontology/v1.1.0> ;
+    owl:versionInfo "1.1.0" ;
     dcat:keyword "biomedicine"@en,
         "clinical data"@en,
         "health information systems"@en,
@@ -121,7 +121,13 @@ hrio:end a owl:ObjectProperty ;
     rdfs:range hrio:OffsetDateTime ;
     rdfs:subPropertyOf gufo:hasReifiedQualityValue .
 
-hrio:femaleAdministrativeGenderInheresInPersonWithFemaleAdministrativeGender rdfs:subPropertyOf hrio:hasAdministrativeGender .
+hrio:femaleAdministrativeGenderInheresInPersonWithFemaleAdministrativeGender rdfs:subPropertyOf hrio:administrativeGenderInheresInPersonWithRecognizedAdministrativeGender .
+
+hrio:hasAllosome a gufo:MaterialRelationshipType,
+        owl:ObjectProperty ;
+    rdfs:label "has allosome"@en ;
+    rdfs:domain hrio:Person ;
+    rdfs:range hrio:Allosome .
 
 hrio:hour a owl:DatatypeProperty ;
     rdfs:label "hour"@en ;
@@ -141,11 +147,7 @@ hrio:isBiologicalMotherOf a gufo:MaterialRelationshipType,
     rdfs:domain hrio:BiologicalMother ;
     rdfs:range hrio:Person .
 
-hrio:legalGenderRecognitionMediatesLegalGenderRecognizer rdfs:subPropertyOf hrio:recognizedBy .
-
-hrio:legalGenderRecognitionMediatesPersonWithRecognizedLegalGender rdfs:subPropertyOf hrio:recognizes .
-
-hrio:maleAdministrativeGenderInheresInPersonWithMaleAdministrativeGender rdfs:subPropertyOf hrio:hasAdministrativeGender .
+hrio:maleAdministrativeGenderInheresInPersonWithMaleAdministrativeGender rdfs:subPropertyOf hrio:administrativeGenderInheresInPersonWithRecognizedAdministrativeGender .
 
 hrio:minute a owl:DatatypeProperty ;
     rdfs:label "minute"@en ;
@@ -164,7 +166,7 @@ hrio:nanosecond a owl:DatatypeProperty ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf gufo:hasValueComponent .
 
-hrio:nonBinaryAdministrativeGenderInheresInPersonWithNonBinaryAdministrativeGender rdfs:subPropertyOf hrio:hasAdministrativeGender .
+hrio:nonBinaryAdministrativeGenderInheresInPersonWithNonBinaryAdministrativeGender rdfs:subPropertyOf hrio:administrativeGenderInheresInPersonWithRecognizedAdministrativeGender .
 
 hrio:parentOf a gufo:MaterialRelationshipType,
         owl:ObjectProperty ;
@@ -172,7 +174,11 @@ hrio:parentOf a gufo:MaterialRelationshipType,
     rdfs:domain hrio:Person ;
     rdfs:range hrio:Person .
 
-hrio:personWithRecognizedLegalGenderInheresInLegalGender rdfs:subPropertyOf hrio:hasAdministrativeGender .
+hrio:personWithRecognizedLegalGenderInheresInLegalGender rdfs:subPropertyOf hrio:administrativeGenderInheresInPersonWithRecognizedAdministrativeGender .
+
+hrio:recognitionBy rdfs:subPropertyOf hrio:recognizedBy .
+
+hrio:recognizes rdfs:subPropertyOf hrio:recognizes_1 .
 
 hrio:second a owl:DatatypeProperty ;
     rdfs:label "second"@en ;
@@ -238,12 +244,12 @@ Also called a "birth record" or "attending physician�s report"."""@en ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         gufo:FunctionalComplex .
 
-hrio:BirthRelatedLegislationRule a gufo:Kind,
+hrio:BirthRelatedLegislationRule a gufo:Category,
         owl:Class,
         owl:NamedIndividual ;
     rdfs:label "Birth-related Legislation Rule"@en ;
     rdfs:comment "Describes the set of legal or regulatory requirements that govern how sex at birth must be assessed, assigned, and recorded. This concept ensures that the model accounts for variation in laws and administrative practices across jurisdictions."@en ;
-    rdfs:subClassOf gufo:IntrinsicMode .
+    rdfs:subClassOf gufo:FunctionalComplex .
 
 hrio:CareOrientedDiagnosis a gufo:Role,
         owl:Class,
@@ -671,15 +677,6 @@ hrio:AdministrativeGenderRecognitionDocument a gufo:RoleMixin,
             owl:someValuesFrom hrio:AdministrativeGenderRecognition ],
         hrio:Document .
 
-hrio:Allosome a gufo:SubKind,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Allosome"@en ;
-    rdfs:comment "Allosome is a subkind of Chromosome that denotes the sex chromosomes present in human cells. Allosomes are responsible for determining chromosomal sex and also contribute to sexual development and related biological traits. In humans, diploid cells typically contain two allosomes, which may occur in the combinations XX or XY."@en ;
-    rdfs:subClassOf hrio:Chromosome ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:AllosomeY hrio:AllosomeX ) ] .
-
 hrio:AllosomeX a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
@@ -839,15 +836,6 @@ hrio:HealthcareProfessional a gufo:Role,
     rdfs:label "Healthcare Professional"@en ;
     rdfs:comment "Represents any trained and authorized individual who provides medical or health-related services. This includes doctors, nurses, midwives, and other clinicians involved in patient care. In the context of this model, healthcare professionals carry out assessments, make observations, and record classifications such as phenotypic sex at birth, but their role more broadly encompasses diagnosis, treatment, counseling, and support for overall health and well-being."@en ;
     rdfs:subClassOf hrio:Person .
-
-hrio:HumanCell a gufo:Kind,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Human Cell"@en ;
-    rdfs:comment "The fundamental structural and functional unit of the human body. A Human Cell is modeled as a kind that provides the basis for distinguishing between diploid and haploid cell types in the ontology. It is represented as the container of chromosomes, with its structural variation expressed through the number of chromosomes it includes."@en ;
-    rdfs:subClassOf gufo:FunctionalComplex ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:HaploidCell hrio:DiploidCell ) ] .
 
 hrio:HumanHealthcareDiagnosis a gufo:SubKind,
         owl:Class,
@@ -1064,6 +1052,12 @@ Physical Document specializes Document and is disjoint from Digital Document."""
     rdfs:subClassOf gufo:FunctionalComplex,
         hrio:Document .
 
+hrio:Polyploid a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Polyploid"@en ;
+    rdfs:subClassOf hrio:HumanCell .
+
 hrio:PostmortemDiagnosis a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
@@ -1129,6 +1123,15 @@ hrio:AdministrativeGenderRecognizingOrganization a gufo:Role,
             owl:someValuesFrom hrio:AdministrativeGenderRecognition ],
         hrio:Organization .
 
+hrio:Allosome a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Allosome"@en ;
+    rdfs:comment "Allosome is a subkind of Chromosome that denotes the sex chromosomes present in human cells. Allosomes are responsible for determining chromosomal sex and also contribute to sexual development and related biological traits. In humans, diploid cells typically contain two allosomes, which may occur in the combinations XX or XY."@en ;
+    rdfs:subClassOf hrio:Chromosome ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:AllosomeX hrio:AllosomeY ) ] .
+
 hrio:Animal a gufo:Category,
         owl:Class,
         owl:NamedIndividual ;
@@ -1180,7 +1183,7 @@ hrio:DiagnosticAssessment a gufo:EventType,
             owl:onProperty [ owl:inverseOf gufo:manifestedIn ] ],
         gufo:Event ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ConclusiveDiagnosticAssessment hrio:InconclusiveDiagnosticAssessment ) ] .
+            owl:unionOf ( hrio:InconclusiveDiagnosticAssessment hrio:ConclusiveDiagnosticAssessment ) ] .
 
 hrio:DiagnosticAssessmentOutcome a gufo:Kind,
         owl:Class,
@@ -1193,7 +1196,7 @@ hrio:DiagnosticAssessmentOutcome a gufo:Kind,
             owl:onProperty gufo:inheresIn ],
         hrio:Belief ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:Diagnosis hrio:NoDiagnosisOutcome ) ] .
+            owl:unionOf ( hrio:NoDiagnosisOutcome hrio:Diagnosis ) ] .
 
 hrio:Document a gufo:Category,
         owl:Class,
@@ -1202,7 +1205,7 @@ hrio:Document a gufo:Category,
     rdfs:comment "A recorded piece of information that can be stored, shared, and referenced, regardless of medium. Documents serve as authoritative records of facts, decisions, or transactions and can exist in physical or digital form. They are used to communicate, formalize, and preserve information across contexts such as administration, law, business, and personal records."@en ;
     rdfs:subClassOf gufo:Object ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:DigitalDocument hrio:PhysicalDocument ) ] .
+            owl:unionOf ( hrio:PhysicalDocument hrio:DigitalDocument ) ] .
 
 hrio:ExposureBasedHealthCondition a gufo:Category,
         owl:Class,
@@ -1225,6 +1228,15 @@ hrio:HaploidCell a gufo:SubKind,
     rdfs:label "Haploid Cell"@en ;
     rdfs:comment "A Haploid Cell is a human cell that contains a single set of chromosomes. It is modeled as a subkind of Human Cell, disjoint and complete with the diploid alternative, and participates in the componentOf relation with chromosomes. Its reduced chromosomal count is essential for distinguishing it from diploid cells, and in the model it also serves as the basis from which gametes are defined."@en ;
     rdfs:subClassOf hrio:HumanCell .
+
+hrio:HumanCell a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Human Cell"@en ;
+    rdfs:comment "The fundamental structural and functional unit of the human body. A Human Cell is modeled as a kind that provides the basis for distinguishing between diploid and haploid cell types in the ontology. It is represented as the container of chromosomes, with its structural variation expressed through the number of chromosomes it includes."@en ;
+    rdfs:subClassOf gufo:FunctionalComplex ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:DiploidCell hrio:HaploidCell hrio:Polyploid ) ] .
 
 hrio:IndividualAgent a gufo:Category,
         owl:Class,
@@ -1338,12 +1350,12 @@ hrio:Sex a gufo:Category,
         owl:NamedIndividual ;
     rdfs:label "Sex"@en ;
     rdfs:comment "Denotes the overall category for classifying a person's biological traits related to reproductive anatomy, chromosomes, and other physical characteristics. It includes different dimensions such as karyotypical sex (chromosomal composition), phenotypic sex (observable anatomical features), and sex at birth (the classification assigned during birth registration). This category emphasizes that sex, while grounded in biology, can involve observation, interpretation, and formal assignment."@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:unionOf ( gufo:IntrinsicMode gufo:ExtrinsicMode ) ],
+        [ a owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass hrio:Person ;
             owl:onProperty gufo:inheresIn ],
-        [ a owl:Class ;
-            owl:unionOf ( gufo:IntrinsicMode gufo:ExtrinsicMode ) ],
         gufo:Aspect .
 
 hrio:SexAtBirthAssignment a gufo:Kind,
@@ -1374,7 +1386,7 @@ hrio:SexualDimorphicCharacteristic a gufo:Category,
     rdfs:comment "An umbrella category for traits that show differences between sexes. These characteristics are used to classify biological sex by examining their type and distribution in an individual. Examples include body hair patterns, skeletal structure, and other anatomical features."@en ;
     rdfs:subClassOf gufo:FunctionalComplex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:MaleTypicalDimorphicCharacteristic hrio:IndeterminateDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic ) ] .
+            owl:unionOf ( hrio:IndeterminateDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic ) ] .
 
 hrio:VisualSexCharacteristic a gufo:Category,
         owl:Class,
@@ -1451,7 +1463,7 @@ hrio:KaryotypicalFemale a gufo:SubKind,
 Karyotypical Female subsumes both regular and variant karyotypic presentations that are categorized as female in the model. It is exclusive with Karyotypical Male within the karyotypical-sex classification of persons."""@en ;
     rdfs:subClassOf hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:VariantKaryotypicalFemale hrio:RegularKaryotypicalFemale ) ] .
+            owl:unionOf ( hrio:RegularKaryotypicalFemale hrio:VariantKaryotypicalFemale ) ] .
 
 hrio:KaryotypicalMale a gufo:SubKind,
         owl:Class,
@@ -1462,7 +1474,7 @@ hrio:KaryotypicalMale a gufo:SubKind,
 Karyotypical Male subsumes both regular and variant karyotypic presentations that are categorized as male in the model. It is exclusive with Karyotypical Female within the karyotypical-sex classification of persons."""@en ;
     rdfs:subClassOf hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:RegularKaryotypicalMale hrio:VariantKaryotypicalMale ) ] .
+            owl:unionOf ( hrio:VariantKaryotypicalMale hrio:RegularKaryotypicalMale ) ] .
 
 hrio:NonStructuralHealthCondition a gufo:Category,
         owl:Class,
@@ -1501,7 +1513,7 @@ hrio:PersonWithRegularSexChromosome a gufo:SubKind,
     rdfs:comment "A Person with Regular Sex Chromosome is represented as an individual whose sex chromosomes conform to the most frequent configurations in the population. In the model this class specializes Person and is disjoint and complete with its variant counterpart, capturing the regular chromosomal patterns used to define standard karyotypical categories. Its role is to provide the structural basis for distinguishing the commonly occurring XX and XY arrangements from other possibilities."@en ;
     rdfs:subClassOf hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:RegularKaryotypicalFemale hrio:RegularKaryotypicalMale ) ] .
+            owl:unionOf ( hrio:RegularKaryotypicalMale hrio:RegularKaryotypicalFemale ) ] .
 
 hrio:PersonsBirth a gufo:EventType,
         owl:Class,
@@ -1596,7 +1608,7 @@ A diagnosed entity may be characterized by conditions and by condition indicator
             owl:onProperty gufo:inheresIn ],
         hrio:Substantial ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:DiagnosedBiologicalPart hrio:DiagnosedSpecimen hrio:DiagnosedGroup hrio:DiagnosedCellularEntity ) ] .
+            owl:unionOf ( hrio:DiagnosedSpecimen hrio:DiagnosedCellularEntity hrio:DiagnosedGroup hrio:DiagnosedBiologicalPart ) ] .
 
 hrio:DiagnosingAgent a gufo:RoleMixin,
         owl:Class,
@@ -1614,7 +1626,7 @@ A diagnosing agent can be characterized by diagnosis suspicions it holds, and ma
         gufo:FunctionalComplex,
         hrio:Agent ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:DiagnosingPerson hrio:DiagnosingArtificialAgent ) ] .
+            owl:unionOf ( hrio:DiagnosingArtificialAgent hrio:DiagnosingPerson ) ] .
 
 hrio:ExternallyCausedHealthCondition a gufo:Category,
         owl:Class,
@@ -1624,7 +1636,7 @@ hrio:ExternallyCausedHealthCondition a gufo:Category,
     rdfs:subClassOf gufo:ExtrinsicMode,
         hrio:KnownOriginHealthCondition ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:Injury hrio:ExposureBasedHealthCondition ) ] .
+            owl:unionOf ( hrio:ExposureBasedHealthCondition hrio:Injury ) ] .
 
 hrio:GenderIdentity a gufo:Kind,
         owl:Class,
@@ -1638,7 +1650,7 @@ hrio:GenderIdentity a gufo:Kind,
         gufo:IntrinsicMode,
         hrio:Gender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:FemaleGenderIdentity hrio:MaleGenderIdentity hrio:NonBinaryGenderIdentity ) ] .
+            owl:unionOf ( hrio:NonBinaryGenderIdentity hrio:FemaleGenderIdentity hrio:MaleGenderIdentity ) ] .
 
 hrio:NonTraumaticHealthCondition a gufo:Category,
         owl:Class,
@@ -1660,7 +1672,7 @@ hrio:PersonWithAssessedPhenotypicSex a gufo:Role,
             owl:someValuesFrom hrio:PhenotypicSex ],
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:AmbiguousPhenotypicPerson hrio:MalePhenotypicPerson hrio:FemalePhenotypicPerson ) ] .
+            owl:unionOf ( hrio:FemalePhenotypicPerson hrio:MalePhenotypicPerson hrio:AmbiguousPhenotypicPerson ) ] .
 
 hrio:PersonWithVariantSexChromosome a gufo:SubKind,
         owl:Class,
@@ -1669,7 +1681,7 @@ hrio:PersonWithVariantSexChromosome a gufo:SubKind,
     rdfs:comment "A Person with Variant Sex Chromosome is represented as an individual whose chromosomal composition departs from the most common XX or XY configurations. In the model this class complements the regular category, ensuring that cases of chromosomal variation are consistently represented. It specializes Person and accounts for less frequent patterns, maintaining completeness and disjointness with the regular classification to capture chromosomal diversity in a systematic way."@en ;
     rdfs:subClassOf hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:KaryotypicalIndeterminatePerson hrio:VariantKaryotypicalMale hrio:VariantKaryotypicalFemale ) ] .
+            owl:unionOf ( hrio:VariantKaryotypicalFemale hrio:KaryotypicalIndeterminatePerson hrio:VariantKaryotypicalMale ) ] .
 
 hrio:Substantial a gufo:Category,
         owl:Class,
@@ -1679,7 +1691,7 @@ hrio:Substantial a gufo:Category,
     rdfs:subClassOf gufo:Object,
         hrio:Endurant ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:Agent hrio:Object ) ] .
+            owl:unionOf ( hrio:Object hrio:Agent ) ] .
 
 hrio:AdministrativeGender a gufo:Kind,
         owl:Class,
@@ -1717,7 +1729,7 @@ hrio:HealthCondition a gufo:Category,
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:EstablishedHealthCondition hrio:RiskBasedHealthCondition ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:NonPathologicalHealthCondition hrio:PathologicalHealthCondition ) ] .
+            owl:unionOf ( hrio:PathologicalHealthCondition hrio:NonPathologicalHealthCondition ) ] .
 
 hrio:KnownOriginHealthCondition a gufo:Category,
         owl:Class,
@@ -1726,9 +1738,9 @@ hrio:KnownOriginHealthCondition a gufo:Category,
     rdfs:comment "A Known-Origin Health Condition is a category used to represent health conditions for which a specific cause can be identified. In the model, it is contrasted with idiopathic cases, emphasizing the distinction between conditions explained by their etiology and those without a clear causal account."@en ;
     rdfs:subClassOf hrio:EstablishedHealthCondition ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:AcquiredHealthCondition hrio:CongenitalHealthCondition ) ],
+            owl:unionOf ( hrio:CongenitalHealthCondition hrio:AcquiredHealthCondition ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:ExternallyCausedHealthCondition hrio:InherentHealthCondition ) ] .
+            owl:unionOf ( hrio:InherentHealthCondition hrio:ExternallyCausedHealthCondition ) ] .
 
 hrio:LivingPerson a gufo:Phase,
         owl:Class,
@@ -1737,9 +1749,9 @@ hrio:LivingPerson a gufo:Phase,
     rdfs:comment "Living Person denotes the life-status phase of a person whose life is ongoing. Together with Dead Person it forms a complete and disjoint partition of persons by living status. Within this phase, the life-stage subclasses Child, Adolescent, and Adult form a complete and disjoint specialization, and the self-awareness subclasses Self-aware Person and Non-self-aware Person form a complete and disjoint specialization."@en ;
     rdfs:subClassOf hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:Adolescent hrio:Child hrio:Adult ) ],
+            owl:unionOf ( hrio:Adult hrio:Child hrio:Adolescent ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:NonSelfAwarePerson hrio:SelfAwarePerson ) ] .
+            owl:unionOf ( hrio:SelfAwarePerson hrio:NonSelfAwarePerson ) ] .
 
 hrio:PersonWithAssignedSexAtBirth a gufo:Role,
         owl:Class,
@@ -1770,7 +1782,7 @@ hrio:PersonWithRecognizedAdministrativeGender a gufo:Role,
             owl:someValuesFrom hrio:AdministrativeGender ],
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:PersonWithNonBinaryAdministrativeGender hrio:PersonWithFemaleAdministrativeGender hrio:PersonWithMaleAdministrativeGender ) ] .
+            owl:unionOf ( hrio:PersonWithMaleAdministrativeGender hrio:PersonWithNonBinaryAdministrativeGender hrio:PersonWithFemaleAdministrativeGender ) ] .
 
 hrio:PersonWithRecognizedLegalGender a gufo:Role,
         owl:Class,
@@ -1787,7 +1799,7 @@ hrio:PersonWithRecognizedLegalGender a gufo:Role,
         hrio:Person,
         hrio:PersonWithRecognizedAdministrativeGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:LegalFemalePerson hrio:LegalNonBinaryPerson hrio:LegalMalePerson ) ] .
+            owl:unionOf ( hrio:LegalNonBinaryPerson hrio:LegalFemalePerson hrio:LegalMalePerson ) ] .
 
 hrio:Agent a gufo:Category,
         owl:Class,
@@ -1813,11 +1825,11 @@ hrio:EstablishedHealthCondition a gufo:Category,
     rdfs:comment "An Established Health Condition is represented as a condition that is already present and identifiable, as opposed to a risk or predisposition. In the model it stands in contrast to risk-based health conditions, forming part of a complete and disjoint partition of health condition nature types. It provides the structural basis for organizing conditions that have been diagnosed or are otherwise clinically recognized, supporting their classification according to structural, functional, psychological, or etiological aspects."@en ;
     rdfs:subClassOf hrio:HealthCondition ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:NonTraumaticHealthCondition hrio:TraumaticHealthCondition ) ],
+            owl:unionOf ( hrio:TraumaticHealthCondition hrio:NonTraumaticHealthCondition ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:StructuralHealthCondition hrio:NonStructuralHealthCondition ) ],
+            owl:unionOf ( hrio:NonStructuralHealthCondition hrio:StructuralHealthCondition ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:IdiopathicHealthCondition hrio:KnownOriginHealthCondition ) ] .
+            owl:unionOf ( hrio:KnownOriginHealthCondition hrio:IdiopathicHealthCondition ) ] .
 
 hrio:HealthcareDiagnosis a gufo:SubKind,
         owl:Class,
@@ -1828,11 +1840,11 @@ hrio:HealthcareDiagnosis a gufo:SubKind,
 In the model it is organized by focus (human or veterinary), by source of evidence (for example clinical, laboratory, radiological, epidemiological, or administrative coding origins), and by use (care-oriented, surveillance, or research)."""@en ;
     rdfs:subClassOf hrio:Diagnosis ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:EpidemiologicalDiagnosis hrio:RadiologicalDiagnosis hrio:LaboratoryDiagnosis hrio:ClinicalDiagnosis hrio:AdministrativeCodingDiagnosis ) ],
+            owl:unionOf ( hrio:EpidemiologicalDiagnosis hrio:ClinicalDiagnosis hrio:LaboratoryDiagnosis hrio:AdministrativeCodingDiagnosis hrio:RadiologicalDiagnosis ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:HumanHealthcareDiagnosis hrio:VeterinaryDiagnosis ) ],
+            owl:unionOf ( hrio:VeterinaryDiagnosis hrio:HumanHealthcareDiagnosis ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:SurveillanceDiagnosis hrio:CareOrientedDiagnosis hrio:ResearchDiagnosis ) ] .
+            owl:unionOf ( hrio:ResearchDiagnosis hrio:CareOrientedDiagnosis hrio:SurveillanceDiagnosis ) ] .
 
 hrio:Month a gufo:AbstractIndividualType,
         owl:Class,
@@ -1860,7 +1872,7 @@ A Person may bear intrinsic modes such as Sex and Gender Identity, which can be 
         hrio:Animal,
         hrio:IndividualAgent ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:PersonWithVariantSexChromosome hrio:PersonWithRegularSexChromosome ) ],
+            owl:unionOf ( hrio:PersonWithRegularSexChromosome hrio:PersonWithVariantSexChromosome ) ],
         [ a owl:Class ;
             owl:unionOf ( hrio:KaryotypicalFemale hrio:KaryotypicalMale ) ],
         [ a owl:Class ;
@@ -1870,67 +1882,67 @@ A Person may bear intrinsic modes such as Sex and Gender Identity, which can be 
         [ a owl:Class ;
             owl:unionOf ( hrio:MaleBiologicalPerson hrio:IndeterminateBiologicalPerson hrio:FemaleBiologicalPerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:PersonWithUnassignedLegalGender hrio:PersonWithRecognizedLegalGender ) ] .
+            owl:unionOf ( hrio:PersonWithRecognizedLegalGender hrio:PersonWithUnassignedLegalGender ) ] .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:HaploidCell hrio:DiploidCell ) .
+    owl:members ( hrio:RegularKaryotypicalMale hrio:RegularKaryotypicalFemale ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:RegularKaryotypicalFemale hrio:RegularKaryotypicalMale ) .
+    owl:members ( hrio:PersonWithRegularSexChromosome hrio:PersonWithVariantSexChromosome ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:PersonWithVariantSexChromosome hrio:PersonWithRegularSexChromosome ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( hrio:KaryotypicalIndeterminatePerson hrio:VariantKaryotypicalMale hrio:VariantKaryotypicalFemale ) .
+    owl:members ( hrio:VariantKaryotypicalFemale hrio:KaryotypicalIndeterminatePerson hrio:VariantKaryotypicalMale ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:KaryotypicalFemale hrio:KaryotypicalMale ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:VariantKaryotypicalFemale hrio:RegularKaryotypicalFemale ) .
+    owl:members ( hrio:RegularKaryotypicalFemale hrio:VariantKaryotypicalFemale ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:RegularKaryotypicalMale hrio:VariantKaryotypicalMale ) .
+    owl:members ( hrio:VariantKaryotypicalMale hrio:RegularKaryotypicalMale ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:NonHumanAnimal hrio:Person ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:NonTraumaticHealthCondition hrio:TraumaticHealthCondition ) .
+    owl:members ( hrio:DiploidCell hrio:HaploidCell hrio:Polyploid ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:AcquiredHealthCondition hrio:CongenitalHealthCondition ) .
+    owl:members ( hrio:TraumaticHealthCondition hrio:NonTraumaticHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:StructuralHealthCondition hrio:NonStructuralHealthCondition ) .
+    owl:members ( hrio:CongenitalHealthCondition hrio:AcquiredHealthCondition ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hrio:NonStructuralHealthCondition hrio:StructuralHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:EstablishedHealthCondition hrio:RiskBasedHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:ExternallyCausedHealthCondition hrio:InherentHealthCondition ) .
+    owl:members ( hrio:InherentHealthCondition hrio:ExternallyCausedHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:ExposureBasedHealthCondition hrio:InherentHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:IdiopathicHealthCondition hrio:KnownOriginHealthCondition ) .
+    owl:members ( hrio:KnownOriginHealthCondition hrio:IdiopathicHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:NonPathologicalHealthCondition hrio:PathologicalHealthCondition ) .
+    owl:members ( hrio:PathologicalHealthCondition hrio:NonPathologicalHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:ArtificialAgent hrio:Person ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:DigitalDocument hrio:PhysicalDocument ) .
+    owl:members ( hrio:PhysicalDocument hrio:DigitalDocument ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:Diagnosis hrio:NoDiagnosisOutcome ) .
+    owl:members ( hrio:NoDiagnosisOutcome hrio:Diagnosis ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:ConclusiveDiagnosticAssessment hrio:InconclusiveDiagnosticAssessment ) .
+    owl:members ( hrio:InconclusiveDiagnosticAssessment hrio:ConclusiveDiagnosticAssessment ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:PositiveDiagnosisAssessment hrio:NegativeDiagnosisAssessment ) .
@@ -1939,13 +1951,13 @@ A Person may bear intrinsic modes such as Sex and Gender Identity, which can be 
     owl:members ( hrio:PostmortemDiagnosis hrio:AntemortemDiagnosis ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:EpidemiologicalDiagnosis hrio:RadiologicalDiagnosis hrio:LaboratoryDiagnosis hrio:ClinicalDiagnosis hrio:AdministrativeCodingDiagnosis ) .
+    owl:members ( hrio:EpidemiologicalDiagnosis hrio:ClinicalDiagnosis hrio:LaboratoryDiagnosis hrio:AdministrativeCodingDiagnosis hrio:RadiologicalDiagnosis ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:HumanHealthcareDiagnosis hrio:VeterinaryDiagnosis ) .
+    owl:members ( hrio:VeterinaryDiagnosis hrio:HumanHealthcareDiagnosis ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:Agent hrio:Object ) .
+    owl:members ( hrio:Object hrio:Agent ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:AdministrativeGender hrio:GenderIdentity ) .
@@ -1954,7 +1966,7 @@ A Person may bear intrinsic modes such as Sex and Gender Identity, which can be 
     owl:members ( hrio:KaryotypicalSex hrio:PhenotypicSex ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:MaleTypicalDimorphicCharacteristic hrio:IndeterminateDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic ) .
+    owl:members ( hrio:IndeterminateDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:MaleTypicalVisualSexCharacteristic hrio:FemaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic ) .
@@ -1963,8 +1975,8 @@ A Person may bear intrinsic modes such as Sex and Gender Identity, which can be 
     owl:members ( hrio:MaleBiologicalPerson hrio:IndeterminateBiologicalPerson hrio:FemaleBiologicalPerson ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:Animal hrio:ArtificialAgent hrio:Organization ) .
+    owl:members ( hrio:Organization hrio:ArtificialAgent hrio:Animal ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:AllosomeY hrio:AllosomeX ) .
+    owl:members ( hrio:AllosomeX hrio:AllosomeY ) .
 
