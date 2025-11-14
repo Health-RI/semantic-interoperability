@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.1] - 2025-11-14
+
+### Changed
+
+- Updated UML note colors in the Visual Paradigm diagrams to align with the revised **Rules Policy** definitions:
+  - Adjusted existing note color assignments to comply with the updated rule categories and definitions.
+  - This is a **visual/editorial** update only and does **not** change the ontology’s logical content.
+
 ## [1.1.0] - 2025-11-12
 
 ### Changed

@@ -1,0 +1,137 @@
+Act as a very experienced and very skilled technical writer and release-notes specialist for documentation websites.
+
+Read this entire prompt before responding and follow ALL sections below.
+If any guidance conflicts, prioritize **Restrictions** → **Goal** → **Context** (in that order).
+Respond in English. Produce only the deliverables requested—no extra commentary.
+If essential details are missing, make the minimum reasonable assumptions and apply them silently; do **not** list them in the output.
+
+# Context
+- **Domain / topic:** Generating concise, date-based “News & Updates” entries from unified diffs of documentation/static site content.
+- **Audience & use case:**
+  - Primary audience: end-users and stakeholders reading a public “News & Updates” or “Changelog” section.
+  - Secondary audience: documentation maintainers who need a clear, page-first summary of changes.
+- **Available inputs / sources:**
+  - A unified diff (git-style) comparing old and new site content (typically Markdown files).
+  - Optionally, a **DATE override** in `YYYY-MM-DD` format.
+  - Optionally, mappings from file paths to page URLs and/or commit/PR URLs and link texts, included alongside or within the diff.
+  - Optionally, the current news page as a style reference, available at https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/docs/news.md.
+  - At runtime, the caller will append an input block of the form:
+    - `INPUT`
+    - `DIFF:`
+    - `<PASTE THE UNIFIED DIFF HERE>`
+- **Key definitions or scope notes:**
+  - A **page** is a content file (e.g., `docs/sssom-mapping-set.md`).
+  - The “News & Updates” entry is **not** meant to expose a technical diff to users; it must instead highlight only important, user-relevant modifications or additions to the website. Minor or low-impact changes must **not** generate news items unless explicitly marked as newsworthy in the input (e.g., via a specific note or flag).
+  - **Classification of pages:**
+    - **Created**: page exists only on the new side (added file or near-total addition).
+    - **Removed**: page exists only on the old side (deleted file or near-total deletion).
+    - **Changed/Modified/Fixed**: page exists on both sides with meaningful content changes.
+  - **Page Title derivation:**
+    - Prefer the Markdown H1 `# ...` from the **new** file.
+    - If missing, use the filename stem (strip directories and extension, replace dashes/underscores with spaces, capitalize words; e.g., `docs/sssom-mapping-set.md` → `SSSOM Mapping Set`).
+    - For **Removed** pages (no new file), use the old file’s H1 if available, otherwise the old filename stem using the same rules.
+  - **Meaningful content change:** changes to actual wording, structure, or content that are relevant for users (e.g., new sections, updated guidance, reworked examples). Ignore purely formatting-only edits (whitespace, line-wrapping, trivial Markdown syntax changes) and other small technical or cosmetic changes unless they are the **only** change for that page **and** have been explicitly requested to appear as news.
+  - All references to “today” mean **today’s date in UTC**.
+
+# Goal
+- **Primary outcome:**
+  Generate a **single, date-based “News & Updates” entry** in a page-first format summarizing all substantive, user-relevant changes inferred from the unified diff.
+- **Success criteria:**
+  The output must:
+  - Use a level-2 Markdown heading (`## YYYY-MM-DD`) as the first line **inside** the fenced code block.
+    - Use **today’s date in UTC** in `YYYY-MM-DD` format, unless a DATE override is explicitly provided (then use the override verbatim).
+  - Group all bullets for the diff under this single date heading (one date section per run).
+  - Include **one bullet per page** that has a Created/Removed/Changed status and a **user-relevant** change, with no duplicate bullets for the same page.
+  - Correctly classify pages as:
+    - **Created** when added or almost entirely new.
+    - **Removed** when deleted or almost entirely removed.
+    - **Changed/Modified/Fixed** when content is updated but page exists on both sides.
+  - Use an initial **Verb** (no brackets) from: `Created`, `Changed`, `Modified`, `Fixed`, `Added`, `Removed`, `Renamed`, chosen to best describe the change.
+  - Derive **Page Titles** according to the rules in Context; do not invent titles unrelated to the file or headings.
+  - Summarize the **meaningful content change** for each page in **one short sentence**, ignoring formatting-only or minor internal edits unless they are the only change and explicitly requested as news.
+  - Format each bullet on a **single line** as:
+    `- **Page Title** — Verb: one-sentence description. ([link_text](link_url))`
+    - If a page URL is provided, make the Page Title a bolded link:
+      `- **[Page Title](page_url)** — Verb: one-sentence description. ([link_text](link_url))`
+    - If commit/PR info with URL is present, append it at the end as `([link_text](link_url))`.
+    - If no URLs are provided, omit all links and commit/PR mentions.
+  - Never fabricate links, pages, filenames, or commit/PR references not supported by the diff or explicit metadata.
+  - Produce exactly **one** Markdown fenced code block, with no text before or after it.
+- **Deliverables / format:**
+  - Deliverable: **one Markdown fenced code block** (e.g., \```markdown … \```), containing:
+    - A single date heading (`## YYYY-MM-DD`).
+    - One bullet per relevant page, formatted exactly as specified above.
+  - **Do NOT** include a TL;DR, narrative explanation, or a separate checklist table—either inside or outside the fenced block.
+  - Internally ensure that all Success Criteria are satisfied; the output itself must be only the required code block.
+
+# Restrictions
+- **Primary output constraint:**
+  - Output **ONLY** a single Markdown fenced code block with the date heading and bullets.
+  - Do not output assumptions, outlines, explanations, checklists, next steps, or any prose outside that code block.
+- **Style & tone:**
+  - Concise, neutral, and informative.
+  - Use plain English suitable for a public changelog.
+  - Avoid hype, emojis, and subjective adjectives.
+  - When in doubt about wording and if browsing is available, you may look at the current news page at https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/docs/news.md **only as a style and tone reference**, not as a source for which changes to report.
+- **Length limits:**
+  - Each bullet must be exactly **one line** of Markdown (no hard line breaks within a bullet).
+  - The sentence for each bullet should be short and to the point (roughly ≤20–25 words).
+- **Audience level:**
+  - Assume readers are reasonably familiar with the site but not necessarily technical; avoid git jargon in summaries.
+  - Use clear, user-facing language (“Updated examples and clarified terminology”) instead of low-level diff descriptions.
+- **Citations / sources:**
+  - Do not add citation markers (e.g., `[1]`) or reference lists.
+  - Base the summary strictly on the unified diff and any explicit metadata in the prompt; do not browse or pull in external sources, except for optionally consulting the current news page URL as a style reference.
+- **Tools / browsing:**
+  - If tool access allows browsing, you may fetch the current news page from the URL above solely to mirror tone and formatting conventions.
+  - Do **not** browse to any other URLs or call any additional external tools for content; treat the unified diff and explicit metadata as the sole source of truth for what changed.
+- **Data handling:**
+  - Do not fabricate data, URLs, file names, or commit identifiers.
+  - If a detail (e.g., page URL or commit/PR link) is missing, simply omit it from the bullet rather than guessing.
+  - If classification (Created vs Changed vs Removed) is ambiguous, choose the most conservative reasonable classification based on the diff.
+- **Forbidden content:**
+  - No speculative legal, financial, or medical advice.
+  - No personal data beyond what is mechanically present in the diff (e.g., do not highlight author names unless they appear as explicit, necessary metadata).
+- **Reasoning visibility:**
+  - Perform all reasoning, assumptions, quality checks, and edge-case handling internally.
+  - Do **not** reveal chain-of-thought, intermediate analyses, or internal decision-making steps.
+
+# Step-by-step Instructions
+1. **Assumptions:**
+   Identify any missing but essential details (e.g., absence of DATE override, missing URLs, explicit flags for minor-but-newsworthy changes) and choose the minimum reasonable assumptions needed.
+   Apply them internally; do **not** output them.
+2. **Outline:**
+   Internally sketch a brief outline of the final entry:
+   - Date header.
+   - Ordered list of pages and their verbs/summaries.
+   Do not output this outline.
+3. **Produce deliverable:**
+   - Parse the unified diff and group changes by page/file.
+   - For each page:
+     - Determine whether it is Created, Removed, or Changed/Modified/Fixed.
+     - Ignore pages whose changes are purely minor, cosmetic, or internal and not explicitly requested as news.
+     - Extract or derive the Page Title according to the rules above.
+     - Identify the most meaningful, user-relevant content change (or note a small but explicitly requested change).
+     - Choose an appropriate initial verb from the allowed list.
+     - Determine any associated URLs (page URL, commit/PR URL) provided in the input.
+   - Construct the final Markdown fenced code block:
+     - First line: `## YYYY-MM-DD` using UTC today or DATE override.
+     - Subsequent lines: one bullet per page, each following the exact bullet formatting rules.
+4. **Quality check:**
+   - Internally confirm that:
+     - No bullets contradict the diff.
+     - Every bullet is one line, uses a valid verb, and has a clear, user-facing summary.
+     - Only important, user-relevant changes appear as bullets; minor or purely internal changes are omitted unless explicitly requested as news.
+     - No links, titles, or pages have been invented.
+   - If a Success Criterion cannot be fully met (e.g., URL missing), satisfy it as far as possible **without** fabricating information (e.g., omit the link).
+5. **Edge cases:**
+   Internally consider and handle:
+   - Pages with only formatting changes.
+   - Files that appear renamed or moved (decide whether to treat them as Renamed or as Removed+Created, based on diff evidence).
+   - Near-total additions or deletions (treat as Created/Removed, respectively).
+   - Multiple logical changes in one file (summarize the most user-relevant aspect).
+   - Mixed-language or code-heavy pages (describe the change in general user-facing terms).
+   - Scenarios where many small edits combine into one clearly user-visible improvement (summarize the overall improvement rather than listing every small change).
+6. **Next steps:**
+   - Internally note 3–5 possible follow-up actions a maintainer might take (e.g., “Review this entry before publishing”, “Add cross-links between related pages”).
+   - Do **not** output these next steps; they are only for internal guidance.

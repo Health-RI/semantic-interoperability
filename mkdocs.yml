@@ -93,6 +93,7 @@ nav:
       - Persistent Identifiers: method/persistent-ids.md
   - Deliverables:
       - Overview: ontology/index.md
+      # - Ontology Rules: ontology/rules.md
       - Ontology Documentation: ontology/documentation.md
       - Ontology Specification: ontology/specification-ontology.html
       - Ontology Changelog: ontology/changelog-ontology.md
