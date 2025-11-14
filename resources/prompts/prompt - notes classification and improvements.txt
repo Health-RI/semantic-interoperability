@@ -10,16 +10,17 @@ If essential details are missing, make the minimum reasonable assumptions and li
 - **Audience & use case:** Internal modeling team maintaining Visual Paradigm (VP) diagrams; results will be pasted back into GitHub issues and used to update VP notes
 - **Available inputs / sources:** (a) Screenshot of the target diagram, (b) Copy-pasted text of every note appearing in that diagram, (c) The “UML Note Classification (for color coding)” policy summarized below
 - **Key definitions or scope notes:**
-  - Seven exclusive categories: SEMI, CNST, RATL, SCOP, TRAC, EXMP, TODO.
-  - Colors (VP Row 1 of the palette; first column is white—skip it):
+  - Eight exclusive categories: SEMI, CNST, DRIV, RATL, SCOP, TRAC, EXMP, TODO.
+  - Colors (VP Row 1 of the palette; one distinct slot per category):
     - SEMI → R1C7 (Lavender Blue • #C0C0FF)
     - CNST → R1C2 (Spanish Pink • #FFC0C0)
+    - DRIV → R1C5 (Tea Green • #C0FFC0)
     - RATL → R1C8 (Brilliant Lavender • #FFC0FF)
     - SCOP → R1C6 (Celeste • #C0FFFF)
     - TRAC → R1C3 (Very Pale Orange • #FFE0C0)
-    - EXMP → R1C4 (Very Pale Yellow • #FFFFC0)
-    - TODO → R1C5 (Tea Green • #C0FFC0)
-  - CNST notes: plain-text paraphrase only (no OCL); must be anchored to the element that owns the OCL.
+    - EXMP → R1C1 (White • #FFFFFF)
+    - TODO → R1C4 (Very Pale Yellow • #FFFFC0)
+  - CNST and DRIV notes: plain-text paraphrase only (no SHACL, SPARQL, or OCL); must be anchored to the element(s) governed by the rule that the note paraphrases.
   - Exactly one category per note. Multiple anchors allowed only when the same text truly applies to each target.
   - All note text must be fully visible in diagram/PNG exports; prefer short, plain ASCII sentences.
   - In plain-text boxes (no formatting), render the tag as an uppercase token followed by a colon, e.g., `CNST:` (no bold).
@@ -27,20 +28,17 @@ If essential details are missing, make the minimum reasonable assumptions and li
 # Goal
 - **Primary outcome:** For each input note, provide (1) its category and corresponding color, (2) a minimally improved replacement text that stays as close as possible to the original, and (3) the recommended anchors (element names) for the note.
 - **Success criteria:**
-  - Exactly one of the 7 categories assigned per note, consistent with policy.
+  - Exactly one of the 8 categories assigned per note, consistent with policy.
   - Correct color reported for that category (VP row/column + HEX).
   - Edited note preserves original intent; only minimal, necessary improvements applied.
-  - CNST notes are anchored to the owning element(s); no diagram-wide CNST.
+  - CNST and DRIV notes are anchored to the governed element(s); no diagram-wide CNST or DRIV.
   - New note text presented in a plain text copy/paste box (no markdown styling, no bold/italics).
   - Each note block clearly lists “Old text”, “New text”, and “Recommended anchors”.
 - **Deliverables / format:**
   - Begin with a **TL;DR / Quick Answer (2–4 lines)** summarizing how many notes were processed and any key assumptions.
   - Then, for each note in input order, present:
     - Old text: (verbatim)
-    - New text (including the tag token as `TAG:`):
-      ```
-      <plain ASCII, minimal edits, no markdown styling>
-      ```
+    - New text (including the tag token as `TAG:`): `<plain ASCII, minimal edits, no markdown styling>`
     - Classification & color: `<TAG> — VP R1Cx — <Color name> • <#HEX>`
     - Recommended anchors: `<list of element names>` (if diagram-wide, write `diagram-wide`)
   - Include a **final checklist table** mapping each Success Criterion to where it is satisfied in the output.
@@ -52,7 +50,7 @@ If essential details are missing, make the minimum reasonable assumptions and li
 - **Citations / sources:** Do not cite external sources; use only the provided policy and inputs.
 - **Tools / browsing:** Do not browse the web.
 - **Data handling:** Do not fabricate anchors; infer from provided diagram screenshot only. If anchor identification is uncertain, state the uncertainty and propose the most likely anchor(s).
-- **Forbidden content:** No OCL syntax inside CNST notes; no personal data beyond supplied element names.
+- **Forbidden content:** No SHACL, SPARQL, or OCL syntax inside CNST or DRIV notes; no personal data beyond supplied element names.
 - **Reasoning visibility:** Provide conclusions and brief justifications; do not reveal chain-of-thought.
 
 # Step-by-step Instructions
@@ -66,10 +64,7 @@ If essential details are missing, make the minimum reasonable assumptions and li
 # Optional Add-ons (use if helpful)
 - **Examples to emulate:**
   - Old text: Encounter denotes a healthcare interaction episode; not a location stay.
-  - New text:
-    ```
-    SEMI: "Encounter" denotes a healthcare interaction episode, not a location stay.
-    ```
+  - New text: `SEMI: "Encounter" denotes a healthcare interaction episode, not a location stay.`
   - Classification & color: SEMI — VP R1C7 — Lavender Blue • #C0C0FF
   - Recommended anchors: Encounter
 - **Rubric for scoring:** 1–5 for (a) correct classification, (b) fidelity to original intent, (c) anchor suitability, (d) brevity/clarity.
