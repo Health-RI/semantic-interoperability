@@ -1,5 +1,11 @@
 # News & Updates
 
+## 2025-11-14
+
+- [**Ontology Rules and SHACL Implementation**](./method/ontology-rules.md) — Created: Introduced a dedicated overview of ontology constraint and derivation rules and their implementation using SHACL.
+- [**Ontology Notes Policy**](./method/ontology-notes-policy.md) — Changed: Updated the notes policy with the new DRIV rule category and adjusted note colors to align with the ontology rules.
+- Changed: Several pages received minor updates to show their relation to the newly created ontology rules page.
+
 ## 2025-11-05
 
 - [**Governance, Lifecycle, and Validation of the Health-RI SSSOM Mapping Set**](./method/mapping-governance.md) — Created: defines roles, two-person rule, lifecycle gates, and validation policy for the SSSOM Mapping Set.

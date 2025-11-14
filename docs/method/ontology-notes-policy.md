@@ -96,14 +96,12 @@ Color selection rule: Use the top row (R1) of the VP color palette, choosing col
 ## Example Snippets
 
 <!-- TODO: Update so all use real examples. -->
-```md
 - **SEMI:** "Encounter" denotes a healthcare interaction episode; not a location stay.
 - **CNST (OneActiveIdentifier):** context Patient must have exactly one active Identifier.
 - **DRIV (CreatesOnBehalfOfRule):** If an Administrative Gender Recognition mediates both an Administrative Gender Recognition Agent and an Administrative Gender Recognizing Organization, then the Agent creates on behalf of the Organization.
 - **RATL:** Kept 'Episode' separate from 'Visit' to allow cross-facility grouping.
 - **TRAC:** Derived from Req HRI-EPI-012 and SNOMED CT 123456.
 - **SCOP:** "Non-binary Gender Identity" may be further specialized if needed.
-```
 
 ## References
 
