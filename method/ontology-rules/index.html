@@ -12,13 +12,13 @@
         <meta name="author" content="Pedro Paulo F. Barcelos">
       
       
-        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/ontology-versioning/">
+        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/ontology-rules/">
       
       
-        <link rel="prev" href="../ontology-notes-policy/">
+        <link rel="prev" href="../ontology-validation/">
       
       
-        <link rel="next" href="../mapping-strategy/">
+        <link rel="next" href="../ontology-notes-policy/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Versioning Strategy for Ontology Releases - Health-RI Semantic Interoperability</title>
+        <title>Ontology Rules and SHACL Implementation - Health-RI Semantic Interoperability</title>
       
     
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#versioning-strategy-for-ontology-releases" class="md-skip">
+        <a href="#ontology-rules-and-shacl-implementation" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Versioning Strategy for Ontology Releases
+              Ontology Rules and SHACL Implementation
             
           </span>
         </div>
@@ -1009,10 +1009,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ontology-rules/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Rules and SHACL Implementation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1028,6 +1055,199 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose &amp; Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attachment-strategy-ontouml-gufo-owlhrio-shacl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attachment Strategy: OntoUML → gUFO → OWL/HRIO → SHACL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attachment Strategy: OntoUML → gUFO → OWL/HRIO → SHACL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-ontouml-notes-to-shacl-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapping OntoUML Notes to SHACL Artifacts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mapping OntoUML Notes to SHACL Artifacts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-the-ontouml-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In the OntoUML Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authoring-conventions-constraints-validation-shapes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authoring Conventions: Constraints (Validation Shapes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authoring Conventions: Constraints (Validation Shapes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Property Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authoring-conventions-derivation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authoring Conventions: Derivation Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authoring Conventions: Derivation Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-we-use-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When We Use Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practices-we-follow-and-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practices We Follow and Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practices We Follow and Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-we-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What We Do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What We Avoid
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1065,37 +1285,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Versioning Strategy for Ontology Releases
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ontology-versioning/" class="md-nav__link">
         
   
   
@@ -1111,187 +1304,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#purpose-scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Purpose &amp; Scope
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definitions-glossary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Definitions &amp; Glossary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-numbering-semantics-increment-reset-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Version Numbering &amp; Semantics — Increment &amp; Reset Rules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#triggers-decision-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Triggers &amp; Decision Rules
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Triggers &amp; Decision Rules">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conditions-for-increasing-x" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conditions for increasing X
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conditions-for-increasing-y" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conditions for increasing Y
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conditions-for-increasing-z" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conditions for increasing Z
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#semantic-vs-non-semantic-decision-tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Semantic vs. Non-Semantic — Decision Tests
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Semantic vs. Non-Semantic — Decision Tests">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#edge-case-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Edge-case examples
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples-decision-table-worked-examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Examples / Decision Table (Worked Examples)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#figures" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Figures
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Figures">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#versioning-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Versioning Flow
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#edge-cases-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Edge Cases &amp; Notes
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1886,258 +1898,130 @@
   
 
 
-<h1 id="versioning-strategy-for-ontology-releases">Versioning Strategy for Ontology Releases</h1>
-<p>This document specifies the version number semantics (<code>X.Y.Z</code>), priority rules, increment/reset logic, and triggers for <code>X</code>/<code>Y</code>/<code>Z</code>. It also includes the semantic vs. non-semantic decision tests, worked examples, and the versioning flowchart. Stage concepts are referenced only insofar as they drive <code>Y</code>-level changes.</p>
-<p>This versioning strategy applies to all ontology artifacts released as part of the Health-RI Ontology. In any given release, all artifacts share the same version identifier (<code>X.Y.Z</code>) and correspond to the same underlying OntoUML model.</p>
+<h1 id="ontology-rules-and-shacl-implementation">Ontology Rules and SHACL Implementation</h1>
+<div class="admonition warning">
+<p class="admonition-title">Disclaimer</p>
+<p>While efforts have been made to ensure accuracy, the material in this page is still under review and may contain inaccuracies or omissions. Users are advised to interpret and apply the content with caution.</p>
+</div>
 <h2 id="purpose-scope">Purpose &amp; Scope</h2>
-<p>Defines how versions are assigned and incremented for the ontology/model releases, including precedence (<code>X &gt; Y &gt; Z</code>), single-step increments, and resets. Stage mechanics (<code>int</code>/<code>irv</code>/<code>erv</code>/<code>pub</code>) are covered in <em>Validation Strategy</em>; they are referenced here only where they directly affect <code>Y</code>. This strategy is effective for releases starting at <code>v1.0.0</code>; earlier releases (<code>&lt; v1.0.0</code>) followed an <a href="../ontology-versioning-old/">earlier versioning policy</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Artifacts covered and alignment</p>
-<p>The <code>X.Y.Z</code> version identifier applies uniformly to the ontology artifacts released by this initiative:
-- OntoUML model in Visual Paradigm (<code>.vpp</code> project).
-- OntoUML model exported as JSON (<code>.json</code>).
-- gUFO-based OWL ontology (<code>.ttl</code>, in Turtle).
-- SHACL shapes file (<code>.shacl</code>, in Turtle).
-- Ontology documentation and specification.</p>
-<p>Model changes are authored in the OntoUML <code>.vpp</code> project first. For each release, the derived artifacts above are regenerated or updated from that source so they remain synchronized under the same version identifier.</p>
-</div>
-<h2 id="definitions-glossary">Definitions &amp; Glossary</h2>
+<p>This document describes the rules of the Health-RI Ontology (HRIO) that, for each released version of HRIO, are implemented in SHACL. These ontology rules are of two types:</p>
 <ul>
-<li>Version format: <code>X.Y.Z</code><ul>
-<li><code>X</code> — Package index (<code>1, 2, 3, …</code>): increases when a new package (new domain scope) is introduced.</li>
-<li><code>Y</code> — Stage increment (<code>0, 1, 2, …</code>): increases for every package stage change.</li>
-<li><code>Z</code> — Minor fixes (<code>0, 1, 2, …</code>): minor modifications that should not significantly impact the domain representation (layout, labeling, diagramming, minor corrections, etc.).</li>
-<li>Examples: <code>3.0.0</code>, <code>3.7.15</code>, <code>4.0.1</code>.</li>
+<li><strong>Constraints</strong>, which validate data against the <strong>gUFO-based OWL ontology</strong> produced from the OntoUML model (A-box quality checks), and</li>
+<li><strong>Derivation rules</strong>, which perform controlled <strong>rule-driven inferences</strong> to enrich data with safe, deterministic triples.</li>
 </ul>
-</li>
-</ul>
-<blockquote>
-<p>Note on stages. Stages are tracked per package (see <em>Validation Strategy</em>). A stage transition causes <code>Y++</code> and resets <code>Z → 0</code>, per rules below.</p>
-</blockquote>
-<div class="admonition note">
-<p class="admonition-title">Published tags are rarely "round"</p>
-<p>GitHub releases are created when the package is in <code>pub</code> stage, ocurring after stage transitions (<code>int → irv → erv → pub</code>). Stage transitions bump <code>Y</code>, so published versions are <strong>unlikely</strong> to be exactly <code>X.0.0</code> (e.g., <code>2.0.0</code>), and <code>Z</code> may be non-zero. Expect tags like <code>2.1.0</code> or <code>2.3.4</code>. "Round" versions may still occur because we version the ontology as a whole (not per package), while packages' independent state transitions influence the overall ontology version.</p>
-</div>
-<h2 id="version-numbering-semantics-increment-reset-rules">Version Numbering &amp; Semantics — Increment &amp; Reset Rules</h2>
+<p>These rules are implemented in SHACL because the language is expressive for both constraint validation and rule-based derivation, and because the SHACL artifacts can be directly associated with the gUFO-based OWL file.</p>
+<p>We maintain a clear separation between:</p>
 <ul>
-<li>Single-step per release. Exactly one component increments by <code>+1</code> per release — the highest-priority applicable one (<code>X &gt; Y &gt; Z</code>). Lower components never increment concurrently; they only reset (<code>Y → 0</code> on <code>X++</code>; <code>Z → 0</code> on <code>X++</code> or <code>Y++</code>).<ul>
-<li>Not allowed: <code>1.5.3 → 1.6.4</code> or <code>1.5.3 → 1.7.0</code> in a single release.</li>
-<li>Allowed: <code>1.5.3 → 1.6.0</code> (<code>Y++</code>) or <code>1.5.3 → 2.0.0</code> (<code>X++</code>).</li>
+<li><strong>Conceptual intent</strong> in OntoUML (human-friendly constraints and rules, documented as notes), and</li>
+<li><strong>Machine-checkable behavior</strong> in SHACL (executable shapes and rules over the RDF/OWL vocabulary).</li>
 </ul>
-</li>
-<li>Priority. If multiple qualifying changes occur together, apply only the highest-priority bump (<code>X &gt; Y &gt; Z</code>). Lower components reset accordingly.</li>
-<li>No skipping within a component. Always increment by exactly <code>+1</code> within <code>X</code>, <code>Y</code>, or <code>Z</code>.</li>
-<li>Mixed <code>X</code> with <code>Y/Z</code>. If any <code>X</code> trigger occurs in a release, apply <code>X++</code> (once). Record <code>Y</code>/<code>Z</code>-qualifying changes in the changelog; do not increment <code>Y</code> or <code>Z</code> in that same release (<code>Y = 0</code>, <code>Z = 0</code> after <code>X++</code>).</li>
-<li>Mixed <code>Y</code> with <code>Z</code>. If any <code>Y</code> trigger occurs in a release, apply <code>Y++</code> (once). Record <code>Z</code>-qualifying changes in the changelog; do not increment <code>Z</code> in that same release (<code>Z → 0</code> on <code>Y++</code>).</li>
-<li>Semantic changes mandate a stage transition. Any semantic change (meaning of classes/relations/constraints/definitions) must be recorded as a package stage reversion to <code>int</code> (see <em>Validation Strategy</em>). This causes <code>Y++</code> and <code>Z → 0</code>.</li>
-<li>Resets.<ul>
-<li>When <code>Y</code> increases, <code>Z</code> resets to <code>0</code>.</li>
-<li>When <code>X</code> increases, <code>Y</code> and <code>Z</code> reset to <code>0</code>.</li>
-</ul>
-</li>
-</ul>
-<h2 id="triggers-decision-rules">Triggers &amp; Decision Rules</h2>
-<h3 id="conditions-for-increasing-x">Conditions for increasing <code>X</code></h3>
-<ul>
-<li>
-<p>Triggers:</p>
-<ul>
-<li>Starting a new package (new domain scope) in the repository.</li>
-<li>Removing an existing package from the official package set (any removal from scope is <code>X</code>).</li>
-</ul>
-</li>
-<li>
-<p>Non-triggers:</p>
-<ul>
-<li>Advancing a package through stages (<code>int</code>, <code>irv</code>, <code>erv</code>, <code>pub</code>): that is <code>Y</code>, not <code>X</code>.</li>
-<li>Renaming/regrouping classes within an existing package without adding a new package.</li>
-</ul>
-</li>
-</ul>
-<h3 id="conditions-for-increasing-y">Conditions for increasing <code>Y</code></h3>
-<ul>
-<li>
-<p>Triggers:</p>
-<ul>
-<li>Any per-package stage transition: <code>int → irv</code>, <code>irv → erv</code>, <code>erv → pub</code>, or a recorded reversion (e.g., <code>irv → int</code>) via the package's stage tagged value.</li>
-<li>Any semantic change that alters model meaning within a package (e.g., adding/removing/retaxonomizing classes, retyping relations, changing multiplicities or constraints, revising authoritative definitions, introducing/removing key axioms).<ul>
-<li>Action: record <code>&lt;current&gt; → int</code> for the package (see <em>Validation Strategy</em>).</li>
-<li>Result: <code>Y++</code> for that release; <code>Z → 0</code>.</li>
-</ul>
-</li>
-<li>When multiple packages transition in the same release, perform a single <code>Y++</code> (<code>Z</code> resets to <code>0</code>).</li>
-</ul>
-</li>
-<li>
-<p>Non-triggers:</p>
-<ul>
-<li>Being in a stage without a transition since last release.</li>
-<li>Diagram/class edits that do not change the package stage.</li>
-<li>Tagged-value corrections that leave stage history unchanged.</li>
-<li>Removing a package (this is <code>X</code>, not <code>Y</code>).</li>
-</ul>
-</li>
-</ul>
-<h3 id="conditions-for-increasing-z">Conditions for increasing <code>Z</code></h3>
-<ul>
-<li>
-<p>Triggers:</p>
-<ul>
-<li>Minor, non-semantic corrections that do not materially change domain representation: label/name normalization, spelling/typos, diagram layout, link/URI fix, file reorganization, export settings, docstring wording, small diagram tweaks.</li>
-</ul>
-</li>
-<li>
-<p>Non-triggers:</p>
-<ul>
-<li>Any package stage transition (<code>int/irv/erv/pub</code>) → that is <code>Y</code> (and resets <code>Z</code> to <code>0</code>).</li>
-<li>Starting/adding a new package → that is <code>X</code> (and resets <code>Y</code> and <code>Z</code> to <code>0</code>).</li>
-<li>Semantic modeling changes are never <code>Z</code>; they require a stage reset to <code>int</code> and thus <code>Y++</code>.</li>
-</ul>
-</li>
-</ul>
-<h2 id="semantic-vs-non-semantic-decision-tests">Semantic vs. Non-Semantic — Decision Tests</h2>
-<p>Treat the change as <strong>semantic</strong> (counts for <code>Y</code>) if any of the following is <strong>yes</strong>; otherwise it is <code>Z</code>:</p>
-<p>1) Entailment / constraints test. Does the change alter logical consequences, constraints, or permitted structures (e.g., subsumption, typing, multiplicities, keys, disjointness)? → yes ⇒ semantic (<code>Y</code>).
-2) Extension / instances test. Would at least one previously valid instance become invalid (or vice versa) solely due to this change? → yes ⇒ semantic (<code>Y</code>).
-3) Identity / reference stability test. Does the change alter IRIs/identifiers or definitions in a way that affects element identity/meaning? → yes ⇒ semantic (<code>Y</code>).
-     - Label-only edits (e.g., <code>rdfs:label</code>, typos, capitalization) with unchanged IRI/definition are <code>Z</code>.
-4) Diagram-only test. Is the change confined to visuals (positions, routing, styling) with no change to model elements or constraints? → yes ⇒ non-semantic (<code>Z</code>).</p>
-<h3 id="edge-case-examples">Edge-case examples</h3>
-<table>
-<thead>
-<tr>
-<th>Change</th>
-<th>Y or Z?</th>
-<th>Rationale</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Rename class label "Person" → "Individual" (label only; IRI/definition unchanged)</td>
-<td>Z</td>
-<td>Terminology-only; no entailment or instance impact.</td>
-</tr>
-<tr>
-<td>Rename class IRI or revise textual definition to narrow/broaden scope</td>
-<td>Y</td>
-<td>Identity/meaning changed; instance/entailment impact possible.</td>
-</tr>
-<tr>
-<td>Add an association previously only <em>visually implied</em> by layout</td>
-<td>Y</td>
-<td>New relation; changes entailments/instances.</td>
-</tr>
-<tr>
-<td>Move boxes/arrows, improve diagram readability</td>
-<td>Z</td>
-<td>Diagram-only; model unchanged.</td>
-</tr>
-<tr>
-<td>Change multiplicity <code>0..* → 1..*</code></td>
-<td>Y</td>
-<td>Constraint tightened; prior instances may become invalid.</td>
-</tr>
-<tr>
-<td>Retype association end or change superclass</td>
-<td>Y</td>
-<td>Taxonomic/typing change; affects entailments/instances.</td>
-</tr>
-<tr>
-<td>Fix spelling/capitalization in labels</td>
-<td>Z</td>
-<td>Surface-only.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="examples-decision-table-worked-examples">Examples / Decision Table (Worked Examples)</h2>
-<p><em>(Assume current version is <code>v1.5.8</code> unless noted.)</em></p>
+<p>OntoUML notes express the intended constraints and derivation rules. The corresponding <code>.shacl</code> file is the <strong>executable source of truth</strong> for their implementation for the matching ontology release.</p>
+<p>The shapes graph is authored in Turtle and relies on SHACL Core and SHACL Advanced Features. Its contents evolve as the ontology grows. The conventions in this document describe how we implement these rules in SHACL for current and future ontology modules and domains.</p>
+<h2 id="attachment-strategy-ontouml-gufo-owlhrio-shacl">Attachment Strategy: OntoUML → gUFO → OWL/HRIO → SHACL</h2>
 <ol>
-<li>A: <code>int → irv</code> → <code>Y++</code> → <code>v1.6.0</code> (<code>Z → 0</code>).</li>
-<li>A: <code>irv → erv</code>, B: <code>int → irv</code> (same release) → <code>Y++</code> once → <code>v1.6.0</code> (<code>Z → 0</code>).</li>
-<li>Start new package C and A: <code>erv → pub</code> (same release) → <code>X++</code> → <code>v2.0.0</code> (<code>Y, Z → 0</code>).</li>
-<li>Typos/layout only → <code>Z++</code> → <code>v1.5.9</code>.</li>
-<li>B: <code>irv → int</code> (recorded) → <code>Y++</code> → <code>v1.6.0</code> (<code>Z → 0</code>).</li>
-<li>Later A: <code>erv → pub</code> (new release) → <code>Y++</code> → <code>v1.7.0</code> (<code>Z → 0</code>).</li>
-<li>Semantic change at <code>erv</code> (retype relation): record <code>erv → int</code> → <code>Y++</code> → <code>v1.6.0</code> (<code>Z → 0</code>).</li>
-<li>Remove a package (scope contraction) from <code>v1.5.8</code> → <code>X++</code> → <code>v2.0.0</code> (<code>Y = 0</code>, <code>Z = 0</code>).</li>
-<li><code>X</code> present with multiple <code>Y</code> events → <code>X++</code> once → <code>v2.0.0</code> (no <code>Y++</code>).</li>
-<li><code>Y</code> present with several <code>Z</code> events → <code>Y++</code> once → <code>v1.6.0</code> (no <code>Z++</code>).</li>
-<li>Label rename only ("Person" → "Individual") → <code>Z++</code> → <code>v1.5.9</code>.</li>
-<li>Definition/IRI change ("Person" narrowed/broadened): record <code>&lt;current&gt; → int</code> → <code>Y++</code> → <code>v1.6.0</code> (<code>Z → 0</code>).</li>
+<li><strong>Conceptual authoring in OntoUML (Visual Paradigm)</strong></li>
+<li>Constraints and derivation rules are specified as <strong>notes</strong> attached to classes, relations, or diagrams.</li>
+<li>
+<p>Notes use tags such as <code>CNST (ShortName):</code> and <code>RULE (ShortName):</code>, followed by a precise natural-language description.</p>
+</li>
+<li>
+<p><strong>OWL export against gUFO</strong></p>
+</li>
+<li>
+<p>The OntoUML model is exported to OWL as a <strong>gUFO-based implementation ontology</strong> (HRIO), following gUFO patterns for types, relators, roles, situations, etc.</p>
+</li>
+<li>
+<p><strong>SHACL authoring over the released OWL vocabulary</strong></p>
+</li>
+<li>SHACL shapes and rules are authored <strong>only over IRIs present in the released HRIO OWL files</strong>.</li>
+<li>
+<p>No SHACL artifact references internal OntoUML identifiers or unversioned/pre-release IRIs.</p>
+</li>
+<li>
+<p><strong>Execution over published HRIO</strong></p>
+</li>
+<li>Shapes target IRIs in the released ontology namespace and reuse <code>gufo:</code> IRIs where relevant.</li>
+<li>Validation and rule materialization operate on datasets aligned to HRIO/gUFO.</li>
 </ol>
-<h2 id="figures">Figures</h2>
-<h3 id="versioning-flow">Versioning Flow</h3>
-<pre class="mermaid"><code>flowchart LR
-
-  subgraph ALL[ ]
-    direction LR
-
-    S((Start))
-
-    B{Package added&lt;br/&gt;or removed?}
-    C{Any package&lt;br/&gt;stage change?}
-    D{Non-semantic&lt;br/&gt;modifications?}
-
-    X[X++ set Y=0; set Z=0]
-    Y[Y++ set Z=0]
-    Z[Z++]
-    N[No version bump]
-
-    yes1([Yes]):::yes
-    no1([No]):::no
-    yes2([Yes]):::yes
-    no2([No]):::no
-    yes3([Yes]):::yes
-    no3([No]):::no
-
-    S --&gt; B
-    B --- yes1
-    B --- no1
-    C --- yes2
-    C --- no2
-    D --- yes3
-    D --- no3
-    yes1 --&gt; X
-    no1    --&gt; C
-    yes2 --&gt; Y
-    no2    --&gt; D
-    yes3 --&gt; Z
-    no3    --&gt; N
-  end
-
-  %% Node styling (Option A adjustments)
-  %% - Semi-transparent fills improve readability on any theme
-  %% - Bold font, rounded corners, small padding
-  classDef stage fill:#0f5d73cc,stroke:#e6f2f6,color:inherit,font-weight:bold,rx:6,ry:6,padding:4;
-  classDef pub   fill:#1f6f2acc,stroke:#e6f2f6,color:inherit,font-weight:bold,rx:6,ry:6,padding:4;
-  classDef yes   fill:#1f6f2acc,stroke:#1f6f2a,color:inherit,font-weight:bold,rx:6,ry:6,padding:4;
-  classDef no    fill:#8B0000cc,stroke:#8B0000,color:inherit,font-weight:bold,rx:6,ry:6,padding:4;
-  classDef result fill:#009fadcc,stroke:#e6f2f6,color:inherit,font-weight:bold,rx:6,ry:6,padding:4;
-
-  class B,C,D stage;
-  class S,X,Y,Z,N pub;
-  class X,Y,Z,N result;
-
-  %% Soft text halo for light themes (increases contrast slightly)
-  style S text-shadow:0px 0px 3px #00000033
-  style B text-shadow:0px 0px 3px #00000033
-  style C text-shadow:0px 0px 3px #00000033
-  style D text-shadow:0px 0px 3px #00000033
-  style X text-shadow:0px 0px 3px #00000033
-  style Y text-shadow:0px 0px 3px #00000033
-  style Z text-shadow:0px 0px 3px #00000033
-  style N text-shadow:0px 0px 3px #00000033
-
-  %% Edge styling
-  linkStyle default stroke:#000000,stroke-width:2px;
-  linkStyle 3,4,5 stroke:#8B0000,stroke-width:2px;</code></pre>
-<h2 id="edge-cases-notes">Edge Cases &amp; Notes</h2>
+<h3 id="policy">Policy</h3>
 <ul>
-<li>Reverting a stage. Any recorded stage transition (forward or backward) increments <code>Y</code> and resets <code>Z</code> to <code>0</code>.</li>
-<li>Simultaneous edits across many packages. Combine into one release → at most one increment; apply <code>X &gt; Y &gt; Z</code> priority and resets.</li>
-<li>Semantic change at any stage (including <code>pub</code>). Reset stage to <code>int</code> (<code>&lt;current&gt; → int</code>) and issue <code>Y++</code> (<code>Z → 0</code>). If missed earlier, correct the stage and bump <code>Y</code> in the release that fixes the record.</li>
-<li>Definition of semantic change. A change is semantic iff it alters at least one of: (i) logical consequences; (ii) admissible instance space; or (iii) intentional content (identity) via IRI/definition changes. All other changes are non-semantic.</li>
-<li>Moving classes between existing packages. If entailments/constraints/definitions change → treat as semantic (<code>Y</code>); otherwise <code>Z</code>.</li>
+<li>We use the HRIO base IRI (<code>hrio:</code>) for ontology classes and properties.</li>
+<li>We use <code>gufo:</code> for gUFO classes and properties (e.g., relator and role patterns).</li>
+<li>We use <code>rdf:</code>, <code>rdfs:</code>, <code>owl:</code>, <code>xsd:</code>, and <code>sh:</code> in line with SHACL Core and SHACL-AF standards.</li>
+</ul>
+<h2 id="mapping-ontouml-notes-to-shacl-artifacts">Mapping OntoUML Notes to SHACL Artifacts</h2>
+<h3 id="in-the-ontouml-model">In the OntoUML Model</h3>
+<p>Executable constraints (<code>CNST</code>) and derivation rules (<code>RULE</code>) appear as textual notes anchored to classes or relations, as defined in <a href="../ontology-notes-policy/">Ontology Note Classification and Visual Conventions</a>.</p>
+<p>For each note with executable intent, we create one <strong>top-level <code>sh:NodeShape</code></strong> with:</p>
+<ul>
+<li><code>sh:name</code> – a short name matching the note's <code>(ShortName)</code>;</li>
+<li><code>sh:description</code> – a natural-language paraphrase;</li>
+<li>one or more targets (<code>sh:targetClass</code>, <code>sh:targetSubjectsOf</code>, <code>sh:targetObjectsOf</code>).</li>
+</ul>
+<p>Constraint rules are implemented as <strong>validation shapes</strong>, which may contain:</p>
+<ul>
+<li>SHACL-SPARQL queries via <code>sh:sparql</code>, or</li>
+<li>property constraints via <code>sh:property</code>.</li>
+<li><code>sh:severity</code> and <code>sh:message</code> typically appear inside the relevant property constraint.</li>
+</ul>
+<p>Derivation rules are implemented as <strong>rule shapes</strong>, which include:</p>
+<ul>
+<li>a <code>sh:rule</code> element (<code>sh:TripleRule</code> or <code>sh:SPARQLRule</code>).</li>
+<li>No validation properties (<code>sh:severity</code>, <code>sh:message</code>) are used in rule-only shapes.</li>
+</ul>
+<p>We may optionally add metadata such as:</p>
+<ul>
+<li><code>rdfs:label</code> aligned with <code>sh:name</code>;</li>
+<li><code>dct:identifier</code> for stable cross-system identifiers.</li>
+</ul>
+<h2 id="authoring-conventions-constraints-validation-shapes">Authoring Conventions: Constraints (Validation Shapes)</h2>
+<h3 id="targets">Targets</h3>
+<p>In our SHACL shapes for constraints:</p>
+<ul>
+<li>We use <code>sh:targetClass</code> when constraints apply to instances of a class.</li>
+<li>We use <code>sh:targetSubjectsOf</code> / <code>sh:targetObjectsOf</code> when targeting occurrences of a property.</li>
+<li>For global or cross-class patterns, we use SHACL-SPARQL (<code>sh:sparql</code>).</li>
+</ul>
+<h3 id="property-constraints">Property Constraints</h3>
+<p>For property-level validation:</p>
+<ul>
+<li>We define property-level validation inside <code>sh:property</code> blocks.</li>
+<li>We use <code>sh:path</code> to identify the validated property.</li>
+<li>We rely primarily on core SHACL constraints, including:</li>
+<li><code>sh:minCount</code>, <code>sh:maxCount</code>,</li>
+<li><code>sh:qualifiedMinCount</code>, <code>sh:qualifiedMaxCount</code>,</li>
+<li><code>sh:class</code>, <code>sh:datatype</code>, <code>sh:nodeKind</code>, <code>sh:in</code>, <code>sh:pattern</code>, etc.</li>
+</ul>
+<p>Validation messages are concise and describe the issue <strong>from the focus node's perspective</strong>.</p>
+<h2 id="authoring-conventions-derivation-rules">Authoring Conventions: Derivation Rules</h2>
+<h3 id="when-we-use-rules">When We Use Rules</h3>
+<p>In our SHACL artifacts, derivation rules provide <strong>deterministic, local inferences</strong> that:</p>
+<ul>
+<li>eliminate repetitive or boilerplate assertions implied by ontology semantics, and</li>
+<li>create <strong>derived relationships</strong> that simplify data access and querying.</li>
+</ul>
+<p>Our guidelines are:</p>
+<ul>
+<li>We prefer <code>sh:TripleRule</code> for direct, pattern-based triple creation.</li>
+<li>We use <code>sh:SPARQLRule</code> for conditions involving joins, filters, or multi-step logic.</li>
+<li>Our derivation rules are <strong>idempotent</strong>, non-destructive, and compatible with ontology disjointness constraints.</li>
+</ul>
+<h2 id="practices-we-follow-and-avoid">Practices We Follow and Avoid</h2>
+<h3 id="what-we-do">What We Do</h3>
+<p>In our SHACL shapes and rules, we:</p>
+<ul>
+<li>only use released HRIO and gUFO IRIs;</li>
+<li>keep each shape or rule <strong>single-purpose</strong>, with clear naming and description;</li>
+<li>prefer SHACL Core features and use SPARQL only where needed;</li>
+<li>design rules to be <strong>safe</strong> and aligned with the ontology's logical constraints.</li>
+</ul>
+<h3 id="what-we-avoid">What We Avoid</h3>
+<p>We do not:</p>
+<ul>
+<li>express ontology (T-box) changes as SHACL rules;</li>
+<li>depend on the order of execution across shapes;</li>
+<li>materialize triples that violate disjointness or other logical axioms;</li>
+<li>reference editor-internal or pre-release IRIs.</li>
 </ul>
 
 

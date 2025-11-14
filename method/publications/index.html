@@ -1012,6 +1012,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../ontology-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Rules and SHACL Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ontology-notes-policy/" class="md-nav__link">
         
   
@@ -1782,6 +1810,13 @@
 </ul>
 </li>
 <li>
+<p><strong>SHACL validation shapes and derivation rules (Turtle)</strong>: SHACL Core and SHACL Advanced Features graph that validates HRIO-aligned instance data and materializes safe, ontology-compatible triples.</p>
+<ul>
+<li><a href="https://w3id.org/health-ri/ontology/shacl"><code>ontologies/latest/health-ri-ontology.shacl</code></a></li>
+<li><code>ontologies/versioned/health-ri-ontology-v&lt;version&gt;.shacl</code> (via <code>https://w3id.org/health-ri/ontology/v&lt;version&gt;/shacl</code>)</li>
+</ul>
+</li>
+<li>
 <p><strong>Markdown documentation</strong>: Textual documentation of the OntoUML ontology.</p>
 <ul>
 <li><a href="https://w3id.org/health-ri/ontology/documentation"><code>ontologies/latest/documentations/documentation.md</code></a></li>
@@ -1798,8 +1833,7 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>gUFO files are only generated for versions of the model that are <strong>syntactically valid</strong>.
-As a result, no <code>.ttl</code> file will be provided for versions that are still incomplete or under development.</p>
+<p>gUFO files may only generated for versions of the model that are <strong>syntactically valid</strong>. As a result, no <code>.ttl</code> or <code>.shacl</code> file may be provided for some versions that are still incomplete or under development.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1814,16 +1848,18 @@ As a result, no <code>.ttl</code> file will be provided for versions that are st
 │   ├── health-ri-ontology.vpp
 │   ├── health-ri-ontology.json
 │   ├── health-ri-ontology.ttl
+│   ├── health-ri-ontology.shacl
 │   ├── documentations/
 │   │   ├── documentation.md
 │   │   └── specification.html
 │   └── images/
-│       └── *.png   # Exported PNG images of all diagrams
+│       └── *.png   # Exported PNG images of all OntoUML diagrams
 │
 ├── versioned/
 │   ├── health-ri-ontology-vX.Y.Z.json
 │   ├── health-ri-ontology-vX.Y.Z.vpp
 │   ├── health-ri-ontology-vX.Y.Z.ttl
+│   ├── health-ri-ontology-vX.Y.Z.shacl
 │   └── documentations/
 │       ├── documentation-vX.Y.Z.md
 │       └── specification-vX.Y.Z.html

@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/method/ontology-notes-policy/">
       
       
-        <link rel="prev" href="../ontology-validation/">
+        <link rel="prev" href="../ontology-rules/">
       
       
         <link rel="next" href="../ontology-versioning/">
@@ -1009,6 +1009,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../ontology-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Rules and SHACL Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1830,7 +1858,7 @@ It ensures consistent visual annotation, semantic clarity, and readability acros
 <h2 id="purpose-scope">Purpose &amp; Scope</h2>
 <p>This guide standardizes how ontology modelers should:</p>
 <ul>
-<li>Classify and label UML notes according to their role (e.g., semantics, constraints, rationale).</li>
+<li>Classify and label UML notes according to their role (e.g., semantics, constraints and derivation rules, rationale, etc.).</li>
 <li>Apply consistent colors and anchoring rules within Visual Paradigm diagrams.</li>
 <li>Maintain visual clarity, traceability, and stylistic uniformity across Health-RI ontology artifacts.</li>
 </ul>
@@ -1844,7 +1872,7 @@ It excludes notation for formal constraint syntax itself or purely graphical con
   The top row (R1), marked in red, shows the color options used for note categories (columns C2–C8).</figcaption>
 </figure>
 
-<p>Each cell in the grid can be identified using a Row × Column notation (RxCy), where R1C1 means "Row 1, Column 1." The top row (R1) contains the main palette options, and the first column (R1C1) is white—this one is not used in our convention. The highlighted red rectangle in the image marks that top row (R1), from which all category colors are selected.</p>
+<p>Each cell in the grid can be identified using a Row × Column notation (RxCy), where R1C1 means "Row 1, Column 1." The top row (R1) contains the main palette options, and the first column (R1C1) is white. The highlighted red rectangle in the image marks that top row (R1), from which all category colors are selected.</p>
 <table>
 <thead>
 <tr>
@@ -1865,10 +1893,17 @@ It excludes notation for formal constraint syntax itself or purely graphical con
 </tr>
 <tr>
 <td><strong>CNST</strong></td>
-<td>Constraints &amp; rules</td>
-<td>Plain-language paraphrase of constraints</td>
-<td>paraphrase of rules, invariants, pre/postconditions, multiplicity rationales (no formal syntax)</td>
+<td>Constraint rules</td>
+<td>Plain-language paraphrase of constraint rules</td>
+<td>paraphrase of constraint rules, invariants, pre/postconditions, multiplicity rationales (no formal syntax)</td>
 <td>R1C2 — Spanish Pink — <div style="background-color:#FFC0C0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFC0C0</div></td>
+</tr>
+<tr>
+<td><strong>DRIV</strong></td>
+<td>Derivation rules</td>
+<td>Plain-language paraphrase of derivation rules</td>
+<td>paraphrase of derivation rules, derived facts, deterministic inferences (no formal syntax)</td>
+<td>R1C5 — Tea Green — <div style="background-color:#C0FFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFC0</div></td>
 </tr>
 <tr>
 <td><strong>RATL</strong></td>
@@ -1896,25 +1931,25 @@ It excludes notation for formal constraint syntax itself or purely graphical con
 <td>Examples &amp; usage</td>
 <td>Small, concrete examples</td>
 <td>valid/invalid instances, mini sequence snippets</td>
-<td>R1C4 — Very Pale Yellow — <div style="background-color:#FFFFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFFFC0</div></td>
+<td>R1C1 — White — <div style="background-color:#FFFFFF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFFFFF</div></td>
 </tr>
 <tr>
 <td><strong>TODO</strong></td>
 <td>Action items</td>
 <td>Work to do on the model</td>
 <td>"rename this," "split class," "add scenario X"</td>
-<td>R1C5 — Tea Green — <div style="background-color:#C0FFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFC0</div></td>
+<td>R1C4 — Very Pale Yellow — <div style="background-color:#FFFFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFFFC0</div></td>
 </tr>
 </tbody>
 </table>
-<p>Color selection rule: Use the top row (R1) of the VP color palette, choosing columns C2–C8 as indicated in the table above. The first slot (R1C1, white) must be skipped<sup id="fnref:no-default-blue"><a class="footnote-ref" href="#fn:no-default-blue">2</a></sup>.</p>
+<p>Color selection rule: Use the top row (R1) of the VP color palette, choosing columns C1–C8 as indicated in the table above. Visual Paradigm's default note color (blue) is intentionally excluded so each note gets a unique category color.</p>
 <h2 id="note-usage-and-diagramming-rules">Note Usage and Diagramming Rules</h2>
 <h3 id="categories-content">Categories &amp; Content</h3>
 <ul>
 <li>Exactly one category per note — never mix categories in the same note.</li>
 <li>Keep notes concise; link out for detailed context when necessary.</li>
-<li>Do not write formal constraint syntax (e.g., SHACL, OCL) inside CNST notes. These notes contain plain-language descriptions only.</li>
-<li>Treat CNST and SEMI as authoritative; other categories are guidance.</li>
+<li>Do not write formal constraint or derivation syntax (e.g., SHACL, SPARQL, OCL) inside CNST or DRIV notes. These notes contain plain-language descriptions only; the formal expressions live in the external SHACL artifact.</li>
+<li>Treat CNST, DRIV, and SEMI as authoritative; other categories are guidance.</li>
 </ul>
 <h3 id="forms-anchoring">Forms &amp; Anchoring</h3>
 <ul>
@@ -1923,19 +1958,29 @@ It excludes notation for formal constraint syntax itself or purely graphical con
 <li>Anchored to multiple classes/relations/notes.</li>
 <li>No anchor (interpreted as diagram-wide).</li>
 <li>Always anchor a note when it refers to specific elements; do not leave it anchorless if it targets a particular class, relation, or note.</li>
-<li><strong>CNST notes must be anchored.</strong> Anchor to the element governed by the constraint that the note paraphrases.</li>
-<li>The constraint's name appears in parentheses in the CNST prefix so the note can be associated with its complete definition maintained in the SHACL constraints file. The model contains only the readable description; the formal rule lives in that external source of truth.</li>
+<li><strong>CNST and DRIV notes must be anchored.</strong> Anchor to the element governed by the rule that the note paraphrases.</li>
 </ul>
 <h3 id="text-formatting">Text Formatting</h3>
 <ul>
 <li>Use plain ASCII where possible; avoid emphasis (bold, italics, underline, highlighting) except for the required tokens described below.</li>
-<li>General rule (all categories except CNST): start the note with the tag and a colon, then a space, then the text. Example: <code>SEMI: This clarifies the meaning of …</code></li>
-<li><strong>CNST formatting (updated):</strong> start with a bold prefix that includes the tag and the rule name in parentheses, then a colon, then a space, then the short description. In other words:
-  <code>**CNST (RuleName):** short, plain-language description of the rule.</code>
-  Here, "RuleName" is the identifier of the rule (following the constraint naming rules) used to associate the note with its formal definition stored in the SHACL file; the remainder is the readable description shown on the diagram.</li>
+<li>General rule (all categories except CNST and DRIV): start the note with the tag and a colon, then a space, then the text. Example: <code>SEMI: This clarifies the meaning of …</code></li>
+<li><strong>CNST and DRIV formatting:</strong> start with a bold prefix that includes the tag and the rule name in parentheses, then a colon, then a space, then the short description.</li>
 <li>Prefer short sentences; use lists only when clarity truly improves (hyphen <code>-</code> list, no nested lists).</li>
 <li>All note text must be fully visible in the diagram and in exports (PNG). Resize or wrap text instead of truncating.</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Rule names in notes</p>
+<p>Rule names appear in parentheses in the <code>CNST</code> and <code>DRIV</code> prefixes so that each note can be associated with its complete definition in the corresponding SHACL artifact. The ontology diagrams contain only the readable description; the formal rules live in the external SHACL file.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Rule names must follow the constraint naming rules defined in <a href="../ontology-rules/">Ontology Rules and SHACL Implementation</a>.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Rules in <code>int</code> stage diagrams (no SHACL formalization yet)</p>
+<p>A constraint or derivation rule shown in a diagram in the <code>int</code> stage may not yet have been formalized in SHACL. In that case, its note may omit the rule name in parentheses and use only the tag prefix (<code>CNST:</code> or <code>DRIV:</code>) followed by a provisional description. Such notes do not claim a stable link to the SHACL artifact.</p>
+<p>Once the rule has been formalized in SHACL, the corresponding note <strong>must</strong> be updated to follow the standard format with the rule name in parentheses (<code>**CNST (RuleName):** …</code> or <code>**DRIV (RuleName):** …</code>). All <code>CNST</code> and <code>DRIV</code> notes that refer to implemented SHACL constraints or derivation rules are required to carry their rule names.</p>
+</div>
 <h3 id="color-borders">Color &amp; Borders</h3>
 <ul>
 <li>Fill color must match the category table (R1C2…R1C8). Custom colors are forbidden.</li>
@@ -1954,24 +1999,20 @@ It excludes notation for formal constraint syntax itself or purely graphical con
 <li>If two notes would collide, stack them vertically with equal spacing and parallel connectors.</li>
 </ul>
 <h2 id="example-snippets">Example Snippets</h2>
-<!-- TODO: Update using real examples. -->
-<ul>
-<li><code>SEMI: "Encounter" denotes a healthcare interaction episode; not a location stay.</code></li>
-<li><code>**CNST (OneActiveIdentifier):** context Patient must have exactly one active Identifier.</code></li>
-<li><code>RATL: Kept 'Episode' separate from 'Visit' to allow cross-facility grouping.</code></li>
-<li><code>TRAC: Derived from Req HRI-EPI-012 and SNOMED CT 123456.</code></li>
-</ul>
+<!-- TODO: Update so all use real examples. -->
+<div class="highlight"><pre><span></span><code><span class="k">-</span><span class="w"> </span><span class="gs">**SEMI:**</span> &quot;Encounter&quot; denotes a healthcare interaction episode; not a location stay.
+<span class="k">-</span><span class="w"> </span><span class="gs">**CNST (OneActiveIdentifier):**</span> context Patient must have exactly one active Identifier.
+<span class="k">-</span><span class="w"> </span><span class="gs">**DRIV (CreatesOnBehalfOfRule):**</span> If an Administrative Gender Recognition mediates both an Administrative Gender Recognition Agent and an Administrative Gender Recognizing Organization, then the Agent creates on behalf of the Organization.
+<span class="k">-</span><span class="w"> </span><span class="gs">**RATL:**</span> Kept &#39;Episode&#39; separate from &#39;Visit&#39; to allow cross-facility grouping.
+<span class="k">-</span><span class="w"> </span><span class="gs">**TRAC:**</span> Derived from Req HRI-EPI-012 and SNOMED CT 123456.
+<span class="k">-</span><span class="w"> </span><span class="gs">**SCOP:**</span> &quot;Non-binary Gender Identity&quot; may be further specialized if needed.
+</code></pre></div>
 <h2 id="references">References</h2>
-<!-- TODO: Update with links to the contstaints definitions page. -->
-
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:name">
 <p>Names obtained from the <a href="https://www.color-name.com/">color-name website</a>.&#160;<a class="footnote-backref" href="#fnref:name" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:no-default-blue">
-<p>The VP default note color (blue) is intentionally excluded so each note gets a unique category color.&#160;<a class="footnote-backref" href="#fnref:no-default-blue" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

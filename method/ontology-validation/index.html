@@ -18,7 +18,7 @@
         <link rel="prev" href="../introduction/">
       
       
-        <link rel="next" href="../ontology-notes-policy/">
+        <link rel="next" href="../ontology-rules/">
       
       
         
@@ -1242,6 +1242,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../ontology-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Rules and SHACL Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ontology-notes-policy/" class="md-nav__link">
         
   
@@ -1881,7 +1909,7 @@
 
 
 <h1 id="ontology-lifecycle-and-validation-policy">Ontology Lifecycle and Validation Policy</h1>
-<p>This document defines the per-package stages (<code>int</code>, <code>irv</code>, <code>erv</code>, <code>pub</code>), how transitions and reversions are recorded in Visual Paradigm, when/why reversions happen, and the mandatory policy for semantic modifications. It also specifies who validates at each stage, how reviews are initiated, and the expected review timelines. Version effects (Y++) are included where relevant.</p>
+<p>This document defines the per-package stages (<code>int</code>, <code>irv</code>, <code>erv</code>, <code>pub</code>), how transitions and reversions are recorded in Visual Paradigm, when and why reversions happen, and the mandatory policy for semantic modifications. It also specifies who validates at each stage, how reviews are initiated, and the expected review timelines. Version effects (Y++) are included where relevant.</p>
 <h2 id="purpose-scope">Purpose &amp; Scope</h2>
 <p>Specifies stage governance for ontology packages: how stage states are tracked, transitioned, and reverted, and how those transitions are recorded. It also defines who performs validation and reviews, when they occur, and how version increments (Y++) are applied. Version impacts are acknowledged where stages drive them; see <a href="../ontology-versioning/">Versioning Strategy</a> for the full versioning logic. This policy applies to all modelers and reviewers involved in ontology development and maintenance.</p>
 <div class="admonition info">
@@ -1896,8 +1924,8 @@
 <li><code>erv</code> – submitted for external review.</li>
 <li><code>pub</code> – external review window closed and package is published.</li>
 </ul>
-<p>Rule. Stage changes happen at package level (not diagram/class). Packages can move through stages independently, and multiple stage transitions may be combined into one release; the version still changes at most once per release following the priority X &gt; Y &gt; Z.
-Version note. A stage transition triggers Y++ and Z → 0 (see <a href="../ontology-versioning/">Versioning Strategy</a>).</p>
+<p><strong>Rule.</strong> Stage changes happen at package level (not diagram/class). Packages can move through stages independently, and multiple stage transitions may be combined into one release; the version still changes at most once per release following the priority X &gt; Y &gt; Z.</p>
+<p><strong>Version note.</strong> A stage transition triggers Y++ and Z → 0 (see <a href="../ontology-versioning/">Versioning Strategy</a>).</p>
 <p><strong>Checklists: gate vs operations.</strong> Stage gate checklists list <strong>exit criteria</strong> to leave stage X and enter stage Y (they are pass/fail gates). The <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a> is <strong>not</strong> a gate; it lists actions to perform <strong>after</strong> entering <code>pub</code> and while remaining there.</p>
 <h2 id="validation-procedures-by-stage">Validation Procedures by Stage</h2>
 <p>Stages <code>int</code> and <code>irv</code> have exit gate checklists that control advancement (see <a href="#stage-specific-checklists">Stage-specific Checklists</a>). Entry into <code>irv</code> requires passing the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a>; advancement from <code>irv</code> to <code>erv</code> requires passing the <a href="#internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</a>. The only in-stage checklist is the <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a>, executed upon entering <code>pub</code> and maintained while in <code>pub</code>.</p>
@@ -1911,6 +1939,7 @@ Version note. A stage transition triggers Y++ and Z → 0 (see <a href="../ontol
 <li>Basic modeling soundness (typing, obvious constraint issues).</li>
 <li>Diagram readability (labels, legends, layout) and terminology consistency.</li>
 <li>Cross-package references are resolvable and unambiguous.</li>
+<li>SHACL validation status for this package (where SHACL shapes exist).</li>
 </ul>
 <p>Reviewers must execute the IRV checklist in section <a href="#internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</a> and record evidence in the review issue.</p>
 <p><strong>Start condition.</strong> The package has passed the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a>; the modeler sets the stage tagged value to <code>irv</code> and notifies internal reviewers.</p>
@@ -1922,7 +1951,7 @@ Version note. A stage transition triggers Y++ and Z → 0 (see <a href="../ontol
 <p><strong>Outcome.</strong> If the review passes (no semantic changes required), the modeler updates the stage tagged value to <code>erv</code> and records the transition <code>&lt;irv → erv&gt;</code>. Per the <a href="../ontology-versioning/">Versioning Strategy</a>, this contributes Y++ and resets Z → 0 for the release (subject to X &gt; Y &gt; Z precedence). Advancement to <code>erv</code> is permitted only after a passed <a href="#internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</a>.</p>
 <h3 id="external-review-erv">External Review (<code>erv</code>)</h3>
 <p><strong>Who validates.</strong> An expanded reviewer pool of domain specialists, modeling specialists, and informed non-specialists.</p>
-<p><strong>Objective.</strong> Conduct an independent, deeper assessment of domain correctness and conceptual rigor. Reviewers check for inconsistencies, incorrectness, incompleteness, ambiguities, hidden assumptions, and coverage gaps, and validate definitions, constraints/multiplicities, and example use-cases/queries, including implications for interoperability and mappings.</p>
+<p><strong>Objective.</strong> Conduct an independent, deeper assessment of domain correctness and conceptual rigor. Reviewers check for inconsistencies, incorrectness, incompleteness, ambiguities, hidden assumptions, and coverage gaps, and validate definitions, constraints/multiplicities, and example use-cases/queries, including implications for interoperability and mappings. Where SHACL shapes exist for the package, reviewers also consider the SHACL validation status as part of this assessment.</p>
 <p><strong>Community call.</strong> The internal team publishes a LinkedIn post entitled "Call for Community Review: [Model Name]". Members of the (future) D12 task group are encouraged to repost this call on their LinkedIn profiles to broaden reach.</p>
 <p><strong>Start condition.</strong> Begins only after a passed <a href="#internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</a>.</p>
 <p><strong>Planning &amp; timeline.</strong> A review activity is created and scheduled into a sprint. External reviewers have one sprint to provide feedback; this may be extended to two sprints based on package complexity, community availability, and other factors.</p>
@@ -1978,6 +2007,7 @@ Version note. A stage transition triggers Y++ and Z → 0 (see <a href="../ontol
 <ul>
 <li>[ ] Model transforms/exports to gUFO/OWL without errors (local build).</li>
 <li>[ ] Ontology header metadata template is populated.</li>
+<li>[ ] Where SHACL shapes exist for this package, SHACL shapes file(s) are present and a SHACL validation run has been executed at least once (no execution errors) (<em>To be implemented</em>). <!-- TODO --></li>
 </ul>
 </li>
 <li>
@@ -2020,15 +2050,20 @@ Version note. A stage transition triggers Y++ and Z → 0 (see <a href="../ontol
 </ul>
 </li>
 <li>
+<p>[ ] <strong>Validation artefacts (SHACL, if appllies)</strong></p>
+<ul>
+<li>[ ] SHACL shapes file(s) for this package are stored in the agreed location in the repository and under version control.</li>
+<li>[ ] A SHACL validation run has been executed for this package; there are no unresolved blocking SHACL violations for this stage (<em>To be implemented</em>). <!-- TODO --></li>
+</ul>
+</li>
+<li>
 <p>[ ] <strong>Terminology consistency</strong></p>
 <ul>
 <li>[ ] Names/labels follow the adopted nomenclature strategy (capitalization, spelling, prefixes).</li>
 <li>[ ] Terminology is consistent across diagrams, package docs, and OWL/TTL (no mismatches or redefinitions).</li>
 <li>[ ] Relation naming follows the defined naming strategy (directionality, verb/preposition pattern, capitalization) and is consistent across diagrams and OWL/TTL.</li>
+<li>[ ] Labels: <code>prefLabel</code> is the most appropriate primary label (no <code>altLabel</code> would be a better choice); missing <code>altLabel</code>s (synonyms, common variants, abbreviations) are identified and proposed.</li>
 </ul>
-</li>
-<li>
-<p>[ ] Labels: <code>prefLabel</code> is the most appropriate primary label (no <code>altLabel</code> would be a better choice); missing <code>altLabel</code>s (synonyms, common variants, abbreviations) are identified and proposed.</p>
 </li>
 <li>
 <p>[ ] <strong>Definitions &amp; examples (scope: packages, diagrams, classes)</strong></p>
@@ -2080,6 +2115,7 @@ Version note. A stage transition triggers Y++ and Z → 0 (see <a href="../ontol
 <li>[ ] Generate the Technical Report (PDF) for the domain ontology represented in the package. The report must summarize what was modeled, key design decisions, challenges/limitations, and relevant context (e.g., related ontologies, mappings/alignments, reuse).</li>
 <li>[ ] Create a new GitHub Release for this package version (tag, title, release notes) that includes the Technical Report PDF and the exported figures as release assets.</li>
 <li>[ ] Trigger Zenodo archiving via the release and verify the DOI is minted; record the DOI in the release notes and on the package page.</li>
+<li>[ ] Where SHACL shapes exist for this package, include the SHACL shapes file(s) as part of the Release assets and Zenodo deposit, so the published ontology has an associated validation shapes graph.</li>
 </ul>
 </li>
 <li>
@@ -2142,10 +2178,9 @@ Version note. A stage transition triggers Y++ and Z → 0 (see <a href="../ontol
 <li>Substantial requirement or scope changes affecting meaning.</li>
 <li>Upstream dependency changes that invalidate assumptions.</li>
 </ul>
-<p>Process. Record the explicit transition as <code>&lt;current&gt; → int</code> in the Visual Paradigm tagged value, open a rework window, and issue Y++ (Z → 0) per the versioning rules. After any reversion to <code>int</code>, the package must re-pass the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a> before re-entering <code>irv</code>.</p>
+<p><strong>Process.</strong> Record the explicit transition as <code>&lt;current&gt; → int</code> in the Visual Paradigm tagged value, open a rework window, and issue Y++ (Z → 0) per the versioning rules. After any reversion to <code>int</code>, the package must re-pass the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a> before re-entering <code>irv</code>.</p>
 <h2 id="policy-for-semantic-modifications">Policy for Semantic Modifications</h2>
-<p>When a package undergoes a semantic modification (e.g., adding/removing/retaxonomizing classes, retyping relations, changing multiplicities or constraints, revising authoritative definitions, introducing/removing key axioms), record an explicit stage reversion <code>&lt;current&gt; → int</code> in the Visual Paradigm tagged value.
-This mandatory reversion triggers Y++ for that release and resets Z → 0. Before resubmitting to <code>irv</code>, the package must re-pass the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a>.</p>
+<p>When a package undergoes a semantic modification (e.g., adding/removing/retaxonomizing classes, retyping relations, changing multiplicities or constraints, revising authoritative definitions, introducing/removing key axioms), record an explicit stage reversion <code>&lt;current&gt; → int</code> in the Visual Paradigm tagged value. This mandatory reversion triggers Y++ for that release and resets Z → 0. Before resubmitting to <code>irv</code>, the package must re-pass the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a>.</p>
 <blockquote>
 <p>See <a href="../ontology-versioning/">Versioning Strategy</a> for the semantic vs. non-semantic decision tests and the full trigger matrix for X/Y/Z.</p>
 </blockquote>
