@@ -1,6 +1,6 @@
 # Ontology Lifecycle and Validation Policy
 
-This document defines the per-package stages (`int`, `irv`, `erv`, `pub`), how transitions and reversions are recorded in Visual Paradigm, when/why reversions happen, and the mandatory policy for semantic modifications. It also specifies who validates at each stage, how reviews are initiated, and the expected review timelines. Version effects (Y++) are included where relevant.
+This document defines the per-package stages (`int`, `irv`, `erv`, `pub`), how transitions and reversions are recorded in Visual Paradigm, when and why reversions happen, and the mandatory policy for semantic modifications. It also specifies who validates at each stage, how reviews are initiated, and the expected review timelines. Version effects (Y++) are included where relevant.
 
 ## Purpose & Scope
 
@@ -18,8 +18,9 @@ Stages are tracked per package inside the Visual Paradigm project as tagged valu
 - `erv` – submitted for external review.
 - `pub` – external review window closed and package is published.
 
-Rule. Stage changes happen at package level (not diagram/class). Packages can move through stages independently, and multiple stage transitions may be combined into one release; the version still changes at most once per release following the priority X > Y > Z.
-Version note. A stage transition triggers Y++ and Z → 0 (see [Versioning Strategy](./ontology-versioning.md)).
+**Rule.** Stage changes happen at package level (not diagram/class). Packages can move through stages independently, and multiple stage transitions may be combined into one release; the version still changes at most once per release following the priority X > Y > Z.
+
+**Version note.** A stage transition triggers Y++ and Z → 0 (see [Versioning Strategy](./ontology-versioning.md)).
 
 **Checklists: gate vs operations.** Stage gate checklists list **exit criteria** to leave stage X and enter stage Y (they are pass/fail gates). The [Publication Stage Operations Checklist](#publication-stage-operations-checklist) is **not** a gate; it lists actions to perform **after** entering `pub` and while remaining there.
 
@@ -39,6 +40,7 @@ Stages `int` and `irv` have exit gate checklists that control advancement (see [
 - Basic modeling soundness (typing, obvious constraint issues).
 - Diagram readability (labels, legends, layout) and terminology consistency.
 - Cross-package references are resolvable and unambiguous.
+- SHACL validation status for this package (where SHACL shapes exist).
 
 Reviewers must execute the IRV checklist in section [Internal Review Stage Gate Checklist](#internal-review-stage-gate-checklist) and record evidence in the review issue.
 
@@ -55,7 +57,7 @@ Reviewers must execute the IRV checklist in section [Internal Review Stage Gate 
 
 **Who validates.** An expanded reviewer pool of domain specialists, modeling specialists, and informed non-specialists.
 
-**Objective.** Conduct an independent, deeper assessment of domain correctness and conceptual rigor. Reviewers check for inconsistencies, incorrectness, incompleteness, ambiguities, hidden assumptions, and coverage gaps, and validate definitions, constraints/multiplicities, and example use-cases/queries, including implications for interoperability and mappings.
+**Objective.** Conduct an independent, deeper assessment of domain correctness and conceptual rigor. Reviewers check for inconsistencies, incorrectness, incompleteness, ambiguities, hidden assumptions, and coverage gaps, and validate definitions, constraints/multiplicities, and example use-cases/queries, including implications for interoperability and mappings. Where SHACL shapes exist for the package, reviewers also consider the SHACL validation status as part of this assessment.
 
 **Community call.** The internal team publishes a LinkedIn post entitled "Call for Community Review: [Model Name]". Members of the (future) D12 task group are encouraged to repost this call on their LinkedIn profiles to broaden reach.
 
@@ -102,6 +104,7 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
 - [ ] **OWL/TTL export & header**
     - [ ] Model transforms/exports to gUFO/OWL without errors (local build).
     - [ ] Ontology header metadata template is populated.
+    - [ ] Where SHACL shapes exist for this package, SHACL shapes file(s) are present and a SHACL validation run has been executed at least once (no execution errors) (*To be implemented*). <!-- TODO -->
 
 - [ ] **Basic domain consistency (author self-check)**
     - [ ] Complete enough: key concepts/relations for the package scope are present.
@@ -130,11 +133,15 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
     - [ ] The OWL/TTL file includes the expected ontology header metadata according to the project standard (pass/fail only; no per-field audit).
     - [ ] Figures folder up to date: the latest package diagrams are exported to the Figures folder (no missing/old images).
 
+- [ ] **Validation artefacts (SHACL, if appllies)**
+    - [ ] SHACL shapes file(s) for this package are stored in the agreed location in the repository and under version control.
+    - [ ] A SHACL validation run has been executed for this package; there are no unresolved blocking SHACL violations for this stage (*To be implemented*). <!-- TODO -->
+
 - [ ] **Terminology consistency**
     - [ ] Names/labels follow the adopted nomenclature strategy (capitalization, spelling, prefixes).
     - [ ] Terminology is consistent across diagrams, package docs, and OWL/TTL (no mismatches or redefinitions).
     - [ ] Relation naming follows the defined naming strategy (directionality, verb/preposition pattern, capitalization) and is consistent across diagrams and OWL/TTL.
-- [ ] Labels: `prefLabel` is the most appropriate primary label (no `altLabel` would be a better choice); missing `altLabel`s (synonyms, common variants, abbreviations) are identified and proposed.
+    - [ ] Labels: `prefLabel` is the most appropriate primary label (no `altLabel` would be a better choice); missing `altLabel`s (synonyms, common variants, abbreviations) are identified and proposed.
 
 - [ ] **Definitions & examples (scope: packages, diagrams, classes)**
     - [ ] Every package, diagram, and class has a definition.
@@ -172,6 +179,7 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
     - [ ] Generate the Technical Report (PDF) for the domain ontology represented in the package. The report must summarize what was modeled, key design decisions, challenges/limitations, and relevant context (e.g., related ontologies, mappings/alignments, reuse).
     - [ ] Create a new GitHub Release for this package version (tag, title, release notes) that includes the Technical Report PDF and the exported figures as release assets.
     - [ ] Trigger Zenodo archiving via the release and verify the DOI is minted; record the DOI in the release notes and on the package page.
+    - [ ] Where SHACL shapes exist for this package, include the SHACL shapes file(s) as part of the Release assets and Zenodo deposit, so the published ontology has an associated validation shapes graph.
 
 - [ ] **Catalog & discoverability (one-time at publication)**
     - [ ] Submit/update the package in the OntoUML/UFO Catalog with the correct version and metadata (including the GitHub Release and Zenodo DOI).
@@ -220,12 +228,11 @@ Reversions (e.g., `irv → int`, `erv → int`, or `pub → int`) happen when th
 - Substantial requirement or scope changes affecting meaning.
 - Upstream dependency changes that invalidate assumptions.
 
-Process. Record the explicit transition as `<current> → int` in the Visual Paradigm tagged value, open a rework window, and issue Y++ (Z → 0) per the versioning rules. After any reversion to `int`, the package must re-pass the [Internal Stage Gate Checklist](#internal-stage-gate-checklist) before re-entering `irv`.
+**Process.** Record the explicit transition as `<current> → int` in the Visual Paradigm tagged value, open a rework window, and issue Y++ (Z → 0) per the versioning rules. After any reversion to `int`, the package must re-pass the [Internal Stage Gate Checklist](#internal-stage-gate-checklist) before re-entering `irv`.
 
 ## Policy for Semantic Modifications
 
-When a package undergoes a semantic modification (e.g., adding/removing/retaxonomizing classes, retyping relations, changing multiplicities or constraints, revising authoritative definitions, introducing/removing key axioms), record an explicit stage reversion `<current> → int` in the Visual Paradigm tagged value.
-This mandatory reversion triggers Y++ for that release and resets Z → 0. Before resubmitting to `irv`, the package must re-pass the [Internal Stage Gate Checklist](#internal-stage-gate-checklist).
+When a package undergoes a semantic modification (e.g., adding/removing/retaxonomizing classes, retyping relations, changing multiplicities or constraints, revising authoritative definitions, introducing/removing key axioms), record an explicit stage reversion `<current> → int` in the Visual Paradigm tagged value. This mandatory reversion triggers Y++ for that release and resets Z → 0. Before resubmitting to `irv`, the package must re-pass the [Internal Stage Gate Checklist](#internal-stage-gate-checklist).
 
 > See [Versioning Strategy](./ontology-versioning.md) for the semantic vs. non-semantic decision tests and the full trigger matrix for X/Y/Z.
 

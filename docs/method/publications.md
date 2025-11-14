@@ -26,6 +26,10 @@ For each ontology release, the following artifacts are published — always in b
     - [`ontologies/latest/health-ri-ontology.ttl`](https://w3id.org/health-ri/ontology/ttl)
     - `ontologies/versioned/health-ri-ontology-v<version>.ttl`
 
+- **SHACL validation shapes and derivation rules (Turtle)**: SHACL Core and SHACL Advanced Features graph that validates HRIO-aligned instance data and materializes safe, ontology-compatible triples.
+    - [`ontologies/latest/health-ri-ontology.shacl`](https://w3id.org/health-ri/ontology/shacl)
+    - `ontologies/versioned/health-ri-ontology-v<version>.shacl` (via `https://w3id.org/health-ri/ontology/v<version>/shacl`)
+
 - **Markdown documentation**: Textual documentation of the OntoUML ontology.
     - [`ontologies/latest/documentations/documentation.md`](https://w3id.org/health-ri/ontology/documentation)
     - `ontologies/versioned/documentations/documentation-v<version>.md`
@@ -35,8 +39,7 @@ For each ontology release, the following artifacts are published — always in b
     - `ontologies/versioned/documentations/specification-v<version>.html`
 
 !!! note
-    gUFO files are only generated for versions of the model that are **syntactically valid**.
-    As a result, no `.ttl` file will be provided for versions that are still incomplete or under development.
+    gUFO files may only generated for versions of the model that are **syntactically valid**. As a result, no `.ttl` or `.shacl` file may be provided for some versions that are still incomplete or under development.
 
 !!! info
     The version numbers of the `.vpp`/`.json` (OntoUML) and `.ttl` (OWL/gUFO) files are managed independently. The `.ttl` file includes a `dcterms:conformsTo` metadata relation to indicate which OntoUML version it corresponds to.
@@ -54,16 +57,18 @@ ontologies/
 │   ├── health-ri-ontology.vpp
 │   ├── health-ri-ontology.json
 │   ├── health-ri-ontology.ttl
+│   ├── health-ri-ontology.shacl
 │   ├── documentations/
 │   │   ├── documentation.md
 │   │   └── specification.html
 │   └── images/
-│       └── *.png   # Exported PNG images of all diagrams
+│       └── *.png   # Exported PNG images of all OntoUML diagrams
 │
 ├── versioned/
 │   ├── health-ri-ontology-vX.Y.Z.json
 │   ├── health-ri-ontology-vX.Y.Z.vpp
 │   ├── health-ri-ontology-vX.Y.Z.ttl
+│   ├── health-ri-ontology-vX.Y.Z.shacl
 │   └── documentations/
 │       ├── documentation-vX.Y.Z.md
 │       └── specification-vX.Y.Z.html

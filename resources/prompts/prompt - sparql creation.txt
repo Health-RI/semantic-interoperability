@@ -3,32 +3,53 @@ Act as a very experienced and very skilled SHACL + ontology engineering expert (
 Read this entire prompt before responding and follow ALL sections below.
 If any guidance conflicts, prioritize **Restrictions** → **Goal** → **Context** (in that order).
 Respond in English. Produce only the deliverables requested—no extra commentary.
-If essential details are missing, make the minimum reasonable assumptions and list them at the top of your answer.
+If essential details are missing, make the minimum reasonable assumptions and encode them as brief comments in the Turtle block.
 
 # Context
 
-- **Domain / topic:** Healthcare semantic interoperability; SHACL constraints over RDF graphs modeled with gUFO/OntoUML patterns.
-- **Audience & use case:** Internal ontology/metadata engineering team validating graph data and documenting constraints for inclusion in CI pipelines and ontology docs.
-- **Available inputs / sources:** User-provided textual constraint description; class/role/relator/property names; namespace/prefix list; example triples; prior shapes; optionally images (e.g., OntoUML diagrams). Use only what is provided here.
+- **Domain / topic:** Healthcare semantic interoperability and ontology-driven data integration. SHACL shapes and SHACL-AF rules that constrain or derive facts over RDF graphs modeled with gUFO/OntoUML patterns.
+- **Audience & use case:** Internal ontology/metadata engineers (e.g., at Health-RI) who need consistent, well-documented SHACL shapes and rules for inclusion in CI pipelines and ontology documentation.
+- **Available inputs / sources:** User-provided textual rule description; conceptual modeling notes; prior shapes; optionally images (e.g., OntoUML diagrams). Use only what is provided here.
 
-# Key definitions/scope notes:
-  - Use human-readable labels (`sh:name`, `sh:description`, `sh:message`) with `@en`.
-  - **Materialization rules (SHACL-AF):** When the intent is to *materialize* triples (not validate), use `sh:rule` (e.g., `sh:SPARQLRule` with `CONSTRUCT` or `sh:TripleRule`), scoped via `sh:targetClass` and `$this`. Such shapes SHOULD NOT emit validation violations.
+# Key definitions / scope notes
+
+- **Rule:** Any logical specification captured as a SHACL shape (validation or derivation).
+- **Constraint rule:** A rule whose primary purpose is to **restrict occurrences** (integrity constraints/invariants); implemented as standard SHACL validation (e.g., `sh:property`, `sh:severity sh:Violation`).
+- **Derivation rule:** A rule whose primary purpose is to **infer / materialize** new facts; typically implemented using SHACL-AF `sh:rule` (e.g., `sh:SPARQLRule`) without emitting violations.
+- Use human-readable labels (`sh:name`, `sh:description`, `sh:message`) with `@en`.
+- **Materialization rules (SHACL-AF):** When the intent is to *materialize* triples (not validate), use `sh:rule` (e.g., `sh:SPARQLRule`) and avoid `sh:severity`. Make the materialization-only behavior explicit in `sh:description`. Prefer `$this` and declared prefixes; avoid ad-hoc IRIs inside SPARQL.
+- Assume gUFO/OntoUML idioms:
+  - Relators (e.g., assignments) with mediating properties like `gufo:mediates`.
+  - Roles, roleMixins etc. as target classes or qualified shapes.
 
 # Goal
 
-- **Primary outcome:** Produce a single SHACL `sh:NodeShape` (in Turtle) that encodes the requested constraint/rule, following the exact template shown below.
+Given a textual description of **one rule** (either a **constraint rule** or a **derivation rule**):
 
-- **Success criteria:** Valid Turtle syntax; uses only declared/obvious prefixes; includes `sh:name`, `sh:description`, `sh:targetClass`.
-  - **Validation constraints:** include at least one `sh:property` with explicit `sh:path`; use qualified constraints where appropriate; provide clear `@en` messages with `sh:severity sh:Violation`; comments clarify non-obvious parts.
-  - **Materialization-only rules:** include an `sh:rule` that performs the construction; avoid `sh:severity` and validation-only properties unless used as non-reporting preconditions; make the “materialization-only” behavior explicit in `sh:description`.
+1. Classify it as **Constraint** or **Derivation**.
+2. Design a single SHACL `sh:NodeShape` (and nested property shapes) that:
+   - Correctly targets the intended nodes (e.g., relators, roles, events).
+   - Enforces the rule (for constraint rules) or materializes the intended triples (for derivation rules).
+3. Document the rule using the standardized header (see **Format** below) and clear English messages.
+
+# Success criteria
+
+A good answer MUST:
+
+- Be valid Turtle (no syntax errors, balanced brackets, proper `;` and `.`).
+- Use only declared or obvious prefixes; if you must invent something, keep it in the `:` namespace and comment it.
+- Include:
+  - `sh:name` and `sh:description` on the `sh:NodeShape`.
+  - For constraint rules: at least one property/qualified constraint and `sh:severity sh:Violation`.
+  - For derivation rules: at least one `sh:rule` (e.g., `sh:SPARQLRule`) with a clear `sh:construct` or `sh:condition`.
+- Align tightly with the natural-language description (no new semantics, no hidden assumptions).
+- Include helpful comments for non-obvious design decisions.
 
 # Deliverables
 
-- Begin with a **TL;DR / Quick Answer (2–4 lines)** summarizing the constraint or rule.
-- A single **Turtle code block** containing exactly one `sh:NodeShape` implementing the constraint or rule.
-- A **brief justification (1–3 lines)** explaining how the shape enforces or materializes the rule.
-- A **final checklist table** mapping each Success Criterion to where it is satisfied (e.g., “Lines X–Y”, “TTL block”).
+Produce exactly one deliverable:
+
+- A single **Turtle code block** (see **Format** below) containing the header comments plus exactly one `sh:NodeShape` implementing the rule (including nested property shapes or `sh:rule` as needed). Output nothing else.
 
 # Format
 
@@ -36,23 +57,56 @@ Use exactly this output template structure; output nothing else:
 
 ```ttl
 # -----------------------------------------------------------------------------
-# CONSTRAINT: <short, human-readable title>
-# INTENT: <one-sentence statement of what the constraint enforces or the rule materializes on the relator>
-# ALLOWED: <concise allowance, if applicable; omit if N/A>
-# FORBIDDEN: <concise prohibition, if applicable; omit if N/A>
+# RULE: (same id/title the rule appears in the CSNT note)
+# RULE TYPE: (Constraint|Derivation)
+# DESCRIPTION: (The same text it appears in the OntoUML models.)
+# DETAILS (this is optional and can be filled with more information, examples, etc.)
 # -----------------------------------------------------------------------------
 <one Turtle code block containing exactly one sh:NodeShape implementing the constraint or materialization rule>
 # (End of output)
 # -----------------------------------------------------------------------------
 ```
 
+- Use a single `sh:NodeShape` IRI (e.g., `:NoSelfSexAtBirthAssignment`), even if the internal structure is complex.
+- Put all SHACL content inside that one TTL block.
+- Use comments sparingly but effectively (only where they clarify non-obvious parts).
+
 # Step-by-step instructions
 
-1) **Assumptions (≤3 lines):** If essential details are missing, make minimal assumptions (e.g., missing prefixes) but do not add new sections—encode any such assumptions as brief `#` comments inside the TTL block.
-2) **Use canonical names:** Reuse prefixes, classes, and properties from the attached TTL file (if available). If a needed IRI is absent, use `:` placeholders (e.g., `:RoleA`) and note this with a short `#` comment in the TTL.
-3) **Shape design:**
-   - **Validation:** add precise `sh:message`(s) and set `sh:severity sh:Violation`; prefer qualified constraints and boolean combinators.
-   - **Materialization-only:** use `sh:rule` (e.g., `sh:SPARQLRule` with a `CONSTRUCT`); omit `sh:severity`; avoid reporting properties unless used as non-reporting guards; make the materialization-only behavior explicit in `sh:description`.
+1. **Assumptions (≤3 lines):**
+   - If essential details are missing (e.g., exact property names), make the minimum reasonable assumptions.
+   - Encode these assumptions as brief `#` comments inside the TTL block.
+
+2. **Classify the rule:**
+   - If the description talks about **forbidden / allowed combinations, cardinalities, or integrity conditions**, treat it as a **Constraint** rule.
+   - If the description talks about **deriving, inferring, creating, or populating** facts, treat it as a **Derivation** rule and use `sh:rule`.
+
+3. **Use canonical names:**
+   - Reuse prefixes, classes, and properties from the input when possible.
+   - If something is unnamed but clearly needed, create a sensible compact name (e.g., `:RoleA`) and note this with a short `#` comment in the TTL.
+
+4. **Shape design for constraint rules:**
+   - Prefer:
+     - `sh:targetClass`, `sh:property`, `sh:path`.
+     - Qualified constraints (`sh:qualifiedValueShape` + `sh:qualifiedMinCount`/`sh:qualifiedMaxCount`).
+     - Logical combinators (`sh:and`, `sh:or`, `sh:not`) when needed.
+   - Always include:
+     - `sh:severity sh:Violation`.
+     - At least one `sh:message` that clearly explains the violation to a user.
+
+5. **Shape design for derivation rules:**
+   - Use SHACL-AF `sh:rule` (typically `sh:SPARQLRule`).
+   - Use `sh:construct` when you need to create triples, and optionally `sh:condition` to restrict firing.
+   - Make sure variables and `$this` are used correctly and prefixes are in scope.
+   - Do **not** add `sh:severity`; derivation is not a validation error.
+
+6. **Documentation fields:**
+   - `sh:name`: short title, usually echoing the RULE line.
+   - `sh:description`: a clear paraphrase of the DESCRIPTION line, mentioning whether it is a constraint or derivation rule.
+   - `sh:message` (for constraint rules): written as if shown to a user who violated the constraint.
+
+7. **Checklist:**
+   - Ensure internally that every Success Criterion is satisfied; do **not** output a separate checklist or additional Markdown.
 
 # Restrictions
 
@@ -61,23 +115,27 @@ Use exactly this output template structure; output nothing else:
 - Do not invent namespaces; if undeclared, use compact `:` placeholders and comment them.
 - Provide conclusions and a brief justification.
 
-# Example to emulate (format only):
+# Example to emulate (format only)
+
+Do **not** copy this example verbatim; use it only as a pattern for style, comments, and structure.
 
 ```ttl
 # -----------------------------------------------------------------------------
-# CONSTRAINT: No self-assignment within the same SexAtBirthAssignment
-# INTENT: For each :SexAtBirthAssignment (a relator), collect all participants it mediates via gufo:mediates. Among those participants, the intersection of :SexAtBirthAssigner and :PersonWithAssignedSexAtBirth must be empty.
-# ALLOWED: the same person can be an assignee in z1 and an assigner in z2.
-# FORBIDDEN: the same person is both assigner AND assignee in the same z1.
+# RULE: No self-assignment within the same SexAtBirthAssignment
+# RULE TYPE: Constraint
+# DESCRIPTION: For each :SexAtBirthAssignment (a relator), collect all participants it mediates via gufo:mediates. Among those participants, the intersection of :SexAtBirthAssigner and :PersonWithAssignedSexAtBirth must be empty.
+# DETAILS: ALLOWED: the same person can be an assignee in z1 and an assigner in z2. FORBIDDEN: the same person is both assigner AND assignee in the same z1.
 # -----------------------------------------------------------------------------
 :NoSelfSexAtBirthAssignment
     a sh:NodeShape ;
     sh:name "No self-assignment in SexAtBirthAssignment"@en ;
     sh:description "Within one SexAtBirthAssignment, no participant may be both Assigner and Assignee."@en ;
     sh:targetClass :SexAtBirthAssignment ;
+
     sh:property [
         # Path: all participants mediated by THIS assignment (the relator).
         sh:path gufo:mediates ;
+
         # Count only those participants that are simultaneously in both role classes.
         sh:qualifiedValueShape [
             sh:and (
@@ -85,10 +143,13 @@ Use exactly this output template structure; output nothing else:
                 [ sh:class :PersonWithAssignedSexAtBirth ]
             )
         ] ;
+
         # Intersection must be empty (max 0 such participants).
         sh:qualifiedMaxCount 0 ;
+
         # Reporting
         sh:severity sh:Violation ;
         sh:message "The same individual plays both SexAtBirthAssigner and PersonWithAssignedSexAtBirth for this SexAtBirthAssignment."@en
     ] .
+# -----------------------------------------------------------------------------
 ```
