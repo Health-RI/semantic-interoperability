@@ -81,6 +81,7 @@ nav:
       - Introduction: method/introduction.md
       - Ontology:
           - Lifecycle and Validation Policy: method/ontology-validation.md
+          - Ontology Rules and SHACL Implementation: method/ontology-rules.md
           - Note Classification and Visual Conventions: method/ontology-notes-policy.md
           - Versioning Strategy for Ontology Releases: method/ontology-versioning.md
       - Mappings:

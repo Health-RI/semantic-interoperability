@@ -26,17 +26,16 @@ Palette convention (RxCy): Visual Paradigm (VP) defines a fixed color grid withi
 
 Each cell in the grid can be identified using a Row × Column notation (RxCy), where R1C1 means "Row 1, Column 1." The top row (R1) contains the main palette options, and the first column (R1C1) is white. The highlighted red rectangle in the image marks that top row (R1), from which all category colors are selected.
 
-| Tag    | Category               | What goes here                                       | Typical contents                                                                                 | Color (VP slot — Name[^name] — HEX) |
-| ------ | ---------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ----------------------------------- |
-| **SEMI** | Semantics & intent     | Clarify meaning beyond the stereotype/name           | term definition, conceptual nuance, OntoUML meaning, disambiguation                              | R1C7 — Lavender Blue — <div style="background-color:#C0C0FF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0C0FF</div> |
-| **CNST** | Constraint rules    | Plain-language paraphrase of constraint rules        | paraphrase of constraint rules, invariants, pre/postconditions, multiplicity rationales (no formal syntax) | R1C2 — Spanish Pink — <div style="background-color:#FFC0C0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFC0C0</div> |
-| **DRIV** | Derivation rules       | Plain-language paraphrase of derivation rules        | paraphrase of derivation rules, derived facts, deterministic inferences (no formal syntax)       | R1C5 — Tea Green — <div style="background-color:#C0FFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFC0</div> |
-| **RATL** | Rationale              | Why a design choice was made                         | trade-offs, rejected alternatives, decision logs                                                 | R1C8 — Brilliant Lavender — <div style="background-color:#FFC0FF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFC0FF</div> |
-| **SCOP** | Scope & assumptions    | Boundaries of what the model covers                  | simplifying assumptions, context limits, applicability conditions                                | R1C6 — Celeste — <div style="background-color:#C0FFFF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFFF</div> |
-| **TRAC** | Traceability & sources | Where a model element comes from                     | requirement IDs, standards clauses, tickets, citations                                           | R1C3 — Very Pale Orange — <div style="background-color:#FFE0C0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFE0C0</div> |
-| **EXMP** | Examples & usage       | Small, concrete examples                             | valid/invalid instances, mini sequence snippets                                                  | R1C1 — White — <div style="background-color:#FFFFFF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFFFFF</div> |
-| **TODO** | Action items           | Work to do on the model                              | "rename this," "split class," "add scenario X"                                                   | R1C4 — Very Pale Yellow — <div style="background-color:#FFFFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFFFC0</div> |
-
+| Tag      | Category               | What goes here                                | Typical contents                                                                                           | Color (VP slot — Name[^name] — HEX)                                                                                                                              |
+| -------- | ---------------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **SEMI** | Semantics & intent     | Clarify meaning beyond the stereotype/name    | term definition, conceptual nuance, OntoUML meaning, disambiguation                                        | R1C7 — Lavender Blue — <div style="background-color:#C0C0FF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0C0FF</div>      |
+| **CNST** | Constraint rules       | Plain-language paraphrase of constraint rules | paraphrase of constraint rules, invariants, pre/postconditions, multiplicity rationales (no formal syntax) | R1C2 — Spanish Pink — <div style="background-color:#FFC0C0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFC0C0</div>       |
+| **DRIV** | Derivation rules       | Plain-language paraphrase of derivation rules | paraphrase of derivation rules, derived facts, deterministic inferences (no formal syntax)                 | R1C5 — Tea Green — <div style="background-color:#C0FFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFC0</div>          |
+| **RATL** | Rationale              | Why a design choice was made                  | trade-offs, rejected alternatives, decision logs                                                           | R1C8 — Brilliant Lavender — <div style="background-color:#FFC0FF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFC0FF</div> |
+| **SCOP** | Scope & assumptions    | Boundaries of what the model covers           | simplifying assumptions, context limits, applicability conditions                                          | R1C6 — Celeste — <div style="background-color:#C0FFFF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#C0FFFF</div>            |
+| **TRAC** | Traceability & sources | Where a model element comes from              | requirement IDs, standards clauses, tickets, citations                                                     | R1C3 — Very Pale Orange — <div style="background-color:#FFE0C0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFE0C0</div>   |
+| **EXMP** | Examples & usage       | Small, concrete examples                      | valid/invalid instances, mini sequence snippets                                                            | R1C1 — White — <div style="background-color:#FFFFFF;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFFFFF</div>              |
+| **TODO** | Action items           | Work to do on the model                       | "rename this," "split class," "add scenario X"                                                             | R1C4 — Very Pale Yellow — <div style="background-color:#FFFFC0;width:90px;height:22px;border:1px solid #999;text-align:center;line-height:22px;">#FFFFC0</div>   |
 
 Color selection rule: Use the top row (R1) of the VP color palette, choosing columns C1–C8 as indicated in the table above. Visual Paradigm's default note color (blue) is intentionally excluded so each note gets a unique category color.
 
@@ -70,7 +69,12 @@ Color selection rule: Use the top row (R1) of the VP color palette, choosing col
     Rule names appear in parentheses in the `CNST` and `DRIV` prefixes so that each note can be associated with its complete definition in the corresponding SHACL artifact. The ontology diagrams contain only the readable description; the formal rules live in the external SHACL file.
 
 !!! note
-    Rule names must follow the constraint naming rules defined in [TO BE DEFINED]. <!-- TODO -->
+    Rule names must follow the constraint naming rules defined in [Ontology Rules and SHACL Implementation](./ontology-rules.md).
+
+!!! info "Rules in `int` stage diagrams (no SHACL formalization yet)"
+    A constraint or derivation rule shown in a diagram in the `int` stage may not yet have been formalized in SHACL. In that case, its note may omit the rule name in parentheses and use only the tag prefix (`CNST:` or `DRIV:`) followed by a provisional description. Such notes do not claim a stable link to the SHACL artifact.
+
+    Once the rule has been formalized in SHACL, the corresponding note **must** be updated to follow the standard format with the rule name in parentheses (`**CNST (RuleName):** …` or `**DRIV (RuleName):** …`). All `CNST` and `DRIV` notes that refer to implemented SHACL constraints or derivation rules are required to carry their rule names.
 
 ### Color & Borders
 
@@ -104,5 +108,3 @@ Color selection rule: Use the top row (R1) of the VP color palette, choosing col
 ## References
 
 [^name]: Names obtained from the [color-name website](https://www.color-name.com/).
-
-<!-- TODO: Update with links to the rule definitions page. -->
