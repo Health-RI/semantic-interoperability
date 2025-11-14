@@ -21,8 +21,8 @@ These URIs point to the **most recent release** of the Health-RI Ontology and re
 | PID                       | Description                                  |
 | ------------------------- | -------------------------------------------- |
 | `/ontology/ttl`           | OWL ontology in Turtle format                |
-| `/ontology/specification` | HTML rendering of the ontology specification |
-| `/ontology/documentation` | Markdown documentation (raw version)         |
+| `/ontology/documentation` | HTML rendering of the OntoUML ontology documentation |
+| `/ontology/specification` | HTML rendering of the gUFO ontology documentation |
 | `/ontology/json`          | OntoUML model exported as JSON               |
 | `/ontology/vpp`           | OntoUML model file in Visual Paradigm format |
 | `/ontology/shacl`         | SHACL constraint and derivation rules        |
@@ -51,8 +51,8 @@ Where:
     - `vpp` — OntoUML model (Visual Paradigm)
     - `json` — OntoUML model (JSON)
     - `shacl` — SHACL constraint and derivation rules (Turtle)
-    - `documentation` — Markdown documentation
-    - `specification` — HTML specification
+    - `documentation` — OntoUML HTML documentation
+    - `specification` — gUFO HTML documentation
 
 !!! tip
     You can also use the version URI without a `{format}` (e.g., `/v0.6.0`) to directly access the `.ttl` file.
@@ -66,10 +66,10 @@ Where:
   → Visual Paradigm project file for version 0.6.0
 
 - `https://w3id.org/health-ri/ontology/v0.9.1/documentation`
-  → Markdown documentation for version 0.9.1
+  → HTML documentation for OntoUMl ontology version 0.9.1
 
 - `https://w3id.org/health-ri/ontology/v0.6.0/specification`
-  → HTML specification for version 0.6.0
+  → HTML documentation for gUFO ontology version 0.6.0
 
 - `https://w3id.org/health-ri/ontology/v0.11.9/shacl`
   → SHACL shapes for version 0.11.9
@@ -151,8 +151,8 @@ Versioned PIDs follow semantic versioning and resolve to immutable artifacts for
 | `/ontology`                                | Ontology root                                | Redirects to raw `.ttl` file            | [https://w3id.org/health-ri/ontology](https://w3id.org/health-ri/ontology)                                                               |
 | `/ontology/ttl`                            | Latest ontology in Turtle format             | Redirects to raw `.ttl` file            | [https://w3id.org/health-ri/ontology/ttl](https://w3id.org/health-ri/ontology/ttl)                                                       |
 | `/ontology/shacl`                          | Latest SHACL shapes                          | Redirects to latest `.shacl`            | [https://w3id.org/health-ri/ontology/shacl](https://w3id.org/health-ri/ontology/shacl)                                                   |
-| `/ontology/specification`                  | Latest HTML specification                    | Human-readable documentation            | [https://w3id.org/health-ri/ontology/specification](https://w3id.org/health-ri/ontology/specification)                                   |
-| `/ontology/documentation`                  | Markdown documentation                       | Redirects to `.md`                      | [https://w3id.org/health-ri/ontology/documentation](https://w3id.org/health-ri/ontology/documentation)                                   |
+| `/ontology/documentation`                  | Latest HTML documentation                    | OntoUML's human-readable documentation  | [https://w3id.org/health-ri/ontology/documentation](https://w3id.org/health-ri/ontology/documentation)                                   |
+| `/ontology/specification`                  | Latest HTML specification                    | gUFO's human-readable documentation     | [https://w3id.org/health-ri/ontology/specification](https://w3id.org/health-ri/ontology/specification)                                   |
 | `/ontology/json`                           | Latest JSON export of OntoUML                | Redirects to `.json`                    | [https://w3id.org/health-ri/ontology/json](https://w3id.org/health-ri/ontology/json)                                                     |
 | `/ontology/vpp`                            | Latest OntoUML model (`.vpp`)                | Redirects to Visual Paradigm file       | [https://w3id.org/health-ri/ontology/vpp](https://w3id.org/health-ri/ontology/vpp)                                                       |
 | `/ontology/vX.Y.Z/{format}`                | Versioned ontology release                   | Format-specific persistent access       | [https://w3id.org/health-ri/ontology/v0.6.0/ttl](https://w3id.org/health-ri/ontology/v0.6.0/ttl)                                         |
