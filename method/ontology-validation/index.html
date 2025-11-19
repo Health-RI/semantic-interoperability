@@ -1959,6 +1959,10 @@
 <h2 id="stage-specific-checklists">Stage-specific Checklists</h2>
 <p>These checklists function strictly as exit gates: the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a> controls exit from <code>int</code> to <code>irv</code>, and the <a href="#internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</a> controls exit from <code>irv</code> to <code>erv</code>. Reviewers must execute the relevant checklist and record evidence (links, notes) in the associated review issue. The <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a> is intentionally non-gate and applies <strong>after</strong> <code>&lt;erv → pub&gt;</code>; use it to run publication and ongoing <code>pub</code> tasks.</p>
 <h3 id="internal-stage-gate-checklist">Internal Stage Gate Checklist</h3>
+<div class="admonition warning">
+<p class="admonition-title">Disclaimer</p>
+<p>This checklist is still under review and it should be used with caution.</p>
+</div>
 <p><strong>Exit criteria for <code>int → irv</code>.</strong> All items below must be satisfied to leave <code>int</code> and enter <code>irv</code>.</p>
 <ul>
 <li>
@@ -2029,40 +2033,38 @@
 </ul>
 <h3 id="internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</h3>
 <p><strong>Exit criteria for <code>irv → erv</code>.</strong> All items below must be satisfied to leave <code>irv</code> and enter <code>erv</code>.</p>
+<!-- Multiple pending TODOs -->
 <ul>
 <li>
 <p>[ ] <strong>Stage tagging &amp; metadata present</strong></p>
 <ul>
-<li>[ ] Package has the correct stage tag (e.g., <code>irv</code>).</li>
-<li>[ ] Required package-level metadata (post-v1.0.0) is present: <code>introducedInVersion</code>, <code>lastChangedInVersion</code>, <code>lastPublishedInVersion</code>, <code>reviewedBy</code>.</li>
-<li>[ ] Title and Description are filled using Visual Paradigm's default fields (not tags).</li>
+<li>[ ] Package has the correct stage tag (e.g., <code>irv</code>).
+<!-- - [ ] Required package-level metadata (post-v1.0.0) is present: <code>introducedInVersion</code>, <code>lastChangedInVersion</code>, <code>lastPublishedInVersion</code>, <code>reviewedBy</code>. --></li>
 </ul>
 </li>
 <li>
 <p>[ ] <strong>Public docs build (Semantic Interoperability site)</strong></p>
 <ul>
-<li>[ ] The package's page on the Semantic Interoperability site builds without errors.</li>
+<li>[ ] The package's description page is available on the Initiative site.</li>
 <li>[ ] All links resolve: documentation, specification (OWL/TTL), IRIs, and release notes (no 404s).</li>
 <li>[ ] Package diagrams/images render correctly (no missing assets; labels are readable).</li>
-<li>[ ] In-page anchors/table of contents navigate to the correct sections.</li>
-<li>[ ] The OWL/TTL file includes the expected ontology header metadata according to the project standard (pass/fail only; no per-field audit).</li>
+<li>[ ] The OWL/gUFO (<code>.ttl</code>) file includes the expected ontology header metadata according to the project standard.</li>
 <li>[ ] Figures folder up to date: the latest package diagrams are exported to the Figures folder (no missing/old images).</li>
 </ul>
 </li>
-<li>
-<p>[ ] <strong>Validation artefacts (SHACL, if appllies)</strong></p>
-<ul>
-<li>[ ] SHACL shapes file(s) for this package are stored in the agreed location in the repository and under version control.</li>
-<li>[ ] A SHACL validation run has been executed for this package; there are no unresolved blocking SHACL violations for this stage (<em>To be implemented</em>). <!-- TODO --></li>
 </ul>
-</li>
+<!-- - [ ] **Validation artefacts (SHACL, if appllies)**
+    - [ ] SHACL shapes file(s) for this package are stored in the agreed location in the repository and under version control.
+    - [ ] A SHACL validation run has been executed for this package; there are no unresolved blocking SHACL violations for this stage (*To be implemented*). -->
+
+<ul>
 <li>
 <p>[ ] <strong>Terminology consistency</strong></p>
 <ul>
 <li>[ ] Names/labels follow the adopted nomenclature strategy (capitalization, spelling, prefixes).</li>
-<li>[ ] Terminology is consistent across diagrams, package docs, and OWL/TTL (no mismatches or redefinitions).</li>
-<li>[ ] Relation naming follows the defined naming strategy (directionality, verb/preposition pattern, capitalization) and is consistent across diagrams and OWL/TTL.</li>
-<li>[ ] Labels: <code>prefLabel</code> is the most appropriate primary label (no <code>altLabel</code> would be a better choice); missing <code>altLabel</code>s (synonyms, common variants, abbreviations) are identified and proposed.</li>
+<li>[ ] Terminology is consistent across diagrams, package docs, and OWL/gUFO (<code>.ttl</code>).</li>
+<li>[ ] Relation naming follows the defined naming strategy (directionality, verb/preposition pattern, capitalization) and is consistent across diagrams and OWL/gUFO (<code>.ttl</code>).
+<!-- - [ ] Labels: <code>prefLabel</code> is the most appropriate primary label (no <code>altLabel</code> would be a better choice); missing <code>altLabel</code>s (synonyms, common variants, abbreviations) are identified and proposed. --></li>
 </ul>
 </li>
 <li>
@@ -2070,8 +2072,8 @@
 <ul>
 <li>[ ] Every package, diagram, and class has a definition.</li>
 <li>[ ] Definitions are concise, non-circular, and free of hidden assumptions.</li>
-<li>[ ] If examples are provided, they are domain-correct, consistent with the formal model (stereotypes, constraints, relations), and never contradict the model.</li>
-<li>[ ] Documentation is supplementary only: it explains what is modeled and must not introduce new semantics; any new information must be added via modeling, not prose.</li>
+<li>[ ] If examples are provided, they are domain-correct, consistent with the model.</li>
+<li>[ ] Documentation is supplementary only: it explains what is modeled and must not introduce new semantics.</li>
 </ul>
 </li>
 <li>
@@ -2079,7 +2081,7 @@
 <ul>
 <li>[ ] Classes and relations use appropriate OntoUML stereotypes; no obvious anti-patterns.</li>
 <li>[ ] Multiplicities and constraint choices are justified and non-contradictory.</li>
-<li>[ ] Every generalization set explicitly indicates <code>isDisjoint</code> and <code>isCovering</code>, and these settings are consistently displayed in all diagram occurrences of the set.</li>
+<li>[ ] Generalization set's properties (<code>isDisjoint</code> and <code>isCovering</code>) are clearly displayed in all diagram occurrences of the set.</li>
 </ul>
 </li>
 <li>
@@ -2088,9 +2090,8 @@
 <li>[ ] External element origin shown: any external/reused class displays its origin (source package/namespace) using the standard notation.</li>
 <li>[ ] Empty attribute compartment hidden: classes with no attributes hide the attribute compartment per the diagram style guide.</li>
 <li>[ ] Clear layouts, legible labels, no overlapping edges/nodes.</li>
-<li>[ ] Figure titles match package names (consistent with the package being reviewed).</li>
 <li>[ ] All notes follow the defined standard color scheme and placement.</li>
-<li>[ ] All constraints follow the defined standard notation and placement (and are visible where applicable).</li>
+<li>[ ] All constraints follow the defined standard notation.</li>
 </ul>
 </li>
 <li>
@@ -2099,14 +2100,17 @@
 <li>[ ] Complete enough: the key concepts/relations expected by the package scope are present (no obvious gaps).</li>
 <li>[ ] Scope fit (no extras): no out-of-scope elements are introduced; concepts that belong elsewhere are not modeled in this package.</li>
 <li>[ ] Clear wording: names and definitions are unambiguous; avoid near-synonyms/homonyms.</li>
-<li>[ ] Right categories: no obvious category errors (e.g., role vs kind; quality/event modeled as a substance).</li>
-<li>[ ] No contradictions: docs, diagrams, and OWL/TTL tell the same story; examples (if any) don't violate constraints.</li>
+<li>[ ] Right categories: no obvious errors regarding OntoUML stereotype assignment.</li>
 <li>[ ] Reasonable cardinalities: multiplicities and disjoint/covering choices look realistic for the domain.</li>
 <li>[ ] No orphans: no unused/orphan classes or relations; no dangling cross-package references.</li>
 </ul>
 </li>
 </ul>
 <h3 id="publication-stage-operations-checklist">Publication Stage Operations Checklist</h3>
+<div class="admonition warning">
+<p class="admonition-title">Disclaimer</p>
+<p>This checklist is still under review and it should be used with caution.</p>
+</div>
 <p><strong>In-stage operational checklist (non-gate).</strong> Use this list to run and monitor activities while the package remains in <code>pub</code>. Failure on any item does <strong>not</strong> automatically change stage; substantive issues should trigger a reversion per <a href="#stage-reversions--why-and-when">Stage Reversions — Why and When</a>.</p>
 <ul>
 <li>
