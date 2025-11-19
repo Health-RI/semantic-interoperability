@@ -4,6 +4,59 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.2.0] - 2025-11-19
+
+### Added
+
+- **femaleTypicalDimorphicCharacteristicIsComponentOfFemaleBiologicalPerson**,  
+  **maleTypicalDimorphicCharacteristicIsComponentOfMaleBiologicalPerson**,  
+  **indeterminateDimorphicCharacteristicIsComponentOfIndeterminateBiologicalPerson**  
+  - Added `rdfs:subPropertyOf` assertions to `sexualDimorphicCharacteristicIsComponentOfPerson`, introducing more specific dimorphic characteristic–person component relations.
+
+- **femaleTypicalVisualSexCharacteristicIsComponentOfFemalePhenotypicPerson**,  
+  **maleTypicalVisualSexCharacteristicIsComponentOfMalePhenotypicPerson**,  
+  **indeterminateVisualSexCharacteristicIsComponentOfAmbiguousPhenotypicPerson**  
+  - Added `rdfs:subPropertyOf` assertions to `personIsComponentOfVisualSexCharacteristic`, specializing visual sex characteristic–person component relations.
+
+### Changed
+
+- **ontology** (`https://w3id.org/health-ri/ontology`)  
+  - Updated `owl:versionInfo` **`1.1.1` → `1.2.0`**.  
+  - Updated `owl:versionIRI` **`…/v1.1.1` → `…/v1.2.0`**.  
+  - Updated `dcterms:modified` **`2025-11-14` → `2025-11-19`**.  
+  - Updated `dcterms:conformsTo` JSON and VPP links **`…/ontology/v1.1.1/{json,vpp}` → `…/ontology/v1.2.0/{json,vpp}`**.
+
+- **SexAtBirthAssignment** – strengthened participation constraint  
+  - `rdfs:subClassOf` previously pointed to an `owl:Restriction` with `owl:someValuesFrom` **SexAtBirthAssigner** on `owl:onProperty gufo:mediates`.  
+  - Now `rdfs:subClassOf` points to an `owl:Restriction` using:
+    - `owl:onClass` **SexAtBirthAssigner**,  
+    - `owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger`,  
+    - `owl:onProperty gufo:mediates`.  
+  - Effect: changes the constraint from an existential restriction (∃ mediated **SexAtBirthAssigner**) to a qualified minimum cardinality restriction (≥ 1 mediated **SexAtBirthAssigner**).
+
+- **PersonWithAssignedSexAtBirth** – strengthened assignment cardinality  
+  - `rdfs:subClassOf` previously pointed to an `owl:Restriction` with:
+    - `owl:someValuesFrom` **SexAtBirthAssignment**,  
+    - `owl:onProperty` an anonymous property with `owl:inverseOf gufo:mediates`.  
+  - Now `rdfs:subClassOf` points to an `owl:Restriction` using:
+    - `owl:onClass` **SexAtBirthAssignment**,  
+    - `owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger`,  
+    - `owl:onProperty` an anonymous property defined by `owl:inverseOf gufo:mediates`.  
+  - Effect: changes the constraint from an existential restriction (∃ inverse-of-`gufo:mediates` **SexAtBirthAssignment**) to a qualified exact cardinality restriction (= 1 such assignment per person).  
+  - The anonymous property node with `owl:inverseOf gufo:mediates` is effectively renamed at blank-node level; intended semantics remain the same (inverse of `gufo:mediates`).
+
+### Removed
+
+- Removed two `owl:Restriction` axioms based on `owl:someValuesFrom`:
+  - The restriction on **SexAtBirthAssignment** using `owl:someValuesFrom` **SexAtBirthAssigner** on `owl:onProperty gufo:mediates`.  
+  - The restriction on **PersonWithAssignedSexAtBirth** using `owl:someValuesFrom` **SexAtBirthAssignment** on an anonymous property (`owl:inverseOf gufo:mediates`).  
+- Removed the supporting anonymous property node that previously encoded `owl:inverseOf gufo:mediates` for the old restriction; this is replaced by a new blank node with the same `owl:inverseOf` assertion in the updated pattern (see *Changed*).  
+- No public named classes or properties (non-blank-node IRIs) were removed in this release.
+
+### Not serialized
+
+- None identified beyond the OWL-level changes summarized above; all observed changes are present in the serialized ontology.
+
 ## [1.1.1] - 2025-11-14
 
 ### Changed
