@@ -73,6 +73,9 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
 
 ### Internal Stage Gate Checklist
 
+!!! warning "Disclaimer"
+    This checklist is still under review and it should be used with caution.
+
 **Exit criteria for `int → irv`.** All items below must be satisfied to leave `int` and enter `irv`.
 
 - [ ] **Stage & package setup**
@@ -120,58 +123,58 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
 
 **Exit criteria for `irv → erv`.** All items below must be satisfied to leave `irv` and enter `erv`.
 
+<!-- Multiple pending TODOs -->
 - [ ] **Stage tagging & metadata present**
     - [ ] Package has the correct stage tag (e.g., `irv`).
-    - [ ] Required package-level metadata (post-v1.0.0) is present: `introducedInVersion`, `lastChangedInVersion`, `lastPublishedInVersion`, `reviewedBy`.
-    - [ ] Title and Description are filled using Visual Paradigm's default fields (not tags).
+    <!-- - [ ] Required package-level metadata (post-v1.0.0) is present: `introducedInVersion`, `lastChangedInVersion`, `lastPublishedInVersion`, `reviewedBy`. -->
 
 - [ ] **Public docs build (Semantic Interoperability site)**
-    - [ ] The package's page on the Semantic Interoperability site builds without errors.
+    - [ ] The package's description page is available on the Initiative site.
     - [ ] All links resolve: documentation, specification (OWL/TTL), IRIs, and release notes (no 404s).
     - [ ] Package diagrams/images render correctly (no missing assets; labels are readable).
-    - [ ] In-page anchors/table of contents navigate to the correct sections.
-    - [ ] The OWL/TTL file includes the expected ontology header metadata according to the project standard (pass/fail only; no per-field audit).
+    - [ ] The OWL/gUFO (`.ttl`) file includes the expected ontology header metadata according to the project standard.
     - [ ] Figures folder up to date: the latest package diagrams are exported to the Figures folder (no missing/old images).
 
-- [ ] **Validation artefacts (SHACL, if appllies)**
+<!-- - [ ] **Validation artefacts (SHACL, if appllies)**
     - [ ] SHACL shapes file(s) for this package are stored in the agreed location in the repository and under version control.
-    - [ ] A SHACL validation run has been executed for this package; there are no unresolved blocking SHACL violations for this stage (*To be implemented*). <!-- TODO -->
+    - [ ] A SHACL validation run has been executed for this package; there are no unresolved blocking SHACL violations for this stage (*To be implemented*). -->
 
 - [ ] **Terminology consistency**
     - [ ] Names/labels follow the adopted nomenclature strategy (capitalization, spelling, prefixes).
-    - [ ] Terminology is consistent across diagrams, package docs, and OWL/TTL (no mismatches or redefinitions).
-    - [ ] Relation naming follows the defined naming strategy (directionality, verb/preposition pattern, capitalization) and is consistent across diagrams and OWL/TTL.
-    - [ ] Labels: `prefLabel` is the most appropriate primary label (no `altLabel` would be a better choice); missing `altLabel`s (synonyms, common variants, abbreviations) are identified and proposed.
+    - [ ] Terminology is consistent across diagrams, package docs, and OWL/gUFO (`.ttl`).
+    - [ ] Relation naming follows the defined naming strategy (directionality, verb/preposition pattern, capitalization) and is consistent across diagrams and OWL/gUFO (`.ttl`).
+    <!-- - [ ] Labels: `prefLabel` is the most appropriate primary label (no `altLabel` would be a better choice); missing `altLabel`s (synonyms, common variants, abbreviations) are identified and proposed. -->
 
 - [ ] **Definitions & examples (scope: packages, diagrams, classes)**
     - [ ] Every package, diagram, and class has a definition.
     - [ ] Definitions are concise, non-circular, and free of hidden assumptions.
-    - [ ] If examples are provided, they are domain-correct, consistent with the formal model (stereotypes, constraints, relations), and never contradict the model.
-    - [ ] Documentation is supplementary only: it explains what is modeled and must not introduce new semantics; any new information must be added via modeling, not prose.
+    - [ ] If examples are provided, they are domain-correct, consistent with the model.
+    - [ ] Documentation is supplementary only: it explains what is modeled and must not introduce new semantics.
 
 - [ ] **Conceptual modeling soundness (OntoUML → gUFO)**
     - [ ] Classes and relations use appropriate OntoUML stereotypes; no obvious anti-patterns.
     - [ ] Multiplicities and constraint choices are justified and non-contradictory.
-    - [ ] Every generalization set explicitly indicates `isDisjoint` and `isCovering`, and these settings are consistently displayed in all diagram occurrences of the set.
+    - [ ] Generalization set's properties (`isDisjoint` and `isCovering`) are clearly displayed in all diagram occurrences of the set.
 
 - [ ] **Diagram quality & traceability**
     - [ ] External element origin shown: any external/reused class displays its origin (source package/namespace) using the standard notation.
     - [ ] Empty attribute compartment hidden: classes with no attributes hide the attribute compartment per the diagram style guide.
     - [ ] Clear layouts, legible labels, no overlapping edges/nodes.
-    - [ ] Figure titles match package names (consistent with the package being reviewed).
     - [ ] All notes follow the defined standard color scheme and placement.
-    - [ ] All constraints follow the defined standard notation and placement (and are visible where applicable).
+    - [ ] All constraints follow the defined standard notation.
 
 - [ ] **Basic domain consistency (quick sanity check)**
     - [ ] Complete enough: the key concepts/relations expected by the package scope are present (no obvious gaps).
     - [ ] Scope fit (no extras): no out-of-scope elements are introduced; concepts that belong elsewhere are not modeled in this package.
     - [ ] Clear wording: names and definitions are unambiguous; avoid near-synonyms/homonyms.
-    - [ ] Right categories: no obvious category errors (e.g., role vs kind; quality/event modeled as a substance).
-    - [ ] No contradictions: docs, diagrams, and OWL/TTL tell the same story; examples (if any) don't violate constraints.
+    - [ ] Right categories: no obvious errors regarding OntoUML stereotype assignment.
     - [ ] Reasonable cardinalities: multiplicities and disjoint/covering choices look realistic for the domain.
     - [ ] No orphans: no unused/orphan classes or relations; no dangling cross-package references.
 
 ### Publication Stage Operations Checklist
+
+!!! warning "Disclaimer"
+    This checklist is still under review and it should be used with caution.
 
 **In-stage operational checklist (non-gate).** Use this list to run and monitor activities while the package remains in `pub`. Failure on any item does **not** automatically change stage; substantive issues should trigger a reversion per [Stage Reversions — Why and When](#stage-reversions--why-and-when).
 
