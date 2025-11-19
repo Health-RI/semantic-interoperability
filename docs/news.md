@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2025-11-19
+
+- **Ontology validation checklists** — Modified: Added warnings and clarifications to ontology validation checklists, relaxing pending items and aligning terminology with OWL/gUFO exports and diagram notation.
+
 ## 2025-11-14
 
 - [**Ontology Rules and SHACL Implementation**](./method/ontology-rules.md) — Created: Introduced a dedicated overview of ontology constraint and derivation rules and their implementation using SHACL.
