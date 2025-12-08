@@ -1,5 +1,11 @@
 # News & Updates
 
+## 2025-12-08
+
+- [**Contributing to the Health-RI Semantic Interoperability Effort**](./contributing/overview.md) — Renamed: provides an overview of contribution options, separating community review calls from general channels and linking to the main submission forms.
+- [**Contribution Channels**](./contributing/contribution-channels.md) — Created: focuses the page on ongoing contribution options outside time-bound review calls, with clarified sections and button-based links to structured issue forms.
+- [**Calls for Community Review**](./contributing/call-for-community-review.md) — Created: describes the external community review process for ontology domains, including participation options and how open and closed calls are listed.
+
 ## 2025-11-19
 
 - **Ontology validation checklists** — Modified: Added warnings and clarifications to ontology validation checklists, relaxing pending items and aligning terminology with OWL/gUFO exports and diagram notation.
