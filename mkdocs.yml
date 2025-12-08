@@ -99,7 +99,10 @@ nav:
       - Ontology Changelog: ontology/changelog-ontology.md
       - SSSOM Mapping Set: ontology/mappings.md
   - FAQ: faq.md
-  - Contributing: contributing.md
+  - Contributing:
+      - Overview: contributing/overview.md
+      - Contribution Channels: contributing/contribution-channels.md
+      - Call for Community Review: contributing/call-for-community-review.md
   # - Output:
   #     - Overview: output/index.md
 
