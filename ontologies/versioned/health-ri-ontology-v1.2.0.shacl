@@ -1,0 +1,77 @@
+@prefix : <https://w3id.org/health-ri/ontology#>.
+@prefix gufo: <http://purl.org/nemo/gufo#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+
+# -----------------------------------------------------------------------------
+# RULE: NoSelfSexAtBirthAssignment
+# RULE TYPE: Constraint
+# DESCRIPTION: In a Sex at Birth Assignment, the person who creates the Birth Notification (Assigner) must not be the same individual whose birth is being notified (Person with Assigned Sex at Birth).
+# DETAILS: ALLOWED: the same person can be an assignee in z1 and an assigner in z2. FORBIDDEN: the same person is both assigner AND assignee in the same z1.
+# -----------------------------------------------------------------------------
+
+:NoSelfSexAtBirthAssignment
+    a sh:NodeShape ;
+    sh:name "No self-assignment in SexAtBirthAssignment"@en ;
+    sh:description "Within one SexAtBirthAssignment, no participant may be both Assigner and Assignee."@en ;
+    sh:targetClass :SexAtBirthAssignment ;
+
+    sh:property [
+        # Path: all participants mediated by THIS assignment (the relator).
+        sh:path gufo:mediates ;
+
+        # Count only those participants that are simultaneously in both role classes.
+        sh:qualifiedValueShape [
+            sh:and (
+                [ sh:class :SexAtBirthAssigner ]
+                [ sh:class :PersonWithAssignedSexAtBirth ]
+            )
+        ] ;
+
+        # Intersection must be empty (max 0 such participants).
+        sh:qualifiedMaxCount 0 ;
+
+        # Reporting
+        sh:severity sh:Violation ;
+        sh:message "The same individual plays both SexAtBirthAssigner and PersonWithAssignedSexAtBirth for this SexAtBirthAssignment."@en
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: CreatesOnBehalfOfRule
+# RULE TYPE: Derivation
+# DESCRIPTION: If an Administrative Gender Recognition mediates both an Administrative Gender Recognition Agent and an Administrative Gender Recognizing Organization, then the Agent creates on behalf of the Organization.
+# -----------------------------------------------------------------------------
+
+:AGRCreatesOnBehalfOfRule
+    a sh:NodeShape ;
+    sh:name "Materialize creates-on-behalf-of in Administrative Gender Recognition"@en ;
+    sh:description "Materialization-only: constructs :createsOnBehalfOf between every mediated Administrative Gender Recognition Agent and mediated Administrative Gender Recognizing Organization within the same relator. If either role is absent, the rule is silent (no violations)."@en ;
+    sh:targetClass :AdministrativeGenderRecognition ;
+
+    # SHACL-AF rule: fires only when BOTH mediated roles exist for $this; otherwise, no output and no violations
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes [ sh:declare (
+            [ sh:prefix ":" ;     sh:namespace "http://example.com#" ]
+            [ sh:prefix "gufo" ;  sh:namespace "http://purl.org/nemo/gufo#" ]
+        ) ] ;
+        sh:construct """
+            PREFIX :     <http://example.com#>
+            PREFIX gufo: <http://purl.org/nemo/gufo#>
+
+            CONSTRUCT {
+              ?agent :createsOnBehalfOf ?org .
+            }
+            WHERE {
+              $this gufo:mediates ?agent .
+              $this gufo:mediates ?org .
+              ?agent a :AdministrativeGenderRecognitionAgent .
+              ?org   a :AdministrativeGenderRecognizingOrganization .
+              # Avoid duplicate construction if already present
+              FILTER NOT EXISTS { ?agent :createsOnBehalfOf ?org }
+            }
+        """ ;
+    ] .
