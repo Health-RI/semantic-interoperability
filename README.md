@@ -20,11 +20,30 @@ Visit the documentation at: **<https://health-ri.github.io/semantic-interoperabi
 
 ## Releases
 
-| Deliverable                      | Version                                                                                                                                                                                                                    | License                                                                                                                          |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| **Health-RI Ontology**           |                                                                                                                                                                                                                            | [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/) |
+| Deliverable                      | Latest Release                                                                                                                                                                                                               | License                                                                                                                          |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **Health-RI Ontology**           |                                                                                                                                                                                                                              | [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/) |
 | **Health-RI SSSOM Mapping Set**  | [![Mapping Set Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=mappings-v*&sort=date)](https://github.com/Health-RI/semantic-interoperability/releases/tag/mappings-v2025-09-08) | [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/) |
 | **Health-RI Mapping Vocabulary** | [![Vocabulary Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=vocabulary-v*&sort=semver)](https://github.com/Health-RI/semantic-interoperability/releases/tag/vocabulary-v1.1.0) | [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/) |
+
+## Repository structure
+
+This repository is organized around the MkDocs documentation site and the semantic artifacts it publishes (ontology, mappings, and vocabulary).
+
+```text
+.
+├─ docs/         # MkDocs website source (pages + shared assets)
+├─ ontologies/   # Health-RI Ontology artifacts (latest + versioned)
+├─ mappings/     # Health-RI mapping set exports
+├─ vocabulary/   # Health-RI Mapping Vocabulary artifacts (latest + versioned)
+├─ scripts/      # Utility scripts for generation/conversion/maintenance
+├─ resources/    # Templates, prompts, QR codes, etc.
+├─ documents/    # Manuscripts and other supporting documents
+├─ site/         # Built documentation site output (generated)
+├─ mkdocs.yml    # MkDocs configuration
+├─ CITATION.cff   # Citation metadata
+└─ LICENSE-*.md   # Licensing for artifacts and code
+```
 
 ## License
 
