@@ -12,8 +12,8 @@
 
 <https://w3id.org/health-ri/ontology> a owl:Ontology ;
     dct:abstract "Developed by Health‑RI and collaborators, this ontology—grounded in UFO and implemented in gUFO/OWL—enables semantic interoperability across healthcare and life sciences, extending beyond systems to include institutions, research infrastructures, and services. It establishes a common reference model that harmonizes data from diverse sources by formally defining domain concepts and allowing mappings from heterogeneous sources."@en ;
-    dct:conformsTo <https://w3id.org/health-ri/ontology/v1.2.1/json>,
-        <https://w3id.org/health-ri/ontology/v1.2.1/vpp> ;
+    dct:conformsTo <https://w3id.org/health-ri/ontology/v1.3.0/json>,
+        <https://w3id.org/health-ri/ontology/v1.3.0/vpp> ;
     dct:contributor <https://orcid.org/0000-0003-0771-3516>,
         <https://orcid.org/0000-0003-1451-4240>,
         <https://orcid.org/0009-0006-1783-9082> ;
@@ -23,14 +23,14 @@
     dct:issued "2025-05-20"^^xsd:date ;
     dct:language "en"^^xsd:language ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dct:modified "2025-12-15"^^xsd:date ;
+    dct:modified "2026-02-02"^^xsd:date ;
     dct:publisher <https://w3id.org/health-ri> ;
     dct:title "Health-RI Ontology"@en ;
     vann:preferredNamespacePrefix "hrio" ;
     vann:preferredNamespaceUri "https://w3id.org/health-ri/ontology#"^^xsd:anyURI ;
     owl:imports gufo: ;
-    owl:versionIRI <https://w3id.org/health-ri/ontology/v1.2.1> ;
-    owl:versionInfo "1.2.1" ;
+    owl:versionIRI <https://w3id.org/health-ri/ontology/v1.3.0> ;
+    owl:versionInfo "1.3.0" ;
     dcat:keyword "biomedicine"@en,
         "clinical data"@en,
         "health information systems"@en,
@@ -121,8 +121,6 @@ hrio:end a owl:ObjectProperty ;
     rdfs:range hrio:OffsetDateTime ;
     rdfs:subPropertyOf gufo:hasReifiedQualityValue .
 
-hrio:femaleAdministrativeGenderInheresInPersonWithFemaleAdministrativeGender rdfs:subPropertyOf hrio:administrativeGenderInheresInPersonWithRecognizedAdministrativeGender .
-
 hrio:femaleTypicalDimorphicCharacteristicIsComponentOfFemaleBiologicalPerson rdfs:subPropertyOf hrio:sexualDimorphicCharacteristicIsComponentOfPerson .
 
 hrio:femaleTypicalVisualSexCharacteristicIsComponentOfFemalePhenotypicPerson rdfs:subPropertyOf hrio:personIsComponentOfVisualSexCharacteristic .
@@ -155,7 +153,11 @@ hrio:isBiologicalMotherOf a gufo:MaterialRelationshipType,
     rdfs:domain hrio:BiologicalMother ;
     rdfs:range hrio:Person .
 
-hrio:maleAdministrativeGenderInheresInPersonWithMaleAdministrativeGender rdfs:subPropertyOf hrio:administrativeGenderInheresInPersonWithRecognizedAdministrativeGender .
+hrio:legalFemaleGenderPerson rdfs:subPropertyOf hrio:administrativeFemaleGenderPerson .
+
+hrio:legalMaleGenderPerson rdfs:subPropertyOf hrio:administrativeMaleGenderPerson .
+
+hrio:legalNonBinaryGenderPerson rdfs:subPropertyOf hrio:administrativeNonBinaryGenderPerson .
 
 hrio:maleTypicalDimorphicCharacteristicIsComponentOfMaleBiologicalPerson rdfs:subPropertyOf hrio:sexualDimorphicCharacteristicIsComponentOfPerson .
 
@@ -178,13 +180,17 @@ hrio:nanosecond a owl:DatatypeProperty ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf gufo:hasValueComponent .
 
-hrio:nonBinaryAdministrativeGenderInheresInPersonWithNonBinaryAdministrativeGender rdfs:subPropertyOf hrio:administrativeGenderInheresInPersonWithRecognizedAdministrativeGender .
-
 hrio:parentOf a gufo:MaterialRelationshipType,
         owl:ObjectProperty ;
     rdfs:label "parent of"@en ;
     rdfs:domain hrio:Person ;
     rdfs:range hrio:Person .
+
+hrio:personWithFemaleSexAtBirth rdfs:subPropertyOf hrio:sexAtBirthInheresInPersonWithAssignedSexAtBirth .
+
+hrio:personWithIndeterminateSexAtBirth rdfs:subPropertyOf hrio:sexAtBirthInheresInPersonWithAssignedSexAtBirth .
+
+hrio:personWithMaleSexAtBirth rdfs:subPropertyOf hrio:sexAtBirthInheresInPersonWithAssignedSexAtBirth .
 
 hrio:personWithRecognizedLegalGenderInheresInLegalGender rdfs:subPropertyOf hrio:administrativeGenderInheresInPersonWithRecognizedAdministrativeGender .
 
@@ -192,11 +198,21 @@ hrio:recognitionBy rdfs:subPropertyOf hrio:recognizedBy .
 
 hrio:recognizes rdfs:subPropertyOf hrio:recognizes_1 .
 
+hrio:recognizesGender_1 rdfs:subPropertyOf hrio:recognizesGender .
+
 hrio:second a owl:DatatypeProperty ;
     rdfs:label "second"@en ;
     rdfs:domain hrio:OffsetDateTime ;
     rdfs:range xsd:int ;
     rdfs:subPropertyOf gufo:hasValueComponent .
+
+hrio:selfIdentifiedFemaleGenderPerson rdfs:subPropertyOf hrio:femaleGenderInheresInFemaleGenderPerson .
+
+hrio:selfIdentifiedGenderInheresInSelfAwarePerson rdfs:subPropertyOf hrio:person .
+
+hrio:selfIdentifiedMaleGenderPerson rdfs:subPropertyOf hrio:maleGenderInheresInMaleGenderPerson .
+
+hrio:selfIdentifiedNonBinaryGenderPerson rdfs:subPropertyOf hrio:nonBinaryGenderInheresInNonBinaryGenderPerson .
 
 hrio:start a owl:ObjectProperty ;
     rdfs:label "start"@en ;
@@ -382,6 +398,13 @@ hrio:DiagnosticOutcomeIssuer a gufo:RoleMixin,
             owl:someValuesFrom hrio:DiagnosticAssessmentOutcome ],
         hrio:DiagnosingAgent .
 
+hrio:DiploidCell a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Diploid Cell"@en ;
+    rdfs:comment "A Diploid Cell is a human cell characterized by the presence of two chromosome sets. It is modeled as a subkind of Human Cell that includes chromosomes as components, with the number of chromosomes distinguishing it from other cell types in the model. In this representation, the diploid structure is complete and disjoint relative to the haploid alternative, reflecting its role in forming the ordinary chromosomal basis of human somatic cells."@en ;
+    rdfs:subClassOf hrio:HumanCell .
+
 hrio:Endurant a gufo:Category,
         owl:Class,
         owl:NamedIndividual ;
@@ -389,15 +412,30 @@ hrio:Endurant a gufo:Category,
     rdfs:comment "Endurant is an individual that is wholly present whenever it exists and can persist through time while undergoing change. It provides the upper-level basis from which more specific substantial categories are specialized."@en ;
     rdfs:subClassOf hrio:Particular .
 
-hrio:February a hrio:Month ;
-    rdf:label "[object Object]" .
-
-hrio:FemaleGenderIdentity a gufo:Phase,
+hrio:ExternallyAttributedCisgenderFemalePerson a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Female Gender Identity"@en ;
-    rdfs:comment "Describes an individual's self-identification as female. It encompasses the personal sense of being female and often informs social expression, interaction, and personal narrative."@en ;
-    rdfs:subClassOf hrio:GenderIdentity .
+    rdfs:label "Externally-attributed Cisgender Female Person"@en ;
+    rdfs:comment """An Externally-attributed Cisgender Female Person is a person for whom another individual attributes a cisgender status together with a female gender attribution.
+
+This class applies when the attributed female gender is consistent with the person's female sex at birth, and the cisgender status is grounded in that external attribution rather than in the person's self-identification."""@en ;
+    rdfs:subClassOf hrio:ExternallyAttributedCisgenderPerson,
+        hrio:ExternallyAttributedFemaleGenderPerson,
+        hrio:PersonWithFemaleSexAtBirth .
+
+hrio:ExternallyAttributedCisgenderMalePerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Externally-attributed Cisgender Male Person"@en ;
+    rdfs:comment """An Externally-attributed Cisgender Male Person is a person for whom another individual attributes a cisgender status together with a male gender attribution.
+
+This class applies when the attributed male gender is consistent with the person's male sex at birth, and the cisgender status is grounded in that external attribution rather than in the person's self-identification."""@en ;
+    rdfs:subClassOf hrio:ExternallyAttributedCisgenderPerson,
+        hrio:ExternallyAttributedMaleGenderPerson,
+        hrio:PersonWithMaleSexAtBirth .
+
+hrio:February a hrio:Month ;
+    rdf:label "[object Object]" .
 
 hrio:FemalePhenotypicPerson a gufo:Role,
         owl:Class,
@@ -436,28 +474,23 @@ hrio:LaypersonDiagnosingAgent a gufo:Role,
     rdfs:comment "A diagnosing person whose professional status is layperson. The role applies when a person acts as a diagnosing agent without holding a professional status in the relevant domain."@en ;
     rdfs:subClassOf hrio:DiagnosingPerson .
 
-hrio:LegalFemalePerson a gufo:Role,
+hrio:LegalFemaleGenderPerson a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Legal Female Person"@en ;
-    rdfs:comment "Refers to an individual whose legal gender is officially recognized as female. This status is used in legal documents and administrative records to determine rights and obligations."@en ;
-    rdfs:subClassOf hrio:PersonWithRecognizedLegalGender .
+    rdfs:label "Legal Female-gender Person"@en ;
+    rdfs:comment """This class focuses on persons whose female gender classification is established through legal recognition, rather than through self-identification or external attribution.
 
-hrio:LegalGender a gufo:SubKind,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Legal Gender"@en ;
-    rdfs:comment "Denotes the gender category recognized by law and recorded in official systems. It provides a standardized basis for administrative processes, legal rights, and social recognition, supporting consistent management of gender-related information."@en ;
+A Legal Female-gender Person is a person whose legal gender is female. Such a person is characterized by one or more instances of Legal Female Gender, reflecting the legal designation of female gender that applies to the person."""@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
-            owl:someValuesFrom hrio:PersonWithRecognizedLegalGender ],
-        hrio:AdministrativeGender .
+            owl:someValuesFrom hrio:LegalFemaleGender ],
+        hrio:AdministrativeFemaleGenderPerson .
 
 hrio:LegalGenderRecognitionDocument a gufo:RoleMixin,
         owl:Class,
         owl:NamedIndividual ;
     rdfs:label "Legal Gender Recognition Document"@en ;
-    rdfs:comment "Refers to official records or certificates that confirm or establish a person�s legal gender. These documents provide formal evidence of legal gender recognition and are used in administrative, legal, and social contexts."@en ;
+    rdfs:comment "Legal Gender Recognition Document denotes an official document that records and formalizes one or more legal gender recognition acts. It provides the documentary basis associated with those recognitions, supporting the registration of the recognized legal gender for the relevant person in formal records."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty [ owl:inverseOf gufo:mediates ] ;
             owl:someValuesFrom hrio:LegalGenderRecognition ],
@@ -468,26 +501,38 @@ hrio:LegalGenderRecognizer a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
     rdfs:label "Legal Gender Recognizer"@en ;
-    rdfs:comment "Represents the role of an entity�often a government body or its agents�authorized to formally assign or recognize a person's legal gender. This role includes the authority to record, approve, or modify legal gender status in official records."@en ;
+    rdfs:comment """This definition identifies the authorized recognizing party involved in legal gender recognition.
+
+Legal Gender Recognizer denotes an authorized entity that performs legal gender recognition for persons. It is the recognizing party that participates in a recognition act and thereby acknowledges a legal gender for a person within the scope of formal legal recognition."""@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty [ owl:inverseOf gufo:mediates ] ;
             owl:someValuesFrom hrio:LegalGenderRecognition ],
         hrio:AdministrativeGenderRecognizingOrganization,
         hrio:Government .
 
-hrio:LegalMalePerson a gufo:Role,
+hrio:LegalMaleGenderPerson a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Legal Male Person"@en ;
-    rdfs:comment "Describes an individual whose legal gender is officially recognized and recorded as male. This classification carries legal and administrative implications for rights, responsibilities, and identification."@en ;
-    rdfs:subClassOf hrio:PersonWithRecognizedLegalGender .
+    rdfs:label "Legal Male-gender Person"@en ;
+    rdfs:comment """This class focuses on persons whose male gender classification is established through legal recognition, rather than through self-identification or external attribution.
 
-hrio:LegalNonBinaryPerson a gufo:Role,
+A Legal Male-gender Person is a person whose legal gender is male. Such a person is characterized by one or more instances of Legal Male Gender, reflecting the legal designation of male gender that applies to the person."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:LegalMaleGender ],
+        hrio:AdministrativeMaleGenderPerson .
+
+hrio:LegalNonBinaryGenderPerson a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Legal Non-binary Person"@en ;
-    rdfs:comment "Includes individuals whose legal gender is formally recognized as non-binary, acknowledging identities outside the traditional male/female binary. This classification supports administrative and legal recognition of gender diversity."@en ;
-    rdfs:subClassOf hrio:PersonWithRecognizedLegalGender .
+    rdfs:label "Legal Non-binary-gender Person"@en ;
+    rdfs:comment """This class focuses on persons whose non-binary gender classification is established through legal recognition, rather than through self-identification or external attribution.
+
+A Legal Non-binary-gender Person is a person whose legal gender is non-binary. Such a person is characterized by one or more instances of Legal Non-binary Gender, reflecting the legal designation of non-binary gender that applies to the person."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:LegalNonBinaryGender ],
+        hrio:AdministrativeNonBinaryGenderPerson .
 
 hrio:LivingCellularEntity a gufo:PhaseMixin,
         owl:Class,
@@ -495,13 +540,6 @@ hrio:LivingCellularEntity a gufo:PhaseMixin,
     rdfs:label "Living Cellular Entity"@en ;
     rdfs:comment "A Living Cellular Entity is represented as a phase of a cellular entity characterized by the presence of biological activity. In the model it appears as part of a complete and disjoint partition of cellular entity states, capturing the condition in which cells, embryos, or organisms are biologically active. This class clarifies that the living state is explicitly represented in contrast to its dead counterpart."@en ;
     rdfs:subClassOf hrio:CellularEntity .
-
-hrio:MaleGenderIdentity a gufo:Phase,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Male Gender Identity"@en ;
-    rdfs:comment "Refers to an individual's self-identification as male. This identity reflects personal understanding and experience of being male, which can shape social roles, expression, and expectations."@en ;
-    rdfs:subClassOf hrio:GenderIdentity .
 
 hrio:MalePhenotypicPerson a gufo:Role,
         owl:Class,
@@ -515,13 +553,6 @@ hrio:March a hrio:Month ;
 
 hrio:May a hrio:Month ;
     rdf:label "[object Object]" .
-
-hrio:NonBinaryGenderIdentity a gufo:Phase,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Non-binary Gender Identity"@en ;
-    rdfs:comment "Includes gender identities outside the traditional male/female binary. This category accommodates diverse self-understandings such as genderqueer, agender, or other identities that do not fit exclusively into male or female classifications."@en ;
-    rdfs:subClassOf hrio:GenderIdentity .
 
 hrio:NonSelfAwarePerson a gufo:Phase,
         owl:Class,
@@ -543,32 +574,13 @@ hrio:Particular a gufo:Mixin,
     rdfs:comment "Particular is the most general notion of an individual entity. It refers to any concrete, single entity that can be the bearer of properties and participate in relations."@en ;
     rdfs:subClassOf gufo:Endurant .
 
-hrio:PersonWithFemaleSexAtBirth a gufo:Role,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Person with Female Sex at Birth"@en ;
-    rdfs:comment "Denotes individuals officially assigned as female in their birth record, based on clinical observation of anatomical features immediately after birth."@en ;
-    rdfs:subClassOf hrio:PersonWithAssignedSexAtBirth .
-
-hrio:PersonWithIndeterminateSexAtBirth a gufo:Role,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Person with Indeterminate Sex at Birth"@en ;
-    rdfs:comment "Includes individuals whose sex at birth is formally recorded as indeterminate. This category supports administrative recognition of cases where observed features do not clearly fit male or female classifications."@en ;
-    rdfs:subClassOf hrio:PersonWithAssignedSexAtBirth .
-
-hrio:PersonWithMaleSexAtBirth a gufo:Role,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Person with Male Sex at Birth"@en ;
-    rdfs:comment "Denotes individuals officially assigned as male in their birth record, typically based on observed anatomical features at the time of delivery."@en ;
-    rdfs:subClassOf hrio:PersonWithAssignedSexAtBirth .
-
 hrio:PersonWithUnassignedLegalGender a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
     rdfs:label "Person with Unassigned Legal Gender"@en ;
-    rdfs:comment "Represents individuals who, in legal or administrative records, do not have a formally assigned legal gender. This category allows for flexibility in cases where no specific legal gender is recorded or chosen."@en ;
+    rdfs:comment """This definition characterizes the absence of a recognized legal gender assignment for a person within formal records.
+
+Person with Unassigned Legal Gender denotes a person for whom no legal gender is recorded as recognized in the relevant legal record or context. This role distinguishes persons lacking a recognized legal gender assignment from those whose legal gender has been formally recognized."""@en ;
     rdfs:subClassOf hrio:Person .
 
 hrio:PersonWithUnassignedSexAtBirth a gufo:Role,
@@ -599,6 +611,12 @@ hrio:PhenotypicSexAssessor a gufo:Role,
             owl:someValuesFrom hrio:PhenotypicSexAssessment ],
         hrio:HealthcareProfessional .
 
+hrio:Polyploid a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Polyploid"@en ;
+    rdfs:subClassOf hrio:HumanCell .
+
 hrio:ProfessionalDiagnosingAgent a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
@@ -623,19 +641,30 @@ hrio:ResearchDiagnosis a gufo:Role,
     rdfs:comment "A healthcare diagnosis whose use is oriented to research. It serves as a diagnostic assertion used to support study design, data analysis, or methodological evaluation, rather than to guide direct care for a specific patient."@en ;
     rdfs:subClassOf hrio:HealthcareDiagnosis .
 
-hrio:September a hrio:Month ;
-    rdf:label "[object Object]" .
-
-hrio:SexAtBirth a gufo:SubKind,
+hrio:SelfIdentifiedCisgenderFemalePerson a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Sex at Birth"@en ;
-    rdfs:comment "Represents the formal classification of a person's sex that is recorded at the time of birth. This category acknowledges that sex at birth is not simply observed but is officially documented, often forming the basis for legal and administrative records throughout life."@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:PersonWithAssignedSexAtBirth ;
-            owl:onProperty gufo:inheresIn ],
-        hrio:PhenotypicSex .
+    rdfs:label "Self-identified Cisgender Female Person"@en ;
+    rdfs:comment """A Self-identified Cisgender Female Person is a person who self-identifies as cisgender and as female.
+
+This class applies when the person's self-identified female gender is consistent with the person's female sex at birth, so the cisgender status is grounded in self-identification rather than in external attribution."""@en ;
+    rdfs:subClassOf hrio:PersonWithFemaleSexAtBirth,
+        hrio:SelfIdentifiedCisgenderPerson,
+        hrio:SelfIdentifiedFemaleGenderPerson .
+
+hrio:SelfIdentifiedCisgenderMalePerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Self-identified Cisgender Male Person"@en ;
+    rdfs:comment """A Self-identified Cisgender Male Person is a person who self-identifies as cisgender and as male.
+
+This class applies when the person's self-identified male gender is consistent with the person's male sex at birth, so the cisgender status is grounded in self-identification rather than in external attribution."""@en ;
+    rdfs:subClassOf hrio:PersonWithMaleSexAtBirth,
+        hrio:SelfIdentifiedCisgenderPerson,
+        hrio:SelfIdentifiedMaleGenderPerson .
+
+hrio:September a hrio:Month ;
+    rdf:label "[object Object]" .
 
 hrio:SexAtBirthAssigner a gufo:Role,
         owl:Class,
@@ -654,6 +683,28 @@ hrio:SurveillanceDiagnosis a gufo:Role,
     rdfs:comment "A healthcare diagnosis whose use is oriented to surveillance. It functions as a diagnostic assertion used for monitoring, reporting, or population-level oversight, rather than for immediate care decisions about a specific patient."@en ;
     rdfs:subClassOf hrio:HealthcareDiagnosis .
 
+hrio:administrativeFemaleGenderPerson rdfs:subPropertyOf hrio:externallyAttributedFemaleGenderPerson .
+
+hrio:administrativeGenderInheresInPersonWithRecognizedAdministrativeGender rdfs:subPropertyOf hrio:externallyGenderAttributedPersonInheresInExternallyAttributedGender .
+
+hrio:administrativeMaleGenderPerson rdfs:subPropertyOf hrio:externallyAttributedMaleGenderPerson .
+
+hrio:administrativeNonBinaryGenderPerson rdfs:subPropertyOf hrio:externallyAttributedNonBinaryGenderPerson .
+
+hrio:externallyAttributedFemaleGenderPerson rdfs:subPropertyOf hrio:femaleGenderInheresInFemaleGenderPerson .
+
+hrio:externallyAttributedMaleGenderPerson rdfs:subPropertyOf hrio:maleGenderInheresInMaleGenderPerson .
+
+hrio:externallyAttributedNonBinaryGenderPerson rdfs:subPropertyOf hrio:nonBinaryGenderInheresInNonBinaryGenderPerson .
+
+hrio:externallyGenderAttributedPersonInheresInExternallyAttributedGender rdfs:subPropertyOf hrio:person .
+
+hrio:recognizedBy rdfs:subPropertyOf hrio:hasAttributor .
+
+hrio:recognizesGender rdfs:subPropertyOf hrio:attributesGender .
+
+hrio:recognizes_1 rdfs:subPropertyOf hrio:attributedTo .
+
 hrio:AcquiredHealthCondition a gufo:Category,
         owl:Class,
         owl:NamedIndividual ;
@@ -669,6 +720,18 @@ hrio:AdministrativeCodingDiagnosis a gufo:SubKind,
     rdfs:comment "Administrative Coding Diagnosis is a Healthcare Diagnosis defined by having an administrative coding record as its source. The diagnostic statement is taken from the administrative code representation rather than from clinical examination, laboratory measurement, or imaging as sources."@en ;
     rdfs:subClassOf hrio:HealthcareDiagnosis .
 
+hrio:AdministrativeFemaleGenderPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Administrative Female-gender Person"@en ;
+    rdfs:comment """An Administrative Female-gender Person is a person whose administrative gender assignment is female. This classification concerns an administrative recognition of a female gender for the person, as established by an organization acting as an administrative gender recognizer and recorded through an administrative gender recognition.
+
+The class is intended to capture the administrative status of a female gender assignment, independently of how the person identifies or how others may attribute gender in non-administrative contexts."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:AdministrativeFemaleGender ],
+        hrio:ExternallyAttributedFemaleGenderPerson .
+
 hrio:AdministrativeGenderRecognitionAgent a gufo:RoleMixin,
         owl:Class,
         owl:NamedIndividual ;
@@ -683,11 +746,37 @@ hrio:AdministrativeGenderRecognitionDocument a gufo:RoleMixin,
         owl:Class,
         owl:NamedIndividual ;
     rdfs:label "Administrative Gender Recognition Document"@en ;
-    rdfs:comment "Administrative Gender Recognition Document is a documentary artifact that records an administrative gender recognition. It specializes Document, is created by an Administrative Gender Recognition Agent, and participates in an Administrative Gender Recognition through a mediating relation."@en ;
+    rdfs:comment """Administrative Gender Recognition Document is a documentary artifact that records an administrative gender recognition and the administrative gender designation recognized for a person. It is created by an administrative gender recognition agent and participates in the recognition or recognitions it records.
+
+The document provides the administrative record that ties a recognition act to its recorded administrative gender outcome."""@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty [ owl:inverseOf gufo:mediates ] ;
             owl:someValuesFrom hrio:AdministrativeGenderRecognition ],
         hrio:Document .
+
+hrio:AdministrativeMaleGenderPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Administrative Male-gender Person"@en ;
+    rdfs:comment """An Administrative Male-gender Person is a person whose administrative gender assignment is male. This classification concerns an administrative recognition of a male gender for the person, as established by an organization acting as an administrative gender recognizer and recorded through an administrative gender recognition.
+
+The class is intended to capture the administrative status of a male gender assignment, independently of how the person identifies or how others may attribute gender in non-administrative contexts."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:AdministrativeMaleGender ],
+        hrio:ExternallyAttributedMaleGenderPerson .
+
+hrio:AdministrativeNonBinaryGenderPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Administrative Non-binary-gender Person"@en ;
+    rdfs:comment """An Administrative Non-binary-gender Person is a person whose administrative gender assignment is non-binary. This classification concerns an administrative recognition of a non-binary gender for the person, as established by an organization acting as an administrative gender recognizer and recorded through an administrative gender recognition.
+
+The class is intended to capture the administrative status of a non-binary gender assignment, independently of how the person identifies or how others may attribute gender in non-administrative contexts."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:AdministrativeNonBinaryGender ],
+        hrio:ExternallyAttributedNonBinaryGenderPerson .
 
 hrio:AllosomeX a gufo:SubKind,
         owl:Class,
@@ -794,13 +883,6 @@ Digital Document specializes Document and is disjoint from Physical Document."""
     rdfs:subClassOf gufo:FunctionalComplex,
         hrio:Document .
 
-hrio:DiploidCell a gufo:SubKind,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Diploid Cell"@en ;
-    rdfs:comment "A Diploid Cell is a human cell characterized by the presence of two chromosome sets. It is modeled as a subkind of Human Cell that includes chromosomes as components, with the number of chromosomes distinguishing it from other cell types in the model. In this representation, the diploid structure is complete and disjoint relative to the haploid alternative, reflecting its role in forming the ordinary chromosomal basis of human somatic cells."@en ;
-    rdfs:subClassOf hrio:HumanCell .
-
 hrio:EpidemiologicalDiagnosis a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
@@ -808,16 +890,13 @@ hrio:EpidemiologicalDiagnosis a gufo:SubKind,
     rdfs:comment "Epidemiological Diagnosis is a Healthcare Diagnosis defined by reliance on an epidemiological case definition as its source. The diagnostic assertion is derived from population-oriented criteria specified in the case definition, rather than from individual laboratory, imaging, or administrative coding sources."@en ;
     rdfs:subClassOf hrio:HealthcareDiagnosis .
 
-hrio:FemaleAdministrativeGender a gufo:Phase,
+hrio:ExternallyAttributedTransgenderPerson a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Female Administrative Gender"@en ;
-    rdfs:comment " Represents an administrative gender designation that classifies individuals as female in formal contexts such as records, forms, or institutional systems. This type supports consistent recognition and management of female gender information across administrative processes."@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:PersonWithFemaleAdministrativeGender ;
-            owl:onProperty gufo:inheresIn ],
-        hrio:AdministrativeGender .
+    rdfs:label "Externally-attributed Transgender Person"@en ;
+    rdfs:comment "Externally-attributed Transgender Person is a person assigned a transgender modality through external attribution. It captures transgender classification as assigned by an external party, distinct from transgender classification grounded in self-identification."@en ;
+    rdfs:subClassOf hrio:ExternallyGenderAttributedPerson,
+        hrio:TransgenderPerson .
 
 hrio:FemaleTypicalDimorphicCharacteristic a gufo:Category,
         owl:Class,
@@ -833,14 +912,24 @@ hrio:FemaleTypicalVisualSexCharacteristic a gufo:Category,
     rdfs:comment "Encompasses anatomical features typically associated with females, such as breast development, pelvic shape, or distribution of body fat."@en ;
     rdfs:subClassOf hrio:VisualSexCharacteristic .
 
-hrio:Gender a gufo:Category,
+hrio:GenderAttributor a gufo:RoleMixin,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Gender"@en ;
-    rdfs:comment "Represents the broad conceptual category encompassing all types of gender characterizations a person may have. It includes self-defined aspects, such as gender identity, as well as externally assigned forms like administrative or legal gender. This category supports understanding gender as a complex social and institutional phenomenon that can be intrinsic to the person or shaped by external authorities and systems."@en ;
-    rdfs:subClassOf [ a owl:Class ;
-            owl:unionOf ( gufo:IntrinsicMode gufo:ExtrinsicMode ) ],
-        gufo:Aspect .
+    rdfs:label "Gender Attributor"@en ;
+    rdfs:comment "A gender attributor is an individual agent who participates as the attributor in one or more gender attributions directed at an externally gender-attributed person. The attributor is the source participant of the attribution and, in each attribution, is distinct from the person to whom the attribution is directed."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:GenderAttribution ;
+            owl:onProperty gufo:mediates ],
+        gufo:FunctionalComplex,
+        hrio:Agent .
+
+hrio:HaploidCell a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Haploid Cell"@en ;
+    rdfs:comment "A Haploid Cell is a human cell that contains a single set of chromosomes. It is modeled as a subkind of Human Cell, disjoint and complete with the diploid alternative, and participates in the componentOf relation with chromosomes. Its reduced chromosomal count is essential for distinguishing it from diploid cells, and in the model it also serves as the basis from which gametes are defined."@en ;
+    rdfs:subClassOf hrio:HumanCell .
 
 hrio:HealthcareProfessional a gufo:Role,
         owl:Class,
@@ -925,17 +1014,6 @@ hrio:LaboratoryDiagnosis a gufo:SubKind,
     rdfs:comment "A healthcare diagnosis established primarily from laboratory analyses of specimens such as blood or tissue."@en ;
     rdfs:subClassOf hrio:HealthcareDiagnosis .
 
-hrio:MaleAdministrativeGender a gufo:Phase,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Male Administrative Gender"@en ;
-    rdfs:comment " Represents an administrative gender designation that classifies individuals as male in formal contexts such as records, forms, or institutional systems. This type supports consistent recognition and management of male gender information across administrative processes."@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:PersonWithMaleAdministrativeGender ;
-            owl:onProperty gufo:inheresIn ],
-        hrio:AdministrativeGender .
-
 hrio:MaleTypicalDimorphicCharacteristic a gufo:Category,
         owl:Class,
         owl:NamedIndividual ;
@@ -949,17 +1027,6 @@ hrio:MaleTypicalVisualSexCharacteristic a gufo:Category,
     rdfs:label "Male-typical Visual Sex Characteristic"@en ;
     rdfs:comment "Includes anatomical features statistically more common or pronounced in males, such as external genitalia shape, body hair distribution, or certain skeletal structures."@en ;
     rdfs:subClassOf hrio:VisualSexCharacteristic .
-
-hrio:NonBinaryAdministrativeGender a gufo:Phase,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Non-binary Administrative Gender"@en ;
-    rdfs:comment " Represents an administrative gender designation for individuals whose gender is formally recognized as non-binary or outside the male/female binary. This type enables consistent documentation and management of non-binary gender identities in administrative contexts."@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:PersonWithNonBinaryAdministrativeGender ;
-            owl:onProperty gufo:inheresIn ],
-        hrio:AdministrativeGender .
 
 hrio:NonHumanAnimal a gufo:Category,
         owl:Class,
@@ -999,35 +1066,16 @@ hrio:Offspring a gufo:Role,
         hrio:Child,
         hrio:Person .
 
-hrio:PersonWithFemaleAdministrativeGender a gufo:Role,
+hrio:PersonWithIndeterminateSexAtBirth a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Person with Female Administrative Gender"@en ;
-    rdfs:comment "Refers to an individual who has been formally designated as female in administrative records or systems. This role indicates that an authoritative body has assigned or acknowledged a female classification for use in official documentation, identification, or institutional processes."@en ;
+    rdfs:label "Person with Indeterminate Sex at Birth"@en ;
+    rdfs:comment "Includes individuals whose sex at birth is formally recorded as indeterminate. This category supports administrative recognition of cases where observed features do not clearly fit male or female classifications."@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass hrio:IndeterminateSexAtBirth ;
             owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
-            owl:someValuesFrom hrio:FemaleAdministrativeGender ],
-        hrio:PersonWithRecognizedAdministrativeGender .
-
-hrio:PersonWithMaleAdministrativeGender a gufo:Role,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Person with Male Administrative Gender"@en ;
-    rdfs:comment "Refers to an individual who has been formally designated as male in administrative records or systems. This role indicates that an authoritative body has assigned or acknowledged a male classification for the purpose of official documentation, identification, or institutional processes."@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
-            owl:someValuesFrom hrio:MaleAdministrativeGender ],
-        hrio:PersonWithRecognizedAdministrativeGender .
-
-hrio:PersonWithNonBinaryAdministrativeGender a gufo:Role,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Person with Non-binary Administrative Gender"@en ;
-    rdfs:comment "Refers to an individual who has been formally designated with a non-binary gender classification in administrative records or systems. This role indicates that an authoritative body has assigned or acknowledged a gender designation outside the traditional male/female binary for the purpose of official documentation, identification, or institutional processes."@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
-            owl:someValuesFrom hrio:NonBinaryAdministrativeGender ],
-        hrio:PersonWithRecognizedAdministrativeGender .
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        hrio:PersonWithAssignedSexAtBirth .
 
 hrio:PersonsDeathCause a gufo:Kind,
         owl:Class,
@@ -1064,12 +1112,6 @@ Physical Document specializes Document and is disjoint from Digital Document."""
     rdfs:subClassOf gufo:FunctionalComplex,
         hrio:Document .
 
-hrio:Polyploid a gufo:SubKind,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Polyploid"@en ;
-    rdfs:subClassOf hrio:HumanCell .
-
 hrio:PostmortemDiagnosis a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
@@ -1092,16 +1134,26 @@ hrio:RiskBasedHealthCondition a gufo:Category,
     rdfs:subClassOf gufo:IntrinsicMode,
         hrio:HealthCondition .
 
-hrio:SelfAwarePerson a gufo:Phase,
+hrio:SelfIdentifiedNonBinaryGenderPerson a gufo:Phase,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Self-aware Person"@en ;
-    rdfs:comment "Represents a phase of a Person characterized by the capacity for self-awareness. A Self-aware Person can recognize themselves as a distinct individual, reflect on their own thoughts and experiences, and potentially form concepts such as personal identity and gender identity. This phase typically develops over time and enables participation in complex social roles."@en ;
+    rdfs:label "Self-identified Non-binary-gender Person"@en ;
+    rdfs:comment """This class focuses on persons whose non-binary gender classification is based on self-identification, emphasizing the person as the source of the gender designation.
+
+A Self-identified Non-binary-gender Person is a person whose self-identified gender is non-binary. Such a person is characterized by exactly one instance of Self-identified Non-binary Gender, reflecting the self-identified designation of non-binary gender associated with the person."""@en ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass hrio:GenderIdentity ;
+            owl:onClass hrio:SelfIdentifiedNonBinaryGender ;
             owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        hrio:LivingPerson .
+        hrio:NonBinaryGenderPerson .
+
+hrio:SelfIdentifiedTransgenderPerson a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Self-identified Transgender Person"@en ;
+    rdfs:comment "Self-identified Transgender Person is a self-aware person who self-identifies as transgender. It is mutually exclusive with Self-identified Cisgender Person and together they classify self-aware persons by self-identified gender modality, while allowing externally attributed transgender classifications to also apply to the same person."@en ;
+    rdfs:subClassOf hrio:SelfAwarePerson,
+        hrio:TransgenderPerson .
 
 hrio:StructuralHealthCondition a gufo:Category,
         owl:Class,
@@ -1125,6 +1177,12 @@ hrio:VeterinaryDiagnosis a gufo:SubKind,
     rdfs:comment "A diagnosis concerning non-human animals within veterinary care. Its scope is animal health and care rather than human healthcare."@en ;
     rdfs:subClassOf hrio:HealthcareDiagnosis .
 
+hrio:femaleGenderInheresInFemaleGenderPerson rdfs:subPropertyOf hrio:person .
+
+hrio:maleGenderInheresInMaleGenderPerson rdfs:subPropertyOf hrio:person .
+
+hrio:nonBinaryGenderInheresInNonBinaryGenderPerson rdfs:subPropertyOf hrio:person .
+
 hrio:AdministrativeGenderRecognizingOrganization a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
@@ -1133,6 +1191,7 @@ hrio:AdministrativeGenderRecognizingOrganization a gufo:Role,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty [ owl:inverseOf gufo:mediates ] ;
             owl:someValuesFrom hrio:AdministrativeGenderRecognition ],
+        hrio:GenderAttributor,
         hrio:Organization .
 
 hrio:Allosome a gufo:SubKind,
@@ -1142,7 +1201,7 @@ hrio:Allosome a gufo:SubKind,
     rdfs:comment "Allosome is a subkind of Chromosome that denotes the sex chromosomes present in human cells. Allosomes are responsible for determining chromosomal sex and also contribute to sexual development and related biological traits. In humans, diploid cells typically contain two allosomes, which may occur in the combinations XX or XY."@en ;
     rdfs:subClassOf hrio:Chromosome ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:AllosomeX hrio:AllosomeY ) ] .
+            owl:unionOf ( hrio:AllosomeY hrio:AllosomeX ) ] .
 
 hrio:Animal a gufo:Category,
         owl:Class,
@@ -1157,7 +1216,25 @@ hrio:Animal a gufo:Category,
         hrio:CellularEntity,
         hrio:Substantial ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:NonHumanAnimal hrio:Person ) ] .
+            owl:unionOf ( hrio:Person hrio:NonHumanAnimal ) ] .
+
+hrio:ArtificialAgent a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Artificial Agent"@en ;
+    rdfs:comment """An individual agent realized by an artifact-based system rather than by a human person. It falls under the broader class Agent and under Individual Agent, and is disjoint from Person in the individual-agent partition. The class serves as a common type for machines or software-controlled systems that can act, perceive, or decide in ways that count as agency for the purposes of this model.
+
+Artificial Agent provides the basis for role-specific specializations in particular contexts. For example, when participating in diagnostic activities an instance can instantiate the Diagnosing Artificial Agent role."""@en ;
+    rdfs:subClassOf hrio:IndividualAgent .
+
+hrio:CisgenderPerson a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Cisgender Person"@en ;
+    rdfs:comment "Cisgender Person is a person assigned a cisgender modality, indicating alignment between a gender classification for the person and the person's sex-at-birth classification. The alignment may be established using self-identified gender or using externally-attributed gender, depending on the specific cisgender classification that applies to the person."@en ;
+    rdfs:subClassOf hrio:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:ExternallyAttributedCisgenderPerson hrio:SelfIdentifiedCisgenderPerson ) ] .
 
 hrio:DeadPerson a gufo:Phase,
         owl:Class,
@@ -1182,7 +1259,7 @@ hrio:DiagnosingPerson a gufo:Role,
     rdfs:subClassOf hrio:DiagnosingAgent,
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ProfessionalDiagnosingAgent hrio:LaypersonDiagnosingAgent ) ] .
+            owl:unionOf ( hrio:LaypersonDiagnosingAgent hrio:ProfessionalDiagnosingAgent ) ] .
 
 hrio:DiagnosticAssessment a gufo:EventType,
         owl:Class,
@@ -1208,7 +1285,7 @@ hrio:DiagnosticAssessmentOutcome a gufo:Kind,
             owl:onProperty gufo:inheresIn ],
         hrio:Belief ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:Diagnosis hrio:NoDiagnosisOutcome ) ] .
+            owl:unionOf ( hrio:NoDiagnosisOutcome hrio:Diagnosis ) ] .
 
 hrio:Document a gufo:Category,
         owl:Class,
@@ -1227,6 +1304,18 @@ hrio:ExposureBasedHealthCondition a gufo:Category,
     rdfs:subClassOf hrio:ExternallyCausedHealthCondition,
         hrio:NonInjuryHealthCondition .
 
+hrio:ExternallyAttributedNonBinaryGenderPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Externally-attributed Non-binary-gender Person"@en ;
+    rdfs:comment """An Externally-attributed Non-binary-gender Person is a person to whom a non-binary gender is attributed by a gender attributor through a gender attribution. The gender attributor is a different person from the one receiving the attribution.
+
+The class focuses on gender as assigned by another person, and it is not defined by the person's own gender identity or by administrative or legal recognition."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:ExternallyAttributedNonBinaryGender ],
+        hrio:NonBinaryGenderPerson .
+
 hrio:FemaleBiologicalPerson a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
@@ -1234,12 +1323,15 @@ hrio:FemaleBiologicalPerson a gufo:SubKind,
     rdfs:comment "Refers to a person whose sexual dimorphic characteristics align more strongly with those typically classified as female. The classification is based on the predominance of female-typical features in the overall assessment."@en ;
     rdfs:subClassOf hrio:Person .
 
-hrio:HaploidCell a gufo:SubKind,
+hrio:FemaleSexAtBirth a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Haploid Cell"@en ;
-    rdfs:comment "A Haploid Cell is a human cell that contains a single set of chromosomes. It is modeled as a subkind of Human Cell, disjoint and complete with the diploid alternative, and participates in the componentOf relation with chromosomes. Its reduced chromosomal count is essential for distinguishing it from diploid cells, and in the model it also serves as the basis from which gametes are defined."@en ;
-    rdfs:subClassOf hrio:HumanCell .
+    rdfs:label "Female Sex at Birth"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:PersonWithFemaleSexAtBirth ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:SexAtBirth .
 
 hrio:HumanCell a gufo:Kind,
         owl:Class,
@@ -1248,36 +1340,56 @@ hrio:HumanCell a gufo:Kind,
     rdfs:comment "The fundamental structural and functional unit of the human body. A Human Cell is modeled as a kind that provides the basis for distinguishing between diploid and haploid cell types in the ontology. It is represented as the container of chromosomes, with its structural variation expressed through the number of chromosomes it includes."@en ;
     rdfs:subClassOf gufo:FunctionalComplex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:HaploidCell hrio:DiploidCell hrio:Polyploid ) ] .
+            owl:unionOf ( hrio:DiploidCell hrio:Polyploid hrio:HaploidCell ) ] .
 
-hrio:IndividualAgent a gufo:Category,
+hrio:IndeterminateSexAtBirth a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Individual Agent"@en ;
-    rdfs:comment "A single bearer of agency that can act as one countable unit. It is a subtype of Agent and excludes collective entities such as organizations. Individual Agent is specialized by Person and Artificial Agent, which partition the space of individual agents. It serves as the general type from which individual participants in recognition or other agentive relations are taken."@en ;
-    rdfs:subClassOf gufo:FunctionalComplex,
-        hrio:Agent ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ArtificialAgent hrio:Person ) ] .
-
-hrio:LegalGenderRecognition a gufo:SubKind,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Legal Gender Recognition"@en ;
-    rdfs:comment "Describes the formal process through which a person's legal gender is established, assigned, or modified in accordance with laws and administrative procedures. This recognition is often documented and has legal consequences for a person's rights and social standing."@en ;
+    rdfs:label "Indeterminate Sex at Birth"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:PersonWithRecognizedLegalGender ;
-            owl:onProperty gufo:mediates ],
-        [ a owl:Restriction ;
+            owl:onClass hrio:PersonWithIndeterminateSexAtBirth ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:SexAtBirth .
+
+hrio:LegalFemaleGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Legal Female Gender"@en ;
+    rdfs:comment "Legal Female Gender is a legal gender characterization in which a person is legally recognized as female. It captures the legal gender status assigned through legal gender recognition and recorded in the corresponding legal gender recognition documentation."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:LegalGenderRecognizer ;
-            owl:onProperty gufo:mediates ],
-        [ a owl:Restriction ;
+            owl:onClass hrio:LegalFemaleGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:AdministrativeFemaleGender,
+        hrio:FemaleGender,
+        hrio:LegalGender .
+
+hrio:LegalMaleGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Legal Male Gender"@en ;
+    rdfs:comment "Legal Male Gender is a legal gender characterization in which a person is legally recognized as male. It captures the legal gender status assigned through legal gender recognition and recorded in the corresponding legal gender recognition documentation."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:LegalGenderRecognitionDocument ;
-            owl:onProperty gufo:mediates ],
-        hrio:AdministrativeGenderRecognition .
+            owl:onClass hrio:LegalMaleGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:AdministrativeMaleGender,
+        hrio:LegalGender,
+        hrio:MaleGender .
+
+hrio:LegalNonBinaryGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Legal Non-binary Gender"@en ;
+    rdfs:comment "Legal Non-binary Gender is a legal gender characterization in which a person is legally recognized as non-binary. It captures the legal gender status assigned through legal gender recognition and recorded in the corresponding legal gender recognition documentation."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:LegalNonBinaryGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:AdministrativeNonBinaryGender,
+        hrio:LegalGender,
+        hrio:NonBinaryGender .
 
 hrio:MaleBiologicalPerson a gufo:SubKind,
         owl:Class,
@@ -1285,6 +1397,16 @@ hrio:MaleBiologicalPerson a gufo:SubKind,
     rdfs:label "Male Biological Person"@en ;
     rdfs:comment "Describes a person whose overall set of sexual dimorphic characteristics aligns more strongly with those typically classified as male. This classification relies on counting or weighting traits that are conventionally considered male-typical."@en ;
     rdfs:subClassOf hrio:Person .
+
+hrio:MaleSexAtBirth a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Male Sex at Birth"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:PersonWithMaleSexAtBirth ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:SexAtBirth .
 
 hrio:NegativeDiagnosisAssessment a gufo:EventType,
         owl:Class,
@@ -1317,15 +1439,7 @@ hrio:NonInjuryHealthCondition a gufo:Category,
             owl:unionOf ( gufo:IntrinsicMode gufo:ExtrinsicMode ) ],
         gufo:Aspect ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:InherentHealthCondition hrio:ExposureBasedHealthCondition ) ] .
-
-hrio:Organization a gufo:Kind,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Organization"@en ;
-    rdfs:comment "A structured group of people with a common purpose, such as a business, government agency, nonprofit, or other formal entity. Organizations can have defined roles, responsibilities, and authority to make decisions, deliver services, and interact with individuals or other organizations in systematic ways."@en ;
-    rdfs:subClassOf gufo:FunctionalComplex,
-        hrio:Agent .
+            owl:unionOf ( hrio:ExposureBasedHealthCondition hrio:InherentHealthCondition ) ] .
 
 hrio:PathologicalHealthCondition a gufo:Category,
         owl:Class,
@@ -1333,6 +1447,39 @@ hrio:PathologicalHealthCondition a gufo:Category,
     rdfs:label "Pathological Health Condition"@en ;
     rdfs:comment "A Pathological Health Condition is represented as a condition that qualifies as pathological in nature. It forms one side of the complete and disjoint partition of health conditions, capturing disorders or diseases that are clinically recognized as pathological. This class serves as the basis for further specialization into categories such as disease or non-traumatic health condition."@en ;
     rdfs:subClassOf hrio:HealthCondition .
+
+hrio:PersonWithRecognizedAdministrativeGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Recognized Administrative Gender"@en ;
+    rdfs:comment """This definition describes the person role tied to an administratively recognized gender assignment.
+
+Person with Recognized Administrative Gender denotes a person who is the target of an administrative gender recognition act and thereby has an administrative gender acknowledged for administrative purposes. This role captures that the relevant administrative gender is established through an attribution or recognition act rather than solely through self-identification."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom hrio:AdministrativeGenderRecognition ],
+        [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:AdministrativeGender ],
+        hrio:ExternallyGenderAttributedPerson,
+        hrio:Person .
+
+hrio:PersonWithRecognizedLegalGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Recognized Legal Gender"@en ;
+    rdfs:comment """This definition describes the person role associated with having a legally recognized gender.
+
+Person with Recognized Legal Gender denotes a person for whom a legal gender has been acknowledged through a legal gender recognition act. In this role, the person is characterized by one or more instances of legal gender that have been recognized and recorded via the associated recognition process and documentation."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom hrio:LegalGenderRecognition ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:LegalGender ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:Person,
+        hrio:PersonWithRecognizedAdministrativeGender .
 
 hrio:PhenotypicSex a gufo:Kind,
         owl:Class,
@@ -1356,6 +1503,68 @@ hrio:PositiveDiagnosisAssessment a gufo:EventType,
             owl:onProperty gufo:manifestedIn ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         hrio:ConclusiveDiagnosticAssessment .
+
+hrio:SelfIdentifiedFemaleGender a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Self-identified Female Gender"@en ;
+    rdfs:comment "Self-identified Female Gender is a female gender held by a self-aware person through self-identification. It characterizes the person as female from the person's own perspective and may coexist with female gender attributions made by external parties or through administrative or legal assignment."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:SelfIdentifiedFemaleGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:FemaleGender,
+        hrio:SelfIdentifiedGender .
+
+hrio:SelfIdentifiedFemaleGenderPerson a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Self-identified Female-gender Person"@en ;
+    rdfs:comment """This class focuses on persons whose female gender classification is based on self-identification, emphasizing the person as the source of the gender designation.
+
+A Self-identified Female-gender Person is a person whose self-identified gender is female. Such a person is characterized by exactly one instance of Self-identified Female Gender, reflecting the self-identified designation of female gender associated with the person."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass hrio:SelfIdentifiedFemaleGender ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        hrio:FemaleGenderPerson .
+
+hrio:SelfIdentifiedMaleGender a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Self-identified Male Gender"@en ;
+    rdfs:comment "Self-identified Male Gender is a male gender held by a self-aware person through self-identification. It characterizes the person as male from the person's own perspective and may coexist with male gender attributions made by external parties or through administrative or legal assignment."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:SelfIdentifiedMaleGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:MaleGender,
+        hrio:SelfIdentifiedGender .
+
+hrio:SelfIdentifiedMaleGenderPerson a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Self-identified Male-gender Person"@en ;
+    rdfs:comment """This class focuses on persons whose male gender classification is based on self-identification, emphasizing the person as the source of the gender designation.
+
+A Self-identified Male-gender Person is a person whose self-identified gender is male. Such a person is characterized by exactly one instance of Self-identified Male Gender, reflecting the self-identified designation of male gender associated with the person."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass hrio:SelfIdentifiedMaleGender ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        hrio:MaleGenderPerson .
+
+hrio:SelfIdentifiedNonBinaryGender a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Self-identified Non-binary Gender"@en ;
+    rdfs:comment "Self-identified Non-binary Gender is a non-binary gender held by a self-aware person through self-identification. It characterizes the person as non-binary from the person's own perspective and may coexist with non-binary gender attributions made by external parties or through administrative or legal assignment."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:SelfIdentifiedNonBinaryGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:NonBinaryGender,
+        hrio:SelfIdentifiedGender .
 
 hrio:Sex a gufo:Category,
         owl:Class,
@@ -1399,7 +1608,28 @@ hrio:SexualDimorphicCharacteristic a gufo:Category,
     rdfs:comment "An umbrella category for traits that show differences between sexes. These characteristics are used to classify biological sex by examining their type and distribution in an individual. Examples include body hair patterns, skeletal structure, and other anatomical features."@en ;
     rdfs:subClassOf gufo:FunctionalComplex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:MaleTypicalDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic hrio:IndeterminateDimorphicCharacteristic ) ] .
+            owl:unionOf ( hrio:IndeterminateDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic ) ] .
+
+hrio:SocialAgent a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Social Agent"@en ;
+    rdfs:comment """A Social Agent is an Agent that can participate in social interactions in which socially meaningful values are attributed to persons and other agents. It provides a general notion for agents that can act in social contexts where such attributions are relevant.
+
+Social Agent includes individual agents and organizations, covering persons and artificial agents as individual agents as well as organizational entities. It supports a uniform treatment of these participants in social contexts where socially meaningful values are attributed."""@en ;
+    rdfs:subClassOf gufo:FunctionalComplex,
+        hrio:Agent ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:Organization hrio:IndividualAgent ) ] .
+
+hrio:TransgenderPerson a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Transgender Person"@en ;
+    rdfs:comment "Transgender Person is a person classified as transgender in at least one gender modality context, including self-identification, external attribution, or both. This classification does not exclude concurrent cisgender classification, supporting representation of differing attributions that may coexist for the same person."@en ;
+    rdfs:subClassOf hrio:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:ExternallyAttributedTransgenderPerson hrio:SelfIdentifiedTransgenderPerson ) ] .
 
 hrio:VisualSexCharacteristic a gufo:Category,
         owl:Class,
@@ -1410,15 +1640,46 @@ hrio:VisualSexCharacteristic a gufo:Category,
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:IndeterminateVisualSexCharacteristic hrio:FemaleTypicalVisualSexCharacteristic hrio:MaleTypicalVisualSexCharacteristic ) ] .
 
-hrio:ArtificialAgent a gufo:Category,
+hrio:sexAtBirthInheresInPersonWithAssignedSexAtBirth rdfs:subPropertyOf hrio:phenotypicSexInheresInPersonWithAssessedPhenotypicSex .
+
+hrio:AdministrativeFemaleGender a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Artificial Agent"@en ;
-    rdfs:comment """An individual agent realized by an artifact-based system rather than by a human person. It falls under the broader class Agent and under Individual Agent, and is disjoint from Person in the individual-agent partition. The class serves as a common type for machines or software-controlled systems that can act, perceive, or decide in ways that count as agency for the purposes of this model.
+    rdfs:label "Administrative Female Gender"@en ;
+    rdfs:comment "Administrative Female Gender is a female gender designation assigned to a person as that person's administrative gender through administrative recognition. It captures the female option of administrative gender attribution used in administrative contexts, and it may or may not coincide with the person's self-identified gender."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:AdministrativeFemaleGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:AdministrativeGender,
+        hrio:ExternallyAttributedFemaleGender,
+        hrio:FemaleGender .
 
-Artificial Agent provides the basis for role-specific specializations in particular contexts. For example, when participating in diagnostic activities an instance can instantiate the Diagnosing Artificial Agent role."""@en ;
-    rdfs:subClassOf hrio:Agent,
-        hrio:IndividualAgent .
+hrio:AdministrativeMaleGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Administrative Male Gender"@en ;
+    rdfs:comment "Administrative Male Gender is a male gender designation assigned to a person as that person's administrative gender through administrative recognition. It captures the male option of administrative gender attribution used in administrative contexts, and it may or may not coincide with the person's self-identified gender."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:AdministrativeMaleGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:AdministrativeGender,
+        hrio:ExternallyAttributedMaleGender,
+        hrio:MaleGender .
+
+hrio:AdministrativeNonBinaryGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Administrative Non-binary Gender"@en ;
+    rdfs:comment "Administrative Non-binary Gender is a non-binary gender designation assigned to a person as that person's administrative gender through administrative recognition. It captures the non-binary option of administrative gender attribution used in administrative contexts, and it may or may not coincide with the person's self-identified gender."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:AdministrativeNonBinaryGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:AdministrativeGender,
+        hrio:ExternallyAttributedNonBinaryGender,
+        hrio:NonBinaryGender .
 
 hrio:CellularEntity a gufo:Category,
         owl:Class,
@@ -1458,6 +1719,107 @@ When the process is finished, the relation can be in a concluded state, and such
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         gufo:Relator .
 
+hrio:ExternallyAttributedCisgenderPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Externally-attributed Cisgender Person"@en ;
+    rdfs:comment "Externally-attributed Cisgender Person is a person classified as cisgender through external attribution. It captures cases where an externally attributed female or male gender classification is treated as aligned with the corresponding female or male sex-at-birth classification."@en ;
+    rdfs:subClassOf hrio:CisgenderPerson,
+        hrio:ExternallyGenderAttributedPerson ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:ExternallyAttributedCisgenderMalePerson hrio:ExternallyAttributedCisgenderFemalePerson ) ] .
+
+hrio:ExternallyAttributedFemaleGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Externally-attributed Female Gender"@en ;
+    rdfs:comment "Externally-attributed Female Gender is a female gender designation attributed to a person by an external party. It captures female gender attributions made by someone other than the person, without assuming that the attribution matches the person's self-identified gender."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:ExternallyAttributedFemaleGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:ExternallyAttributedGender,
+        hrio:FemaleGender .
+
+hrio:ExternallyAttributedFemaleGenderPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Externally-attributed Female-gender Person"@en ;
+    rdfs:comment """An Externally-attributed Female-gender Person is a person to whom a female gender is attributed by a gender attributor through a gender attribution. The gender attributor is a different person from the one receiving the attribution.
+
+The class focuses on gender as assigned by another person, and it is not defined by the person's own gender identity or by administrative or legal recognition."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:ExternallyAttributedFemaleGender ],
+        hrio:FemaleGenderPerson .
+
+hrio:ExternallyAttributedMaleGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Externally-attributed Male Gender"@en ;
+    rdfs:comment "Externally-attributed Male Gender is a male gender designation attributed to a person by an external party. It captures male gender attributions made by someone other than the person, without assuming that the attribution matches the person's self-identified gender."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:ExternallyAttributedMaleGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:ExternallyAttributedGender,
+        hrio:MaleGender .
+
+hrio:ExternallyAttributedMaleGenderPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Externally-attributed Male-gender Person"@en ;
+    rdfs:comment """An Externally-attributed Male-gender Person is a person to whom a male gender is attributed by a gender attributor through a gender attribution. The gender attributor is a different person from the one receiving the attribution.
+
+The class focuses on gender as assigned by another person, and it is not defined by the person's own gender identity or by administrative or legal recognition."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:ExternallyAttributedMaleGender ],
+        hrio:MaleGenderPerson .
+
+hrio:ExternallyAttributedNonBinaryGender a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Externally-attributed Non-binary Gender"@en ;
+    rdfs:comment "Externally-attributed Non-binary Gender is a non-binary gender designation attributed to a person by an external party. It captures non-binary gender attributions made by someone other than the person, without assuming that the attribution matches the person's self-identified gender."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:ExternallyAttributedNonBinaryGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:ExternallyAttributedGender,
+        hrio:NonBinaryGender .
+
+hrio:FemaleGenderPerson a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Female-gender Person"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:FemaleGender ],
+        hrio:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:ExternallyAttributedFemaleGenderPerson hrio:SelfIdentifiedFemaleGenderPerson ) ] .
+
+hrio:GenderAttribution a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Gender Attribution"@en ;
+    rdfs:comment """A gender attribution is an attribution relation that connects one gender attributor to one externally gender-attributed person. It represents a specific instance of externally attributing gender to a person, with the attributor as the source participant and the person as the target participant.
+
+Each gender attribution has exactly one attributor and is directed to exactly one person, while a person can be the target of one or more gender attributions and a gender attributor can participate in one or more gender attributions. In each gender attribution, the attributor and the attributed person are not the same individual."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom hrio:GenderAttributor ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:ExternallyGenderAttributedPerson ;
+            owl:onProperty gufo:mediates ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:ExternallyAttributedGender ;
+            owl:onProperty gufo:mediates ],
+        gufo:Relator .
+
 hrio:InherentHealthCondition a gufo:Category,
         owl:Class,
         owl:NamedIndividual ;
@@ -1489,6 +1851,55 @@ Karyotypical Male subsumes both regular and variant karyotypic presentations tha
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:VariantKaryotypicalMale hrio:RegularKaryotypicalMale ) ] .
 
+hrio:LegalGenderRecognition a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Legal Gender Recognition"@en ;
+    rdfs:comment """This definition outlines the recognition act that establishes the connection between a person and a legal gender.
+
+Legal Gender Recognition denotes a formal recognition act carried out by an authorized legal recognizer that acknowledges a specific legal gender for a person. It is the recognizing situation that links the recognizer, the person in the role of having a recognized legal gender, and the legal gender that is acknowledged, and it is formalized through an official recognition document."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:PersonWithRecognizedLegalGender ;
+            owl:onProperty gufo:mediates ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:LegalGenderRecognizer ;
+            owl:onProperty gufo:mediates ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:LegalGenderRecognitionDocument ;
+            owl:onProperty gufo:mediates ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:LegalGender ;
+            owl:onProperty gufo:mediates ],
+        hrio:AdministrativeGenderRecognition .
+
+hrio:MaleGenderPerson a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Male-gender Person"@en ;
+    rdfs:comment "Male-gender Person is a person who is characterized by at least one instance of Male Gender. It captures membership in the male gender option regardless of whether that characterization comes from self-identification or from external attribution, including administrative or legal assignment. It does not imply any particular sex at birth and does not exclude additional gender characterizations."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:MaleGender ],
+        hrio:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:SelfIdentifiedMaleGenderPerson hrio:ExternallyAttributedMaleGenderPerson ) ] .
+
+hrio:NonBinaryGenderPerson a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Non-binary-gender Person"@en ;
+    rdfs:comment "Non-binary-gender Person is a person who is characterized by at least one instance of Non-binary Gender. It captures membership in the non-binary gender option regardless of whether that characterization comes from self-identification or external attribution, including administrative or legal assignment. It does not imply any particular sex at birth and does not exclude additional gender characterizations."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:NonBinaryGender ],
+        hrio:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:SelfIdentifiedNonBinaryGenderPerson hrio:ExternallyAttributedNonBinaryGenderPerson ) ] .
+
 hrio:NonStructuralHealthCondition a gufo:Category,
         owl:Class,
         owl:NamedIndividual ;
@@ -1497,6 +1908,13 @@ hrio:NonStructuralHealthCondition a gufo:Category,
     rdfs:subClassOf hrio:EstablishedHealthCondition ;
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:FunctionalHealthCondition hrio:PsychologicalHealthCondition ) ] .
+
+hrio:Organization a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Organization"@en ;
+    rdfs:comment "A structured group of people with a common purpose, such as a business, government agency, nonprofit, or other formal entity. Organizations can have defined roles, responsibilities, and authority to make decisions, deliver services, and interact with individuals or other organizations in systematic ways."@en ;
+    rdfs:subClassOf hrio:SocialAgent .
 
 hrio:ParentChildRelation a gufo:Kind,
         owl:Class,
@@ -1519,6 +1937,28 @@ hrio:ParentChildRelation a gufo:Kind,
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         gufo:Relator .
 
+hrio:PersonWithFemaleSexAtBirth a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Female Sex at Birth"@en ;
+    rdfs:comment "Denotes individuals officially assigned as female in their birth record, based on clinical observation of anatomical features immediately after birth."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass hrio:FemaleSexAtBirth ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        hrio:PersonWithAssignedSexAtBirth .
+
+hrio:PersonWithMaleSexAtBirth a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Male Sex at Birth"@en ;
+    rdfs:comment "Denotes individuals officially assigned as male in their birth record, typically based on observed anatomical features at the time of delivery."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass hrio:MaleSexAtBirth ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        hrio:PersonWithAssignedSexAtBirth .
+
 hrio:PersonWithRegularSexChromosome a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
@@ -1526,7 +1966,7 @@ hrio:PersonWithRegularSexChromosome a gufo:SubKind,
     rdfs:comment "A Person with Regular Sex Chromosome is represented as an individual whose sex chromosomes conform to the most frequent configurations in the population. In the model this class specializes Person and is disjoint and complete with its variant counterpart, capturing the regular chromosomal patterns used to define standard karyotypical categories. Its role is to provide the structural basis for distinguishing the commonly occurring XX and XY arrangements from other possibilities."@en ;
     rdfs:subClassOf hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:RegularKaryotypicalFemale hrio:RegularKaryotypicalMale ) ] .
+            owl:unionOf ( hrio:RegularKaryotypicalMale hrio:RegularKaryotypicalFemale ) ] .
 
 hrio:PersonsBirth a gufo:EventType,
         owl:Class,
@@ -1559,6 +1999,43 @@ hrio:RegularKaryotypicalMale a gufo:SubKind,
     rdfs:subClassOf hrio:KaryotypicalMale,
         hrio:PersonWithRegularSexChromosome .
 
+hrio:SelfAwarePerson a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Self-aware Person"@en ;
+    rdfs:comment "Represents a phase of a Person characterized by the capacity for self-awareness. A Self-aware Person can recognize themselves as a distinct individual, reflect on their own thoughts and experiences, and potentially form concepts such as personal identity and gender identity. This phase typically develops over time and enables participation in complex social roles."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass hrio:SelfIdentifiedGender ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        hrio:LivingPerson,
+        hrio:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:SelfIdentifiedCisgenderPerson hrio:SelfIdentifiedTransgenderPerson ) ] .
+
+hrio:SelfIdentifiedCisgenderPerson a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Self-identified Cisgender Person"@en ;
+    rdfs:comment "Self-identified Cisgender Person is a self-aware person whose self-identified gender is aligned with the person's sex at birth. In this model, it is specialized into cisgender female and cisgender male cases by combining self-identified female or male gender with female or male sex at birth, and it is mutually exclusive with Self-identified Transgender Person."@en ;
+    rdfs:subClassOf hrio:CisgenderPerson,
+        hrio:SelfAwarePerson ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:SelfIdentifiedCisgenderMalePerson hrio:SelfIdentifiedCisgenderFemalePerson ) ] .
+
+hrio:SexAtBirth a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Sex at Birth"@en ;
+    rdfs:comment "Represents the formal classification of a person's sex that is recorded at the time of birth. This category acknowledges that sex at birth is not simply observed but is officially documented, often forming the basis for legal and administrative records throughout life."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:PersonWithAssignedSexAtBirth ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:PhenotypicSex ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:MaleSexAtBirth hrio:FemaleSexAtBirth hrio:IndeterminateSexAtBirth ) ] .
+
 hrio:VariantKaryotypicalFemale a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
@@ -1574,27 +2051,6 @@ hrio:VariantKaryotypicalMale a gufo:SubKind,
     rdfs:comment "Includes individuals whose chromosomal patterns are considered male but differ from the standard XY configuration. For example, XXY or other variations that still lead to a male classification but with genetic differences."@en ;
     rdfs:subClassOf hrio:KaryotypicalMale,
         hrio:PersonWithVariantSexChromosome .
-
-hrio:AdministrativeGenderRecognition a gufo:Kind,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Administrative Gender Recognition"@en ;
-    rdfs:comment "Describes the process and relationship through which an organization formally assigns or recognizes a person's administrative gender. It represents the structured interaction that results in an individual's gender being recorded or changed in administrative systems."@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:AdministrativeGenderRecognizingOrganization ;
-            owl:onProperty gufo:mediates ],
-        [ a owl:Restriction ;
-            owl:onProperty gufo:mediates ;
-            owl:someValuesFrom hrio:PersonWithRecognizedAdministrativeGender ],
-        [ a owl:Restriction ;
-            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
-            owl:someValuesFrom hrio:AdministrativeGenderRecognitionAgent ],
-        [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:AdministrativeGenderRecognitionDocument ;
-            owl:onProperty gufo:mediates ],
-        gufo:Relator .
 
 hrio:Date a gufo:AbstractIndividualType,
         owl:Class,
@@ -1621,7 +2077,7 @@ A diagnosed entity may be characterized by conditions and by condition indicator
             owl:onProperty gufo:inheresIn ],
         hrio:Substantial ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:DiagnosedSpecimen hrio:DiagnosedBiologicalPart hrio:DiagnosedCellularEntity hrio:DiagnosedGroup ) ] .
+            owl:unionOf ( hrio:DiagnosedSpecimen hrio:DiagnosedCellularEntity hrio:DiagnosedBiologicalPart hrio:DiagnosedGroup ) ] .
 
 hrio:DiagnosingAgent a gufo:RoleMixin,
         owl:Class,
@@ -1651,19 +2107,50 @@ hrio:ExternallyCausedHealthCondition a gufo:Category,
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:Injury hrio:ExposureBasedHealthCondition ) ] .
 
-hrio:GenderIdentity a gufo:Kind,
+hrio:ExternallyGenderAttributedPerson a gufo:Role,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Gender Identity"@en ;
-    rdfs:comment "Represents a person's deeply held sense of their own gender. It is an intrinsic aspect of self-understanding and social identity, reflecting how individuals perceive themselves and wish to be recognized. Gender identity may or may not align with a person's sex assigned at birth."@en ;
+    rdfs:label "Externally Gender-attributed Person"@en ;
+    rdfs:comment """An externally gender-attributed person is a person who is the target of one or more gender attributions made by an individual agent acting as a gender attributor. This class captures cases where a persons gender is held or assigned from an external perspective rather than asserted as the persons own self-identification.
+
+Such a person is characterized by one or more externally-attributed genders, which represent the externally held gender characterization(s) applicable to that person."""@en ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom hrio:GenderAttribution ],
+        [ a owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:SelfAwarePerson ;
+            owl:onClass hrio:ExternallyAttributedGender ;
             owl:onProperty gufo:inheresIn ],
-        gufo:IntrinsicMode,
-        hrio:Gender ;
+        hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:FemaleGenderIdentity hrio:MaleGenderIdentity hrio:NonBinaryGenderIdentity ) ] .
+            owl:unionOf ( hrio:ExternallyAttributedTransgenderPerson hrio:ExternallyAttributedCisgenderPerson ) ] .
+
+hrio:IndividualAgent a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Individual Agent"@en ;
+    rdfs:comment "A single bearer of agency that can act as one countable unit. It is a subtype of Agent and excludes collective entities such as organizations. Individual Agent is specialized by Person and Artificial Agent, which partition the space of individual agents. It serves as the general type from which individual participants in recognition or other agentive relations are taken."@en ;
+    rdfs:subClassOf hrio:SocialAgent ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:Person hrio:ArtificialAgent ) ] .
+
+hrio:LegalGender a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Legal Gender"@en ;
+    rdfs:comment """This definition clarifies what counts as legal gender and how it is grounded in formal recognition.
+
+Legal Gender denotes a gender classification that is recognized through an official legal recognition act and is treated as the legally valid gender for a person within formal records. It is the gender used when a person is in the role of having a recognized legal gender, and it is the gender outcome that a legal recognizer acknowledges through the recognition process and its associated documentation."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:PersonWithRecognizedLegalGender ],
+        [ a owl:Restriction ;
+            owl:onClass hrio:LegalGenderRecognition ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        hrio:AdministrativeGender ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:LegalMaleGender hrio:LegalFemaleGender hrio:LegalNonBinaryGender ) ] .
 
 hrio:NonTraumaticHealthCondition a gufo:Category,
         owl:Class,
@@ -1671,21 +2158,6 @@ hrio:NonTraumaticHealthCondition a gufo:Category,
     rdfs:label "Non-traumatic Health Condition"@en ;
     rdfs:comment "A Non-traumatic Health Condition is a category used to characterize health conditions that arise without a direct causal link to trauma. In the model, it groups together conditions that may have idiopathic or known origins, including congenital or acquired forms, thereby distinguishing them from conditions that are explicitly the result of injury or traumatic events."@en ;
     rdfs:subClassOf hrio:EstablishedHealthCondition .
-
-hrio:PersonWithAssessedPhenotypicSex a gufo:Role,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Person with Assessed Phenotypic Sex"@en ;
-    rdfs:comment "Describes an individual whose phenotypic sex has been evaluated and categorized, typically by a healthcare professional. This classification recognizes that phenotypic sex is not simply �given� but results from an assessment process."@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
-            owl:someValuesFrom hrio:PhenotypicSexAssessment ],
-        [ a owl:Restriction ;
-            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
-            owl:someValuesFrom hrio:PhenotypicSex ],
-        hrio:Person ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:MalePhenotypicPerson hrio:AmbiguousPhenotypicPerson hrio:FemalePhenotypicPerson ) ] .
 
 hrio:PersonWithVariantSexChromosome a gufo:SubKind,
         owl:Class,
@@ -1695,6 +2167,22 @@ hrio:PersonWithVariantSexChromosome a gufo:SubKind,
     rdfs:subClassOf hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:VariantKaryotypicalFemale hrio:VariantKaryotypicalMale hrio:KaryotypicalIndeterminatePerson ) ] .
+
+hrio:SelfIdentifiedGender a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Self-identified Gender"@en ;
+    rdfs:comment """This definition clarifies the self-ascribed gender that characterizes a self-aware person.
+
+Self-identified Gender denotes the gender with which a self-aware person identifies, as expressed through self-identification rather than third-party attribution. It captures the person's own identification as the basis for the gender characterization used in self-identification contexts."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:SelfAwarePerson ;
+            owl:onProperty gufo:inheresIn ],
+        gufo:IntrinsicMode,
+        hrio:Gender ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:SelfIdentifiedFemaleGender hrio:SelfIdentifiedMaleGender hrio:SelfIdentifiedNonBinaryGender ) ] .
 
 hrio:Substantial a gufo:Category,
         owl:Class,
@@ -1706,19 +2194,61 @@ hrio:Substantial a gufo:Category,
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:Object hrio:Agent ) ] .
 
-hrio:AdministrativeGender a gufo:Kind,
+hrio:AdministrativeGender a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
     rdfs:label "Administrative Gender"@en ;
-    rdfs:comment "Represents the type of gender designation used in administrative contexts, such as records, forms, or institutional databases. This category captures the labels or classifications assigned through formal processes."@en ;
+    rdfs:comment """Administrative Gender is a gender designation that is externally attributed and recorded for administrative purposes by an organization or system. It captures the gender value used in administrative records and other administrative contexts, rather than a person's self-identified gender.
+
+An administrative gender characterizes a person as the outcome of an administrative gender recognition."""@en ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass hrio:PersonWithRecognizedAdministrativeGender ;
             owl:onProperty gufo:inheresIn ],
-        gufo:ExtrinsicMode,
-        hrio:Gender ;
+        [ a owl:Restriction ;
+            owl:onClass hrio:AdministrativeGenderRecognition ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        hrio:ExternallyAttributedGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:FemaleAdministrativeGender hrio:MaleAdministrativeGender hrio:NonBinaryAdministrativeGender ) ] .
+            owl:unionOf ( hrio:AdministrativeNonBinaryGender hrio:AdministrativeMaleGender hrio:AdministrativeFemaleGender ) ] .
+
+hrio:AdministrativeGenderRecognition a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Administrative Gender Recognition"@en ;
+    rdfs:comment """Administrative Gender Recognition is the formal recognition act through which an organization assigns or recognizes a person's administrative gender. It links the recognizing organization, the recognition agent, the person whose gender is being recognized, and the resulting administrative gender designation.
+
+Each administrative gender recognition is carried out by a recognition agent and is recorded in an administrative gender recognition document created by that agent."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:AdministrativeGenderRecognizingOrganization ;
+            owl:onProperty gufo:mediates ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:PersonWithRecognizedAdministrativeGender ;
+            owl:onProperty gufo:mediates ],
+        [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom hrio:AdministrativeGenderRecognitionAgent ],
+        [ a owl:Restriction ;
+            owl:onProperty gufo:mediates ;
+            owl:someValuesFrom hrio:AdministrativeGenderRecognitionDocument ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:AdministrativeGender ;
+            owl:onProperty gufo:mediates ],
+        hrio:GenderAttribution .
+
+hrio:Agent a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Agent"@en ;
+    rdfs:comment "Agent is a substantial capable of acting and participating in goal-directed interactions. It subsumes organizations and individual agents, the latter including persons and artificial agents. Agents may bear agentive roles such as Diagnosing Agent when engaged in domain-specific activities."@en ;
+    rdfs:subClassOf gufo:Object,
+        hrio:Substantial ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:SocialAgent hrio:Animal ) ] .
 
 hrio:Diagnosis a gufo:SubKind,
         owl:Class,
@@ -1732,6 +2262,35 @@ As an outcome, it stands in contrast to a No-Diagnosis Outcome and provides the 
             owl:onClass hrio:PositiveDiagnosisAssessment ;
             owl:onProperty [ owl:inverseOf gufo:manifestedIn ] ],
         hrio:DiagnosticAssessmentOutcome .
+
+hrio:FemaleGender a gufo:PhaseMixin,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Female Gender"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:FemaleGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:Gender ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:LegalFemaleGender hrio:AdministrativeFemaleGender ) ],
+        [ a owl:Class ;
+            owl:unionOf ( hrio:ExternallyAttributedFemaleGender hrio:SelfIdentifiedFemaleGender ) ] .
+
+hrio:Gender a gufo:Category,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Gender"@en ;
+    rdfs:comment "Gender is the broad category of gender characterizations that can be attributed to a person, either by the person themselves or by others. It covers self-identified gender as well as externally attributed gender, including administrative and legal forms used for recognition by organizations or legal institutions."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:Person ;
+            owl:onProperty gufo:inheresIn ],
+        [ a owl:Class ;
+            owl:unionOf ( gufo:IntrinsicMode gufo:ExtrinsicMode ) ],
+        gufo:Aspect ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:NonBinaryGender hrio:FemaleGender hrio:MaleGender ) ] .
 
 hrio:HealthCondition a gufo:Category,
         owl:Class,
@@ -1751,7 +2310,7 @@ hrio:KnownOriginHealthCondition a gufo:Category,
     rdfs:comment "A Known-Origin Health Condition is a category used to represent health conditions for which a specific cause can be identified. In the model, it is contrasted with idiopathic cases, emphasizing the distinction between conditions explained by their etiology and those without a clear causal account."@en ;
     rdfs:subClassOf hrio:EstablishedHealthCondition ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:CongenitalHealthCondition hrio:AcquiredHealthCondition ) ],
+            owl:unionOf ( hrio:AcquiredHealthCondition hrio:CongenitalHealthCondition ) ],
         [ a owl:Class ;
             owl:unionOf ( hrio:InherentHealthCondition hrio:ExternallyCausedHealthCondition ) ] .
 
@@ -1762,9 +2321,54 @@ hrio:LivingPerson a gufo:Phase,
     rdfs:comment "Living Person denotes the life-status phase of a person whose life is ongoing. Together with Dead Person it forms a complete and disjoint partition of persons by living status. Within this phase, the life-stage subclasses Child, Adolescent, and Adult form a complete and disjoint specialization, and the self-awareness subclasses Self-aware Person and Non-self-aware Person form a complete and disjoint specialization."@en ;
     rdfs:subClassOf hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:Child hrio:Adult hrio:Adolescent ) ],
+            owl:unionOf ( hrio:Adolescent hrio:Child hrio:Adult ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:SelfAwarePerson hrio:NonSelfAwarePerson ) ] .
+            owl:unionOf ( hrio:NonSelfAwarePerson hrio:SelfAwarePerson ) ] .
+
+hrio:MaleGender a gufo:PhaseMixin,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Male Gender"@en ;
+    rdfs:comment "Male Gender is a gender that characterizes a person as male. It supports representing a person's male gender across different contexts, including self-identification, third-party attribution, and administrative or legal assignment, without implying any particular sex at birth."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:MaleGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:Gender ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:AdministrativeMaleGender hrio:LegalMaleGender ) ],
+        [ a owl:Class ;
+            owl:unionOf ( hrio:SelfIdentifiedMaleGender hrio:ExternallyAttributedMaleGender ) ] .
+
+hrio:NonBinaryGender a gufo:PhaseMixin,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Non-binary Gender"@en ;
+    rdfs:comment "Non-binary Gender is a gender that characterizes a person as non-binary, meaning not exclusively male or female. It supports representing a person's non-binary gender across different contexts, including self-identification, third-party attribution, and administrative or legal assignment, without implying any particular sex at birth."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:NonBinaryGenderPerson ;
+            owl:onProperty gufo:inheresIn ],
+        hrio:Gender ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:LegalNonBinaryGender hrio:AdministrativeNonBinaryGender ) ],
+        [ a owl:Class ;
+            owl:unionOf ( hrio:ExternallyAttributedNonBinaryGender hrio:SelfIdentifiedNonBinaryGender ) ] .
+
+hrio:PersonWithAssessedPhenotypicSex a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Person with Assessed Phenotypic Sex"@en ;
+    rdfs:comment "Describes an individual whose phenotypic sex has been evaluated and categorized, typically by a healthcare professional. This classification recognizes that phenotypic sex is not simply �given� but results from an assessment process."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom hrio:PhenotypicSexAssessment ],
+        [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:PhenotypicSex ],
+        hrio:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:FemalePhenotypicPerson hrio:MalePhenotypicPerson hrio:AmbiguousPhenotypicPerson ) ] .
 
 hrio:PersonWithAssignedSexAtBirth a gufo:Role,
         owl:Class,
@@ -1779,49 +2383,29 @@ hrio:PersonWithAssignedSexAtBirth a gufo:Role,
             owl:onClass hrio:SexAtBirth ;
             owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        hrio:Person ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:PersonWithIndeterminateSexAtBirth hrio:PersonWithFemaleSexAtBirth hrio:PersonWithMaleSexAtBirth ) ] .
-
-hrio:PersonWithRecognizedAdministrativeGender a gufo:Role,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Person with Recognized Administrative Gender"@en ;
-    rdfs:comment "Refers to an individual whose gender has been formally assigned or recognized by an organization for administrative purposes. This role acknowledges that administrative gender is not merely self-defined but is established through interaction with an authoritative body."@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
-            owl:someValuesFrom hrio:AdministrativeGenderRecognition ],
-        [ a owl:Restriction ;
-            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
-            owl:someValuesFrom hrio:AdministrativeGender ],
-        hrio:Person ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:PersonWithFemaleAdministrativeGender hrio:PersonWithNonBinaryAdministrativeGender hrio:PersonWithMaleAdministrativeGender ) ] .
-
-hrio:PersonWithRecognizedLegalGender a gufo:Role,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Person with Recognized Legal Gender"@en ;
-    rdfs:comment "Denotes an individual who has an officially assigned legal gender recorded through a formal recognition process. This role reflects the outcome of administrative or legal procedures defining a person's gender status for legal and institutional purposes."@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
-            owl:someValuesFrom hrio:LegalGenderRecognition ],
-        [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:LegalGender ;
-            owl:onProperty gufo:inheresIn ],
         hrio:Person,
-        hrio:PersonWithRecognizedAdministrativeGender ;
+        hrio:PersonWithAssessedPhenotypicSex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:LegalMalePerson hrio:LegalNonBinaryPerson hrio:LegalFemalePerson ) ] .
+            owl:unionOf ( hrio:PersonWithMaleSexAtBirth hrio:PersonWithIndeterminateSexAtBirth hrio:PersonWithFemaleSexAtBirth ) ] .
 
-hrio:Agent a gufo:Category,
+hrio:ExternallyAttributedGender a gufo:Kind,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Agent"@en ;
-    rdfs:comment "Agent is a substantial capable of acting and participating in goal-directed interactions. It subsumes organizations and individual agents, the latter including persons and artificial agents. Agents may bear agentive roles such as Diagnosing Agent when engaged in domain-specific activities."@en ;
-    rdfs:subClassOf gufo:Object,
-        hrio:Substantial .
+    rdfs:label "Externally-attributed Gender"@en ;
+    rdfs:comment """This definition covers what an externally-attributed gender represents and how it functions as a gender characterization of a person.
+
+An externally-attributed gender is a gender characterization that applies to a person as a result of someone else's attribution. It represents the gender value(s) assigned to, recorded for, or otherwise held about a person from an external viewpoint, and it is used to distinguish external attribution from gender expressed through self-identification."""@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:ExternallyGenderAttributedPerson ],
+        [ a owl:Restriction ;
+            owl:onClass hrio:GenderAttribution ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        gufo:ExtrinsicMode,
+        hrio:Gender ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:ExternallyAttributedMaleGender hrio:ExternallyAttributedNonBinaryGender hrio:ExternallyAttributedFemaleGender ) ] .
 
 hrio:OffsetDateTime a gufo:AbstractIndividualType,
         owl:Class,
@@ -1839,7 +2423,7 @@ hrio:EstablishedHealthCondition a gufo:Category,
     rdfs:comment "An Established Health Condition is represented as a condition that is already present and identifiable, as opposed to a risk or predisposition. In the model it stands in contrast to risk-based health conditions, forming part of a complete and disjoint partition of health condition nature types. It provides the structural basis for organizing conditions that have been diagnosed or are otherwise clinically recognized, supporting their classification according to structural, functional, psychological, or etiological aspects."@en ;
     rdfs:subClassOf hrio:HealthCondition ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:NonTraumaticHealthCondition hrio:TraumaticHealthCondition ) ],
+            owl:unionOf ( hrio:TraumaticHealthCondition hrio:NonTraumaticHealthCondition ) ],
         [ a owl:Class ;
             owl:unionOf ( hrio:StructuralHealthCondition hrio:NonStructuralHealthCondition ) ],
         [ a owl:Class ;
@@ -1854,11 +2438,11 @@ hrio:HealthcareDiagnosis a gufo:SubKind,
 In the model it is organized by focus (human or veterinary), by source of evidence (for example clinical, laboratory, radiological, epidemiological, or administrative coding origins), and by use (care-oriented, surveillance, or research)."""@en ;
     rdfs:subClassOf hrio:Diagnosis ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:RadiologicalDiagnosis hrio:ClinicalDiagnosis hrio:EpidemiologicalDiagnosis hrio:LaboratoryDiagnosis hrio:AdministrativeCodingDiagnosis ) ],
+            owl:unionOf ( hrio:RadiologicalDiagnosis hrio:LaboratoryDiagnosis hrio:AdministrativeCodingDiagnosis hrio:EpidemiologicalDiagnosis hrio:ClinicalDiagnosis ) ],
         [ a owl:Class ;
             owl:unionOf ( hrio:HumanHealthcareDiagnosis hrio:VeterinaryDiagnosis ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:ResearchDiagnosis hrio:CareOrientedDiagnosis hrio:SurveillanceDiagnosis ) ] .
+            owl:unionOf ( hrio:SurveillanceDiagnosis hrio:ResearchDiagnosis hrio:CareOrientedDiagnosis ) ] .
 
 hrio:Month a gufo:AbstractIndividualType,
         owl:Class,
@@ -1883,23 +2467,33 @@ A Person may bear intrinsic modes such as Sex and Gender Identity, which can be 
         [ a owl:Restriction ;
             owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
             owl:someValuesFrom hrio:Sex ],
+        [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:Gender ],
         hrio:Animal,
         hrio:IndividualAgent ;
     owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:PersonWithRecognizedLegalGender hrio:PersonWithUnassignedLegalGender ) ],
+        [ a owl:Class ;
             owl:unionOf ( hrio:PersonWithRegularSexChromosome hrio:PersonWithVariantSexChromosome ) ],
         [ a owl:Class ;
             owl:unionOf ( hrio:KaryotypicalMale hrio:KaryotypicalFemale ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:LivingPerson hrio:DeadPerson ) ],
+            owl:unionOf ( hrio:PersonWithUnassignedSexAtBirth hrio:PersonWithAssignedSexAtBirth ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:PersonWithAssignedSexAtBirth hrio:PersonWithUnassignedSexAtBirth ) ],
+            owl:unionOf ( hrio:DeadPerson hrio:LivingPerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:FemaleBiologicalPerson hrio:IndeterminateBiologicalPerson hrio:MaleBiologicalPerson ) ],
+            owl:unionOf ( hrio:IndeterminateBiologicalPerson hrio:FemaleBiologicalPerson hrio:MaleBiologicalPerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:PersonWithRecognizedLegalGender hrio:PersonWithUnassignedLegalGender ) ] .
+            owl:unionOf ( hrio:CisgenderPerson hrio:TransgenderPerson ) ],
+        [ a owl:Class ;
+            owl:unionOf ( hrio:MaleGenderPerson hrio:NonBinaryGenderPerson hrio:FemaleGenderPerson ) ] .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:RegularKaryotypicalFemale hrio:RegularKaryotypicalMale ) .
+    owl:members ( hrio:AllosomeY hrio:AllosomeX ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hrio:RegularKaryotypicalMale hrio:RegularKaryotypicalFemale ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:PersonWithRegularSexChromosome hrio:PersonWithVariantSexChromosome ) .
@@ -1917,16 +2511,13 @@ A Person may bear intrinsic modes such as Sex and Gender Identity, which can be 
     owl:members ( hrio:VariantKaryotypicalMale hrio:RegularKaryotypicalMale ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:NonHumanAnimal hrio:Person ) .
+    owl:members ( hrio:Person hrio:NonHumanAnimal ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:HaploidCell hrio:DiploidCell hrio:Polyploid ) .
+    owl:members ( hrio:TraumaticHealthCondition hrio:NonTraumaticHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:NonTraumaticHealthCondition hrio:TraumaticHealthCondition ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( hrio:CongenitalHealthCondition hrio:AcquiredHealthCondition ) .
+    owl:members ( hrio:AcquiredHealthCondition hrio:CongenitalHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:StructuralHealthCondition hrio:NonStructuralHealthCondition ) .
@@ -1938,7 +2529,7 @@ A Person may bear intrinsic modes such as Sex and Gender Identity, which can be 
     owl:members ( hrio:InherentHealthCondition hrio:ExternallyCausedHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:InherentHealthCondition hrio:ExposureBasedHealthCondition ) .
+    owl:members ( hrio:ExposureBasedHealthCondition hrio:InherentHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:KnownOriginHealthCondition hrio:IdiopathicHealthCondition ) .
@@ -1947,13 +2538,19 @@ A Person may bear intrinsic modes such as Sex and Gender Identity, which can be 
     owl:members ( hrio:NonPathologicalHealthCondition hrio:PathologicalHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:ArtificialAgent hrio:Person ) .
+    owl:members ( hrio:Person hrio:ArtificialAgent ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:DigitalDocument hrio:PhysicalDocument ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:Diagnosis hrio:NoDiagnosisOutcome ) .
+    owl:members ( hrio:Organization hrio:IndividualAgent ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hrio:ExternallyAttributedGender hrio:SelfIdentifiedGender ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hrio:NoDiagnosisOutcome hrio:Diagnosis ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:InconclusiveDiagnosticAssessment hrio:ConclusiveDiagnosticAssessment ) .
@@ -1965,7 +2562,10 @@ A Person may bear intrinsic modes such as Sex and Gender Identity, which can be 
     owl:members ( hrio:PostmortemDiagnosis hrio:AntemortemDiagnosis ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:RadiologicalDiagnosis hrio:ClinicalDiagnosis hrio:EpidemiologicalDiagnosis hrio:LaboratoryDiagnosis hrio:AdministrativeCodingDiagnosis ) .
+    owl:members ( hrio:KaryotypicalSex hrio:PhenotypicSex ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hrio:RadiologicalDiagnosis hrio:LaboratoryDiagnosis hrio:AdministrativeCodingDiagnosis hrio:EpidemiologicalDiagnosis hrio:ClinicalDiagnosis ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:HumanHealthcareDiagnosis hrio:VeterinaryDiagnosis ) .
@@ -1974,23 +2574,14 @@ A Person may bear intrinsic modes such as Sex and Gender Identity, which can be 
     owl:members ( hrio:Object hrio:Agent ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:AdministrativeGender hrio:GenderIdentity ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( hrio:KaryotypicalSex hrio:PhenotypicSex ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( hrio:MaleTypicalDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic hrio:IndeterminateDimorphicCharacteristic ) .
+    owl:members ( hrio:IndeterminateDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:IndeterminateVisualSexCharacteristic hrio:FemaleTypicalVisualSexCharacteristic hrio:MaleTypicalVisualSexCharacteristic ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:FemaleBiologicalPerson hrio:IndeterminateBiologicalPerson hrio:MaleBiologicalPerson ) .
+    owl:members ( hrio:IndeterminateBiologicalPerson hrio:FemaleBiologicalPerson hrio:MaleBiologicalPerson ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:Organization hrio:ArtificialAgent hrio:Animal ) .
-
-[] a owl:AllDisjointClasses ;
-    owl:members ( hrio:AllosomeX hrio:AllosomeY ) .
+    owl:members ( hrio:MaleSexAtBirth hrio:FemaleSexAtBirth hrio:IndeterminateSexAtBirth ) .
 
