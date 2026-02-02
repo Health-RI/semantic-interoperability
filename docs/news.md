@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2026-02-02
+
+- **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Added: Published ontology release 1.3.0, refactoring gender modeling (externally-attributed vs self-identified) and adding cisgender/transgender modality concepts, plus SocialAgent taxonomy updates and refreshed metadata.
+
 ## 2025-12-08
 
 - [**Contributing to the Health-RI Semantic Interoperability Effort**](./contributing/overview.md) — Renamed: provides an overview of contribution options, separating community review calls from general channels and linking to the main submission forms.

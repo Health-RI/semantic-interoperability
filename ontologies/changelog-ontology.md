@@ -4,6 +4,102 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.3.0] - 2026-02-02
+
+### TL;DR
+
+- Refactors the **gender** model to distinguish **externally-attributed** vs **self-identified** gender, and adds explicit **legal/administrative** specializations with updated constraints.
+- Refactors the **agent** taxonomy via **SocialAgent**, updates related disjointness axioms, and de-parents **ArtificialAgent** from **Agent**.
+- Updates ontology release metadata: `owl:versionInfo` **1.2.1 → 1.3.0**, `owl:versionIRI`, `dcterms:modified`, and `dcterms:conformsTo`.
+
+### Added
+
+- Introduced a gender attribution pattern (metamodelling via gUFO stereotypes: many terms are both `owl:Class` and `owl:NamedIndividual`):
+  - **GenderAttribution**: `rdfs:subClassOf` `gufo:Relator`; `gufo:mediates` **some** **GenderAttributor**; `gufo:mediates` **≥ 1** **ExternallyAttributedGender** and **≥ 1** **ExternallyGenderAttributedPerson**.
+  - **GenderAttributor**: `rdf:type` `gufo:RoleMixin`; `rdfs:subClassOf` **Agent**; `gufo:mediates` **≥ 1** **GenderAttribution**.
+- Added new gender layers and specializations:
+  - **ExternallyAttributedGender** and **SelfIdentifiedGender** (+ Female/Male/NonBinary specializations and corresponding bearer phases).
+  - **Administrative\*** and **Legal\*** gender specializations (gender + bearer phases).
+  - **CisgenderPerson** / **TransgenderPerson** (and externally-attributed / self-identified cis/trans specializations).
+- Added sex-at-birth subkinds:
+  - **FemaleSexAtBirth**, **MaleSexAtBirth**, **IndeterminateSexAtBirth**.
+- Introduced **SocialAgent**:
+  - `rdf:type` `gufo:Category`; `owl:equivalentClass` **IndividualAgent ⊔ Organization**.
+- Added helper property specializations (structural alignments via `rdfs:subPropertyOf`), including:
+  - **recognizedBy** (`rdfs:subPropertyOf` `hasAttributor`), **recognizesGender** (`rdfs:subPropertyOf` `attributesGender`), plus **recognizesGender_1** and **recognizes_1**.
+  - Gender / sex-at-birth inherence helper subproperties (e.g., **selfIdentifiedGenderInheresInSelfAwarePerson**, **sexAtBirthInheresInPersonWithAssignedSexAtBirth**, and related “personWith\*” subproperties).
+
+### Changed
+
+- Release metadata updated on the ontology IRI <https://w3id.org/health-ri/ontology>:
+  - `owl:versionInfo` **"1.2.1" → "1.3.0"**; `owl:versionIRI` **…/v1.2.1 → …/v1.3.0**.
+  - `dcterms:modified` **2025-12-15 → 2026-02-02**.
+  - `dcterms:conformsTo` links updated to **…/v1.3.0/json** and **…/v1.3.0/vpp**.
+- Reworked **Gender**:
+  - Added `owl:equivalentClass` **FemaleGender ⊔ MaleGender ⊔ NonBinaryGender**.
+  - Added `rdfs:subClassOf` constraint: `gufo:inheresIn` **≥ 1** **Person**.
+  - Updated `rdfs:comment` (definition text).
+- Reworked **AdministrativeGender**:
+  - `rdf:type` **gufo:Kind → gufo:SubKind**.
+  - `rdfs:subClassOf` **gufo:ExtrinsicMode** and **Gender** → **ExternallyAttributedGender**.
+  - Added `rdfs:subClassOf` restriction: `owl:onProperty [ owl:inverseOf gufo:mediates ]` `owl:qualifiedCardinality 1` **AdministrativeGenderRecognition**.
+  - Updated `owl:equivalentClass` **FemaleAdministrativeGender ⊔ MaleAdministrativeGender ⊔ NonBinaryAdministrativeGender → AdministrativeFemaleGender ⊔ AdministrativeMaleGender ⊔ AdministrativeNonBinaryGender**.
+- Reworked **AdministrativeGenderRecognition**:
+  - `rdf:type` **gufo:Kind → gufo:SubKind**.
+  - `rdfs:subClassOf` **gufo:Relator → GenderAttribution**.
+  - Constraints refactored:
+    - Added `gufo:mediates` **≥ 1** **AdministrativeGender**.
+    - Changed document constraint: `gufo:mediates` **≥ 1** **AdministrativeGenderRecognitionDocument → some** **AdministrativeGenderRecognitionDocument**.
+    - Strengthened person constraint: `gufo:mediates` **some → ≥ 1** **PersonWithRecognizedAdministrativeGender**.
+- Reworked **LegalGender**:
+  - Added `owl:equivalentClass` **LegalFemaleGender ⊔ LegalMaleGender ⊔ LegalNonBinaryGender**.
+  - Added `rdfs:subClassOf` restriction: `owl:onProperty [ owl:inverseOf gufo:mediates ]` `owl:qualifiedCardinality 1` **LegalGenderRecognition**.
+- Updated **LegalGenderRecognition**:
+  - Added `rdfs:subClassOf` restriction: `gufo:mediates` **≥ 1** **LegalGender**.
+- Refactored bearer-role patterns:
+  - **PersonWithRecognizedAdministrativeGender**:
+    - Removed `owl:equivalentClass` union over **PersonWithFemaleAdministrativeGender / PersonWithMaleAdministrativeGender / PersonWithNonBinaryAdministrativeGender**.
+    - Added `rdfs:subClassOf` **ExternallyGenderAttributedPerson**.
+    - Updated `rdfs:comment` (definition text).
+  - **PersonWithRecognizedLegalGender**:
+    - Removed `owl:equivalentClass` union over **LegalFemalePerson / LegalMalePerson / LegalNonBinaryPerson**.
+    - Updated `rdfs:comment` (definition text).
+- Reworked **SelfAwarePerson**:
+  - Added `rdfs:subClassOf` **Person**.
+  - Replaced gender constraint: `owl:onProperty [ owl:inverseOf gufo:inheresIn ]` `owl:qualifiedCardinality 1`
+    - **GenderIdentity → SelfIdentifiedGender**.
+  - Added `owl:equivalentClass` **CisgenderPerson ⊔ TransgenderPerson**.
+- Tightened and aligned **Person** and sex-at-birth modeling:
+  - **Person**: added `owl:equivalentClass` **FemaleGenderPerson ⊔ MaleGenderPerson ⊔ NonBinaryGenderPerson** and **CisgenderPerson ⊔ TransgenderPerson**; added `rdfs:subClassOf` `owl:onProperty [ owl:inverseOf gufo:inheresIn ]` **some** **Gender**.
+  - **SexAtBirth**: added `owl:equivalentClass` **FemaleSexAtBirth ⊔ IndeterminateSexAtBirth ⊔ MaleSexAtBirth**.
+  - **PersonWithAssignedSexAtBirth**: added `rdfs:subClassOf` **PersonWithAssessedPhenotypicSex**.
+  - **PersonWithFemaleSexAtBirth / PersonWithMaleSexAtBirth / PersonWithIndeterminateSexAtBirth**: added `owl:qualifiedCardinality 1` constraints (via `owl:onProperty [ owl:inverseOf gufo:inheresIn ]`) on the corresponding **\*SexAtBirth**.
+- Agent taxonomy refactor:
+  - **Agent**: added `owl:equivalentClass` **Animal ⊔ SocialAgent**.
+  - **Organization** and **IndividualAgent**: `rdfs:subClassOf` **gufo:FunctionalComplex** and **Agent** → **SocialAgent** (via new intermediate taxonomy term).
+  - **ArtificialAgent**: removed `rdfs:subClassOf` **Agent** (comment formatting also updated).
+  - Updated disjointness axioms (`owl:AllDisjointClasses`):
+    - Removed: **Animal / ArtificialAgent / Organization**.
+    - Added: **IndividualAgent / Organization**.
+- Disjointness and serialization adjustments relevant to gender and cells:
+  - Replaced disjointness: **AdministrativeGender / GenderIdentity** → **ExternallyAttributedGender / SelfIdentifiedGender** (`owl:AllDisjointClasses`).
+  - Added `owl:AllDisjointClasses` over **FemaleSexAtBirth / IndeterminateSexAtBirth / MaleSexAtBirth**.
+  - **HumanCell**: `owl:equivalentClass` union reserialized (operands unchanged: **DiploidCell ⊔ HaploidCell ⊔ Polyploid**); removed the `owl:AllDisjointClasses` axiom over **DiploidCell / HaploidCell / Polyploid** present in the old serialization (verify if disjointness is asserted elsewhere).
+
+- Editorial-only (no semantic change):
+  - Normalized newline formatting in `rdfs:comment` for **20** entities (e.g., **Diagnosis**, **HealthcareDiagnosis**, **Chromosome**, **Date**, **OffsetDateTime**, **NonHumanAnimal**, and document terms).
+
+### Removed
+
+- Removed legacy gender identity taxonomy:
+  - **GenderIdentity**, **FemaleGenderIdentity**, **MaleGenderIdentity**, **NonBinaryGenderIdentity**.
+- Removed legacy administrative/legal bearer patterns superseded by the refactor:
+  - **FemaleAdministrativeGender**, **MaleAdministrativeGender**, **NonBinaryAdministrativeGender**.
+  - **PersonWithFemaleAdministrativeGender**, **PersonWithMaleAdministrativeGender**, **PersonWithNonBinaryAdministrativeGender**.
+  - **LegalFemalePerson**, **LegalMalePerson**, **LegalNonBinaryPerson**.
+- Removed legacy administrative gender inherence subproperties:
+  - **femaleAdministrativeGenderInheresInPersonWithFemaleAdministrativeGender**, **maleAdministrativeGenderInheresInPersonWithMaleAdministrativeGender**, **nonBinaryAdministrativeGenderInheresInPersonWithNonBinaryAdministrativeGender**.
+
 ## [1.2.1] - 2025-12-15
 
 ### Changed
