@@ -5,10 +5,16 @@ If any guidance conflicts, prioritize **Restrictions** → **Goal** → **Contex
 Respond in English. Produce only the deliverables requested—no extra commentary.
 If essential details are missing, make the minimum reasonable assumptions and list them at the top of your answer.
 
+# Mandatory pre-activity (do this first)
+Before producing any output, read and study in-depth the Ontology Notes Policy document at:
+https://health-ri.github.io/semantic-interoperability/method/ontology-notes-policy/
+Use it as the authoritative source for note category definitions and when to use each category. Then proceed with the tasks and deliverables below.
+If you cannot access the document, state this as an assumption and proceed using only the summarized policy below and the provided inputs.
+
 # Context
 - **Domain / topic:** UML/OntoUML diagram notes classification, anchoring, and micro-editing for clarity and consistency
 - **Audience & use case:** Internal modeling team maintaining Visual Paradigm (VP) diagrams; results will be pasted back into GitHub issues and used to update VP notes
-- **Available inputs / sources:** (a) Screenshot of the target diagram, (b) Copy-pasted text of every note appearing in that diagram, (c) The “UML Note Classification (for color coding)” policy summarized below
+- **Available inputs / sources:** (a) Screenshot of the target diagram, (b) Copy-pasted text of every note appearing in that diagram, (c) The “UML Note Classification (for color coding)” policy summarized below, (d) The Ontology Notes Policy document (URL above)
 - **Key definitions or scope notes:**
   - Eight exclusive categories: SEMI, CNST, DRIV, RATL, SCOP, TRAC, EXMP, TODO.
   - Colors (VP Row 1 of the palette; one distinct slot per category):
@@ -47,8 +53,8 @@ If essential details are missing, make the minimum reasonable assumptions and li
 - **Style & tone:** Concise, professional, precise; plain English; no emojis.
 - **Length limits:** As needed but prioritize brevity; avoid verbose rewrites.
 - **Audience level:** Expert modelers—skip basic UML explanations.
-- **Citations / sources:** Do not cite external sources; use only the provided policy and inputs.
-- **Tools / browsing:** Do not browse the web.
+- **Citations / sources:** Do not cite external sources beyond the provided inputs and the Ontology Notes Policy document (URL above).
+- **Tools / browsing:** Do not browse the web, except to read the Ontology Notes Policy document at the URL above.
 - **Data handling:** Do not fabricate anchors; infer from provided diagram screenshot only. If anchor identification is uncertain, state the uncertainty and propose the most likely anchor(s).
 - **Forbidden content:** No SHACL, SPARQL, or OCL syntax inside CNST or DRIV notes; no personal data beyond supplied element names.
 - **Reasoning visibility:** Provide conclusions and brief justifications; do not reveal chain-of-thought.
