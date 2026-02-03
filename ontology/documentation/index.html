@@ -1594,39 +1594,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#person-by-genders-modality" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Person by Genders Modality
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#person-by-gender-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Person by Gender Context
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#person-by-gender-option" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Person by Gender Option
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#gender-types" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1672,10 +1639,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#self-identified-gender" class="md-nav__link">
+  <a href="#self-designated-gender" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Self-identified Gender
+        Self-designated Gender
       
     </span>
   </a>
@@ -1687,6 +1654,17 @@
     <span class="md-ellipsis">
       
         Externally-attributed Gender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#person-by-gender-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Person by Gender Context
       
     </span>
   </a>
@@ -1710,22 +1688,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#person-by-gender-type" class="md-nav__link">
+  <a href="#gender-option" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Person by Gender Type
+        Gender Option
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Person by Gender Type">
+    <nav class="md-nav" aria-label="Gender Option">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#male-gender-person" class="md-nav__link">
+  <a href="#person-by-gender-option" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Male-gender Person
+        Person by Gender Option
       
     </span>
   </a>
@@ -1733,10 +1711,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#female-gender-person" class="md-nav__link">
+  <a href="#male-gender" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Female-gender Person
+        Male Gender
       
     </span>
   </a>
@@ -1744,10 +1722,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#non-binary-gender-person" class="md-nav__link">
+  <a href="#female-gender" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Non-binary-gender Person
+        Female Gender
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-binary-gender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-binary Gender
       
     </span>
   </a>
@@ -1770,6 +1759,17 @@
   
     <nav class="md-nav" aria-label="Gender Modality">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#person-by-gender-modality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Person by Gender Modality
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#self-identified-cisgender-person" class="md-nav__link">
@@ -2416,7 +2416,7 @@
 
 
 <h1 id="health-ri-ontology">Health-RI Ontology</h1>
-<p><em>Version 1.3.0</em></p>
+<p><em>Version 1.4.0</em></p>
 <h2 id="sex-and-gender">Sex and Gender</h2>
 <p>This document describes the OntoUML conceptual model of Sex and Gender, detailing its structure, types, and relationships. The model follows the ontological notion of <strong>&lt;<mode>&gt;</strong>, representing intrinsic properties of a <em>Person</em>. However, while these modes always depend on the bearer (they are properties of them), their determination can be either intrinsic depending only on the person s own features or extrinsic requiring assessment or assignment by external agents.</p>
 <p>This distinction is crucial to properly model the social, legal, and biological complexity of sex and gender in human contexts.</p>
@@ -2452,22 +2452,10 @@
 <h3 id="gender">Gender</h3>
 <p>Gender defines a person-related characteristic that can be established through distinct sources of identification and attribution. It distinguishes gender that is self-identified by the person from gender that is externally attributed to the person, and it supports external attribution that is recognized in administrative settings and, more specifically, in legal settings through governmental recognition. This separation enables representing gender characterizations that reflect different authorities and contexts of use without forcing a single privileged source.</p>
 <p>Gender is organized around common gender options and supports consistent alignment between those options and context-specific gender types used in person characterizations. It also supports gender modality characterizations and explicit attribution by relating an attributing agent to the person to whom a gender is attributed, keeping the source of externally-attributed gender statements explicit.</p>
-<h4 id="person-by-genders-modality">Person by Genders Modality</h4>
-<p><img alt="Person by Genders Modality" src="../assets/images/Person%20by%20Genders%20Modality.png" /></p>
-<p>Person is classified by gender modality into Cisgender Person and Transgender Person, with the classification defined as complete and overlapping. Two context-specific person types support modality assignment: Self-aware Person supports self-identified modality types, and Externally Gender-attributed Person supports externally-attributed modality types.</p>
-<p>Self-identified Cisgender Person and Self-identified Transgender Person specialize Self-aware Person as a complete and disjoint classification, while Externally-attributed Cisgender Person and Externally-attributed Transgender Person specialize Externally Gender-attributed Person as a complete and overlapping classification. Cisgender and transgender types are also refined by context, relating self-identified and externally-attributed variants to the broader cisgender and transgender person classifications.</p>
-<h4 id="person-by-gender-context">Person by Gender Context</h4>
-<p><img alt="Person by Gender Context" src="../assets/images/Person%20by%20Gender%20Context.png" /></p>
-<p>Person is characterized by Gender through person types that reflect how gender is established. Self-aware Person is characterized by exactly one Self-identified Gender, linking self-identification to a person state where self-identification is applicable. Externally Gender-attributed Person is characterized by one or more Externally-attributed Gender instances, capturing cases where gender is assigned to a person by an external party.</p>
-<p>Recognized Administrative Gender and Recognized Legal Gender refine external attribution into administrative and legal contexts. Person with Recognized Administrative Gender is characterized by Administrative Gender, and Person with Recognized Legal Gender is characterized by Legal Gender, with recognized legal gender treated as a specialization of recognized administrative gender. The specialization of Gender into contexts is not exhaustive, while keeping these contexts distinct.</p>
-<h4 id="person-by-gender-option">Person by Gender Option</h4>
-<p><img alt="Person by Gender Option" src="../assets/images/Person%20by%20Gender%20Option.png" /></p>
-<p>Person is classified into Male-gender Person, Female-gender Person, and Non-binary-gender Person, with the classification defined as complete and overlapping. Each Person is characterized by one or more Gender instances, and each such Gender instance characterizes exactly one Person.</p>
-<p>Male-gender Person, Female-gender Person, and Non-binary-gender Person are each characterized by the corresponding gender option, namely Male Gender, Female Gender, and Non-binary Gender. The gender options are defined as complete and disjoint, so each Gender instance falls under exactly one option, while a person may be associated with multiple options by being characterized by multiple Gender instances.</p>
 <h4 id="gender-types">Gender Types</h4>
 <p><img alt="Gender Types" src="../assets/images/Gender%20Types.png" /></p>
-<p>Gender is specialized by context into Self-identified Gender and Externally-attributed Gender, with Externally-attributed Gender further specialized into Administrative Gender and Legal Gender. This supports distinguishing genders grounded in self-identification from genders attributed by third parties, while separating administrative attribution from legal attribution.</p>
-<p>Gender is also specialized by option into Male Gender, Female Gender, and Non-binary Gender. Specific genders are defined at the intersection of context and option, including self-identified, externally-attributed, administrative, and legal variants for male, female, and non-binary. For each option, the context-specific variants are defined as complete and overlapping, supporting cases where a single gender instance participates in more than one attribution context within the same option.</p>
+<p>Gender is organized along two orthogonal partitions that are each complete and disjoint: gender contexts and gender options. Gender contexts distinguish Self-identified Gender, Gender Expression, and Externally-attributed Gender, with Administrative Gender and Legal Gender refining Externally-attributed Gender, and the externally-attributed, administrative, and legal partitions allowing overlap. Gender options distinguish Male Gender, Female Gender, and Non-binary Gender.</p>
+<p>Each gender context is further specialized into option-specific types that align the context dimension with the option dimension, such as Self-identified Male Gender, Feminine Gender Expression, and Legal Non-binary Gender. Specialization relations are color-coded only to distinguish which generalization set they belong to, and the colors carry no semantic meaning.</p>
 <h4 id="gender-context">Gender Context</h4>
 <p>Gender Context defines the contexts in which gender is established for a person and the agents and social entities involved in that establishment. It distinguishes self-identified gender from externally-attributed gender, specializes externally-attributed gender into administrative gender as gender recognized by organizations, and further specializes administrative gender into legal gender as gender recognized through governmental authority. It also supports representing persons whose administrative or legal gender is recognized, as well as persons whose legal gender is unassigned.</p>
 <p>Gender Context captures recognition as a mediated process that can involve recognizers, recognition acts, and recognition documents, allowing administrative and legal recognition to be represented with their associated participants and artifacts. It also includes an explicit gender attribution relation connecting a gender attributor to an externally gender-attributed person, preserving a clear separation between the attributing party and the person who is attributed.</p>
@@ -2479,36 +2467,48 @@
 <p><img alt="Administrative Gender" src="../assets/images/Administrative%20Gender.png" /></p>
 <p>Administrative Gender is assigned through an Administrative Gender Recognition, which specializes Gender Attribution. An Administrative Gender Recognizing Organization recognizes a Person through this recognition, supporting the classification Person with Recognized Administrative Gender. The recognized person is associated with one or more Administrative Gender instances, capturing administrative gender values as outcomes of organizational recognition.</p>
 <p>An Administrative Gender Recognition is created by an Administrative Gender Recognition Agent and generates an Administrative Gender Recognition Document, which is a Document. The generated document supports traceability of the recognition act. A relation "creates on behalf of" links the recognition agent and the recognizing organization, with a rule that derives this relation when an Administrative Gender Recognition mediates both parties; a scope note states that no additional formal relation between agent and organization is asserted.</p>
-<h5 id="self-identified-gender">Self-identified Gender</h5>
-<p><img alt="Self-identified Gender" src="../assets/images/Self-identified%20Gender.png" /></p>
-<p>Self-identified Gender characterizes a Self-aware Person, with Self-aware Person specializing Living Person. Each Self-aware Person is linked to exactly one Self-identified Gender, and each Self-identified Gender is linked to exactly one Self-aware Person.</p>
-<p>This establishes a single, direct association between a self-aware person and the gender they self-identify, using a one-to-one characterization link.</p>
+<h5 id="self-designated-gender">Self-designated Gender</h5>
+<p><img alt="Self-designated Gender" src="../assets/images/Self-designated%20Gender.png" /></p>
+<p>A Living Person may be in the Self-aware Person condition, which supports capturing self-designated information about gender. Each Self-aware Person is characterized by exactly one Self-identified Gender and exactly one Gender Expression. Both Self-identified Gender and Gender Expression are treated as kinds of Self-designated Gender, and they are mutually exclusive and collectively exhaustive with respect to Self-designated Gender.</p>
+<p>Preferred pronouns are recorded for a Self-aware Person as optional, repeatable values. The pronoun content is represented as free text (string) to allow any pronoun specification without restricting the set of permitted values, supporting direct representation of an individual's stated pronouns.</p>
 <h5 id="externally-attributed-gender">Externally-attributed Gender</h5>
 <p><img alt="Externally-attributed Gender" src="../assets/images/Externally-attributed%20Gender.png" /></p>
 <p>Externally-attributed Gender is grounded in Gender Attribution, which links a Gender Attributor to an Externally Gender-attributed Person via mediation relations. This supports an explicit attribution situation in which an individual agent attributes gender information to a person, and the attributed person is associated with one or more Externally-attributed Gender instances.</p>
 <p>Each Gender Attribution has exactly one Gender Attributor and is attributed to exactly one Externally Gender-attributed Person, while allowing multiple attributions for the same attributor and for the same person. A stated constraint requires that, in each Gender Attribution, the Gender Attributor and the Externally Gender-attributed Person are not the same individual.</p>
+<h5 id="person-by-gender-context">Person by Gender Context</h5>
+<p><img alt="Person by Gender Context" src="../assets/images/Person%20by%20Gender%20Context.png" /></p>
+<p>Person is characterized by Gender through a set of gender contexts that are complete and disjoint. Self-aware Person is characterized by exactly one Self-identified Gender and exactly one Gender Expression, reflecting the distinction between a persons current self-identification and a persons outward expression.</p>
+<p>Externally Gender-attributed Person is characterized by one or more Externally-attributed Gender values, allowing multiple attributions to coexist. Administrative Gender and Legal Gender refine Externally-attributed Gender, and are used to characterize Person with Recognized Administrative Gender and Person with Recognized Legal Gender, respectively. Gender is treated as either a current self-identification that presupposes self-awareness, or an external attribution that may rely on prior self-identification or records, without assuming an inherent gender at birth.</p>
 <h5 id="externally-attributed-gender-hierarchy">Externally-attributed Gender Hierarchy</h5>
 <p><img alt="Externally-attributed Gender Hierarchy" src="../assets/images/Externally-attributed%20Gender%20Hierarchy.png" /></p>
 <p>Gender Attribution defines how gender can be attributed to a person by an external agent through an explicit attribution relationship. It captures the roles of the gender attributor and the externally gender-attributed person, and it links the externally gender-attributed person to an externally-attributed gender characterization. Each attribution involves an attributing agent that is distinct from the person to whom gender is attributed, keeping the source of externally-attributed gender statements explicit.</p>
 <p>Gender Attribution is specialized into Administrative Gender Recognition and Legal Gender Recognition, representing institutional attributions performed by an administrative gender recognizing organization and, more specifically, by a legal gender recognizer. These specializations relate the recognizing party to a recognition instance that connects a person with recognized gender to the corresponding recognized gender type, distinguishing administrative and legal recognition while preserving a shared attribution structure.</p>
-<h4 id="person-by-gender-type">Person by Gender Type</h4>
+<h4 id="gender-option">Gender Option</h4>
 <p>Person by Gender Type defines person classifications according to gender options, organizing persons as male-gender, female-gender, or non-binary-gender. It connects these person classifications to corresponding gender types through gender characterizations, ensuring that each person classification is grounded in an explicit gender characterization.</p>
 <p>This package distinguishes person classifications by the source of the associated gender, separating self-identified from externally-attributed classifications and refining external attribution into administrative variants and, more specifically, legal variants. This supports describing a person by gender option while keeping the relevant source of recognition or attribution explicit.</p>
-<h5 id="male-gender-person">Male-gender Person</h5>
-<p><img alt="Male-gender Person" src="../assets/images/Male-gender%20Person.png" /></p>
-<p>Male-gender Person is refined into Self-identified Male-gender Person and Externally-attributed Male-gender Person in a complete and overlapping way, allowing a person to satisfy one or both refinements. Externally-attributed Male-gender Person is further refined into Administrative Male-gender Person and Legal Male-gender Person.</p>
-<p>Male-gender Person is linked to Male Gender so that each Male-gender Person is characterized by one or more Male Gender instances, and each Male Gender instance characterizes exactly one Male-gender Person. The characterization links are organized as a complete and disjoint set, aligning Self-identified Male-gender Person with exactly one Self-identified Male Gender, and aligning each of Externally-attributed Male-gender Person, Administrative Male-gender Person, and Legal Male-gender Person with one or more corresponding male gender instances. Male Gender is refined into Self-identified Male Gender and Externally-attributed Male Gender in a complete and disjoint way, with externally-attributed male genders further refined into Administrative Male Gender and Legal Male Gender.</p>
-<h5 id="female-gender-person">Female-gender Person</h5>
-<p><img alt="Female-gender Person" src="../assets/images/Female-gender%20Person.png" /></p>
-<p>Female-gender Person is refined into Self-identified Female-gender Person and Externally-attributed Female-gender Person in a complete and overlapping way, allowing a person to satisfy one or both refinements. Externally-attributed Female-gender Person is further refined into Administrative Female-gender Person and Legal Female-gender Person.</p>
-<p>Female-gender Person is linked to Female Gender so that each Female-gender Person is characterized by one or more Female Gender instances, and each Female Gender instance characterizes exactly one Female-gender Person. The characterization links are organized as a complete and disjoint set, aligning Self-identified Female-gender Person with exactly one Self-identified Female Gender, and aligning each of Externally-attributed Female-gender Person, Administrative Female-gender Person, and Legal Female-gender Person with one or more corresponding female gender instances. Female Gender is refined into Self-identified Female Gender and Externally-attributed Female Gender in a complete and disjoint way, with externally-attributed female genders further refined into Administrative Female Gender and Legal Female Gender.</p>
-<h5 id="non-binary-gender-person">Non-binary-gender Person</h5>
-<p><img alt="Non-binary-gender Person" src="../assets/images/Non-binary-gender%20Person.png" /></p>
-<p>Non-binary-gender Person is refined into Self-identified Non-binary-gender Person and Externally-attributed Non-binary-gender Person in a complete and overlapping way, allowing a person to satisfy one or both refinements. Externally-attributed Non-binary-gender Person is further refined into Administrative Non-binary-gender Person and Legal Non-binary-gender Person.</p>
-<p>Non-binary-gender Person is linked to Non-binary Gender so that each Non-binary-gender Person is characterized by one or more Non-binary Gender instances, and each Non-binary Gender instance characterizes exactly one Non-binary-gender Person. The characterization links are organized as a complete and disjoint set, aligning Self-identified Non-binary-gender Person with exactly one Self-identified Non-binary Gender, and aligning each of Externally-attributed Non-binary-gender Person, Administrative Non-binary-gender Person, and Legal Non-binary-gender Person with one or more corresponding non-binary gender instances. Non-binary Gender is refined into Self-identified Non-binary Gender and Externally-attributed Non-binary Gender in a complete and disjoint way, with externally-attributed non-binary genders further refined into Administrative Non-binary Gender and Legal Non-binary Gender.</p>
+<h5 id="person-by-gender-option">Person by Gender Option</h5>
+<p><img alt="Person by Gender Option" src="../assets/images/Person%20by%20Gender%20Option.png" /></p>
+<p>Person is classified into Male-gender Person, Female-gender Person, and Non-binary-gender Person, with the classification defined as complete and overlapping. Each Person is characterized by one or more Gender instances, and each such Gender instance characterizes exactly one Person.</p>
+<p>Male-gender Person, Female-gender Person, and Non-binary-gender Person are each characterized by the corresponding gender option, namely Male Gender, Female Gender, and Non-binary Gender. The gender options are defined as complete and disjoint, so each Gender instance falls under exactly one option, while a person may be associated with multiple options by being characterized by multiple Gender instances.</p>
+<h5 id="male-gender">Male Gender</h5>
+<p><img alt="Male Gender" src="../assets/images/Male%20Gender.png" /></p>
+<p>Male-gender Person is characterized by one or more Male Gender values. Male-gender persons are specialized as a complete and overlapping set of person types covering self-identification, presentation, and external attribution, and these specializations are aligned with corresponding male gender context types through characterization relations.</p>
+<p>Male Gender is specialized into Self-identified Male Gender, Masculine Gender Expression, and Externally-attributed Male Gender as a complete and disjoint set, and Externally-attributed Male Gender is further specialized into Administrative Male Gender and Legal Male Gender. Self-identified Male-gender Person is characterized by exactly one Self-identified Male Gender, Masculine-presenting Person by exactly one Masculine Gender Expression, and externally-attributed, administrative, and legal male-gender persons by one or more corresponding externally-attributed, administrative, and legal male gender values.</p>
+<h5 id="female-gender">Female Gender</h5>
+<p><img alt="Female Gender" src="../assets/images/Female%20Gender.png" /></p>
+<p>Female-gender Person is characterized by one or more Female Gender values. Female-gender persons are specialized as a complete and overlapping set of person types covering self-identification, presentation, and external attribution, and these specializations are aligned with corresponding female gender context types through characterization relations.</p>
+<p>Female Gender is specialized into Self-identified Female Gender, Feminine Gender Expression, and Externally-attributed Female Gender as a complete and disjoint set, and Externally-attributed Female Gender is further specialized into Administrative Female Gender and Legal Female Gender. Self-identified Female-gender Person is characterized by exactly one Self-identified Female Gender, Feminine-presenting person by exactly one Feminine Gender Expression, and externally-attributed, administrative, and legal female-gender persons by one or more corresponding externally-attributed, administrative, and legal female gender values.</p>
+<h5 id="non-binary-gender">Non-binary Gender</h5>
+<p><img alt="Non-binary Gender" src="../assets/images/Non-binary%20Gender.png" /></p>
+<p>Non-binary-gender Person is characterized by one or more Non-binary Gender values. Non-binary-gender persons are specialized as a complete and overlapping set of person types covering self-identification, presentation, and external attribution, and these specializations are aligned with corresponding non-binary gender context types through characterization relations.</p>
+<p>Non-binary Gender is specialized into Self-identified Non-binary Gender, Non-binary Gender Expression, and Externally-attributed Non-binary Gender as a complete and disjoint set, and Externally-attributed Non-binary Gender is further specialized into Administrative Non-binary Gender and Legal Non-binary Gender. Self-identified Non-binary-gender Person is characterized by exactly one Self-identified Non-binary Gender, Non-binary-presenting Person by exactly one Non-binary Gender Expression, and externally-attributed, administrative, and legal non-binary-gender persons by one or more corresponding externally-attributed, administrative, and legal non-binary gender values.</p>
 <h4 id="gender-modality">Gender Modality</h4>
 <p>Gender Modality defines how a person can be characterized as cisgender or transgender and how such characterizations may arise from different sources. It supports modality assignments for persons and refines them into self-identified and externally-attributed modality types, allowing both perspectives to be represented when applicable.</p>
 <p>Gender Modality also refines cisgender and transgender person types through their connections to sex at birth and to person classifications by gender type, supporting more specific modality assignments that are grounded in these linked characterizations. This supports consistent representation of modality statements while keeping the source of the modality explicit.</p>
+<h5 id="person-by-gender-modality">Person by Gender Modality</h5>
+<p><img alt="Person by Gender Modality" src="../assets/images/Person%20by%20Gender%20Modality.png" /></p>
+<p>Person is classified by gender modality into Cisgender Person and Transgender Person, with the classification defined as complete and overlapping. Two context-specific person types support modality assignment: Self-aware Person supports self-identified modality types, and Externally Gender-attributed Person supports externally-attributed modality types.</p>
+<p>Self-identified Cisgender Person and Self-identified Transgender Person specialize Self-aware Person as a complete and disjoint classification, while Externally-attributed Cisgender Person and Externally-attributed Transgender Person specialize Externally Gender-attributed Person as a complete and overlapping classification. Cisgender and transgender types are also refined by context, relating self-identified and externally-attributed variants to the broader cisgender and transgender person classifications.</p>
 <h5 id="self-identified-cisgender-person">Self-identified Cisgender Person</h5>
 <p><img alt="Self-identified Cisgender Person" src="../assets/images/Self-identified%20Cisgender%20Person.png" /></p>
 <p>Defines self-identified cisgender classification by combining a self-identified gender-type classification with a sex-at-birth classification.</p>
