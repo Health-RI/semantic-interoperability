@@ -1537,6 +1537,67 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#140-2026-02-03" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [1.4.0] - 2026-02-03
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[1.4.0] - 2026-02-03">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tldr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TL;DR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#added-introduced-a-self-designated-gender-layer-and-expression-taxonomy-metamodelling-via-gufo-stereotypes-terms-are-both-owlclass-and-owlnamedindividual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added - Introduced a self-designated gender layer and expression taxonomy (metamodelling via gUFO stereotypes: terms are both owl:Class and owl:NamedIndividual)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed-release-metadata-updated-on-the-ontology-iri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed - Release metadata updated on the ontology IRI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed-removed-legacy-recognized-gender-bearer-patterns-superseded-by-the-refactor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed - Removed legacy recognized-gender bearer patterns superseded by the refactor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#130-2026-02-02" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1549,7 +1610,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tldr" class="md-nav__link">
+  <a href="#tldr_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         TL;DR
@@ -2941,8 +3002,101 @@
 <h1 id="changelog">Changelog</h1>
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.1.0/">Keep a Changelog</a>.</p>
-<h2 id="130-2026-02-02">[1.3.0] - 2026-02-02</h2>
+<h2 id="140-2026-02-03">[1.4.0] - 2026-02-03</h2>
 <h3 id="tldr">TL;DR</h3>
+<ul>
+<li>Extends the <strong>gender</strong> model with an explicit <strong>GenderExpression</strong> layer and corresponding <em>presenting-person</em> phases.</li>
+<li>Refactors recognized <strong>legal/administrative</strong> gender bearer patterns to new role IRIs and updates dependent constraints and helper subproperty hierarchies.</li>
+<li>Updates ontology release metadata: <code>owl:versionInfo</code> <strong>1.3.0 → 1.4.0</strong>, <code>owl:versionIRI</code>, <code>dcterms:modified</code>, and <code>dcterms:conformsTo</code>.</li>
+</ul>
+<h3 id="added-introduced-a-self-designated-gender-layer-and-expression-taxonomy-metamodelling-via-gufo-stereotypes-terms-are-both-owlclass-and-owlnamedindividual">Added - Introduced a self-designated gender layer and expression taxonomy (metamodelling via gUFO stereotypes: terms are both <code>owl:Class</code> and <code>owl:NamedIndividual</code>)</h3>
+<ul>
+<li><strong>SelfDesignatedGender</strong>: <code>rdf:type</code> <code>gufo:Category</code>; <code>rdfs:subClassOf</code> <code>gufo:IntrinsicMode</code>; <code>owl:equivalentClass</code> <strong>GenderExpression ⊔ SelfIdentifiedGender</strong>.</li>
+<li><strong>GenderExpression</strong>: <code>rdf:type</code> <code>gufo:Kind</code>; <code>rdfs:subClassOf</code> <strong>Gender</strong> and <strong>SelfDesignatedGender</strong>; <code>rdfs:subClassOf</code> constraint <code>gufo:inheresIn</code> <strong>≥ 1</strong> <strong>SelfAwarePerson</strong>; <code>owl:equivalentClass</code> <strong>FeminineGenderExpression ⊔ MasculineGenderExpression ⊔ NonBinaryGenderExpression</strong>.</li>
+<li><strong>FeminineGenderExpression</strong>, <strong>MasculineGenderExpression</strong>, <strong>NonBinaryGenderExpression</strong>: <code>rdf:type</code> <code>gufo:Phase</code>; <code>rdfs:subClassOf</code> <strong>GenderExpression</strong> and the corresponding <strong>FemaleGender / MaleGender / NonBinaryGender</strong>; <code>rdfs:subClassOf</code> constraint <code>gufo:inheresIn</code> <strong>≥ 1</strong> <strong>FemininePresentingPerson / MasculinePresentingPerson / NonBinaryPresentingPerson</strong>.</li>
+<li><strong>FemininePresentingPerson</strong>, <strong>MasculinePresentingPerson</strong>, <strong>NonBinaryPresentingPerson</strong>: <code>rdf:type</code> <code>gufo:Phase</code>; <code>rdfs:subClassOf</code> the corresponding <strong>FemaleGenderPerson / MaleGenderPerson / NonBinaryGenderPerson</strong>; <code>rdfs:subClassOf</code> restriction <code>owl:onProperty [ owl:inverseOf gufo:inheresIn ]</code> <code>owl:qualifiedCardinality 1</code> <strong>FeminineGenderExpression / MasculineGenderExpression / NonBinaryGenderExpression</strong>.</li>
+<li>Introduced <strong>PreferredGenderedPronoun</strong>: <code>rdf:type</code> <code>gufo:Kind</code>; <code>rdfs:subClassOf</code> <code>gufo:Quality</code>; with datatype property <strong>value</strong> (<code>rdf:type</code> <code>owl:DatatypeProperty</code>; <code>rdfs:subPropertyOf</code> <code>gufo:hasQualityValue</code>; <code>rdfs:domain</code> <strong>PreferredGenderedPronoun</strong>; <code>rdfs:range</code> <code>xsd:string</code>).</li>
+<li>Introduced new recognized-gender bearer role IRIs (metamodelling as <code>gufo:Role</code>):  </li>
+<li><strong>AdministrativeGenderRecognizedPerson</strong>: <code>rdfs:subClassOf</code> <strong>Person</strong> and <strong>ExternallyGenderAttributedPerson</strong>; <code>rdfs:subClassOf</code> restrictions <code>owl:onProperty [ owl:inverseOf gufo:inheresIn ]</code> <strong>some</strong> <strong>AdministrativeGender</strong> and <code>owl:onProperty [ owl:inverseOf gufo:mediates ]</code> <strong>some</strong> <strong>AdministrativeGenderRecognition</strong>.  </li>
+<li><strong>LegalGenderRecognizedPerson</strong>: <code>rdfs:subClassOf</code> <strong>AdministrativeGenderRecognizedPerson</strong>; <code>rdfs:subClassOf</code> restriction <code>gufo:inheresIn</code> <strong>≥ 1</strong> <strong>LegalGender</strong> and <code>owl:onProperty [ owl:inverseOf gufo:mediates ]</code> <strong>some</strong> <strong>LegalGenderRecognition</strong>.  </li>
+<li><strong>LegalGenderUnassignedPerson</strong>: <code>rdfs:subClassOf</code> <strong>Person</strong>.</li>
+</ul>
+<h3 id="changed-release-metadata-updated-on-the-ontology-iri">Changed - Release metadata updated on the ontology IRI</h3>
+<ul>
+<li><strong>ontology</strong> (<code>https://w3id.org/health-ri/ontology</code>)</li>
+<li><code>owl:versionInfo</code> <strong>"1.3.0" → "1.4.0"</strong>; <code>owl:versionIRI</code> <strong>…/v1.3.0 → …/v1.4.0</strong>.</li>
+<li><code>dcterms:modified</code> <strong>2026-02-02 → 2026-02-03</strong>.</li>
+<li>
+<p><code>dcterms:conformsTo</code> links updated to <strong>…/v1.4.0/json</strong> and <strong>…/v1.4.0/vpp</strong>.</p>
+</li>
+<li>
+<p>Reworked <strong>Gender</strong> and related disjointness to include <strong>GenderExpression</strong>:</p>
+</li>
+<li><strong>Gender</strong>: added <code>owl:equivalentClass</code> <strong>ExternallyAttributedGender ⊔ GenderExpression ⊔ SelfIdentifiedGender</strong>; updated <code>rdfs:comment</code> (definition text).</li>
+<li>
+<p>Updated disjointness axioms (<code>owl:AllDisjointClasses</code>): replaced <strong>ExternallyAttributedGender / SelfIdentifiedGender</strong> with disjointness over <strong>ExternallyAttributedGender / GenderExpression / SelfIdentifiedGender</strong> (and added explicit <strong>GenderExpression / SelfIdentifiedGender</strong> disjointness).</p>
+</li>
+<li>
+<p>Updated gender partitions to incorporate the new expression layer (and removed administrative/legal unions at the gender level):</p>
+</li>
+<li><strong>MaleGender</strong>: <code>owl:equivalentClass</code> <strong>AdministrativeMaleGender ⊔ LegalMaleGender</strong> removed; <strong>ExternallyAttributedMaleGender ⊔ SelfIdentifiedMaleGender → ExternallyAttributedMaleGender ⊔ MasculineGenderExpression ⊔ SelfIdentifiedMaleGender</strong>.</li>
+<li><strong>FemaleGender</strong>: <code>owl:equivalentClass</code> <strong>AdministrativeFemaleGender ⊔ LegalFemaleGender</strong> removed; <strong>ExternallyAttributedFemaleGender ⊔ SelfIdentifiedFemaleGender → ExternallyAttributedFemaleGender ⊔ FeminineGenderExpression ⊔ SelfIdentifiedFemaleGender</strong>.</li>
+<li>
+<p><strong>NonBinaryGender</strong>: <code>owl:equivalentClass</code> <strong>AdministrativeNonBinaryGender ⊔ LegalNonBinaryGender</strong> removed; <strong>ExternallyAttributedNonBinaryGender ⊔ SelfIdentifiedNonBinaryGender → ExternallyAttributedNonBinaryGender ⊔ NonBinaryGenderExpression ⊔ SelfIdentifiedNonBinaryGender</strong>.</p>
+</li>
+<li>
+<p>Updated bearer-phase unions to include presenting-person phases:</p>
+</li>
+<li><strong>MaleGenderPerson</strong>: <code>owl:equivalentClass</code> <strong>ExternallyAttributedMaleGenderPerson ⊔ SelfIdentifiedMaleGenderPerson → ExternallyAttributedMaleGenderPerson ⊔ MasculinePresentingPerson ⊔ SelfIdentifiedMaleGenderPerson</strong>.</li>
+<li><strong>FemaleGenderPerson</strong>: <code>owl:equivalentClass</code> <strong>ExternallyAttributedFemaleGenderPerson ⊔ SelfIdentifiedFemaleGenderPerson → ExternallyAttributedFemaleGenderPerson ⊔ FemininePresentingPerson ⊔ SelfIdentifiedFemaleGenderPerson</strong>.</li>
+<li>
+<p><strong>NonBinaryGenderPerson</strong>: <code>owl:equivalentClass</code> <strong>ExternallyAttributedNonBinaryGenderPerson ⊔ SelfIdentifiedNonBinaryGenderPerson → ExternallyAttributedNonBinaryGenderPerson ⊔ NonBinaryPresentingPerson ⊔ SelfIdentifiedNonBinaryGenderPerson</strong>.</p>
+</li>
+<li>
+<p>Refactored self-designation hierarchy and constraints:</p>
+</li>
+<li><strong>SelfIdentifiedGender</strong>: <code>rdfs:subClassOf</code> <strong>gufo:IntrinsicMode → SelfDesignatedGender</strong>; updated <code>rdfs:comment</code>.</li>
+<li>
+<p><strong>SelfAwarePerson</strong>: added <code>rdfs:subClassOf</code> restriction <code>owl:onProperty [ owl:inverseOf gufo:inheresIn ]</code> <code>owl:qualifiedCardinality 1</code> <strong>GenderExpression</strong>.</p>
+</li>
+<li>
+<p>Refactored recognized-gender constraints to target the new recognized-person role IRIs:</p>
+</li>
+<li><strong>AdministrativeGender</strong>: <code>rdfs:subClassOf</code> constraint <code>gufo:inheresIn</code> <strong>≥ 1</strong> <strong>PersonWithRecognizedAdministrativeGender → AdministrativeGenderRecognizedPerson</strong>; updated <code>rdfs:comment</code>.</li>
+<li><strong>AdministrativeGenderRecognition</strong>: <code>rdfs:subClassOf</code> constraint <code>gufo:mediates</code> <strong>≥ 1</strong> <strong>PersonWithRecognizedAdministrativeGender → AdministrativeGenderRecognizedPerson</strong>; updated <code>rdfs:comment</code>.</li>
+<li><strong>LegalGender</strong>: <code>rdfs:subClassOf</code> constraint <code>owl:onProperty [ owl:inverseOf gufo:inheresIn ]</code> <strong>some</strong> <strong>PersonWithRecognizedLegalGender → LegalGenderRecognizedPerson</strong>; updated <code>rdfs:comment</code>.</li>
+<li><strong>LegalGenderRecognition</strong>: <code>rdfs:subClassOf</code> constraint <code>gufo:mediates</code> <strong>≥ 1</strong> <strong>PersonWithRecognizedLegalGender → LegalGenderRecognizedPerson</strong>; updated <code>rdfs:comment</code>.</li>
+<li>
+<p><strong>Person</strong>: <code>owl:equivalentClass</code> <strong>PersonWithRecognizedLegalGender ⊔ PersonWithUnassignedLegalGender → LegalGenderRecognizedPerson ⊔ LegalGenderUnassignedPerson</strong>; updated <code>rdfs:comment</code>.</p>
+</li>
+<li>
+<p>Added helper property specializations (structural alignments via <code>rdfs:subPropertyOf</code>):</p>
+</li>
+<li><code>femininePresentingPerson</code>: <code>rdfs:subPropertyOf</code> <code>femaleGenderInheresInFemaleGenderPerson</code>.</li>
+<li><code>masculinePresentingPerson</code>: <code>rdfs:subPropertyOf</code> <code>maleGenderInheresInMaleGenderPerson</code>.</li>
+<li><code>nonBinaryPresentingPerson</code>: <code>rdfs:subPropertyOf</code> <code>nonBinaryGenderInheresInNonBinaryGenderPerson</code>.</li>
+<li><code>selfAwarePerson</code>: <code>rdfs:subPropertyOf</code> <code>person</code>.</li>
+<li><code>administrativeGenderInheresInAdministrativeGenderRecognizedPerson</code>: <code>rdfs:subPropertyOf</code> <code>externallyGenderAttributedPersonInheresInExternallyAttributedGender</code>.</li>
+<li>
+<p><code>legalGenderRecognizedPersonInheresInLegalGender</code>: <code>rdfs:subPropertyOf</code> <code>administrativeGenderInheresInAdministrativeGenderRecognizedPerson</code>.</p>
+</li>
+<li>
+<p>Editorial-only (no semantic change):</p>
+</li>
+<li>Polished textual definitions (<code>rdfs:comment</code>) for <strong>45</strong> terms (no semantic change), including:<ul>
+<li><em>Diagnosis, HealthcareDiagnosis, Chromosome, Date, OffsetDateTime, PhysicalDocument, DigitalDocument, BirthNotification, SocialAgent, ArtificialAgent, ExternallyGenderAttributedPerson</em>, and others.</li>
+</ul>
+</li>
+</ul>
+<h3 id="removed-removed-legacy-recognized-gender-bearer-patterns-superseded-by-the-refactor">Removed - Removed legacy recognized-gender bearer patterns superseded by the refactor</h3>
+<ul>
+<li>Removed legacy recognized-gender bearer role IRIs:</li>
+<li><strong>PersonWithRecognizedAdministrativeGender</strong>, <strong>PersonWithRecognizedLegalGender</strong>, <strong>PersonWithUnassignedLegalGender</strong>.</li>
+<li>Removed legacy recognized-gender inherence helper subproperties:</li>
+<li><strong>administrativeGenderInheresInPersonWithRecognizedAdministrativeGender</strong>, <strong>personWithRecognizedLegalGenderInheresInLegalGender</strong>.</li>
+</ul>
+<h2 id="130-2026-02-02">[1.3.0] - 2026-02-02</h2>
+<h3 id="tldr_1">TL;DR</h3>
 <ul>
 <li>Refactors the <strong>gender</strong> model to distinguish <strong>externally-attributed</strong> vs <strong>self-identified</strong> gender, and adds explicit <strong>legal/administrative</strong> specializations with updated constraints.</li>
 <li>Refactors the <strong>agent</strong> taxonomy via <strong>SocialAgent</strong>, updates related disjointness axioms, and de-parents <strong>ArtificialAgent</strong> from <strong>Agent</strong>.</li>
