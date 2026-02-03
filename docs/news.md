@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2026-02-03
+
+- **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Modified: Updated to v1.4.0, adding gender expression and preferred pronoun concepts and refining administrative and legal gender recognition terminology.
+
 ## 2026-02-02
 
 - **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Added: Published ontology release 1.3.0, refactoring gender modeling (externally-attributed vs self-identified) and adding cisgender/transgender modality concepts, plus SocialAgent taxonomy updates and refreshed metadata.
