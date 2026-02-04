@@ -19,6 +19,8 @@ If essential details are missing, make the minimum reasonable assumptions and ap
     - `INPUT`
     - `DIFF:`
     - `<PASTE THE UNIFIED DIFF HERE>`
+- **Style consistency requirement:**
+  - You MUST study the previous news entries in the news style reference above and generate any new entry using the same style, headings, tone, bullet grammar, and phrasing patterns.
 - **Key definitions or scope notes:**
   - A **page** is a content file (e.g., `docs/sssom-mapping-set.md`).
   - The “News & Updates” entry is **not** meant to expose a technical diff to users; it must instead highlight only important, user-relevant modifications or additions to the website. Minor or low-impact changes must **not** generate news items unless explicitly marked as newsworthy in the input (e.g., via a specific note or flag).

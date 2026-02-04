@@ -12,8 +12,10 @@ If essential details are missing, make the minimum reasonable assumptions and li
   - `diff.additions.ttl` (triples present only in the new version)
   - `diff.removals.ttl` (triples present only in the old version)
   - Published changelog entries (style reference): https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/ontologies/changelog-ontology.md
+  - Published news entries (style reference): https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/docs/news.md
 - **Style consistency requirement (STRICT):**
   - You MUST study the published entries in the style reference above and keep the same headings, tone, bullet grammar, and phrasing patterns.
+  - You MUST also study the previous news entries in the news style reference above and generate any new news entry using the same style, headings, and phrasing patterns.
 - **Key definitions or scope notes:**
   - *Added:* new entities/axioms (classes, properties, individuals, annotations).
   - *Changed:* modifications to existing entities/axioms (e.g., `rdf:type`, `rdfs:subClassOf`, domain/range, `owl:equivalentClass`, `rdfs:comment` wording).
@@ -41,7 +43,7 @@ If essential details are missing, make the minimum reasonable assumptions and li
 - **Length limits:** As needed, but prioritize brevity and signal over detail.
 - **Audience level:** Expert readers; skip basic OWL/RDF explanations.
 - **Citations / sources:** Do **not** include external citations in the changelog entry.
-- **Tools / browsing:** You MAY retrieve/read the style reference changelog file linked above for consistency. Do not browse beyond that; rely on the two diffs + the style reference.
+- **Tools / browsing:** You MAY retrieve/read the style reference changelog file and the style reference news file linked above for consistency. Do not browse beyond those; rely on the two diffs + the style references.
 - **Data handling:** Do not invent entities or changes; if uncertain, state uncertainty and how to verify (briefly, inside the relevant bullet).
 - **Forbidden content:** No PII; no speculative legal/medical advice.
 - **Reasoning visibility:** Provide conclusions with brief justifications; do **not** reveal chain-of-thought.
