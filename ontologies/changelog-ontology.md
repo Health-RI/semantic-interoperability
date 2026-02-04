@@ -1,8 +1,49 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. Entries are generated with automated support by comparing each ontology release against its immediate predecessor and summarizing the resulting changes.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+## [1.5.0] - 2026-02-04
+
+### TL;DR
+
+- Introduces **PersonWithDeterminateSexAtBirth** and adds cisgender specializations (**FemaleCisgenderPerson**, **MaleCisgenderPerson**).
+- Refines sex-at-birth / cis-trans alignment via updated `owl:equivalentClass` axioms and added `rdfs:subClassOf` links.
+- Updates ontology release metadata to **1.5.0** and normalizes `rdfs:comment` line endings (CRLF → LF) for **46** terms (no semantic change).
+
+### Added
+
+- Introduced cisgender specializations (metamodelling via gUFO stereotypes: terms are both `owl:Class` and `owl:NamedIndividual`):
+  - **FemaleCisgenderPerson**: `rdf:type` `gufo:Role`; `rdfs:subClassOf` **CisgenderPerson**, **FemaleGenderPerson**, **PersonWithFemaleSexAtBirth**.
+  - **MaleCisgenderPerson**: `rdf:type` `gufo:Role`; `rdfs:subClassOf` **CisgenderPerson**, **MaleGenderPerson**, **PersonWithMaleSexAtBirth**.
+- Introduced **PersonWithDeterminateSexAtBirth** (metamodelling as `gufo:Role`):
+  - `rdfs:subClassOf` **PersonWithAssignedSexAtBirth**; `owl:equivalentClass` **PersonWithFemaleSexAtBirth ⊔ PersonWithMaleSexAtBirth**.
+
+### Changed
+
+- **ontology** (`https://w3id.org/health-ri/ontology`)
+  - `owl:versionInfo` **"1.4.0" → "1.5.0"**; `owl:versionIRI` **…/v1.4.0 → …/v1.5.0**.
+  - `dcterms:modified` **2026-02-03 → 2026-02-04**.
+  - `dcterms:conformsTo` links updated to **…/v1.5.0/json** and **…/v1.5.0/vpp**.
+- Refined sex-at-birth / cis-trans role definitions:
+  - **PersonWithAssignedSexAtBirth**:
+    - `owl:equivalentClass` **PersonWithFemaleSexAtBirth ⊔ PersonWithIndeterminateSexAtBirth ⊔ PersonWithMaleSexAtBirth → PersonWithFemaleSexAtBirth ⊔ PersonWithMaleSexAtBirth**.
+    - Added `owl:equivalentClass` **CisgenderPerson ⊔ PersonWithIndeterminateSexAtBirth ⊔ TransgenderPerson**.
+  - **PersonWithFemaleSexAtBirth**, **PersonWithMaleSexAtBirth**: added `rdfs:subClassOf` **PersonWithDeterminateSexAtBirth**.
+  - **CisgenderPerson**: added `rdfs:subClassOf` **PersonWithAssignedSexAtBirth**; added `owl:equivalentClass` **FemaleCisgenderPerson ⊔ MaleCisgenderPerson**.
+  - **TransgenderPerson**: added `rdfs:subClassOf` **PersonWithAssignedSexAtBirth** and **PersonWithDeterminateSexAtBirth**.
+  - **Person**: removed `owl:equivalentClass` **CisgenderPerson ⊔ TransgenderPerson**.
+- Documentation:
+  - Added `rdfs:comment` definition text for **FemaleSexAtBirth**, **MaleSexAtBirth**, **IndeterminateSexAtBirth**, **FemininePresentingPerson**, **MasculinePresentingPerson**, **NonBinaryPresentingPerson**.
+- Editorial-only (no semantic change):
+  - Normalized `rdfs:comment` line endings (CRLF → LF) for **46** terms, including:
+    - *Person, Diagnosis, HealthcareDiagnosis, Chromosome, Date, OffsetDateTime, AdministrativeGender, ExternallyAttributedGender*, and others.
+
+### Removed
+
+- Removed supporting blank-node `owl:unionOf` class expressions superseded by the updated `owl:equivalentClass` axioms (see *Changed*).
+- No public named classes or properties (non-blank-node IRIs) were removed in this release.
 
 ## [1.4.0] - 2026-02-03
 

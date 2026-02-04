@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2026-02-04
+
+- **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Added: Published v1.5.0 release artifacts (Turtle, JSON, Visual Paradigm) and refreshed gender/sex diagrams, adding cisgender/transgender and sex-at-birth type visualizations.
+
 ## 2026-02-03
 
 - **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Modified: Updated to v1.4.0, adding gender expression and preferred pronoun concepts and refining administrative and legal gender recognition terminology.
