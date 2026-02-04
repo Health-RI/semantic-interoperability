@@ -1,5 +1,5 @@
 # Health-RI Ontology
-*Version 1.4.0*
+*Version 1.5.0*
 
 ## Sex and Gender
 
@@ -54,6 +54,22 @@ The model structures biological sex through three subkinds of persons: Male Biol
 This classification is simplified, focusing on the count of dimorphic traits without weighting them, while recognizing that in biological and clinical practice, some traits such as chromosomal constitution, gonadal tissue, or hormonal profiles may be considered diagnostically more significant than secondary sexual features. Supplementary notes in the model highlight this limitation and indicate that future refinements may include explicit modeling of chromosomes as sexual dimorphic characteristics.
 
 By organizing sex in this way, the ontology establishes biological sex as a multifaceted construct while situating it within a coherent framework that connects intrinsic features of persons with representative biological dimensions, such as karyotypical, phenotypic, and assigned sex at birth.
+
+#### Sex Types
+
+![Sex Types](../images/Sex%20Types.png)
+
+Sex is treated as a biological classification grounded in distinct dimensions, including chromosomal constitution and observable anatomical features. Persons can be connected to sex classifications that are assessed or recorded, including a recorded classification at birth.
+
+Sex is specialized into Karyotypical Sex and Phenotypic Sex as mutually exclusive alternatives, while not asserting that these alternatives are exhaustive. Phenotypic Sex is further specialized by Sex at Birth, emphasizing a phenotypic classification that is recorded at the time of birth. Person is connected to Sex and also connected to Karyotypical Sex, supporting explicit representation of chromosomal and broader sex classifications for a given person. Person with Assessed Phenotypic Sex refines Person for cases where a phenotypic classification has been assessed, and Person with Assigned Sex at Birth refines that assessed category for cases where a sex-at-birth classification is recorded; the link between Person with Assigned Sex at Birth and Sex at Birth is a specialization of the link between Person with Assessed Phenotypic Sex and Phenotypic Sex.
+
+#### Sex at Birth Types
+
+![Sex at Birth Types](../images/Sex%20at%20Birth%20Types.png)
+
+Sex at birth assignment is treated as a classification outcome for a person, distinguishing cases with a recorded assignment from cases without a recorded assignment. Recorded assignments can be refined into determinate outcomes and indeterminate outcomes, and determinate outcomes are refined into male and female categories.
+
+Person is partitioned into Person with Assigned Sex at Birth and Person with Unassigned Sex at Birth as mutually exclusive and collectively exhaustive alternatives, supporting explicit representation of the absence of a recorded sex-at-birth assignment. Person with Assigned Sex at Birth is further specialized by Person with Determinate Sex at Birth, and also by Person with Indeterminate Sex at Birth, capturing whether the recorded assignment resolves into a determinate category. Person with Determinate Sex at Birth is partitioned into Person with Male Sex at Birth and Person with Female Sex at Birth as mutually exclusive and collectively exhaustive alternatives, representing the two determinate assignment outcomes.
 
 #### Views
 
@@ -177,29 +193,37 @@ Gender Modality defines how a person can be characterized as cisgender or transg
 
 Gender Modality also refines cisgender and transgender person types through their connections to sex at birth and to person classifications by gender type, supporting more specific modality assignments that are grounded in these linked characterizations. This supports consistent representation of modality statements while keeping the source of the modality explicit.
 
-##### Person by Gender Modality
+##### Gender Modality Overview
 
-![Person by Gender Modality](../images/Person%20by%20Gender%20Modality.png)
+![Gender Modality Overview](../images/Gender%20Modality%20Overview.png)
 
 Person is classified by gender modality into Cisgender Person and Transgender Person, with the classification defined as complete and overlapping. Two context-specific person types support modality assignment: Self-aware Person supports self-identified modality types, and Externally Gender-attributed Person supports externally-attributed modality types.
 
 Self-identified Cisgender Person and Self-identified Transgender Person specialize Self-aware Person as a complete and disjoint classification, while Externally-attributed Cisgender Person and Externally-attributed Transgender Person specialize Externally Gender-attributed Person as a complete and overlapping classification. Cisgender and transgender types are also refined by context, relating self-identified and externally-attributed variants to the broader cisgender and transgender person classifications.
 
-##### Self-identified Cisgender Person
+##### Self-identified Cisgender Criteria
 
-![Self-identified Cisgender Person](../images/Self-identified%20Cisgender%20Person.png)
+![Self-identified Cisgender Criteria](../images/Self-identified%20Cisgender%20Criteria.png)
 
 Defines self-identified cisgender classification by combining a self-identified gender-type classification with a sex-at-birth classification.
 
 Self-identified cisgender persons are partitioned into female and male cases. Each case is defined by the conjunction of two conditions: the person is self-identified as female-gender or male-gender, and the person is also classified as having female sex at birth or male sex at birth, respectively. This provides a clear criterion for self-identification-based cisgender classification that depends on both self-identification and a sex-at-birth type.
 
-##### Externally-attributed Cisgender Person
+##### Externally-attributed Cisgender Criteria
 
-![Externally-attributed Cisgender Person](../images/Externally-attributed%20Cisgender%20Person.png)
+![Externally-attributed Cisgender Criteria](../images/Externally-attributed%20Cisgender%20Criteria.png)
 
 Defines externally-attributed cisgender classification by combining an externally attributed gender-type classification with a sex-at-birth classification.
 
 Externally-attributed cisgender persons are partitioned into female and male cases. Each case is defined by the conjunction of two conditions: the person is externally attributed as female-gender or male-gender, and the person is also classified as having female sex at birth or male sex at birth, respectively. This provides a clear criterion for externally attributed cisgender classification that depends on both an externally attributed gender type and a sex-at-birth type.
+
+##### Cisgender and Transgender Types
+
+![Cisgender and Transgender Types](../images/Cisgender%20and%20Transgender%20Types.png)
+
+Gender modality is used to classify persons with an assigned sex at birth by the relationship between a gender classification and the sex-at-birth classification. Cisgender and transgender modalities are introduced and then specialized to capture male and female cisgender cases that combine gender characterization and sex-at-birth classification.
+
+Person with Assigned Sex at Birth has specializations Cisgender Person, Transgender Person, and Person with Indeterminate Sex at Birth; together these specializations are complete, while overlap between them is not excluded. Cisgender Person is specialized into Male Cisgender Person and Female Cisgender Person as mutually exclusive and collectively exhaustive alternatives. Male Cisgender Person is specialized under Cisgender Person, Male-gender Person, and Person with Male Sex at Birth, and Female Cisgender Person is specialized under Cisgender Person, Female-gender Person, and Person with Female Sex at Birth, capturing cases where a male or female gender characterization aligns with the corresponding sex-at-birth classification. Transgender Person is also specialized under Person with Determinate Sex at Birth, focusing this modality on cases where the sex-at-birth classification is determinate.
 
 ## Biology
 
