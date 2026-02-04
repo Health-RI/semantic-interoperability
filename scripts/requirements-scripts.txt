@@ -1,0 +1,9 @@
+# requirements-scripts.txt
+#
+# Superset of Python dependencies required to run all scripts in scripts/.
+# (CI/docs deploy uses scripts/requirements-deploy.txt instead.)
+
+beautifulsoup4
+packaging
+pylode
+rdflib

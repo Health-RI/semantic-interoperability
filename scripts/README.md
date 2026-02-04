@@ -22,17 +22,20 @@ This folder contains utility scripts used across the Health-RI Semantic Interope
   - [`run-merge-metadata.bat` — Wrapper for TTL metadata merge](#run-merge-metadatabat--wrapper-for-ttl-metadata-merge)
 - [Workflow / CI integration](#workflow--ci-integration)
   - [Pipeline (high level)](#pipeline-high-level)
-  - [Keeping `scripts/requirements.txt` correct](#keeping-scriptsrequirementstxt-correct)
+  - [Keeping `scripts/requirements-deploy.txt` correct](#keeping-scriptsrequirements-deploytxt-correct)
 
 ## Dependencies (Python)
 
-Depending on the script, you may need:
+Two requirements files are provided:
 
-- Python 3.x
-- `packaging`
-- `rdflib`
-- `beautifulsoup4`
-- `pylode` CLI available on `PATH` (for `docgen-pylode.py`)
+- `requirements-deploy.txt`: dependencies used by the documentation deploy workflow (`deploy.yml`).
+- `requirements-scripts.txt`: superset needed to run all scripts in this folder locally.
+
+Install for local script runs:
+
+`pip install -r scripts/requirements-scripts.txt`
+
+Some batch scripts also require external tools (e.g., `jq`, `git`/`diff`, ImageMagick).
 
 ## Python scripts
 
@@ -260,11 +263,11 @@ Runs `merge-metadata.py` and pauses on completion so you can read the console ou
 
 ## Workflow / CI integration
 
-The repository’s documentation deployment workflow (`deploy.yml`) uses `scripts/requirements.txt` as the source of truth for installing Python dependencies (and as the pip cache key), then runs a fixed generation pipeline.
+The repository’s documentation deployment workflow (`deploy.yml`) uses `scripts/requirements-deploy.txt` as the source of truth for installing Python dependencies (and as the pip cache key), then runs a fixed generation pipeline.
 
 ### Pipeline (high level)
 
-1. Install dependencies: `pip install -r scripts/requirements.txt`
+1. Install dependencies: `pip install -r scripts/requirements-deploy.txt`
 2. Run generation steps:
    - `clean-unwanted-files.py`
    - `insert-metadata.py`
@@ -274,7 +277,8 @@ The repository’s documentation deployment workflow (`deploy.yml`) uses `script
    - `sssom-tsv2ttl.py`
 3. Build and validate the site (`mkdocs build`) and check links (`linkchecker`).
 
-### Keeping `scripts/requirements.txt` correct
+### Keeping `scripts/requirements-deploy.txt` correct
 
-- This file should include dependencies for **all scripts executed in the workflow**.
-- In particular, `insert-metadata.py` depends on `rdflib`, so `rdflib` should be listed here.
+- `scripts/requirements-deploy.txt` is for the deploy workflow only; keep it limited to what the workflow needs.
+- Add script runtime dependencies to `scripts/requirements-scripts.txt`.
+- If a new dependency is needed by the deploy workflow, add it to **both** files.
