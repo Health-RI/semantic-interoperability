@@ -1549,6 +1549,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#sex-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sex Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sex-at-birth-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sex at Birth Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#views" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1761,10 +1783,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#person-by-gender-modality" class="md-nav__link">
+  <a href="#gender-modality-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Person by Gender Modality
+        Gender Modality Overview
       
     </span>
   </a>
@@ -1772,10 +1794,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#self-identified-cisgender-person" class="md-nav__link">
+  <a href="#self-identified-cisgender-criteria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Self-identified Cisgender Person
+        Self-identified Cisgender Criteria
       
     </span>
   </a>
@@ -1783,10 +1805,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#externally-attributed-cisgender-person" class="md-nav__link">
+  <a href="#externally-attributed-cisgender-criteria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Externally-attributed Cisgender Person
+        Externally-attributed Cisgender Criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cisgender-and-transgender-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cisgender and Transgender Types
       
     </span>
   </a>
@@ -2416,7 +2449,7 @@
 
 
 <h1 id="health-ri-ontology">Health-RI Ontology</h1>
-<p><em>Version 1.4.0</em></p>
+<p><em>Version 1.5.0</em></p>
 <h2 id="sex-and-gender">Sex and Gender</h2>
 <p>This document describes the OntoUML conceptual model of Sex and Gender, detailing its structure, types, and relationships. The model follows the ontological notion of <strong>&lt;<mode>&gt;</strong>, representing intrinsic properties of a <em>Person</em>. However, while these modes always depend on the bearer (they are properties of them), their determination can be either intrinsic depending only on the person s own features or extrinsic requiring assessment or assignment by external agents.</p>
 <p>This distinction is crucial to properly model the social, legal, and biological complexity of sex and gender in human contexts.</p>
@@ -2444,6 +2477,14 @@
 <p>The model structures biological sex through three subkinds of persons: Male Biological Person, Female Biological Person, and Indeterminate Biological Person. These roles are distinguished based on the relative number of Sexual Dimorphic Characteristics exhibited by the individual. Such characteristics are further classified as Male-typical, Female-typical, or Indeterminate Dimorphic Characteristics, and together they form the basis for sex classification in the model.</p>
 <p>This classification is simplified, focusing on the count of dimorphic traits without weighting them, while recognizing that in biological and clinical practice, some traits such as chromosomal constitution, gonadal tissue, or hormonal profiles may be considered diagnostically more significant than secondary sexual features. Supplementary notes in the model highlight this limitation and indicate that future refinements may include explicit modeling of chromosomes as sexual dimorphic characteristics.</p>
 <p>By organizing sex in this way, the ontology establishes biological sex as a multifaceted construct while situating it within a coherent framework that connects intrinsic features of persons with representative biological dimensions, such as karyotypical, phenotypic, and assigned sex at birth.</p>
+<h4 id="sex-types">Sex Types</h4>
+<p><img alt="Sex Types" src="../assets/images/Sex%20Types.png" /></p>
+<p>Sex is treated as a biological classification grounded in distinct dimensions, including chromosomal constitution and observable anatomical features. Persons can be connected to sex classifications that are assessed or recorded, including a recorded classification at birth.</p>
+<p>Sex is specialized into Karyotypical Sex and Phenotypic Sex as mutually exclusive alternatives, while not asserting that these alternatives are exhaustive. Phenotypic Sex is further specialized by Sex at Birth, emphasizing a phenotypic classification that is recorded at the time of birth. Person is connected to Sex and also connected to Karyotypical Sex, supporting explicit representation of chromosomal and broader sex classifications for a given person. Person with Assessed Phenotypic Sex refines Person for cases where a phenotypic classification has been assessed, and Person with Assigned Sex at Birth refines that assessed category for cases where a sex-at-birth classification is recorded; the link between Person with Assigned Sex at Birth and Sex at Birth is a specialization of the link between Person with Assessed Phenotypic Sex and Phenotypic Sex.</p>
+<h4 id="sex-at-birth-types">Sex at Birth Types</h4>
+<p><img alt="Sex at Birth Types" src="../assets/images/Sex%20at%20Birth%20Types.png" /></p>
+<p>Sex at birth assignment is treated as a classification outcome for a person, distinguishing cases with a recorded assignment from cases without a recorded assignment. Recorded assignments can be refined into determinate outcomes and indeterminate outcomes, and determinate outcomes are refined into male and female categories.</p>
+<p>Person is partitioned into Person with Assigned Sex at Birth and Person with Unassigned Sex at Birth as mutually exclusive and collectively exhaustive alternatives, supporting explicit representation of the absence of a recorded sex-at-birth assignment. Person with Assigned Sex at Birth is further specialized by Person with Determinate Sex at Birth, and also by Person with Indeterminate Sex at Birth, capturing whether the recorded assignment resolves into a determinate category. Person with Determinate Sex at Birth is partitioned into Person with Male Sex at Birth and Person with Female Sex at Birth as mutually exclusive and collectively exhaustive alternatives, representing the two determinate assignment outcomes.</p>
 <h4 id="views">Views</h4>
 <h5 id="persons-sex-taxonomy">Person's Sex Taxonomy</h5>
 <p><img alt="Person's Sex Taxonomy" src="../assets/images/Person%27s%20Sex%20Taxonomy.png" /></p>
@@ -2505,18 +2546,22 @@
 <h4 id="gender-modality">Gender Modality</h4>
 <p>Gender Modality defines how a person can be characterized as cisgender or transgender and how such characterizations may arise from different sources. It supports modality assignments for persons and refines them into self-identified and externally-attributed modality types, allowing both perspectives to be represented when applicable.</p>
 <p>Gender Modality also refines cisgender and transgender person types through their connections to sex at birth and to person classifications by gender type, supporting more specific modality assignments that are grounded in these linked characterizations. This supports consistent representation of modality statements while keeping the source of the modality explicit.</p>
-<h5 id="person-by-gender-modality">Person by Gender Modality</h5>
-<p><img alt="Person by Gender Modality" src="../assets/images/Person%20by%20Gender%20Modality.png" /></p>
+<h5 id="gender-modality-overview">Gender Modality Overview</h5>
+<p><img alt="Gender Modality Overview" src="../assets/images/Gender%20Modality%20Overview.png" /></p>
 <p>Person is classified by gender modality into Cisgender Person and Transgender Person, with the classification defined as complete and overlapping. Two context-specific person types support modality assignment: Self-aware Person supports self-identified modality types, and Externally Gender-attributed Person supports externally-attributed modality types.</p>
 <p>Self-identified Cisgender Person and Self-identified Transgender Person specialize Self-aware Person as a complete and disjoint classification, while Externally-attributed Cisgender Person and Externally-attributed Transgender Person specialize Externally Gender-attributed Person as a complete and overlapping classification. Cisgender and transgender types are also refined by context, relating self-identified and externally-attributed variants to the broader cisgender and transgender person classifications.</p>
-<h5 id="self-identified-cisgender-person">Self-identified Cisgender Person</h5>
-<p><img alt="Self-identified Cisgender Person" src="../assets/images/Self-identified%20Cisgender%20Person.png" /></p>
+<h5 id="self-identified-cisgender-criteria">Self-identified Cisgender Criteria</h5>
+<p><img alt="Self-identified Cisgender Criteria" src="../assets/images/Self-identified%20Cisgender%20Criteria.png" /></p>
 <p>Defines self-identified cisgender classification by combining a self-identified gender-type classification with a sex-at-birth classification.</p>
 <p>Self-identified cisgender persons are partitioned into female and male cases. Each case is defined by the conjunction of two conditions: the person is self-identified as female-gender or male-gender, and the person is also classified as having female sex at birth or male sex at birth, respectively. This provides a clear criterion for self-identification-based cisgender classification that depends on both self-identification and a sex-at-birth type.</p>
-<h5 id="externally-attributed-cisgender-person">Externally-attributed Cisgender Person</h5>
-<p><img alt="Externally-attributed Cisgender Person" src="../assets/images/Externally-attributed%20Cisgender%20Person.png" /></p>
+<h5 id="externally-attributed-cisgender-criteria">Externally-attributed Cisgender Criteria</h5>
+<p><img alt="Externally-attributed Cisgender Criteria" src="../assets/images/Externally-attributed%20Cisgender%20Criteria.png" /></p>
 <p>Defines externally-attributed cisgender classification by combining an externally attributed gender-type classification with a sex-at-birth classification.</p>
 <p>Externally-attributed cisgender persons are partitioned into female and male cases. Each case is defined by the conjunction of two conditions: the person is externally attributed as female-gender or male-gender, and the person is also classified as having female sex at birth or male sex at birth, respectively. This provides a clear criterion for externally attributed cisgender classification that depends on both an externally attributed gender type and a sex-at-birth type.</p>
+<h5 id="cisgender-and-transgender-types">Cisgender and Transgender Types</h5>
+<p><img alt="Cisgender and Transgender Types" src="../assets/images/Cisgender%20and%20Transgender%20Types.png" /></p>
+<p>Gender modality is used to classify persons with an assigned sex at birth by the relationship between a gender classification and the sex-at-birth classification. Cisgender and transgender modalities are introduced and then specialized to capture male and female cisgender cases that combine gender characterization and sex-at-birth classification.</p>
+<p>Person with Assigned Sex at Birth has specializations Cisgender Person, Transgender Person, and Person with Indeterminate Sex at Birth; together these specializations are complete, while overlap between them is not excluded. Cisgender Person is specialized into Male Cisgender Person and Female Cisgender Person as mutually exclusive and collectively exhaustive alternatives. Male Cisgender Person is specialized under Cisgender Person, Male-gender Person, and Person with Male Sex at Birth, and Female Cisgender Person is specialized under Cisgender Person, Female-gender Person, and Person with Female Sex at Birth, capturing cases where a male or female gender characterization aligns with the corresponding sex-at-birth classification. Transgender Person is also specialized under Person with Determinate Sex at Birth, focusing this modality on cases where the sex-at-birth classification is determinate.</p>
 <h2 id="biology">Biology</h2>
 <h3 id="chromosomes">Chromosomes</h3>
 <p><img alt="Chromosomes" src="../assets/images/Chromosomes.png" /></p>
