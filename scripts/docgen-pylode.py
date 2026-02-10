@@ -74,30 +74,54 @@ def fix_internal_links_in_html(file_path: Path):
 
 def sort_toc_sections_in_html(file_path: Path, section_ids=("classes", "annotationproperties")):
     """
-    Sorts the entries in the Table of Contents (ToC) for specified sections
-    (e.g., 'Classes', 'Annotation Properties') alphabetically by label text.
+    Sorts nested Table of Contents (ToC) lists alphabetically.
 
-    Args:
-        file_path (Path): Path to the HTML file.
-        section_ids (tuple[str]): HTML anchor IDs of the ToC sections to sort.
+    Notes:
+    - Keeps the top-level ToC groups in their original order.
+    - Sorts each nested group (e.g., Classes, Object properties, Data properties, etc.)
+      alphabetically by the visible label.
+    - The `section_ids` parameter is kept for backward compatibility but is not used.
     """
     try:
         html = file_path.read_text(encoding="utf-8")
         soup = BeautifulSoup(html, "html.parser")
 
-        for section_id in section_ids:
-            toc_anchor = soup.find("a", href=f"#{section_id}")
-            if toc_anchor:
-                parent_li = toc_anchor.find_parent("li")
-                ul_second = parent_li.find("ul", class_="second")
-                if ul_second:
-                    list_items = ul_second.find_all("li")
-                    sorted_items = sorted(list_items, key=lambda li: li.a.text.lower())
-                    ul_second.clear()
-                    for li in sorted_items:
-                        ul_second.append(li)
-        file_path.write_text(str(soup), encoding="utf-8")
-        logging.info(f"Sorted Table of Contents entries for sections: {section_ids}")
+        toc = soup.find(id="toc")
+        if not toc:
+            logging.info("No #toc found; nothing to sort.")
+            return
+
+        def _label_for_li(li) -> str:
+            a = li.find("a")
+            if a and a.get_text(strip=True):
+                return a.get_text(strip=True)
+            return li.get_text(" ", strip=True)
+
+        changed = False
+
+        # Sort nested TOC lists; pyLODE commonly uses ul.second / ul.third
+        for ul in toc.select("ul.second, ul.third"):
+            items = ul.find_all("li", recursive=False)
+            if len(items) < 2:
+                continue
+
+            indexed_items = list(enumerate(items))
+            indexed_items_sorted = sorted(
+                indexed_items,
+                key=lambda pair: (_label_for_li(pair[1]).casefold(), pair[0]),  # stable tie-breaker
+            )
+
+            if [li for _, li in indexed_items_sorted] != items:
+                ul.clear()
+                for _, li in indexed_items_sorted:
+                    ul.append(li)
+                changed = True
+
+        if changed:
+            file_path.write_text(str(soup), encoding="utf-8")
+            logging.info("Sorted nested Table of Contents entries alphabetically.")
+        else:
+            logging.info("ToC already sorted; no changes applied.")
     except Exception as e:
         logging.warning(f"Could not sort ToC sections: {e}")
 
@@ -136,6 +160,56 @@ def insert_logo_in_html(
     except Exception as e:
         logging.warning(f"Could not insert logo: {e}")
 
+def apply_responsive_toc_split_css(
+    file_path: Path,
+    min_toc_px: int = 280,
+    toc_vw: int = 20,
+    max_toc_px: int = 420,
+):
+    """
+    Inject a CSS override for PyLODE's fixed right-hand TOC layout.
+
+    Why:
+    - PyLODE sets #toc { position: fixed; width: 180px; }
+    - and #content { width: calc(100% - 150px); }
+    So table/td-based logic won't work; we override those rules via CSS.
+    """
+    try:
+        html = file_path.read_text(encoding="utf-8")
+        soup = BeautifulSoup(html, "html.parser")
+
+        head = soup.head
+        if not head:
+            logging.info("No <head> found; cannot inject CSS override.")
+            return
+
+        clamp = f"clamp({int(min_toc_px)}px, {int(toc_vw)}vw, {int(max_toc_px)}px)"
+        css = f"""
+/* Health-RI override: responsive toc/content split */
+#toc {{
+  width: {clamp} !important;
+  box-sizing: border-box !important;
+}}
+#content {{
+  margin-right: {clamp} !important;
+  width: auto !important;
+}}
+""".strip()
+
+        style_id = "healthri-toc-split-override"
+        style_tag = soup.find("style", attrs={"id": style_id})
+        if style_tag is None:
+            style_tag = soup.new_tag("style", id=style_id)
+            head.append(style_tag)
+
+        # Replace contents (idempotent)
+        style_tag.string = "\n" + css + "\n"
+
+        file_path.write_text(str(soup), encoding="utf-8")
+        logging.info(f"Injected responsive TOC/content split CSS: {clamp}")
+    except Exception as e:
+        logging.warning(f"Could not inject responsive TOC/content split CSS: {e}")
+
 
 def main():
     """
@@ -150,6 +224,10 @@ def main():
     It will only execute PyLODE if the versioned output for the detected version
     does not already exist. Otherwise, it will skip generation and (idempotently)
     repair missing "latest" and "docs" copies from the versioned file.
+
+    IMPORTANT (no-regression behavior):
+    - When reusing an existing versioned HTML, we apply link fixing + TOC sorting ONLY to the
+      docs/latest copies (we do NOT rewrite the versioned artifact).
     """
     logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
@@ -173,12 +251,19 @@ def main():
 
         # --- Early-exit gate for ontology spec ---
         if versioned_output.exists():
-            # Always sync "latest" and "docs" from the canonical versioned file
-            shutil.copyfile(versioned_output, latest_output)
+            # Rebuild docs + latest from the canonical versioned file,
+            # then enforce fixes on docs and propagate to latest (do not rewrite versioned).
             shutil.copyfile(versioned_output, output_file)
+
+            fix_internal_links_in_html(output_file)
+            sort_toc_sections_in_html(output_file)
+            apply_responsive_toc_split_css(output_file)
+
+            shutil.copyfile(output_file, latest_output)
+
             logging.info(
                 f"Ontology specification for v{version_str} already exists "
-                f"({versioned_output}). Skipped regeneration; synced latest/docs."
+                f"({versioned_output}). Skipped regeneration; synced latest/docs (with enforced TOC sort)."
             )
         else:
             # Run PyLODE only when the versioned file does not exist
@@ -191,6 +276,7 @@ def main():
                 fix_internal_links_in_html(output_file)
                 sort_toc_sections_in_html(output_file)
                 insert_logo_in_html(output_file)
+                apply_responsive_toc_split_css(output_file)
 
                 # Save versioned + latest copies
                 shutil.copyfile(output_file, versioned_output)
@@ -223,12 +309,19 @@ def main():
 
         # --- Early-exit gate for vocabulary spec ---
         if vocab_versioned_output.exists():
-            # Always sync "latest" and "docs" from the canonical versioned file
-            shutil.copyfile(vocab_versioned_output, vocab_latest_output)
+            # Rebuild docs + latest from the canonical versioned file,
+            # then enforce fixes on docs and propagate to latest (do not rewrite versioned).
             shutil.copyfile(vocab_versioned_output, vocab_output_file)
+
+            fix_internal_links_in_html(vocab_output_file)
+            sort_toc_sections_in_html(vocab_output_file)
+            apply_responsive_toc_split_css(vocab_output_file)
+
+            shutil.copyfile(vocab_output_file, vocab_latest_output)
+
             logging.info(
                 f"Vocabulary specification for v{vocab_version_str} already exists "
-                f"({vocab_versioned_output}). Skipped regeneration; synced latest/docs."
+                f"({vocab_versioned_output}). Skipped regeneration; synced latest/docs (with enforced TOC sort)."
             )
         else:
             logging.info(f"Generating vocabulary specification from: {vocab_ttl}")
@@ -243,6 +336,7 @@ def main():
                 fix_internal_links_in_html(vocab_output_file)
                 sort_toc_sections_in_html(vocab_output_file)
                 insert_logo_in_html(vocab_output_file)
+                apply_responsive_toc_split_css(vocab_output_file)
 
                 # Save versioned + latest copies
                 shutil.copyfile(vocab_output_file, vocab_versioned_output)
