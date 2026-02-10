@@ -4,6 +4,115 @@ All notable changes to this project will be documented in this file. Entries are
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.6.0] - 2026-02-10
+
+### TL;DR
+
+- Refactors the sex/gender model around a new **SexGender** backbone with explicit **Female / Male / NonBinarySexGender** and **Woman / Man / NonBinaryPerson** partitions.
+- Replaces legacy sex-at-birth / phenotypic / karyotypic terms and bearer roles with new IRIs, updating dependent `owl:equivalentClass`, `rdfs:subClassOf`, and disjointness axioms.
+- Updates release metadata to **1.6.0** and removes `skos:prefLabel` annotations for **242** terms (no semantic change, but may affect label-dependent consumers).
+
+### Added
+
+- Introduced a consolidated **SexGender** backbone (metamodelling via gUFO stereotypes: many terms are both `owl:Class` and `owl:NamedIndividual`):
+  - **SexGender**: `rdf:type` `gufo:Category`; `rdfs:subClassOf` `gufo:Aspect`; `owl:equivalentClass` **Gender ⊔ Sex** and **Female ⊔ Male ⊔ NonBinarySexGender**.
+  - **Female**, **Male**, **NonBinarySexGender**: `rdf:type` `gufo:Category`; `rdfs:subClassOf` **SexGender**; with `owl:equivalentClass` **FemaleGender ⊔ FemaleSex**, **MaleGender ⊔ MaleSex**, **NonBinaryGender ⊔ IndeterminateSex**.
+  - **Woman**, **Man**, **NonBinaryPerson**: `rdf:type` `gufo:SubKind`; `rdfs:subClassOf` **Person**; with `owl:equivalentClass` **FemaleGenderPerson ⊔ FemaleSexPerson**, **MaleGenderPerson ⊔ MaleSexPerson**, **NonBinaryGenderPerson ⊔ IndeterminateSexPerson**.
+- Added explicit sex-type specializations and person subkinds:
+  - **FemaleSex**, **MaleSex**, **IndeterminateSex**: `rdf:type` `gufo:Category`; `rdfs:subClassOf` **Sex** (and **Female / Male / NonBinarySexGender** respectively).
+  - **FemaleSexPerson**, **MaleSexPerson**, **IndeterminateSexPerson**: `rdf:type` `gufo:SubKind`; `rdfs:subClassOf` **Person** (aligned to **Woman / Man / NonBinaryPerson** respectively).
+- Added explicit **sex-at-birth** taxonomy and bearer roles (metamodelling via gUFO stereotypes):
+  - **SexAtBirthFemaleSex**, **SexAtBirthMaleSex**, **SexAtBirthIndeterminateSex**: `rdf:type` `gufo:SubKind`; `rdfs:subClassOf` **SexAtBirth** (+ aligned to corresponding **...Sex** and **Phenotypic...Sex**).
+  - Bearer roles: **SexAtBirthAssignedPerson**, **SexAtBirthUnassignedPerson**, **SexAtBirthDeterminateSexPerson**, **SexAtBirthFemaleSexPerson**, **SexAtBirthMaleSexPerson**, **SexAtBirthIndeterminateSexPerson** (`rdf:type` `gufo:Role`).
+- Added explicit **phenotypic sex** specializations and bearer role:
+  - **PhenotypicFemaleSex**, **PhenotypicMaleSex**, **PhenotypicAmbiguousSex** (`rdf:type` `gufo:SubKind`).
+  - **PhenotypicSexAssessedPerson** (`rdf:type` `gufo:Role`).
+- Added explicit **karyotypic sex** specializations and person subkinds:
+  - **KaryotypicSex**: `rdf:type` `gufo:Kind`; `rdfs:subClassOf` `gufo:IntrinsicMode` and **Sex**.
+  - **KaryotypicFemaleSex**, **KaryotypicMaleSex** (`rdf:type` `gufo:SubKind`; `rdfs:subClassOf` **KaryotypicSex**).
+  - **KaryotypicFemaleSexPerson**, **KaryotypicMaleSexPerson** (+ **RegularKaryotypical\*Person**, **VariantKaryotypical\*Person**) to represent karyotypic person partitions.
+- Added **GenderModality** partition and supporting relationships:
+  - **GenderModality**: `rdf:type` `gufo:Category`; `rdfs:subClassOf` **Gender**; `owl:equivalentClass` **Cisgender ⊔ Transgender**.
+  - **Cisgender**, **Transgender**: `rdf:type` `gufo:Kind`; `rdfs:subClassOf` **GenderModality**.
+  - **hasCause**, **hasCause_1** (`rdf:type` `gufo:MaterialRelationshipType`, `owl:ObjectProperty`): `rdfs:domain` **GenderModality**; `rdfs:range` **Sex** / **Gender**.
+- Introduced **PreferredPronoun** (`rdf:type` `gufo:Kind`; `rdfs:subClassOf` `gufo:Quality`) to replace **PreferredGenderedPronoun** (see *Removed*).
+- Introduced supporting modeling individuals:
+  - **SexAxis**, **SexOutcome**, **GenderOutcome**, **SexGenderOutcome**, **SexGenderType**, **GenderContext** (`rdf:type` `owl:NamedIndividual`; `rdfs:subClassOf` **ConcreteIndividualType**).
+
+### Changed
+
+- **ontology** (`https://w3id.org/health-ri/ontology`)
+  - `owl:versionInfo` **"1.5.0" → "1.6.0"**; `owl:versionIRI` **…/v1.5.0 → …/v1.6.0**.
+  - `dcterms:modified` **2026-02-04 → 2026-02-10**.
+  - `dcterms:conformsTo` links updated to **…/v1.6.0/json** and **…/v1.6.0/vpp**.
+  - Added `dcterms:contributor` annotations.
+- Consolidated core sex/gender hierarchy and typing:
+  - **Sex**, **Gender**: `rdfs:subClassOf` **`gufo:Aspect` + `gufo:ExtrinsicMode` → SexGender**.
+  - **Sex**: added `owl:equivalentClass` **FemaleSex ⊔ IndeterminateSex ⊔ MaleSex**.
+  - **FemaleGender**, **MaleGender**, **NonBinaryGender**: added `rdfs:subClassOf` **Female / Male / NonBinarySexGender**.
+  - **FemaleGenderPerson**, **MaleGenderPerson**, **NonBinaryGenderPerson**: added `rdfs:subClassOf` **Woman / Man / NonBinaryPerson**.
+  - **SelfDesignatedGender**: added `rdfs:subClassOf` **Gender**.
+- Refactored sex-at-birth and phenotypic-sex bearers and partitions:
+  - **SexAtBirth**:
+    - `owl:equivalentClass` **FemaleSexAtBirth ⊔ IndeterminateSexAtBirth ⊔ MaleSexAtBirth → SexAtBirthFemaleSex ⊔ SexAtBirthIndeterminateSex ⊔ SexAtBirthMaleSex**.
+    - `rdfs:subClassOf` constraint `gufo:inheresIn` **≥ 1** **PersonWithAssignedSexAtBirth → SexAtBirthAssignedPerson**.
+  - **SexAtBirthAssignment**: `rdfs:subClassOf` constraint `gufo:mediates` **≥ 1** **PersonWithAssignedSexAtBirth → SexAtBirthAssignedPerson**.
+  - **PhenotypicSex**:
+    - Added `owl:equivalentClass` **PhenotypicAmbiguousSex ⊔ PhenotypicFemaleSex ⊔ PhenotypicMaleSex**.
+    - `rdfs:subClassOf` constraint `gufo:inheresIn` **≥ 1** **PersonWithAssessedPhenotypicSex → PhenotypicSexAssessedPerson**.
+  - **PhenotypicSexAssessment**: `rdfs:subClassOf` constraint `gufo:mediates` **≥ 1** **PersonWithAssessedPhenotypicSex → PhenotypicSexAssessedPerson**.
+  - **CisgenderPerson**, **TransgenderPerson**:
+    - Updated bearer links **PersonWithAssignedSexAtBirth → SexAtBirthAssignedPerson**.
+    - Added `rdfs:subClassOf` restriction `owl:onProperty [ owl:inverseOf gufo:inheresIn ]` `owl:someValuesFrom` **Cisgender / Transgender**.
+  - **FemaleCisgenderPerson**, **MaleCisgenderPerson**, **SelfIdentifiedCisgender\***, **ExternallyAttributedCisgender\***:
+    - Updated `rdfs:subClassOf` **PersonWithFemaleSexAtBirth / PersonWithMaleSexAtBirth → SexAtBirthFemaleSexPerson / SexAtBirthMaleSexPerson**.
+- Refactored **Person** equivalences, constraints, and karyotypic naming:
+  - **Person**:
+    - `owl:equivalentClass` **PersonWithAssignedSexAtBirth ⊔ PersonWithUnassignedSexAtBirth → SexAtBirthAssignedPerson ⊔ SexAtBirthUnassignedPerson**.
+    - `owl:equivalentClass` **KaryotypicalFemale ⊔ KaryotypicalMale → KaryotypicFemaleSexPerson ⊔ KaryotypicMaleSexPerson**.
+    - `owl:equivalentClass` **LegalGenderRecognizedPerson ⊔ LegalGenderUnassignedPerson → LegallyRecognizedGenderPerson ⊔ LegallyUnassignedGenderPerson**.
+    - `owl:equivalentClass` **FemaleBiologicalPerson ⊔ IndeterminateBiologicalPerson ⊔ MaleBiologicalPerson → FemaleSexPerson ⊔ IndeterminateSexPerson ⊔ MaleSexPerson**.
+    - Added `owl:equivalentClass` **Man ⊔ NonBinaryPerson ⊔ Woman**.
+    - `rdfs:subClassOf` constraint `gufo:inheresIn` **≥ 1** **KaryotypicalSex → KaryotypicSex**.
+    - Added `rdfs:subClassOf` restriction `owl:onProperty [ owl:inverseOf gufo:inheresIn ]` `owl:someValuesFrom` **SexGender**.
+  - **PersonWithRegularSexChromosome**:
+    - `owl:equivalentClass` **RegularKaryotypicalFemale ⊔ RegularKaryotypicalMale → RegularKaryotypicalFemalePerson ⊔ RegularKaryotypicalMalePerson**.
+- Updated biological parent specializations:
+  - **BiologicalMother**: `rdfs:subClassOf` **FemaleBiologicalPerson → FemaleSexPerson**.
+  - **BiologicalFather**: `rdfs:subClassOf` **MaleBiologicalPerson → MaleSexPerson**.
+- Updated recognized-gender constraints to target new bearer role IRIs:
+  - **AdministrativeGender**: `rdfs:subClassOf` constraint `gufo:inheresIn` **≥ 1** **AdministrativeGenderRecognizedPerson → AdministrativelyRecognizedGenderPerson**.
+  - **AdministrativeGenderRecognition**: `rdfs:subClassOf` constraint `gufo:mediates` **≥ 1** **AdministrativeGenderRecognizedPerson → AdministrativelyRecognizedGenderPerson**.
+  - **LegalGender**: `rdfs:subClassOf` constraint `owl:onProperty [ owl:inverseOf gufo:inheresIn ]` **some** **LegalGenderRecognizedPerson → LegallyRecognizedGenderPerson**.
+  - **LegalGenderRecognition**: `rdfs:subClassOf` constraint `gufo:mediates` **≥ 1** **LegalGenderRecognizedPerson → LegallyRecognizedGenderPerson**.
+- Updated disjointness axioms (`owl:AllDisjointClasses`) to reflect the refactor:
+  - Replaced **FemaleSexAtBirth / IndeterminateSexAtBirth / MaleSexAtBirth** with disjointness over **SexAtBirthFemaleSex / SexAtBirthIndeterminateSex / SexAtBirthMaleSex**.
+  - Replaced **FemaleBiologicalPerson / IndeterminateBiologicalPerson / MaleBiologicalPerson** with disjointness over **FemaleSexPerson / IndeterminateSexPerson / MaleSexPerson**.
+  - Replaced **KaryotypicalFemale / KaryotypicalMale** with disjointness over **KaryotypicFemaleSexPerson / KaryotypicMaleSexPerson** (and added disjointness over **KaryotypicFemaleSex / KaryotypicMaleSex**).
+  - Added disjointness over **Gender / Sex**, and over **Cisgender / Transgender**.
+- Updated helper subproperty hierarchies (structural alignments via `rdfs:subPropertyOf`):
+  - `femaleGenderInheresInFemaleGenderPerson`, `maleGenderInheresInMaleGenderPerson`, `nonBinaryGenderInheresInNonBinaryGenderPerson`: `rdfs:subPropertyOf` **person → person_1** (and added specializations to **woman / man / nonBinaryPerson** where applicable).
+  - `selfAwarePerson`, `selfIdentifiedGenderInheresInSelfAwarePerson`, `externallyGenderAttributedPersonInheresInExternallyAttributedGender`: `rdfs:subPropertyOf` **person → person_1**.
+- **value**: `rdfs:domain` **PreferredGenderedPronoun → PreferredPronoun**.
+- Documentation:
+  - Removed `skos:prefLabel` annotations for **242** terms.
+  - Removed `skos:altLabel` annotations for **7** terms, including: *Diagnosis, HealthCondition, PhenotypicSex, SelfIdentifiedGender*.
+  - Editorial-only (no semantic change):
+    - Normalized `rdfs:comment` whitespace/line endings for **31** terms, including: *AdministrativeGenderRecognitionDocument, Belief, ArtificialAgent, Chromosome, Date*, and others.
+
+### Removed
+
+- Removed legacy sex-at-birth / phenotypic / karyotypic IRIs superseded by the refactor:
+  - **PersonWithAssignedSexAtBirth**, **PersonWithUnassignedSexAtBirth**, **PersonWithDeterminateSexAtBirth**, **PersonWithFemaleSexAtBirth**, **PersonWithMaleSexAtBirth**, **PersonWithIndeterminateSexAtBirth**.
+  - **FemaleSexAtBirth**, **MaleSexAtBirth**, **IndeterminateSexAtBirth**.
+  - **PersonWithAssessedPhenotypicSex**, **FemalePhenotypicPerson**, **MalePhenotypicPerson**, **AmbiguousPhenotypicPerson**.
+  - **KaryotypicalSex**, **KaryotypicalFemale**, **KaryotypicalMale**, **RegularKaryotypicalFemale**, **RegularKaryotypicalMale**, **VariantKaryotypicalFemale**, **VariantKaryotypicalMale**.
+  - **FemaleBiologicalPerson**, **MaleBiologicalPerson**, **IndeterminateBiologicalPerson**.
+- Removed legacy recognized-gender bearer role IRIs superseded by the updated constraints:
+  - **AdministrativeGenderRecognizedPerson**, **LegalGenderRecognizedPerson**, **LegalGenderUnassignedPerson**.
+- Removed **PreferredGenderedPronoun** (replaced by **PreferredPronoun**).
+- Removed supporting blank-node `owl:unionOf` / `owl:AllDisjointClasses` class expressions superseded by the updated axioms (see *Changed*).
+
 ## [1.5.0] - 2026-02-04
 
 ### TL;DR

@@ -57,7 +57,7 @@ Use exactly this output template structure; output nothing else:
 
 ```ttl
 # -----------------------------------------------------------------------------
-# RULE: (same id/title the rule appears in the CSNT note)
+# RULE: (canonical rule id; use the derived class name in PascalCase, e.g., MaleCisgenderPerson; do NOT include "DRIV:" or other prefixes)
 # RULE TYPE: (Constraint|Derivation)
 # DESCRIPTION: (The same text it appears in the OntoUML models.)
 # DETAILS (this is optional and can be filled with more information, examples, etc.)
@@ -100,7 +100,7 @@ Use exactly this output template structure; output nothing else:
    - Do **not** add `sh:severity`; derivation is not a validation error.
 
 6. **Documentation fields:**
-   - `sh:name`: short title, usually echoing the RULE line.
+   - `sh:name`: MUST equal the RULE: value exactly.
    - `sh:description`: a clear paraphrase of the DESCRIPTION line, mentioning whether it is a constraint or derivation rule.
    - `sh:message` (for constraint rules): written as if shown to a user who violated the constraint.
 
