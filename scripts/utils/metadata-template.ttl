@@ -34,7 +34,6 @@
                     <https://orcid.org/0009-0000-0967-7294> ,   # Annemarie Trompert
                     <https://orcid.org/0000-0001-8802-7002> ;   # Janet Vos
 
-
     # --- 4. Publication and Licensing ---
     dct:publisher <https://w3id.org/health-ri> ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
