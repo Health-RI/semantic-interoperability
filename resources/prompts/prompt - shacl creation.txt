@@ -63,7 +63,6 @@ Use exactly this output template structure; output nothing else:
 # DETAILS (this is optional and can be filled with more information, examples, etc.)
 # -----------------------------------------------------------------------------
 <one Turtle code block containing exactly one sh:NodeShape implementing the constraint or materialization rule>
-# (End of output)
 # -----------------------------------------------------------------------------
 ```
 
