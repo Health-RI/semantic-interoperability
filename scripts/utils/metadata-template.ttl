@@ -24,10 +24,16 @@
     dct:description """This ontology is part of Health-RI’s semantic interoperability initiative, which provides a shared ontological framework for harmonizing healthcare and life sciences data across institutions. It includes a conceptual reference model defined in OntoUML and a machine-processable OWL ontology implemented using gUFO. These artifacts are used to enable explicit mappings from heterogeneous data schemas, ensuring consistent semantics in data exchange and integration. The approach supports both human understanding and computational tractability. All components are openly published and designed for reuse across systems and services."""@en ;
 
     # --- 3. Creators and Contributors ---
-    dct:creator <https://orcid.org/0000-0003-2736-7817> ;   # Pedro Paulo F. Barcelos
+    dct:creator <https://orcid.org/0000-0003-2736-7817> ;   # Pedro Paulo Favato Barcelos
     dct:contributor <https://orcid.org/0000-0003-0771-3516> ,   # Niek van Ulzen
+                    <https://orcid.org/0009-0006-1783-9082> ,   # Reinier Groeneveld
+                    <https://orcid.org/0009-0002-3089-9558> ,   # Ana Konrad
+                    <https://orcid.org/0000-0002-7944-2594> ,   # Qasim Khalid
+                    <https://orcid.org/0000-0003-4715-9070> ,   # Shuxin Zhang
                     <https://orcid.org/0000-0003-1451-4240> ,   # Anika Bongaarts
-                    <https://orcid.org/0009-0006-1783-9082> ;   # Reinier Groeneveld
+                    <https://orcid.org/0009-0000-0967-7294> ,   # Annemarie Trompert
+                    <https://orcid.org/0000-0001-8802-7002> ;   # Janet Vos
+
 
     # --- 4. Publication and Licensing ---
     dct:publisher <https://w3id.org/health-ri> ;
