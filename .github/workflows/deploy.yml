@@ -43,6 +43,10 @@ jobs:
       - name: Ensure metadata is added to gUFO file
         run: python scripts/insert-metadata.py
 
+      # --- Add SKOS prefLabel/altLabel from JSON synonyms (latest versioned pair) ---
+      - name: Add SKOS labels (prefLabel + altLabel)
+        run: python scripts/add-skos-labels.py
+
       # --- Promote newest versioned files into 'latest' folder ---
       - name: Move newest files from versioned to latest
         run: python scripts/move-latest.py
@@ -53,7 +57,7 @@ jobs:
           mkdir -p docs/ontology
           cp ontologies/changelog-ontology.md docs/ontology/changelog-ontology.md
 
-      # --- ensure no stale PyLODE HTML remains ---
+      # --- Ensure no stale PyLODE HTML remains ---
       - name: Forces clean sync
         run: |
           rm -f docs/ontology/specification-ontology.html

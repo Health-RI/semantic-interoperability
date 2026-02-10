@@ -10,6 +10,7 @@ This folder contains utility scripts used across the Health-RI Semantic Interope
   - [`docgen-ontouml.py` — OntoUML JSON → Markdown docs](#docgen-ontoumlpy--ontouml-json--markdown-docs)
   - [`docgen-pylode.py` — TTL → HTML specification (PyLODE), with post-processing](#docgen-pylodepy--ttl--html-specification-pylode-with-post-processing)
   - [`insert-metadata.py` — Merge release metadata into the latest ontology TTL](#insert-metadatapy--merge-release-metadata-into-the-latest-ontology-ttl)
+  - [`add-skos-labels.py` — Add SKOS prefLabel/altLabel from OntoUML JSON synonyms](#add-skos-labelspy--add-skos-preflabelaltlabel-from-ontouml-json-synonyms)
   - [`make-diff-ttl.py` — RDF diff graphs between two versions](#make-diff-ttlpy--rdf-diff-graphs-between-two-versions)
   - [`diff-ttl.py` — Convenience wrapper: metadata insertion + diff for last two versions](#diff-ttlpy--convenience-wrapper-metadata-insertion--diff-for-last-two-versions)
   - [`move-latest.py` — Populate `ontologies/latest/` from versioned artifacts](#move-latestpy--populate-ontologieslatest-from-versioned-artifacts)
@@ -100,6 +101,22 @@ Merges a Turtle metadata template into the latest versioned ontology TTL, and ad
       - `https://w3id.org/health-ri/ontology/vX.Y.Z/json`
   - **Overwrites** the latest versioned TTL file in place.
 - **Run:** `python scripts/insert-metadata.py`
+
+### `add-skos-labels.py` — Add SKOS prefLabel/altLabel from OntoUML JSON synonyms
+
+Adds SKOS labeling properties to the latest versioned ontology TTL by using tagged values from the matching latest versioned OntoUML JSON export.
+
+- **Inputs (auto-detected):** latest *matching* semver pair from `ontologies/versioned/`:
+  - `ontologies/versioned/health-ri-ontology-vX.Y.Z.ttl`
+  - `ontologies/versioned/health-ri-ontology-vX.Y.Z.json`
+- **Behavior:**
+  - Keeps existing `rdfs:label` triples.
+  - For every `rdfs:label`, adds a mirror `skos:prefLabel` (same literal, including language tag).
+  - For JSON elements that contain a `synonyms` (or `synonym`) tagged value:
+    - Splits the string on commas and adds one `skos:altLabel` per item (trimmed; de-duplicated).
+    - Skips any `altLabel` that is identical to the resource’s `prefLabel` in the same language.
+  - **Overwrites** the latest versioned TTL file in place.
+- **Run:** `python scripts/add-skos-labels.py`
 
 ### `make-diff-ttl.py` — RDF diff graphs between two versions
 
@@ -271,6 +288,7 @@ The repository’s documentation deployment workflow (`deploy.yml`) uses `script
 2. Run generation steps:
    - `clean-unwanted-files.py`
    - `insert-metadata.py`
+   - `add-skos-labels.py`
    - `move-latest.py`
    - `docgen-ontouml.py`
    - `docgen-pylode.py`
