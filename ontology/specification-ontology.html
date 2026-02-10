@@ -341,7 +341,17 @@ td {
   }
 ]
 	</script>
-</head>
+<style id="healthri-toc-split-override">
+/* Health-RI override: responsive toc/content split */
+#toc {
+  width: clamp(280px, 20vw, 420px) !important;
+  box-sizing: border-box !important;
+}
+#content {
+  margin-right: clamp(280px, 20vw, 420px) !important;
+  width: auto !important;
+}
+</style></head>
 <body><img alt="Health-RI Logo" src="../assets/images/health-ri-logo-blue.png" style="max-height: 80px; margin-bottom: 1em;"/>
 <div id="content">
 <div class="section" id="metadata">
