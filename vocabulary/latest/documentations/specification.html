@@ -342,7 +342,17 @@ td {
   }
 ]
 	</script>
-</head>
+<style id="healthri-toc-split-override">
+/* Health-RI override: responsive toc/content split */
+#toc {
+  width: clamp(280px, 20vw, 420px) !important;
+  box-sizing: border-box !important;
+}
+#content {
+  margin-right: clamp(280px, 20vw, 420px) !important;
+  width: auto !important;
+}
+</style></head>
 <body><img alt="Health-RI Logo" src="../assets/images/health-ri-logo-blue.png" style="max-height: 80px; margin-bottom: 1em;"/>
 <div id="content">
 <div class="section" id="metadata">
@@ -1104,29 +1114,21 @@ No other subproperties are permitted under this vocabulary besides the ones here
 <h4>
 <a href="#objectproperties">Object Properties</a>
 </h4>
-<ul class="second">
-<li>
-<a href="#meaningMappingRelation">meaningMappingRelation</a>
-</li>
-<li>
-<a href="#hasExactMeaning">hasExactMeaning</a>
-</li>
-<li>
-<a href="#isExactMeaningOf">isExactMeaningOf</a>
-</li>
-<li>
+<ul class="second"><li>
 <a href="#hasBroaderMeaningThan">hasBroaderMeaningThan</a>
-</li>
-<li>
-<a href="#isNarrowerMeaningFor">isNarrowerMeaningFor</a>
-</li>
-<li>
+</li><li>
+<a href="#hasExactMeaning">hasExactMeaning</a>
+</li><li>
 <a href="#hasNarrowerMeaningThan">hasNarrowerMeaningThan</a>
-</li>
-<li>
+</li><li>
 <a href="#isBroaderMeaningFor">isBroaderMeaningFor</a>
-</li>
-</ul>
+</li><li>
+<a href="#isExactMeaningOf">isExactMeaningOf</a>
+</li><li>
+<a href="#isNarrowerMeaningFor">isNarrowerMeaningFor</a>
+</li><li>
+<a href="#meaningMappingRelation">meaningMappingRelation</a>
+</li></ul>
 </li>
 <li>
 <h4>
