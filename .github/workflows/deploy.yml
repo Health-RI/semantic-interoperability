@@ -43,9 +43,9 @@ jobs:
       - name: Ensure metadata is added to gUFO file
         run: python scripts/insert-metadata.py
 
-      # --- Add SKOS prefLabel/altLabel from JSON synonyms (latest versioned pair) ---
-      - name: Add SKOS labels (prefLabel + altLabel)
-        run: python scripts/add-skos-labels.py
+      # --- OWL post-processing (latest versioned pair): labels, synonyms, packages, stages, isDefinedBy, comment cleanup ---
+      - name: OWL post-processing (labels, packages, maturity)
+        run: python scripts/owl-postprocess.py
 
       # --- Promote newest versioned files into 'latest' folder ---
       - name: Move newest files from versioned to latest
