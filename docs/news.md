@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2026-02-11
+
+- **[Health Ri Ontology](https://w3id.org/health-ri/ontology)** — Added: Published v1.6.0 release artifacts (Turtle, JSON, SHACL, Visual Paradigm) and refreshed sex/gender diagrams and SKOS labels for improved display.
+
 ## 2026-02-04
 
 - **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Added: Published v1.5.0 release artifacts (Turtle, JSON, Visual Paradigm) and refreshed gender/sex diagrams, adding cisgender/transgender and sex-at-birth type visualizations.
