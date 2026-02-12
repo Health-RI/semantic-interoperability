@@ -2,6 +2,7 @@
 *Version 1.6.0*
 
 ## Sex and Gender
+[![Maturity level external review (erv): stage 3 of 4](https://img.shields.io/badge/Maturity_level-external_review_(erv)%3A_stage_3_of_4-007bff)](https://health-ri.github.io/semantic-interoperability/method/ontology-validation/)
 
 This package describes the OntoUML conceptual model of Sex and Gender, detailing its structure, types, and relationships. The model follows the ontological notion of mode, representing properties that inhere in a Person. However, while these modes always depend on the bearer (they are properties of them), their determination can be either intrinsic depending only on the person's own features or extrinsic requiring assessment, assignment, or recognition by external agents.
 
@@ -410,6 +411,7 @@ Distinguishes gender-based and indeterminate-sex forms of Non-binary and aligns 
 Non-binary Person is characterized by Non-binary. Non-binary is specialized into Non-binary Gender and Indeterminate Sex as disjoint and complete alternatives, while Non-binary Person is specialized into Non-binary-gender Person and Indeterminate-sex Person as a complete refinement that permits overlap. Non-binary Gender is associated to Non-binary-gender Person with cardinality 1..*, and Indeterminate Sex is associated to Indeterminate-sex Person with cardinality 1..*; these two associations correspond to the gender-based and indeterminate-sex specializations of Non-binary.
 
 ## Biology
+[![Maturity level internal work (int): stage 1 of 4](https://img.shields.io/badge/Maturity_level-internal_work_(int)%3A_stage_1_of_4-ff0400)](https://health-ri.github.io/semantic-interoperability/method/ontology-validation/)
 
 ### Chromosomes
 
@@ -454,6 +456,7 @@ The diagram additionally addresses dependence types, separating inherent conditi
 Overall, the diagram provides a comprehensive schema for differentiating established health conditions, using complete and disjoint partitions where appropriate and allowing overlaps where necessary.
 
 ## General
+[![Maturity level internal work (int): stage 1 of 4](https://img.shields.io/badge/Maturity_level-internal_work_(int)%3A_stage_1_of_4-ff0400)](https://health-ri.github.io/semantic-interoperability/method/ontology-validation/)
 
 ### Agents
 
@@ -482,6 +485,7 @@ Physical Document represents tangible information carriers such as paper records
 This distinction supports consistent representation of information artifacts across heterogeneous healthcare and research contexts, enabling explicit modeling of whether information exists in material form or as a digital object.
 
 ## Diagnosis
+[![Maturity level internal work (int): stage 1 of 4](https://img.shields.io/badge/Maturity_level-internal_work_(int)%3A_stage_1_of_4-ff0400)](https://health-ri.github.io/semantic-interoperability/method/ontology-validation/)
 
 ### Diagnostic Assessments
 
@@ -534,6 +538,7 @@ The diagram defines the abstract notion of a Diagnosed Entity, capturing the ran
 The specialization includes Diagnosed Cellular Entity, which is explicitly linked to the broader biological category of Cellular Entity. This supports the modeling of diagnostic contexts where individual cells, such as tumor cells or infected cells, are the diagnostic target. Diagnosed Biological Part covers organs, tissues, or other anatomical structures subject to diagnosis, while Diagnosed Specimen represents biological samples collected for diagnostic analysis. Finally, Diagnosed Group accounts for diagnoses applied at the collective level, such as patient cohorts or study populations.
 
 ## UFO
+[![Maturity level internal work (int): stage 1 of 4](https://img.shields.io/badge/Maturity_level-internal_work_(int)%3A_stage_1_of_4-ff0400)](https://health-ri.github.io/semantic-interoperability/method/ontology-validation/)
 
 ### Endurant
 
@@ -544,6 +549,7 @@ The diagram presents the high-level taxonomy of Endurants as conceptualized in U
 Substantial is modeled as a specialization of endurants, representing entities that have identity and exist independently. The category is further partitioned into two complete and disjoint subtypes: Object and Agent. Objects denote substantial entities that are not capable of agency, while Agents represent substantials that can act or exercise agency. This division provides the ontological basis for distinguishing between passive and active entities in the domain.
 
 ## Person
+[![Maturity level internal work (int): stage 1 of 4](https://img.shields.io/badge/Maturity_level-internal_work_(int)%3A_stage_1_of_4-ff0400)](https://health-ri.github.io/semantic-interoperability/method/ontology-validation/)
 
 ### Person's Living Status
 
