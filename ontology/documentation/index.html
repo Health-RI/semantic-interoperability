@@ -2716,6 +2716,7 @@
 <h1 id="health-ri-ontology">Health-RI Ontology</h1>
 <p><em>Version 1.6.0</em></p>
 <h2 id="sex-and-gender">Sex and Gender</h2>
+<p><a href="https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"><img alt="Maturity level external review (erv): stage 3 of 4" src="https://img.shields.io/badge/Maturity_level-external_review_(erv)%3A_stage_3_of_4-007bff" /></a></p>
 <p>This package describes the OntoUML conceptual model of Sex and Gender, detailing its structure, types, and relationships. The model follows the ontological notion of mode, representing properties that inhere in a Person. However, while these modes always depend on the bearer (they are properties of them), their determination can be either intrinsic depending only on the person's own features or extrinsic requiring assessment, assignment, or recognition by external agents.</p>
 <p>This distinction is crucial to properly model the social, legal, and biological complexity of sex and gender in human contexts.</p>
 <h3 id="persons-sex-and-gender-basic-taxonomy">Person's Sex and Gender Basic Taxonomy</h3>
@@ -2920,6 +2921,7 @@
 <p>Distinguishes gender-based and indeterminate-sex forms of Non-binary and aligns these with corresponding types of Non-binary Person. Captures separate qualification patterns for the gender-based and indeterminate-sex cases.</p>
 <p>Non-binary Person is characterized by Non-binary. Non-binary is specialized into Non-binary Gender and Indeterminate Sex as disjoint and complete alternatives, while Non-binary Person is specialized into Non-binary-gender Person and Indeterminate-sex Person as a complete refinement that permits overlap. Non-binary Gender is associated to Non-binary-gender Person with cardinality 1..<em>, and Indeterminate Sex is associated to Indeterminate-sex Person with cardinality 1..</em>; these two associations correspond to the gender-based and indeterminate-sex specializations of Non-binary.</p>
 <h2 id="biology">Biology</h2>
+<p><a href="https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"><img alt="Maturity level internal work (int): stage 1 of 4" src="https://img.shields.io/badge/Maturity_level-internal_work_(int)%3A_stage_1_of_4-ff0400" /></a></p>
 <h3 id="chromosomes">Chromosomes</h3>
 <p><img alt="Chromosomes" src="../assets/images/Chromosomes.png" /></p>
 <p>The diagram models chromosomes and their role in human cells and persons. At its core, Chromosome is specialized into the subkind Allosome, which is further partitioned into Allosome X and Allosome Y. A note clarifies that an allosome set can never consist of only Y, preventing biologically inconsistent representations. The model enforces that allosome type is complete and disjoint.</p>
@@ -2942,6 +2944,7 @@
 <p>The diagram additionally addresses dependence types, separating inherent conditions from externally-caused ones. Externally-caused conditions are modeled alongside injuries and exposure-based conditions, reflecting the impact of external influences on health states. Injuries are further divided into traumatic and non-traumatic categories, capturing the role of trauma in their occurrence. This structure ensures that conditions are classified according to both their internal characteristics and their external determinants.</p>
 <p>Overall, the diagram provides a comprehensive schema for differentiating established health conditions, using complete and disjoint partitions where appropriate and allowing overlaps where necessary.</p>
 <h2 id="general">General</h2>
+<p><a href="https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"><img alt="Maturity level internal work (int): stage 1 of 4" src="https://img.shields.io/badge/Maturity_level-internal_work_(int)%3A_stage_1_of_4-ff0400" /></a></p>
 <h3 id="agents">Agents</h3>
 <p><img alt="Agents" src="../assets/images/Agents.png" /></p>
 <p>The diagram organizes the ontology of Agents, rooted in the UFO-based category Agent. Agents are understood as entities capable of acting or exercising agency in a system. The diagram distinguishes between collective and individual forms of agency.</p>
@@ -2956,6 +2959,7 @@
 <p>Physical Document represents tangible information carriers such as paper records, printed reports, or handwritten notes. Digital Document covers information encoded in electronic formats, including files, databases, and digitally stored reports. The complete and disjoint constraint ensures that every document must be classified as either physical or digital, with no overlap between the two.</p>
 <p>This distinction supports consistent representation of information artifacts across heterogeneous healthcare and research contexts, enabling explicit modeling of whether information exists in material form or as a digital object.</p>
 <h2 id="diagnosis">Diagnosis</h2>
+<p><a href="https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"><img alt="Maturity level internal work (int): stage 1 of 4" src="https://img.shields.io/badge/Maturity_level-internal_work_(int)%3A_stage_1_of_4-ff0400" /></a></p>
 <h3 id="diagnostic-assessments">Diagnostic Assessments</h3>
 <p><img alt="Diagnostic Assessments" src="../assets/images/Diagnostic%20Assessments.png" /></p>
 <p>The diagram represents the structure and results of diagnostic processes. At the top, a Diagnostic Relation connects diagnosing agents and diagnosed entities. Once a diagnostic process has been completed, this relation becomes a Concluded Diagnostic Relation, which manifests in one or more Diagnostic Assessments. These assessments classify the determination of diagnostic results into complete and disjoint categories.</p>
@@ -2982,11 +2986,13 @@
 <p>The diagram defines the abstract notion of a Diagnosed Entity, capturing the range of entities that may be the subject of a diagnostic process. This is partitioned into four disjoint and complete types, ensuring that all diagnosed entities fall into one of these categories.</p>
 <p>The specialization includes Diagnosed Cellular Entity, which is explicitly linked to the broader biological category of Cellular Entity. This supports the modeling of diagnostic contexts where individual cells, such as tumor cells or infected cells, are the diagnostic target. Diagnosed Biological Part covers organs, tissues, or other anatomical structures subject to diagnosis, while Diagnosed Specimen represents biological samples collected for diagnostic analysis. Finally, Diagnosed Group accounts for diagnoses applied at the collective level, such as patient cohorts or study populations.</p>
 <h2 id="ufo">UFO</h2>
+<p><a href="https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"><img alt="Maturity level internal work (int): stage 1 of 4" src="https://img.shields.io/badge/Maturity_level-internal_work_(int)%3A_stage_1_of_4-ff0400" /></a></p>
 <h3 id="endurant">Endurant</h3>
 <p><img alt="Endurant" src="../assets/images/Endurant.png" /></p>
 <p>The diagram presents the high-level taxonomy of Endurants as conceptualized in UFO. At the top, Particular is introduced as a general mixin that subsumes all individual entities. From this root, the category Endurant captures entities that persist through time while possibly undergoing changes in their properties.</p>
 <p>Substantial is modeled as a specialization of endurants, representing entities that have identity and exist independently. The category is further partitioned into two complete and disjoint subtypes: Object and Agent. Objects denote substantial entities that are not capable of agency, while Agents represent substantials that can act or exercise agency. This division provides the ontological basis for distinguishing between passive and active entities in the domain.</p>
 <h2 id="person">Person</h2>
+<p><a href="https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"><img alt="Maturity level internal work (int): stage 1 of 4" src="https://img.shields.io/badge/Maturity_level-internal_work_(int)%3A_stage_1_of_4-ff0400" /></a></p>
 <h3 id="persons-living-status">Person's Living Status</h3>
 <p><img alt="Person's Living Status" src="../assets/images/Person%27s%20Living%20Status.png" /></p>
 <p>The diagram models the temporal and biological aspects of a person s existence, capturing both life stages and living status. At its center is the kind Person, which includes an attribute date of birth that records the individual's birth date. A constraint ensures consistency by requiring that the date of birth matches the date portion of the end attribute of the associated Person s Birth event.</p>
