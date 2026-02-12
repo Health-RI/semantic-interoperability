@@ -12,7 +12,7 @@ Preserved (legacy) behaviors from docgen-pylode.py:
 
 New ontology behaviors:
 - Restructure ONLY the #classes section into top-level package subsections (H3)
-- Insert maturity line under each package heading (vs:term_status on top-level package)
+- Insert maturity badge after each package heading (vs:term_status on top-level package)
 - Add Synonyms row to each class block from skos:altLabel (idempotent)
 - Rebuild the "Classes" ToC subtree to reflect package grouping
 - Lightweight validations (class count unchanged, unique anchors, ToC targets exist)
@@ -34,6 +34,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 from typing import DefaultDict, Dict, List, Optional, Sequence, Set, Tuple
+from urllib.parse import quote
 
 import rdflib
 from bs4 import BeautifulSoup, NavigableString, Tag
@@ -48,6 +49,24 @@ MATURITY_DOCS_URL = "https://health-ri.github.io/semantic-interoperability/metho
 # ---------------------------
 # HTML helpers (legacy)
 # ---------------------------
+
+
+def remove_is_defined_by_rows(soup: BeautifulSoup) -> int:
+    """
+    Remove PyLODE-rendered 'Is Defined By' rows from entity tables.
+    Idempotent: removing an already-removed row is a no-op.
+    """
+    removed = 0
+    for block in soup.select("div.property.entity"):
+        table = block.find("table")
+        if not table:
+            continue
+        for tr in list(table.find_all("tr")):
+            th = tr.find("th")
+            if th and th.get_text(strip=True).casefold() == "is defined by":
+                tr.decompose()
+                removed += 1
+    return removed
 
 
 def fix_internal_links_raw(html: str) -> str:
@@ -135,6 +154,32 @@ def sort_toc_nested_lists(soup: BeautifulSoup) -> None:
             ul.clear()
             for _, li in indexed_sorted:
                 ul.append(li)
+
+
+def maturity_badge(term_status: str) -> Optional[tuple[str, str]]:
+    """
+    Returns (badge_url, alt_text) for a given vs:term_status.
+    Badge style matches Shields' /badge/<label>-<message>-<color>.
+    """
+    # Follow your requested strings for stage 1 and stage 4.
+    mapping = {
+        "int": ("Maturity_level", "internal_work_(int):_stage_1_of_4", "ff0400"),
+        "irv": ("Maturity_level", "internal_review_(irv):_stage_2_of_4", "ffae00"),
+        "erv": ("Maturity_level", "external_review_(erv):_stage_3_of_4", "007bff"),
+        "pub": ("Maturity_level", "Published_(pub):_stage_4_of_4", "009e15"),
+    }
+    if term_status not in mapping:
+        return None
+
+    label, message, color = mapping[term_status]
+
+    # Encode like the example: keep underscores/parentheses; ensure ":" becomes %3A.
+    label_enc = quote(label, safe="_-()")
+    message_enc = quote(message, safe="_-()")
+    badge_url = f"https://img.shields.io/badge/{label_enc}-{message_enc}-{color}"
+
+    alt_text = f"{label} {message}".replace("_", " ")
+    return badge_url, alt_text
 
 
 # ---------------------------
@@ -537,22 +582,33 @@ def restructure_classes_section(
 
     for pkg in packages_in_order:
         h3 = soup.new_tag("h3", id=pkg.heading_id)
-        strong = soup.new_tag("strong")
-        strong.append(NavigableString(pkg.label if pkg.key.casefold() == "unassigned" else f"Package: {pkg.label}"))
-        h3.append(strong)
+        pkg_heading_text = pkg.label if pkg.key.casefold() == "unassigned" else f"Package: {pkg.label}"
+        h3.append(NavigableString(pkg_heading_text))
         classes_section.append(h3)
+
 
         if pkg.term_status:
             mtxt = maturity_text(pkg.term_status)
             if mtxt:
-                p = soup.new_tag("p")
-                p["class"] = "maturity"
-                p.append(NavigableString(mtxt))
-                p.append(NavigableString(" — "))
-                a_docs = soup.new_tag("a", href=MATURITY_DOCS_URL)
-                a_docs.append(NavigableString("Docs"))
-                p.append(a_docs)
-                classes_section.append(p)
+                badge = maturity_badge(pkg.term_status)
+                if badge:
+                    badge_url, alt_text = badge
+
+                    p = soup.new_tag("p")
+                    p["class"] = "maturity"
+
+                    a = soup.new_tag("a", href=MATURITY_DOCS_URL)
+                    img = soup.new_tag("img", src=badge_url, alt=alt_text)
+                    # optional: keep badge aligned nicely
+                    img["style"] = "vertical-align: middle;"
+
+                    a.append(img)
+                    p.append(a)
+                    classes_section.append(p)
+                else:
+                    logging.warning(
+                        f"Unknown vs:term_status value; omitting maturity badge: {pkg.label} -> {pkg.term_status}"
+                    )
             else:
                 logging.warning(
                     f"Unknown vs:term_status value; omitting maturity line: {pkg.label} -> {pkg.term_status}"
@@ -742,6 +798,9 @@ def postprocess_html(
         raw = fix_internal_links_raw(raw)
 
     soup = BeautifulSoup(raw, "html.parser")
+    n = remove_is_defined_by_rows(soup)
+    if n:
+        logging.info(f"Removed {n} 'Is Defined By' rows from HTML.")
 
     if do_logo:
         insert_logo(soup, logo_url=logo_url, alt_text=logo_alt)
