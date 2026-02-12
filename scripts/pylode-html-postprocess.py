@@ -49,6 +49,7 @@ MATURITY_DOCS_URL = "https://health-ri.github.io/semantic-interoperability/metho
 # HTML helpers (legacy)
 # ---------------------------
 
+
 def fix_internal_links_raw(html: str) -> str:
     """Preserve legacy behavior: only patch file://.../specification.html#Anchor -> #Anchor."""
     return _INTERNAL_LINK_FIX_RE.sub(r'href="#\1"', html)
@@ -140,6 +141,7 @@ def sort_toc_nested_lists(soup: BeautifulSoup) -> None:
 # Generic helpers
 # ---------------------------
 
+
 def slug_id(s: str) -> str:
     s = s.strip().casefold()
     s = re.sub(r"[^a-z0-9]+", "-", s)
@@ -227,6 +229,7 @@ def upsert_table_row(
 # RDF helpers
 # ---------------------------
 
+
 def parse_ttl(ttl_path: Path) -> rdflib.Graph:
     g = rdflib.Graph()
     g.parse(ttl_path, format="turtle")
@@ -235,10 +238,10 @@ def parse_ttl(ttl_path: Path) -> rdflib.Graph:
 
 def build_rdf_indexes(g: rdflib.Graph) -> Tuple[
     Dict[str, List[str]],  # class_iri -> alt labels
-    Dict[str, str],        # class_iri -> package_iri
-    Dict[str, str],        # package_iri -> rdfs:label
-    Dict[str, str],        # package_iri -> vs:term_status
-    Set[str],              # package node IRIs present in TTL
+    Dict[str, str],  # class_iri -> package_iri
+    Dict[str, str],  # package_iri -> rdfs:label
+    Dict[str, str],  # package_iri -> vs:term_status
+    Set[str],  # package node IRIs present in TTL
 ]:
     class_to_alt: DefaultDict[str, List[str]] = defaultdict(list)
     for s, o in g.subject_objects(SKOS.altLabel):
@@ -281,7 +284,7 @@ def package_path_segment(package_iri: str) -> Optional[str]:
     idx = package_iri.find(marker)
     if idx < 0:
         return None
-    tail = package_iri[idx + len(marker):]
+    tail = package_iri[idx + len(marker) :]
     if not tail:
         return None
     return tail.split("/")[0]
@@ -312,6 +315,7 @@ def maturity_text(term_status: str) -> Optional[str]:
 # ---------------------------
 # Classes restructuring
 # ---------------------------
+
 
 @dataclass(frozen=True)
 class ClassEntry:
@@ -389,7 +393,14 @@ def compute_groups_and_meta(
             key = "Unassigned"
             if key not in meta:
                 heading_id = _ensure_unique_id(existing_ids, "pkg-unassigned")
-                meta[key] = PackageMeta(key=key, segment=None, label="Unassigned", heading_id=heading_id, term_status=None, resolved_in_ttl=True)
+                meta[key] = PackageMeta(
+                    key=key,
+                    segment=None,
+                    label="Unassigned",
+                    heading_id=heading_id,
+                    term_status=None,
+                    resolved_in_ttl=True,
+                )
             groups[key].append(e)
             continue
 
@@ -399,7 +410,14 @@ def compute_groups_and_meta(
             key = "Unassigned"
             if key not in meta:
                 heading_id = _ensure_unique_id(existing_ids, "pkg-unassigned")
-                meta[key] = PackageMeta(key=key, segment=None, label="Unassigned", heading_id=heading_id, term_status=None, resolved_in_ttl=True)
+                meta[key] = PackageMeta(
+                    key=key,
+                    segment=None,
+                    label="Unassigned",
+                    heading_id=heading_id,
+                    term_status=None,
+                    resolved_in_ttl=True,
+                )
             groups[key].append(e)
             continue
 
@@ -416,7 +434,9 @@ def compute_groups_and_meta(
             term_status = pkg_to_status.get(top_pkg_iri)
             resolved = True
         else:
-            logging.warning(f"Package not present in TTL; using segment label and omitting maturity: {pkg_iri} (segment={segment})")
+            logging.warning(
+                f"Package not present in TTL; using segment label and omitting maturity: {pkg_iri} (segment={segment})"
+            )
             label = segment
             term_status = None
             resolved = False
@@ -424,7 +444,14 @@ def compute_groups_and_meta(
         if key not in meta:
 
             heading_id = _ensure_unique_id(existing_ids, f"pkg-{slug_id(segment)}")
-            meta[key] = PackageMeta(key=key, segment=segment, label=label, heading_id=heading_id, term_status=term_status, resolved_in_ttl=resolved)
+            meta[key] = PackageMeta(
+                key=key,
+                segment=segment,
+                label=label,
+                heading_id=heading_id,
+                term_status=term_status,
+                resolved_in_ttl=resolved,
+            )
 
         groups[key].append(e)
 
@@ -503,13 +530,16 @@ def restructure_classes_section(
     )
 
     pkg_keys = list(groups.keys())
-    pkg_keys.sort(key=lambda k: (k.casefold() == "unassigned", meta[k].label.casefold(), (meta[k].segment or "").casefold()))
+    pkg_keys.sort(
+        key=lambda k: (k.casefold() == "unassigned", meta[k].label.casefold(), (meta[k].segment or "").casefold())
+    )
     packages_in_order: List[PackageMeta] = [meta[k] for k in pkg_keys]
 
     for pkg in packages_in_order:
         h3 = soup.new_tag("h3", id=pkg.heading_id)
-        pkg_heading_text = pkg.label if pkg.key.casefold() == "unassigned" else f"Package: {pkg.label}"
-        h3.append(NavigableString(pkg_heading_text))
+        strong = soup.new_tag("strong")
+        strong.append(NavigableString(pkg.label if pkg.key.casefold() == "unassigned" else f"Package: {pkg.label}"))
+        h3.append(strong)
         classes_section.append(h3)
 
         if pkg.term_status:
@@ -524,7 +554,9 @@ def restructure_classes_section(
                 p.append(a_docs)
                 classes_section.append(p)
             else:
-                logging.warning(f"Unknown vs:term_status value; omitting maturity line: {pkg.label} -> {pkg.term_status}")
+                logging.warning(
+                    f"Unknown vs:term_status value; omitting maturity line: {pkg.label} -> {pkg.term_status}"
+                )
         else:
             if pkg.resolved_in_ttl:
                 logging.warning(f"Missing vs:term_status for package; omitting maturity line: {pkg.label}")
@@ -558,7 +590,6 @@ def _ensure_synonyms_header_link(soup: BeautifulSoup, th: Tag) -> None:
 
 
 def add_synonyms(
-
     soup: BeautifulSoup,
     classes_section: Tag,
     *,
@@ -777,7 +808,9 @@ def main() -> int:
     ap.add_argument("--logo-url", default="../assets/images/health-ri-logo-blue.png", help="Logo URL to insert.")
     ap.add_argument("--logo-alt", default="Health-RI Logo", help="Logo alt text.")
     ap.add_argument("--no-toc-css", action="store_true", help="Disable responsive TOC CSS injection.")
-    ap.add_argument("--no-classes-restructure", action="store_true", help="Disable package grouping / ToC rewrite for Classes.")
+    ap.add_argument(
+        "--no-classes-restructure", action="store_true", help="Disable package grouping / ToC rewrite for Classes."
+    )
     ap.add_argument("--no-synonyms", action="store_true", help="Disable inserting/updating Synonyms rows.")
 
     args = ap.parse_args()
