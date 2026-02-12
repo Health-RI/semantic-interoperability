@@ -8,6 +8,31 @@ from rdflib.namespace import XSD, DCTERMS, OWL
 
 logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
+def move_ontology_block_to_top(ttl_text: str, ontology_iri: str) -> str:
+    # Find the *ontology* subject block (avoid earlier occurrences where the IRI appears as an object).
+    start = ttl_text.find(f"<{ontology_iri}> a owl:Ontology")
+    if start == -1:
+        return ttl_text
+
+    # Turtle blocks in your file are separated by a blank line.
+    end = ttl_text.find("\n\n", start)
+    if end == -1:
+        end = len(ttl_text)
+    else:
+        end += 2  # keep the blank line separator
+
+    block = ttl_text[start:end].strip() + "\n\n"
+    rest = (ttl_text[:start] + ttl_text[end:])
+
+    # Keep @prefix/@base lines at the very top.
+    header_re = re.compile(r"(?s)^(?:@prefix[^\n]*\n|@base[^\n]*\n)+\n")
+    hm = header_re.match(rest)
+    if hm:
+        header = hm.group(0)
+        body = rest[len(header):].lstrip()
+        return header + block + body
+
+    return block + rest.lstrip()
 
 def get_latest_ttl_file(directory):
     """
@@ -76,6 +101,7 @@ def bind_common_prefixes(graph: Graph) -> None:
     graph.bind("gufo", "http://purl.org/nemo/gufo#")
     graph.bind("hrio", "https://w3id.org/health-ri/ontology#")
     graph.bind("dct", DCTERMS)
+    graph.bind("mod", "https://w3id.org/mod#")
 
 
 def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
@@ -95,6 +121,8 @@ def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
     g_b.parse(b_path, format="turtle")
 
     g_a += g_b
+    for prefix, ns in g_b.namespace_manager.namespaces():
+        g_a.bind(prefix, ns, override=False)
 
     today = date.today().isoformat()
 
@@ -111,7 +139,9 @@ def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
 
     bind_common_prefixes(g_a)
 
-    g_a.serialize(destination=latest_a, format="turtle")
+    ttl_text = g_a.serialize(format="turtle")
+    ttl_text = move_ontology_block_to_top(ttl_text, "https://w3id.org/health-ri/ontology")
+    latest_a.write_text(ttl_text, encoding="utf-8")
     logging.info(f"Metadata successfully merged. File saved to: {latest_a.resolve()}")
     logging.info(
         f"Added dct:modified = {today}, owl:versionInfo = {version_str}, owl:versionIRI = {version_iri}, dct:conformsTo = {conforms_to_vpp}, dct:conformsTo = {conforms_to_json}"
