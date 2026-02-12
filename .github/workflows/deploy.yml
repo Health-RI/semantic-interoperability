@@ -39,13 +39,13 @@ jobs:
       - name: Clean unwanted files
         run: python scripts/clean-unwanted-files.py
 
-      # --- Ensure ontology metadata is present/updated (gUFO file) ---
-      - name: Ensure metadata is added to gUFO file
-        run: python scripts/insert-metadata.py
-
       # --- OWL post-processing (latest versioned pair): labels, synonyms, packages, stages, isDefinedBy, comment cleanup ---
       - name: OWL post-processing (labels, packages, maturity)
         run: python scripts/owl-postprocess.py
+
+      # --- Ensure ontology metadata is present/updated (gUFO file) ---
+      - name: Ensure metadata is added to gUFO file
+        run: python scripts/insert-metadata.py
 
       # --- Promote newest versioned files into 'latest' folder ---
       - name: Move newest files from versioned to latest

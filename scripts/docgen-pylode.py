@@ -1,353 +1,265 @@
-import re
-import subprocess
+#!/usr/bin/env python3
+"""
+docgen-pylode.py
+
+Orchestrator for generating and post-processing PyLODE HTML specifications.
+
+What this script does
+- Detects the latest versioned TTL for:
+  - Ontology: ontologies/versioned/health-ri-ontology-vX.Y.Z.ttl
+  - Vocabulary: vocabulary/versioned/health-ri-vocabulary-vX.Y.Z.ttl
+- Preserves historical artifacts:
+  - If the versioned HTML already exists, it is NOT rewritten.
+  - docs/ and latest/ outputs are (re)built from the versioned HTML and post-processed.
+- If the versioned HTML does not exist:
+  - Generate raw HTML via pylode-html-generate.py
+  - Post-process via pylode-html-postprocess.py
+  - Write docs/ output, then copy it to versioned/ and latest/
+
+Design
+- All HTML transforms live in pylode-html-postprocess.py.
+- This script only handles versioning decisions, calling scripts, and copying outputs.
+
+Exit codes
+- 0: success
+- 1: one or more specs failed
+- 2: invalid inputs / missing scripts
+"""
+
+from __future__ import annotations
+
 import logging
-from pathlib import Path
-from packaging import version
-from bs4 import BeautifulSoup
+import os
+import re
 import shutil
+import subprocess
+import sys
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Callable, List, Optional, Tuple
+
+from packaging import version
 
 
-def get_latest_ontology_ttl_file(directory: Path):
-    """
-    Finds the latest versioned TTL file in the given directory based on semantic versioning
-    embedded in the filename (e.g., 'health-ri-ontology-v1.2.3.ttl').
+# ---------------------------
+# Version discovery
+# ---------------------------
 
-    Args:
-        directory (Path): Directory containing versioned TTL files.
+def _find_latest_versioned_ttl(
+    directory: Path,
+    *,
+    filename_regex: str,
+    glob_pattern: str,
+) -> Tuple[Optional[Path], Optional[version.Version]]:
+    latest_file: Optional[Path] = None
+    latest_version: Optional[version.Version] = None
 
-    Returns:
-        tuple[Path | None, Version | None]: The path to the latest TTL file and its parsed version,
-        or (None, None) if no valid files are found.
-    """
-    pattern = r"health-ri-ontology-v(\d+\.\d+\.\d+)\.ttl"
-    latest_file = None
-    latest_version = None
+    rx = re.compile(filename_regex)
 
-    for file in directory.glob("health-ri-ontology-v*.ttl"):
-        match = re.match(pattern, file.name)
-        if match:
-            file_version = version.parse(match.group(1))
-            if latest_version is None or file_version > latest_version:
-                latest_version = file_version
-                latest_file = file
-
-    return latest_file, latest_version
-
-
-def get_latest_vocabulary_ttl_file(directory: Path):
-    """
-    Finds the latest versioned TTL file for the vocabulary based on semantic versioning
-    embedded in the filename (e.g., 'health-ri-vocabulary-v1.2.3.ttl').
-    """
-    pattern = r"health-ri-vocabulary-v(\d+\.\d+\.\d+)\.ttl"
-    latest_file = None
-    latest_version = None
-
-    for file in directory.glob("health-ri-vocabulary-v*.ttl"):
-        match = re.match(pattern, file.name)
-        if match:
-            file_version = version.parse(match.group(1))
-            if latest_version is None or file_version > latest_version:
-                latest_version = file_version
-                latest_file = file
+    for file in directory.glob(glob_pattern):
+        m = rx.fullmatch(file.name)
+        if not m:
+            continue
+        file_version = version.parse(m.group(1))
+        if latest_version is None or file_version > latest_version:
+            latest_version = file_version
+            latest_file = file
 
     return latest_file, latest_version
 
 
-def fix_internal_links_in_html(file_path: Path):
-    """
-    Fixes PyLODE-generated HTML links that use absolute `file://` paths, converting them
-    to relative fragment identifiers (e.g., '#AnchorName').
-
-    Args:
-        file_path (Path): Path to the HTML file to patch.
-    """
-    try:
-        html = file_path.read_text(encoding="utf-8")
-        # Replace href="file:///.../specification.html#SomeAnchor" → href="#SomeAnchor"
-        fixed_html = re.sub(r'href="file://[^"]*/specification\.html#([^"]+)"', r'href="#\1"', html)
-        file_path.write_text(fixed_html, encoding="utf-8")
-        logging.info("Patched internal file:// links to use relative anchors (#...).")
-    except Exception as e:
-        logging.warning(f"Could not patch internal links: {e}")
+def get_latest_ontology_ttl_file(directory: Path) -> Tuple[Optional[Path], Optional[version.Version]]:
+    return _find_latest_versioned_ttl(
+        directory,
+        filename_regex=r"health-ri-ontology-v(\d+\.\d+\.\d+)\.ttl",
+        glob_pattern="health-ri-ontology-v*.ttl",
+    )
 
 
-def sort_toc_sections_in_html(file_path: Path, section_ids=("classes", "annotationproperties")):
-    """
-    Sorts nested Table of Contents (ToC) lists alphabetically.
-
-    Notes:
-    - Keeps the top-level ToC groups in their original order.
-    - Sorts each nested group (e.g., Classes, Object properties, Data properties, etc.)
-      alphabetically by the visible label.
-    - The `section_ids` parameter is kept for backward compatibility but is not used.
-    """
-    try:
-        html = file_path.read_text(encoding="utf-8")
-        soup = BeautifulSoup(html, "html.parser")
-
-        toc = soup.find(id="toc")
-        if not toc:
-            logging.info("No #toc found; nothing to sort.")
-            return
-
-        def _label_for_li(li) -> str:
-            a = li.find("a")
-            if a and a.get_text(strip=True):
-                return a.get_text(strip=True)
-            return li.get_text(" ", strip=True)
-
-        changed = False
-
-        # Sort nested TOC lists; pyLODE commonly uses ul.second / ul.third
-        for ul in toc.select("ul.second, ul.third"):
-            items = ul.find_all("li", recursive=False)
-            if len(items) < 2:
-                continue
-
-            indexed_items = list(enumerate(items))
-            indexed_items_sorted = sorted(
-                indexed_items,
-                key=lambda pair: (_label_for_li(pair[1]).casefold(), pair[0]),  # stable tie-breaker
-            )
-
-            if [li for _, li in indexed_items_sorted] != items:
-                ul.clear()
-                for _, li in indexed_items_sorted:
-                    ul.append(li)
-                changed = True
-
-        if changed:
-            file_path.write_text(str(soup), encoding="utf-8")
-            logging.info("Sorted nested Table of Contents entries alphabetically.")
-        else:
-            logging.info("ToC already sorted; no changes applied.")
-    except Exception as e:
-        logging.warning(f"Could not sort ToC sections: {e}")
+def get_latest_vocabulary_ttl_file(directory: Path) -> Tuple[Optional[Path], Optional[version.Version]]:
+    return _find_latest_versioned_ttl(
+        directory,
+        filename_regex=r"health-ri-vocabulary-v(\d+\.\d+\.\d+)\.ttl",
+        glob_pattern="health-ri-vocabulary-v*.ttl",
+    )
 
 
-def insert_logo_in_html(
-    file_path: Path,
-    logo_url="../assets/images/health-ri-logo-blue.png",
-    alt_text="Health-RI Logo",
-):
-    """
-    Inserts a logo image at the top of the HTML document's <body> section. The logo is inserted before any existing body content.
+# ---------------------------
+# Orchestration
+# ---------------------------
 
-    Args:
-        file_path (Path): Path to the HTML file.
-        logo_url (str): Relative URL of the logo image to embed.
-        alt_text (str): Alternative text for the logo image.
-    """
-    try:
-        html = file_path.read_text(encoding="utf-8")
-        soup = BeautifulSoup(html, "html.parser")
+@dataclass(frozen=True)
+class SpecConfig:
+    name: str  # for logs
+    ttl_dir: Path
+    ttl_finder: Callable[[Path], Tuple[Optional[Path], Optional[version.Version]]]
 
-        # Find the body and insert logo at the top
-        body = soup.body
-        if body:
-            img_tag = soup.new_tag(
-                "img",
-                src=logo_url,
-                alt=alt_text,
-                style="max-height: 80px; margin-bottom: 1em;",
-            )
-            body.insert(0, img_tag)
-            file_path.write_text(str(soup), encoding="utf-8")
-            logging.info("Inserted logo at the top of the HTML.")
-        else:
-            logging.warning("No <body> tag found. Logo not inserted.")
-    except Exception as e:
-        logging.warning(f"Could not insert logo: {e}")
+    docs_output: Path
+    latest_output: Path
+    versioned_output_dir: Path
 
-def apply_responsive_toc_split_css(
-    file_path: Path,
-    min_toc_px: int = 280,
-    toc_vw: int = 20,
-    max_toc_px: int = 420,
-):
-    """
-    Inject a CSS override for PyLODE's fixed right-hand TOC layout.
+    raw_output_dir: Path
 
-    Why:
-    - PyLODE sets #toc { position: fixed; width: 180px; }
-    - and #content { width: calc(100% - 150px); }
-    So table/td-based logic won't work; we override those rules via CSS.
-    """
-    try:
-        html = file_path.read_text(encoding="utf-8")
-        soup = BeautifulSoup(html, "html.parser")
-
-        head = soup.head
-        if not head:
-            logging.info("No <head> found; cannot inject CSS override.")
-            return
-
-        clamp = f"clamp({int(min_toc_px)}px, {int(toc_vw)}vw, {int(max_toc_px)}px)"
-        css = f"""
-/* Health-RI override: responsive toc/content split */
-#toc {{
-  width: {clamp} !important;
-  box-sizing: border-box !important;
-}}
-#content {{
-  margin-right: {clamp} !important;
-  width: auto !important;
-}}
-""".strip()
-
-        style_id = "healthri-toc-split-override"
-        style_tag = soup.find("style", attrs={"id": style_id})
-        if style_tag is None:
-            style_tag = soup.new_tag("style", id=style_id)
-            head.append(style_tag)
-
-        # Replace contents (idempotent)
-        style_tag.string = "\n" + css + "\n"
-
-        file_path.write_text(str(soup), encoding="utf-8")
-        logging.info(f"Injected responsive TOC/content split CSS: {clamp}")
-    except Exception as e:
-        logging.warning(f"Could not inject responsive TOC/content split CSS: {e}")
+    # Extra postprocess flags, e.g. ["--no-classes-restructure"]
+    postprocess_extra_args: List[str] = field(default_factory=list)
 
 
-def main():
-    """
-    Main execution function. Generates the HTML specification using PyLODE from the
-    latest versioned TTL file, applies post-processing (link fixing, ToC sorting, logo insertion),
-    and saves the result to:
+def _run(cmd: List[str]) -> None:
+    logging.info("Running: %s", " ".join(cmd))
+    subprocess.run(cmd, check=True)
 
-    - docs/ontology/specification-ontology.html
-    - ontologies/latest/documentations/specification.html
-    - ontologies/versioned/documentations/specification-v<version>.html
 
-    It will only execute PyLODE if the versioned output for the detected version
-    does not already exist. Otherwise, it will skip generation and (idempotently)
-    repair missing "latest" and "docs" copies from the versioned file.
+def _ensure_parent(path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
 
-    IMPORTANT (no-regression behavior):
-    - When reusing an existing versioned HTML, we apply link fixing + TOC sorting ONLY to the
-      docs/latest copies (we do NOT rewrite the versioned artifact).
-    """
+
+def _orchestrate_one_spec(
+    cfg: SpecConfig,
+    *,
+    generate_script: Path,
+    postprocess_script: Path,
+    pylode_cmd: str,
+) -> bool:
+    cfg.ttl_dir.mkdir(parents=True, exist_ok=True)
+    cfg.versioned_output_dir.mkdir(parents=True, exist_ok=True)
+    cfg.raw_output_dir.mkdir(parents=True, exist_ok=True)
+    _ensure_parent(cfg.docs_output)
+    _ensure_parent(cfg.latest_output)
+
+    latest_ttl, latest_ver = cfg.ttl_finder(cfg.ttl_dir)
+    if not latest_ttl or latest_ver is None:
+        logging.warning("No valid TTL files found for %s in: %s (skipping).", cfg.name, cfg.ttl_dir)
+        return True
+
+    ver_str = str(latest_ver)
+    versioned_output = cfg.versioned_output_dir / f"specification-v{ver_str}.html"
+
+    # ---------------------------
+    # Case A: versioned HTML exists -> preserve it, rebuild docs/latest and post-process those copies only
+    # ---------------------------
+    if versioned_output.exists():
+        shutil.copyfile(versioned_output, cfg.docs_output)
+
+        _run(
+            [
+                sys.executable,
+                str(postprocess_script),
+                "--html-in",
+                str(cfg.docs_output),
+                "--ttl",
+                str(latest_ttl),
+                *cfg.postprocess_extra_args,
+            ]
+        )
+
+        shutil.copyfile(cfg.docs_output, cfg.latest_output)
+
+        logging.info(
+            "%s specification for v%s already exists (%s). Synced docs/latest from versioned and post-processed docs/latest only.",
+            cfg.name,
+            ver_str,
+            versioned_output,
+        )
+        return True
+
+    # ---------------------------
+    # Case B: versioned HTML missing -> generate raw + postprocess into docs, then copy docs -> versioned + latest
+    # ---------------------------
+    raw_html = cfg.raw_output_dir / f"{cfg.name.casefold()}-v{ver_str}-raw.html"
+
+    _run(
+        [
+            sys.executable,
+            str(generate_script),
+            "--ttl",
+            str(latest_ttl),
+            "--out",
+            str(raw_html),
+            "--overwrite",
+            "--pylode-cmd",
+            pylode_cmd,
+        ]
+    )
+
+    _run(
+        [
+            sys.executable,
+            str(postprocess_script),
+            "--html-in",
+            str(raw_html),
+            "--ttl",
+            str(latest_ttl),
+            "--html-out",
+            str(cfg.docs_output),
+            *cfg.postprocess_extra_args,
+        ]
+    )
+
+    _ensure_parent(versioned_output)
+    shutil.copyfile(cfg.docs_output, versioned_output)
+    shutil.copyfile(cfg.docs_output, cfg.latest_output)
+
+    logging.info("%s specification generated and written to docs/latest/versioned for v%s.", cfg.name, ver_str)
+    return True
+
+
+def main() -> int:
     logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
-    # Define directories
     base_dir = Path(__file__).resolve().parent.parent
-    ttl_dir = base_dir / "ontologies" / "versioned"
-    output_file = base_dir / "docs/ontology/specification-ontology.html"
-    output_file.parent.mkdir(parents=True, exist_ok=True)
+    script_dir = Path(__file__).resolve().parent
 
-    latest_ttl, latest_version = get_latest_ontology_ttl_file(ttl_dir)
-    if not latest_ttl:
-        logging.warning("No valid TTL files found in 'ontologies/versioned/'. No specification will be produced.")
-        # Continue on to vocabulary below even if ontology is missing
-    else:
-        # Paths that depend on ontology version
-        version_str = str(latest_version)
-        versioned_output = base_dir / f"ontologies/versioned/documentations/specification-v{version_str}.html"
-        latest_output = base_dir / "ontologies/latest/documentations/specification.html"
-        latest_output.parent.mkdir(parents=True, exist_ok=True)
-        versioned_output.parent.mkdir(parents=True, exist_ok=True)
+    generate_script = script_dir / "pylode-html-generate.py"
+    postprocess_script = script_dir / "pylode-html-postprocess.py"
 
-        # --- Early-exit gate for ontology spec ---
-        if versioned_output.exists():
-            # Rebuild docs + latest from the canonical versioned file,
-            # then enforce fixes on docs and propagate to latest (do not rewrite versioned).
-            shutil.copyfile(versioned_output, output_file)
+    if not generate_script.exists():
+        logging.error("Missing generator script: %s", generate_script)
+        return 2
+    if not postprocess_script.exists():
+        logging.error("Missing post-processor script: %s", postprocess_script)
+        return 2
 
-            fix_internal_links_in_html(output_file)
-            sort_toc_sections_in_html(output_file)
-            apply_responsive_toc_split_css(output_file)
+    # Allow override in CI if needed
+    pylode_cmd = os.environ.get("PYLODE_CMD", "pylode")
 
-            shutil.copyfile(output_file, latest_output)
+    ok = True
 
-            logging.info(
-                f"Ontology specification for v{version_str} already exists "
-                f"({versioned_output}). Skipped regeneration; synced latest/docs (with enforced TOC sort)."
-            )
-        else:
-            # Run PyLODE only when the versioned file does not exist
-            logging.info(f"Generating specification from: {latest_ttl}")
-            try:
-                subprocess.run(["pylode", str(latest_ttl), "-o", str(output_file)], check=True)
-                logging.info(f"Specification generated at: {output_file}")
+    ok = _orchestrate_one_spec(
+        SpecConfig(
+            name="Ontology",
+            ttl_dir=base_dir / "ontologies" / "versioned",
+            ttl_finder=get_latest_ontology_ttl_file,
+            docs_output=base_dir / "docs" / "ontology" / "specification-ontology.html",
+            latest_output=base_dir / "ontologies" / "latest" / "documentations" / "specification.html",
+            versioned_output_dir=base_dir / "ontologies" / "versioned" / "documentations",
+            raw_output_dir=base_dir / "build" / "pylode" / "ontology",
+            postprocess_extra_args=[],
+        ),
+        generate_script=generate_script,
+        postprocess_script=postprocess_script,
+        pylode_cmd=pylode_cmd,
+    ) and ok
 
-                # Post-process the file to fix broken internal links
-                fix_internal_links_in_html(output_file)
-                sort_toc_sections_in_html(output_file)
-                insert_logo_in_html(output_file)
-                apply_responsive_toc_split_css(output_file)
+    # For the vocabulary spec, we keep legacy HTML tweaks but disable package-based Classes restructuring by default.
+    # This avoids failures in cases where the vocabulary HTML has no #classes section.
+    ok = _orchestrate_one_spec(
+        SpecConfig(
+            name="Vocabulary",
+            ttl_dir=base_dir / "vocabulary" / "versioned",
+            ttl_finder=get_latest_vocabulary_ttl_file,
+            docs_output=base_dir / "docs" / "method" / "specification-vocabulary.html",
+            latest_output=base_dir / "vocabulary" / "latest" / "documentations" / "specification.html",
+            versioned_output_dir=base_dir / "vocabulary" / "versioned" / "documentations",
+            raw_output_dir=base_dir / "build" / "pylode" / "vocabulary",
+            postprocess_extra_args=["--no-classes-restructure"],
+        ),
+        generate_script=generate_script,
+        postprocess_script=postprocess_script,
+        pylode_cmd=pylode_cmd,
+    ) and ok
 
-                # Save versioned + latest copies
-                shutil.copyfile(output_file, versioned_output)
-                logging.info(f"Copied versioned specification to: {versioned_output}")
-
-                shutil.copyfile(output_file, latest_output)
-                logging.info(f"Copied specification to: {latest_output}")
-
-            except subprocess.CalledProcessError as e:
-                logging.error(f"PyLODE generation failed: {e}")
-
-    # Generate specification for the Mapping Vocabulary ===
-    vocab_ttl_dir = base_dir / "vocabulary" / "versioned"
-    vocab_output_file = base_dir / "docs/method/specification-vocabulary.html"
-    vocab_output_file.parent.mkdir(parents=True, exist_ok=True)
-
-    vocab_ttl, vocab_version = get_latest_vocabulary_ttl_file(vocab_ttl_dir)
-    if not vocab_ttl:
-        logging.warning(
-            "No valid TTL files found in 'vocabulary/versioned/'. No vocabulary specification will be produced."
-        )
-    else:
-        vocab_version_str = str(vocab_version)
-        vocab_versioned_output = (
-            base_dir / f"vocabulary/versioned/documentations/specification-v{vocab_version_str}.html"
-        )
-        vocab_latest_output = base_dir / "vocabulary/latest/documentations/specification.html"
-        vocab_versioned_output.parent.mkdir(parents=True, exist_ok=True)
-        vocab_latest_output.parent.mkdir(parents=True, exist_ok=True)
-
-        # --- Early-exit gate for vocabulary spec ---
-        if vocab_versioned_output.exists():
-            # Rebuild docs + latest from the canonical versioned file,
-            # then enforce fixes on docs and propagate to latest (do not rewrite versioned).
-            shutil.copyfile(vocab_versioned_output, vocab_output_file)
-
-            fix_internal_links_in_html(vocab_output_file)
-            sort_toc_sections_in_html(vocab_output_file)
-            apply_responsive_toc_split_css(vocab_output_file)
-
-            shutil.copyfile(vocab_output_file, vocab_latest_output)
-
-            logging.info(
-                f"Vocabulary specification for v{vocab_version_str} already exists "
-                f"({vocab_versioned_output}). Skipped regeneration; synced latest/docs (with enforced TOC sort)."
-            )
-        else:
-            logging.info(f"Generating vocabulary specification from: {vocab_ttl}")
-            try:
-                subprocess.run(
-                    ["pylode", str(vocab_ttl), "-o", str(vocab_output_file)],
-                    check=True,
-                )
-                logging.info(f"Vocabulary specification generated at: {vocab_output_file}")
-
-                # Post-process the file
-                fix_internal_links_in_html(vocab_output_file)
-                sort_toc_sections_in_html(vocab_output_file)
-                insert_logo_in_html(vocab_output_file)
-                apply_responsive_toc_split_css(vocab_output_file)
-
-                # Save versioned + latest copies
-                shutil.copyfile(vocab_output_file, vocab_versioned_output)
-                logging.info(f"Copied versioned vocabulary specification to: {vocab_versioned_output}")
-
-                shutil.copyfile(vocab_output_file, vocab_latest_output)
-                logging.info(f"Copied vocabulary specification to: {vocab_latest_output}")
-
-            except subprocess.CalledProcessError as e:
-                logging.error(f"PyLODE generation for vocabulary failed: {e}")
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

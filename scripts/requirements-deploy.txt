@@ -1,7 +1,9 @@
+beautifulsoup4
+linkchecker
+lxml
 mkdocs
 mkdocs-material
 mkdocs-table-reader-plugin
 packaging
 pylode
-beautifulsoup4
-linkchecker
+rdflib
