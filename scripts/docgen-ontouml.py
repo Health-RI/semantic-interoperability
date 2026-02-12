@@ -5,6 +5,94 @@ import re
 import os
 import logging
 from urllib.parse import quote
+from rdflib import Graph, Namespace
+from rdflib.namespace import RDFS
+
+VS = Namespace("http://www.w3.org/2003/06/sw-vocab-status/ns#")
+MATURITY_DOCS_URL = "https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"
+BADGE_MARKER = "img.shields.io/badge/Maturity_level"
+
+def _normalize_label(label: str) -> str:
+    """Normalize labels for matching between TTL and OntoUML JSON."""
+    if not isinstance(label, str):
+        return str(label)
+    label = re.sub(r"\s+", " ", label).strip()
+    return label.casefold()
+
+def maturity_badge(term_status: str):
+    """Returns (badge_url, alt_text) for a given vs:term_status (same as pylode-html-postprocess.py)."""
+    mapping = {
+        "int": ("Maturity_level", "internal_work_(int):_stage_1_of_4", "ff0400"),
+        "irv": ("Maturity_level", "internal_review_(irv):_stage_2_of_4", "ffae00"),
+        "erv": ("Maturity_level", "external_review_(erv):_stage_3_of_4", "007bff"),
+        "pub": ("Maturity_level", "Published_(pub):_stage_4_of_4", "009e15"),
+    }
+    if term_status not in mapping:
+        return None, None
+
+    label, message, color = mapping[term_status]
+
+    # Encode like the HTML: keep underscores/parentheses; ensure ":" becomes %3A.
+    label_enc = quote(label, safe="_-()")
+    message_enc = quote(message, safe="_-()")
+    badge_url = f"https://img.shields.io/badge/{label_enc}-{message_enc}-{color}"
+
+    alt_text = f"{label} {message}".replace("_", " ")
+    return badge_url, alt_text
+
+def maturity_badge_markdown(term_status: str) -> str:
+    """Markdown for the maturity badge, linked to the maturity-level docs page."""
+    badge_url, alt_text = maturity_badge(term_status)
+    if not badge_url:
+        return ""
+    return f"[![{alt_text}]({badge_url})]({MATURITY_DOCS_URL})"
+
+def _find_ttl_for_version(ontologies_dir: Path, latest_dir: Path, version_str: str):
+    """Best-effort lookup of a TTL file matching the JSON version."""
+    candidates = [
+        ontologies_dir / f"health-ri-ontology-v{version_str}.ttl",
+        latest_dir / "health-ri-ontology.ttl",
+    ]
+    for p in candidates:
+        if p.exists():
+            return p
+
+    # Fallback: any TTL in versioned folder matching the version
+    for p in sorted(ontologies_dir.glob(f"health-ri-ontology-v{version_str}*.ttl")):
+        if p.exists():
+            return p
+    return None
+
+def load_top_level_package_status_by_label(ttl_path: Path):
+    """Extract vs:term_status for top-level #package/<segment> nodes, keyed by rdfs:label."""
+    g = Graph()
+    g.parse(ttl_path, format="turtle")
+
+    pkg_label = {}
+    pkg_status = {}
+
+    for s, o in g.subject_objects(RDFS.label):
+        s_str = str(s)
+        if "#package/" not in s_str:
+            continue
+        pkg_label[s_str] = str(o)
+
+    for s, o in g.subject_objects(VS.term_status):
+        s_str = str(s)
+        if "#package/" not in s_str:
+            continue
+        pkg_status[s_str] = str(o)
+
+    out = {}
+    for iri, label in pkg_label.items():
+        tail = iri.split("#package/", 1)[-1]
+        if "/" in tail:
+            continue  # not a top-level package
+        status = pkg_status.get(iri)
+        if status:
+            out[_normalize_label(label)] = status
+    return out
+
 
 
 def has_meaningful_content(pkg, diagrams_by_owner):
@@ -184,6 +272,7 @@ def generate_markdown(
     images_folder=None,
     image_path_prefix="assets/images",
     encode_image_path=False,
+    pkg_status_by_label=None,
 ):
     """
     Generates the complete Markdown documentation from the given OntoUML JSON data.
@@ -198,6 +287,8 @@ def generate_markdown(
     Returns:
         str: The full Markdown-formatted documentation.
     """
+
+    pkg_status_by_label = pkg_status_by_label or {}
 
     def process_package_with_prefix(pkg, diagrams_by_owner, images_folder, level=2):
         if not pkg.get("name") or not has_meaningful_content(pkg, diagrams_by_owner):
@@ -237,7 +328,14 @@ def generate_markdown(
         if not pkg.get("description") and not diagram_lines and not content_lines:
             return []
 
-        lines = [f"{heading_prefix} {name}", ""]
+        heading = f"{heading_prefix} {name}"
+        lines = [heading]
+        if level == 2:
+            term_status = pkg_status_by_label.get(_normalize_label(name))
+            badge_md = maturity_badge_markdown(term_status) if term_status else ""
+            if badge_md:
+                lines.append(badge_md)
+        lines.append("")
         if pkg.get("description"):
             lines.append(clean_text(pkg["description"]))
             lines.append("")
@@ -327,33 +425,54 @@ def main():
     latest_md_path = latest_docs_dir / "documentation.md"
     output_path_main = Path("docs/ontology/documentation.md")  # keep this path
 
+    # --- Package maturity (vs:term_status) badges (best-effort) ---
+    pkg_status_by_label = {}
+    ttl_path = _find_ttl_for_version(ontologies_dir, latest_dir, version_str)
+    if ttl_path:
+        try:
+            pkg_status_by_label = load_top_level_package_status_by_label(ttl_path)
+            logging.info(f"Loaded {len(pkg_status_by_label)} top-level package maturity statuses from: {ttl_path}")
+        except Exception as e:
+            logging.warning(f"Could not read maturity statuses from TTL ({ttl_path}): {e}")
+    else:
+        logging.warning("Could not find a TTL file to read maturity statuses; package badges will be omitted.")
+
+
     # --- Early exit gate: if this version is already documented, skip regeneration but always sync copies ---
+    # Backfill: if the versioned doc exists but predates maturity badges, regenerate once.
     if versioned_md_path.exists():
-        # Ensure parents exist (defensive)
-        output_path_main.parent.mkdir(parents=True, exist_ok=True)
-        latest_md_path.parent.mkdir(parents=True, exist_ok=True)
+        existing_versioned_text = versioned_md_path.read_text(encoding="utf-8")
+        if BADGE_MARKER in existing_versioned_text:
+            # Ensure parents exist (defensive)
+            output_path_main.parent.mkdir(parents=True, exist_ok=True)
+            latest_md_path.parent.mkdir(parents=True, exist_ok=True)
 
-        # 1) Always sync docs copy from canonical versioned file
-        versioned_text = versioned_md_path.read_text(encoding="utf-8")
-        output_path_main.write_text(versioned_text, encoding="utf-8")
-        logging.info(f"Synced docs copy from versioned: {output_path_main}")
+            # 1) Always sync docs copy from canonical versioned file
+            versioned_text = existing_versioned_text
+            output_path_main.write_text(versioned_text, encoding="utf-8")
+            logging.info(f"Synced docs copy from versioned: {output_path_main}")
 
-        # 2) Always refresh latest copy (needs ../images + encoding)
-        data = load_json(latest_json)
-        markdown_latest = generate_markdown(
-            data,
-            version_str,
-            images_folder,
-            image_path_prefix="../images",
-            encode_image_path=True,
-        )
-        latest_md_path.write_text(markdown_latest, encoding="utf-8")
-        logging.info(f"Refreshed latest documentation at: {latest_md_path}")
+            # 2) Always refresh latest copy (needs ../images + encoding)
+            data = load_json(latest_json)
+            markdown_latest = generate_markdown(
+                data,
+                version_str,
+                images_folder,
+                image_path_prefix="../images",
+                encode_image_path=True,
+                pkg_status_by_label=pkg_status_by_label,
+            )
+            latest_md_path.write_text(markdown_latest, encoding="utf-8")
+            logging.info(f"Refreshed latest documentation at: {latest_md_path}")
+
+            logging.info(
+                f"Documentation for v{version_str} already exists ({versioned_md_path}). Skipped regeneration; synced docs/latest."
+            )
+            return
 
         logging.info(
-            f"Documentation for v{version_str} already exists ({versioned_md_path}). Skipped regeneration; synced docs/latest."
+            f"Documentation for v{version_str} already exists ({versioned_md_path}) but is missing maturity badges; regenerating to backfill."
         )
-        return
 
     # ------------------------------------------------------------------------------
 
@@ -361,7 +480,7 @@ def main():
     data = load_json(latest_json)
 
     # 1. Main Markdown output (original path)
-    markdown_main = generate_markdown(data, version_str, images_folder)
+    markdown_main = generate_markdown(data, version_str, images_folder, pkg_status_by_label=pkg_status_by_label)
     output_path_main.write_text(markdown_main, encoding="utf-8")
     logging.info(f"Main documentation written to: {output_path_main}")
 
@@ -376,6 +495,7 @@ def main():
         images_folder,
         image_path_prefix="../images",
         encode_image_path=True,
+        pkg_status_by_label=pkg_status_by_label,
     )
     latest_md_path.write_text(markdown_latest, encoding="utf-8")
     logging.info(f"Latest documentation written to: {latest_md_path}")
