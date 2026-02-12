@@ -3,10 +3,17 @@ import logging
 from pathlib import Path
 from packaging import version
 from datetime import date
-from rdflib import Graph, Literal, URIRef
+from rdflib import Graph, Literal, URIRef, Namespace
 from rdflib.namespace import XSD, DCTERMS, OWL
 
 logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
+
+DCAT = Namespace("http://www.w3.org/ns/dcat#")
+
+# Option: if True, include only the latest patch for each (MAJOR, MINOR) line among prior versions.
+# Example: for 1.2.0, 1.2.1, 1.2.2 -> keep only 1.2.2.
+LATEST_PER_MINOR = True
+
 
 def move_ontology_block_to_top(ttl_text: str, ontology_iri: str) -> str:
     # Find the *ontology* subject block (avoid earlier occurrences where the IRI appears as an object).
@@ -33,6 +40,64 @@ def move_ontology_block_to_top(ttl_text: str, ontology_iri: str) -> str:
         return header + block + body
 
     return block + rest.lstrip()
+
+
+def get_previous_versions(directory: Path, current_version_str: str, latest_per_minor: bool = False) -> list[str]:
+    """
+    Returns versions found in directory that are strictly lower than current_version_str.
+
+    - If latest_per_minor is False: returns all prior versions (sorted ascending).
+    - If latest_per_minor is True: returns only the latest patch for each (MAJOR, MINOR) line
+      among prior versions (sorted ascending).
+
+    Assumes filename format: 'health-ri-ontology-v<MAJOR>.<MINOR>.<PATCH>.ttl'
+    """
+    pattern = r"^health-ri-ontology-v(\d+\.\d+\.\d+)\.ttl$"
+    current_v = version.parse(current_version_str)
+
+    prior: list[tuple[object, str]] = []
+    for f in Path(directory).glob("health-ri-ontology-v*.ttl"):
+        m = re.match(pattern, f.name)
+        if not m:
+            continue
+        v_str = m.group(1)
+        try:
+            v_obj = version.parse(v_str)
+        except version.InvalidVersion:
+            continue
+
+        if v_obj < current_v:
+            prior.append((v_obj, v_str))
+
+    if not latest_per_minor:
+        prior.sort(key=lambda x: x[0])
+        return [v_str for _, v_str in prior]
+
+    # Keep only the latest patch for each (major, minor) among prior versions
+    best_by_minor: dict[tuple[int, int], tuple[object, str]] = {}
+    for v_obj, v_str in prior:
+        release = getattr(v_obj, "releaseU", None)  # force miss? no; keep safe fallback below
+
+
+    best_by_minor = {}
+    for v_obj, v_str in prior:
+        release = getattr(v_obj, "release", None)
+        if not release or len(release) < 2:
+            continue
+        major, minor = int(release[0]), int(release[1])
+        key = (major, minor)
+        if key not in best_by_minor or v_obj > best_by_minor[key][0]:
+            best_by_minor[key] = (v_obj, v_str)
+
+    selected = list(best_by_minor.values())
+    selected.sort(key=lambda x: x[0])
+    return [v_str for _, v_str in selected]
+
+
+def make_ontology_version_iri(version_str: str) -> URIRef:
+    # Keep consistent with OWL.versionIRI in this script
+    return URIRef(f"https://w3id.org/health-ri/ontology/v{version_str}")
+
 
 def get_latest_ttl_file(directory):
     """
@@ -102,12 +167,14 @@ def bind_common_prefixes(graph: Graph) -> None:
     graph.bind("hrio", "https://w3id.org/health-ri/ontology#")
     graph.bind("dct", DCTERMS)
     graph.bind("mod", "https://w3id.org/mod#")
+    graph.bind("dcat", DCAT)
 
 
 def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
     """
     Merges TTL file B into the latest version of TTL file A and overwrites A.
-    Also adds dct:modified, owl:versionInfo, owl:versionIRI, and two dct:conformsTo triples.
+    Also adds dct:modified, owl:versionInfo, owl:versionIRI, two dct:conformsTo triples,
+    and dcat:hasVersion for prior versions found in the versioned folder.
 
     Args:
         latest_a (Path): Path to the latest TTL file A.
@@ -137,6 +204,15 @@ def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
     g_a.add((ontology_uri, DCTERMS.conformsTo, conforms_to_vpp))
     g_a.add((ontology_uri, DCTERMS.conformsTo, conforms_to_json))
 
+    # dcat:hasVersion: prior versions from the versioned folder
+    for o in list(g_a.objects(ontology_uri, DCAT.hasVersion)):
+        g_a.remove((ontology_uri, DCAT.hasVersion, o))
+
+    version_dir = latest_a.parent
+    prior_versions = get_previous_versions(version_dir, version_str, latest_per_minor=LATEST_PER_MINOR)
+    for prev_v in prior_versions:
+        g_a.add((ontology_uri, DCAT.hasVersion, make_ontology_version_iri(prev_v)))
+
     bind_common_prefixes(g_a)
 
     ttl_text = g_a.serialize(format="turtle")
@@ -144,7 +220,9 @@ def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
     latest_a.write_text(ttl_text, encoding="utf-8")
     logging.info(f"Metadata successfully merged. File saved to: {latest_a.resolve()}")
     logging.info(
-        f"Added dct:modified = {today}, owl:versionInfo = {version_str}, owl:versionIRI = {version_iri}, dct:conformsTo = {conforms_to_vpp}, dct:conformsTo = {conforms_to_json}"
+        f"Added dct:modified = {today}, owl:versionInfo = {version_str}, owl:versionIRI = {version_iri}, "
+        f"dct:conformsTo = {conforms_to_vpp}, dct:conformsTo = {conforms_to_json}, "
+        f"dcat:hasVersion count = {len(prior_versions)} (latest-per-minor={LATEST_PER_MINOR})"
     )
 
 
