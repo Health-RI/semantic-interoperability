@@ -1,24 +1,24 @@
 # Ontology Lifecycle and Validation Policy
 
-This document defines the per-package stages (`int`, `irv`, `erv`, `pub`), how transitions and reversions are recorded in Visual Paradigm, when and why reversions happen, and the mandatory policy for semantic modifications. It also specifies who validates at each stage, how reviews are initiated, and the expected review timelines. Version effects (Y++) are included where relevant.
+This document defines the stages (`int`, `irv`, `erv`, `pub`) used to track maturity for "domain packages" (i.e., packages whose introduction/removal triggers `X` in the adopted semantic versioning), how transitions and reversions are recorded in Visual Paradigm, when and why reversions happen, and the mandatory policy for semantic modifications. It also specifies who validates at each stage, how reviews are initiated, and the expected review timelines. Version effects (Y++) are included where relevant.
 
 ## Purpose & Scope
 
-Specifies stage governance for ontology packages: how stage states are tracked, transitioned, and reverted, and how those transitions are recorded. It also defines who performs validation and reviews, when they occur, and how version increments (Y++) are applied. Version impacts are acknowledged where stages drive them; see [Versioning Strategy](./ontology-versioning.md) for the full versioning logic. This policy applies to all modelers and reviewers involved in ontology development and maintenance.
+Specifies stage governance for "domain packages": how stage states are tracked, transitioned, and reverted, and how those transitions are recorded. Stage states (the stage tagged value) are tracked only for domain packages (i.e., packages whose introduction/removal triggers `X` in the adopted semantic versioning); supporting/non-domain packages do not carry a stage tagged value. It also defines who performs validation and reviews, when they occur, and how version increments (Y++) are applied. Version impacts are acknowledged where stages drive them; see [Versioning Strategy](./ontology-versioning.md) for the full versioning logic. This policy applies to all modelers and reviewers involved in domain-package development and maintenance.
 
 !!! info "Input sources at all stages"
     Input may arrive at any stage (`int`, `irv`, `erv`, `pub`) and from multiple sources. For example, external contributors (e.g., via GitHub Issues or community calls), the mappings team, domain experts, and other stakeholders. Such input is triaged within the current stage and it does not change the stage by itself. If accepted input entails semantic changes, apply the reversion and versioning rules in [Stage Reversions — Why and When](#stage-reversions--why-and-when) and [Policy for Semantic Modifications](#policy-for-semantic-modifications).
 
 ## Definitions & Glossary (Stages)
 
-Stages are tracked per package inside the Visual Paradigm project as tagged values on packages and displayed in documentation.
+Stages are tracked per domain packages inside the Visual Paradigm project as tagged values on packages and displayed in documentation.
 
 - `int` – internal work (draft modeling, layout, labels, notes).
 - `irv` – submitted for internal review.
 - `erv` – submitted for external review.
 - `pub` – external review window closed and package is published.
 
-**Rule.** Stage changes happen at package level (not diagram/class). Packages can move through stages independently, and multiple stage transitions may be combined into one release; the version still changes at most once per release following the priority X > Y > Z.
+**Rule.** Stage changes happen at package level (not diagram/class). Domain packages can move through stages independently, and multiple stage transitions may be combined into one release; the version still changes at most once per release following the priority X > Y > Z.
 
 **Version note.** A stage transition triggers Y++ and Z → 0 (see [Versioning Strategy](./ontology-versioning.md)).
 
@@ -132,7 +132,7 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
 
 <!-- Multiple pending TODOs -->
 - [ ] **Stage tagging & metadata present**
-    - [ ] Package has the correct stage tag (e.g., `irv`).
+    - [ ] For domain packages: package has the correct stage tag (e.g., `irv`).
     <!-- - [ ] Required package-level metadata (post-v1.0.0) is present: `introducedInVersion`, `lastChangedInVersion`, `lastPublishedInVersion`, `reviewedBy`. -->
 
 - [ ] **Public docs build (Health-RI Semantic Interoperability Initiative website)**

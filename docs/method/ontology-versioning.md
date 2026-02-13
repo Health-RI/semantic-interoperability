@@ -22,14 +22,14 @@ Defines how versions are assigned and incremented for the ontology/model release
 
 - Version format: `X.Y.Z`
     - `X` — Package index (`1, 2, 3, …`): increases when a new package (new domain scope) is introduced.
-    - `Y` — Stage increment (`0, 1, 2, …`): increases for every package stage change.
+    - `Y` — Stage increment (`0, 1, 2, …`): increases for every domain package stage change.
     - `Z` — Minor fixes (`0, 1, 2, …`): minor modifications that should not significantly impact the domain representation (layout, labeling, diagramming, minor corrections, etc.).
     - Examples: `3.0.0`, `3.7.15`, `4.0.1`.
 
-> Note on stages. Stages are tracked per package (see *Validation Strategy*). A stage transition causes `Y++` and resets `Z → 0`, per rules below.
+> Note on stages. Stages are tracked per domain packages (see *Validation Strategy*). A stage transition causes `Y++` and resets `Z → 0`, per rules below.
 
 !!! note "Published tags are rarely "round""
-    GitHub releases are created when the package is in `pub` stage, ocurring after stage transitions (`int → irv → erv → pub`). Stage transitions bump `Y`, so published versions are **unlikely** to be exactly `X.0.0` (e.g., `2.0.0`), and `Z` may be non-zero. Expect tags like `2.1.0` or `2.3.4`. "Round" versions may still occur because we version the ontology as a whole (not per package), while packages' independent state transitions influence the overall ontology version.
+    GitHub releases are created when the relevant domain package is in `pub` stage, occurring after stage transitions (`int → irv → erv → pub`). Stage transitions bump `Y`, so published versions are **unlikely** to be exactly `X.0.0` (e.g., `2.0.0`), and `Z` may be non-zero. Expect tags like `2.1.0` or `2.3.4`. "Round" versions may still occur because we version the ontology as a whole (not per package), while domain packages' independent state transitions influence the overall ontology version.
 
 ## Version Numbering & Semantics — Increment & Reset Rules
 
@@ -60,7 +60,7 @@ Defines how versions are assigned and incremented for the ontology/model release
 ### Conditions for increasing `Y`
 
 - Triggers:
-    - Any per-package stage transition: `int → irv`, `irv → erv`, `erv → pub`, or a recorded reversion (e.g., `irv → int`) via the package's stage tagged value.
+    - Any domain package stage transition: `int → irv`, `irv → erv`, `erv → pub`, or a recorded reversion (e.g., `irv → int`) via the  package's stage tagged value.
     - Any semantic change that alters model meaning within a package (e.g., adding/removing/retaxonomizing classes, retyping relations, changing multiplicities or constraints, revising authoritative definitions, introducing/removing key axioms).
         - Action: record `<current> → int` for the package (see *Validation Strategy*).
         - Result: `Y++` for that release; `Z → 0`.
