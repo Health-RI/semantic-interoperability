@@ -2,6 +2,7 @@
 
 ## 2026-02-13
 
+- **Health-RI Ontology** — Fixed: Released v1.6.1, removing incorrect metadata from distribution packages without changing term semantics.
 - **Index** — Changed: Reworked the homepage to emphasize semantic traceability, the semantic-hub mapping approach, and a 10-minute quick start.
 - **Method Overview** — Changed: Expanded the method overview with clearer definitions, rationale, and references for HRIO/HRIV-based semantic traceability.
 - **Frequently Asked Questions (FAQ)** — Changed: Added detailed guidance on HRIO/HRIV meaning mappings, including interpretation caveats (SKOS/OWL) and adoption considerations.
