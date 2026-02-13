@@ -9,8 +9,10 @@ This folder contains utility scripts used across the Health-RI Semantic Interope
 - [Python scripts](#python-scripts)
   - [`docgen-ontouml.py` — OntoUML JSON → Markdown docs](#docgen-ontoumlpy--ontouml-json--markdown-docs)
   - [`docgen-pylode.py` — TTL → HTML specification (PyLODE), with post-processing](#docgen-pylodepy--ttl--html-specification-pylode-with-post-processing)
+  - [`pylode-html-generate.py` — TTL → raw HTML specification (PyLODE)](#pylode-html-generatepy--ttl--raw-html-specification-pylode)
+  - [`pylode-html-postprocess.py` — Post-process PyLODE HTML (Health-RI tweaks + optional RDF-driven enhancements)](#pylode-html-postprocesspy--post-process-pylode-html-health-ri-tweaks--optional-rdf-driven-enhancements)
   - [`insert-metadata.py` — Merge release metadata into the latest ontology TTL](#insert-metadatapy--merge-release-metadata-into-the-latest-ontology-ttl)
-  - [`add-skos-labels.py` — Add SKOS prefLabel/altLabel from OntoUML JSON synonyms](#add-skos-labelspy--add-skos-preflabelaltlabel-from-ontouml-json-synonyms)
+  - [`owl-postprocess.py` — Post-process ontology TTL using the paired OntoUML JSON export](#owl-postprocesspy--post-process-ontology-ttl-using-the-paired-ontouml-json-export)
   - [`make-diff-ttl.py` — RDF diff graphs between two versions](#make-diff-ttlpy--rdf-diff-graphs-between-two-versions)
   - [`diff-ttl.py` — Convenience wrapper: metadata insertion + diff for last two versions](#diff-ttlpy--convenience-wrapper-metadata-insertion--diff-for-last-two-versions)
   - [`move-latest.py` — Populate `ontologies/latest/` from versioned artifacts](#move-latestpy--populate-ontologieslatest-from-versioned-artifacts)
@@ -59,39 +61,136 @@ Generates Markdown documentation from the latest versioned OntoUML JSON export.
 
 ### `docgen-pylode.py` — TTL → HTML specification (PyLODE), with post-processing
 
-Builds HTML specifications from the latest ontology TTL and the latest mapping vocabulary TTL using PyLODE, then patches the generated HTML.
+Orchestrates generating HTML specifications from the latest versioned TTLs (ontology + vocabulary), while preserving historical (versioned) HTML artifacts.
 
-- **Inputs (auto-detected):**
-  - Ontology: `ontologies/versioned/health-ri-ontology-vX.Y.Z.ttl`
-  - Vocabulary: `vocabulary/versioned/health-ri-vocabulary-vX.Y.Z.ttl`
-- **Outputs:**
-  - Ontology:
-    - `docs/ontology/specification-ontology.html`
-    - `ontologies/versioned/documentations/specification-vX.Y.Z.html`
-    - `ontologies/latest/documentations/specification.html`
-  - Vocabulary:
-    - `docs/method/specification-vocabulary.html`
-    - `vocabulary/versioned/documentations/specification-vX.Y.Z.html`
-    - `vocabulary/latest/documentations/specification.html`
+- **Inputs (auto-detected, highest semver):**
+  - Ontology TTL: `ontologies/versioned/health-ri-ontology-vX.Y.Z.ttl`
+  - Vocabulary TTL: `vocabulary/versioned/health-ri-vocabulary-vX.Y.Z.ttl`
+
+- **Outputs (per spec):**
+  - **Ontology**
+    - Docs: `docs/ontology/specification-ontology.html`
+    - Versioned: `ontologies/versioned/documentations/specification-vX.Y.Z.html`
+    - Latest: `ontologies/latest/documentations/specification.html`
+    - Raw intermediate: `build/pylode/ontology/ontology-vX.Y.Z-raw.html`
+  - **Vocabulary**
+    - Docs: `docs/method/specification-vocabulary.html`
+    - Versioned: `vocabulary/versioned/documentations/specification-vX.Y.Z.html`
+    - Latest: `vocabulary/latest/documentations/specification.html`
+    - Raw intermediate: `build/pylode/vocabulary/vocabulary-vX.Y.Z-raw.html`
+
 - **Key characteristics:**
-  - Only runs PyLODE if the versioned output for the detected version does **not** exist.
-    - If the versioned output exists, it simply copies it into `docs/` and `latest/` (no re-generation).
-  - Post-processing on freshly generated HTML:
-    - Rewrites broken internal `file://...specification.html#...` links to `#...`
-    - Sorts ToC entries for section IDs `classes` and `annotationproperties`
-    - Inserts a Health-RI logo at the top of `<body>` using `../assets/images/health-ri-logo-blue.png`
-- **Run:** `python scripts/docgen-pylode.py`
+  - Creates required output folders if missing.
+  - Uses `PYLODE_CMD` (environment variable) if set; otherwise defaults to `pylode`.
+  - Requires sibling scripts:
+    - `scripts/pylode-html-generate.py`
+    - `scripts/pylode-html-postprocess.py`
+    - If either is missing, exits with code `2`.
+  - **Preserves versioned HTML (historical artifacts):**
+    - If `.../specification-vX.Y.Z.html` already exists:
+      - Copies **versioned → docs**
+      - Runs post-processing **on the docs copy** (overwriting `docs/...html`)
+      - Copies the post-processed **docs → latest**
+      - The **versioned HTML is not modified**
+  - **Generates new artifacts only when needed:**
+    - If versioned HTML is missing:
+      - Generates **raw HTML** via `pylode-html-generate.py` (into `build/pylode/...`)
+      - Post-processes raw → **docs output** via `pylode-html-postprocess.py`
+      - Copies **docs → versioned** and **docs → latest**
+  - Vocabulary run disables package-based restructuring of the `#classes` section by default (`--no-classes-restructure`) to avoid failures when the generated HTML lacks `#classes`.
+
+- **Run:**
+  - `python scripts/docgen-pylode.py`
+
+- **Exit codes:**
+  - `0`: success
+  - `1`: one or more specs failed
+  - `2`: invalid inputs / missing scripts
+
+### `pylode-html-generate.py` — TTL → raw HTML specification (PyLODE)
+
+Minimal wrapper around PyLODE that turns a TTL file into a *raw* HTML specification. Intended to be called by an orchestrator that handles versioning/copying.
+
+- **Inputs (CLI):**
+  - `--ttl PATH` (required): input TTL file.
+  - `--out PATH` (required): output HTML path.
+  - `--pylode-cmd CMD` (optional, default `pylode`): PyLODE command to execute.
+  - `--overwrite` (optional): overwrite output if it already exists (default is to skip).
+
+- **Behavior:**
+  - Ensures the output parent directory exists.
+  - If `--out` already exists and `--overwrite` is **not** set, it logs a “skipping generation” message and exits successfully (`0`).
+  - Runs PyLODE as: `<pylode-cmd> <ttl> -o <out>` (via `subprocess.run(..., check=True)`).
+
+- **Run (examples):**
+  - `python scripts/pylode-html-generate.py --ttl ontologies/versioned/health-ri-ontology-vX.Y.Z.ttl --out build/pylode/ontology/ontology-vX.Y.Z-raw.html --overwrite`
+  - `python scripts/pylode-html-generate.py --ttl vocabulary/versioned/health-ri-vocabulary-vX.Y.Z.ttl --out build/pylode/vocabulary/vocabulary-vX.Y.Z-raw.html --overwrite`
+
+- **Exit codes:**
+  - `0`: success (including “skipped because output exists”)
+  - `1`: PyLODE failed (non-zero subprocess exit)
+  - `2`: input TTL not found
+
+### `pylode-html-postprocess.py` — Post-process PyLODE HTML (Health-RI tweaks + optional RDF-driven enhancements)
+
+Post-processes PyLODE-generated HTML using BeautifulSoup, and (optionally) a TTL file via RDFLib for ontology-aware enhancements. Designed to be idempotent.
+
+- **Inputs (CLI):**
+  - `--html-in PATH` (required): input HTML file.
+  - `--html-out PATH` (optional): output HTML file (default: overwrite `--html-in`).
+  - `--ttl PATH` (optional): TTL file used for RDF-driven edits (packages, maturity, synonyms).
+
+- **HTML tweaks (legacy + always-on cleanup):**
+  - Removes PyLODE “Is Defined By” table rows from entity tables.
+  - Fixes internal links of the form `file://.../specification.html#Anchor` → `#Anchor` (unless `--no-link-fix`).
+  - Sorts nested ToC lists (`ul.second` / `ul.third`) alphabetically (unless `--no-toc-sort`).
+  - Inserts the Health-RI logo at the top of `<body>` (unless `--no-logo`; idempotent by `src`).
+  - Injects a responsive TOC/content split CSS override (unless `--no-toc-css`; idempotent via `<style id="healthri-toc-split-override">`).
+
+- **Ontology-aware enhancements (require `--ttl`, and can be individually disabled):**
+  - **Restructure `#classes` by package** (disable with `--no-classes-restructure`):
+    - Reads `dcterms:isPartOf` triples (class → package IRI).
+    - If the package IRI contains `#package/<segment>/...`, it groups classes by the first `<segment>` and maps them to a *top-level package IRI* `...#package/<segment>`.
+    - Inserts package headings (`<h3 id="pkg-<segment>">Package: <rdfs:label></h3>`) and rebuilds the “Classes” ToC subtree accordingly.
+    - If a top-level package IRI exists in the TTL, `rdfs:label` is **mandatory** (missing/empty label triggers an error).
+    - If a package has `vs:term_status` (`int|irv|erv|pub`), inserts a Shields.io maturity badge (linked to the maturity docs URL) under the package heading.
+    - If `#classes` is missing and restructuring is enabled, this is treated as a structure error (exit code `2`).
+    - Post-check: raises an error if the class count changes after restructuring.
+  - **Insert/update a “Synonyms” row per class** from `skos:altLabel` (disable with `--no-synonyms`):
+    - Adds/updates a table row labeled “Synonyms” (with a predicate-style header link to `skos:altLabel`).
+    - Uses a comma-separated list of `skos:altLabel` values for that class IRI.
+    - Inserts after “Description” if present; otherwise after “IRI”.
+
+- **Validation:**
+  - Ensures no duplicate class anchor IDs in `#classes` (hard error if duplicates).
+  - Warns if any ToC `#anchor` target is missing in the HTML.
+
+- **Options (summary):**
+  - `--no-link-fix`, `--no-toc-sort`, `--no-logo`, `--logo-url ...`, `--logo-alt ...`, `--no-toc-css`,
+    `--no-classes-restructure`, `--no-synonyms`
+
+- **Run (examples):**
+  - `python scripts/pylode-html-postprocess.py --html-in build/pylode/ontology/ontology-vX.Y.Z-raw.html --ttl ontologies/versioned/health-ri-ontology-vX.Y.Z.ttl --html-out docs/ontology/specification-ontology.html`
+  - `python scripts/pylode-html-postprocess.py --html-in build/pylode/vocabulary/vocabulary-vX.Y.Z-raw.html --ttl vocabulary/versioned/health-ri-vocabulary-vX.Y.Z.ttl --no-classes-restructure --html-out docs/method/specification-vocabulary.html`
+
+- **Exit codes:**
+  - `0`: success
+  - `1`: generic failure (unexpected exception)
+  - `2`: input/structure error (e.g., missing input files, missing `#classes` when restructuring enabled, missing required package labels)
 
 ### `insert-metadata.py` — Merge release metadata into the latest ontology TTL
 
-Merges a Turtle metadata template into the latest versioned ontology TTL, and adds/updates release triples.
+Merges a Turtle metadata template into the latest versioned ontology TTL, and (on first merge) adds release/versioning triples.
 
 - **Inputs:**
   - Latest TTL (auto-detected): `ontologies/versioned/health-ri-ontology-vX.Y.Z.ttl`
   - Template: `scripts/utils/metadata-template.ttl`
 - **Behavior:**
-  - Guarded merge: merges the template **only if** the graph does *not* already contain
-    `?s dct:issued "2025-05-20"^^xsd:date` (hard-coded sentinel check).
+  - Auto-detects the latest TTL by parsing versions from filenames matching:
+    `health-ri-ontology-v<MAJOR>.<MINOR>.<PATCH>.ttl`.
+  - Guarded merge: performs the merge **only if** the graph does *not* already contain
+    `?s dct:issued "2025-05-20"^^xsd:date` (hard-coded sentinel check). If the sentinel is found, the script logs and exits without modifying the TTL.
+  - Merges the template TTL into the latest versioned TTL graph and carries over template namespaces/prefixes.
   - Adds (to `https://w3id.org/health-ri/ontology`):
     - `dct:modified` (today’s date, `xsd:date`)
     - `owl:versionInfo` (`X.Y.Z`)
@@ -99,24 +198,74 @@ Merges a Turtle metadata template into the latest versioned ontology TTL, and ad
     - `dct:conformsTo` links:
       - `https://w3id.org/health-ri/ontology/vX.Y.Z/vpp`
       - `https://w3id.org/health-ri/ontology/vX.Y.Z/json`
+    - `dcat:hasVersion` for **prior** versions found in `ontologies/versioned/` as:
+      - `https://w3id.org/health-ri/ontology/vA.B.C`
+      - By default, only the latest patch per `(MAJOR, MINOR)` line is kept (`LATEST_PER_MINOR = True`).
+  - Adds (to the current version IRI node `https://w3id.org/health-ri/ontology/vX.Y.Z`):
+    - `owl:priorVersion` pointing to the immediate predecessor version IRI (highest version strictly lower than `X.Y.Z` found in the versioned TTL folder).
+  - Output readability cleanup after RDFLib serialization:
+    - Moves the ontology subject block (`<https://w3id.org/health-ri/ontology> a owl:Ontology ...`) to the top (after `@prefix`/`@base`).
+    - Moves the current version subject block (`<.../vX.Y.Z> ...`) to appear immediately after the ontology block.
   - **Overwrites** the latest versioned TTL file in place.
 - **Run:** `python scripts/insert-metadata.py`
 
-### `add-skos-labels.py` — Add SKOS prefLabel/altLabel from OntoUML JSON synonyms
+### `owl-postprocess.py` — Post-process ontology TTL using the paired OntoUML JSON export
 
-Adds SKOS labeling properties to the latest versioned ontology TTL by using tagged values from the matching latest versioned OntoUML JSON export.
+Enriches the latest versioned ontology TTL using the latest *matching* versioned OntoUML JSON export (same `X.Y.Z`), adding labeling, package resources, membership, package maturity/status, and minor literal cleanup.
 
 - **Inputs (auto-detected):** latest *matching* semver pair from `ontologies/versioned/`:
   - `ontologies/versioned/health-ri-ontology-vX.Y.Z.ttl`
   - `ontologies/versioned/health-ri-ontology-vX.Y.Z.json`
 - **Behavior:**
-  - Keeps existing `rdfs:label` triples.
-  - For every `rdfs:label`, adds a mirror `skos:prefLabel` (same literal, including language tag).
-  - For JSON elements that contain a `synonyms` (or `synonym`) tagged value:
-    - Splits the string on commas and adds one `skos:altLabel` per item (trimmed; de-duplicated).
-    - Skips any `altLabel` that is identical to the resource’s `prefLabel` in the same language.
+  - **Locating inputs**
+    - Walks upward from the script location to find a repository directory that contains `ontologies/versioned/`.
+    - Selects the latest version `X.Y.Z` for which *both* `.ttl` and `.json` exist.
+  - **SKOS labels**
+    - Keeps existing `rdfs:label` triples.
+    - Mirrors every `rdfs:label` into `skos:prefLabel` (same literal, including language tag).
+    - Avoids creating multiple `skos:prefLabel` values for the same subject+language:
+      - If a `prefLabel` already exists for that language, the mirror is skipped (counted as a conflict).
+    - For JSON elements with tagged value `synonyms` (or `synonym`) under `propertyAssignments`:
+      - Splits the string on commas into multiple labels (trimmed; de-duplicated).
+      - Adds one `skos:altLabel` per label to the RDF subject whose `rdfs:label` string matches the JSON element’s `name`.
+      - Uses the same language tag as the matched `rdfs:label` literal.
+      - Does **not** add an `altLabel` identical to the resource’s `prefLabel` for the same language (SKOS disjointness).
+      - If the JSON `name` does not map uniquely to exactly one `rdfs:label`, the synonym record is skipped (tracked as “unmapped”).
+  - **Ontology ownership**
+    - Adds `rdfs:isDefinedBy <https://w3id.org/health-ri/ontology>` to every `hrio:` URI that appears anywhere in the graph (as subject, predicate, or object).
+  - **Packages (from JSON)**
+    - Creates/ensures a package resource for every JSON Package:
+      - IRI pattern: `https://w3id.org/health-ri/ontology#package/{PackagePath}`
+      - `{PackagePath}` is normalized per path segment to UpperCamelCase (alphanumeric tokenization) and joined with `/`.
+    - For each package resource, ensures:
+      - `rdf:type skos:Collection`
+      - `rdfs:label "..."@en` (if missing; defaults to the raw last segment of the JSON package path)
+      - `skos:prefLabel` is produced by the label-mirroring step (a second mirror pass is run after package labels are ensured).
+  - **Package membership (from JSON)**
+    - For each JSON Class nested in a JSON Package, adds:
+      - `dcterms:isPartOf <...#package/{PackagePath}>`
+      - Matches the RDF resource by `rdfs:label` string == JSON Class `name` (must map uniquely).
+    - Optional reconciliation (enabled by default via `RECONCILE_PACKAGE_MEMBERSHIP = True`):
+      - Removes other `dcterms:isPartOf` values in the `...#package/` namespace for the class, keeping only the JSON-derived membership.
+  - **Package maturity/status (from JSON, with inheritance)**
+    - For each JSON Package resource, writes:
+      - `vs:term_status "int|irv|erv|pub"`
+    - Stage values are inherited from the closest ancestor package that has `propertyAssignments.stage`.
+      - If no ancestor has `stage`, no `vs:term_status` is written for that package.
+    - Optional reconciliation (enabled by default via `RECONCILE_PACKAGE_STATUS = True`):
+      - Removes existing `vs:term_status` values for each package before writing the computed one.
+    - If an effective stage is not one of `int|irv|erv|pub`, the script warns but still writes it.
+  - **Migration/cleanup (enabled by default via `MIGRATE_PERCENT_ENCODED_PACKAGE_IRIS = True`)**
+    - Removes legacy percent-encoded package IRIs (e.g., `...#package/Health%20Condition`) and their related triples.
+    - Normalizes `rdfs:comment` line endings to LF only (removes stray `\r` / CRLF).
+  - **Safety/correctness**
+    - File size guardrails (`MAX_TTL_BYTES`, `MAX_JSON_BYTES`).
+    - Basic sanity check: warns (or errors in `STRICT_MODE`) if the ontology node is not found as `owl:Ontology`.
+    - Atomic write (`.tmp` then replace) to avoid partially written TTL files on failure.
+  - **Notes:**
+    - RDFLib serialization does **not** preserve Turtle comments (`# ...`) or prefix ordering.
   - **Overwrites** the latest versioned TTL file in place.
-- **Run:** `python scripts/add-skos-labels.py`
+- **Run:** `python scripts/owl-postprocess.py`
 
 ### `make-diff-ttl.py` — RDF diff graphs between two versions
 
