@@ -1,5 +1,5 @@
 # Health-RI Ontology
-*Version 1.6.0*
+*Version 1.6.1*
 
 ## Sex and Gender
 [![Maturity level external review (erv): stage 3 of 4](https://img.shields.io/badge/Maturity_level-external_review_(erv)%3A_stage_3_of_4-007bff)](https://health-ri.github.io/semantic-interoperability/method/ontology-validation/)

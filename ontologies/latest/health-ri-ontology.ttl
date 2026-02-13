@@ -3,7 +3,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gufo: <http://purl.org/nemo/gufo#> .
 @prefix hrio: <https://w3id.org/health-ri/ontology#> .
-@prefix ns1: <https://w3id.org/mod#> .
+@prefix mod: <https://w3id.org/mod#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -1076,6 +1076,8 @@ hrio:recognizesGender rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
 hrio:recognizes_1 rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subPropertyOf hrio:attributedTo .
 
+<https://w3id.org/health-ri/ontology/v1.6.1> owl:priorVersion <https://w3id.org/health-ri/ontology/v1.6.0> .
+
 hrio:AcquiredHealthCondition a gufo:Category,
         owl:Class,
         owl:NamedIndividual ;
@@ -1249,7 +1251,7 @@ hrio:CellularEntityDiagnosis a gufo:SubKind,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:HealthcareDiagnosis ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:PostmortemDiagnosis hrio:AntemortemDiagnosis ) ] ;
+            owl:unionOf ( hrio:AntemortemDiagnosis hrio:PostmortemDiagnosis ) ] ;
     skos:prefLabel "Cellular Entity Diagnosis"@en .
 
 hrio:Child a gufo:Phase,
@@ -2030,7 +2032,7 @@ hrio:DiagnosticAssessment a gufo:EventType,
             owl:onProperty [ owl:inverseOf gufo:manifestedIn ] ],
         gufo:Event ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ConclusiveDiagnosticAssessment hrio:InconclusiveDiagnosticAssessment ) ] ;
+            owl:unionOf ( hrio:InconclusiveDiagnosticAssessment hrio:ConclusiveDiagnosticAssessment ) ] ;
     skos:prefLabel "Diagnostic Assessment"@en .
 
 hrio:DiagnosticAssessmentOutcome a gufo:Kind,
@@ -2046,7 +2048,7 @@ hrio:DiagnosticAssessmentOutcome a gufo:Kind,
             owl:onProperty gufo:inheresIn ],
         hrio:Belief ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:Diagnosis hrio:NoDiagnosisOutcome ) ] ;
+            owl:unionOf ( hrio:NoDiagnosisOutcome hrio:Diagnosis ) ] ;
     skos:prefLabel "Diagnostic Assessment Outcome"@en .
 
 hrio:Document a gufo:Category,
@@ -2058,7 +2060,7 @@ hrio:Document a gufo:Category,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf gufo:Object ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:PhysicalDocument hrio:DigitalDocument ) ] ;
+            owl:unionOf ( hrio:DigitalDocument hrio:PhysicalDocument ) ] ;
     skos:prefLabel "Document"@en .
 
 hrio:ExposureBasedHealthCondition a gufo:Category,
@@ -2111,7 +2113,7 @@ hrio:HumanCell a gufo:Kind,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf gufo:FunctionalComplex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:HaploidCell hrio:DiploidCell hrio:Polyploid ) ] ;
+            owl:unionOf ( hrio:Polyploid hrio:HaploidCell hrio:DiploidCell ) ] ;
     skos:prefLabel "Human Cell"@en .
 
 hrio:LegallyRecognizedGenderPerson a gufo:Role,
@@ -2359,7 +2361,7 @@ This role is defined by the recorded classification in the birth record and shou
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:SexAtBirthAssignedPerson ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SexAtBirthFemaleSexPerson hrio:SexAtBirthMaleSexPerson ) ] ;
+            owl:unionOf ( hrio:SexAtBirthMaleSexPerson hrio:SexAtBirthFemaleSexPerson ) ] ;
     skos:prefLabel "Sex-at-birth Determinate-sex Person"@en .
 
 hrio:SexAtBirthFemaleSex a gufo:SubKind,
@@ -2425,7 +2427,7 @@ hrio:SexualDimorphicCharacteristic a gufo:Category,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf gufo:FunctionalComplex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:MaleTypicalDimorphicCharacteristic hrio:IndeterminateDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic ) ] ;
+            owl:unionOf ( hrio:FemaleTypicalDimorphicCharacteristic hrio:IndeterminateDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic ) ] ;
     skos:prefLabel "Sexual Dimorphic Characteristic"@en .
 
 hrio:SocialAgent a gufo:Category,
@@ -2468,7 +2470,7 @@ hrio:VisualSexCharacteristic a gufo:Category,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf gufo:FunctionalComplex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:MaleTypicalVisualSexCharacteristic hrio:FemaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic ) ] ;
+            owl:unionOf ( hrio:FemaleTypicalVisualSexCharacteristic hrio:MaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic ) ] ;
     skos:prefLabel "Visual Sex Characteristic"@en .
 
 hrio:femaleGenderInheresInFemaleGenderPerson rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
@@ -2486,7 +2488,7 @@ hrio:nonBinaryGenderInheresInNonBinaryGenderPerson rdfs:isDefinedBy <https://w3i
 <https://w3id.org/health-ri/ontology#package/SexAndGender/Gender> a skos:Collection ;
     rdfs:label "Gender"@en ;
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    vs:term_status "irv" ;
+    vs:term_status "erv" ;
     skos:prefLabel "Gender"@en .
 
 hrio:personIsComponentOfVisualSexCharacteristic rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> .
@@ -2507,7 +2509,7 @@ hrio:CellularEntity a gufo:Category,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf gufo:FunctionalComplex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:DeadCellularEntity hrio:LivingCellularEntity ) ] ;
+            owl:unionOf ( hrio:LivingCellularEntity hrio:DeadCellularEntity ) ] ;
     skos:prefLabel "Cellular Entity"@en .
 
 hrio:ConclusiveDiagnosticAssessment a gufo:EventType,
@@ -2555,7 +2557,7 @@ hrio:ExternallyAttributedCisgenderPerson a gufo:Role,
     rdfs:subClassOf hrio:CisgenderPerson,
         hrio:ExternallyGenderAttributedPerson ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ExternallyAttributedCisgenderMalePerson hrio:ExternallyAttributedCisgenderFemalePerson ) ] ;
+            owl:unionOf ( hrio:ExternallyAttributedCisgenderFemalePerson hrio:ExternallyAttributedCisgenderMalePerson ) ] ;
     skos:prefLabel "Externally-attributed Cisgender Person"@en .
 
 hrio:ExternallyAttributedFemaleGender a gufo:Role,
@@ -2648,7 +2650,7 @@ It provides a common female classification that can be specified as a sex-based 
             owl:onProperty gufo:inheresIn ],
         hrio:SexGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:FemaleSex hrio:FemaleGender ) ] ;
+            owl:unionOf ( hrio:FemaleGender hrio:FemaleSex ) ] ;
     skos:prefLabel "Female"@en .
 
 hrio:GenderAttribution a gufo:Kind,
@@ -2746,7 +2748,7 @@ It provides a common male classification that can be specified as a sex-based ma
             owl:onProperty gufo:inheresIn ],
         hrio:SexGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:MaleGender hrio:MaleSex ) ] ;
+            owl:unionOf ( hrio:MaleSex hrio:MaleGender ) ] ;
     skos:prefLabel "Male"@en .
 
 hrio:Man a gufo:SubKind,
@@ -2763,7 +2765,7 @@ Sex-based male classification includes variants based on sex at birth, phenotypi
             owl:someValuesFrom hrio:Male ],
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:MaleSexPerson hrio:MaleGenderPerson ) ] ;
+            owl:unionOf ( hrio:MaleGenderPerson hrio:MaleSexPerson ) ] ;
     skos:prefLabel "Man"@en .
 
 hrio:NonBinaryPerson a gufo:SubKind,
@@ -2780,7 +2782,7 @@ Sex-based indeterminate classification includes variants based on sex at birth a
             owl:someValuesFrom hrio:NonBinarySexGender ],
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:NonBinaryGenderPerson hrio:IndeterminateSexPerson ) ] ;
+            owl:unionOf ( hrio:IndeterminateSexPerson hrio:NonBinaryGenderPerson ) ] ;
     skos:prefLabel "Non-binary Person"@en .
 
 hrio:NonBinarySexGender a gufo:Category,
@@ -2810,7 +2812,7 @@ hrio:NonStructuralHealthCondition a gufo:Category,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:EstablishedHealthCondition ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:FunctionalHealthCondition hrio:PsychologicalHealthCondition ) ] ;
+            owl:unionOf ( hrio:PsychologicalHealthCondition hrio:FunctionalHealthCondition ) ] ;
     skos:prefLabel "Non-structural Health Condition"@en .
 
 hrio:Organization a gufo:Kind,
@@ -2856,7 +2858,7 @@ hrio:PersonWithRegularSexChromosome a gufo:SubKind,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:RegularKaryotypicalFemalePerson hrio:RegularKaryotypicalMalePerson ) ] ;
+            owl:unionOf ( hrio:RegularKaryotypicalMalePerson hrio:RegularKaryotypicalFemalePerson ) ] ;
     skos:prefLabel "Person with Regular Sex Chromosome"@en .
 
 hrio:PersonsBirth a gufo:EventType,
@@ -2954,7 +2956,7 @@ hrio:SelfIdentifiedCisgenderPerson a gufo:Role,
     rdfs:subClassOf hrio:CisgenderPerson,
         hrio:SelfAwarePerson ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SelfIdentifiedCisgenderMalePerson hrio:SelfIdentifiedCisgenderFemalePerson ) ] ;
+            owl:unionOf ( hrio:SelfIdentifiedCisgenderFemalePerson hrio:SelfIdentifiedCisgenderMalePerson ) ] ;
     skos:prefLabel "Self-identified Cisgender Person"@en .
 
 hrio:SexAtBirth a gufo:SubKind,
@@ -2970,7 +2972,7 @@ hrio:SexAtBirth a gufo:SubKind,
             owl:onProperty gufo:inheresIn ],
         hrio:PhenotypicSex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SexAtBirthIndeterminateSex hrio:SexAtBirthMaleSex hrio:SexAtBirthFemaleSex ) ] ;
+            owl:unionOf ( hrio:SexAtBirthFemaleSex hrio:SexAtBirthMaleSex hrio:SexAtBirthIndeterminateSex ) ] ;
     skos:prefLabel "Sex at Birth"@en .
 
 hrio:TransgenderPerson a gufo:Phase,
@@ -2987,7 +2989,7 @@ hrio:TransgenderPerson a gufo:Phase,
         hrio:SexAtBirthAssignedPerson,
         hrio:SexAtBirthDeterminateSexPerson ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ExternallyAttributedTransgenderPerson hrio:SelfIdentifiedTransgenderPerson ) ] ;
+            owl:unionOf ( hrio:SelfIdentifiedTransgenderPerson hrio:ExternallyAttributedTransgenderPerson ) ] ;
     skos:prefLabel "Transgender Person"@en .
 
 hrio:VariantKaryotypicalFemalePerson a gufo:SubKind,
@@ -3026,7 +3028,7 @@ Sex-based female classification includes variants based on sex at birth, phenoty
             owl:someValuesFrom hrio:Female ],
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:FemaleGenderPerson hrio:FemaleSexPerson ) ] ;
+            owl:unionOf ( hrio:FemaleSexPerson hrio:FemaleGenderPerson ) ] ;
     skos:prefLabel "Woman"@en .
 
 hrio:phenotypicSexInheresInPhenotypicSexAssessedPerson rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
@@ -3083,7 +3085,7 @@ A diagnosing agent can be characterized by diagnosis suspicions it holds, and ma
         gufo:FunctionalComplex,
         hrio:Agent ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:DiagnosingPerson hrio:DiagnosingArtificialAgent ) ] ;
+            owl:unionOf ( hrio:DiagnosingArtificialAgent hrio:DiagnosingPerson ) ] ;
     skos:prefLabel "Diagnosing Agent"@en .
 
 hrio:ExternallyCausedHealthCondition a gufo:Category,
@@ -3096,7 +3098,7 @@ hrio:ExternallyCausedHealthCondition a gufo:Category,
     rdfs:subClassOf gufo:ExtrinsicMode,
         hrio:KnownOriginHealthCondition ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ExposureBasedHealthCondition hrio:Injury ) ] ;
+            owl:unionOf ( hrio:Injury hrio:ExposureBasedHealthCondition ) ] ;
     skos:prefLabel "Externally-caused Health Condition"@en .
 
 hrio:ExternallyGenderAttributedPerson a gufo:Role,
@@ -3115,7 +3117,7 @@ hrio:ExternallyGenderAttributedPerson a gufo:Role,
             owl:onProperty gufo:inheresIn ],
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ExternallyAttributedTransgenderPerson hrio:ExternallyAttributedCisgenderPerson ) ] ;
+            owl:unionOf ( hrio:ExternallyAttributedCisgenderPerson hrio:ExternallyAttributedTransgenderPerson ) ] ;
     skos:prefLabel "Externally Gender-attributed Person"@en .
 
 hrio:GenderModality a gufo:Category,
@@ -3212,7 +3214,7 @@ Legal Gender denotes a gender classification that is recognized through an offic
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         hrio:AdministrativeGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:LegalMaleGender hrio:LegalNonBinaryGender hrio:LegalFemaleGender ) ] ;
+            owl:unionOf ( hrio:LegalNonBinaryGender hrio:LegalMaleGender hrio:LegalFemaleGender ) ] ;
     skos:prefLabel "Legal Gender"@en .
 
 hrio:NonTraumaticHealthCondition a gufo:Category,
@@ -3234,7 +3236,7 @@ hrio:PersonWithVariantSexChromosome a gufo:SubKind,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:VariantKaryotypicalMalePerson hrio:KaryotypicalIndeterminatePerson hrio:VariantKaryotypicalFemalePerson ) ] ;
+            owl:unionOf ( hrio:VariantKaryotypicalFemalePerson hrio:VariantKaryotypicalMalePerson hrio:KaryotypicalIndeterminatePerson ) ] ;
     skos:prefLabel "Person with Variant Sex Chromosome"@en .
 
 hrio:SelfAwarePerson a gufo:Phase,
@@ -3255,7 +3257,7 @@ hrio:SelfAwarePerson a gufo:Phase,
         hrio:LivingPerson,
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SelfIdentifiedCisgenderPerson hrio:SelfIdentifiedTransgenderPerson ) ] ;
+            owl:unionOf ( hrio:SelfIdentifiedTransgenderPerson hrio:SelfIdentifiedCisgenderPerson ) ] ;
     skos:prefLabel "Self-aware Person"@en .
 
 hrio:Substantial a gufo:Category,
@@ -3268,7 +3270,7 @@ hrio:Substantial a gufo:Category,
     rdfs:subClassOf gufo:Object,
         hrio:Endurant ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:Object hrio:Agent ) ] ;
+            owl:unionOf ( hrio:Agent hrio:Object ) ] ;
     skos:prefLabel "Substantial"@en .
 
 <https://w3id.org/health-ri/ontology#package/UFO> a skos:Collection ;
@@ -3296,7 +3298,7 @@ hrio:AdministrativeGender a gufo:SubKind,
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         hrio:ExternallyAttributedGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:AdministrativeMaleGender hrio:AdministrativeFemaleGender hrio:AdministrativeNonBinaryGender ) ] ;
+            owl:unionOf ( hrio:AdministrativeFemaleGender hrio:AdministrativeNonBinaryGender hrio:AdministrativeMaleGender ) ] ;
     skos:altLabel "Administrative Gender Marker"@en,
         "Civil Registry Gender"@en,
         "Civil Registry Gender Marker"@en,
@@ -3364,9 +3366,9 @@ hrio:CisgenderPerson a gufo:Phase,
         hrio:Person,
         hrio:SexAtBirthAssignedPerson ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ExternallyAttributedCisgenderPerson hrio:SelfIdentifiedCisgenderPerson ) ],
+            owl:unionOf ( hrio:SelfIdentifiedCisgenderPerson hrio:ExternallyAttributedCisgenderPerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:MaleCisgenderPerson hrio:FemaleCisgenderPerson ) ] ;
+            owl:unionOf ( hrio:FemaleCisgenderPerson hrio:MaleCisgenderPerson ) ] ;
     skos:prefLabel "Cisgender Person"@en .
 
 hrio:Diagnosis a gufo:SubKind,
@@ -3435,7 +3437,7 @@ Karyotypic Female-sex Person subsumes both Regular Karyotypical Female Person an
         hrio:FemaleSexPerson,
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:RegularKaryotypicalFemalePerson hrio:VariantKaryotypicalFemalePerson ) ] ;
+            owl:unionOf ( hrio:VariantKaryotypicalFemalePerson hrio:RegularKaryotypicalFemalePerson ) ] ;
     skos:prefLabel "Karyotypic Female-sex Person"@en .
 
 hrio:KaryotypicMaleSexPerson a gufo:SubKind,
@@ -3468,7 +3470,7 @@ hrio:KnownOriginHealthCondition a gufo:Category,
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:CongenitalHealthCondition hrio:AcquiredHealthCondition ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:InherentHealthCondition hrio:ExternallyCausedHealthCondition ) ] ;
+            owl:unionOf ( hrio:ExternallyCausedHealthCondition hrio:InherentHealthCondition ) ] ;
     skos:prefLabel "Known-Origin Health Condition"@en .
 
 hrio:LivingPerson a gufo:Phase,
@@ -3480,9 +3482,9 @@ hrio:LivingPerson a gufo:Phase,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SelfAwarePerson hrio:NonSelfAwarePerson ) ],
+            owl:unionOf ( hrio:NonSelfAwarePerson hrio:SelfAwarePerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:Adolescent hrio:Adult hrio:Child ) ] ;
+            owl:unionOf ( hrio:Child hrio:Adolescent hrio:Adult ) ] ;
     skos:prefLabel "Living Person"@en .
 
 hrio:NonBinaryGenderPerson a gufo:Phase,
@@ -3498,7 +3500,7 @@ hrio:NonBinaryGenderPerson a gufo:Phase,
         hrio:NonBinaryPerson,
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SelfIdentifiedNonBinaryGenderPerson hrio:NonBinaryPresentingPerson hrio:ExternallyAttributedNonBinaryGenderPerson ) ] ;
+            owl:unionOf ( hrio:NonBinaryPresentingPerson hrio:ExternallyAttributedNonBinaryGenderPerson hrio:SelfIdentifiedNonBinaryGenderPerson ) ] ;
     skos:prefLabel "Non-binary-gender Person"@en .
 
 hrio:PhenotypicFemaleSex a gufo:SubKind,
@@ -3545,7 +3547,7 @@ hrio:PhenotypicSex a gufo:Kind,
         gufo:ExtrinsicMode,
         hrio:Sex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:PhenotypicFemaleSex hrio:PhenotypicMaleSex hrio:PhenotypicAmbiguousSex ) ] ;
+            owl:unionOf ( hrio:PhenotypicMaleSex hrio:PhenotypicAmbiguousSex hrio:PhenotypicFemaleSex ) ] ;
     skos:altLabel "Received Phenotypic Sex"@en ;
     skos:prefLabel "Phenotypic Sex"@en .
 
@@ -3565,7 +3567,7 @@ hrio:PhenotypicSexAssessedPerson a gufo:Role,
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:PhenotypicMaleSexPerson hrio:PhenotypicFemaleSexPerson hrio:PhenotypicAmbiguousSexPerson ) ] ;
+            owl:unionOf ( hrio:PhenotypicFemaleSexPerson hrio:PhenotypicMaleSexPerson hrio:PhenotypicAmbiguousSexPerson ) ] ;
     skos:prefLabel "Phenotypic-sex-assessed Person"@en .
 
 hrio:SexAtBirthFemaleSexPerson a gufo:Role,
@@ -3619,7 +3621,7 @@ hrio:FemaleGenderPerson a gufo:Phase,
         hrio:Person,
         hrio:Woman ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SelfIdentifiedFemaleGenderPerson hrio:ExternallyAttributedFemaleGenderPerson hrio:FemininePresentingPerson ) ] ;
+            owl:unionOf ( hrio:SelfIdentifiedFemaleGenderPerson hrio:FemininePresentingPerson hrio:ExternallyAttributedFemaleGenderPerson ) ] ;
     skos:prefLabel "Female-gender Person"@en .
 
 hrio:FemaleSexPerson a gufo:SubKind,
@@ -3687,13 +3689,13 @@ hrio:MaleSexPerson a gufo:SubKind,
 <https://w3id.org/health-ri/ontology#package/SexAndGender/Sex> a skos:Collection ;
     rdfs:label "Sex"@en ;
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    vs:term_status "irv" ;
+    vs:term_status "erv" ;
     skos:prefLabel "Sex"@en .
 
 <https://w3id.org/health-ri/ontology#package/SexAndGender/SexGenderOutcome> a skos:Collection ;
     rdfs:label "Sex-Gender Outcome"@en ;
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    vs:term_status "int" ;
+    vs:term_status "erv" ;
     skos:prefLabel "Sex-Gender Outcome"@en .
 
 hrio:person_1 rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> .
@@ -3717,7 +3719,7 @@ An externally-attributed gender is a gender characterization that applies to a p
         gufo:ExtrinsicMode,
         hrio:Gender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ExternallyAttributedFemaleGender hrio:ExternallyAttributedMaleGender hrio:ExternallyAttributedNonBinaryGender ) ] ;
+            owl:unionOf ( hrio:ExternallyAttributedMaleGender hrio:ExternallyAttributedFemaleGender hrio:ExternallyAttributedNonBinaryGender ) ] ;
     skos:prefLabel "Externally-attributed Gender"@en .
 
 hrio:FemaleGender a gufo:PhaseMixin,
@@ -3753,7 +3755,7 @@ This classification concerns biological sex categorization and is distinct from 
         hrio:Female,
         hrio:Sex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:KaryotypicFemaleSex hrio:PhenotypicFemaleSex ) ] ;
+            owl:unionOf ( hrio:PhenotypicFemaleSex hrio:KaryotypicFemaleSex ) ] ;
     skos:prefLabel "Female Sex"@en .
 
 hrio:GenderExpression a gufo:Kind,
@@ -3770,7 +3772,7 @@ hrio:GenderExpression a gufo:Kind,
         hrio:Gender,
         hrio:SelfDesignatedGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:NonBinaryGenderExpression hrio:MasculineGenderExpression hrio:FeminineGenderExpression ) ] ;
+            owl:unionOf ( hrio:MasculineGenderExpression hrio:FeminineGenderExpression hrio:NonBinaryGenderExpression ) ] ;
     skos:prefLabel "Gender Expression"@en .
 
 hrio:MaleGender a gufo:PhaseMixin,
@@ -3824,7 +3826,7 @@ hrio:NonBinaryGender a gufo:PhaseMixin,
         hrio:Gender,
         hrio:NonBinarySexGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:NonBinaryGenderExpression hrio:ExternallyAttributedNonBinaryGender hrio:SelfIdentifiedNonBinaryGender ) ] ;
+            owl:unionOf ( hrio:NonBinaryGenderExpression hrio:SelfIdentifiedNonBinaryGender hrio:ExternallyAttributedNonBinaryGender ) ] ;
     skos:prefLabel "Non-binary Gender"@en .
 
 hrio:OffsetDateTime a gufo:AbstractIndividualType,
@@ -3855,7 +3857,7 @@ Self-identified Gender denotes the gender with which a self-aware person identif
         hrio:Gender,
         hrio:SelfDesignatedGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SelfIdentifiedFemaleGender hrio:SelfIdentifiedNonBinaryGender hrio:SelfIdentifiedMaleGender ) ] ;
+            owl:unionOf ( hrio:SelfIdentifiedMaleGender hrio:SelfIdentifiedNonBinaryGender hrio:SelfIdentifiedFemaleGender ) ] ;
     skos:altLabel "Gender Identity"@en,
         "Self-assigned Gender"@en,
         "Self-attributed Gender"@en ;
@@ -3880,7 +3882,7 @@ It provides a common space for male, female, and non-binary classifications at t
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:NonBinarySexGender hrio:Male hrio:Female ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:Sex hrio:Gender ) ] ;
+            owl:unionOf ( hrio:Gender hrio:Sex ) ] ;
     skos:prefLabel "Sex-Gender"@en .
 
 hrio:EstablishedHealthCondition a gufo:Category,
@@ -3892,11 +3894,11 @@ hrio:EstablishedHealthCondition a gufo:Category,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:HealthCondition ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:NonTraumaticHealthCondition hrio:TraumaticHealthCondition ) ],
+            owl:unionOf ( hrio:TraumaticHealthCondition hrio:NonTraumaticHealthCondition ) ],
         [ a owl:Class ;
             owl:unionOf ( hrio:NonStructuralHealthCondition hrio:StructuralHealthCondition ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:KnownOriginHealthCondition hrio:IdiopathicHealthCondition ) ] ;
+            owl:unionOf ( hrio:IdiopathicHealthCondition hrio:KnownOriginHealthCondition ) ] ;
     skos:prefLabel "Established Health Condition"@en .
 
 hrio:SexAtBirthAssignedPerson a gufo:Role,
@@ -3917,9 +3919,9 @@ hrio:SexAtBirthAssignedPerson a gufo:Role,
         hrio:Person,
         hrio:PhenotypicSexAssessedPerson ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SexAtBirthFemaleSexPerson hrio:SexAtBirthMaleSexPerson ) ],
+            owl:unionOf ( hrio:SexAtBirthMaleSexPerson hrio:SexAtBirthFemaleSexPerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:CisgenderPerson hrio:SexAtBirthIndeterminateSexPerson hrio:TransgenderPerson ) ] ;
+            owl:unionOf ( hrio:SexAtBirthIndeterminateSexPerson hrio:CisgenderPerson hrio:TransgenderPerson ) ] ;
     skos:prefLabel "Sex-at-birth-assigned Person"@en .
 
 hrio:HealthcareDiagnosis a gufo:SubKind,
@@ -3933,11 +3935,11 @@ In the model it is organized by focus (human or veterinary), by source of eviden
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:Diagnosis ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:RadiologicalDiagnosis hrio:ClinicalDiagnosis hrio:AdministrativeCodingDiagnosis hrio:LaboratoryDiagnosis hrio:EpidemiologicalDiagnosis ) ],
+            owl:unionOf ( hrio:ClinicalDiagnosis hrio:RadiologicalDiagnosis hrio:AdministrativeCodingDiagnosis hrio:LaboratoryDiagnosis hrio:EpidemiologicalDiagnosis ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:VeterinaryDiagnosis hrio:HumanHealthcareDiagnosis ) ],
+            owl:unionOf ( hrio:HumanHealthcareDiagnosis hrio:VeterinaryDiagnosis ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:SurveillanceDiagnosis hrio:CareOrientedDiagnosis hrio:ResearchDiagnosis ) ] ;
+            owl:unionOf ( hrio:SurveillanceDiagnosis hrio:ResearchDiagnosis hrio:CareOrientedDiagnosis ) ] ;
     skos:prefLabel "Healthcare Diagnosis"@en .
 
 hrio:Sex a gufo:Category,
@@ -3953,7 +3955,7 @@ hrio:Sex a gufo:Category,
             owl:onProperty gufo:inheresIn ],
         hrio:SexGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:FemaleSex hrio:IndeterminateSex hrio:MaleSex ) ] ;
+            owl:unionOf ( hrio:MaleSex hrio:IndeterminateSex hrio:FemaleSex ) ] ;
     skos:altLabel "Biological Sex"@en ;
     skos:prefLabel "Sex"@en .
 
@@ -3988,9 +3990,9 @@ hrio:Gender a gufo:Category,
             owl:onProperty gufo:inheresIn ],
         hrio:SexGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:FemaleGender hrio:NonBinaryGender hrio:MaleGender ) ],
+            owl:unionOf ( hrio:NonBinaryGender hrio:FemaleGender hrio:MaleGender ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:GenderExpression hrio:SelfIdentifiedGender hrio:ExternallyAttributedGender ) ] ;
+            owl:unionOf ( hrio:GenderExpression hrio:ExternallyAttributedGender hrio:SelfIdentifiedGender ) ] ;
     skos:altLabel "Social Gender"@en ;
     skos:prefLabel "Gender"@en .
 
@@ -4067,27 +4069,27 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
         hrio:Animal,
         hrio:IndividualAgent ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:LegallyRecognizedGenderPerson hrio:LegallyUnassignedGenderPerson ) ],
+            owl:unionOf ( hrio:LegallyUnassignedGenderPerson hrio:LegallyRecognizedGenderPerson ) ],
         [ a owl:Class ;
             owl:unionOf ( hrio:FemaleGenderPerson hrio:MaleGenderPerson hrio:NonBinaryGenderPerson ) ],
         [ a owl:Class ;
             owl:unionOf ( hrio:PersonWithVariantSexChromosome hrio:PersonWithRegularSexChromosome ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:KaryotypicMaleSexPerson hrio:KaryotypicFemaleSexPerson ) ],
+            owl:unionOf ( hrio:KaryotypicFemaleSexPerson hrio:KaryotypicMaleSexPerson ) ],
         [ a owl:Class ;
             owl:unionOf ( hrio:Woman hrio:NonBinaryPerson hrio:Man ) ],
         [ a owl:Class ;
             owl:unionOf ( hrio:DeadPerson hrio:LivingPerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:SexAtBirthUnassignedPerson hrio:SexAtBirthAssignedPerson ) ],
+            owl:unionOf ( hrio:SexAtBirthAssignedPerson hrio:SexAtBirthUnassignedPerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:MaleSexPerson hrio:IndeterminateSexPerson hrio:FemaleSexPerson ) ] ;
+            owl:unionOf ( hrio:MaleSexPerson hrio:FemaleSexPerson hrio:IndeterminateSexPerson ) ] ;
     skos:prefLabel "Person"@en .
 
 <https://w3id.org/health-ri/ontology> a owl:Ontology ;
     dct:abstract "Developed by Health‑RI and collaborators, this ontology—grounded in UFO and implemented in gUFO/OWL—enables semantic interoperability across healthcare and life sciences, extending beyond systems to include institutions, research infrastructures, and services. It establishes a common reference model that harmonizes data from diverse sources by formally defining domain concepts and allowing mappings from heterogeneous sources."@en ;
-    dct:conformsTo <https://w3id.org/health-ri/ontology/v1.6.0/json>,
-        <https://w3id.org/health-ri/ontology/v1.6.0/vpp> ;
+    dct:conformsTo <https://w3id.org/health-ri/ontology/v1.6.1/json>,
+        <https://w3id.org/health-ri/ontology/v1.6.1/vpp> ;
     dct:contributor <https://orcid.org/0000-0001-8802-7002>,
         <https://orcid.org/0000-0002-7944-2594>,
         <https://orcid.org/0000-0003-0771-3516>,
@@ -4102,14 +4104,26 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
     dct:issued "2025-05-20"^^xsd:date ;
     dct:language "en"^^xsd:language ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dct:modified "2026-02-11"^^xsd:date ;
+    dct:modified "2026-02-13"^^xsd:date ;
     dct:publisher <https://w3id.org/health-ri> ;
     dct:title "Health-RI Ontology"@en ;
     vann:preferredNamespacePrefix "hrio" ;
     vann:preferredNamespaceUri "https://w3id.org/health-ri/ontology#"^^xsd:anyURI ;
     owl:imports gufo: ;
-    owl:versionIRI <https://w3id.org/health-ri/ontology/v1.6.0> ;
-    owl:versionInfo "1.6.0" ;
+    owl:versionIRI <https://w3id.org/health-ri/ontology/v1.6.1> ;
+    owl:versionInfo "1.6.1" ;
+    dcat:hasVersion <https://w3id.org/health-ri/ontology/v0.10.1>,
+        <https://w3id.org/health-ri/ontology/v0.11.9>,
+        <https://w3id.org/health-ri/ontology/v0.4.0>,
+        <https://w3id.org/health-ri/ontology/v0.5.2>,
+        <https://w3id.org/health-ri/ontology/v0.6.0>,
+        <https://w3id.org/health-ri/ontology/v0.9.2>,
+        <https://w3id.org/health-ri/ontology/v1.1.1>,
+        <https://w3id.org/health-ri/ontology/v1.2.1>,
+        <https://w3id.org/health-ri/ontology/v1.3.0>,
+        <https://w3id.org/health-ri/ontology/v1.4.0>,
+        <https://w3id.org/health-ri/ontology/v1.5.0>,
+        <https://w3id.org/health-ri/ontology/v1.6.0> ;
     dcat:keyword "biomedicine"@en,
         "clinical data"@en,
         "health information systems"@en,
@@ -4119,22 +4133,22 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
     dcat:landingPage <https://w3id.org/health-ri/semantic-interoperability> ;
     foaf:homepage <https://w3id.org/health-ri/semantic-interoperability> ;
     foaf:logo <https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/docs/assets/images/health-ri-logo-blue.png> ;
-    ns1:repository <https://w3id.org/health-ri/semantic-interoperability/git> .
+    mod:repository <https://w3id.org/health-ri/semantic-interoperability/git> .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:KaryotypicFemaleSex hrio:PhenotypicFemaleSex ) .
+    owl:members ( hrio:PhenotypicFemaleSex hrio:KaryotypicFemaleSex ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:KaryotypicMaleSex hrio:PhenotypicMaleSex ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:MaleTypicalVisualSexCharacteristic hrio:FemaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic ) .
+    owl:members ( hrio:FemaleTypicalVisualSexCharacteristic hrio:MaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:KaryotypicMaleSex hrio:KaryotypicFemaleSex ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:PhenotypicFemaleSex hrio:PhenotypicMaleSex hrio:PhenotypicAmbiguousSex ) .
+    owl:members ( hrio:PhenotypicMaleSex hrio:PhenotypicAmbiguousSex hrio:PhenotypicFemaleSex ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:SelfIdentifiedGender hrio:GenderExpression ) .
@@ -4146,22 +4160,22 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
     owl:members ( hrio:AllosomeY hrio:AllosomeX ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:RegularKaryotypicalFemalePerson hrio:RegularKaryotypicalMalePerson ) .
+    owl:members ( hrio:RegularKaryotypicalMalePerson hrio:RegularKaryotypicalFemalePerson ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:GenderExpression hrio:SelfIdentifiedGender hrio:ExternallyAttributedGender ) .
+    owl:members ( hrio:GenderExpression hrio:ExternallyAttributedGender hrio:SelfIdentifiedGender ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:PersonWithVariantSexChromosome hrio:PersonWithRegularSexChromosome ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:VariantKaryotypicalMalePerson hrio:KaryotypicalIndeterminatePerson hrio:VariantKaryotypicalFemalePerson ) .
+    owl:members ( hrio:VariantKaryotypicalFemalePerson hrio:VariantKaryotypicalMalePerson hrio:KaryotypicalIndeterminatePerson ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:KaryotypicMaleSexPerson hrio:KaryotypicFemaleSexPerson ) .
+    owl:members ( hrio:KaryotypicFemaleSexPerson hrio:KaryotypicMaleSexPerson ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:RegularKaryotypicalFemalePerson hrio:VariantKaryotypicalFemalePerson ) .
+    owl:members ( hrio:VariantKaryotypicalFemalePerson hrio:RegularKaryotypicalFemalePerson ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:RegularKaryotypicalMalePerson hrio:VariantKaryotypicalMalePerson ) .
@@ -4170,7 +4184,7 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
     owl:members ( hrio:Person hrio:NonHumanAnimal ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:NonTraumaticHealthCondition hrio:TraumaticHealthCondition ) .
+    owl:members ( hrio:TraumaticHealthCondition hrio:NonTraumaticHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:CongenitalHealthCondition hrio:AcquiredHealthCondition ) .
@@ -4182,7 +4196,7 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
     owl:members ( hrio:RiskBasedHealthCondition hrio:EstablishedHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:InherentHealthCondition hrio:ExternallyCausedHealthCondition ) .
+    owl:members ( hrio:ExternallyCausedHealthCondition hrio:InherentHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:KaryotypicSex hrio:PhenotypicSex ) .
@@ -4191,7 +4205,7 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
     owl:members ( hrio:ExposureBasedHealthCondition hrio:InherentHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:KnownOriginHealthCondition hrio:IdiopathicHealthCondition ) .
+    owl:members ( hrio:IdiopathicHealthCondition hrio:KnownOriginHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:PathologicalHealthCondition hrio:NonPathologicalHealthCondition ) .
@@ -4200,44 +4214,44 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
     owl:members ( hrio:ArtificialAgent hrio:Person ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:PhysicalDocument hrio:DigitalDocument ) .
+    owl:members ( hrio:DigitalDocument hrio:PhysicalDocument ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:IndividualAgent hrio:Organization ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:Diagnosis hrio:NoDiagnosisOutcome ) .
+    owl:members ( hrio:NoDiagnosisOutcome hrio:Diagnosis ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:ConclusiveDiagnosticAssessment hrio:InconclusiveDiagnosticAssessment ) .
+    owl:members ( hrio:InconclusiveDiagnosticAssessment hrio:ConclusiveDiagnosticAssessment ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:PositiveDiagnosisAssessment hrio:NegativeDiagnosisAssessment ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:PostmortemDiagnosis hrio:AntemortemDiagnosis ) .
+    owl:members ( hrio:AntemortemDiagnosis hrio:PostmortemDiagnosis ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:RadiologicalDiagnosis hrio:ClinicalDiagnosis hrio:AdministrativeCodingDiagnosis hrio:LaboratoryDiagnosis hrio:EpidemiologicalDiagnosis ) .
+    owl:members ( hrio:ClinicalDiagnosis hrio:RadiologicalDiagnosis hrio:AdministrativeCodingDiagnosis hrio:LaboratoryDiagnosis hrio:EpidemiologicalDiagnosis ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:VeterinaryDiagnosis hrio:HumanHealthcareDiagnosis ) .
+    owl:members ( hrio:HumanHealthcareDiagnosis hrio:VeterinaryDiagnosis ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:Object hrio:Agent ) .
+    owl:members ( hrio:Agent hrio:Object ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:Sex hrio:Gender ) .
+    owl:members ( hrio:Gender hrio:Sex ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:MaleTypicalDimorphicCharacteristic hrio:IndeterminateDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic ) .
+    owl:members ( hrio:FemaleTypicalDimorphicCharacteristic hrio:IndeterminateDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:MaleSexPerson hrio:IndeterminateSexPerson hrio:FemaleSexPerson ) .
+    owl:members ( hrio:MaleSexPerson hrio:FemaleSexPerson hrio:IndeterminateSexPerson ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:SexAtBirthIndeterminateSex hrio:SexAtBirthMaleSex hrio:SexAtBirthFemaleSex ) .
+    owl:members ( hrio:SexAtBirthFemaleSex hrio:SexAtBirthMaleSex hrio:SexAtBirthIndeterminateSex ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:FemaleSex hrio:IndeterminateSex hrio:MaleSex ) .
+    owl:members ( hrio:MaleSex hrio:IndeterminateSex hrio:FemaleSex ) .
 
