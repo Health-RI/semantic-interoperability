@@ -1,0 +1,300 @@
+@prefix : <https://w3id.org/health-ri/ontology#>.
+@prefix gufo: <http://purl.org/nemo/gufo#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+
+# -----------------------------------------------------------------------------
+# RULE: NoSelfSexAtBirthAssignment
+# RULE TYPE: Constraint
+# DESCRIPTION: In a Sex at Birth Assignment, the person who creates the Birth Notification (Assigner) must not be the same individual whose birth is being notified (Person with Assigned Sex at Birth).
+# DETAILS: ALLOWED: the same person can be an assignee in z1 and an assigner in z2. FORBIDDEN: the same person is both assigner AND assignee in the same z1.
+# -----------------------------------------------------------------------------
+
+:NoSelfSexAtBirthAssignment
+    a sh:NodeShape ;
+    sh:name "No self-assignment in SexAtBirthAssignment"@en ;
+    sh:description "Within one SexAtBirthAssignment, no participant may be both Assigner and Assignee."@en ;
+    sh:targetClass :SexAtBirthAssignment ;
+
+    sh:property [
+        # Path: all participants mediated by THIS assignment (the relator).
+        sh:path gufo:mediates ;
+
+        # Count only those participants that are simultaneously in both role classes.
+        sh:qualifiedValueShape [
+            sh:and (
+                [ sh:class :SexAtBirthAssigner ]
+                [ sh:class :PersonWithAssignedSexAtBirth ]
+            )
+        ] ;
+
+        # Intersection must be empty (max 0 such participants).
+        sh:qualifiedMaxCount 0 ;
+
+        # Reporting
+        sh:severity sh:Violation ;
+        sh:message "The same individual plays both SexAtBirthAssigner and PersonWithAssignedSexAtBirth for this SexAtBirthAssignment."@en
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: CreatesOnBehalfOfRule
+# RULE TYPE: Derivation
+# DESCRIPTION: If an Administrative Gender Recognition mediates both an Administrative Gender Recognition Agent and an Administrative Gender Recognizing Organization, then the Agent creates on behalf of the Organization.
+# -----------------------------------------------------------------------------
+
+:AGRCreatesOnBehalfOfRule
+    a sh:NodeShape ;
+    sh:name "Materialize creates-on-behalf-of in Administrative Gender Recognition"@en ;
+    sh:description "Materialization-only: constructs :createsOnBehalfOf between every mediated Administrative Gender Recognition Agent and mediated Administrative Gender Recognizing Organization within the same relator. If either role is absent, the rule is silent (no violations)."@en ;
+    sh:targetClass :AdministrativeGenderRecognition ;
+
+    # SHACL-AF rule: fires only when BOTH mediated roles exist for $this; otherwise, no output and no violations
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes [ sh:declare (
+            [ sh:prefix ":" ;     sh:namespace "http://example.com#" ]
+            [ sh:prefix "gufo" ;  sh:namespace "http://purl.org/nemo/gufo#" ]
+        ) ] ;
+        sh:construct """
+            PREFIX :     <http://example.com#>
+            PREFIX gufo: <http://purl.org/nemo/gufo#>
+
+            CONSTRUCT {
+              ?agent :createsOnBehalfOf ?org .
+            }
+            WHERE {
+              $this gufo:mediates ?agent .
+              $this gufo:mediates ?org .
+              ?agent a :AdministrativeGenderRecognitionAgent .
+              ?org   a :AdministrativeGenderRecognizingOrganization .
+              # Avoid duplicate construction if already present
+              FILTER NOT EXISTS { ?agent :createsOnBehalfOf ?org }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: FemaleCisgenderPerson
+# RULE TYPE: Derivation
+# DESCRIPTION: If a Sex-at-birth-assigned Person is both a Female-gender Person and a Sex-at-birth Female-sex Person, then this person is a Female Cisgender Person.
+# DETAILS: Derivation (materialization) because the rule specifies inferring/classifying a person as :FemaleCisgenderPerson based on existing rdf:type memberships.
+# -----------------------------------------------------------------------------
+
+# Assumption: Individuals are classified using rdf:type to the gUFO/OntoUML classes exported in the : namespace.
+# Assumption: Materialization is implemented via SHACL-AF sh:SPARQLRule (no violations are emitted).
+
+:FemaleCisgenderPerson
+    a sh:NodeShape ;
+    sh:name "FemaleCisgenderPerson"@en ;
+    sh:description "Derivation rule (materialization-only): if a Sex-at-birth-assigned Person is both a Female-gender Person and a Sex-at-birth Female-sex Person, then materialize that this person is a Female Cisgender Person."@en ;
+    sh:targetClass :SexAtBirthAssignedPerson ;
+
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :   <https://w3id.org/health-ri/ontology#>
+            PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+            CONSTRUCT {
+              $this rdf:type :FemaleCisgenderPerson .
+            }
+            WHERE {
+              $this a :SexAtBirthAssignedPerson ,
+                       :FemaleGenderPerson ,
+                       :SexAtBirthFemaleSexPerson .
+              FILTER NOT EXISTS { $this a :FemaleCisgenderPerson . }
+            }
+        """ ;
+    ] .
+
+
+# -----------------------------------------------------------------------------
+# RULE: MaleCisgenderPerson
+# RULE TYPE: Derivation
+# DESCRIPTION: If a Sex-at-birth-assigned Person is both a Male-gender Person and a Sex-at-birth Male-sex Person, then this person is a Male Cisgender Person.
+# DETAILS: Derivation (materialization) because the rule specifies inferring/classifying a person as :MaleCisgenderPerson based on existing rdf:type memberships.
+# -----------------------------------------------------------------------------
+
+# Assumption: Individuals are classified using rdf:type to the gUFO/OntoUML classes exported in the : namespace.
+# Assumption: Materialization is implemented via SHACL-AF sh:SPARQLRule (no violations are emitted).
+
+:MaleCisgenderPerson
+    a sh:NodeShape ;
+    sh:name "MaleCisgenderPerson"@en ;
+    sh:description "Derivation rule (materialization-only): if a Sex-at-birth-assigned Person is both a Male-gender Person and a Sex-at-birth Male-sex Person, then materialize that this person is a Male Cisgender Person."@en ;
+    sh:targetClass :SexAtBirthAssignedPerson ;
+
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :   <https://w3id.org/health-ri/ontology#>
+            PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+            CONSTRUCT {
+              $this rdf:type :MaleCisgenderPerson .
+            }
+            WHERE {
+              $this a :SexAtBirthAssignedPerson ,
+                       :MaleGenderPerson ,
+                       :SexAtBirthMaleSexPerson .
+              FILTER NOT EXISTS { $this a :MaleCisgenderPerson . }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: DeriveGenderModalityPairings
+# RULE TYPE: Derivation
+# DESCRIPTION: When a Sex-at-birth-assigned Person is characterized by one or more Gender instances and by one or more Sex-at-birth Sex instances, the model introduces Gender Modality instances to represent the possible Sex-and-Gender pairings for that person. Only Sex-at-birth Male Sex and Sex-at-birth Female Sex are used to form these pairings; Sex-at-birth Indeterminate Sex is ignored for this purpose and does not lead to any Gender Modality instance. For each pairing between an eligible Sex-at-birth Sex and a Gender, there is a corresponding Gender Modality instance that is linked by has cause to exactly that Sex (role "sex") and to exactly that Gender (role "gender").
+# DETAILS: Materializes one :GenderModality individual per eligible (Sex-at-birth Male/Female Sex) × (Gender) pairing for the same person.
+# -----------------------------------------------------------------------------
+
+:DeriveGenderModalityPairings
+    a sh:NodeShape ;
+    sh:name "Derive Gender Modality pairings"@en ;
+    sh:description "Materialization-only: for each :SexAtBirthAssignedPerson, construct one :GenderModality per eligible Sex-at-birth Sex (Male/Female only) × Gender pairing inhering in the same person, and link it via :hasCause (sex role) and :hasCause_1 (gender role)."@en ;
+    sh:targetClass :SexAtBirthAssignedPerson ;
+
+    sh:rule [
+        a sh:SPARQLRule ;
+
+        # Assumption 1: Sex-at-birth Sex individuals and Gender individuals link to their bearer Person via gufo:inheresIn.
+        # Assumption 2: Role-specific cause links follow the ontology TBox: :hasCause (-> :Sex), :hasCause_1 (-> :Gender).
+        # Assumption 3: A deterministic IRI is minted for each derived modality to keep the rule idempotent across pipeline re-runs.
+        sh:construct """
+            PREFIX :     <https://w3id.org/health-ri/ontology#>
+            PREFIX gufo: <http://purl.org/nemo/gufo#>
+            PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+            CONSTRUCT {
+              ?gm rdf:type :GenderModality ;
+                  gufo:inheresIn $this ;
+                  :hasCause ?sex ;
+                  :hasCause_1 ?gender .
+            }
+            WHERE {
+              # Eligible Sex-at-birth Sex instances for this person (Indeterminate excluded).
+              ?sex gufo:inheresIn $this .
+              VALUES ?eligibleSexClass { :SexAtBirthMaleSex :SexAtBirthFemaleSex } .
+              ?sex rdf:type/rdfs:subClassOf* ?eligibleSexClass .
+
+              # Gender instances for the same person (exclude any already-derived Gender Modality instances).
+              ?gender gufo:inheresIn $this ;
+                      rdf:type/rdfs:subClassOf* :Gender .
+              FILTER NOT EXISTS { ?gender rdf:type/rdfs:subClassOf* :GenderModality }
+
+              # Deterministic IRI for the pairing-specific Gender Modality individual.
+              BIND(
+                IRI(
+                  CONCAT(
+                    STR(:GenderModality),
+                    "_",
+                    ENCODE_FOR_URI(CONCAT(STR($this), "|", STR(?sex), "|", STR(?gender)))
+                  )
+                ) AS ?gm
+              )
+
+              # Avoid duplicate materialization if already present.
+              FILTER NOT EXISTS {
+                ?gm rdf:type :GenderModality ;
+                    gufo:inheresIn $this ;
+                    :hasCause ?sex ;
+                    :hasCause_1 ?gender .
+              }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: DeriveCisgenderForGenderModality
+# RULE TYPE: Derivation
+# DESCRIPTION: A Gender Modality instance is typed as Cisgender when its has cause links point to a Sex-at-birth Sex and a Gender that match (Sex-at-birth Male Sex with Male Gender, or Sex-at-birth Female Sex with Female Gender).
+# DETAILS: Materializes rdf:type :Cisgender for each :GenderModality whose cause-pair is a matching Male/Male or Female/Female combination.
+# -----------------------------------------------------------------------------
+
+:DeriveCisgenderForGenderModality
+    a sh:NodeShape ;
+    sh:name "Derive Cisgender typing for Gender Modality"@en ;
+    sh:description "Materialization-only: if a :GenderModality has causes (:hasCause sex, :hasCause_1 gender) that match Male×Male or Female×Female, then assert rdf:type :Cisgender."@en ;
+    sh:targetClass :GenderModality ;
+
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :     <https://w3id.org/health-ri/ontology#>
+            PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+            CONSTRUCT {
+              $this rdf:type :Cisgender .
+            }
+            WHERE {
+              $this :hasCause ?sex ;
+                    :hasCause_1 ?gender .
+
+              {
+                ?sex    rdf:type/rdfs:subClassOf* :SexAtBirthMaleSex .
+                ?gender rdf:type/rdfs:subClassOf* :MaleGender .
+              }
+              UNION
+              {
+                ?sex    rdf:type/rdfs:subClassOf* :SexAtBirthFemaleSex .
+                ?gender rdf:type/rdfs:subClassOf* :FemaleGender .
+              }
+
+              FILTER NOT EXISTS { $this rdf:type :Cisgender . }
+              # Defensive: prevent double-typing if data are inconsistent.
+              FILTER NOT EXISTS { $this rdf:type :Transgender . }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: DeriveTransgenderForGenderModality
+# RULE TYPE: Derivation
+# DESCRIPTION: A Gender Modality instance is typed as Transgender when its has cause links point to a Sex-at-birth Sex and a Gender that do not match (Sex-at-birth Male Sex with Female Gender or Non-binary Gender, or Sex-at-birth Female Sex with Male Gender or Non-binary Gender).
+# DETAILS: Materializes rdf:type :Transgender for each :GenderModality whose cause-pair is a mismatch (Male × {Female, Non-binary}) or (Female × {Male, Non-binary}).
+# -----------------------------------------------------------------------------
+
+:DeriveTransgenderForGenderModality
+    a sh:NodeShape ;
+    sh:name "Derive Transgender typing for Gender Modality"@en ;
+    sh:description "Materialization-only: if a :GenderModality has causes (:hasCause sex, :hasCause_1 gender) that mismatch Male×{Female,Non-binary} or Female×{Male,Non-binary}, then assert rdf:type :Transgender."@en ;
+    sh:targetClass :GenderModality ;
+
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :     <https://w3id.org/health-ri/ontology#>
+            PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+            CONSTRUCT {
+              $this rdf:type :Transgender .
+            }
+            WHERE {
+              $this :hasCause ?sex ;
+                    :hasCause_1 ?gender .
+
+              {
+                ?sex rdf:type/rdfs:subClassOf* :SexAtBirthMaleSex .
+                VALUES ?mismatchGenderClass { :FemaleGender :NonBinaryGender } .
+                ?gender rdf:type/rdfs:subClassOf* ?mismatchGenderClass .
+              }
+              UNION
+              {
+                ?sex rdf:type/rdfs:subClassOf* :SexAtBirthFemaleSex .
+                VALUES ?mismatchGenderClass { :MaleGender :NonBinaryGender } .
+                ?gender rdf:type/rdfs:subClassOf* ?mismatchGenderClass .
+              }
+
+              FILTER NOT EXISTS { $this rdf:type :Transgender . }
+              # Defensive: prevent double-typing if data are inconsistent.
+              FILTER NOT EXISTS { $this rdf:type :Cisgender . }
+            }
+        """ ;
+    ] .
