@@ -2028,22 +2028,22 @@
 
 
 <h1 id="ontology-lifecycle-and-validation-policy">Ontology Lifecycle and Validation Policy</h1>
-<p>This document defines the per-package stages (<code>int</code>, <code>irv</code>, <code>erv</code>, <code>pub</code>), how transitions and reversions are recorded in Visual Paradigm, when and why reversions happen, and the mandatory policy for semantic modifications. It also specifies who validates at each stage, how reviews are initiated, and the expected review timelines. Version effects (Y++) are included where relevant.</p>
+<p>This document defines the stages (<code>int</code>, <code>irv</code>, <code>erv</code>, <code>pub</code>) used to track maturity for "domain packages" (i.e., packages whose introduction/removal triggers <code>X</code> in the adopted semantic versioning), how transitions and reversions are recorded in Visual Paradigm, when and why reversions happen, and the mandatory policy for semantic modifications. It also specifies who validates at each stage, how reviews are initiated, and the expected review timelines. Version effects (Y++) are included where relevant.</p>
 <h2 id="purpose-scope">Purpose &amp; Scope</h2>
-<p>Specifies stage governance for ontology packages: how stage states are tracked, transitioned, and reverted, and how those transitions are recorded. It also defines who performs validation and reviews, when they occur, and how version increments (Y++) are applied. Version impacts are acknowledged where stages drive them; see <a href="../ontology-versioning/">Versioning Strategy</a> for the full versioning logic. This policy applies to all modelers and reviewers involved in ontology development and maintenance.</p>
+<p>Specifies stage governance for "domain packages": how stage states are tracked, transitioned, and reverted, and how those transitions are recorded. Stage states (the stage tagged value) are tracked only for domain packages (i.e., packages whose introduction/removal triggers <code>X</code> in the adopted semantic versioning); supporting/non-domain packages do not carry a stage tagged value. It also defines who performs validation and reviews, when they occur, and how version increments (Y++) are applied. Version impacts are acknowledged where stages drive them; see <a href="../ontology-versioning/">Versioning Strategy</a> for the full versioning logic. This policy applies to all modelers and reviewers involved in domain-package development and maintenance.</p>
 <div class="admonition info">
 <p class="admonition-title">Input sources at all stages</p>
 <p>Input may arrive at any stage (<code>int</code>, <code>irv</code>, <code>erv</code>, <code>pub</code>) and from multiple sources. For example, external contributors (e.g., via GitHub Issues or community calls), the mappings team, domain experts, and other stakeholders. Such input is triaged within the current stage and it does not change the stage by itself. If accepted input entails semantic changes, apply the reversion and versioning rules in <a href="#stage-reversions--why-and-when">Stage Reversions — Why and When</a> and <a href="#policy-for-semantic-modifications">Policy for Semantic Modifications</a>.</p>
 </div>
 <h2 id="definitions-glossary-stages">Definitions &amp; Glossary (Stages)</h2>
-<p>Stages are tracked per package inside the Visual Paradigm project as tagged values on packages and displayed in documentation.</p>
+<p>Stages are tracked per domain packages inside the Visual Paradigm project as tagged values on packages and displayed in documentation.</p>
 <ul>
 <li><code>int</code> – internal work (draft modeling, layout, labels, notes).</li>
 <li><code>irv</code> – submitted for internal review.</li>
 <li><code>erv</code> – submitted for external review.</li>
 <li><code>pub</code> – external review window closed and package is published.</li>
 </ul>
-<p><strong>Rule.</strong> Stage changes happen at package level (not diagram/class). Packages can move through stages independently, and multiple stage transitions may be combined into one release; the version still changes at most once per release following the priority X &gt; Y &gt; Z.</p>
+<p><strong>Rule.</strong> Stage changes happen at package level (not diagram/class). Domain packages can move through stages independently, and multiple stage transitions may be combined into one release; the version still changes at most once per release following the priority X &gt; Y &gt; Z.</p>
 <p><strong>Version note.</strong> A stage transition triggers Y++ and Z → 0 (see <a href="../ontology-versioning/">Versioning Strategy</a>).</p>
 <p><strong>Checklists: gate vs operations.</strong> Stage gate checklists list <strong>exit criteria</strong> to leave stage X and enter stage Y (they are pass/fail gates). The <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a> is <strong>not</strong> a gate; it lists actions to perform <strong>after</strong> entering <code>pub</code> and while remaining there.</p>
 <h2 id="validation-procedures-by-stage">Validation Procedures by Stage</h2>
@@ -2166,7 +2166,7 @@ They are expected to be checked during <code>irv</code>/<code>erv</code>, but th
 <li>
 <p>[ ] <strong>Stage tagging &amp; metadata present</strong></p>
 <ul>
-<li>[ ] Package has the correct stage tag (e.g., <code>irv</code>).
+<li>[ ] For domain packages: package has the correct stage tag (e.g., <code>irv</code>).
 <!-- - [ ] Required package-level metadata (post-v1.0.0) is present: <code>introducedInVersion</code>, <code>lastChangedInVersion</code>, <code>lastPublishedInVersion</code>, <code>reviewedBy</code>. --></li>
 </ul>
 </li>

@@ -2024,18 +2024,18 @@
 <ul>
 <li>Version format: <code>X.Y.Z</code><ul>
 <li><code>X</code> — Package index (<code>1, 2, 3, …</code>): increases when a new package (new domain scope) is introduced.</li>
-<li><code>Y</code> — Stage increment (<code>0, 1, 2, …</code>): increases for every package stage change.</li>
+<li><code>Y</code> — Stage increment (<code>0, 1, 2, …</code>): increases for every domain package stage change.</li>
 <li><code>Z</code> — Minor fixes (<code>0, 1, 2, …</code>): minor modifications that should not significantly impact the domain representation (layout, labeling, diagramming, minor corrections, etc.).</li>
 <li>Examples: <code>3.0.0</code>, <code>3.7.15</code>, <code>4.0.1</code>.</li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p>Note on stages. Stages are tracked per package (see <em>Validation Strategy</em>). A stage transition causes <code>Y++</code> and resets <code>Z → 0</code>, per rules below.</p>
+<p>Note on stages. Stages are tracked per domain packages (see <em>Validation Strategy</em>). A stage transition causes <code>Y++</code> and resets <code>Z → 0</code>, per rules below.</p>
 </blockquote>
 <div class="admonition note">
 <p class="admonition-title">Published tags are rarely "round"</p>
-<p>GitHub releases are created when the package is in <code>pub</code> stage, ocurring after stage transitions (<code>int → irv → erv → pub</code>). Stage transitions bump <code>Y</code>, so published versions are <strong>unlikely</strong> to be exactly <code>X.0.0</code> (e.g., <code>2.0.0</code>), and <code>Z</code> may be non-zero. Expect tags like <code>2.1.0</code> or <code>2.3.4</code>. "Round" versions may still occur because we version the ontology as a whole (not per package), while packages' independent state transitions influence the overall ontology version.</p>
+<p>GitHub releases are created when the relevant domain package is in <code>pub</code> stage, occurring after stage transitions (<code>int → irv → erv → pub</code>). Stage transitions bump <code>Y</code>, so published versions are <strong>unlikely</strong> to be exactly <code>X.0.0</code> (e.g., <code>2.0.0</code>), and <code>Z</code> may be non-zero. Expect tags like <code>2.1.0</code> or <code>2.3.4</code>. "Round" versions may still occur because we version the ontology as a whole (not per package), while domain packages' independent state transitions influence the overall ontology version.</p>
 </div>
 <h2 id="version-numbering-semantics-increment-reset-rules">Version Numbering &amp; Semantics — Increment &amp; Reset Rules</h2>
 <ul>
@@ -2078,7 +2078,7 @@
 <li>
 <p>Triggers:</p>
 <ul>
-<li>Any per-package stage transition: <code>int → irv</code>, <code>irv → erv</code>, <code>erv → pub</code>, or a recorded reversion (e.g., <code>irv → int</code>) via the package's stage tagged value.</li>
+<li>Any domain package stage transition: <code>int → irv</code>, <code>irv → erv</code>, <code>erv → pub</code>, or a recorded reversion (e.g., <code>irv → int</code>) via the  package's stage tagged value.</li>
 <li>Any semantic change that alters model meaning within a package (e.g., adding/removing/retaxonomizing classes, retyping relations, changing multiplicities or constraints, revising authoritative definitions, introducing/removing key axioms).<ul>
 <li>Action: record <code>&lt;current&gt; → int</code> for the package (see <em>Validation Strategy</em>).</li>
 <li>Result: <code>Y++</code> for that release; <code>Z → 0</code>.</li>
