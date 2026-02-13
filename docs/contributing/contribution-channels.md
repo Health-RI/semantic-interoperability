@@ -4,7 +4,7 @@ Outside specific [Calls for Community Review](call-for-community-review.md), you
 
 ## Report an Error in the OntoUML or gUFO Ontology
 
-If you identify an error, inconsistency, ambiguity, or omission in any of the semantic artifacts (including diagrams, models, or OWL files), please let us know.
+If you identify an error, inconsistency, ambiguity, or omission in any of the HRIO artifacts (including diagrams, models, or OWL files), please let us know.
 
 <div class="button-grid" markdown>
 
@@ -21,7 +21,7 @@ Typical reports may include:
 
 ## Request a New Concept to Be Added
 
-If you believe a concept is missing from the ontology and should be included (e.g., a new domain-specific class or relation), please use the form below to propose it.
+If you believe a concept is missing from the Health-RI Ontology (HRIO) and should be included (e.g., a new domain-specific class or relation), please use the form below to propose it.
 
 <div class="button-grid" markdown>
 
@@ -50,7 +50,7 @@ Examples of valid submissions:
 - Proposing a new use case to guide modeling efforts
 - Requesting clarification about specific OntoUML patterns
 - Suggesting improvements to model documentation
-- Offering to align a dataset with the reference ontology
+- Offering to align a dataset with the Health-RI Ontology (HRIO)
 
 ## Contribute SSSOM Mappings
 
@@ -58,12 +58,12 @@ You can contribute to the Health-RI **SSSOM mapping set** (manually curated) in 
 
 <div class="button-grid" markdown>
 
-[Propose a SSSOM Mapping](https://github.com/Health-RI/semantic-interoperability/issues/new?template=sssom-new-mapping.yml){ .md-button }
+[Propose a SSSOM Mapping](https://github.com/health-ri/semantic-interoperability/issues/new?template=sssom-new-mapping.yml){ .md-button }
 
 </div>
 
 1. **Preferred: Submit the issue form**
-   Use our **[SSSOM mapping issue form](https://github.com/Health-RI/semantic-interoperability/issues/new?template=sssom-new-mapping.yml)** to add a single mapping row. Fill in the required fields; Health-RI curators will review and integrate your contribution.
+   Use our **[SSSOM mapping issue form](https://github.com/health-ri/semantic-interoperability/issues/new?template=sssom-new-mapping.yml)** to add a single mapping row. Fill in the required fields; Health-RI curators will review and integrate your contribution.
 
 2. **Alternative: Use the Excel template**
    Download the **[XLSX template](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx)** and enter:
@@ -73,7 +73,7 @@ You can contribute to the Health-RI **SSSOM mapping set** (manually curated) in 
 
 Both methods ensure your contribution is reviewed and incorporated into the official Health-RI SSSOM mapping set.
 
-For more details, see the [Mapping Set documentation](../method/mapping-schema.md).
+For more details, see the [Mapping Set documentation](../method/mapping-schema.md). For curation rules (e.g., mapping lifecycle, `replaces`, evidence expectations), see the [Mapping Governance](../method/mapping-governance.md) page.
 
 ### Submission checklist (for contributors)
 

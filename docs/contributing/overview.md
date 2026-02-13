@@ -1,6 +1,6 @@
-# Contributing to the Health-RI Semantic Interoperability Effort
+# Contributing to the Health-RI Semantic Interoperability Initiative
 
-We welcome community feedback and contributions to help improve the quality, coverage, and clarity of the models and ontologies developed as part of Health-RI's semantic interoperability initiative.
+We welcome community feedback and contributions to help improve the quality, coverage, and clarity of the models and ontologies developed as part of the Health-RI Semantic Interoperability Initiative.
 
 To streamline the contribution process, we distinguish between time-bound calls for community review of specific domain models and ongoing contribution channels. These are described in more detail in the **[Call for Community Review](call-for-community-review.md)** and **[Contribution Channels](contribution-channels.md)** pages, respectively.
 
@@ -22,6 +22,6 @@ For the general case, you can contribute at any time using the **structured subm
 
 [Other Contribution or Request](https://github.com/health-ri/semantic-interoperability/issues/new?template=other-contribution.yml){ .md-button }
 
-[Propose a SSSOM Mapping](https://github.com/Health-RI/semantic-interoperability/issues/new?template=sssom-new-mapping.yml){ .md-button }
+[Propose a SSSOM Mapping](https://github.com/health-ri/semantic-interoperability/issues/new?template=sssom-new-mapping.yml){ .md-button }
 
 </div>

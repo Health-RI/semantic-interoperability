@@ -6,26 +6,26 @@ This page lists the **persistent, stable, and dereferenceable identifiers (PIDs)
 
 ### URI: `https://w3id.org/health-ri/semantic-interoperability`
 
-This URI refers to the Semantic Interoperability Initiative as a whole. It provides persistent access to the initiative's public-facing resources and is suitable for citing the initiative in publications, websites, and metadata records.
+This URI refers to the Semantic Interoperability Initiative as a whole. It provides persistent access to the initiative's public-facing resources and is suitable for citing the initiative in publications, websites, and metadata records. For a scholarly citation of the initiative's conceptual rationale, cite the [academic paper](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf) (and optionally include this URI as the project identifier).
 
 ## Ontology Identifier
 
 ### URI: `https://w3id.org/health-ri/ontology`
 
-This is the **main identifier for the Health-RI Ontology**, which always resolves to the ontology's most recent version.
+This is the **main identifier for the Health-RI Ontology (HRIO)**, and always resolves to the ontology's most recent version. The namespace IRI for HRIO terms is `https://w3id.org/health-ri/ontology#` (prefix `hrio:`).
 
 ### Identifiers for the **Latest Ontology Version**
 
 These URIs point to the **most recent release** of the Health-RI Ontology and related documentation formats.
 
-| PID                       | Description                                  |
-| ------------------------- | -------------------------------------------- |
-| `/ontology/ttl`           | OWL ontology in Turtle format                |
+| PID                       | Description                                          |
+| ------------------------- | ---------------------------------------------------- |
+| `/ontology/ttl`           | OWL ontology in Turtle format                        |
 | `/ontology/documentation` | HTML rendering of the OntoUML ontology documentation |
-| `/ontology/specification` | HTML rendering of the gUFO ontology documentation |
-| `/ontology/json`          | OntoUML model exported as JSON               |
-| `/ontology/vpp`           | OntoUML model file in Visual Paradigm format |
-| `/ontology/shacl`         | SHACL constraint and derivation rules        |
+| `/ontology/specification` | HTML rendering of the gUFO ontology documentation    |
+| `/ontology/json`          | OntoUML model exported as JSON                       |
+| `/ontology/vpp`           | OntoUML model file in Visual Paradigm format         |
+| `/ontology/shacl`         | SHACL constraint and derivation rules                |
 
 Each of these URIs redirects to the latest available version of the resource.
 
@@ -35,9 +35,18 @@ Each of these URIs redirects to the latest available version of the resource.
 !!! note
     Our SHACL file uses the `.shacl` extension and Turtle serialization.
 
+!!! warning "Citing vs browsing"
+    Use **versioned** PIDs (e.g., `/ontology/vX.Y.Z/...`) when citing HRIO in papers, metadata, or data releases to ensure reproducibility.
+    Use the **latest** PIDs (e.g., `/ontology/ttl`, `/ontology/doc`) for browsing and "always-up-to-date" references.
+
 ### Identifiers for **Versioned Ontology Releases**
 
 To support traceability and reproducibility, each ontology release is also available via **version-specific URIs**. Each versioned release of the Health-RI Ontology is identified by its own dedicated URI in the format **`https://w3id.org/health-ri/ontology/vX.Y.Z`**. This URI is used as the `owl:versionIRI` in the ontology metadata.
+
+See also:
+
+- [Versioning Strategy for Ontology Releases](./ontology-versioning.md)
+- [Initiative Publications](./publications.md)
 
 #### Format
 
@@ -45,14 +54,14 @@ To support traceability and reproducibility, each ontology release is also avail
 
 Where:
 
-- `X.Y.Z` is the semantic version (e.g., `2.0.0`)
+- `X.Y.Z` is the HRIO release version identifier (see the [Ontology Versioning Policy](./ontology-versioning.md)) (e.g., `2.0.0`)
 - `{format}` is one of:
-    - `ttl` — OWL ontology (Turtle)
-    - `vpp` — OntoUML model (Visual Paradigm)
-    - `json` — OntoUML model (JSON)
-    - `shacl` — SHACL constraint and derivation rules (Turtle)
-    - `documentation` — OntoUML HTML documentation
-    - `specification` — gUFO HTML documentation
+  - `ttl` — OWL ontology (Turtle)
+  - `vpp` — OntoUML model (Visual Paradigm)
+  - `json` — OntoUML model (JSON)
+  - `shacl` — SHACL constraint and derivation rules (Turtle)
+  - `documentation` — OntoUML HTML documentation
+  - `specification` — gUFO HTML documentation
 
 !!! tip
     You can also use the version URI without a `{format}` (e.g., `/v0.6.0`) to directly access the `.ttl` file.
@@ -124,7 +133,7 @@ The **Health-RI Mapping Vocabulary** defines terms used in our mapping work. The
 
 ### Versioned Vocabulary
 
-Versioned PIDs follow semantic versioning and resolve to immutable artifacts for that release.
+Versioned PIDs include an explicit `vX.Y.Z` segment and resolve to immutable artifacts for that release.
 
 - **URI (TTL):**
   `https://w3id.org/health-ri/mapping-vocabulary/vX.Y.Z`

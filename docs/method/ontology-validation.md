@@ -28,6 +28,9 @@ Stages are tracked per package inside the Visual Paradigm project as tagged valu
 
 Stages `int` and `irv` have exit gate checklists that control advancement (see [Stage-specific Checklists](#stage-specific-checklists)). Entry into `irv` requires passing the [Internal Stage Gate Checklist](#internal-stage-gate-checklist); advancement from `irv` to `erv` requires passing the [Internal Review Stage Gate Checklist](#internal-review-stage-gate-checklist). The only in-stage checklist is the [Publication Stage Operations Checklist](#publication-stage-operations-checklist), executed upon entering `pub` and maintained while in `pub`.
 
+!!! note "Reviewer acknowledgement (opt-out)"
+    Unless a reviewer requests anonymity, record reviewer names (internal `irv` and external `erv`) in the ontology/package metadata collaborators list for the corresponding release. If anonymity is requested (e.g., in the review issue or submission), do not include the reviewer's name.
+
 ### Internal Review (`irv`)
 
 **Who validates.** Members of the modeling and mappings teams who were not directly involved in modeling the package.
@@ -59,7 +62,7 @@ Reviewers must execute the IRV checklist in section [Internal Review Stage Gate 
 
 **Objective.** Conduct an independent, deeper assessment of domain correctness and conceptual rigor. Reviewers check for inconsistencies, incorrectness, incompleteness, ambiguities, hidden assumptions, and coverage gaps, and validate definitions, constraints/multiplicities, and example use-cases/queries, including implications for interoperability and mappings. Where SHACL shapes exist for the package, reviewers also consider the SHACL validation status as part of this assessment.
 
-**Community call.** The internal team publishes a LinkedIn post entitled "Call for Community Review: [Model Name]". Members of the (future) D12 task group are encouraged to repost this call on their LinkedIn profiles to broaden reach.
+**Community call.** The internal team publishes a LinkedIn post entitled "Call for Community Review: <package name>". Health-RI colleagues and partners are encouraged to repost this call to broaden reach.
 
 **Start condition.** Begins only after a passed [Internal Review Stage Gate Checklist](#internal-review-stage-gate-checklist).
 
@@ -83,7 +86,7 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
     - [ ] Title and Description filled using Visual Paradigm's default fields (not tags).
     - [ ] Package metadata initialized with `introducedInVersion` and possibly `lastChangedInVersion`.
 
-- [ ] **Modeling prepared (OntoUML → gUFO)**
+- [ ] **Modeling prepared (HRIO OntoUML → gUFO)**
     - [ ] Classes and relations carry appropriate OntoUML stereotypes (no obvious anti-patterns).
     - [ ] Multiplicities and constraints are specified and justified.
     - [ ] All generalization sets show `isDisjoint` and `isCovering` in every diagram occurrence.
@@ -97,6 +100,10 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
     - [ ] Each package, diagram, and class has a definition that is concise, non-circular, and free of hidden assumptions.
     - [ ] If examples are included, they are domain-correct and consistent with the formal model.
 
+    !!! info "AI-assisted drafting of definitions (draft quality)"
+        Package, diagram, and class definitions in the documentation may be drafted with AI support as a starting point.
+        They are expected to be checked during `irv`/`erv`, but the presence of a definition alone does not imply it has been reviewed in the current snapshot. For transparency, the prompts used to draft AI-supported content are available in `resources/prompts/`.
+
 - [ ] **Diagram quality & traceability**
     - [ ] External element origin shown: any external/reused class displays its origin (source package) using the standard notation.
     - [ ] Empty attribute compartment hidden: classes with no attributes hide the attribute compartment per the diagram style guide.
@@ -105,9 +112,9 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
     - [ ] Notes and constraints follow the standard style and placement.
 
 - [ ] **OWL/TTL export & header**
-    - [ ] Model transforms/exports to gUFO/OWL without errors (local build).
+    - [ ] Model transforms/exports to HRIO gUFO/OWL without errors (local build).
     - [ ] Ontology header metadata template is populated.
-    - [ ] Where SHACL shapes exist for this package, SHACL shapes file(s) are present and a SHACL validation run has been executed at least once (no execution errors) (*To be implemented*). <!-- TODO -->
+    <!-- - [ ] Where SHACL shapes exist for this package, SHACL shapes file(s) are present and a SHACL validation run has been executed at least once (no execution errors) (*To be implemented*). -->
 
 - [ ] **Basic domain consistency (author self-check)**
     - [ ] Complete enough: key concepts/relations for the package scope are present.
@@ -128,11 +135,11 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
     - [ ] Package has the correct stage tag (e.g., `irv`).
     <!-- - [ ] Required package-level metadata (post-v1.0.0) is present: `introducedInVersion`, `lastChangedInVersion`, `lastPublishedInVersion`, `reviewedBy`. -->
 
-- [ ] **Public docs build (Semantic Interoperability site)**
-    - [ ] The package's description page is available on the Initiative site.
+- [ ] **Public docs build (Health-RI Semantic Interoperability Initiative website)**
+    - [ ] The package's description page is available on the Initiative website.
     - [ ] All links resolve: documentation, specification (OWL/TTL), IRIs, and release notes (no 404s).
     - [ ] Package diagrams/images render correctly (no missing assets; labels are readable).
-    - [ ] The OWL/gUFO (`.ttl`) file includes the expected ontology header metadata according to the project standard.
+    - [ ] The HRIO gUFO/OWL (`.ttl`) file includes the expected ontology header metadata according to the project standard.
     - [ ] Figures folder up to date: the latest package diagrams are exported to the Figures folder (no missing/old images).
 
 <!-- - [ ] **Validation artefacts (SHACL, if appllies)**
@@ -141,8 +148,8 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
 
 - [ ] **Terminology consistency**
     - [ ] Names/labels follow the adopted nomenclature strategy (capitalization, spelling, prefixes).
-    - [ ] Terminology is consistent across diagrams, package docs, and OWL/gUFO (`.ttl`).
-    - [ ] Relation naming follows the defined naming strategy (directionality, verb/preposition pattern, capitalization) and is consistent across diagrams and OWL/gUFO (`.ttl`).
+    - [ ] Terminology is consistent across diagrams, package docs, and HRIO gUFO/OWL (`.ttl`).
+    - [ ] Relation naming follows the defined naming strategy (directionality, verb/preposition pattern, capitalization) and is consistent across diagrams and HRIO gUFO/OWL (`.ttl`).
     <!-- - [ ] Labels: `prefLabel` is the most appropriate primary label (no `altLabel` would be a better choice); missing `altLabel`s (synonyms, common variants, abbreviations) are identified and proposed. -->
 
 - [ ] **Definitions & examples (scope: packages, diagrams, classes)**
@@ -151,7 +158,10 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
     - [ ] If examples are provided, they are domain-correct, consistent with the model.
     - [ ] Documentation is supplementary only: it explains what is modeled and must not introduce new semantics.
 
-- [ ] **Conceptual modeling soundness (OntoUML → gUFO)**
+    !!! note "Reviewer focus: AI-drafted text"
+        Definitions of packages, diagrams, and classes may have been drafted with AI support. At this gate, reviewers should validate these texts against the model and domain sources. Prompt sets used for AI-supported drafting are available in `resources/prompts/` for independent assessment.
+
+- [ ] **Conceptual modeling soundness (HRIO OntoUML → gUFO)**
     - [ ] Classes and relations use appropriate OntoUML stereotypes; no obvious anti-patterns.
     - [ ] Multiplicities and constraint choices are justified and non-contradictory.
     - [ ] Generalization set's properties (`isDisjoint` and `isCovering`) are clearly displayed in all diagram occurrences of the set.

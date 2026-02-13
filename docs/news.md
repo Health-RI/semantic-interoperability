@@ -1,5 +1,22 @@
 # News & Updates
 
+## 2026-02-13
+
+- **Index** — Changed: Reworked the homepage to emphasize semantic traceability, the semantic-hub mapping approach, and a 10-minute quick start.
+- **Method Overview** — Changed: Expanded the method overview with clearer definitions, rationale, and references for HRIO/HRIV-based semantic traceability.
+- **Frequently Asked Questions (FAQ)** — Changed: Added detailed guidance on HRIO/HRIV meaning mappings, including interpretation caveats (SKOS/OWL) and adoption considerations.
+- **Mapping Strategy** — Changed: Clarified CIM/PIM layering for HRIO artifacts, updating the figure caption and adding an artifact-by-layer comparison table.
+- **The Health-RI SSSOM Mapping Set Schema** — Modified: Added semantic-traceability context, expanded field guidance, and clarified that HRIV predicates are meaning-level links (not OWL equivalence/subsumption).
+- **Mapping Governance** — Modified: Strengthened curation and review guidance with warnings against false agreement, clearer evidence expectations, and notes on mapping stability versus HRIO maturity.
+- **Ontology Validation** — Modified: Updated review checklists with opt-out acknowledgement guidance and transparency notes for AI-assisted drafting of documentation text.
+- **Ontology Rules** — Modified: Clarified how SHACL constraints and derivation rules attach to HRIO artifacts, including an updated OntoUML→gUFO/OWL→SHACL workflow.
+- **Ontology Versioning** — Changed: Aligned terminology and artifact lists under HRIO, clarifying that all release artifacts share one version identifier.
+- **Persistent IDs** — Changed: Expanded guidance on citing versioned PIDs versus using “latest” PIDs for browsing, and clarified HRIO namespace identifiers.
+- **Publications** — Changed: Clarified when derived OWL/SHACL/spec artifacts are published and how “latest” PIDs behave when derived artifacts are unavailable.
+- **Deliverables Overview** — Modified: Updated the deliverables summary to explicitly describe HRIO, HRIV, the SSSOM mapping set, and the changelog.
+- **Contribution Channels** — Fixed: Refreshed contribution guidance with HRIO terminology, links to mapping governance, and normalized SSSOM issue-form links.
+- **Calls for Community Review** — Modified: Clarified the external review process for HRIO domains, including default acknowledgement with opt-out and a current “no open calls” status note.
+
 ## 2026-02-11
 
 - **[Health Ri Ontology](https://w3id.org/health-ri/ontology)** — Added: Published v1.6.0 release artifacts (Turtle, JSON, SHACL, Visual Paradigm) and refreshed sex/gender diagrams and SKOS labels for improved display.

@@ -21,6 +21,7 @@ The importance of semantic interoperability lies in its capacity to enable accur
 The FAIR guiding principles identify **Interoperability** as a central pillar for maximizing the value of information artifacts <a href="#ref12">[12]</a>. According to Guizzardi, the "I" in FAIR must be understood not just as a technical property, but as a commitment to meaningful, semantically grounded data integration that supports **human interoperation mediated by machines** [11].
 
 The FAIR principles I1–I3 specify that:
+
 1. (meta)data should use a **formal, accessible, shared, and broadly applicable language** for knowledge representation;
 2. (meta)data should rely on **vocabularies that themselves follow FAIR principles**;
 3. (meta)data should include **qualified references** to other (meta)data.
@@ -28,6 +29,7 @@ The FAIR principles I1–I3 specify that:
 These requirements cannot be fulfilled by mere terminological resources alone. To ensure that systems interpret shared data consistently, vocabularies must be underpinned by **ontologies**—explicit and formal representations of shared conceptualizations. Guizzardi emphasizes that vocabularies must be ontologically grounded in order to properly support semantic interoperability [11].
 
 To achieve this, two levels of support are needed:
+
 - **Ontologies** (in the plural) serve as "meaning contracts" that clarify the domain-specific conceptualizations shared between systems;
 - **Ontology** (as a discipline) provides the **formal methods and theories** required to build these ontologies correctly and to clarify their commitments.
 
@@ -117,37 +119,49 @@ These examples underscore the importance of designing systems that share not onl
 ## References
 
 <a id="ref1"></a>
-- **[1]** Semantic interoperability. *Wikipedia*. Retrieved from: https://en.wikipedia.org/wiki/Semantic_interoperability
+
+- **[1]** Semantic interoperability. _Wikipedia_. Retrieved from: <https://en.wikipedia.org/wiki/Semantic_interoperability>
 
 <a id="ref2"></a>
-- **[2]** What is semantic interoperability? *Wolters Kluwer*. Retrieved from: https://www.wolterskluwer.com/en/expert-insights/what-is-semantic-interoperability
+
+- **[2]** What is semantic interoperability? _Wolters Kluwer_. Retrieved from: <https://www.wolterskluwer.com/en/expert-insights/what-is-semantic-interoperability>
 
 <a id="ref3"></a>
-- **[3]** Guarino, N. (2009). *The Ontological Level: Revisiting 30 Years of Knowledge Representation*. In: Borgida, A.T. et al. (Eds.), Mylopoulos Festschrift, LNCS 5600, pp. 52–67. Springer. https://doi.org/10.1007/978-3-642-01907-4_6
+
+- **[3]** Guarino, N. (2009). _The Ontological Level: Revisiting 30 Years of Knowledge Representation_. In: Borgida, A.T. et al. (Eds.), Mylopoulos Festschrift, LNCS 5600, pp. 52–67. Springer. <https://doi.org/10.1007/978-3-642-01907-4_6>
 
 <a id="ref4"></a>
-- **[4]** Guarino, N. (1998). *Formal Ontology and Information Systems*. In: N. Guarino (ed.), FOIS'98, IOS Press, pp. 3–15. https://www.researchgate.net/publication/272169039_Formal_Ontology_and_Information_Systems
+
+- **[4]** Guarino, N. (1998). _Formal Ontology and Information Systems_. In: N. Guarino (ed.), FOIS'98, IOS Press, pp. 3–15. <https://www.researchgate.net/publication/272169039_Formal_Ontology_and_Information_Systems>
 
 <a id="ref5"></a>
-- **[5]** Interoperability: unifying and maximising data reuse within digital education ecosystems. *OECD*. Retrieved from: https://www.oecd.org/en/publications/oecd-digital-education-outlook-2023_c74f03de-en/full-report/interoperability-unifying-and-maximising-data-reuse-within-digital-education-ecosystems_660f8da1.html
+
+- **[5]** Interoperability: unifying and maximising data reuse within digital education ecosystems. _OECD_. Retrieved from: <https://www.oecd.org/en/publications/oecd-digital-education-outlook-2023_c74f03de-en/full-report/interoperability-unifying-and-maximising-data-reuse-within-digital-education-ecosystems_660f8da1.html>
 
 <a id="ref6"></a>
-- **[6]** Importance of Semantic Interoperability in Public Health Surveillance. *SSG*. Retrieved from: https://www.ssg-llc.com/semantic-interoperability-importance-of-interoperability-in-public-health/
+
+- **[6]** Importance of Semantic Interoperability in Public Health Surveillance. _SSG_. Retrieved from: <https://www.ssg-llc.com/semantic-interoperability-importance-of-interoperability-in-public-health/>
 
 <a id="ref7"></a>
-- **[7]** Aligning Semantic Interoperability Frameworks with the FOXS Stack. *PubMed*. Retrieved from: https://pubmed.ncbi.nlm.nih.gov/36473495/
+
+- **[7]** Aligning Semantic Interoperability Frameworks with the FOXS Stack. _PubMed_. Retrieved from: <https://pubmed.ncbi.nlm.nih.gov/36473495/>
 
 <a id="ref8"></a>
-- **[8]** Achieving Semantic Interoperability Using RDF and OWL. *W3C*. Retrieved from: https://www.w3.org/2001/sw/BestPractices/OEP/SemInt/
+
+- **[8]** Achieving Semantic Interoperability Using RDF and OWL. _W3C_. Retrieved from: <https://www.w3.org/2001/sw/BestPractices/OEP/SemInt/>
 
 <a id="ref9"></a>
-- **[9]** Suggestions for extending the FAIR Principles based on a linguistic perspective on semantic interoperability. *Nature Scientific Data*. Retrieved from: https://www.nature.com/articles/s41597-025-05011-x
+
+- **[9]** Suggestions for extending the FAIR Principles based on a linguistic perspective on semantic interoperability. _Nature Scientific Data_. Retrieved from: <https://www.nature.com/articles/s41597-025-05011-x>
 
 <a id="ref10"></a>
-- **[10]** FAIR Semantics, Interoperability, and Services. *FAIRsFAIR*. Retrieved from: https://www.fairsfair.eu/fair-semantics-interoperability-and-services-0
+
+- **[10]** FAIR Semantics, Interoperability, and Services. _FAIRsFAIR_. Retrieved from: <https://www.fairsfair.eu/fair-semantics-interoperability-and-services-0>
 
 <a id="ref11"></a>
-- **[11]** Guizzardi, G. (2020). *Ontology, Ontologies and the "I" of FAIR*. Data Intelligence, 2(1–2), 181–191. https://doi.org/10.1162/dint_a_00040
+
+- **[11]** Guizzardi, G. (2020). _Ontology, Ontologies and the "I" of FAIR_. Data Intelligence, 2(1–2), 181–191. <https://doi.org/10.1162/dint_a_00040>
 
 <a id="ref12"></a>
-- **[12]** Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., et al. (2016). *The FAIR Guiding Principles for scientific data management and stewardship*. Scientific Data, 3, 160018. https://doi.org/10.1038/sdata.2016.18
+
+- **[12]** Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., et al. (2016). _The FAIR Guiding Principles for scientific data management and stewardship_. Scientific Data, 3, 160018. <https://doi.org/10.1038/sdata.2016.18>

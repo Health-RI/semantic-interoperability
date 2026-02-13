@@ -1,4 +1,4 @@
-### Ontology Old Versioning Policy
+# Ontology Old Versioning Policy
 
 Before version 1.0.0, We used an **adapted semantic versioning** scheme to indicate the type and impact of changes:
 

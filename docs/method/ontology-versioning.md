@@ -2,7 +2,7 @@
 
 This document specifies the version number semantics (`X.Y.Z`), priority rules, increment/reset logic, and triggers for `X`/`Y`/`Z`. It also includes the semantic vs. non-semantic decision tests, worked examples, and the versioning flowchart. Stage concepts are referenced only insofar as they drive `Y`-level changes.
 
-This versioning strategy applies to all ontology artifacts released as part of the Health-RI Ontology. In any given release, all artifacts share the same version identifier (`X.Y.Z`) and correspond to the same underlying OntoUML model.
+This versioning strategy applies to all ontology artifacts released as part of the Health-RI Ontology (HRIO). In any given release, all artifacts share the same version identifier (`X.Y.Z`) and correspond to the same underlying HRIO OntoUML model.
 
 ## Purpose & Scope
 
@@ -10,9 +10,9 @@ Defines how versions are assigned and incremented for the ontology/model release
 
 !!! note "Artifacts covered and alignment"
     The `X.Y.Z` version identifier applies uniformly to the ontology artifacts released by this initiative:
-    - OntoUML model in Visual Paradigm (`.vpp` project).
-    - OntoUML model exported as JSON (`.json`).
-    - gUFO-based OWL ontology (`.ttl`, in Turtle).
+    - HRIO OntoUML model in Visual Paradigm (`.vpp` project).
+    - HRIO OntoUML model exported as JSON (`.json`).
+    - HRIO gUFO/OWL ontology (`.ttl`, in Turtle).
     - SHACL shapes file (`.shacl`, in Turtle).
     - Ontology documentation and specification.
 
@@ -94,15 +94,15 @@ Treat the change as **semantic** (counts for `Y`) if any of the following is **y
 
 ### Edge-case examples
 
-| Change | Y or Z? | Rationale |
-|---|---|---|
-| Rename class label "Person" → "Individual" (label only; IRI/definition unchanged) | Z | Terminology-only; no entailment or instance impact. |
-| Rename class IRI or revise textual definition to narrow/broaden scope | Y | Identity/meaning changed; instance/entailment impact possible. |
-| Add an association previously only *visually implied* by layout | Y | New relation; changes entailments/instances. |
-| Move boxes/arrows, improve diagram readability | Z | Diagram-only; model unchanged. |
-| Change multiplicity `0..* → 1..*` | Y | Constraint tightened; prior instances may become invalid. |
-| Retype association end or change superclass | Y | Taxonomic/typing change; affects entailments/instances. |
-| Fix spelling/capitalization in labels | Z | Surface-only. |
+| Change                                                                            | Y or Z? | Rationale                                                      |
+| --------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------- |
+| Rename class label "Person" → "Individual" (label only; IRI/definition unchanged) | Z       | Terminology-only; no entailment or instance impact.            |
+| Rename class IRI or revise textual definition to narrow/broaden scope             | Y       | Identity/meaning changed; instance/entailment impact possible. |
+| Add an association previously only *visually implied* by layout                   | Y       | New relation; changes entailments/instances.                   |
+| Move boxes/arrows, improve diagram readability                                    | Z       | Diagram-only; model unchanged.                                 |
+| Change multiplicity `0..* → 1..*`                                                 | Y       | Constraint tightened; prior instances may become invalid.      |
+| Retype association end or change superclass                                       | Y       | Taxonomic/typing change; affects entailments/instances.        |
+| Fix spelling/capitalization in labels                                             | Z       | Surface-only.                                                  |
 
 ## Examples / Decision Table (Worked Examples)
 

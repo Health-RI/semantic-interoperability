@@ -240,7 +240,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - `rdf:type` `gufo:Category`; `owl:equivalentClass` **IndividualAgent ⊔ Organization**.
 - Added helper property specializations (structural alignments via `rdfs:subPropertyOf`), including:
   - **recognizedBy** (`rdfs:subPropertyOf` `hasAttributor`), **recognizesGender** (`rdfs:subPropertyOf` `attributesGender`), plus **recognizesGender_1** and **recognizes_1**.
-  - Gender / sex-at-birth inherence helper subproperties (e.g., **selfIdentifiedGenderInheresInSelfAwarePerson**, **sexAtBirthInheresInPersonWithAssignedSexAtBirth**, and related “personWith\*” subproperties).
+  - Gender / sex-at-birth inherence helper subproperties (e.g., **selfIdentifiedGenderInheresInSelfAwarePerson**, **sexAtBirthInheresInPersonWithAssignedSexAtBirth**, and related "personWith\*" subproperties).
 
 ### Changed
 
@@ -378,7 +378,7 @@ Class `Healthcare Professional` moved from package `Sex and Gender` to package `
 
 - Updated UML note colors in the Visual Paradigm diagrams to align with the revised **Rules Policy** definitions:
   - Adjusted existing note color assignments to comply with the updated rule categories and definitions.
-  - This is a **visual/editorial** update only and does **not** change the ontology’s logical content.
+  - This is a **visual/editorial** update only and does **not** change the ontology's logical content.
 
 ## [1.1.0] - 2025-11-12
 
@@ -405,11 +405,11 @@ Class `Healthcare Professional` moved from package `Sex and Gender` to package `
 ### Added
 
 - Introduced class **Polyploid**:
-  - `rdfs:label` “Polyploid”
+  - `rdfs:label` "Polyploid"
   - `rdfs:subClassOf` **HumanCell**
   - Stereotyped as **gufo:SubKind** (declared as both `owl:Class` and `owl:NamedIndividual`).
 - Introduced object property **hasAllosome**:
-  - `rdfs:label` “has allosome”
+  - `rdfs:label` "has allosome"
   - `rdfs:domain` **Person**
   - `rdfs:range` **Allosome**
   - Stereotyped as **gufo:MaterialRelationshipType**.

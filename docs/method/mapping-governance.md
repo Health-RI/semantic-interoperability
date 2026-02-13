@@ -4,23 +4,26 @@ This page sets the governance, lifecycle, validation, and release policy for the
 
 ## Purpose and Scope
 
-This policy defines how the Health-RI SSSOM Mapping Set is governed, validated, versioned, and released so that mappings are trustworthy, reproducible, and easy to discover.
+This policy defines how the Health-RI SSSOM Mapping Set is governed, validated, versioned, and released so that mappings are trustworthy, reproducible, and easy to discover and reuse in FAIR-aligned infrastructures [1], [18].
 
 ### Objectives
 
 - Enforce clear roles with separation of duties (Mapper, Reviewer, Curator) and independent human approvals (two-person rule).
 - Run a stateful lifecycle with explicit promotion gates and an append-only supersession model.
 - Guarantee provenance, reproducibility, and transparent release management.
-- Align with external standard communities where applicable (e.g., OMOP) and record outcomes.
+- Align with external standard communities where applicable (e.g., OMOP) and record outcomes [11].
 
 ### Applicability
 
 - Applies to all mapping records proposed for or included in Health-RI mapping artifacts (TSV/TTL) and their metadata as defined on the [Mapping Set](./mapping-schema.md) page.
 - Covers all submission routes referenced on the [Mapping Set](./mapping-schema.md) page (e.g., issue form or XLSX) and the end-to-end path to publication.
 
-<!-- Future update will be necessary -->
 #### Start stage for mappings
+
 At the current maturity level, mapping work may begin once the relevant HRIO package reaches `irv` (internal review). Our target policy is to allow mappings only after the package is in `pub` (published). Stage definitions are described in the [Ontology Lifecycle and Validation Policy](./ontology-validation.md).
+
+!!! info "Mapping stability depends on HRIO maturity"
+    If the target HRIO package is still in internal review, mappings may need revision after publication. Prefer mapping against `pub` packages when possible, and expect supersession when meanings evolve.
 
 ### In Scope
 
@@ -203,14 +206,21 @@ flowchart LR
 
 ## Semantic Requirements
 
+!!! warning "Avoid false agreement (labels are not semantics)"
+    Similar labels, codes, or even OWL axioms across artifacts are not sufficient evidence of shared meaning.
+    Predicate selection must be justified using definitions, scope notes, and modeled constraints—not string similarity [19], [22].
+
 Normative, per-row schema constraints (e.g., allowed predicates, label language tags, justification vocabulary) are defined on the [Mapping Set](./mapping-schema.md) page. This section provides usage guidance only.
 
 ### Justification and Evidence
 
 - Set `mapping_justification` to the appropriate method indicator. By default (and currently the only generally acceptable value) it is `semapv:ManualMappingCuration` (a curator-approved alternative may be used when explicitly evaluated). This field records the method/rationale category for how the mapping was produced, not the semantic relation itself.
-- Capture the concrete reasoning for your choice of HRIV `predicate_id` (e.g., `hriv:hasExactMeaning`, `hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`) in the `comment` field. When justifying, use definitional/semantic arguments (notes, formal definitions) over label similarity.
+- Capture the concrete reasoning for your choice of HRIV `predicate_id` (e.g., `hriv:hasExactMeaning`, `hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`) in the `comment` field. When justifying, use definitional/semantic arguments (notes, formal definitions) over label similarity [22].
 - When using a negation, set `predicate_modifier` to `Not` (its only valid value) and add a brief rationale in `comment`.
 - For borderline hierarchical mappings, add a brief rationale in `comment` explaining why you selected broader or narrower.
+
+!!! tip "What to include as evidence in `comment`"
+    When a mapping is non-obvious, add short evidence pointers in `comment` (e.g., definition excerpts, scope-note references, or URLs to the relevant standard/ontology documentation). Keep it concise but sufficient for an independent reviewer to reproduce the decision [22].
 
 ## Validation
 
@@ -242,10 +252,22 @@ When a source or target standard maintains an official mapping registry or accep
 1. Submit after publication: Within **one sprint** of publication, notify/submit the mapping(s) to the standard's community channel or registry.
 2. Provide traceable facts: Include the Health-RI release date (`publication_date`), affected `record_id`(s), chosen HRIV predicate (`predicate_id`), and `mapping_justification`.
 3. Record the submission: Add the submission URL or ticket ID in release notes; optionally place a per-row link in the `comment` field.
-4. Handle outcomes via supersession: If the external review requests changes, publish a new record that supersedes the previous one using `replaces` (append-only), with a short rationale.
+4. Handle outcomes via supersession: If the external review requests changes, publish a new record that supersedes the previous one using `replaces` (append-only), with a short rationale [11].
 
 !!! note "Submission SLA"
     Submissions to external registries (e.g., OHDSI/OMOP) must be initiated within **one sprint** of publication.
+
+## References
+
+[1]: Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. *Scientific Data, 3*(1), 160018. https://doi.org/10.1038/sdata.2016.18
+
+[11]: Observational Health Data Sciences and Informatics. (2014). *OMOP Common Data Model*. https://ohdsi.github.io/CommonDataModel/
+
+[18]: Guizzardi, G. (2020). Ontology, ontologies and the "I" of FAIR. *Data Intelligence, 2*(1–2), 181–191. https://doi.org/10.1162/dint_a_00040
+
+[19]: Guarino, N. (Ed.). (1998). *Formal Ontology in Information Systems: Proceedings of the 1st International Conference (Trento, Italy, June 6–8, 1998)*. IOS Press.
+
+[22]: Guizzardi, G., & Guarino, N. (2024). Explanation, semantics, and ontology. *Data & Knowledge Engineering, 153*, 102325. https://doi.org/10.1016/j.datak.2024.102325
 
 <!-- footnotes -->
 [^hrim]: `hrim` is the prefix for <https://w3id.org/health-ri/semantic-interoperability/mappings#>

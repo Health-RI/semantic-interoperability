@@ -1,5 +1,8 @@
 # Frequently Asked Questions (FAQ)
 
+!!! note "Transparency (AI-assisted drafting)"
+    Parts of this FAQ were drafted with AI-assisted editing support. Health-RI team members review and refine entries to the best of our ability.
+
 ## Project Overview and Strategic Context
 
 *Questions about the initiative's purpose, strategic goals, expected impact, and broader context.*
@@ -16,34 +19,34 @@
     To enable meaningful data integration across health and life sciences institutions by aligning data semantically, not just structurally. This is achieved through the development and adoption of a common reference model that captures domain meaning explicitly.
 
 ??? question "What exactly are we trying to achieve with semantic interoperability?"
-    We aim to align external and internal ontologies to a shared reference model, ensuring that semantic definitions are preserved across conceptual and computational layers. This is achieved through structured mappings (e.g., `hriv:hasExactMeaning`) from third-party concepts to Health-RI's reference ontology (OntoUML) and its computational counterpart (gUFO).
+    We aim to align external and internal ontologies to a shared reference model, ensuring that semantic definitions are preserved across conceptual and computational layers. This is achieved through structured meaning mappings (e.g., `hriv:hasExactMeaning`) from third-party concepts to the Health-RI Ontology (HRIO), specified in OntoUML and implemented as a gUFO-based OWL ontology (HRIO gUFO/OWL).
 
 ??? question "Why is semantic interoperability important in healthcare and life sciences?"
     Because it ensures that data from diverse sources is interpreted consistently, reducing the risk of misinterpretation and improving reusability, reproducibility, and trust. It supports FAIR data practices and accelerates data-driven innovation.
 
 ??? question "What problem is this initiative addressing?"
-    It addresses the issue of inconsistent data semantics across institutions, which leads to errors, false agreement, and limited reuse. Many systems use similar terms but with different meanings, or different terms for the same concept.
+    It addresses the issue of inconsistent data semantics across institutions, which leads to errors, false agreement, and limited reuse. Many systems use similar terms but with different meanings, or different terms for the same concept. Rather than assuming agreement based on labels, definitions, codes, or OWL axioms, the initiative requires that mapped concepts be traced back to a shared, well-defined conceptualization.
 
 ??? question "Is there a standardized way to define common reference models? Are we using standardized methods, languages, or tools?"
-    There is currently no global standard for defining and implementing semantic reference models. However, the approach adopted by this initiative—based on ontology-driven conceptual modeling and explicit ontological commitments—is recognized in the literature as the only viable path to achieve real semantic interoperability (see [Guizzardi (2020)](https://doi.org/10.1162/dint_a_00033)).
+    There is currently no global standard for defining and implementing semantic reference models. However, the approach adopted by this initiative—based on ontology-driven conceptual modeling and explicit ontological commitments—is recognized in the literature as a viable path to achieve semantic interoperability (see [Guizzardi (2020)](https://doi.org/10.1162/dint_a_00033)).
 
     We apply well-established methods and languages that have been successfully used in a variety of domains and are widely recognized for their effectiveness (see [Guizzardi et al. (2022)](https://journals.sagepub.com/doi/abs/10.3233/AO-210256)). These include:
 
-    - OntoUML for conceptual modeling
-    - OWL and RDF for computational representation and publishing
-    - SSSOM Mappings for declaring resources semantics
+    - OntoUML for conceptual modeling (reference model)
+    - OWL and RDF for computational representation and publishing (gUFO-based OWL implementation)
+    - SSSOM mapping sets for sharing meaning mappings (when mappings are maintained as separate artifacts)
     - Persistent identifiers, alignment with FAIR principles
 
     Other approaches may offer faster implementation or simpler integration but often fail to ensure semantic consistency over time. By contrast, our approach prioritizes long-term semantic precision and interoperability.
 
 ??? question "What does success look like for this project?"
-    Success means having a robust reference model (OntoUML) and executable OWL artifacts (gUFO) in place, with external ontologies semantically aligned through precise mappings. It also includes supporting community contributions, replacing approximate mappings (e.g., `hriv:hasExactMeaning`) with exact ones where possible, and continuously refining the model to bridge semantic gaps.
+    Success means having a robust reference model (HRIO OntoUML) and its executable OWL implementation (HRIO gUFO/OWL) in place, with external ontologies semantically aligned through precise meaning mappings. It also includes supporting community contributions, replacing broader/narrower meaning mappings (`hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`) with `hriv:hasExactMeaning` where possible, and continuously refining the model to bridge semantic gaps.
 
 ??? question "Who will benefit from or use the developed solutions?"
     Researchers, clinicians, developers, and data stewards who need to align datasets from different systems and institutions while preserving domain meaning.
 
-??? question "Are there any external collaborators or partner organizations? (TBD)"
-    TBD.
+??? question "Are there any external collaborators or partner organizations?"
+    Yes. The initiative's work is carried out with Health-RI's external collaborators, including Leiden University Medical Center (LUMC) and Amsterdam University Medical Center (Amsterdam UMC).
 
 ??? question "What is the current situation regarding data interoperability in the Netherlands? (TBD)"
     TBD.
@@ -55,13 +58,21 @@
     The development of the OntoUML conceptual model, its implementation as the gUFO OWL ontology, and the strategy for semantically aligning third-party ontologies using [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html) properties are all concrete milestones achieved. Figures and examples in the documentation illustrate successful alignment strategies already in use.
 
 ??? question "What challenges are currently being faced?"
-    One challenge is when no exact match exists between external concepts and the reference ontology. This requires approximate mappings and motivates the need to expand the Health-RI ontology to bridge gaps. Another challenge is managing transitivity and ambiguity in mappings (e.g., limiting to a single `hriv:hasExactMeaning` per concept).
+    One challenge is when no exact-meaning alignment is justified between an external concept and the reference ontology. This requires broader/narrower meaning mappings and motivates the need to expand the Health-RI ontology to bridge gaps over time.
 
-??? question "What risks and limitations should be considered? (TBD)"
-    TBD.
+    Another challenge is ensuring consistent interpretation across tooling. HRIV mappings can be aligned to SKOS mapping relations for interoperability and discovery, but SKOS-level entailments (e.g., transitivity of `skos:exactMatch`) must not be used to change the intended interpretation of an HRIV mapping. This makes curation rules and governance important for keeping mappings reliable as sources evolve.
 
-??? question "What assumptions are being made during development? (TBD)"
-    TBD.
+??? question "What risks and limitations should be considered?"
+    The current documentation illustrates intended benefits but does not yet present an empirical evaluation of mapping-effort reduction, error reduction, or user comprehension gains.
+
+    Adoption may also increase initial effort in the short term, since new standards and local schemas still require curated meaning mappings. In addition, mappings must be maintained per source artifact and release, and reviewed when source or HRIO definitions evolve. The long-term success of the approach therefore depends on sustained community engagement and governance to curate and maintain mappings as artifacts evolve.
+
+??? question "What assumptions are being made during development?"
+    The approach relies on explicit semantic assumptions linking layers and artifacts. In particular:
+    - The HRIO gUFO/OWL ontology is treated as an implementation of the HRIO OntoUML reference model, preserving the same intended meanings across conceptual and computational layers.
+    - External artifacts are treated as indirectly representing HRIO meanings via their HRIV links to HRIO concepts; this "indirect representation" is derived from implementation and mapping assumptions rather than encoded as an OWL relation.
+
+    In the OWL implementation, mapping assertions are expressed as object-property assertions between individuals denoting expressions and meanings (with OWL 2 DL punning when OWL class IRIs are used). As a result, HRIV mappings should not be interpreted as OWL class axioms.
 
 ??? question "What changes are expected in the future?"
     Future work includes refining the ontology by introducing intermediate concepts to replace approximate mappings with exact ones, enhancing semantic precision and reasoning capabilities.
@@ -144,25 +155,47 @@
 - [How to contribute concepts/mappings](../contributing/)
 
 ??? question "How are mappings from local schemas to the reference model created?"
-    If schemas are OWL/RDF-based, mappings can be embedded directly using standard RDF properties. Otherwise, external mappings are created using [SSSOM](https://mapping-commons.github.io/sssom/).
+    Mappings are expressed using the Health-RI Mapping Vocabulary (HRIV) predicates (i.e., HRIV-defined subproperties of `hriv:meaningMappingRelation`).
 
-    Mappings follow the [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html) and can be asserted using:
+    In practice, there are two complementary approaches:
+    - If an external artifact is outside Health-RI's editorial control, mappings are typically maintained non-invasively in a separate mapping artifact (e.g., a SSSOM mapping set).
+    - If an external artifact is under the editorial control of its authors/maintainers (and governance permits), HRIV mapping assertions may be embedded directly in the artifact itself (e.g., as ontology annotations or axioms).
 
-    - [`hriv:hasExactMeaning`](../method/specification-vocabulary.html#hasExactMeaning) for perfect semantic alignment (only one allowed),
-    - [`hriv:hasBroaderMeaningThan`](../method/specification-vocabulary.html#hasBroaderMeaningThan) or [`hriv:hasNarrowerMeaningThan`](../method/specification-vocabulary.html#hasNarrowerMeaningThan) when the match is approximate.
+    Mappings can be asserted using:
+    - [`hriv:hasExactMeaning`](../method/specification-vocabulary.html#hasExactMeaning) when an exact-meaning alignment is justified,
+    - [`hriv:hasBroaderMeaningThan`](../method/specification-vocabulary.html#hasBroaderMeaningThan) or [`hriv:hasNarrowerMeaningThan`](../method/specification-vocabulary.html#hasNarrowerMeaningThan) when an exact-meaning alignment is not justified (or not available), to make the direction of mismatch explicit.
 
-    These mappings support semantic alignment without requiring modification to the original schema and are managed either by Health-RI (non-invasively in SSSOM) or by partners (embedded in their own RDF models).
+    These mappings support semantic alignment without requiring replacement of existing schemas, and can be managed either by Health-RI (non-invasively in SSSOM) or by partners (embedded in their own RDF/OWL artifacts).
 
 ??? question "What is `hriv:hasExactMeaning`, and how is it different from `owl:equivalentClass` or `skos:exactMatch`?"
-    `hriv:hasExactMeaning` (equivalent to `semiotics:expresses`) is used to state that an external concept carries the same intended meaning as a concept in the Health-RI reference model. It expresses a strong semantic alignment in terms of shared meaning, but it does not imply logical equivalence.
+    `hriv:hasExactMeaning` (a specialized subproperty of `semiotics:expresses`) is used to state that an external concept carries the same intended meaning as a concept in the Health-RI reference model—i.e., the expression's semantics are precisely determined by that meaning. It expresses a strong meaning mapping, but it does not imply logical equivalence.
 
     - Unlike `owl:equivalentClass`, it does not entail formal logical equivalence and therefore avoids unintended reasoning consequences when integrating ontologies with different logical foundations.
-    - Unlike `skos:exactMatch`, which is often used for linking concepts across vocabularies in a looser, less formally grounded way, `hriv:hasExactMeaning` is tied to an explicit semantic grounding in a reference ontology. This makes it more precise for interoperability scenarios where meaning—not logical entailment—is the key requirement.
+    - Unlike `skos:exactMatch`, which is often used for linking concepts across vocabularies in a looser, less formally grounded way, `hriv:hasExactMeaning` is tied to an explicit semantic grounding in a reference ontology.
 
-    In summary, `hriv:hasExactMeaning` is intended for strong semantic alignment without the risks of logical overcommitment (`owl:equivalentClass`) or the potential ambiguity of generic lexical alignment (`skos:exactMatch`).
+    In the OWL implementation, HRIV mapping assertions are not OWL class axioms: they are expressed as object-property assertions between individuals denoting expressions and meanings (with OWL 2 DL punning when class IRIs are used). Therefore, they do not imply `owl:equivalentClass`, `owl:sameAs`, or `rdfs:subClassOf` entailments between the mapped classes. For compatibility with SKOS tooling, corresponding SKOS mapping assertions can be derived, but the HRIV predicate remains the authoritative carrier of the intended meaning.
+
+??? question "Do HRIV mappings imply OWL entailments between external classes (e.g., equivalence or subsumption)?"
+    No. HRIV mappings are not OWL class axioms between external classes. They link external concepts to HRIO meanings (and, in OWL 2 DL implementations, rely on punning when class IRIs are used as individuals).
+
+    Once external concepts are linked to HRIO meanings, their relationship can be assessed by inspecting (and querying/reasoning over) HRIO. Any derived cross-standard relationship should be interpreted as a mapping-level assessment grounded in HRIO, not as an OWL DL class-level entailment between the external classes.
+
+??? question "How does HRIV relate to SKOS mapping relations?"
+    HRIV mapping relations are aligned via `rdfs:subPropertyOf` to corresponding SKOS mapping relations so Health-RI mappings can participate in SKOS-based tooling and workflows.
+
+    However, the HRIV predicates remain the authoritative carriers of the intended (definitional) semantics: any entailed SKOS mapping assertions should be treated as a derived "SKOS view" for interoperability and discovery, and SKOS-level entailments (e.g., transitivity of `skos:exactMatch`) must not be used to change the intended interpretation of an HRIV mapping.
 
 ??? question "Why is there a rule that only one `hriv:hasExactMeaning` is allowed per concept?"
-    To avoid semantic ambiguity. Allowing multiple `hriv:hasExactMeaning` assertions for the same concept would imply conflicting definitions and hinder consistent interpretation. Each external concept must match only one Health-RI concept with perfect equivalence.
+    To avoid semantic ambiguity during curation and downstream interpretation. Allowing multiple `hriv:hasExactMeaning` assertions for the same external concept would make its intended meaning unclear (or potentially conflicting), which hinders consistent use in interoperability scenarios.
+
+    Practically, this is best treated as a curation/validation policy for Health-RI mapping artifacts (rather than an OWL logical constraint): HRIV's use is designed around controlled, consistently interpretable mapping assertions.
+
+??? question "How do I choose between `hriv:hasBroaderMeaningThan` and `hriv:hasNarrowerMeaningThan`?"
+    Use `hriv:hasBroaderMeaningThan` when your expression is broader in scope than the HRIO target (it includes the HRIO concept but is not limited to it). Use `hriv:hasNarrowerMeaningThan` when your expression is narrower in scope than the HRIO target (it is limited to a subset of what the HRIO concept covers).
+
+    Examples:
+    - Broader-than: "Adult patient" mapped to "Pregnant adult patient" (the expression covers more than the target).
+    - Narrower-than: "Left femur fracture" mapped to "Femur fracture" (the expression covers less than the target).
 
 ??? question "What should I do if no exact match exists between my concept and the Health-RI ontology?"
     If your concept is broader or narrower than any existing reference concept, use `hriv:hasBroaderMeaningThan` or `hriv:hasNarrowerMeaningThan` accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future.
@@ -269,7 +302,7 @@
 ??? question "How can I contribute to the Health-RI Semantic Interoperability Initiative?"
     You can contribute by submitting structured feedback using one of our [GitHub Issue Forms](https://github.com/health-ri/semantic-interoperability/issues/new/choose). We currently support the following contribution types:
 
-    - Report an error in the OntoUML or gUFO-based ontology
+    - Report an error in HRIO OntoUML or HRIO gUFO/OWL
     - Request a new concept to be added to the reference model
     - Submit other input such as documentation improvements, mapping suggestions, or collaboration proposals
 
@@ -367,8 +400,9 @@
     Incomplete or draft versions may not include a `.ttl` file until model consistency is ensured.
 
 ??? question "Can the latest version of the OWL (.ttl) file correspond to a different version than the latest version of the OntoUML (.json/.vpp) model?"
-    Yes. The `.ttl` versioning is managed independently and may lag behind the `.vpp` or `.json` files.
-    The OWL file includes a `dcterms:conformsTo` triple that explicitly links it to the OntoUML version it was derived from.
+    Yes. The `.ttl` file is only published for releases where the OntoUML model is syntactically valid and the transformation pipeline completes successfully.
+    If the most recent HRIO release does not include a `.ttl`, the `/ontology/ttl` PID will continue to resolve to the latest available `.ttl`, which may therefore correspond to an earlier HRIO version.
+    When present, the OWL file includes a `dcterms:conformsTo` triple linking it to the OntoUML artifact version it was derived from.
 
 ??? question "How can I access a specific version of the Health-RI ontology?"
     Use the versioned PID format: `https://w3id.org/health-ri/ontology/vX.Y.Z/{format}`
