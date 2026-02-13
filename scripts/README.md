@@ -52,7 +52,7 @@ Generates Markdown documentation from the latest versioned OntoUML JSON export.
   - `ontologies/versioned/documentations/documentation-vX.Y.Z.md`
   - `ontologies/latest/documentations/documentation.md` (uses `../images` links + URL-encoding)
 - **Key characteristics:**
-  - Recursively documents packages only if they contain “meaningful content” (package description and/or diagrams with descriptions, including nested packages).
+  - Recursively documents packages only if they contain "meaningful content" (package description and/or diagrams with descriptions, including nested packages).
   - Diagram sections are only emitted when a diagram **has a description**.
   - Optional image embedding: if a file exists in `docs/ontology/assets/images/` named **exactly** `<diagram name>.png|.jpg|.jpeg`, it is included under the diagram section.
   - Idempotent behavior: if the versioned Markdown already exists, it **does not** regenerate it; it syncs `docs/` from the versioned file and regenerates only the `latest/` copy (to apply `../images` + URL-encoding).
@@ -119,7 +119,7 @@ Minimal wrapper around PyLODE that turns a TTL file into a *raw* HTML specificat
 
 - **Behavior:**
   - Ensures the output parent directory exists.
-  - If `--out` already exists and `--overwrite` is **not** set, it logs a “skipping generation” message and exits successfully (`0`).
+  - If `--out` already exists and `--overwrite` is **not** set, it logs a "skipping generation" message and exits successfully (`0`).
   - Runs PyLODE as: `<pylode-cmd> <ttl> -o <out>` (via `subprocess.run(..., check=True)`).
 
 - **Run (examples):**
@@ -127,7 +127,7 @@ Minimal wrapper around PyLODE that turns a TTL file into a *raw* HTML specificat
   - `python scripts/pylode-html-generate.py --ttl vocabulary/versioned/health-ri-vocabulary-vX.Y.Z.ttl --out build/pylode/vocabulary/vocabulary-vX.Y.Z-raw.html --overwrite`
 
 - **Exit codes:**
-  - `0`: success (including “skipped because output exists”)
+  - `0`: success (including "skipped because output exists")
   - `1`: PyLODE failed (non-zero subprocess exit)
   - `2`: input TTL not found
 
@@ -141,7 +141,7 @@ Post-processes PyLODE-generated HTML using BeautifulSoup, and (optionally) a TTL
   - `--ttl PATH` (optional): TTL file used for RDF-driven edits (packages, maturity, synonyms).
 
 - **HTML tweaks (legacy + always-on cleanup):**
-  - Removes PyLODE “Is Defined By” table rows from entity tables.
+  - Removes PyLODE "Is Defined By" table rows from entity tables.
   - Fixes internal links of the form `file://.../specification.html#Anchor` → `#Anchor` (unless `--no-link-fix`).
   - Sorts nested ToC lists (`ul.second` / `ul.third`) alphabetically (unless `--no-toc-sort`).
   - Inserts the Health-RI logo at the top of `<body>` (unless `--no-logo`; idempotent by `src`).
@@ -151,15 +151,15 @@ Post-processes PyLODE-generated HTML using BeautifulSoup, and (optionally) a TTL
   - **Restructure `#classes` by package** (disable with `--no-classes-restructure`):
     - Reads `dcterms:isPartOf` triples (class → package IRI).
     - If the package IRI contains `#package/<segment>/...`, it groups classes by the first `<segment>` and maps them to a *top-level package IRI* `...#package/<segment>`.
-    - Inserts package headings (`<h3 id="pkg-<segment>">Package: <rdfs:label></h3>`) and rebuilds the “Classes” ToC subtree accordingly.
+    - Inserts package headings (`<h3 id="pkg-<segment>">Package: <rdfs:label></h3>`) and rebuilds the "Classes" ToC subtree accordingly.
     - If a top-level package IRI exists in the TTL, `rdfs:label` is **mandatory** (missing/empty label triggers an error).
     - If a package has `vs:term_status` (`int|irv|erv|pub`), inserts a Shields.io maturity badge (linked to the maturity docs URL) under the package heading.
     - If `#classes` is missing and restructuring is enabled, this is treated as a structure error (exit code `2`).
     - Post-check: raises an error if the class count changes after restructuring.
-  - **Insert/update a “Synonyms” row per class** from `skos:altLabel` (disable with `--no-synonyms`):
-    - Adds/updates a table row labeled “Synonyms” (with a predicate-style header link to `skos:altLabel`).
+  - **Insert/update a "Synonyms" row per class** from `skos:altLabel` (disable with `--no-synonyms`):
+    - Adds/updates a table row labeled "Synonyms" (with a predicate-style header link to `skos:altLabel`).
     - Uses a comma-separated list of `skos:altLabel` values for that class IRI.
-    - Inserts after “Description” if present; otherwise after “IRI”.
+    - Inserts after "Description" if present; otherwise after "IRI".
 
 - **Validation:**
   - Ensures no duplicate class anchor IDs in `#classes` (hard error if duplicates).
@@ -192,7 +192,7 @@ Merges a Turtle metadata template into the latest versioned ontology TTL, and (o
     `?s dct:issued "2025-05-20"^^xsd:date` (hard-coded sentinel check). If the sentinel is found, the script logs and exits without modifying the TTL.
   - Merges the template TTL into the latest versioned TTL graph and carries over template namespaces/prefixes.
   - Adds (to `https://w3id.org/health-ri/ontology`):
-    - `dct:modified` (today’s date, `xsd:date`)
+    - `dct:modified` (today's date, `xsd:date`)
     - `owl:versionInfo` (`X.Y.Z`)
     - `owl:versionIRI` (`https://w3id.org/health-ri/ontology/vX.Y.Z`)
     - `dct:conformsTo` links:
@@ -227,10 +227,10 @@ Enriches the latest versioned ontology TTL using the latest *matching* versioned
       - If a `prefLabel` already exists for that language, the mirror is skipped (counted as a conflict).
     - For JSON elements with tagged value `synonyms` (or `synonym`) under `propertyAssignments`:
       - Splits the string on commas into multiple labels (trimmed; de-duplicated).
-      - Adds one `skos:altLabel` per label to the RDF subject whose `rdfs:label` string matches the JSON element’s `name`.
+      - Adds one `skos:altLabel` per label to the RDF subject whose `rdfs:label` string matches the JSON element's `name`.
       - Uses the same language tag as the matched `rdfs:label` literal.
-      - Does **not** add an `altLabel` identical to the resource’s `prefLabel` for the same language (SKOS disjointness).
-      - If the JSON `name` does not map uniquely to exactly one `rdfs:label`, the synonym record is skipped (tracked as “unmapped”).
+      - Does **not** add an `altLabel` identical to the resource's `prefLabel` for the same language (SKOS disjointness).
+      - If the JSON `name` does not map uniquely to exactly one `rdfs:label`, the synonym record is skipped (tracked as "unmapped").
   - **Ontology ownership**
     - Adds `rdfs:isDefinedBy <https://w3id.org/health-ri/ontology>` to every `hrio:` URI that appears anywhere in the graph (as subject, predicate, or object).
   - **Packages (from JSON)**
@@ -269,7 +269,7 @@ Enriches the latest versioned ontology TTL using the latest *matching* versioned
 
 ### `make-diff-ttl.py` — RDF diff graphs between two versions
 
-Computes “additions”, “removals”, and optionally “unchanged” graphs between two RDF files, with normalization to reduce bnode/list noise.
+Computes "additions", "removals", and optionally "unchanged" graphs between two RDF files, with normalization to reduce bnode/list noise.
 
 - **Inputs:** two files: `OLD` and `NEW` (any RDF format supported by RDFLib; TTL is typical)
 - **Outputs (defaults):**
@@ -300,7 +300,7 @@ Runs `insert-metadata.py`, then runs `make-diff-ttl.py` using either provided pa
   - Optional: `OLD` and `NEW` TTL paths
   - Default: auto-picks the last two `health-ri-ontology-vX.Y.Z.ttl` files from `ontologies/versioned/`
 - **Key characteristics:**
-  - Enforces “both or none” for positional args:
+  - Enforces "both or none" for positional args:
     - provide both OLD and NEW, or provide none to auto-pick
   - `--dry-run` prints the commands without executing them
 - **Run:**
@@ -324,7 +324,7 @@ Copies the latest versioned ontology artifacts to `ontologies/latest/` using ver
 
 ### `sssom-tsv2ttl.py` — Health-RI SSSOM TSV → TTL converter (tailored)
 
-Converts the repository’s SSSOM TSV mappings file into Turtle, minting one `sssom:Mapping` resource per row and one `sssom:MappingSet` resource for the set.
+Converts the repository's SSSOM TSV mappings file into Turtle, minting one `sssom:Mapping` resource per row and one `sssom:MappingSet` resource for the set.
 
 - **Fixed paths (as implemented):**
   - Input: `./mappings/health-ri-mappings.tsv`
@@ -429,7 +429,7 @@ Runs `merge-metadata.py` and pauses on completion so you can read the console ou
 
 ## Workflow / CI integration
 
-The repository’s documentation deployment workflow (`deploy.yml`) uses `scripts/requirements-deploy.txt` as the source of truth for installing Python dependencies (and as the pip cache key), then runs a fixed generation pipeline.
+The repository's documentation deployment workflow (`deploy.yml`) uses `scripts/requirements-deploy.txt` as the source of truth for installing Python dependencies (and as the pip cache key), then runs a fixed generation pipeline.
 
 ### Pipeline (high level)
 
