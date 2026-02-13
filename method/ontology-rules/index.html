@@ -1084,15 +1084,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attachment-strategy-ontouml-gufo-owlhrio-shacl" class="md-nav__link">
+  <a href="#attachment-strategy-hrio-ontouml-gufo-hrio-gufoowl-shacl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Attachment Strategy: OntoUML → gUFO → OWL/HRIO → SHACL
+        Attachment Strategy: HRIO OntoUML → gUFO → HRIO gUFO/OWL → SHACL
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Attachment Strategy: OntoUML → gUFO → OWL/HRIO → SHACL">
+    <nav class="md-nav" aria-label="Attachment Strategy: HRIO OntoUML → gUFO → HRIO gUFO/OWL → SHACL">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2025,42 +2025,42 @@
 <h2 id="purpose-scope">Purpose &amp; Scope</h2>
 <p>This document describes the rules of the Health-RI Ontology (HRIO) that, for each released version of HRIO, are implemented in SHACL. These ontology rules are of two types:</p>
 <ul>
-<li><strong>Constraints</strong>, which validate data against the <strong>gUFO-based OWL ontology</strong> produced from the OntoUML model (A-box quality checks), and</li>
-<li><strong>Derivation rules</strong>, which perform controlled <strong>rule-driven inferences</strong> to enrich data with safe, deterministic triples.</li>
+<li>Constraints, which validate data against the HRIO gUFO/OWL ontology produced from the HRIO OntoUML model (A-box quality checks), and</li>
+<li>derivation rules, which perform controlled rule-driven inferences to enrich data with safe, deterministic triples.</li>
 </ul>
-<p>These rules are implemented in SHACL because the language is expressive for both constraint validation and rule-based derivation, and because the SHACL artifacts can be directly associated with the gUFO-based OWL file.</p>
+<p>These rules are implemented in SHACL because the language is expressive for both constraint validation and rule-based derivation, and because the SHACL artifacts can be directly associated with the HRIO gUFO/OWL file.</p>
 <p>We maintain a clear separation between:</p>
 <ul>
-<li><strong>Conceptual intent</strong> in OntoUML (human-friendly constraints and rules, documented as notes), and</li>
-<li><strong>Machine-checkable behavior</strong> in SHACL (executable shapes and rules over the RDF/OWL vocabulary).</li>
+<li>Conceptual intent in OntoUML (human-friendly constraints and rules, documented as notes), and</li>
+<li>Machine-checkable behavior in SHACL (executable shapes and rules over the RDF/OWL vocabulary).</li>
 </ul>
-<p>OntoUML notes express the intended constraints and derivation rules. The corresponding <code>.shacl</code> file is the <strong>executable source of truth</strong> for their implementation for the matching ontology release.</p>
+<p>OntoUML notes express the intended constraints and derivation rules. The corresponding <code>.shacl</code> file is the executable source of truth for their implementation for the matching ontology release.</p>
 <p>The shapes graph is authored in Turtle and relies on SHACL Core and SHACL Advanced Features. Its contents evolve as the ontology grows. The conventions in this document describe how we implement these rules in SHACL for current and future ontology modules and domains.</p>
-<h2 id="attachment-strategy-ontouml-gufo-owlhrio-shacl">Attachment Strategy: OntoUML → gUFO → OWL/HRIO → SHACL</h2>
+<h2 id="attachment-strategy-hrio-ontouml-gufo-hrio-gufoowl-shacl">Attachment Strategy: HRIO OntoUML → gUFO → HRIO gUFO/OWL → SHACL</h2>
 <ol>
-<li><strong>Conceptual authoring in OntoUML (Visual Paradigm)</strong></li>
-<li>Constraints and derivation rules are specified as <strong>notes</strong> attached to classes, relations, or diagrams.</li>
+<li><strong>Conceptual authoring in HRIO OntoUML (Visual Paradigm)</strong></li>
+<li>Constraints and derivation rules are specified as notes attached to classes, relations, or diagrams.</li>
 <li>
-<p>Notes use tags such as <code>CNST (ShortName):</code> and <code>RULE (ShortName):</code>, followed by a precise natural-language description.</p>
+<p>Notes use tags such as <code>CNST (ShortName):</code> and <code>DRIV (ShortName):</code>, followed by a precise natural-language description.</p>
 </li>
 <li>
-<p><strong>OWL export against gUFO</strong></p>
+<p><strong>OWL export to HRIO gUFO/OWL</strong></p>
 </li>
 <li>
-<p>The OntoUML model is exported to OWL as a <strong>gUFO-based implementation ontology</strong> (HRIO), following gUFO patterns for types, relators, roles, situations, etc.</p>
+<p>The HRIO OntoUML model is exported to OWL as HRIO gUFO/OWL, following gUFO patterns for types, relators, roles, situations, etc.</p>
 </li>
 <li>
 <p><strong>SHACL authoring over the released OWL vocabulary</strong></p>
 </li>
-<li>SHACL shapes and rules are authored <strong>only over IRIs present in the released HRIO OWL files</strong>.</li>
+<li>SHACL shapes and rules are authored only over IRIs present in the released HRIO gUFO/OWL files.</li>
 <li>
 <p>No SHACL artifact references internal OntoUML identifiers or unversioned/pre-release IRIs.</p>
 </li>
 <li>
-<p><strong>Execution over published HRIO</strong></p>
+<p><strong>Execution over published HRIO gUFO/OWL</strong></p>
 </li>
 <li>Shapes target IRIs in the released ontology namespace and reuse <code>gufo:</code> IRIs where relevant.</li>
-<li>Validation and rule materialization operate on datasets aligned to HRIO/gUFO.</li>
+<li>Validation and rule materialization operate on datasets aligned to HRIO gUFO/OWL.</li>
 </ol>
 <h3 id="policy">Policy</h3>
 <ul>
@@ -2070,20 +2070,20 @@
 </ul>
 <h2 id="mapping-ontouml-notes-to-shacl-artifacts">Mapping OntoUML Notes to SHACL Artifacts</h2>
 <h3 id="in-the-ontouml-model">In the OntoUML Model</h3>
-<p>Executable constraints (<code>CNST</code>) and derivation rules (<code>RULE</code>) appear as textual notes anchored to classes or relations, as defined in <a href="../ontology-notes-policy/">Ontology Note Classification and Visual Conventions</a>.</p>
-<p>For each note with executable intent, we create one <strong>top-level <code>sh:NodeShape</code></strong> with:</p>
+<p>Executable constraints (<code>CNST</code>) and derivation rules (<code>DRIV</code>) appear as textual notes anchored to classes or relations, as defined in <a href="../ontology-notes-policy/">Ontology Note Classification and Visual Conventions</a>.</p>
+<p>For each note with executable intent, we create one top-level <code>sh:NodeShape</code> with:</p>
 <ul>
 <li><code>sh:name</code> – a short name matching the note's <code>(ShortName)</code>;</li>
 <li><code>sh:description</code> – a natural-language paraphrase;</li>
 <li>one or more targets (<code>sh:targetClass</code>, <code>sh:targetSubjectsOf</code>, <code>sh:targetObjectsOf</code>).</li>
 </ul>
-<p>Constraint rules are implemented as <strong>validation shapes</strong>, which may contain:</p>
+<p>Constraint rules are implemented as validation shapes, which may contain:</p>
 <ul>
 <li>SHACL-SPARQL queries via <code>sh:sparql</code>, or</li>
 <li>property constraints via <code>sh:property</code>.</li>
 <li><code>sh:severity</code> and <code>sh:message</code> typically appear inside the relevant property constraint.</li>
 </ul>
-<p>Derivation rules are implemented as <strong>rule shapes</strong>, which include:</p>
+<p>Derivation rules are implemented as rule shapes, which include:</p>
 <ul>
 <li>a <code>sh:rule</code> element (<code>sh:TripleRule</code> or <code>sh:SPARQLRule</code>).</li>
 <li>No validation properties (<code>sh:severity</code>, <code>sh:message</code>) are used in rule-only shapes.</li>
@@ -2111,28 +2111,28 @@
 <li><code>sh:qualifiedMinCount</code>, <code>sh:qualifiedMaxCount</code>,</li>
 <li><code>sh:class</code>, <code>sh:datatype</code>, <code>sh:nodeKind</code>, <code>sh:in</code>, <code>sh:pattern</code>, etc.</li>
 </ul>
-<p>Validation messages are concise and describe the issue <strong>from the focus node's perspective</strong>.</p>
+<p>Validation messages are concise and describe the issue from the focus node's perspective.</p>
 <h2 id="authoring-conventions-derivation-rules">Authoring Conventions: Derivation Rules</h2>
 <h3 id="when-we-use-rules">When We Use Rules</h3>
-<p>In our SHACL artifacts, derivation rules provide <strong>deterministic, local inferences</strong> that:</p>
+<p>In our SHACL artifacts, derivation rules provide deterministic, local inferences that:</p>
 <ul>
 <li>eliminate repetitive or boilerplate assertions implied by ontology semantics, and</li>
-<li>create <strong>derived relationships</strong> that simplify data access and querying.</li>
+<li>create derived relationships that simplify data access and querying.</li>
 </ul>
 <p>Our guidelines are:</p>
 <ul>
 <li>We prefer <code>sh:TripleRule</code> for direct, pattern-based triple creation.</li>
 <li>We use <code>sh:SPARQLRule</code> for conditions involving joins, filters, or multi-step logic.</li>
-<li>Our derivation rules are <strong>idempotent</strong>, non-destructive, and compatible with ontology disjointness constraints.</li>
+<li>Our derivation rules are idempotent, non-destructive, and compatible with ontology disjointness constraints.</li>
 </ul>
 <h2 id="practices-we-follow-and-avoid">Practices We Follow and Avoid</h2>
 <h3 id="what-we-do">What We Do</h3>
 <p>In our SHACL shapes and rules, we:</p>
 <ul>
 <li>only use released HRIO and gUFO IRIs;</li>
-<li>keep each shape or rule <strong>single-purpose</strong>, with clear naming and description;</li>
+<li>keep each shape or rule single-purpose, with clear naming and description;</li>
 <li>prefer SHACL Core features and use SPARQL only where needed;</li>
-<li>design rules to be <strong>safe</strong> and aligned with the ontology's logical constraints.</li>
+<li>design rules to be safe and aligned with the ontology's logical constraints.</li>
 </ul>
 <h3 id="what-we-avoid">What We Avoid</h3>
 <p>We do not:</p>

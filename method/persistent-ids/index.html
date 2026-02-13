@@ -2065,10 +2065,10 @@
 <p>This page lists the <strong>persistent, stable, and dereferenceable identifiers (PIDs)</strong> established by the Health-RI Semantic Interoperability Initiative. These URIs support semantic interoperability, long-term accessibility, and alignment with FAIR principles.</p>
 <h2 id="initiative-wide-identifier">Initiative-Wide Identifier</h2>
 <h3 id="uri-httpsw3idorghealth-risemantic-interoperability">URI: <code>https://w3id.org/health-ri/semantic-interoperability</code></h3>
-<p>This URI refers to the Semantic Interoperability Initiative as a whole. It provides persistent access to the initiative's public-facing resources and is suitable for citing the initiative in publications, websites, and metadata records.</p>
+<p>This URI refers to the Semantic Interoperability Initiative as a whole. It provides persistent access to the initiative's public-facing resources and is suitable for citing the initiative in publications, websites, and metadata records. For a scholarly citation of the initiative's conceptual rationale, cite the <a href="https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf">academic paper</a> (and optionally include this URI as the project identifier).</p>
 <h2 id="ontology-identifier">Ontology Identifier</h2>
 <h3 id="uri-httpsw3idorghealth-riontology">URI: <code>https://w3id.org/health-ri/ontology</code></h3>
-<p>This is the <strong>main identifier for the Health-RI Ontology</strong>, which always resolves to the ontology's most recent version.</p>
+<p>This is the <strong>main identifier for the Health-RI Ontology (HRIO)</strong>, and always resolves to the ontology's most recent version. The namespace IRI for HRIO terms is <code>https://w3id.org/health-ri/ontology#</code> (prefix <code>hrio:</code>).</p>
 <h3 id="identifiers-for-the-latest-ontology-version">Identifiers for the <strong>Latest Ontology Version</strong></h3>
 <p>These URIs point to the <strong>most recent release</strong> of the Health-RI Ontology and related documentation formats.</p>
 <table>
@@ -2114,22 +2114,30 @@
 <p class="admonition-title">Note</p>
 <p>Our SHACL file uses the <code>.shacl</code> extension and Turtle serialization.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Citing vs browsing</p>
+<p>Use <strong>versioned</strong> PIDs (e.g., <code>/ontology/vX.Y.Z/...</code>) when citing HRIO in papers, metadata, or data releases to ensure reproducibility.
+Use the <strong>latest</strong> PIDs (e.g., <code>/ontology/ttl</code>, <code>/ontology/doc</code>) for browsing and "always-up-to-date" references.</p>
+</div>
 <h3 id="identifiers-for-versioned-ontology-releases">Identifiers for <strong>Versioned Ontology Releases</strong></h3>
 <p>To support traceability and reproducibility, each ontology release is also available via <strong>version-specific URIs</strong>. Each versioned release of the Health-RI Ontology is identified by its own dedicated URI in the format <strong><code>https://w3id.org/health-ri/ontology/vX.Y.Z</code></strong>. This URI is used as the <code>owl:versionIRI</code> in the ontology metadata.</p>
+<p>See also:</p>
+<ul>
+<li><a href="../ontology-versioning/">Versioning Strategy for Ontology Releases</a></li>
+<li><a href="../publications/">Initiative Publications</a></li>
+</ul>
 <h4 id="format">Format</h4>
 <p><code>https://w3id.org/health-ri/ontology/vX.Y.Z/{format}</code></p>
 <p>Where:</p>
 <ul>
-<li><code>X.Y.Z</code> is the semantic version (e.g., <code>2.0.0</code>)</li>
-<li><code>{format}</code> is one of:<ul>
+<li><code>X.Y.Z</code> is the HRIO release version identifier (see the <a href="../ontology-versioning/">Ontology Versioning Policy</a>) (e.g., <code>2.0.0</code>)</li>
+<li><code>{format}</code> is one of:</li>
 <li><code>ttl</code> — OWL ontology (Turtle)</li>
 <li><code>vpp</code> — OntoUML model (Visual Paradigm)</li>
 <li><code>json</code> — OntoUML model (JSON)</li>
 <li><code>shacl</code> — SHACL constraint and derivation rules (Turtle)</li>
 <li><code>documentation</code> — OntoUML HTML documentation</li>
 <li><code>specification</code> — gUFO HTML documentation</li>
-</ul>
-</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -2215,7 +2223,7 @@
 </li>
 </ul>
 <h3 id="versioned-vocabulary">Versioned Vocabulary</h3>
-<p>Versioned PIDs follow semantic versioning and resolve to immutable artifacts for that release.</p>
+<p>Versioned PIDs include an explicit <code>vX.Y.Z</code> segment and resolve to immutable artifacts for that release.</p>
 <ul>
 <li>
 <p><strong>URI (TTL):</strong>

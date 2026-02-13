@@ -1784,17 +1784,18 @@
 
 
 <h1 id="deliverables-overview">Deliverables Overview</h1>
-<p>This section presents the <strong>outcomes of the Health-RI Semantic Interoperability initiative</strong>.
-Here you will find the concrete artifacts that have been produced, maintained, and released as part of the initiative:</p>
+<p>This section presents the <strong>outcomes of the Health-RI Semantic Interoperability Initiative</strong>.
+Here you will find the concrete artifacts that have been produced, maintained, and released as part of the Initiative:</p>
 <ul>
-<li><strong>Ontology</strong> – a formal specification capturing the concepts and relations relevant to semantic interoperability in the Health-RI context. It provides the conceptual and computational foundation for aligning health and life sciences data.</li>
-<li><strong>SSSOM Mapping Set</strong> – a curated set of semantic mappings expressed in <a href="https://w3id.org/sssom/">SSSOM</a> format, linking external ontologies and models to the Health-RI ontology to enable consistent data integration.</li>
+<li><strong>Health-RI Ontology (HRIO)</strong> – a common semantic reference model specified in OntoUML and implemented as a gUFO-based OWL ontology, providing a machine-processable semantic hub for aligning health and life sciences data.</li>
+<li><strong>Health-RI Mapping Vocabulary (HRIV)</strong> – an intentional (definitional) mapping vocabulary in OWL defining meaning-mapping relations that explicitly capture ontological commitments (e.g., <code>hriv:hasExactMeaning</code>, <code>hriv:hasBroaderMeaningThan</code>, <code>hriv:hasNarrowerMeaningThan</code>).</li>
+<li><strong>SSSOM Mapping Set</strong> – a curated set of semantic mappings expressed in <a href="https://w3id.org/sssom/">SSSOM</a> format, linking external ontologies and models to HRIO using HRIV meaning-mapping relations to enable consistent data integration.</li>
 </ul>
 <p>Supporting pages in this section include:</p>
 <ul>
 <li><strong>Ontology Documentation and Specification</strong> – the full reference, generated automatically from the ontology.</li>
 <li><strong>Mapping Set</strong> – the downloadable and browsable set of mappings.</li>
-<li><strong>Changelog</strong> – a record of changes across ontology and mapping releases, ensuring transparency and reproducibility.</li>
+<li><strong>Changelog</strong> – a record of changes across HRIO, HRIV, and mapping releases, ensuring transparency and reproducibility.</li>
 </ul>
 <p>Together, these deliverables form the foundation of semantic alignment across Health-RI and provide reusable resources for the broader community.</p>
 

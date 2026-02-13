@@ -960,17 +960,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#generic-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Generic process
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#current-situation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -982,10 +971,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#toward-a-solution-introducing-a-common-reference-model" class="md-nav__link">
+  <a href="#toward-a-solution-introducing-a-common-semantic-reference-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Toward a Solution: Introducing a Common Reference Model
+        Toward a Solution: Introducing a Common Semantic Reference Model
       
     </span>
   </a>
@@ -1932,45 +1921,77 @@
 
 
 <h1 id="method-overview">Method Overview</h1>
-<h2 id="generic-process">Generic process</h2>
-<p><img alt="Generic process" src="../assets/images/Picture0.png" /></p>
 <h2 id="current-situation">Current Situation</h2>
+<!-- TODO: Update this image, removing the "nodes" concept. -->
 <p><img alt="Current Situation" src="../assets/images/Picture1.png" /></p>
-<p>Health-RI serves as an intermediary that enables the nodes in its network to publish and consume data across institutions and systems. However, for this data exchange to be meaningful and analytically reliable, the data must be interpreted consistently and correctly by all parties involved.</p>
-<p>Addressing this challenge requires moving beyond structural or syntactic alignment. What is needed is semantic interoperability—a shared understanding of the meaning behind the data being exchanged.</p>
-<p>As illustrated in the figure above, each node maintains its own data schema and data repository. These schemas often vary significantly in structure, terminology, and the standards or assumptions they follow. In practice, several challenges arise:</p>
-<ul>
-<li>Some schemas adhere to formal standards, while others are informally defined by the data authors themselves.</li>
-<li>A single schema might be influenced by multiple standards, each introducing different terminologies or modeling assumptions.</li>
-<li>Documentation is often incomplete or ambiguous, which leads to misunderstandings and misinterpretation when data is exchanged between nodes.</li>
-</ul>
-<p>This lack of clear, shared semantics introduces significant barriers to data integration and analysis. It increases the risk of misinterpretation, reduces confidence in the data, and ultimately limits reuse and impact.</p>
-<p>To address these challenges and ensure semantic alignment across Health-RI's network, we propose a new approach centered around a shared reference model.</p>
-<h2 id="toward-a-solution-introducing-a-common-reference-model">Toward a Solution: Introducing a Common Reference Model</h2>
-<p>Rather than relying on isolated and potentially ambiguous schemas, we propose the creation of a Common Reference Model to serve as a shared semantic foundation across all nodes.</p>
-<p>This model is not intended to replace local schemas. Instead, it will serve as a semantic anchor: each schema will be expected to explicitly declare how its elements correspond to the concepts in the reference model, clarifying their intended meaning and enabling consistent interpretation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In practice, schemas do not need to be restructured or rewritten. Rather, they must be mapped to the reference model—declaring, for each concept, its corresponding concept (or the nature of its relation) in the shared ontology.</p>
+<p>This figure may contain legacy terminology (e.g., "nodes"). Interpret it as referring to data sources/schemas and their mappings.</p>
 </div>
-<p>To be effective, the reference model must be expressed in a highly expressive modeling language—one capable of making ontological commitments explicit and capturing rich semantic distinctions.</p>
-<p>These requirements call for the use of ontologically well-founded modeling languages, which are grounded in formal ontology and support the precise representation of complex domains. Among them, <a href="../../ontouml-gufo/ontouml/">OntoUML</a> stands out as a leading and widely adopted approach, offering both theoretical rigor and practical tooling.</p>
-<p>The image below illustrates the roles and technologies involved in our approach to enabling semantic interoperability. At the top, the conceptual common reference model is represented using OntoUML, providing a clear and ontologically well-founded view of the meaning of concepts. While this model supports human understanding, it is not directly usable in computational artifacts.</p>
+<p>Across the health and life sciences, data producers and consumers often need to publish and consume data across institutions and systems. However, for this data exchange to be meaningful and analytically reliable, the data must be interpreted consistently and correctly by all parties involved.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> In practice, achieving this often relies on manual, case-by-case mappings across heterogeneous standards and local schemas, which is technically complex, time-consuming, and error-prone.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this page, "schema" is used broadly to include local database schemas as well as standard-level models (e.g., FHIR, OMOP, openEHR) and RDF/OWL artifacts used for exchange.</p>
+</div>
+<p>Addressing this challenge requires moving beyond structural or syntactic alignment. What is needed is semantic interoperability—a shared understanding of the meaning behind the data being exchanged.<sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref2:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:32"><a class="footnote-ref" href="#fn:32">16</a></sup> Otherwise, systems may appear to agree because they use the same terms or data structures, while still committing to different conceptualizations. Such a situation can lead to <a href="../../semantic-interoperability/"><em>false agreement</em></a>.<sup id="fnref:19"><a class="footnote-ref" href="#fn:19">8</a></sup><sup id="fnref:22"><a class="footnote-ref" href="#fn:22">11</a></sup></p>
+<p>As illustrated in the figure above, each institution maintains its own data schema and data repository, often resulting in fragmented data silos. These schemas often vary significantly in structure, terminology, and the standards or assumptions they follow.<sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref3:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup><sup id="fnref:17"><a class="footnote-ref" href="#fn:17">6</a></sup><sup id="fnref:24"><a class="footnote-ref" href="#fn:24">13</a></sup> In practice, several challenges arise:</p>
+<ul>
+<li>Some schemas adhere to formal standards, while others are informally defined by the data authors themselves.<sup id="fnref4:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref2:24"><a class="footnote-ref" href="#fn:24">13</a></sup></li>
+<li>A single schema might be influenced by multiple standards, each introducing different terminologies or modeling assumptions.<sup id="fnref5:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup></li>
+<li>Documentation is often incomplete or ambiguous, which leads to misunderstandings and misinterpretation when data is exchanged between institutions.<sup id="fnref6:4"><a class="footnote-ref" href="#fn:4">4</a></sup><sup id="fnref3:5"><a class="footnote-ref" href="#fn:5">5</a></sup></li>
+<li>Mappings and transformations are often specified at the level of implementation artifacts (schemas and their structures), leaving underlying conceptualizations and meaning-level relations implicit.<sup id="fnref5:21"><a class="footnote-ref" href="#fn:21">10</a></sup><sup id="fnref2:22"><a class="footnote-ref" href="#fn:22">11</a></sup></li>
+<li>Similar labels, codes, textual definitions, or even OWL axioms are not sufficient to guarantee shared meaning when ontological commitments remain implicit.<sup id="fnref2:19"><a class="footnote-ref" href="#fn:19">8</a></sup><sup id="fnref3:22"><a class="footnote-ref" href="#fn:22">11</a></sup></li>
+</ul>
+<p>This lack of clear, shared semantics introduces significant barriers to data integration and analysis. It increases the risk of misinterpretation, reduces confidence in the data, and ultimately limits reuse and impact.<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref2:17"><a class="footnote-ref" href="#fn:17">6</a></sup></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Shared labels, codes, or even similar OWL patterns do not guarantee shared meaning. Apparent agreement can hide genuine semantic misalignment ("false agreement"), so mappings must make their intended ontological commitments explicit and reviewable.<sup id="fnref4:18"><a class="footnote-ref" href="#fn:18">7</a></sup><sup id="fnref4:22"><a class="footnote-ref" href="#fn:22">11</a></sup></p>
+</div>
+<p>To address these challenges and ensure semantic alignment across institutions and systems, we propose a new approach centered around a common semantic reference model: the Health-RI Ontology (HRIO).<sup id="fnref:21"><a class="footnote-ref" href="#fn:21">10</a></sup><sup id="fnref:18"><a class="footnote-ref" href="#fn:18">7</a></sup></p>
+<h2 id="toward-a-solution-introducing-a-common-semantic-reference-model">Toward a Solution: Introducing a Common Semantic Reference Model</h2>
+<p>Rather than relying on isolated and potentially ambiguous schemas, we propose the creation of a common semantic reference model—the Health-RI Ontology, or simply HRIO—to serve as a shared semantic foundation across institutions and systems.<sup id="fnref2:21"><a class="footnote-ref" href="#fn:21">10</a></sup><sup id="fnref2:18"><a class="footnote-ref" href="#fn:18">7</a></sup></p>
+<p>HRIO is not intended to replace local schemas. Instead, it will serve as a semantic anchor: each schema will be expected to explicitly declare how its elements correspond to the concepts in HRIO, clarifying their intended meaning and enabling consistent interpretation.<sup id="fnref3:18"><a class="footnote-ref" href="#fn:18">7</a></sup><sup id="fnref3:21"><a class="footnote-ref" href="#fn:21">10</a></sup></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In practice, schemas do not need to be restructured or rewritten. Rather, they must be mapped to HRIO—declaring, for each concept, its corresponding concept (or the nature of its relation) in the shared ontology, using the Health-RI Mapping Vocabulary (HRIV) (cf. SKOS mapping relations for general vocabulary alignment).<sup id="fnref:36"><a class="footnote-ref" href="#fn:36">20</a></sup></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The Common Reference Model is a semantic hub, not a replacement for local schemas. It supports reuse by letting multiple standards and local schemas align to one shared conceptualization rather than maintaining many pairwise mappings.</p>
+</div>
+<p>To be effective, HRIO must be expressed in a highly expressive modeling language—one capable of making ontological commitments explicit and capturing rich semantic distinctions.<sup id="fnref:20"><a class="footnote-ref" href="#fn:20">9</a></sup><sup id="fnref:23"><a class="footnote-ref" href="#fn:23">12</a></sup></p>
+<p>These requirements call for the use of ontologically well-founded modeling languages, which are grounded in formal ontology and support the precise representation of complex domains. Among them, <a href="../../ontouml-gufo/ontouml/">OntoUML</a> stands out as a leading and widely adopted approach, offering both theoretical rigor and practical tooling.<sup id="fnref2:20"><a class="footnote-ref" href="#fn:20">9</a></sup><sup id="fnref2:23"><a class="footnote-ref" href="#fn:23">12</a></sup></p>
+<p>The image below illustrates the roles and technologies involved in our approach to enabling semantic interoperability. At the top, the conceptual HRIO reference model is represented using OntoUML (HRIO OntoUML), providing a clear and ontologically well-founded view of the meaning of concepts. While this model supports human understanding, it is not directly usable in computational artifacts.</p>
 <p><img alt="Common Reference Model" src="../assets/images/common-reference-model.png" /></p>
-<p>To enable computational use, the OntoUML model is transformed into a corresponding ontology implemented in <a href="../../ontouml-gufo/gufo/">gUFO</a>, a lightweight ontology in OWL aligned with the Unified Foundational Ontology (UFO).</p>
-<p>Once the computational ontology is available, computational artifacts—such as schemas, web ontologies, or others used for information exchange—can be mapped to the gUFO-based OWL ontology. These mappings may be created by Health-RI (see <a href="../../ontology/mappings/">mappings</a>) or by the owners of the aligned artifacts.</p>
-<!-- TODO: add advantages of OntoUML and link to its page -->
-
+<p>To enable computational use, the HRIO OntoUML model is transformed into a corresponding gUFO-based OWL implementation (HRIO gUFO/OWL), based on <a href="../../ontouml-gufo/gufo/">gUFO</a>, a lightweight ontology in OWL aligned with the Unified Foundational Ontology (UFO).<sup id="fnref3:23"><a class="footnote-ref" href="#fn:23">12</a></sup><sup id="fnref:25"><a class="footnote-ref" href="#fn:25">14</a></sup></p>
+<p>The next figure summarizes <em>semantic traceability</em> in the approach, connecting (i) the semiotic view (referent, conceptualization, representation) with (ii) the Model-Driven Architecture (MDA) view. It highlights the relationship between the conceptual model (HRIO OntoUML, CIM) and its computational ontology implementation (HRIO gUFO/OWL, PIM), helping preserve meaning across layers.<sup id="fnref:33"><a class="footnote-ref" href="#fn:33">17</a></sup><sup id="fnref:34"><a class="footnote-ref" href="#fn:34">18</a></sup><sup id="fnref:35"><a class="footnote-ref" href="#fn:35">19</a></sup> For the initiative-level conceptual rationale and worked example, see the academic paper.<sup id="fnref:37"><a class="footnote-ref" href="#fn:37">21</a></sup></p>
+<!-- TODO: Add this new image. -->
+<p><img alt="Semantic traceability architecture (Semiotic + MDA views)" src="../assets/images/semantic-traceability.png" /></p>
+<p>Once the computational ontology is available, computational artifacts—such as schemas, web ontologies, or others used for information exchange—can be mapped to HRIO gUFO/OWL using the Health-RI Mapping Vocabulary (HRIV). These mappings may be created by Health-RI (see <a href="../../ontology/mappings/">mappings</a>) or by the owners of the aligned artifacts.<sup id="fnref4:21"><a class="footnote-ref" href="#fn:21">10</a></sup><sup id="fnref:29"><a class="footnote-ref" href="#fn:29">15</a></sup></p>
+<div class="admonition info">
+<p class="admonition-title">Why OntoUML?</p>
+<p>OntoUML is used for HRIO OntoUML because it is grounded in the Unified Foundational Ontology (UFO) and supports explicit ontological commitments. This helps:</p>
+<ul>
+<li>make modeling commitments discussable, reviewable, and comparable across artifacts;</li>
+<li>support conceptual clarification and meaning negotiation with domain experts (when terminology alone is not reliable);</li>
+<li>preserve intended semantics when transforming the conceptual model into HRIO gUFO/OWL.</li>
+</ul>
+<p>For more information, access: <a href="../../ontouml-gufo/ontouml/">OntoUML</a>.</p>
+</div>
 <h2 id="division-of-responsibilities-modeling-and-mapping-teams">Division of Responsibilities: Modeling and Mapping Teams</h2>
 <p><img alt="Modeling and Mapping Teams" src="../assets/images/Picture2.png" /></p>
-<p>To operationalize the approach based on a shared reference model, Health-RI will structure the effort around two complementary teams:</p>
+<p>To operationalize the approach based on a common semantic reference model (HRIO), Health-RI will structure the effort around two complementary teams:</p>
 <ul>
 <li>The Ontology Modeling Team</li>
 <li>The Ontology Mapping Team</li>
 </ul>
 <p>These teams will work in parallel to accelerate delivery while maintaining a clear division of responsibilities.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Treat mappings as versioned artifacts: they must be reviewed when either the source schema/standard or the reference model evolves. Capturing rationale for each mapping decision reduces rework and reviewer disagreement.</p>
+</div>
 <h3 id="ontology-modeling-team">Ontology Modeling Team</h3>
-<p>The Modeling Team is responsible for developing the reference model using OntoUML. Team members are expected to:</p>
+<p>The Modeling Team is responsible for developing the HRIO reference model (HRIO OntoUML) using OntoUML. Team members are expected to:</p>
 <ul>
 <li>Model domain knowledge using OntoUML with a high degree of accuracy and precision.</li>
 <li>Analyze and interpret technical materials, such as standards, protocols, and domain documentation.</li>
@@ -1978,15 +1999,16 @@
 </ul>
 <p>The team's objective is to produce a semantically rich and ontologically well-founded model that captures the essential structure and meaning of the domain.</p>
 <h3 id="ontology-mapping-team">Ontology Mapping Team</h3>
-<p>The Mapping Team is responsible for linking existing data schemas from participating nodes to the reference model. This involves:</p>
+<p>The Mapping Team is responsible for aligning concepts from external standards and local schemas (and related implementation artifacts such as RDF/OWL ontologies, codes, and schema elements) to HRIO. In the approach, these external artifacts contribute the <em>source expressions</em> being mapped, while HRIO concepts play the role of the target meanings. This involves:</p>
 <ul>
 <li>Interpreting and understanding OntoUML models.</li>
 <li>Analyzing data schemas in various formats, with an emphasis on Semantic Web technologies.</li>
 <li>Applying best practices in concept mapping using appropriate tools and techniques.</li>
-<li>Utilizing the <a href="https://mapping-commons.github.io/sssom/">Simple Standard for Sharing Ontological Mappings (SSSOM)</a> to document mappings in a consistent and reusable way.</li>
-<li>Collaborating closely with data holders, managers, and owners at each node to capture the intended meaning of schema elements.</li>
+<li>Utilizing the <a href="https://mapping-commons.github.io/sssom/">Simple Standard for Sharing Ontological Mappings (SSSOM)</a> to document mappings in a consistent and reusable way.<sup id="fnref2:29"><a class="footnote-ref" href="#fn:29">15</a></sup></li>
+<li>Collaborating closely with artifact owners and maintainers (e.g., standard communities, ontology/schema maintainers, and domain experts) to capture the intended meaning of concepts and schema elements.</li>
 </ul>
-<p>This team plays a critical role in ensuring that local schemas are semantically aligned with the reference model, enabling shared understanding across the network.</p>
+<p>Depending on editorial control, mappings may be maintained non-invasively in a separate mapping set (e.g., SSSOM) or embedded directly in the source artifact when governance permits.</p>
+<p>This team plays a critical role in ensuring that concepts from standards, schemas, and related artifacts are semantically aligned with the reference model, enabling shared understanding and more reliable reuse across systems and integration settings.</p>
 <h3 id="domain-guidance-and-coordination">Domain Guidance and Coordination</h3>
 <p>While domain knowledge is essential, it does not need to reside within the modeling or mapping teams. Instead, a third coordinating group will provide:</p>
 <ul>
@@ -1999,7 +2021,7 @@
 <p>As shown in the diagram, the Modeling and Mapping Teams operate in a collaborative feedback loop.</p>
 <ul>
 <li>The Ontology Modeling Team develops the conceptual model.</li>
-<li>The Ontology Mapping Team uses this model to map the local schemas.</li>
+<li>The Ontology Mapping Team uses this model to map concepts from external artifacts (standards, local schemas, and ontologies) and local schemas (and related implementation artifacts) to HRIO.</li>
 <li>Insights gained during the mapping process are fed back to the modeling team.</li>
 </ul>
 <p>This feedback may include:</p>
@@ -2008,16 +2030,88 @@
 <li>Redundant or unused elements that can be removed or revised.</li>
 <li>Ambiguities or inconsistencies that require clarification.</li>
 </ul>
-<p>This iterative cycle improves both the quality of the reference model and the precision of the mappings. Over time, it leads to a stronger, more coherent semantic framework for Health-RI and its partners.</p>
+<p>This iterative cycle improves both the quality of the reference model and the precision of the mappings. Over time, it leads to a stronger, more coherent semantic framework for Health-RI and others facing similar interoperability challenges.</p>
 <h2 id="translating-ontouml-to-owl-via-gufo">Translating OntoUML to OWL via gUFO</h2>
-<p>While OntoUML provides the expressiveness and ontological rigor needed to build the reference model, it is designed primarily for conceptual modeling. Its focus is on producing models that support human understanding, learning, communication, and informed decision-making. As such, OntoUML models are not directly suited for computational use in Semantic Web applications or automated reasoning tasks.</p>
-<p>To bridge this gap, the OntoUML model must be transformed into a computational representation. This is achieved by converting the OntoUML reference model into <a href="../../ontouml-gufo/gufo/">gUFO (gentle UFO)</a>—a lightweight, computationally accessible ontology derived from UFO, the foundational ontology on which OntoUML is based.</p>
-<p>gUFO is implemented in the Web Ontology Language (OWL), a widely used standard for representing ontologies on the Semantic Web. This makes it compatible with existing RDF-based technologies and allows:</p>
+<p>While OntoUML provides the expressiveness and ontological rigor needed to build HRIO OntoUML, it is designed primarily for conceptual modeling. Its focus is on producing models that support human understanding, learning, communication, and informed decision-making. As such, OntoUML models are not directly suited for computational use in Semantic Web applications or automated reasoning tasks.<sup id="fnref3:20"><a class="footnote-ref" href="#fn:20">9</a></sup><sup id="fnref4:23"><a class="footnote-ref" href="#fn:23">12</a></sup></p>
+<p>To bridge this gap, the OntoUML model must be transformed into a computational representation. This is achieved by converting the OntoUML reference model (HRIO OntoUML) into a gUFO-based OWL implementation (HRIO gUFO/OWL) using <a href="../../ontouml-gufo/gufo/">gUFO (gentle UFO)</a>—a lightweight, computationally accessible ontology derived from UFO, the foundational ontology on which OntoUML is based.<sup id="fnref5:23"><a class="footnote-ref" href="#fn:23">12</a></sup><sup id="fnref2:25"><a class="footnote-ref" href="#fn:25">14</a></sup></p>
+<p>gUFO is implemented in the Web Ontology Language (OWL), a widely used standard for representing ontologies on the Semantic Web. This makes it compatible with existing RDF-based technologies and allows:<sup id="fnref3:25"><a class="footnote-ref" href="#fn:25">14</a></sup></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>OntoUML is optimized for making ontological distinctions explicit for human understanding and review, while gUFO/OWL enables computational use. Keeping both layers preserves meaning while remaining technically tractable.</p>
+</div>
 <ul>
 <li>The OntoUML-based reference model to be used computationally within semantic infrastructures.</li>
-<li>Semantic mappings from node-level RDF-based schemas to be aligned directly with the OWL representation of the model.</li>
+<li>Semantic mappings from local RDF-based schemas to be aligned directly with the OWL representation of the model.</li>
 </ul>
-<p>By converting OntoUML models into gUFO-compliant OWL ontologies, we ensure that the semantics captured during conceptual modeling are retained, while also enabling their technical integration into semantic web systems and interoperability workflows.</p>
+<p>By converting HRIO OntoUML into HRIO gUFO/OWL, we ensure that the semantics captured during conceptual modeling are retained, while also enabling their technical integration into semantic web systems and interoperability workflows.<sup id="fnref4:25"><a class="footnote-ref" href="#fn:25">14</a></sup></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <em>Scientific Data, 3</em>(1), 160018. https://doi.org/10.1038/sdata.2016.18&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Piera-Jiménez, J., Leslie, H., Dunscombe, R., &amp; Pontes, C. (2024). Interoperability in the context of integrated care. In V. Amelung, V. Stein, E. Suter, N. Goodwin, R. Balicer, &amp; A.-S. Beese (Eds.), <em>Handbook of Integrated Care</em> (pp. 1–22). Springer Nature Switzerland. https://doi.org/10.1007/978-3-031-25376-8_101-1&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Yadav, R., Murria, S., &amp; Sharma, A. (2021). A research review on semantic interoperability issues in electronic health record systems in medical healthcare. In <em>IoT-Based Data Analytics for the Healthcare Industry</em> (pp. 123–138). Elsevier. https://doi.org/10.1016/B978-0-12-821472-5.00009-0&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>De Mello, B. H., et al. (2022). Semantic interoperability in health records standards: A systematic literature review. <em>Health Technol, 12</em>(2), 255–272. https://doi.org/10.1007/s12553-022-00639-w&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Capuano, N., Foggia, P., Greco, L., &amp; Ritrovato, P. (2022). A Linked Data application for harmonizing heterogeneous biomedical information. <em>Applied Sciences, 12</em>(18), 9317. https://doi.org/10.3390/app12189317&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:17">
+<p>Mithiri, R. K. (2025). A semantic interoperability framework for cross-institutional integration of heterogeneous electronic health records. <em>International Journal of Engineering Technology Research &amp; Development, 6</em>(3), 25–31.&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:17" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:18">
+<p>Guizzardi, G. (2020). Ontology, ontologies and the "I" of FAIR. <em>Data Intelligence, 2</em>(1–2), 181–191. https://doi.org/10.1162/dint_a_00040&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:18" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:18" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:18" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:19">
+<p>Guarino, N. (Ed.). (1998). <em>Formal Ontology in Information Systems: Proceedings of the 1st International Conference (Trento, Italy, June 6–8, 1998)</em>. IOS Press.&#160;<a class="footnote-backref" href="#fnref:19" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:19" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:20">
+<p>Guizzardi, G. (2005). <em>Ontological foundations for structural conceptual models</em> (Doctoral dissertation, University of Twente).&#160;<a class="footnote-backref" href="#fnref:20" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:20" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:20" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:21">
+<p>Ekaputra, F. J., Sabou, M., Serral, E., Kiesling, E., &amp; Biffl, S. (2017). Ontology-based data integration in multi-disciplinary engineering environments: A review. <em>Open Journal of Information Systems (OJIS), 4</em>(1), 1–26.&#160;<a class="footnote-backref" href="#fnref:21" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:21" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:21" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:21" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:21" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:22">
+<p>Guizzardi, G., &amp; Guarino, N. (2024). Explanation, semantics, and ontology. <em>Data &amp; Knowledge Engineering, 153</em>, 102325. https://doi.org/10.1016/j.datak.2024.102325&#160;<a class="footnote-backref" href="#fnref:22" title="Jump back to footnote 11 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:22" title="Jump back to footnote 11 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:22" title="Jump back to footnote 11 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:22" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:23">
+<p>Guizzardi, G., Botti Benevides, A., Fonseca, C. M., Porello, D., Almeida, J. P. A., &amp; Prince Sales, T. (2022). UFO: Unified Foundational Ontology. <em>Applied Ontology, 17</em>(1), 167–210. https://doi.org/10.3233/AO-210256&#160;<a class="footnote-backref" href="#fnref:23" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:23" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:23" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:23" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:23" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:24">
+<p>Saberi, M. A., Mcheick, H., &amp; Adda, M. (2025). From data silos to health records without borders: A systematic survey on patient-centered data interoperability. <em>Information, 16</em>(2), 106. https://doi.org/10.3390/info16020106&#160;<a class="footnote-backref" href="#fnref:24" title="Jump back to footnote 13 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:24" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:25">
+<p>Almeida, J. P. A., Guizzardi, G., Sales, T. P., &amp; Falbo, R. A. (2019). <em>gUFO: A lightweight implementation of the Unified Foundational Ontology (UFO)</em>. http://purl.org/nemo/doc/gufo&#160;<a class="footnote-backref" href="#fnref:25" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:25" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:25" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:25" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:29">
+<p>Zhang, S., Cornet, R., &amp; Benis, N. (2024). Cross-Standard Health Data Harmonization using Semantics of Data Elements. <em>Scientific Data, 11</em>(1), 1407. https://doi.org/10.1038/s41597-024-04168-1&#160;<a class="footnote-backref" href="#fnref:29" title="Jump back to footnote 15 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:29" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:32">
+<p>Palojoki, S., &amp; Vuokko, R. (2023, April 26). Semantic interoperability of EHRs: Review of approaches for enhancing the goals of European Health Data Space. <em>Preprint</em>. https://doi.org/10.20944/preprints202304.0957.v1&#160;<a class="footnote-backref" href="#fnref:32" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:33">
+<p>Ogden, C. K., &amp; Richards, I. A. (1923). <em>The meaning of meaning: A study of the influence of language upon thought and of the science of symbolism</em>. Kegan Paul, Trench, Trubner &amp; Co.&#160;<a class="footnote-backref" href="#fnref:33" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:34">
+<p>Gangemi, A. (2007). <em>Semiotics Ontology Design Pattern</em>. http://www.ontologydesignpatterns.org/cp/owl/semiotics.owl&#160;<a class="footnote-backref" href="#fnref:34" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:35">
+<p>Miller, J., &amp; Mukerji, J. (2003). <em>MDA Guide Version 1.0.1</em> (OMG/03-06-01). Object Management Group. http://www.omg.org/cgi-bin/doc?omg/03-06-01.pdf&#160;<a class="footnote-backref" href="#fnref:35" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:36">
+<p>Miles, A., &amp; Bechhofer, S. (2009, August 18). <em>SKOS Simple Knowledge Organization System Reference</em> (W3C Recommendation REC-skos-reference-20090818). World Wide Web Consortium. https://www.w3.org/TR/skos-reference/&#160;<a class="footnote-backref" href="#fnref:36" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:37">
+<p>Barcelos, P. P. F., van Ulzen, N., Groeneveld, R., Konrad, A., Khalid, Q., Zhang, S., Trompert, A., &amp; Vos, J. (n.d.). <em>Enabling Semantic Traceability in Health Data: The Health-RI Semantic Interoperability Initiative</em> (manuscript approved at SWAT4HCLS 2026, v1.1.1). <a href="https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf">Download link.</a>&#160;<a class="footnote-backref" href="#fnref:37" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

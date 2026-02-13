@@ -2048,6 +2048,10 @@
 <p><strong>Checklists: gate vs operations.</strong> Stage gate checklists list <strong>exit criteria</strong> to leave stage X and enter stage Y (they are pass/fail gates). The <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a> is <strong>not</strong> a gate; it lists actions to perform <strong>after</strong> entering <code>pub</code> and while remaining there.</p>
 <h2 id="validation-procedures-by-stage">Validation Procedures by Stage</h2>
 <p>Stages <code>int</code> and <code>irv</code> have exit gate checklists that control advancement (see <a href="#stage-specific-checklists">Stage-specific Checklists</a>). Entry into <code>irv</code> requires passing the <a href="#internal-stage-gate-checklist">Internal Stage Gate Checklist</a>; advancement from <code>irv</code> to <code>erv</code> requires passing the <a href="#internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</a>. The only in-stage checklist is the <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a>, executed upon entering <code>pub</code> and maintained while in <code>pub</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Reviewer acknowledgement (opt-out)</p>
+<p>Unless a reviewer requests anonymity, record reviewer names (internal <code>irv</code> and external <code>erv</code>) in the ontology/package metadata collaborators list for the corresponding release. If anonymity is requested (e.g., in the review issue or submission), do not include the reviewer's name.</p>
+</div>
 <h3 id="internal-review-irv">Internal Review (<code>irv</code>)</h3>
 <p><strong>Who validates.</strong> Members of the modeling and mappings teams who were not directly involved in modeling the package.</p>
 <p><strong>Objective.</strong> Perform an internal completeness and quality sanity check from a non-domain-specialist perspective. Reviewers verify:</p>
@@ -2071,7 +2075,7 @@
 <h3 id="external-review-erv">External Review (<code>erv</code>)</h3>
 <p><strong>Who validates.</strong> An expanded reviewer pool of domain specialists, modeling specialists, and informed non-specialists.</p>
 <p><strong>Objective.</strong> Conduct an independent, deeper assessment of domain correctness and conceptual rigor. Reviewers check for inconsistencies, incorrectness, incompleteness, ambiguities, hidden assumptions, and coverage gaps, and validate definitions, constraints/multiplicities, and example use-cases/queries, including implications for interoperability and mappings. Where SHACL shapes exist for the package, reviewers also consider the SHACL validation status as part of this assessment.</p>
-<p><strong>Community call.</strong> The internal team publishes a LinkedIn post entitled "Call for Community Review: [Model Name]". Members of the (future) D12 task group are encouraged to repost this call on their LinkedIn profiles to broaden reach.</p>
+<p><strong>Community call.</strong> The internal team publishes a LinkedIn post entitled "Call for Community Review: <package name>". Health-RI colleagues and partners are encouraged to repost this call to broaden reach.</p>
 <p><strong>Start condition.</strong> Begins only after a passed <a href="#internal-review-stage-gate-checklist">Internal Review Stage Gate Checklist</a>.</p>
 <p><strong>Planning &amp; timeline.</strong> A review activity is created and scheduled into a sprint. External reviewers have one sprint to provide feedback; this may be extended to two sprints based on package complexity, community availability, and other factors.</p>
 <p><strong>Outcome.</strong> If the review passes (no semantic changes required), the modeler updates the stage tagged value to <code>pub</code> and records the transition <code>&lt;erv → pub&gt;</code>. Per the <a href="../ontology-versioning/">Versioning Strategy</a>, this contributes Y++ and resets Z → 0 for the release (subject to X &gt; Y &gt; Z precedence). Upon entering <code>pub</code>, immediately execute the <a href="#publication-stage-operations-checklist">Publication Stage Operations Checklist</a>.</p>
@@ -2093,7 +2097,7 @@
 </ul>
 </li>
 <li>
-<p>[ ] <strong>Modeling prepared (OntoUML → gUFO)</strong></p>
+<p>[ ] <strong>Modeling prepared (HRIO OntoUML → gUFO)</strong></p>
 <ul>
 <li>[ ] Classes and relations carry appropriate OntoUML stereotypes (no obvious anti-patterns).</li>
 <li>[ ] Multiplicities and constraints are specified and justified.</li>
@@ -2114,6 +2118,11 @@
 <li>[ ] Each package, diagram, and class has a definition that is concise, non-circular, and free of hidden assumptions.</li>
 <li>[ ] If examples are included, they are domain-correct and consistent with the formal model.</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">AI-assisted drafting of definitions (draft quality)</p>
+<p>Package, diagram, and class definitions in the documentation may be drafted with AI support as a starting point.
+They are expected to be checked during <code>irv</code>/<code>erv</code>, but the presence of a definition alone does not imply it has been reviewed in the current snapshot. For transparency, the prompts used to draft AI-supported content are available in <code>resources/prompts/</code>.</p>
+</div>
 </li>
 <li>
 <p>[ ] <strong>Diagram quality &amp; traceability</strong></p>
@@ -2128,9 +2137,9 @@
 <li>
 <p>[ ] <strong>OWL/TTL export &amp; header</strong></p>
 <ul>
-<li>[ ] Model transforms/exports to gUFO/OWL without errors (local build).</li>
-<li>[ ] Ontology header metadata template is populated.</li>
-<li>[ ] Where SHACL shapes exist for this package, SHACL shapes file(s) are present and a SHACL validation run has been executed at least once (no execution errors) (<em>To be implemented</em>). <!-- TODO --></li>
+<li>[ ] Model transforms/exports to HRIO gUFO/OWL without errors (local build).</li>
+<li>[ ] Ontology header metadata template is populated.
+<!-- - [ ] Where SHACL shapes exist for this package, SHACL shapes file(s) are present and a SHACL validation run has been executed at least once (no execution errors) (*To be implemented*). --></li>
 </ul>
 </li>
 <li>
@@ -2162,12 +2171,12 @@
 </ul>
 </li>
 <li>
-<p>[ ] <strong>Public docs build (Semantic Interoperability site)</strong></p>
+<p>[ ] <strong>Public docs build (Health-RI Semantic Interoperability Initiative website)</strong></p>
 <ul>
-<li>[ ] The package's description page is available on the Initiative site.</li>
+<li>[ ] The package's description page is available on the Initiative website.</li>
 <li>[ ] All links resolve: documentation, specification (OWL/TTL), IRIs, and release notes (no 404s).</li>
 <li>[ ] Package diagrams/images render correctly (no missing assets; labels are readable).</li>
-<li>[ ] The OWL/gUFO (<code>.ttl</code>) file includes the expected ontology header metadata according to the project standard.</li>
+<li>[ ] The HRIO gUFO/OWL (<code>.ttl</code>) file includes the expected ontology header metadata according to the project standard.</li>
 <li>[ ] Figures folder up to date: the latest package diagrams are exported to the Figures folder (no missing/old images).</li>
 </ul>
 </li>
@@ -2181,8 +2190,8 @@
 <p>[ ] <strong>Terminology consistency</strong></p>
 <ul>
 <li>[ ] Names/labels follow the adopted nomenclature strategy (capitalization, spelling, prefixes).</li>
-<li>[ ] Terminology is consistent across diagrams, package docs, and OWL/gUFO (<code>.ttl</code>).</li>
-<li>[ ] Relation naming follows the defined naming strategy (directionality, verb/preposition pattern, capitalization) and is consistent across diagrams and OWL/gUFO (<code>.ttl</code>).
+<li>[ ] Terminology is consistent across diagrams, package docs, and HRIO gUFO/OWL (<code>.ttl</code>).</li>
+<li>[ ] Relation naming follows the defined naming strategy (directionality, verb/preposition pattern, capitalization) and is consistent across diagrams and HRIO gUFO/OWL (<code>.ttl</code>).
 <!-- - [ ] Labels: <code>prefLabel</code> is the most appropriate primary label (no <code>altLabel</code> would be a better choice); missing <code>altLabel</code>s (synonyms, common variants, abbreviations) are identified and proposed. --></li>
 </ul>
 </li>
@@ -2194,9 +2203,13 @@
 <li>[ ] If examples are provided, they are domain-correct, consistent with the model.</li>
 <li>[ ] Documentation is supplementary only: it explains what is modeled and must not introduce new semantics.</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Reviewer focus: AI-drafted text</p>
+<p>Definitions of packages, diagrams, and classes may have been drafted with AI support. At this gate, reviewers should validate these texts against the model and domain sources. Prompt sets used for AI-supported drafting are available in <code>resources/prompts/</code> for independent assessment.</p>
+</div>
 </li>
 <li>
-<p>[ ] <strong>Conceptual modeling soundness (OntoUML → gUFO)</strong></p>
+<p>[ ] <strong>Conceptual modeling soundness (HRIO OntoUML → gUFO)</strong></p>
 <ul>
 <li>[ ] Classes and relations use appropriate OntoUML stereotypes; no obvious anti-patterns.</li>
 <li>[ ] Multiplicities and constraint choices are justified and non-contradictory.</li>

@@ -1483,6 +1483,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2053,22 +2064,25 @@
 <h1 id="governance-lifecycle-and-validation-of-the-health-ri-sssom-mapping-set">Governance, Lifecycle, and Validation of the Health-RI SSSOM Mapping Set</h1>
 <p>This page sets the governance, lifecycle, validation, and release policy for the Health-RI SSSOM Mapping Set. It complements the <a href="../mapping-schema/">Mapping Set</a> page (schema, field semantics, URIs) and the <a href="../mapping-strategy/">Semantic Mapping Strategy</a> page (methodology and scope).</p>
 <h2 id="purpose-and-scope">Purpose and Scope</h2>
-<p>This policy defines how the Health-RI SSSOM Mapping Set is governed, validated, versioned, and released so that mappings are trustworthy, reproducible, and easy to discover.</p>
+<p>This policy defines how the Health-RI SSSOM Mapping Set is governed, validated, versioned, and released so that mappings are trustworthy, reproducible, and easy to discover and reuse in FAIR-aligned infrastructures [1], [18].</p>
 <h3 id="objectives">Objectives</h3>
 <ul>
 <li>Enforce clear roles with separation of duties (Mapper, Reviewer, Curator) and independent human approvals (two-person rule).</li>
 <li>Run a stateful lifecycle with explicit promotion gates and an append-only supersession model.</li>
 <li>Guarantee provenance, reproducibility, and transparent release management.</li>
-<li>Align with external standard communities where applicable (e.g., OMOP) and record outcomes.</li>
+<li>Align with external standard communities where applicable (e.g., OMOP) and record outcomes [11].</li>
 </ul>
 <h3 id="applicability">Applicability</h3>
 <ul>
 <li>Applies to all mapping records proposed for or included in Health-RI mapping artifacts (TSV/TTL) and their metadata as defined on the <a href="../mapping-schema/">Mapping Set</a> page.</li>
 <li>Covers all submission routes referenced on the <a href="../mapping-schema/">Mapping Set</a> page (e.g., issue form or XLSX) and the end-to-end path to publication.</li>
 </ul>
-<!-- Future update will be necessary -->
 <h4 id="start-stage-for-mappings">Start stage for mappings</h4>
 <p>At the current maturity level, mapping work may begin once the relevant HRIO package reaches <code>irv</code> (internal review). Our target policy is to allow mappings only after the package is in <code>pub</code> (published). Stage definitions are described in the <a href="../ontology-validation/">Ontology Lifecycle and Validation Policy</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Mapping stability depends on HRIO maturity</p>
+<p>If the target HRIO package is still in internal review, mappings may need revision after publication. Prefer mapping against <code>pub</code> packages when possible, and expect supersession when meanings evolve.</p>
+</div>
 <h3 id="in-scope">In Scope</h3>
 <ul>
 <li>Role definitions and two-person rule.</li>
@@ -2286,14 +2300,23 @@ If staffing is limited, reschedule publication rather than collapsing roles.</p>
 <p>Fixes must be new records that point to the prior one via <code>replaces</code>. Editing a published row is not possible, as it would break reproducibility and the audit trail.</p>
 </div>
 <h2 id="semantic-requirements">Semantic Requirements</h2>
+<div class="admonition warning">
+<p class="admonition-title">Avoid false agreement (labels are not semantics)</p>
+<p>Similar labels, codes, or even OWL axioms across artifacts are not sufficient evidence of shared meaning.
+Predicate selection must be justified using definitions, scope notes, and modeled constraints—not string similarity [19], [22].</p>
+</div>
 <p>Normative, per-row schema constraints (e.g., allowed predicates, label language tags, justification vocabulary) are defined on the <a href="../mapping-schema/">Mapping Set</a> page. This section provides usage guidance only.</p>
 <h3 id="justification-and-evidence">Justification and Evidence</h3>
 <ul>
 <li>Set <code>mapping_justification</code> to the appropriate method indicator. By default (and currently the only generally acceptable value) it is <code>semapv:ManualMappingCuration</code> (a curator-approved alternative may be used when explicitly evaluated). This field records the method/rationale category for how the mapping was produced, not the semantic relation itself.</li>
-<li>Capture the concrete reasoning for your choice of HRIV <code>predicate_id</code> (e.g., <code>hriv:hasExactMeaning</code>, <code>hriv:hasBroaderMeaningThan</code>, <code>hriv:hasNarrowerMeaningThan</code>) in the <code>comment</code> field. When justifying, use definitional/semantic arguments (notes, formal definitions) over label similarity.</li>
+<li>Capture the concrete reasoning for your choice of HRIV <code>predicate_id</code> (e.g., <code>hriv:hasExactMeaning</code>, <code>hriv:hasBroaderMeaningThan</code>, <code>hriv:hasNarrowerMeaningThan</code>) in the <code>comment</code> field. When justifying, use definitional/semantic arguments (notes, formal definitions) over label similarity [22].</li>
 <li>When using a negation, set <code>predicate_modifier</code> to <code>Not</code> (its only valid value) and add a brief rationale in <code>comment</code>.</li>
 <li>For borderline hierarchical mappings, add a brief rationale in <code>comment</code> explaining why you selected broader or narrower.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">What to include as evidence in <code>comment</code></p>
+<p>When a mapping is non-obvious, add short evidence pointers in <code>comment</code> (e.g., definition excerpts, scope-note references, or URLs to the relevant standard/ontology documentation). Keep it concise but sufficient for an independent reviewer to reproduce the decision [22].</p>
+</div>
 <h2 id="validation">Validation</h2>
 <ul>
 <li>
@@ -2329,12 +2352,18 @@ If staffing is limited, reschedule publication rather than collapsing roles.</p>
 <li>Submit after publication: Within <strong>one sprint</strong> of publication, notify/submit the mapping(s) to the standard's community channel or registry.</li>
 <li>Provide traceable facts: Include the Health-RI release date (<code>publication_date</code>), affected <code>record_id</code>(s), chosen HRIV predicate (<code>predicate_id</code>), and <code>mapping_justification</code>.</li>
 <li>Record the submission: Add the submission URL or ticket ID in release notes; optionally place a per-row link in the <code>comment</code> field.</li>
-<li>Handle outcomes via supersession: If the external review requests changes, publish a new record that supersedes the previous one using <code>replaces</code> (append-only), with a short rationale.</li>
+<li>Handle outcomes via supersession: If the external review requests changes, publish a new record that supersedes the previous one using <code>replaces</code> (append-only), with a short rationale [11].</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Submission SLA</p>
 <p>Submissions to external registries (e.g., OHDSI/OMOP) must be initiated within <strong>one sprint</strong> of publication.</p>
 </div>
+<h2 id="references">References</h2>
+<p>[1]: Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <em>Scientific Data, 3</em>(1), 160018. https://doi.org/10.1038/sdata.2016.18</p>
+<p>[11]: Observational Health Data Sciences and Informatics. (2014). <em>OMOP Common Data Model</em>. https://ohdsi.github.io/CommonDataModel/</p>
+<p>[18]: Guizzardi, G. (2020). Ontology, ontologies and the "I" of FAIR. <em>Data Intelligence, 2</em>(1–2), 181–191. https://doi.org/10.1162/dint_a_00040</p>
+<p>[19]: Guarino, N. (Ed.). (1998). <em>Formal Ontology in Information Systems: Proceedings of the 1st International Conference (Trento, Italy, June 6–8, 1998)</em>. IOS Press.</p>
+<p>[22]: Guizzardi, G., &amp; Guarino, N. (2024). Explanation, semantics, and ontology. <em>Data &amp; Knowledge Engineering, 153</em>, 102325. https://doi.org/10.1016/j.datak.2024.102325</p>
 <!-- footnotes -->
 <div class="footnote">
 <hr />

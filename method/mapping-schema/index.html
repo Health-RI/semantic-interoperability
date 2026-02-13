@@ -1334,6 +1334,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#preferred-submit-the-issue-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferred: Submit the issue form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-use-the-excel-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative: Use the Excel template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#submission-checklist-for-contributors" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1346,6 +1368,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1945,14 +1978,14 @@
 
 
 <h1 id="the-health-ri-sssom-mapping-set-schema">The Health-RI SSSOM Mapping Set Schema</h1>
-<p>One of the key deliverables of the Health-RI Semantic Interoperability Initiative is a SSSOM mapping set. This mapping set is manually curated, reflecting the efforts of both the dedicated mapping team and external collaborators. For the conceptual background and rationale behind our mappings, see the <a href="../mapping-strategy/">Mapping Strategy</a>.</p>
+<p>One of the key deliverables of the Health-RI Semantic Interoperability Initiative is a SSSOM mapping set. This mapping set is manually curated, reflecting the efforts of both the dedicated mapping team and external collaborators. In line with work that treats mappings as first-class artifacts separating meaning (data element concepts) from representation, Health-RI uses SSSOM to support semantic traceability and reuse across standards (e.g., FHIR [8], OMOP [11], openEHR [9]) [29]. For the initiative-level conceptual background (including our definition of semantic traceability), see our <a href="https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf">academic paper</a> [30]. For the mapping-specific conceptual background and rationale behind our mappings, see the <a href="../mapping-strategy/">Mapping Strategy</a>.</p>
 <p>This page documents the mappings curated and published by Health-RI. Partners may also embed mappings directly into their own ontologies, as explained in the <a href="../mapping-strategy/">Mapping Strategy</a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Want to browse the mappings?</p>
 <p>For an interactive view of the <strong>already created</strong> mappings, see <strong><a href="../../ontology/mappings/">Mappings</a></strong>.</p>
 </div>
 <h2 id="permanent-uris">Permanent URIs</h2>
-<p>We offer several stable and accessible URIs for accessing the mapping set in different formats:</p>
+<p>We offer several stable and accessible URIs for accessing the mapping set in different formats, supporting long-term findability and reuse in FAIR-aligned infrastructures [1], [18]:</p>
 <ul>
 <li><code>https://w3id.org/health-ri/semantic-interoperability/mappings</code> — Redirects to the TTL version of the SSSOM mappings.</li>
 <li><code>https://w3id.org/health-ri/semantic-interoperability/mappings/ttl</code> — Redirects to the TTL version of the SSSOM mappings.</li>
@@ -1970,6 +2003,7 @@
 <p>An append-only approach (immutable log) preserves a complete audit trail, makes releases reproducible, and avoids ambiguity about which version of a mapping was used.</p>
 </div>
 <h2 id="sssom-file-schema">SSSOM File Schema</h2>
+<p>SSSOM-based mapping sets have been used to operationalize semantic traceability by enabling meaning-level correspondences across heterogeneous standards while preserving separations between concepts and representations [29].</p>
 <div class="admonition note">
 <p class="admonition-title">Language tags for labels</p>
 <p>The <code>subject_label</code> and <code>object_label</code> fields <strong>must</strong> be language-tagged (RDF langstrings), e.g., <code>Patient@en</code>, <code>Patiënt@nl</code>.</p>
@@ -2024,7 +2058,7 @@
 <td>EntityReference</td>
 <td>1</td>
 <td>Yes</td>
-<td>A Health-RI Vocabulary's object property linking subject and object</td>
+<td>A Health-RI Mapping Vocabulary (HRIV) object property linking subject and object</td>
 <td><code>hriv:hasExactMeaning</code></td>
 <td>Contributor</td>
 </tr>
@@ -2168,7 +2202,7 @@
 <td>String</td>
 <td>0..1</td>
 <td>No</td>
-<td>Version of the Health-RI ontology used for the mapping</td>
+<td>Version of the Health-RI Ontology (HRIO) used for the mapping</td>
 <td><code>0.9.1</code></td>
 <td>Contributor (or Default)</td>
 </tr>
@@ -2225,6 +2259,14 @@
 <div class="admonition note">
 <p class="admonition-title">If you negate a predicate</p>
 <p>When <code>predicate_modifier</code> is set to <code>Not</code>, include a brief rationale in <code>comment</code> explaining <strong>why</strong> the negation applies. See the <a href="../mapping-governance/#justification-and-evidence">Mapping Governance page's Justification and Evidence section</a> for the policy.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">HRIV predicates are not OWL equivalence/subsumption</p>
+<p><code>hriv:hasExactMeaning</code>, <code>hriv:hasBroaderMeaningThan</code>, and <code>hriv:hasNarrowerMeaningThan</code> express <strong>meaning-level</strong> links for traceability and reuse. They must not be interpreted as OWL class axioms (e.g., <code>owl:equivalentClass</code>, <code>rdfs:subClassOf</code>) or as evidence of class identity across standards. [22], [19]</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Record versions precisely for reproducibility</p>
+<p>When available, always provide an exact source release identifier in <code>subject_source_version</code> and <code>object_source_version</code> (not just a major family like "R4"). This makes it clear which standard/ontology release your mapping was evaluated against. [8], [9], [11]</p>
 </div>
 <h3 id="responsibility-legend">Responsibility Legend</h3>
 <p>The following legend explains who is responsible for providing or assigning each field in the schema, clarifying whether values come from contributors, curators, or are system-generated:</p>
@@ -2288,26 +2330,30 @@
 <ul>
 <li><strong>mapping_justification</strong> – Defaults to <code>semapv:ManualMappingCuration</code>.</li>
 <li><strong>license</strong> – Defaults to <code>https://creativecommons.org/licenses/by/4.0/</code>.</li>
-<li><strong>object_source_version</strong> – Defaults to the ontology's latest version number. E.g., <code>1.0.0</code>.</li>
+<li><strong>object_source_version</strong> – Defaults to HRIO's latest version number. E.g., <code>1.0.0</code>.</li>
 <li><strong>mapping_date</strong> - Defaults to the date the contribution was received via GitHub issue.</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Defaults are resolved to concrete values</p>
+<p>Defaults such as <code>object_source_version</code> and <code>mapping_date</code> are resolved to specific values at curation time and stored in the record.
+They are not interpreted as "floating latest" values.</p>
+</div>
 <h2 id="how-to-contribute">How to Contribute</h2>
-<p>We welcome contributions to expand and refine the mapping set. You can contribute in two ways:</p>
-<ol>
-<li>
-<p><strong>Preferred: Submit the Issue Form</strong>
-   Use our <strong><a href="https://github.com/Health-RI/semantic-interoperability/issues/new?template=sssom-new-mapping.yml">SSSOM mapping issue form</a></strong> to add a single mapping row. Fill in the required fields and submit; Health-RI curators will review and integrate your contribution.</p>
-</li>
-<li>
-<p><strong>Alternative: Use the Excel template</strong></p>
-</li>
-</ol>
+<p>We welcome contributions to expand and refine the mapping set. Choose one of the following methods:</p>
+<h3 id="preferred-submit-the-issue-form">Preferred: Submit the issue form</h3>
+<p>Use our <strong><a href="https://github.com/Health-RI/semantic-interoperability/issues/new?template=sssom-new-mapping.yml">SSSOM mapping issue form</a></strong> to add a single mapping row. Fill in the required fields and submit; Health-RI curators will review and integrate your contribution.</p>
+<h3 id="alternative-use-the-excel-template">Alternative: Use the Excel template</h3>
 <p>Download the <strong><a href="https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx">XLSX template</a></strong> and enter:</p>
 <ul>
 <li>the mapping row(s) in the mappings sheet, and</li>
 <li>all CURIE prefix bindings in the prefix sheet.</li>
 </ul>
-<p>Attach the completed file to a new issue and we will review and add it. In the template, field headers are color-coded as follows:</p>
+<p>Attach the completed file to a new GitHub issue; we will review it and add the mappings to the official set.</p>
+<div class="admonition note">
+<p class="admonition-title">CURIE prefixes must be declared consistently</p>
+<p>If you introduce any new CURIE prefix, declare it in the prefix sheet (XLSX) or the submission so that others can resolve it. Use official namespace URIs and stable community identifiers whenever possible.</p>
+</div>
+<p>In the template, field headers are color-coded as follows:</p>
 <ul>
 <li>mandatory with no default have a black background;</li>
 <li>mandatory with a fixed default are purple and pre-filled;</li>
@@ -2324,8 +2370,18 @@
 <ul>
 <li>All <strong>mandatory</strong> contributor fields are present and correctly formatted.</li>
 <li>All <code>subject_label</code> and <code>object_label</code> fields you provide are language-tagged (e.g., <code>Patient@en</code>, <code>Patiënt@nl</code>).</li>
-<li>Any optional values provided use valid identifiers (e.g., ORCIDs, resolvable URIs, SEMAPV terms).</li>
+<li>Any optional values provided use valid identifiers (e.g., ORCID IDs, resolvable URIs, SEMAPV terms).</li>
 </ul>
+<h2 id="references">References</h2>
+<p>[1] Wilkinson, M. D., et al. (2016). The FAIR guiding principles for scientific data management and stewardship. <em>Scientific Data, 3</em>(1), 160018. https://doi.org/10.1038/sdata.2016.18</p>
+<p>[8] HL7 International. (2023). <em>FHIR Release 5</em>. Retrieved December 1, 2025, from https://www.hl7.org/fhir/R5/</p>
+<p>[9] openEHR Foundation. (2020). <em>Architecture overview</em>. Retrieved December 1, 2025, from https://specifications.openehr.org/releases/BASE/latest/architecture_overview.html</p>
+<p>[11] Observational Health Data Sciences and Informatics. (2014). <em>OMOP Common Data Model</em>. Retrieved December 1, 2025, from https://ohdsi.github.io/CommonDataModel/</p>
+<p>[18] Guizzardi, G. (2020). Ontology, ontologies and the "I" of FAIR. <em>Data Intelligence, 2</em>(1–2), 181–191. https://doi.org/10.1162/dint_a_00040</p>
+<p>[19] Guarino, N. (1998). <em>Formal ontology in information systems: Proceedings of the 1st International Conference (FOIS '98), June 6–8, 1998, Trento, Italy</em> (1st ed.). IOS Press.</p>
+<p>[22] Guizzardi, G., &amp; Guarino, N. (2024). Explanation, semantics, and ontology. <em>Data &amp; Knowledge Engineering, 153</em>, 102325. https://doi.org/10.1016/j.datak.2024.102325</p>
+<p>[29] Zhang, S., Smits, A., Brochhausen, M., Solbrig, H. E., &amp; Wilkinson, M. D. (2021). Operationalizing the ISO/IEC 11179 metadata registry model for semantic findability, interoperability and reuse of complex data elements. <em>International Journal on Semantic Web and Information Systems, 17</em>(4), 1–33. https://doi.org/10.4018/IJSWIS.2021100101</p>
+<p>[30] Barcelos, P. P. F., van Ulzen, N., Groeneveld, R., Konrad, A., Khalid, Q., Zhang, S., Trompert, A., &amp; Vos, J. (n.d.). <em>Enabling Semantic Traceability in Health Data: The Health-RI Semantic Interoperability Initiative</em> (manuscript approved at SWAT4HCLS 2026, v1.1.1). <a href="https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf">Download link.</a>.</p>
 <!-- Footnotes -->
 <div class="footnote">
 <hr />

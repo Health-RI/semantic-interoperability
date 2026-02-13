@@ -1996,12 +1996,12 @@
 
 <h1 id="semantic-mapping-strategy">Semantic Mapping Strategy</h1>
 <h2 id="model-driven-techniques-mda-mdd-and-mde">Model-Driven Techniques: MDA, MDD, and MDE</h2>
-<p>The <strong><a href="http://www.omg.org/mda/">Model-Driven Architecture (MDA)</a></strong>, defined by the Object Management Group (OMG), is an architectural framework that structures system modeling into abstract layers—promoting interoperability, portability, and reuse by separating domain concerns from technical implementation <a href="#ref1">[1</a>, <a href="#ref2">2]</a>.</p>
+<p>The <strong><a href="http://www.omg.org/mda/">Model-Driven Architecture (MDA)</a></strong>, defined by the Object Management Group (OMG), is an architectural framework that structures system modeling into abstract layers—promoting interoperability, portability, and reuse by separating domain concerns from technical implementation <a href="#ref1">[1]</a>, <a href="#ref2">[2]</a>.</p>
 <ul>
 <li><strong>Model-Driven Development (MDD)</strong> denotes development processes guided by high-level models; MDA is one such OMG-conforming realization <a href="#ref2">[2]</a>.</li>
 <li><strong>Model-Driven Engineering (MDE)</strong> is an overarching paradigm including model creation, transformation, code generation, reverse-engineering, and lifecycle evolution <a href="#ref2">[2]</a>.</li>
 </ul>
-<p>OMG defines three main abstraction layers <a href="#ref1">[1</a>, <a href="#ref2">2]</a>:</p>
+<p>OMG defines three main abstraction layers <a href="#ref1">[1]</a>, <a href="#ref2">[2]</a>:</p>
 <ul>
 <li><strong>Computation-Independent Model (CIM)</strong>: captures domain context and system requirements in business terms, without specifying implementation structure.</li>
 <li><strong>Platform-Independent Model (PIM)</strong>: defines structural and behavioral aspects—such as classes and relationships—in a technology-agnostic way, without committing to any particular implementation platform.</li>
@@ -2010,13 +2010,13 @@
 <h2 id="cim-and-pim-in-our-ontology-artifacts">CIM and PIM in Our Ontology Artifacts</h2>
 <p>Within our semantic interoperability framework:</p>
 <ul>
-<li>The <strong>OntoUML ontology</strong> sits at the <a href="https://cio-wiki.org/wiki/Computation-Independent_Model_(CIM)">CIM layer</a>: it defines conceptual domain entities and relationships grounded in the Unified Foundational Ontology (UFO) <a href="#ref3">[3]</a>.</li>
-<li>The <strong>gUFO representation</strong> (OWL-based lightweight implementation of UFO) resides at the <a href="https://cio-wiki.org/wiki/Platform_Independent_Model_(PIM)">PIM layer</a>: it expresses those same concepts as an executable OWL 2 DL ontology, suitable for reasoning and integration with Semantic Web tools <a href="#ref3">[3]</a>.</li>
+<li>The <strong>HRIO OntoUML reference model</strong> sits at the <a href="https://cio-wiki.org/wiki/Computation-Independent_Model_(CIM)">CIM layer</a>: it defines conceptual domain entities and relationships grounded in the Unified Foundational Ontology (UFO) <a href="#ref3">[3]</a>.</li>
+<li>The <strong>HRIO gUFO/OWL implementation</strong> (gUFO-based OWL implementation of UFO) resides at the <a href="https://cio-wiki.org/wiki/Platform_Independent_Model_(PIM)">PIM layer</a>: it expresses those same concepts as an executable OWL 2 DL ontology, suitable for reasoning and integration with Semantic Web tools <a href="#ref3">[3]</a>.</li>
 </ul>
 <p><img alt="Mapping from OntoUML at CIM to gUFO/OWL at PIM" src="../assets/images/mapping-cim-pim.png" />
-<em>Figure 1: OntoUML at the CIM layer defines the semantics that are implemented in gUFO/OWL at the PIM layer.</em></p>
+<em>Figure 1: HRIO OntoUML (CIM) defines the semantics that are implemented in HRIO gUFO/OWL (PIM).</em></p>
 <p>This separation is crucial because it ensures clarity about what we mean versus how we represent it. By explicitly considering this, each element in the ontology has a well-defined meaning behind it, rather than being just an arbitrary label or technical construct. By identifying the original meaning (conceptualization) of "Person" (for example) and separating it from any one representation, we follow the prescription that real-world semantics should guide the modeling. This aligns with knowledge engineering practices: every knowledge base or ontology implicitly commits to some conceptualization of the domain, and making that conceptualization explicit is critical for correctness.</p>
-<p>This visual clarifies that OntoUML provides the conceptual meaning, which the gUFO artifact operationalizes—while preserving semantic integrity across layers.</p>
+<p>This visual clarifies that HRIO OntoUML provides the conceptual meaning, which the HRIO gUFO/OWL artifact operationalizes—while preserving semantic integrity across layers.</p>
 <h3 id="roles-of-the-artifacts">Roles of the Artifacts</h3>
 <table>
 <thead>
@@ -2029,44 +2029,44 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>OntoUML</strong></td>
+<td><strong>HRIO OntoUML reference model</strong></td>
 <td>CIM</td>
 <td>Provides clarity about domain-specific concepts by offering clear and precise definitions, supporting conceptual validation and enabling expert communication</td>
 <td>Serves as a semantic map and meaning contract to align domain terms for interoperability</td>
 </tr>
 <tr>
-<td><strong>gUFO</strong> (OWL)</td>
+<td><strong>HRIO gUFO/OWL implementation</strong></td>
 <td>PIM</td>
 <td>Provides machine-readable semantics, supporting automated reasoning and tool interoperability</td>
 <td>Enables integration and alignment of RDF-based artifacts within semantic web and linked data contexts</td>
 </tr>
 </tbody>
 </table>
-<p>Maintaining both artifacts ensures clear traceability from domain concepts (OntoUML/CIM) to executable ontology structures (gUFO/PIM) <a href="#ref3">[3]</a>.</p>
+<p>Maintaining both artifacts ensures clear traceability from domain concepts (HRIO OntoUML/CIM) to executable ontology structures (HRIO gUFO/OWL/PIM) <a href="#ref3">[3]</a>.</p>
 <h2 id="semantic-reference-defining-cim-to-pim-semantics">Semantic Reference: Defining CIM-to-PIM Semantics</h2>
-<p>In the Health-RI architecture, every class in the gUFO ontology (PIM) is implicitly semantically defined by its counterpart in OntoUML (CIM). For example, the class <code>hrio:Person</code> in gUFO borrows its semantics from the <code>Person</code> class in the OntoUML model. Because the CIM is not computational, this semantic linkage remains implicit and is <em>not formally encoded</em> <a href="#ref3">[3]</a>.</p>
+<p>In the Health-RI architecture, every class in the HRIO gUFO/OWL ontology (PIM) is implicitly semantically defined by its counterpart in the HRIO OntoUML reference model (CIM). For example, the class <code>hrio:Person</code> in HRIO gUFO/OWL borrows its semantics from the <code>Person</code> class in the HRIO OntoUML model. Because the CIM is not computational, this semantic linkage remains implicit and is <em>not formally encoded</em> <a href="#ref3">[3]</a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Why the CIM-PIM link matters</p>
-<p>Even though the OntoUML model is not executable, it defines the core meaning that gUFO classes implement. This semantic grounding improves trust, clarity, and alignment in data integration.</p>
+<p>Even though the HRIO OntoUML model is not executable, it defines the core meaning that HRIO gUFO/OWL classes implement. This semantic grounding improves trust, clarity, and alignment in data integration.</p>
 </div>
 <h2 id="conceptualization-implementation-and-mapping">Conceptualization, Implementation, and Mapping</h2>
-<p>To make the semantic link between OntoUML, gUFO, and external ontologies more explicit, it is useful to consider the semiotic perspective shown in Figure 2.</p>
+<p>To make the semantic link between the HRIO OntoUML reference model, the HRIO gUFO/OWL implementation, and external ontologies more explicit, it is useful to consider the semiotic perspective shown in Figure 2.</p>
 <p><img alt="Linking OntoUML conceptualization, gUFO implementation, and external mappings" src="../assets/images/theory.png" />
-<em>Figure 2: OntoUML (CIM) provides the conceptualization, which gUFO (PIM) implements. External ontologies aligned through the Health-RI Mapping Vocabulary (<code>hriv</code>) can then be interpreted as sharing the same underlying conceptualization defined by OntoUML. This ensures that both meaning and representation remain consistent across models and ontologies.</em></p>
+<em>Figure 2: HRIO OntoUML (CIM) provides the conceptualization, which HRIO gUFO/OWL (PIM) implements. External ontologies aligned through the Health-RI Mapping Vocabulary (HRIV, <code>hriv</code>) can then be interpreted as being linked to the underlying conceptualization defined in HRIO OntoUML. This supports keeping meaning and representation consistent across models and ontologies.</em></p>
 <p>In this Figure:</p>
 <ul>
 <li><strong>Real-world referents (globe and people, top-right):</strong> indicate the actual entities in the domain (e.g., human beings) that the conceptualization is about. These are the things to which all conceptualizations ultimately refer.</li>
-<li><strong>Shared Conceptualization (top, cloud icon):</strong> represents the underlying domain meaning (e.g., <em>Person</em>) that is shared across different artifacts. This is the abstract conceptualization formalized in OntoUML, implemented computationally in gUFO, and explicitly anchored when an external ontology concept is mapped through the Health-RI Mapping Vocabulary.</li>
-<li><strong>OntoUML class (<code>&lt;&lt;kind&gt;&gt; Person</code>, left):</strong> formalizes this conceptualization at the CIM layer, providing precise ontological grounding (in UFO) for what it means to be a <em>Person</em>. When we create a class <code>&lt;&lt;kind&gt;&gt; Person</code> in OntoUML, we are doing more than drawing a box labeled "Person." We are encoding the meaning of Person in a structured way that the modeling language understands. In this sense, the OntoUML concept plays the role of a meaningful representation: it carries intentional meaning (e.g., the notion of a person as an entity with essential properties, understood via UFO's category of Kind) and it is also an explicit element in a model.</li>
-<li><strong>gUFO implementation (<code>hrio:Person</code>, bottom):</strong> expresses the same meaning in computational terms at the PIM layer, making it machine-readable and interoperable. gUFO classes always inherit their semantics from the OntoUML concepts they implement.</li>
-<li><strong>External ontology concept (<code>ont:Human</code>, right):</strong> denotes how a third-party ontology may define a similar concept. When mapped via the Health-RI Mapping Vocabulary (e.g., <code>hriv:hasExactMeaning</code>), such an external concept is explicitly anchored to the gUFO representation and, by transitivity, to the original OntoUML conceptualization.</li>
+<li><strong>Shared Conceptualization (top, cloud icon):</strong> represents the underlying domain meaning (e.g., <em>Person</em>) that is shared across different artifacts. This is the abstract conceptualization formalized in the HRIO OntoUML model, implemented computationally in HRIO gUFO/OWL, and explicitly anchored when an external ontology concept is mapped through the Health-RI Mapping Vocabulary (HRIV).</li>
+<li><strong>HRIO OntoUML class (<code>&lt;&lt;kind&gt;&gt; Person</code>, left):</strong> formalizes this conceptualization at the CIM layer, providing precise ontological grounding (in UFO) for what it means to be a <em>Person</em>. When we create a class <code>&lt;&lt;kind&gt;&gt; Person</code> in the HRIO OntoUML model, we are doing more than drawing a box labeled "Person." We are encoding the meaning of Person in a structured way that the modeling language understands. In this sense, the HRIO OntoUML concept plays the role of a meaningful representation: it carries intentional meaning (e.g., the notion of a person as an entity with essential properties, understood via UFO's category of Kind) and it is also an explicit element in a model.</li>
+<li><strong>HRIO gUFO/OWL implementation (<code>hrio:Person</code>, bottom):</strong> expresses that same conceptual meaning in computational terms at the PIM layer, making it machine-readable and interoperable. HRIO gUFO/OWL classes always inherit their semantics from the HRIO OntoUML concepts they implement.</li>
+<li><strong>External ontology concept (<code>ont:Human</code>, right):</strong> denotes how a third-party ontology may define a similar concept. When mapped via the Health-RI Mapping Vocabulary (e.g., <code>hriv:hasExactMeaning</code>), such an external concept is explicitly linked to the HRIO gUFO/OWL implementation and should be understood as indirectly representing the HRIO OntoUML conceptualization (derived from the combination of implementation and mapping assumptions).</li>
 </ul>
-<p>Taken together, the diagram shows that <em>(i)</em> the Health-RI OntoUML model provides the authoritative conceptual meaning, <em>(ii)</em> the gUFO implementation operationalizes this meaning computationally, and <em>(iii)</em> external mappings assert that third-party ontologies share this meaning.</p>
-<p>This guarantees that when a partner ontology concept is mapped to the Health-RI ontology using <code>hriv</code>, it is not only aligned with the gUFO class but is also understood to embody the same <strong>conceptualization</strong> originally defined in OntoUML. In this way, interoperability extends beyond structural matching to the preservation of intended meaning.</p>
+<p>Taken together, the diagram shows that <em>(i)</em> the HRIO OntoUML model provides the shared conceptual meaning, <em>(ii)</em> the HRIO gUFO/OWL implementation operationalizes this meaning computationally, and <em>(iii)</em> external mappings assert how third-party ontologies are intended to relate to this meaning.</p>
+<p>This supports that when a partner ontology concept is mapped to the Health-RI ontology using <code>hriv</code>, it is not only aligned with the HRIO gUFO/OWL class but is intended to embody the same <strong>conceptualization</strong> originally defined in the HRIO OntoUML model. In this way, interoperability extends beyond structural matching to the preservation of intended meaning.</p>
 <p>OntoUML and OWL are complementary in that they operate at different knowledge representation levels. OntoUML is a conceptual modeling language—closer to human cognition and domain semantics—whereas OWL is a computational ontology language—suited for machine tractability and reasoning. Designing at the conceptual level first ensures the meaning is captured correctly before committing to OWL's computational restrictions.</p>
-<p>Theories of formal semantics tell us that an OWL class gets its meaning from two sources: the formal semantics of the logic (which treats Person as a set of individuals with certain properties) and the intended interpretation by the modeler (the conceptualization of Person). By explicitly maintaining the link (<code>hriv:hasExactMeaning</code>) between <code>ont:Human</code> and <code>hrio:Person</code> (which is anchored in the conceptualization), we ensure that the formal artifact is interpreted correctly. By grounding both the OntoUML and OWL representations in the same meaning, we mitigate the risk of the OWL ontology drifting from the original intent. This establishes a <strong>traceability of semantics</strong>—from the real-world domain, to the conceptual model, to the formal ontology—which is a characteristic of rigorous ontology engineering. Nothing is introduced in OWL that was not conceptually established first.</p>
+<p>Theories of formal semantics tell us that an OWL class gets its meaning from two sources: the formal semantics of the logic (which treats Person as a set of individuals with certain properties) and the intended interpretation by the modeler (the conceptualization of Person). By explicitly maintaining the link (<code>hriv:hasExactMeaning</code>) between <code>ont:Human</code> and <code>hrio:Person</code> (which is anchored in the conceptualization), we ensure that the formal artifact is interpreted correctly. By grounding both the HRIO OntoUML and HRIO gUFO/OWL representations in that same conceptual meaning, we mitigate the risk of the OWL ontology drifting from the original intent. This establishes a <strong>traceability of semantics</strong>—from the real-world domain, to the conceptual model, to the formal ontology—which is a characteristic of rigorous ontology engineering. Nothing is introduced in OWL that was not conceptually established first.</p>
 <h2 id="aligning-third-party-ontologies">Aligning Third-Party Ontologies</h2>
-<p>Our common reference model provides authoritative semantics to external concept definitions. When another ontology defines <code>ont:Human</code>, it may be semantically aligned with our <code>hrio:Person</code>. To make this relationship explicit, a <strong><code>hriv:hasExactMeaning</code></strong> link can be asserted—either by the Health-RI mapping team (e.g., in SSSOM format), or by the owners of the external ontology within their artifact—signifying that the external concept carries the same meaning.</p>
+<p>Our common semantic reference model (HRIO) provides the shared meanings to which external concept definitions can be mapped. When another ontology defines <code>ont:Human</code>, it may be semantically aligned with our <code>hrio:Person</code>. To make this relationship explicit, a <strong><code>hriv:hasExactMeaning</code></strong> link can be asserted—either by the Health-RI mapping team (e.g., in SSSOM format), or by the owners of the external ontology within their artifact—signifying that the external concept's intended semantics are fully and precisely defined by that linked HRIO meaning.</p>
 <p>There are two possible approaches for creating and maintaining such mappings:</p>
 <ul>
 <li>
@@ -2091,10 +2091,10 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Only one <code>hriv:hasExactMeaning</code> allowed</p>
-<p>Each concept may have <strong>exactly one</strong> <code>hriv:hasExactMeaning</code> to a Health-RI concept—<strong>and only when a perfect semantic equivalence exists</strong>. Using more than one <code>hriv:hasExactMeaning</code> for the same concept is not allowed, as it introduces ambiguity.</p>
+<p>Each concept may have <strong>exactly one</strong> <code>hriv:hasExactMeaning</code> to a Health-RI concept—<strong>and only when the expression's intended semantics are fully and precisely defined by a specific linked HRIO meaning</strong>. Using more than one <code>hriv:hasExactMeaning</code> for the same concept is not allowed, as it introduces ambiguity.</p>
 </div>
 <p><img alt="Deriving OntoUML semantics via mapping to Health-RI reference model" src="../assets/images/mapping-cim-pim2.png" />
-<em>Figure 3: If an external ontology defines <code>External:Patient</code> which we map via <code>hriv:hasExactMeaning</code> to <code>hrio:Patient</code>—and <code>hrio:Patient</code> derives its semantics from the OntoUML <code>Patient</code> concept—then we can interpret <code>External:Patient</code> as conveying the same semantics as the <code>OntoUML Patient</code> concept.</em></p>
+<em>Figure 3: If an external ontology defines <code>External:Patient</code> which we map via <code>hriv:hasExactMeaning</code> to <code>hrio:Patient</code>—and <code>hrio:Patient</code> is semantically defined by its counterpart in the HRIO OntoUML model—then <code>External:Patient</code> is intended to be interpreted as embodying that same HRIO conceptualization.</em></p>
 <h2 id="mapping-properties-for-cross-scheme-alignment">Mapping Properties for Cross-Scheme Alignment</h2>
 <p>The <a href="../specification-vocabulary.html">Health-RI Mapping Vocabulary</a> was created to provide a set of mapping properties designed for expressing alignments between concepts in different concept schemes (e.g. external vocabularies and our Health-RI ontology). The principal properties are: <code>hriv:hasExactMeaning</code>, <code>hriv:hasBroaderMeaningThan</code>, and <code>hriv:hasNarrowerMeaningThan</code>.</p>
 <p>The Health-RI mapping relations are declared as specializations of SKOS mapping properties. Importantly, this does not change the semantics explained above: Health-RI relations remain meaning-centric (intentional) while SKOS relations are similarity mappings between extensionally defined categories. The <code>rdfs:subPropertyOf</code> alignment simply ensures that whenever you assert an <code>hriv</code> mapping, a reasoner (or any RDFS-aware tool) can automatically derive the corresponding SKOS mapping. This improves interoperability with tools that expect SKOS, while preserving the stricter intent of the Health-RI semantics.</p>
@@ -2106,19 +2106,19 @@
 </ul>
 <h3 id="our-strategy-choosing-the-right-mapping-property">Our Strategy: Choosing the Right Mapping Property</h3>
 <ul>
-<li><strong><a href="../specification-vocabulary.html#hasExactMeaning"><code>hriv:hasExactMeaning</code></a></strong> is used when the external concept is fully equivalent in meaning to our reference concept.<ul>
+<li><strong><a href="../specification-vocabulary.html#hasExactMeaning"><code>hriv:hasExactMeaning</code></a></strong> is used when the expression's intended semantics are fully and precisely defined by a specific linked HRIO meaning.<ul>
 <li>Each external concept may have <strong>only one</strong> <code>hriv:hasExactMeaning</code>.</li>
 </ul>
 </li>
-<li><strong><a href="../specification-vocabulary.html#hasBroaderMeaningThan"><code>hriv:hasBroaderMeaningThan</code></a></strong> is used when the external concept is <strong>broader</strong> than our reference concept (i.e., it includes our concept and possibly more).</li>
-<li><strong><a href="../specification-vocabulary.html#hasNarrowerMeaningThan"><code>hriv:hasNarrowerMeaningThan</code></a></strong> is used when the external concept is <strong>narrower</strong> than our reference concept (i.e., it captures a more specific notion).</li>
+<li><strong><a href="../specification-vocabulary.html#hasBroaderMeaningThan"><code>hriv:hasBroaderMeaningThan</code></a></strong> is used when the external expression is <strong>broader in scope</strong> than the HRIO meaning it is linked to (i.e., it includes the linked HRIO meaning but is not limited to it).</li>
+<li><strong><a href="../specification-vocabulary.html#hasNarrowerMeaningThan"><code>hriv:hasNarrowerMeaningThan</code></a></strong> is used when the external expression is <strong>narrower in scope</strong> than the HRIO meaning it is linked to (i.e., it is limited to a subset of what the linked HRIO meaning covers).</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Clarifying hriv:hasExactMeaning semantics</p>
-<p>Although <code>hriv:hasExactMeaning</code> can be treated like a strong semantic alignment <strong>in meaning</strong>, it does <strong>not imply logical equivalence</strong> (such as <code>owl:equivalentClass</code>). It is intended to capture a strong semantic alignment <strong>in meaning</strong>, not in logical entailment. This allows semantic interoperability without risking unintended reasoning consequences in OWL-based systems.</p>
+<p>Although <code>hriv:hasExactMeaning</code> expresses a strong meaning-level commitment, it should not be interpreted as an OWL class axiom (e.g., it does not entail <code>owl:equivalentClass</code>, <code>owl:sameAs</code>, or <code>rdfs:subClassOf</code> between mapped classes). In OWL implementations, mapping assertions can be expressed as object-property assertions between individuals denoting expressions and meanings (with OWL 2 DL punning when class IRIs are used).</p>
 </div>
 <p>In contrast to <code>hriv:hasExactMeaning</code>, both <code>hriv:hasNarrowerMeaningThan</code> and <code>hriv:hasBroaderMeaningThan</code> allow <strong>multiple mappings per concept</strong> to express partial or hierarchical semantic overlaps.</p>
-<p>These mappings are only to be used when <strong>no perfect equivalence exists</strong> and a semantic approximation must be made to the <strong>closest reference concept</strong> in the Health-RI ontology.</p>
+<p>These mappings are used when an exact-meaning alignment is not justified (or not available): <code>hriv:hasBroaderMeaningThan</code> and <code>hriv:hasNarrowerMeaningThan</code> make the direction of semantic mismatch explicit, so integrators avoid treating mapped concepts as interchangeable.</p>
 <h3 id="visual-example-exact-semantic-alignment">Visual Example: Exact Semantic Alignment</h3>
 <p><img alt="Cross-ontology mapping using hriv:hasExactMeaning and rdfs:subClassOf" src="../assets/images/example-mapping.png" />
 <em>Figure 4: External ontologies (e.g., HealthCare and Veterinary) map their local concepts to reference concepts in the Health-RI Ontology via <code>hriv:hasExactMeaning</code> (red). These reference concepts are also semantically structured via <code>rdfs:subClassOf</code> (brown), enabling consistent classification across domains.</em></p>
@@ -2145,7 +2145,7 @@
 <li><code>ghc:Patient hriv:hasBroaderMeaningThan hrio:HealthcarePatient</code> and <code>ghc:Patient hriv:hasBroaderMeaningThan hrio:VeterinaryPatient</code>. The concept <code>Patient</code> in the GeneralHealth ontology has broader meaning than the two target classes in the Health-RI Ontology.</li>
 <li><code>pvet:Patient hriv:hasNarrowerMeaningThan hrio:VeterinaryPatient</code>. Pet-veterinary patients have a more restricted meaning than that of Health-RI's veterinary patients.</li>
 <li><code>pvet:PetAnimal</code> is linked via <code>hriv:hasNarrowerMeaningThan</code> to <code>hrio:NonHumanAnimal</code>, signaling that the external concept has narrower meaning.</li>
-<li>The figure also maintains <code>hriv:hasExactMeaning</code> mappings for concepts that are fully equivalent (e.g., <code>ghc:Animal</code> and <code>hrio:Animal</code>).</li>
+<li>The figure also maintains <code>hriv:hasExactMeaning</code> mappings for cases where an exact-meaning alignment applies (e.g., <code>ghc:Animal</code> and <code>hrio:Animal</code>).</li>
 <li>Internal hierarchical structure is preserved via <code>rdfs:subClassOf</code> to allow consistent classification across ontologies.</li>
 </ul>
 <p>This more flexible mapping strategy supports gradual alignment of external ontologies to our reference model even in cases where semantic overlap is partial rather than complete.</p>

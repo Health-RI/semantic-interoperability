@@ -1942,14 +1942,18 @@
 <p>The importance of semantic interoperability lies in its capacity to enable accurate and meaningful data exchange, which is crucial for decision-making, efficiency, and innovation. In healthcare, for instance, it allows for the seamless sharing of patient information across different electronic health record systems, improving patient outcomes and reducing costs. In public services, it supports transparency and collaboration between governmental bodies <a href="#ref5">[5]</a><a href="#ref6">[6]</a>. This need for meaningful data exchange is reflected in the FAIR principles, which highlight Interoperability as one of the four essential pillars of data stewardship <a href="#ref12">[12]</a>.</p>
 <h2 id="semantic-interoperability-and-the-i-of-fair">Semantic Interoperability and the "I" of FAIR</h2>
 <p>The FAIR guiding principles identify <strong>Interoperability</strong> as a central pillar for maximizing the value of information artifacts <a href="#ref12">[12]</a>. According to Guizzardi, the "I" in FAIR must be understood not just as a technical property, but as a commitment to meaningful, semantically grounded data integration that supports <strong>human interoperation mediated by machines</strong> [11].</p>
-<p>The FAIR principles I1–I3 specify that:
-1. (meta)data should use a <strong>formal, accessible, shared, and broadly applicable language</strong> for knowledge representation;
-2. (meta)data should rely on <strong>vocabularies that themselves follow FAIR principles</strong>;
-3. (meta)data should include <strong>qualified references</strong> to other (meta)data.</p>
+<p>The FAIR principles I1–I3 specify that:</p>
+<ol>
+<li>(meta)data should use a <strong>formal, accessible, shared, and broadly applicable language</strong> for knowledge representation;</li>
+<li>(meta)data should rely on <strong>vocabularies that themselves follow FAIR principles</strong>;</li>
+<li>(meta)data should include <strong>qualified references</strong> to other (meta)data.</li>
+</ol>
 <p>These requirements cannot be fulfilled by mere terminological resources alone. To ensure that systems interpret shared data consistently, vocabularies must be underpinned by <strong>ontologies</strong>—explicit and formal representations of shared conceptualizations. Guizzardi emphasizes that vocabularies must be ontologically grounded in order to properly support semantic interoperability [11].</p>
-<p>To achieve this, two levels of support are needed:
-- <strong>Ontologies</strong> (in the plural) serve as "meaning contracts" that clarify the domain-specific conceptualizations shared between systems;
-- <strong>Ontology</strong> (as a discipline) provides the <strong>formal methods and theories</strong> required to build these ontologies correctly and to clarify their commitments.</p>
+<p>To achieve this, two levels of support are needed:</p>
+<ul>
+<li><strong>Ontologies</strong> (in the plural) serve as "meaning contracts" that clarify the domain-specific conceptualizations shared between systems;</li>
+<li><strong>Ontology</strong> (as a discipline) provides the <strong>formal methods and theories</strong> required to build these ontologies correctly and to clarify their commitments.</li>
+</ul>
 <p>This ontological grounding is essential to ensure that relations between data elements reflect not only their syntactic alignment, but also their <strong>real-world semantics</strong>, including identity, dependence, and other ontological distinctions.</p>
 <p>Guizzardi argues that <strong>formal ontologies</strong>—such as the Unified Foundational Ontology (UFO)—play a key role in satisfying the interoperability requirements of FAIR. Ontology-driven representation languages like <strong>OntoUML</strong> allow modelers to specify their conceptualizations in a way that is formally constrained, semantically rich, and verifiable. This ontological precision is crucial to prevent the <strong>false agreement problem</strong>, in which systems appear interoperable at the surface level but interpret the same data differently beneath it.</p>
 <p>Ultimately, the "I" of FAIR demands more than connectivity and shared syntax. It requires a shared <strong>worldview</strong>—an agreement not only on the words used, but on the meanings they are intended to convey. As Guizzardi puts it: <em>"No ontology without Ontology"</em> [11].</p>
@@ -2023,30 +2027,54 @@
 <p>This scenario illustrates why Guarino argues that <strong>semantic interoperability requires agreement not just on representation syntax or surface ontologies</strong>, but on the deeper <strong>conceptual structures</strong> and <strong>intended models</strong>. Without this alignment, even systems that validate data successfully may still fail to understand each other.</p>
 <p>These examples underscore the importance of designing systems that share not only data but also the underlying conceptual frameworks that give that data meaning. Semantic interoperability is ultimately a matter of shared understanding, not just shared syntax.</p>
 <h2 id="references">References</h2>
-<p><a id="ref1"></a>
-- <strong>[1]</strong> Semantic interoperability. <em>Wikipedia</em>. Retrieved from: https://en.wikipedia.org/wiki/Semantic_interoperability</p>
-<p><a id="ref2"></a>
-- <strong>[2]</strong> What is semantic interoperability? <em>Wolters Kluwer</em>. Retrieved from: https://www.wolterskluwer.com/en/expert-insights/what-is-semantic-interoperability</p>
-<p><a id="ref3"></a>
-- <strong>[3]</strong> Guarino, N. (2009). <em>The Ontological Level: Revisiting 30 Years of Knowledge Representation</em>. In: Borgida, A.T. et al. (Eds.), Mylopoulos Festschrift, LNCS 5600, pp. 52–67. Springer. https://doi.org/10.1007/978-3-642-01907-4_6</p>
-<p><a id="ref4"></a>
-- <strong>[4]</strong> Guarino, N. (1998). <em>Formal Ontology and Information Systems</em>. In: N. Guarino (ed.), FOIS'98, IOS Press, pp. 3–15. https://www.researchgate.net/publication/272169039_Formal_Ontology_and_Information_Systems</p>
-<p><a id="ref5"></a>
-- <strong>[5]</strong> Interoperability: unifying and maximising data reuse within digital education ecosystems. <em>OECD</em>. Retrieved from: https://www.oecd.org/en/publications/oecd-digital-education-outlook-2023_c74f03de-en/full-report/interoperability-unifying-and-maximising-data-reuse-within-digital-education-ecosystems_660f8da1.html</p>
-<p><a id="ref6"></a>
-- <strong>[6]</strong> Importance of Semantic Interoperability in Public Health Surveillance. <em>SSG</em>. Retrieved from: https://www.ssg-llc.com/semantic-interoperability-importance-of-interoperability-in-public-health/</p>
-<p><a id="ref7"></a>
-- <strong>[7]</strong> Aligning Semantic Interoperability Frameworks with the FOXS Stack. <em>PubMed</em>. Retrieved from: https://pubmed.ncbi.nlm.nih.gov/36473495/</p>
-<p><a id="ref8"></a>
-- <strong>[8]</strong> Achieving Semantic Interoperability Using RDF and OWL. <em>W3C</em>. Retrieved from: https://www.w3.org/2001/sw/BestPractices/OEP/SemInt/</p>
-<p><a id="ref9"></a>
-- <strong>[9]</strong> Suggestions for extending the FAIR Principles based on a linguistic perspective on semantic interoperability. <em>Nature Scientific Data</em>. Retrieved from: https://www.nature.com/articles/s41597-025-05011-x</p>
-<p><a id="ref10"></a>
-- <strong>[10]</strong> FAIR Semantics, Interoperability, and Services. <em>FAIRsFAIR</em>. Retrieved from: https://www.fairsfair.eu/fair-semantics-interoperability-and-services-0</p>
-<p><a id="ref11"></a>
-- <strong>[11]</strong> Guizzardi, G. (2020). <em>Ontology, Ontologies and the "I" of FAIR</em>. Data Intelligence, 2(1–2), 181–191. https://doi.org/10.1162/dint_a_00040</p>
-<p><a id="ref12"></a>
-- <strong>[12]</strong> Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., et al. (2016). <em>The FAIR Guiding Principles for scientific data management and stewardship</em>. Scientific Data, 3, 160018. https://doi.org/10.1038/sdata.2016.18</p>
+<p><a id="ref1"></a></p>
+<ul>
+<li><strong>[1]</strong> Semantic interoperability. <em>Wikipedia</em>. Retrieved from: <a href="https://en.wikipedia.org/wiki/Semantic_interoperability">https://en.wikipedia.org/wiki/Semantic_interoperability</a></li>
+</ul>
+<p><a id="ref2"></a></p>
+<ul>
+<li><strong>[2]</strong> What is semantic interoperability? <em>Wolters Kluwer</em>. Retrieved from: <a href="https://www.wolterskluwer.com/en/expert-insights/what-is-semantic-interoperability">https://www.wolterskluwer.com/en/expert-insights/what-is-semantic-interoperability</a></li>
+</ul>
+<p><a id="ref3"></a></p>
+<ul>
+<li><strong>[3]</strong> Guarino, N. (2009). <em>The Ontological Level: Revisiting 30 Years of Knowledge Representation</em>. In: Borgida, A.T. et al. (Eds.), Mylopoulos Festschrift, LNCS 5600, pp. 52–67. Springer. <a href="https://doi.org/10.1007/978-3-642-01907-4_6">https://doi.org/10.1007/978-3-642-01907-4_6</a></li>
+</ul>
+<p><a id="ref4"></a></p>
+<ul>
+<li><strong>[4]</strong> Guarino, N. (1998). <em>Formal Ontology and Information Systems</em>. In: N. Guarino (ed.), FOIS'98, IOS Press, pp. 3–15. <a href="https://www.researchgate.net/publication/272169039_Formal_Ontology_and_Information_Systems">https://www.researchgate.net/publication/272169039_Formal_Ontology_and_Information_Systems</a></li>
+</ul>
+<p><a id="ref5"></a></p>
+<ul>
+<li><strong>[5]</strong> Interoperability: unifying and maximising data reuse within digital education ecosystems. <em>OECD</em>. Retrieved from: <a href="https://www.oecd.org/en/publications/oecd-digital-education-outlook-2023_c74f03de-en/full-report/interoperability-unifying-and-maximising-data-reuse-within-digital-education-ecosystems_660f8da1.html">https://www.oecd.org/en/publications/oecd-digital-education-outlook-2023_c74f03de-en/full-report/interoperability-unifying-and-maximising-data-reuse-within-digital-education-ecosystems_660f8da1.html</a></li>
+</ul>
+<p><a id="ref6"></a></p>
+<ul>
+<li><strong>[6]</strong> Importance of Semantic Interoperability in Public Health Surveillance. <em>SSG</em>. Retrieved from: <a href="https://www.ssg-llc.com/semantic-interoperability-importance-of-interoperability-in-public-health/">https://www.ssg-llc.com/semantic-interoperability-importance-of-interoperability-in-public-health/</a></li>
+</ul>
+<p><a id="ref7"></a></p>
+<ul>
+<li><strong>[7]</strong> Aligning Semantic Interoperability Frameworks with the FOXS Stack. <em>PubMed</em>. Retrieved from: <a href="https://pubmed.ncbi.nlm.nih.gov/36473495/">https://pubmed.ncbi.nlm.nih.gov/36473495/</a></li>
+</ul>
+<p><a id="ref8"></a></p>
+<ul>
+<li><strong>[8]</strong> Achieving Semantic Interoperability Using RDF and OWL. <em>W3C</em>. Retrieved from: <a href="https://www.w3.org/2001/sw/BestPractices/OEP/SemInt/">https://www.w3.org/2001/sw/BestPractices/OEP/SemInt/</a></li>
+</ul>
+<p><a id="ref9"></a></p>
+<ul>
+<li><strong>[9]</strong> Suggestions for extending the FAIR Principles based on a linguistic perspective on semantic interoperability. <em>Nature Scientific Data</em>. Retrieved from: <a href="https://www.nature.com/articles/s41597-025-05011-x">https://www.nature.com/articles/s41597-025-05011-x</a></li>
+</ul>
+<p><a id="ref10"></a></p>
+<ul>
+<li><strong>[10]</strong> FAIR Semantics, Interoperability, and Services. <em>FAIRsFAIR</em>. Retrieved from: <a href="https://www.fairsfair.eu/fair-semantics-interoperability-and-services-0">https://www.fairsfair.eu/fair-semantics-interoperability-and-services-0</a></li>
+</ul>
+<p><a id="ref11"></a></p>
+<ul>
+<li><strong>[11]</strong> Guizzardi, G. (2020). <em>Ontology, Ontologies and the "I" of FAIR</em>. Data Intelligence, 2(1–2), 181–191. <a href="https://doi.org/10.1162/dint_a_00040">https://doi.org/10.1162/dint_a_00040</a></li>
+</ul>
+<p><a id="ref12"></a></p>
+<ul>
+<li><strong>[12]</strong> Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., et al. (2016). <em>The FAIR Guiding Principles for scientific data management and stewardship</em>. Scientific Data, 3, 160018. <a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a></li>
+</ul>
 
 
 

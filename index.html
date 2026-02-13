@@ -501,6 +501,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-we-do-differently-semantic-traceability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we do differently: semantic traceability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-once-reuse-everywhere-a-semantic-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map once, reuse everywhere (a semantic hub)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-concrete-example-avoiding-same-label-different-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A concrete example: avoiding "same label, different meaning"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trust-by-design-auditable-semantic-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trust by design: auditable semantic assets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick start (10 minutes)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community-and-collaboration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Community and collaboration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#about-health-ri" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1823,17 +1889,51 @@
 
 <h1 id="health-ri-semantic-interoperability-initiative">Health-RI Semantic Interoperability Initiative</h1>
 <p>The health domain is shaped by many standards and models that guide the design of databases and the implementation of systems. They are applied in diverse contexts, from hospital records to research infrastructures. To enable effective data reuse, the data within these systems often needs to be exchanged, compared, and integrated. In other words, the data must be interoperable (fulfilling the "I" in FAIR).</p>
-<p>But achieving this is technically complex, time-consuming, and prone to errors when relying on case-by-case mappings between standards. In the past, several initiatives have sought to address this challenge, and while they brought valuable contributions, some unintentionally added to the creation of a "standard #15," resulting in another model in an already crowded landscape.</p>
+<p>In practice, interoperability often breaks because <strong>meaning stays implicit</strong>. Similar labels, codes, or even similar OWL patterns can hide genuine semantic misalignment ("false agreement")—and those mismatches usually surface later as brittle integrations, silent errors, and hard-to-reproduce results.</p>
+<h2 id="what-we-do-differently-semantic-traceability">What we do differently: semantic traceability</h2>
+<p>The Health-RI Semantic Interoperability Initiative is a model-driven, ontology-based framework designed to enable <strong>semantic traceability</strong>: keeping meaning and representation aligned across the stack.</p>
+<p>We develop the <strong>Health-RI Ontology (HRIO)</strong> as a common semantic reference model:</p>
+<ul>
+<li><strong>HRIO OntoUML (CIM)</strong>: a conceptual model for experts to validate (meaning-first).</li>
+<li><strong>HRIO gUFO/OWL (PIM)</strong>: a computational OWL implementation of the same meanings (machine-processable).</li>
+<li><strong>Health-RI Mapping Vocabulary (HRIV)</strong>: a meaning-level mapping layer that links external terms to HRIO meanings with explicit intent.</li>
+</ul>
+<p>This makes it possible to trace semantics <strong>from external artifacts → mapped HRIO meanings → conceptual reference definitions</strong>, and also in the reverse direction.</p>
+<h2 id="map-once-reuse-everywhere-a-semantic-hub">Map once, reuse everywhere (a semantic hub)</h2>
+<p>Most interoperability programs end up maintaining many pairwise mappings across standards and local schemas. Our approach replaces that scaling trap with a semantic hub:</p>
+<ul>
+<li>Each external standard, schema, or ontology maps <strong>once</strong> to HRIO.</li>
+<li>When two external terms map to the same HRIO meaning, their intended semantics become comparable through the shared reference model—without needing a bespoke pairwise mapping for every combination.</li>
+</ul>
 <p align="center"><img src="assets/images/xkcd-standards.png" width="500" alt="XKCD Comic #927 - Standards"><br>
 <em>Source: <a href="https://xkcd.com/927/">xkcd.com/927</a></em></p>
 
-<p>Important efforts such as FHIR, OpenEHR, SNOMED CT, OMOP, and convergence initiatives between them remain crucial endeavors for interoperability, and our work builds directly on them while taking a distinct perspective.</p>
-<p>The Health-RI Semantic Interoperability Initiative addresses this challenge by developing a unifying upper-level ontology that defines the precise meaning of key concepts already present in widely used standards such as FHIR, OMOP, and OpenEHR. This ontology serves as a shared reference point, allowing existing standards to map their concepts to it. Through this mapping, the intended meanings become clear and explicit to anyone who needs to interoperate across systems.</p>
-<p>We do not intend to replace the standards and models already in use, into which research groups and institutions have invested significant effort and resources. Instead, our approach replaces the need for multiple pairwise mappings between those standards with a single, reusable mapping to our ontology.</p>
-<p>This makes the Health-RI Semantic Interoperability Initiative non-intrusive: the ontology complements existing efforts and provides the semantic backbone that supports their interoperability. We know this is complex and ambitious work, but once a mapping is created it can be applied consistently across different projects and contexts. By relying on solid theoretical foundations and state-of-the-art technologies, and by working together as a community, we are confident that we can turn this work into a practical means for achieving semantic interoperability.</p>
+<h2 id="a-concrete-example-avoiding-same-label-different-meaning">A concrete example: avoiding "same label, different meaning"</h2>
+<p>Two standards may both use the label "Man", while embedding different conceptualizations (e.g., a karyotype-based reading versus a gender-based reading). Treating them as interchangeable creates false agreement.</p>
+<p>With HRIO + HRIV:</p>
+<ul>
+<li>each external term is linked to the specific HRIO meaning it intends,</li>
+<li>and cross-standard interpretations are derived from those explicit meaning-level commitments (not from labels alone).</li>
+</ul>
+<h2 id="trust-by-design-auditable-semantic-assets">Trust by design: auditable semantic assets</h2>
+<p>We treat semantic artifacts like production assets:</p>
+<ul>
+<li><strong>Role separation</strong> (Mapper ≠ Reviewer; Curator publishes)</li>
+<li><strong>Validation before release</strong> (promotion gates)</li>
+<li><strong>Append-only history</strong> where mappings are <strong>superseded</strong> (never overwritten), with <code>replaces</code> lineage</li>
+<li><strong>Stable, citable PIDs (w3id)</strong> and <strong>version IRIs / dated releases</strong> to support reproducibility</li>
+</ul>
+<h2 id="quick-start-10-minutes">Quick start (10 minutes)</h2>
+<p>1) <strong>Pick</strong> one ambiguous local term (column header, code, or ontology class).
+2) <strong>Select</strong> the closest HRIO meaning (browse the ontology specification/documentation).
+3) <strong>Attach</strong> a meaning-level relation (your semantic "unit test"):
+   - <code>hriv:hasExactMeaning</code> (intended meaning is fully equivalent)
+   - <code>hriv:hasBroaderMeaningThan</code> / <code>hriv:hasNarrowerMeaningThan</code> (meaning is broader/narrower)
+4) <strong>Share it</strong> with the community (one row is fine): contribute via the routes described in the contributing pages.</p>
+<h2 id="community-and-collaboration">Community and collaboration</h2>
 <p>At this early stage, as we continue to explore alternatives and collaborations, we are already receiving valuable support and feedback from academics and professionals across Health-RI and the broader health data community. Their perspectives are helping us shape the work and ensure it stays aligned with ongoing national and international efforts toward interoperability.</p>
-<p>We invite you to explore the resources we are making available — including our <a href="ontology/"><strong>ontology</strong></a>, <a href="method/specification-vocabulary.html"><strong>mapping vocabulary</strong></a>, and <a href="method/mapping-schema/"><strong>mapping sets</strong></a> — all of which are openly published and continuously improved.</p>
-<p>We also welcome direct engagement, whether through sharing feedback, proposing new mappings, or discussing use cases and potential applications with us.</p>
+<p>We invite you to explore the resources we are making available — including our <a href="ontology/"><strong>ontology</strong></a>, <a href="method/specification-vocabulary.html"><strong>mapping vocabulary</strong></a>, and <a href="method/mapping-schema/"><strong>mapping sets</strong></a> — all of which are openly published and continuously improved. For the conceptual rationale and the initiative-level definition of semantic traceability, see our <a href="https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf">academic paper</a>.</p>
+<p>We also welcome direct engagement—see <a href="contributing/overview/">Contributing</a>, including time-bound <a href="contributing/call-for-community-review/">Calls for Community Review</a>, and the ongoing <a href="contributing/contribution-channels/">Contribution Channels</a>.</p>
 <p>After all, semantic interoperability can only be achieved <strong>through the community</strong>: initiatives earn trust only when they are built openly and collaboratively. Together, we can ensure this effort translates into real, lasting improvements in how health data is shared and reused.</p>
 <hr />
 <h2 id="about-health-ri">About Health-RI</h2>
@@ -1845,13 +1945,13 @@
 <ul>
 <li><strong>Semantic Interoperability</strong>: <a href="semantic-interoperability/">Overview</a></li>
 <li><strong>OntoUML &amp; gUFO</strong>: <a href="ontouml-gufo/">Overview</a> · <a href="ontouml-gufo/ontouml/">OntoUML</a> · <a href="ontouml-gufo/ontouml-stereotypes/">OntoUML Stereotypes</a> · <a href="ontouml-gufo/ontouml-ufo-catalog/">OntoUML/UFO Catalog</a> · <a href="ontouml-gufo/creating-ontouml-models/">Creating OntoUML Models</a> · <a href="ontouml-gufo/gufo/">gUFO</a></li>
-<li><strong>Method</strong>: <a href="method/">Overview</a> · <a href="method/introduction/">Introduction</a> · <a href="method/mapping-strategy/">Mapping Strategy</a> · <a href="method/specification-vocabulary.html">Mapping Vocabulary Specification</a> · <a href="method/mapping-schema/">SSSOM Mapping Set</a> · <a href="method/publications/">Publications</a> · <a href="method/persistent-ids/">Persistent Identifiers</a></li>
+<li><strong>Method</strong>: <a href="method/">Overview</a> · <a href="method/introduction/">Introduction</a> · <a href="method/mapping-strategy/">Mapping Strategy</a> · <a href="method/specification-vocabulary.html">Mapping Vocabulary Specification</a> · <a href="method/mapping-schema/">SSSOM Mapping Set</a> · <a href="method/mapping-governance/">Mapping Governance</a> · <a href="method/ontology-versioning/">Ontology Versioning</a> · <a href="method/ontology-validation/">Ontology Validation</a> · <a href="method/publications/">Publications</a> · <a href="method/persistent-ids/">Persistent Identifiers</a></li>
 <li><strong>Deliverables</strong>: <a href="ontology/">Overview</a> · <a href="ontology/documentation/">Ontology Documentation</a> · <a href="ontology/specification-ontology.html">Ontology Specification</a> · <a href="ontology/changelog-ontology/">Ontology Changelog</a></li>
-<li><strong>Help &amp; Contributions</strong>: <a href="faq/">FAQ</a> · <a href="contributing/overview/">Contributing</a></li>
+<li><strong>Help &amp; Contributions</strong>: <a href="faq/">FAQ</a> · <a href="contributing/overview/">Contributing</a> · <a href="contributing/call-for-community-review/">Calls for Community Review</a> · <a href="contributing/contribution-channels/">Contribution Channels</a></li>
 </ul>
 <hr />
 <h2 id="who-this-is-for">Who this is for</h2>
-<p>Data stewards, modelers, and engineers who need stable, shared meaning across systems — using a common reference model (OntoUML → gUFO) and mappings that align external ontologies to it.</p>
+<p>Data stewards, modelers, and engineers who need stable, shared meaning across systems — using a common reference model (OntoUML → gUFO) and mappings that align external ontologies, terminologies, and schemas to it.</p>
 <hr />
 <h2 id="license">License</h2>
 <p><strong>Semantic Artifacts &amp; Documentation</strong>: All ontologies, vocabularies, mapping files, documentation, templates, and other semantic artifacts are licensed under the <a href="https://creativecommons.org/licenses/by/4.0/"><strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong></a> license.</p>

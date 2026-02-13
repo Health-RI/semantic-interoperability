@@ -1952,12 +1952,12 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>gUFO files may only generated for versions of the model that are <strong>syntactically valid</strong>. As a result, no <code>.ttl</code> or <code>.shacl</code> file may be provided for some versions that are still incomplete or under development.</p>
+<p>Derived gUFO artifacts (<code>.ttl</code>, <code>.shacl</code>, and the HTML specification) are generated only for releases where the OntoUML model is syntactically valid and the transformation pipeline completes successfully. If a release cannot produce these derived files, they may be absent from <code>ontologies/versioned/</code>, and the corresponding "latest" PID (e.g., <code>/ontology/ttl</code>) will continue to resolve to the most recent available derived artifact.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The version numbers of the <code>.vpp</code>/<code>.json</code> (OntoUML) and <code>.ttl</code> (OWL/gUFO) files are managed independently. The <code>.ttl</code> file includes a <code>dcterms:conformsTo</code> metadata relation to indicate which OntoUML version it corresponds to.</p>
-<p><code>&lt;https://w3id.org/health-ri/ontology#&gt; dcterms:conformsTo &lt;https://w3id.org/health-ri/ontouml-v0.3.0&gt; .</code></p>
+<p>All published artifacts use the HRIO release version identifier (<code>X.Y.Z</code>) defined in the Ontology Versioning Policy. When an OWL (<code>.ttl</code>) artifact is present, it includes a <code>dcterms:conformsTo</code> relation to indicate the OntoUML artifact version it was generated from.</p>
+<p><code>&lt;https://w3id.org/health-ri/ontology#&gt; dcterms:conformsTo &lt;https://w3id.org/health-ri/ontology/vX.Y.Z/json&gt; .</code></p>
 </div>
 <h3 id="repository-structure">Repository Structure</h3>
 <p>All current artifacts are made available in the <code>/ontologies</code> folder:</p>
@@ -2001,7 +2001,8 @@ These images are always generated from the most recent <code>.vpp</code> file an
 <li><strong>All previous versions</strong> are organized in the <code>ontologies/versioned/</code> directory for transparency and reproducibility.</li>
 <li>A <strong>changelog file (<code>changelog-ontology.md</code>)</strong> summarizes all version changes and links them to their respective files and semantic impact.<ul>
 <li>The changelog follows the <a href="https://keepachangelog.com/">Keep a Changelog</a> format.</li>
-<li>It is generated and maintained with the support of an AI-assisted tool to ensure consistency and clarity.</li>
+<li>It is drafted with AI support as an editorial aid. Entries are intended to be reviewed and aligned with the released artifacts, but they may still contain inaccuracies or lag behind model changes in a given snapshot.</li>
+<li>The prompts used to draft AI-supported changelog content are available in <code>resources/prompts/</code>.</li>
 </ul>
 </li>
 </ul>
@@ -2010,12 +2011,12 @@ These images are always generated from the most recent <code>.vpp</code> file an
 <p>The full description of all Persistent Identifiers (PIDs) — including format-specific URIs for each version — is documented separately. Access the complete description at: <a href="../persistent-ids/">Persistent Identifiers</a>.</p>
 </div>
 <h2 id="publishing-sssom-mappings">Publishing SSSOM Mappings</h2>
-<p>This section describes the publication process for our <strong>SSSOM mapping sets</strong> (cross-ontology alignments), which follow a different versioning strategy than the ontology artifacts described above.</p>
+<p>This section describes the publication process for our <strong>SSSOM mapping sets</strong> (meaning mappings), which follow a different versioning strategy than the ontology artifacts described above.</p>
 <p>The SSSOM mapping set uses date-based versions in the format <code>YYYY-MM-DD</code> (at most one version per day).
 Published mappings are <strong>append-only</strong>: existing rows are not deleted. To correct or supersede a row, add a new one using the <code>replaces</code> field to reference the previous record.</p>
 <ul>
 <li><strong>SSSOM Mapping Set (TSV &amp; TTL)</strong>
-  Curated cross-ontology alignments published as a tabular SSSOM set and as RDF/Turtle.<ul>
+  Curated meaning mappings published as a tabular SSSOM set and as RDF/Turtle.<ul>
 <li><code>https://w3id.org/health-ri/semantic-interoperability/mappings</code> — redirects to the <strong>TTL</strong> version</li>
 <li><code>https://w3id.org/health-ri/semantic-interoperability/mappings/ttl</code> — <strong>TTL</strong> version</li>
 <li><code>https://w3id.org/health-ri/semantic-interoperability/mappings/tsv</code> — <strong>TSV</strong> version</li>
