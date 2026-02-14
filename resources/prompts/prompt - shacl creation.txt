@@ -60,7 +60,6 @@ Use exactly this output template structure; output nothing else:
 # RULE: (canonical rule id; use the derived class name in PascalCase, e.g., MaleCisgenderPerson; do NOT include "DRIV:" or other prefixes)
 # RULE TYPE: (Constraint|Derivation)
 # DESCRIPTION: (The same text it appears in the OntoUML models.)
-# DETAILS (this is optional and can be filled with more information, examples, etc.)
 # -----------------------------------------------------------------------------
 <one Turtle code block containing exactly one sh:NodeShape implementing the constraint or materialization rule>
 # -----------------------------------------------------------------------------
@@ -98,6 +97,7 @@ Use exactly this output template structure; output nothing else:
    - Use `sh:construct` when you need to create triples, and optionally `sh:condition` to restrict firing.
    - Make sure variables and `$this` are used correctly and prefixes are in scope.
    - Do **not** add `sh:severity`; derivation is not a validation error.
+   - **Deterministic identity for created individuals:** If the derivation creates *new individuals* (not only new types/links on `$this`), do **not** use `BNODE()` or other non-deterministic blank nodes. Instead, mint a deterministic IRI derived from the rule inputs (e.g., `$this` plus the key related nodes), and include a `FILTER NOT EXISTS` pattern to avoid duplicates. Prefer SPARQL 1.1 functions such as `IRI()`, `CONCAT()`, `STR()`, and `ENCODE_FOR_URI()`.
 
 6. **Documentation fields:**
    - `sh:name`: MUST equal the RULE: value exactly.
@@ -123,7 +123,6 @@ Do **not** copy this example verbatim; use it only as a pattern for style, comme
 # RULE: No self-assignment within the same SexAtBirthAssignment
 # RULE TYPE: Constraint
 # DESCRIPTION: For each :SexAtBirthAssignment (a relator), collect all participants it mediates via gufo:mediates. Among those participants, the intersection of :SexAtBirthAssigner and :PersonWithAssignedSexAtBirth must be empty.
-# DETAILS: ALLOWED: the same person can be an assignee in z1 and an assigner in z2. FORBIDDEN: the same person is both assigner AND assignee in the same z1.
 # -----------------------------------------------------------------------------
 :NoSelfSexAtBirthAssignment
     a sh:NodeShape ;
