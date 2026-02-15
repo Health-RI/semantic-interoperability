@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2026-02-15
+
+- **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Renamed: Corrected the v1.6.2 Turtle artifact name and embedded version metadata (versionIRI, versionInfo, conformsTo) to match v1.6.2.
+
 ## 2026-02-13
 
 - **Health-RI Ontology** — Fixed: Released v1.6.1, removing incorrect metadata from distribution packages without changing term semantics.

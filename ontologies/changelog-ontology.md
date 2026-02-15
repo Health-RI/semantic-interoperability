@@ -4,6 +4,71 @@ All notable changes to this project will be documented in this file. Entries are
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.6.2] - 2026-02-15
+
+### TL;DR
+
+- Metadata-only release: bumps ontology release metadata to **1.6.2** and updates versioned artifact links.
+- Updates the explicit version chain via `owl:priorVersion` (no term-level semantic change).
+- No classes, properties, or logical axioms were added, changed, or removed beyond the metadata updates below.
+
+### Added
+
+- No new classes, properties, or axioms were introduced in this release.
+
+### Changed
+
+- **ontology** (`https://w3id.org/health-ri/ontology`)
+  - `owl:versionInfo` **"1.6.1" → "1.6.2"**; `owl:versionIRI` **…/v1.6.1 → …/v1.6.2**.
+  - `dcterms:modified` **2026-02-13 → 2026-02-15**.
+  - `dcterms:conformsTo` links updated to **…/v1.6.2/json** and **…/v1.6.2/vpp**.
+  - `dcat:hasVersion` **…/v1.6.0 → …/v1.6.1**.
+- **ontology/v1.6.2** (`https://w3id.org/health-ri/ontology/v1.6.2`)
+  - Added `owl:priorVersion` **…/v1.6.1**.
+- **ontology/v1.6.1** (`https://w3id.org/health-ri/ontology/v1.6.1`)
+  - Removed `owl:priorVersion` **…/v1.6.0** (version chain now continues via **…/v1.6.2**).
+
+### Removed
+
+- No classes, properties, or logical axioms were removed in this release.
+
+### Not serialized
+
+- None identified beyond the OWL-level changes summarized above; all observed changes are present in the serialized ontology.
+
+## [1.6.1] - 2026-02-13
+
+### TL;DR - Metadata-only patch release: corrected distribution/package metadata without changing term semantics
+
+- Updated release metadata to `1.6.1` and refreshed artifact links.
+- Corrected package-level `ns1:term_status` values in the SexAndGender module (no OWL logical changes).
+
+### Added - Added explicit version-linkage metadata for release navigation
+
+- **ontology** (`https://w3id.org/health-ri/ontology`)
+  - `dcat:hasVersion`: added links to historical version IRIs (`v0.4.0`, `v0.5.2`, `v0.6.0`, `v0.9.2`, `v0.10.1`, `v0.11.9`, `v1.1.1`, `v1.2.1`, `v1.3.0`, `v1.4.0`, `v1.5.0`, `v1.6.0`).
+- **v1.6.1** (`…/v1.6.1`)
+  - `owl:priorVersion`: `…/v1.6.0`.
+
+### Changed - Updated release metadata and corrected term-status annotations (no semantic change)
+
+- **ontology** (`https://w3id.org/health-ri/ontology`)
+  - `owl:versionInfo` **"1.6.0" → "1.6.1"**
+  - `owl:versionIRI` **…/v1.6.0 → …/v1.6.1**
+  - `dcterms:modified` **2026-02-11 → 2026-02-13**
+  - `dcterms:conformsTo` updated artifact links (**…/v1.6.0/(json|vpp) → …/v1.6.1/(json|vpp)**)
+- SexAndGender packages: corrected `ns1:term_status` values.
+  - **Gender** (`…#package/SexAndGender/Gender`): `ns1:term_status` **"irv" → "erv"**
+  - **Sex** (`…#package/SexAndGender/Sex`): `ns1:term_status` **"irv" → "erv"**
+  - **SexGenderOutcome** (`…#package/SexAndGender/SexGenderOutcome`): `ns1:term_status` **"int" → "erv"**
+
+### Removed - No named terms removed; only superseded metadata values were replaced
+
+- No classes, properties, or individuals were removed in this release.
+- Prior release metadata values (`owl:versionInfo`, `owl:versionIRI`, `dcterms:modified`, `dcterms:conformsTo`) and previous `ns1:term_status` literals were superseded by the updates listed under *Changed*.
+
+### Not serialized - None identified beyond the OWL-level changes summarized above; all observed changes are present in the serialized ontology
+
 ## [1.6.0] - 2026-02-10
 
 ### TL;DR
