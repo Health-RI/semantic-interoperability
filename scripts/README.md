@@ -14,7 +14,7 @@ This folder contains utility scripts used across the Health-RI Semantic Interope
   - [`insert-metadata.py` — Merge release metadata into the latest ontology TTL](#insert-metadatapy--merge-release-metadata-into-the-latest-ontology-ttl)
   - [`owl-postprocess.py` — Post-process ontology TTL using the paired OntoUML JSON export](#owl-postprocesspy--post-process-ontology-ttl-using-the-paired-ontouml-json-export)
   - [`make-diff-ttl.py` — RDF diff graphs between two versions](#make-diff-ttlpy--rdf-diff-graphs-between-two-versions)
-  - [`diff-ttl.py` — Convenience wrapper: metadata insertion + diff for last two versions](#diff-ttlpy--convenience-wrapper-metadata-insertion--diff-for-last-two-versions)
+  - [`diff-ttl.py` — Convenience wrapper: post-processing + metadata insertion + diff for last two versions](#diff-ttlpy--convenience-wrapper-post-processing--metadata-insertion--diff-for-last-two-versions)
   - [`move-latest.py` — Populate `ontologies/latest/` from versioned artifacts](#move-latestpy--populate-ontologieslatest-from-versioned-artifacts)
   - [`sssom-tsv2ttl.py` — Health-RI SSSOM TSV → TTL converter (tailored)](#sssom-tsv2ttlpy--health-ri-sssom-tsv--ttl-converter-tailored)
   - [`clean-unwanted-files.py` — Delete temporary/lock/backup artifacts across the repo](#clean-unwanted-filespy--delete-temporarylockbackup-artifacts-across-the-repo)
@@ -245,6 +245,7 @@ Enriches the latest versioned ontology TTL using the latest *matching* versioned
     - For each JSON Class nested in a JSON Package, adds:
       - `dcterms:isPartOf <...#package/{PackagePath}>`
       - Matches the RDF resource by `rdfs:label` string == JSON Class `name` (must map uniquely).
+      - Matching is performed against non-package resources; labels of `...#package/...` resources are excluded to avoid ambiguities after package resources are generated.
     - Optional reconciliation (enabled by default via `RECONCILE_PACKAGE_MEMBERSHIP = True`):
       - Removes other `dcterms:isPartOf` values in the `...#package/` namespace for the class, keeping only the JSON-derived membership.
   - **Package maturity/status (from JSON, with inheritance)**
@@ -253,18 +254,22 @@ Enriches the latest versioned ontology TTL using the latest *matching* versioned
     - Stage values are inherited from the closest ancestor package that has `propertyAssignments.stage`.
       - If no ancestor has `stage`, no `vs:term_status` is written for that package.
     - Optional reconciliation (enabled by default via `RECONCILE_PACKAGE_STATUS = True`):
-      - Removes existing `vs:term_status` values for each package before writing the computed one.
+      - Removes **stale** `vs:term_status` values (values different from the computed one).
+      - If a package has no effective stage and reconciliation is enabled, any existing `vs:term_status` values for that package are removed.
     - If an effective stage is not one of `int|irv|erv|pub`, the script warns but still writes it.
   - **Migration/cleanup (enabled by default via `MIGRATE_PERCENT_ENCODED_PACKAGE_IRIS = True`)**
     - Removes legacy percent-encoded package IRIs (e.g., `...#package/Health%20Condition`) and their related triples.
     - Normalizes `rdfs:comment` line endings to LF only (removes stray `\r` / CRLF).
+  - **Reporting**
+    - If any JSON `name` does not map uniquely to exactly one `rdfs:label`, the script writes a TSV report alongside the TTL:
+      - `ontologies/versioned/health-ri-ontology-vX.Y.Z.unmapped-label-matches.tsv`
   - **Safety/correctness**
     - File size guardrails (`MAX_TTL_BYTES`, `MAX_JSON_BYTES`).
     - Basic sanity check: warns (or errors in `STRICT_MODE`) if the ontology node is not found as `owl:Ontology`.
-    - Atomic write (`.tmp` then replace) to avoid partially written TTL files on failure.
+    - Atomic writes (`.tmp` then replace) to avoid partially written files on failure.
   - **Notes:**
     - RDFLib serialization does **not** preserve Turtle comments (`# ...`) or prefix ordering.
-  - **Overwrites** the latest versioned TTL file in place.
+  - **Writes the TTL only if changes are required**; otherwise leaves it untouched.
 - **Run:** `python scripts/owl-postprocess.py`
 
 ### `make-diff-ttl.py` — RDF diff graphs between two versions
@@ -292,17 +297,23 @@ Computes "additions", "removals", and optionally "unchanged" graphs between two 
 - **Run (example):**
   - `python scripts/make-diff-ttl.py old.ttl new.ttl --out-prefix diff --log-level INFO`
 
-### `diff-ttl.py` — Convenience wrapper: metadata insertion + diff for last two versions
+### `diff-ttl.py` — Convenience wrapper: post-processing + metadata insertion + diff for last two versions
 
-Runs `insert-metadata.py`, then runs `make-diff-ttl.py` using either provided paths or (by default) the last two versioned ontology TTLs.
+Runs `owl-postprocess.py`, then `insert-metadata.py`, then runs `make-diff-ttl.py` using either provided paths or (by default) the last two versioned ontology TTLs.
 
 - **Inputs:**
-  - Optional: `OLD` and `NEW` TTL paths
+  - Optional: `OLD` and `NEW` TTL paths (used for the diff step)
   - Default: auto-picks the last two `health-ri-ontology-vX.Y.Z.ttl` files from `ontologies/versioned/`
 - **Key characteristics:**
   - Enforces "both or none" for positional args:
     - provide both OLD and NEW, or provide none to auto-pick
+  - Runs the pipeline in this order:
+    1. `owl-postprocess.py`
+    2. `insert-metadata.py`
+    3. `make-diff-ttl.py OLD NEW`
+  - Prints section headers to visually separate the logs from each step.
   - `--dry-run` prints the commands without executing them
+  - **Note:** `owl-postprocess.py` and `insert-metadata.py` operate on the latest versioned ontology TTL (auto-detected); they do not take OLD/NEW as inputs.
 - **Run:**
   - `python scripts/diff-ttl.py`
   - `python scripts/diff-ttl.py path/to/old.ttl path/to/new.ttl`

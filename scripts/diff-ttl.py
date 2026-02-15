@@ -33,12 +33,17 @@ def pick_last_two_versioned_ttls(version_dir: Path) -> tuple[Path, Path]:
     return old_path, new_path
 
 
+def _section(title: str) -> None:
+    bar = "=" * 80
+    print(f"\n{bar}\n[diff-ttl] {title}\n{bar}", flush=True)
+
+
 def main() -> int:
     script_dir = Path(__file__).resolve().parent
     repo_root = script_dir.parent
 
     p = argparse.ArgumentParser(
-        description="Run insert-metadata.py and then make-diff-ttl.py (auto-picks last two versions if args omitted)."
+        description="Run owl-postprocess.py, then insert-metadata.py, then make-diff-ttl.py (auto-picks last two versions if args omitted)."
     )
     p.add_argument("old", nargs="?", help="Old TTL path (optional)")
     p.add_argument("new", nargs="?", help="New TTL path (optional)")
@@ -62,9 +67,11 @@ def main() -> int:
     else:
         raise SystemExit("Provide either BOTH OLD and NEW paths, or provide none (to auto-pick).")
 
+    post_script = script_dir / "owl-postprocess.py"
     insert_script = script_dir / "insert-metadata.py"
     diff_script = script_dir / "make-diff-ttl.py"
 
+    post_cmd = [sys.executable, str(post_script)]
     insert_cmd = [sys.executable, str(insert_script)]
     diff_cmd = [sys.executable, str(diff_script), str(old_path), str(new_path)]
 
@@ -73,12 +80,20 @@ def main() -> int:
 
     if args.dry_run:
         print("[diff-ttl] DRY RUN")
+        print(" ".join(post_cmd))
         print(" ".join(insert_cmd))
         print(" ".join(diff_cmd))
         return 0
 
+    _section("OWL postprocessor (owl-postprocess.py)")
+    subprocess.run(post_cmd, check=True)
+
+    _section("Metadata inserter (insert-metadata.py)")
     subprocess.run(insert_cmd, check=True)
+
+    _section("Diff generator (make-diff-ttl.py)")
     subprocess.run(diff_cmd, check=True)
+
     return 0
 
 

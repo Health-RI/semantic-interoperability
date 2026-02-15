@@ -111,6 +111,7 @@ logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 # Helpers
 # ----------------------------
 
+
 @dataclass(frozen=True)
 class VersionedPair:
     ver: semver.Version
@@ -127,9 +128,7 @@ def _find_base_dir(start: Path) -> Path:
         candidate = parent / VERSIONED_REL
         if candidate.is_dir():
             return parent
-    raise FileNotFoundError(
-        f"Could not locate '{VERSIONED_REL.as_posix()}' by walking up from {start}"
-    )
+    raise FileNotFoundError(f"Could not locate '{VERSIONED_REL.as_posix()}' by walking up from {start}")
 
 
 def _guard_file_size(path: Path, max_bytes: int) -> None:
@@ -138,9 +137,7 @@ def _guard_file_size(path: Path, max_bytes: int) -> None:
     except OSError as e:
         raise OSError(f"Could not stat file: {path}") from e
     if size > max_bytes:
-        raise ValueError(
-            f"Refusing to read {path} ({size} bytes) > limit {max_bytes} bytes"
-        )
+        raise ValueError(f"Refusing to read {path} ({size} bytes) > limit {max_bytes} bytes")
 
 
 def _decode_json_bytes(raw: bytes) -> str:
@@ -352,9 +349,7 @@ def _find_latest_versioned_pair(versioned_dir: Path) -> VersionedPair:
 
     common = sorted(set(ttl_by_ver.keys()) & set(json_by_ver.keys()))
     if not common:
-        raise FileNotFoundError(
-            f"No matching TTL+JSON versioned pairs found in {versioned_dir}"
-        )
+        raise FileNotFoundError(f"No matching TTL+JSON versioned pairs found in {versioned_dir}")
 
     latest = common[-1]
     return VersionedPair(ver=latest, ttl=ttl_by_ver[latest], js=json_by_ver[latest])
@@ -388,10 +383,7 @@ def _mirror_rdfs_label_to_skos_preflabel(g: Graph) -> Tuple[int, int]:
             continue
 
         lang = o.language
-        existing_same_lang = [
-            x for x in g.objects(s, SKOS.prefLabel)
-            if isinstance(x, Literal) and x.language == lang
-        ]
+        existing_same_lang = [x for x in g.objects(s, SKOS.prefLabel) if isinstance(x, Literal) and x.language == lang]
 
         if any(x == o for x in existing_same_lang):
             continue
@@ -445,7 +437,8 @@ def _validate_ontology_metadata_present(g: Graph) -> None:
 
 def _atomic_write_text(path: Path, text: str, encoding: str = "utf-8") -> None:
     tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(text, encoding=encoding)
+    with tmp.open("w", encoding=encoding, newline="\n") as f:
+        f.write(text)
     tmp.replace(path)
 
 
@@ -522,6 +515,10 @@ def postprocess_ontology(
     # Index rdfs:label -> [(subject, literal)]  (do NOT restrict to URIRef; preserves older behavior)
     label_index: Dict[str, List[Tuple[Any, Literal]]] = defaultdict(list)
     for s, _, o in g.triples((None, RDFS.label, None)):
+        # NEW: exclude package nodes so their labels don't create ambiguous matches on reruns
+        if isinstance(s, URIRef) and str(s).startswith(f"{HRIO_NS_STR}package/"):
+            continue
+
         if isinstance(o, Literal) and isinstance(o.value, str):
             label_index[str(o).strip()].append((s, o))
 
@@ -536,19 +533,50 @@ def postprocess_ontology(
     added_alt = 0
     unmapped_synonyms = 0
 
-    for elem_name, syn_str in syn_records:
+    unmapped_label_rows: List[List[str]] = []
+
+    def _tsv_escape(x: Any) -> str:
+        if x is None:
+            return ""
+        return str(x).replace("\t", "\\t").replace("\r", "\\r").replace("\n", "\\n")
+
+    def _fmt_lit(l: Literal) -> str:
+        base = str(l)
+        if l.language:
+            return f"{base}@{l.language}"
+        if l.datatype:
+            return f"{base}^^<{str(l.datatype)}>"
+        return base
+
+    for json_idx, (elem_name, syn_str) in enumerate(syn_records, start=1):
         hits = label_index.get(elem_name.strip(), [])
         if len(hits) != 1:
             unmapped_synonyms += 1
+
+            conflict_type = "missing_label_match" if not hits else "ambiguous_label_match"
+            cand_subjects = ";".join(str(s) for s, _ in hits)
+            cand_labels = ";".join(_fmt_lit(l) for _, l in hits)
+
+            unmapped_label_rows.append(
+                [
+                    "synonym",  # kind
+                    conflict_type,  # conflict_type
+                    str(json_idx),  # json_index (1-based within syn_records)
+                    _tsv_escape(elem_name),  # json_name
+                    _tsv_escape(elem_name.strip()),  # label_key used for lookup
+                    str(len(hits)),  # hit_count
+                    _tsv_escape(syn_str),  # synonyms
+                    "",  # package_path (n/a)
+                    _tsv_escape(cand_subjects),  # candidate_subjects
+                    _tsv_escape(cand_labels),  # candidate_labels
+                ]
+            )
             continue
 
         subj, label_lit = hits[0]
         lang = label_lit.language
 
-        pref_lex = {
-            str(x) for x in g.objects(subj, SKOS.prefLabel)
-            if isinstance(x, Literal) and x.language == lang
-        }
+        pref_lex = {str(x) for x in g.objects(subj, SKOS.prefLabel) if isinstance(x, Literal) and x.language == lang}
 
         for alt in _split_synonyms(syn_str):
             if alt in pref_lex:
@@ -567,8 +595,7 @@ def postprocess_ontology(
     removed_legacy_pkg_subject_triples = 0
     if MIGRATE_PERCENT_ENCODED_PACKAGE_IRIS:
         legacy_subjects = {
-            s for s in set(g.subjects())
-            if isinstance(s, URIRef) and _is_legacy_percent_encoded_package_iri(s)
+            s for s in set(g.subjects()) if isinstance(s, URIRef) and _is_legacy_percent_encoded_package_iri(s)
         }
         for s in legacy_subjects:
             triples = list(g.triples((s, None, None)))
@@ -585,10 +612,29 @@ def postprocess_ontology(
     removed_stale_partof = 0
     removed_legacy_partof = 0
 
-    for class_name, pkg_path in class_records:
+    for json_idx, (class_name, pkg_path) in enumerate(class_records, start=1):
         hits = label_index.get(class_name.strip(), [])
         if len(hits) != 1:
             unmapped_classes += 1
+
+            conflict_type = "missing_label_match" if not hits else "ambiguous_label_match"
+            cand_subjects = ";".join(str(s) for s, _ in hits)
+            cand_labels = ";".join(_fmt_lit(l) for _, l in hits)
+
+            unmapped_label_rows.append(
+                [
+                    "class",  # kind
+                    conflict_type,  # conflict_type
+                    str(json_idx),  # json_index (1-based within class_records)
+                    _tsv_escape(class_name),  # json_name
+                    _tsv_escape(class_name.strip()),  # label_key used for lookup
+                    str(len(hits)),  # hit_count
+                    "",  # synonyms (n/a)
+                    _tsv_escape(pkg_path),  # package_path
+                    _tsv_escape(cand_subjects),  # candidate_subjects
+                    _tsv_escape(cand_labels),  # candidate_labels
+                ]
+            )
             continue
 
         subj, _ = hits[0]
@@ -608,9 +654,7 @@ def postprocess_ontology(
             stale = [
                 (subj, DCTERMS.isPartOf, obj)
                 for obj in g.objects(subj, DCTERMS.isPartOf)
-                if isinstance(obj, URIRef)
-                and str(obj).startswith(f"{HRIO_NS_STR}package/")
-                and obj != pkg_iri
+                if isinstance(obj, URIRef) and str(obj).startswith(f"{HRIO_NS_STR}package/") and obj != pkg_iri
             ]
             for t in stale:
                 g.remove(t)
@@ -627,20 +671,27 @@ def postprocess_ontology(
 
     for pkg_path, stage in package_stage.items():
         pkg_iri = _package_iri(pkg_path)
-
-        if RECONCILE_PACKAGE_STATUS:
-            existing = list(g.objects(pkg_iri, VS.term_status))
-            for o in existing:
-                g.remove((pkg_iri, VS.term_status, o))
-            removed_term_status += len(existing)
+        existing = list(g.objects(pkg_iri, VS.term_status))
 
         if stage is None:
             packages_without_stage += 1
+            # Optional: if you want "no stage" => ensure no vs:term_status remains
+            if RECONCILE_PACKAGE_STATUS and existing:
+                for o in existing:
+                    g.remove((pkg_iri, VS.term_status, o))
+                removed_term_status += len(existing)
             continue
 
-        lit = Literal(stage)
-        if (pkg_iri, VS.term_status, lit) not in g:
-            g.add((pkg_iri, VS.term_status, lit))
+        desired = Literal(stage)
+
+        if RECONCILE_PACKAGE_STATUS:
+            stale = [o for o in existing if o != desired]
+            for o in stale:
+                g.remove((pkg_iri, VS.term_status, o))
+            removed_term_status += len(stale)
+
+        if (pkg_iri, VS.term_status, desired) not in g:
+            g.add((pkg_iri, VS.term_status, desired))
             added_term_status += 1
 
     # 3) Add rdfs:isDefinedBy to all hrio:* resources (includes package nodes)
@@ -654,7 +705,47 @@ def postprocess_ontology(
 
     _validate_ontology_metadata_present(g)
 
-    _atomic_write_text(ttl_path, g.serialize(format="turtle"), encoding="utf-8")
+    total_changes = (
+        added_pref_1
+        + added_alt
+        + pkg_resource_stats["created_pkg_type_skos_collection"]
+        + pkg_resource_stats["created_pkg_rdfs_label"]
+        + pkg_resource_stats["created_pkg_rdfs_label_from_existing_pref"]
+        + removed_legacy_pkg_subject_triples
+        + added_partof
+        + removed_stale_partof
+        + removed_legacy_partof
+        + added_term_status
+        + removed_term_status
+        + added_is_defined_by
+        + normalized_comments
+        + added_pref_2
+    )
+
+    if unmapped_label_rows:
+        report_path = ttl_path.with_suffix(".unmapped-label-matches.tsv")
+        header = [
+            "kind",
+            "conflict_type",
+            "json_index",
+            "json_name",
+            "label_key",
+            "hit_count",
+            "synonyms",
+            "package_path",
+            "candidate_subjects",
+            "candidate_labels",
+        ]
+        lines = ["\t".join(header)]
+        lines.extend("\t".join(row) for row in unmapped_label_rows)
+        _atomic_write_text(report_path, "\n".join(lines) + "\n", encoding="utf-8")
+        logging.info(f"Wrote unmapped-label report: {report_path}")
+
+    if total_changes:
+        logging.info(f"Applied {total_changes} change(s); writing updated TTL.")
+        _atomic_write_text(ttl_path, g.serialize(format="turtle"), encoding="utf-8")
+    else:
+        logging.info("Ontology TTL already up to date; no changes applied.")
 
     return {
         # prefLabel mirrors (two passes; second is mainly for newly added package labels)
