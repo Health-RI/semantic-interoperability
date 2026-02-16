@@ -1,5 +1,10 @@
 # News & Updates
 
+## 2026-02-16
+
+- **[HRIO Mapping Assistant (GPT)](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant)** — Added: Published a dedicated assistant to help draft HRIV meaning mappings from domain concepts to HRIO (one predicate, confidence %, and evidence snippets).
+- **[Semantic Interoperability Guide (GPT)](https://chatgpt.com/g/g-6992c8eb8780819185f0922ac33d79ce-health-ri-semantic-interoperability-guide)** — Added: Published a dedicated assistant to answer questions about the initiative and help users navigate its documentation, artifacts, releases, and persistent identifiers.
+
 ## 2026-02-15
 
 - **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Renamed: Corrected the v1.6.2 Turtle artifact name and embedded version metadata (versionIRI, versionInfo, conformsTo) to match v1.6.2.

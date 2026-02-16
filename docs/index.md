@@ -48,12 +48,28 @@ We treat semantic artifacts like production assets:
 
 ## Quick start (10 minutes)
 
-1) **Pick** one ambiguous local term (column header, code, or ontology class).
-2) **Select** the closest HRIO meaning (browse the ontology specification/documentation).
-3) **Attach** a meaning-level relation (your semantic "unit test"):
+!!! tip "AI Assistants (GPT)"
+    Two optional ChatGPT assistants can help you navigate the initiative and draft mappings.
+
+    <div class="button-gridb" markdown>
+    [Open: Semantic Interoperability Guide](https://chatgpt.com/g/g-6992c8eb8780819185f0922ac33d79ce-health-ri-semantic-interoperability-guide){ .md-button .md-button--primary .gpt-button }
+    [Open: HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant){ .md-button .md-button--primary .gpt-button }
+    </div>
+
+    - Use the **Guide** for questions about the initiative, artifacts, releases, and PIDs.
+    - Use the **Mapping Assistant** to draft a candidate **HRIV meaning mapping** from your term to **HRIO** (one predicate + confidence + evidence snippets).
+
+    *These tools are drafting aids. Always validate results against the documentation and follow the mapping governance rules before publishing or submitting contributions.*
+
+**1) Pick** one ambiguous local term (column header, code, or ontology class).
+   
+**2) Select** the closest HRIO meaning (browse the ontology specification/documentation).
+   
+**3) Attach** a meaning-level relation (your semantic "unit test"):
    - `hriv:hasExactMeaning` (intended meaning is fully equivalent)
    - `hriv:hasBroaderMeaningThan` / `hriv:hasNarrowerMeaningThan` (meaning is broader/narrower)
-4) **Share it** with the community (one row is fine): contribute via the routes described in the contributing pages.
+
+**4) Share it** with the community (one row is fine): contribute via the routes described in the contributing pages.
 
 ## Community and collaboration
 

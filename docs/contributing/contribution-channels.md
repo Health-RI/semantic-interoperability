@@ -54,6 +54,15 @@ Examples of valid submissions:
 
 ## Contribute SSSOM Mappings
 
+!!! tip "Optional helper for mapping submissions"
+    Before submitting a mapping, you can use the **HRIO Mapping Assistant (GPT)** to draft a candidate predicate/target and gather evidence snippets:
+
+    <div class="button-grid">
+    [Open HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant){ .md-button .md-button--primary }
+    </div>
+
+    *Always verify against HRIO documentation and follow the governance rules for curated/public mappings.*
+
 You can contribute to the Health-RI **SSSOM mapping set** (manually curated) in two ways:
 
 <div class="button-grid" markdown>

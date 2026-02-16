@@ -102,6 +102,11 @@ The Mapping Team is responsible for aligning concepts from external standards an
 * Utilizing the [Simple Standard for Sharing Ontological Mappings (SSSOM)](https://mapping-commons.github.io/sssom/) to document mappings in a consistent and reusable way.[^29]
 * Collaborating closely with artifact owners and maintainers (e.g., standard communities, ontology/schema maintainers, and domain experts) to capture the intended meaning of concepts and schema elements.
 
+!!! tip "Drafting mappings with the HRIO Mapping Assistant (GPT)"
+    When you need help selecting a candidate HRIO target and choosing exactly one HRIV predicate, you can use the [HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant)** as a drafting aid.
+
+    *Always capture evidence in the mapping record and follow the review rules described in Mapping Governance before publishing or contributing mappings.*
+
 Depending on editorial control, mappings may be maintained non-invasively in a separate mapping set (e.g., SSSOM) or embedded directly in the source artifact when governance permits.
 
 This team plays a critical role in ensuring that concepts from standards, schemas, and related artifacts are semantically aligned with the reference model, enabling shared understanding and more reliable reuse across systems and integration settings.

@@ -29,6 +29,18 @@ For lifecycle states, approvals, and publication policy, see the [Governance, Li
 
 ## SSSOM File Schema
 
+!!! tip "Need help turning a local term into a valid SSSOM row?"
+    Use the **HRIO Mapping Assistant** to draft a mapping from a data-model concept (field/code/class) to an HRIO target:
+
+    - It proposes HRIO candidate labels, a single HRIV `predicate_id`, confidence, and evidence snippets.
+    - Paste the evidence snippet into `comment` to document *why* the predicate fits (definition/scope reasoning).
+    - If the assistant provides an OntoUML type/stereotype, copy it into `object_category` when appropriate.
+    - Keep `mapping_justification` as `semapv:ManualMappingCuration` unless the curator explicitly approves an alternative.
+
+    **Important:** HRIV predicates express *meaning-level* links and must **not** be interpreted as OWL equivalence/subsumption. Also, you still must comply with governance checks (e.g., role separation and validation).
+
+    [Open HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant)
+
 SSSOM-based mapping sets have been used to operationalize semantic traceability by enabling meaning-level correspondences across heterogeneous standards while preserving separations between concepts and representations [29].
 
 !!! note "Language tags for labels"

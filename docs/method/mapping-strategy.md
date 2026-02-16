@@ -107,6 +107,13 @@ The Health-RI mapping relations are declared as specializations of SKOS mapping 
 
 ### Our Strategy: Choosing the Right Mapping Property
 
+!!! tip "Need a quick mapping draft?"
+    Use the **HRIO Mapping Assistant** to propose HRIO candidate targets and the most appropriate HRIV predicate (`hriv:hasExactMeaning`, `hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`) with confidence and evidence snippets.
+
+    **Use it as a drafting aid, not as an authority.** You still need to justify predicate choice based on *definitions and scope* (not label similarity) and follow the policy on exact-meaning uniqueness.
+
+    [Open HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant)
+
 - **[`hriv:hasExactMeaning`](./specification-vocabulary.html#hasExactMeaning)** is used when the expression's intended semantics are fully and precisely defined by a specific linked HRIO meaning.
     - Each external concept may have **only one** `hriv:hasExactMeaning`.
 - **[`hriv:hasBroaderMeaningThan`](./specification-vocabulary.html#hasBroaderMeaningThan)** is used when the external expression is **broader in scope** than the HRIO meaning it is linked to (i.e., it includes the linked HRIO meaning but is not limited to it).

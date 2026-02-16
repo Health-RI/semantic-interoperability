@@ -214,6 +214,17 @@ Normative, per-row schema constraints (e.g., allowed predicates, label language 
 
 ### Justification and Evidence
 
+!!! tip "Draft your justification before submitting"
+    The **HRIO Mapping Assistant** can help you draft:
+    
+    - candidate HRIO target labels
+    - a recommended HRIV `predicate_id` with a confidence estimate
+    - short evidence snippets you can paste into `comment` as your justification
+
+    Keep the final decision **human-reviewed** and aligned with governance (e.g., two-person rule and promotion gates). Your `comment` should still capture *definitional/semantic* reasoning (not label similarity).
+
+    [Open HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant)
+
 - Set `mapping_justification` to the appropriate method indicator. By default (and currently the only generally acceptable value) it is `semapv:ManualMappingCuration` (a curator-approved alternative may be used when explicitly evaluated). This field records the method/rationale category for how the mapping was produced, not the semantic relation itself.
 - Capture the concrete reasoning for your choice of HRIV `predicate_id` (e.g., `hriv:hasExactMeaning`, `hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`) in the `comment` field. When justifying, use definitional/semantic arguments (notes, formal definitions) over label similarity [22].
 - When using a negation, set `predicate_modifier` to `Not` (its only valid value) and add a brief rationale in `comment`.

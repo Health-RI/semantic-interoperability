@@ -1,8 +1,5 @@
 # Frequently Asked Questions (FAQ)
 
-!!! note "Transparency (AI-assisted drafting)"
-    Parts of this FAQ were drafted with AI-assisted editing support. Health-RI team members review and refine entries to the best of our ability.
-
 ## Project Overview and Strategic Context
 
 *Questions about the initiative's purpose, strategic goals, expected impact, and broader context.*
@@ -14,6 +11,30 @@
 
 !!! warning "Disclaimer"
     The answers in this section are part of an ongoing effort to address strategic questions about the initiative. They are based on initial interpretations and should be used with caution. All entries are marked as drafts and will be further refined and validated in collaboration with stakeholders.
+
+!!! warning "Transparency (AI-assisted drafting)"
+    Parts of this FAQ were drafted with AI-assisted editing support. Health-RI team members review and refine entries to the best of our ability.
+
+??? question "Is there an assistant that can help me navigate this initiative and its artifacts?"
+    Yes — we provide an Assistant (GPT) that explains the initiative in plain terms and points you to the relevant pages and stable identifiers (w3id PIDs).
+
+    [Open the Assistant (GPT)](<GPT_URL>){ .md-button .md-button--primary }
+
+    Typical questions it can answer:
+    - What is the Health-RI Semantic Interoperability Initiative?
+    - Give me a quick tour of the project's main artifacts.
+    - Where can I find the latest official HRIO release?
+    - Explain HRIO in plain terms and how I should use it.
+    - Explain HRIV (Mapping Vocabulary) and what it's for.
+    - How do I cite the latest official ontology release?
+    - What's the difference between the ontology TTL and the SHACL shapes?
+    - How do persistent identifiers (w3id) work in this project?
+    - I have a term/IRI—help me interpret it and find its definition.
+    - How are mappings represented in this initiative?
+
+    Notes:
+    - Treat the linked docs and PIDs as the authoritative reference.
+    - Avoid pasting sensitive or unpublished content into the assistant.
 
 ??? question "What is the goal of Health-RI's semantic interoperability initiative?"
     To enable meaningful data integration across health and life sciences institutions by aligning data semantically, not just structurally. This is achieved through the development and adoption of a common reference model that captures domain meaning explicitly.
@@ -154,6 +175,15 @@
 - [Mapping strategy guide](../method/mapping-strategy)
 - [How to contribute concepts/mappings](../contributing/)
 
+!!! tip "HRIO Mapping Assistant (GPT)"
+    Need help drafting a meaning mapping from a schema term (or text concept) to HRIO?
+
+    [Open HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant){ .md-button .md-button--primary }
+
+    It proposes exactly **one** HRIV predicate (`hriv:hasExactMeaning` / `hriv:hasBroaderMeaningThan` / `hriv:hasNarrowerMeaningThan`), a **confidence %**, and **evidence snippets** (so you can justify and review the mapping).
+
+    *Drafting aid only: always confirm against HRIO docs and apply the review/curation rules described in Mapping Governance.*
+
 ??? question "How are mappings from local schemas to the reference model created?"
     Mappings are expressed using the Health-RI Mapping Vocabulary (HRIV) predicates (i.e., HRIV-defined subproperties of `hriv:meaningMappingRelation`).
 
@@ -196,6 +226,13 @@
     Examples:
     - Broader-than: "Adult patient" mapped to "Pregnant adult patient" (the expression covers more than the target).
     - Narrower-than: "Left femur fracture" mapped to "Femur fracture" (the expression covers less than the target).
+
+??? question "Is there a tool to help me draft mappings to HRIO?"
+    Yes. Use the [**HRIO Mapping Assistant (GPT)**](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant)
+
+    It helps you map a domain concept to HRIO by proposing **one** HRIV predicate and a candidate HRIO target, plus a confidence estimate and supporting evidence snippets you can use in `mapping_justification`.
+
+    *Treat the output as a draft: you remain responsible for verifying the target meaning in HRIO and following the curation/review rules before contributing or publishing mappings.*
 
 ??? question "What should I do if no exact match exists between my concept and the Health-RI ontology?"
     If your concept is broader or narrower than any existing reference concept, use `hriv:hasBroaderMeaningThan` or `hriv:hasNarrowerMeaningThan` accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future.
