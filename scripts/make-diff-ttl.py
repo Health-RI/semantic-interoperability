@@ -382,8 +382,8 @@ def simple_set_diff(old_g: Graph, new_g: Graph):
     old_nt = _as_text(iso_old.serialize(format="nt"))
     new_nt = _as_text(iso_new.serialize(format="nt"))
 
-    old_set = set(l for l in old_nt.splitlines() if l.strip())
-    new_set = set(l for l in new_nt.splitlines() if l.strip())
+    old_set = set(line for line in old_nt.splitlines() if line.strip())
+    new_set = set(line for line in new_nt.splitlines() if line.strip())
 
     both = old_set & new_set
     old_only = old_set - new_set

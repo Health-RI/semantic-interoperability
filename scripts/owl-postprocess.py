@@ -540,12 +540,12 @@ def postprocess_ontology(
             return ""
         return str(x).replace("\t", "\\t").replace("\r", "\\r").replace("\n", "\\n")
 
-    def _fmt_lit(l: Literal) -> str:
-        base = str(l)
-        if l.language:
-            return f"{base}@{l.language}"
-        if l.datatype:
-            return f"{base}^^<{str(l.datatype)}>"
+    def _fmt_lit(lit: Literal) -> str:
+        base = str(lit)
+        if lit.language:
+            return f"{base}@{lit.language}"
+        if lit.datatype:
+            return f"{base}^^<{str(lit.datatype)}>"
         return base
 
     for json_idx, (elem_name, syn_str) in enumerate(syn_records, start=1):
@@ -555,7 +555,7 @@ def postprocess_ontology(
 
             conflict_type = "missing_label_match" if not hits else "ambiguous_label_match"
             cand_subjects = ";".join(str(s) for s, _ in hits)
-            cand_labels = ";".join(_fmt_lit(l) for _, l in hits)
+            cand_labels = ";".join(_fmt_lit(label_lit) for _, label_lit in hits)
 
             unmapped_label_rows.append(
                 [
@@ -619,7 +619,7 @@ def postprocess_ontology(
 
             conflict_type = "missing_label_match" if not hits else "ambiguous_label_match"
             cand_subjects = ";".join(str(s) for s, _ in hits)
-            cand_labels = ";".join(_fmt_lit(l) for _, l in hits)
+            cand_labels = ";".join(_fmt_lit(label_lit) for _, label_lit in hits)
 
             unmapped_label_rows.append(
                 [
