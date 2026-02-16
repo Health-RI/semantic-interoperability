@@ -1,0 +1,84 @@
+# .pre-commit-config.yaml
+#
+# Goal
+# ----
+# Run consistent checks/formatters on commit and in CI:
+# - basic hygiene (trailing whitespace, EOF newline)
+# - YAML syntax validation (MkDocs config often needs --unsafe)
+# - Markdown formatting (MkDocs/admonitions-friendly via mdformat-mkdocs)
+# - Python lint + auto-fix + formatting (Ruff)
+#
+# First-run behavior
+# ------------------
+# Many hooks are "fixers": if they modify files, they exit non-zero so you notice.
+# Typical workflow:
+#   pre-commit run --all-files
+#   git add -A
+#   pre-commit run --all-files
+#
+# Path / regex notes
+# ------------------
+# - pre-commit matches file paths using git-style forward slashes (/), even on Windows.
+# - The top-level `exclude` is a SINGLE Python regex applied repo-wide to ALL hooks.
+
+# REPO-WIDE EXCLUSIONS (ALL HOOKS)
+# -------------------------------
+# This is the "what I had before + that" set:
+# - All versioned artifacts (often generated / release snapshots)
+# - All documentation HTML/outputs under ontologies/**/documentations and vocabulary/**/documentations
+# - docs/deliverables (often generated exports)
+# - Plus the explicit ontologies/versioned/documentations path you asked to add (redundant with the
+#   broader ontologies/.*/documentations rule, but kept for clarity).
+exclude: ^(
+  ontologies/versioned/documentations/|
+  ontologies/versioned/|
+  vocabulary/versioned/|
+  ontologies/.*/documentations/|
+  vocabulary/.*/documentations/|
+  docs/deliverables/
+  )
+
+repos:
+  # ---------------------------------------------------------------------------
+  # Baseline hygiene: whitespace, EOF newline, YAML parsing
+  # ---------------------------------------------------------------------------
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+
+      # MkDocs YAML may contain Python object tags (e.g., !!python/name:...),
+      # which safe YAML loaders reject. --unsafe makes this a syntax-focused check.
+      - id: check-yaml
+        args: [--unsafe]
+
+  # ---------------------------------------------------------------------------
+  # Markdown formatting (MkDocs-friendly; keeps admonitions sane)
+  # ---------------------------------------------------------------------------
+  - repo: https://github.com/hukkin/mdformat
+    rev: 1.0.0
+    hooks:
+      - id: mdformat
+        # Only run on Markdown files.
+        files: \.(md|mdx)$
+        # Plugins installed into the hook’s venv.
+        additional_dependencies:
+          - mdformat-gfm
+          - mdformat-frontmatter
+          - mdformat-mkdocs==5.1.4
+
+  # ---------------------------------------------------------------------------
+  # Python lint + auto-fix + formatting (Ruff)
+  # ---------------------------------------------------------------------------
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.1
+    hooks:
+      # Lint + auto-fix first...
+      - id: ruff-check
+        args: [--fix]
+        types_or: [python, pyi]
+
+      # ...then format.
+      - id: ruff-format
+        types_or: [python, pyi]
