@@ -11,8 +11,8 @@ If essential details are missing, make the minimum reasonable assumptions and li
 - Audience & use case: Audience is ontology users, researchers, and implementers in healthcare and life sciences. The use case is producing consistent, high-quality documentation text that defines ontology diagrams in alignment with existing ontology documentation.
 - Available inputs / sources:
 
-  - Ontology documentation (updated, about diagrams): [https://health-ri.github.io/semantic-interoperability/ontology/documentation/](https://health-ri.github.io/semantic-interoperability/ontology/documentation/)
-  - Ontology specification (outdated, about classes): [https://health-ri.github.io/semantic-interoperability/ontology/specification-ontology.html](https://health-ri.github.io/semantic-interoperability/ontology/specification-ontology.html)
+  - Ontology documentation (updated, about diagrams): [https://health-ri.github.io/semantic-interoperability/deliverables/documentation/](https://health-ri.github.io/semantic-interoperability/deliverables/documentation/)
+  - Ontology specification (outdated, about classes): [https://health-ri.github.io/semantic-interoperability/deliverables/specification-ontology.html](https://health-ri.github.io/semantic-interoperability/deliverables/specification-ontology.html)
   - Image of the OntoUML diagram to be defined (provided in the request).
 - Key descriptions or scope notes:
 
