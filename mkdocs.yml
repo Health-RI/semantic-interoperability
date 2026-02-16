@@ -66,7 +66,6 @@ extra_css:
 
 nav:
   - Home: index.md
-  - AI Assistants: assistants.md
   - News & Updates: news.md
   - Semantic Interoperability:
       - Overview: semantic-interoperability/index.md
@@ -99,11 +98,12 @@ nav:
       - Ontology Specification: deliverables/specification-ontology.html
       - Ontology Changelog: deliverables/changelog-ontology.md
       - SSSOM Mapping Set: deliverables/mappings.md
-  - FAQ: faq.md
+  - AI Assistants: assistants.md
   - Contributing:
       - Overview: contributing/overview.md
       - Contribution Channels: contributing/contribution-channels.md
       - Call for Community Review: contributing/call-for-community-review.md
+  - FAQ: faq.md
 
 extra:
   generator: false # disables "Made with Material for MkDocs" line
