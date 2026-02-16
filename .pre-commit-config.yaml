@@ -26,13 +26,10 @@
 # The top-level `exclude` is applied to all hooks. :contentReference[oaicite:4]{index=4}
 #
 # Excluded folders:
-# - ontologies/versioned/documentations/   (explicitly requested)
-# - ontologies/versioned/                  (versioned released artifacts)
-# - vocabulary/versioned/                  (versioned released artifacts)
-# - ontologies/**/documentations/          (generated docs under ontologies)
-# - vocabulary/**/documentations/          (generated docs under vocabulary)
+# - ontologies/                            (and all its sub-folders)
+# - ontologies/versioned/                  (and all its sub-folders)
 # - docs/deliverables/                     (generated exports)
-exclude: ^(ontologies/versioned/documentations/|ontologies/versioned/|vocabulary/versioned/|ontologies/.*/documentations/|vocabulary/.*/documentations/|docs/deliverables/)
+exclude: ^(ontologies/|vocabulary/|docs/deliverables/)
 
 repos:
   # ---------------------------------------------------------------------------
