@@ -52,6 +52,27 @@
   }
 }
 
+/* =============================================================================
+   1C. CONTRIBUTION BUTTONS
+   Single-column layout, centered buttons with consistent spacing and width.
+============================================================================= */
+.md-typeset .button-gridc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* center horizontally */
+  gap: 1.2rem;            /* vertical space between buttons */
+  margin: 2rem 0;
+}
+
+.md-typeset .button-gridc > p {
+  margin: 0;              /* remove extra <p> margins */
+}
+
+.md-typeset .button-gridc .md-button {
+  width: 520px;           /* fixed width for all buttons */
+  text-align: center;
+  padding: 0.9rem 1rem;
+}
 
 /* =============================================================================
    2. FOOTNOTE COLOR OVERRIDE

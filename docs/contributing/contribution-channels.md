@@ -58,7 +58,7 @@ Examples of valid submissions:
 
     Before submitting a mapping, you can use the **HRIO Mapping Assistant (GPT)** to draft a candidate predicate/target and gather evidence snippets:
 
-    <div class="button-grid">
+    <div class="button-grid" markdown>
     [Open HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant){ .md-button .md-button--primary }
     </div>
 

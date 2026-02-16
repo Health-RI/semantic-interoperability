@@ -16,7 +16,7 @@ To respond to a time-bound **Call for Community Review**, use the link below:
 
     If you want help drafting a mapping row (candidate HRIO target + one HRIV predicate + evidence you can turn into `mapping_justification`), try:
 
-    <div class="button-grid">
+    <div class="button-grid" markdown>
     [Open HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant){ .md-button .md-button--primary }
     </div>
 
