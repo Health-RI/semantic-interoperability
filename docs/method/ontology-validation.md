@@ -7,6 +7,7 @@ This document defines the stages (`int`, `irv`, `erv`, `pub`) used to track matu
 Specifies stage governance for "domain packages": how stage states are tracked, transitioned, and reverted, and how those transitions are recorded. Stage states (the stage tagged value) are tracked only for domain packages (i.e., packages whose introduction/removal triggers `X` in the adopted semantic versioning); supporting/non-domain packages do not carry a stage tagged value. It also defines who performs validation and reviews, when they occur, and how version increments (Y++) are applied. Version impacts are acknowledged where stages drive them; see [Versioning Strategy](./ontology-versioning.md) for the full versioning logic. This policy applies to all modelers and reviewers involved in domain-package development and maintenance.
 
 !!! info "Input sources at all stages"
+
     Input may arrive at any stage (`int`, `irv`, `erv`, `pub`) and from multiple sources. For example, external contributors (e.g., via GitHub Issues or community calls), the mappings team, domain experts, and other stakeholders. Such input is triaged within the current stage and it does not change the stage by itself. If accepted input entails semantic changes, apply the reversion and versioning rules in [Stage Reversions — Why and When](#stage-reversions--why-and-when) and [Policy for Semantic Modifications](#policy-for-semantic-modifications).
 
 ## Definitions & Glossary (Stages)
@@ -29,6 +30,7 @@ Stages are tracked per domain packages inside the Visual Paradigm project as tag
 Stages `int` and `irv` have exit gate checklists that control advancement (see [Stage-specific Checklists](#stage-specific-checklists)). Entry into `irv` requires passing the [Internal Stage Gate Checklist](#internal-stage-gate-checklist); advancement from `irv` to `erv` requires passing the [Internal Review Stage Gate Checklist](#internal-review-stage-gate-checklist). The only in-stage checklist is the [Publication Stage Operations Checklist](#publication-stage-operations-checklist), executed upon entering `pub` and maintained while in `pub`.
 
 !!! note "Reviewer acknowledgement (opt-out)"
+
     Unless a reviewer requests anonymity, record reviewer names (internal `irv` and external `erv`) in the ontology/package metadata collaborators list for the corresponding release. If anonymity is requested (e.g., in the review issue or submission), do not include the reviewer's name.
 
 ### Internal Review (`irv`)
@@ -52,6 +54,7 @@ Reviewers must execute the IRV checklist in section [Internal Review Stage Gate 
 **Planning & timeline.** A review activity is created and scheduled into a sprint. Internal reviewers have one sprint to complete the review. Depending on model complexity, team availability, and other factors, this may be extended to two sprints.
 
 !!! info "Terminology"
+
     **Sprint** refers to the organization's standard sprint length as defined by the project board. This policy intentionally avoids a fixed day count.
 
 **Outcome.** If the review passes (no semantic changes required), the modeler updates the stage tagged value to `erv` and records the transition `<irv → erv>`. Per the [Versioning Strategy](./ontology-versioning.md), this contributes Y++ and resets Z → 0 for the release (subject to X > Y > Z precedence). Advancement to `erv` is permitted only after a passed [Internal Review Stage Gate Checklist](#internal-review-stage-gate-checklist).
@@ -77,34 +80,41 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
 ### Internal Stage Gate Checklist
 
 !!! warning "Disclaimer"
+
     This checklist is still under review and it should be used with caution.
 
 **Exit criteria for `int → irv`.** All items below must be satisfied to leave `int` and enter `irv`.
 
 - [ ] **Stage & package setup**
+
     - [ ] Package stage is set to `int`.
     - [ ] Title and Description filled using Visual Paradigm's default fields (not tags).
     - [ ] Package metadata initialized with `introducedInVersion` and possibly `lastChangedInVersion`.
 
 - [ ] **Modeling prepared (HRIO OntoUML → gUFO)**
+
     - [ ] Classes and relations carry appropriate OntoUML stereotypes (no obvious anti-patterns).
     - [ ] Multiplicities and constraints are specified and justified.
     - [ ] All generalization sets show `isDisjoint` and `isCovering` in every diagram occurrence.
     - [ ] Relation naming applied per (or aligned with the draft) naming strategy; directionality is explicit.
 
 - [ ] **Terminology & labels**
+
     - [ ] Names/labels follow the nomenclature strategy (capitalization, spelling, prefixes).
     - [ ] For classes: `prefLabel` = class Name; synonyms added to the `synonyms` tagged value to generate `altLabel`s.
 
 - [ ] **Definitions & examples**
+
     - [ ] Each package, diagram, and class has a definition that is concise, non-circular, and free of hidden assumptions.
     - [ ] If examples are included, they are domain-correct and consistent with the formal model.
 
     !!! info "AI-assisted drafting of definitions (draft quality)"
+
         Package, diagram, and class definitions in the documentation may be drafted with AI support as a starting point.
         They are expected to be checked during `irv`/`erv`, but the presence of a definition alone does not imply it has been reviewed in the current snapshot. For transparency, the prompts used to draft AI-supported content are available in `resources/prompts/`.
 
 - [ ] **Diagram quality & traceability**
+
     - [ ] External element origin shown: any external/reused class displays its origin (source package) using the standard notation.
     - [ ] Empty attribute compartment hidden: classes with no attributes hide the attribute compartment per the diagram style guide.
     - [ ] Diagrams are readable (clear layout, legible labels, no overlapping edges/nodes).
@@ -112,17 +122,21 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
     - [ ] Notes and constraints follow the standard style and placement.
 
 - [ ] **OWL/TTL export & header**
+
     - [ ] Model transforms/exports to HRIO gUFO/OWL without errors (local build).
     - [ ] Ontology header metadata template is populated.
+
     <!-- - [ ] Where SHACL shapes exist for this package, SHACL shapes file(s) are present and a SHACL validation run has been executed at least once (no execution errors) (*To be implemented*). -->
 
 - [ ] **Basic domain consistency (author self-check)**
+
     - [ ] Complete enough: key concepts/relations for the package scope are present.
     - [ ] Scope fit: no out-of-scope elements introduced.
     - [ ] No contradictions: definitions, diagrams, and OWL/TTL tell the same story.
     - [ ] Reasonable cardinalities for the domain.
 
 - [ ] **Docs & handover**
+
     - [ ] Export diagrams: export the latest package diagrams to the Figures folder (no missing/old images).
     - [ ] Changelog/change summary drafted for this package.
 
@@ -131,11 +145,15 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
 **Exit criteria for `irv → erv`.** All items below must be satisfied to leave `irv` and enter `erv`.
 
 <!-- Multiple pending TODOs -->
+
 - [ ] **Stage tagging & metadata present**
+
     - [ ] For domain packages: package has the correct stage tag (e.g., `irv`).
+
     <!-- - [ ] Required package-level metadata (post-v1.0.0) is present: `introducedInVersion`, `lastChangedInVersion`, `lastPublishedInVersion`, `reviewedBy`. -->
 
 - [ ] **Public docs build (Health-RI Semantic Interoperability Initiative website)**
+
     - [ ] The package's description page is available on the Initiative website.
     - [ ] All links resolve: documentation, specification (OWL/TTL), IRIs, and release notes (no 404s).
     - [ ] Package diagrams/images render correctly (no missing assets; labels are readable).
@@ -147,26 +165,32 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
     - [ ] A SHACL validation run has been executed for this package; there are no unresolved blocking SHACL violations for this stage (*To be implemented*). -->
 
 - [ ] **Terminology consistency**
+
     - [ ] Names/labels follow the adopted nomenclature strategy (capitalization, spelling, prefixes).
     - [ ] Terminology is consistent across diagrams, package docs, and HRIO gUFO/OWL (`.ttl`).
     - [ ] Relation naming follows the defined naming strategy (directionality, verb/preposition pattern, capitalization) and is consistent across diagrams and HRIO gUFO/OWL (`.ttl`).
+
     <!-- - [ ] Labels: `prefLabel` is the most appropriate primary label (no `altLabel` would be a better choice); missing `altLabel`s (synonyms, common variants, abbreviations) are identified and proposed. -->
 
 - [ ] **Definitions & examples (scope: packages, diagrams, classes)**
+
     - [ ] Every package, diagram, and class has a definition.
     - [ ] Definitions are concise, non-circular, and free of hidden assumptions.
     - [ ] If examples are provided, they are domain-correct, consistent with the model.
     - [ ] Documentation is supplementary only: it explains what is modeled and must not introduce new semantics.
 
     !!! note "Reviewer focus: AI-drafted text"
+
         Definitions of packages, diagrams, and classes may have been drafted with AI support. At this gate, reviewers should validate these texts against the model and domain sources. Prompt sets used for AI-supported drafting are available in `resources/prompts/` for independent assessment.
 
 - [ ] **Conceptual modeling soundness (HRIO OntoUML → gUFO)**
+
     - [ ] Classes and relations use appropriate OntoUML stereotypes; no obvious anti-patterns.
     - [ ] Multiplicities and constraint choices are justified and non-contradictory.
     - [ ] Generalization set's properties (`isDisjoint` and `isCovering`) are clearly displayed in all diagram occurrences of the set.
 
 - [ ] **Diagram quality & traceability**
+
     - [ ] External element origin shown: any external/reused class displays its origin (source package/namespace) using the standard notation.
     - [ ] Empty attribute compartment hidden: classes with no attributes hide the attribute compartment per the diagram style guide.
     - [ ] Clear layouts, legible labels, no overlapping edges/nodes.
@@ -174,6 +198,7 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
     - [ ] All constraints follow the defined standard notation.
 
 - [ ] **Basic domain consistency (quick sanity check)**
+
     - [ ] Complete enough: the key concepts/relations expected by the package scope are present (no obvious gaps).
     - [ ] Scope fit (no extras): no out-of-scope elements are introduced; concepts that belong elsewhere are not modeled in this package.
     - [ ] Clear wording: names and definitions are unambiguous; avoid near-synonyms/homonyms.
@@ -184,23 +209,27 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
 ### Publication Stage Operations Checklist
 
 !!! warning "Disclaimer"
+
     This checklist is still under review and it should be used with caution.
 
 **In-stage operational checklist (non-gate).** Use this list to run and monitor activities while the package remains in `pub`. Failure on any item does **not** automatically change stage; substantive issues should trigger a reversion per [Stage Reversions — Why and When](#stage-reversions--why-and-when).
 
 - [ ] **Release & preservation (one-time at publication)**
+
     - [ ] Generate the Technical Report (PDF) for the domain ontology represented in the package. The report must summarize what was modeled, key design decisions, challenges/limitations, and relevant context (e.g., related ontologies, mappings/alignments, reuse).
     - [ ] Create a new GitHub Release for this package version (tag, title, release notes) that includes the Technical Report PDF and the exported figures as release assets.
     - [ ] Trigger Zenodo archiving via the release and verify the DOI is minted; record the DOI in the release notes and on the package page.
     - [ ] Where SHACL shapes exist for this package, include the SHACL shapes file(s) as part of the Release assets and Zenodo deposit, so the published ontology has an associated validation shapes graph.
 
 - [ ] **Catalog & discoverability (one-time at publication)**
+
     - [ ] Submit/update the package in the OntoUML/UFO Catalog with the correct version and metadata (including the GitHub Release and Zenodo DOI).
     - [ ] Upload the Technical Report PDF to ResearchGate (project item/preprint as appropriate) to improve visibility and indexing in Google Scholar and similar services; ensure the record links back to the GitHub Release and Zenodo DOI.
     - [ ] Announce on LinkedIn that the package is published and available (link to GitHub Release and Zenodo DOI).
     - [ ] Post follow-ups on LinkedIn when (a) the OntoUML/UFO Catalog entry is published/updated, and (b) the ResearchGate upload is live, each time linking the respective record.
 
 - [ ] **Academic publication** (optional, but recommended)
+
     - [ ] Identify a suitable open-access venue (scope fit, audience, licensing).
     - [ ] Prepare a submission derived from the Technical Report (methods, results, contribution), following venue author guidelines.
     - [ ] Submit and track peer review; if accepted, add the formal citation and publisher DOI to the GitHub Release notes, package docs, and the OntoUML/UFO Catalog entry.
@@ -213,16 +242,19 @@ Mark the package as `pub` (in its stage tagged value) once internal and external
 **Active actions at `pub`.** Execute the [Publication Stage Operations Checklist](#publication-stage-operations-checklist). The items below explain *what* each checklist group is about:
 
 - **Release & preservation.**
+
     - Create a GitHub Release for the package version (tag, title, and release notes) to make the package citable and discoverable in the repo history.
     - Attach the PDF package report and exported figures so the exact published artifacts are preserved with the release.
     - Verify that Zenodo archiving is triggered and that a DOI is minted; record that DOI in the release notes to provide a permanent scholarly reference.
 
 - **Catalog & discoverability.**
+
     - Submit to the OntoUML/UFO Catalog entry with correct versioning and references (GitHub Release, Zenodo DOI) so users can locate and reuse the model.
     - Upload the Technical Report to ResearchGate (with links to the Zenodo DOI and Release) to increase scholarly discoverability (e.g., Google Scholar).
     - Communicate on LinkedIn at publication time (linking Release/DOI) and post short follow-ups when the Catalog entry and ResearchGate record go live.
 
 - **Academic publication (optional).**
+
     - Consider a peer-reviewed venue to add external validation and community contribution.
     - If proceeding, submit and track the process; once accepted, record the publisher DOI/citation in the Release notes, package docs, and Catalog entry; keep the LinkedIn audience updated as appropriate.
 

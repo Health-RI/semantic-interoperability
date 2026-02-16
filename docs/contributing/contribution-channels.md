@@ -55,6 +55,7 @@ Examples of valid submissions:
 ## Contribute SSSOM Mappings
 
 !!! tip "Optional helper for mapping submissions"
+
     Before submitting a mapping, you can use the **HRIO Mapping Assistant (GPT)** to draft a candidate predicate/target and gather evidence snippets:
 
     <div class="button-grid">
@@ -72,13 +73,14 @@ You can contribute to the Health-RI **SSSOM mapping set** (manually curated) in 
 </div>
 
 1. **Preferred: Submit the issue form**
-   Use our **[SSSOM mapping issue form](https://github.com/health-ri/semantic-interoperability/issues/new?template=sssom-new-mapping.yml)** to add a single mapping row. Fill in the required fields; Health-RI curators will review and integrate your contribution.
+    Use our **[SSSOM mapping issue form](https://github.com/health-ri/semantic-interoperability/issues/new?template=sssom-new-mapping.yml)** to add a single mapping row. Fill in the required fields; Health-RI curators will review and integrate your contribution.
 
-2. **Alternative: Use the Excel template**
-   Download the **[XLSX template](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx)** and enter:
-   - the mapping row(s) in the **mappings** sheet, and
-   - all CURIE prefix bindings in the **prefix** sheet.
-   Attach the completed file to a new issue; we'll review and add it.
+1. **Alternative: Use the Excel template**
+    Download the **[XLSX template](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx)** and enter:
+
+    - the mapping row(s) in the **mappings** sheet, and
+    - all CURIE prefix bindings in the **prefix** sheet.
+        Attach the completed file to a new issue; we'll review and add it.
 
 Both methods ensure your contribution is reviewed and incorporated into the official Health-RI SSSOM mapping set.
 

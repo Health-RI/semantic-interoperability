@@ -49,6 +49,7 @@ We treat semantic artifacts like production assets:
 ## Quick start (10 minutes)
 
 !!! tip "AI Assistants (GPT)"
+
     Two optional ChatGPT assistants can help you navigate the initiative and draft mappings.
 
     <div class="button-gridb" markdown>
@@ -66,8 +67,9 @@ We treat semantic artifacts like production assets:
 **2) Select** the closest HRIO meaning (browse the ontology specification/documentation).
 
 **3) Attach** a meaning-level relation (your semantic "unit test"):
-   - `hriv:hasExactMeaning` (intended meaning is fully equivalent)
-   - `hriv:hasBroaderMeaningThan` / `hriv:hasNarrowerMeaningThan` (meaning is broader/narrower)
+
+- `hriv:hasExactMeaning` (intended meaning is fully equivalent)
+- `hriv:hasBroaderMeaningThan` / `hriv:hasNarrowerMeaningThan` (meaning is broader/narrower)
 
 **4) Share it** with the community (one row is fine): contribute via the routes described in the contributing pages.
 
@@ -81,7 +83,7 @@ We also welcome direct engagement—see [Contributing](contributing/overview.md)
 
 After all, semantic interoperability can only be achieved **through the community**: initiatives earn trust only when they are built openly and collaboratively. Together, we can ensure this effort translates into real, lasting improvements in how health data is shared and reused.
 
----
+______________________________________________________________________
 
 ## About Health-RI
 
@@ -89,7 +91,7 @@ After all, semantic interoperability can only be achieved **through the communit
 
 Semantic interoperability plays a foundational role in this mission by ensuring that data from diverse sources can be aligned and understood consistently — not just technically, but conceptually.
 
----
+______________________________________________________________________
 
 ## What's on this site
 
@@ -101,13 +103,13 @@ This site documents how Health-RI achieves semantic interoperability across heal
 - **Deliverables**: [Overview](deliverables/index.md) · [Ontology Documentation](deliverables/documentation.md) · [Ontology Specification](deliverables/specification-ontology.html) · [Ontology Changelog](deliverables/changelog-ontology.md)
 - **Help & Contributions**: [FAQ](faq.md) · [Contributing](./contributing/overview.md) · [Calls for Community Review](./contributing/call-for-community-review.md) · [Contribution Channels](./contributing/contribution-channels.md)
 
----
+______________________________________________________________________
 
 ## Who this is for
 
 Data stewards, modelers, and engineers who need stable, shared meaning across systems — using a common reference model (OntoUML → gUFO) and mappings that align external ontologies, terminologies, and schemas to it.
 
----
+______________________________________________________________________
 
 ## License
 

@@ -1,6 +1,7 @@
 # Ontology Rules and SHACL Implementation
 
 !!! warning "Disclaimer"
+
     While efforts have been made to ensure accuracy, the material in this page is still under review and may contain inaccuracies or omissions. Users are advised to interpret and apply the content with caution.
 
 ## Purpose & Scope
@@ -24,19 +25,23 @@ The shapes graph is authored in Turtle and relies on SHACL Core and SHACL Advanc
 ## Attachment Strategy: HRIO OntoUML → gUFO → HRIO gUFO/OWL → SHACL
 
 1. **Conceptual authoring in HRIO OntoUML (Visual Paradigm)**
-   - Constraints and derivation rules are specified as notes attached to classes, relations, or diagrams.
-   - Notes use tags such as `CNST (ShortName):` and `DRIV (ShortName):`, followed by a precise natural-language description.
 
-2. **OWL export to HRIO gUFO/OWL**
-   - The HRIO OntoUML model is exported to OWL as HRIO gUFO/OWL, following gUFO patterns for types, relators, roles, situations, etc.
+    - Constraints and derivation rules are specified as notes attached to classes, relations, or diagrams.
+    - Notes use tags such as `CNST (ShortName):` and `DRIV (ShortName):`, followed by a precise natural-language description.
 
-3. **SHACL authoring over the released OWL vocabulary**
-   - SHACL shapes and rules are authored only over IRIs present in the released HRIO gUFO/OWL files.
-   - No SHACL artifact references internal OntoUML identifiers or unversioned/pre-release IRIs.
+1. **OWL export to HRIO gUFO/OWL**
 
-4. **Execution over published HRIO gUFO/OWL**
-   - Shapes target IRIs in the released ontology namespace and reuse `gufo:` IRIs where relevant.
-   - Validation and rule materialization operate on datasets aligned to HRIO gUFO/OWL.
+    - The HRIO OntoUML model is exported to OWL as HRIO gUFO/OWL, following gUFO patterns for types, relators, roles, situations, etc.
+
+1. **SHACL authoring over the released OWL vocabulary**
+
+    - SHACL shapes and rules are authored only over IRIs present in the released HRIO gUFO/OWL files.
+    - No SHACL artifact references internal OntoUML identifiers or unversioned/pre-release IRIs.
+
+1. **Execution over published HRIO gUFO/OWL**
+
+    - Shapes target IRIs in the released ontology namespace and reuse `gufo:` IRIs where relevant.
+    - Validation and rule materialization operate on datasets aligned to HRIO gUFO/OWL.
 
 ### Policy
 
@@ -60,7 +65,7 @@ Constraint rules are implemented as validation shapes, which may contain:
 
 - SHACL-SPARQL queries via `sh:sparql`, or
 - property constraints via `sh:property`.
-  - `sh:severity` and `sh:message` typically appear inside the relevant property constraint.
+    - `sh:severity` and `sh:message` typically appear inside the relevant property constraint.
 
 Derivation rules are implemented as rule shapes, which include:
 
@@ -89,9 +94,9 @@ For property-level validation:
 - We define property-level validation inside `sh:property` blocks.
 - We use `sh:path` to identify the validated property.
 - We rely primarily on core SHACL constraints, including:
-  - `sh:minCount`, `sh:maxCount`,
-  - `sh:qualifiedMinCount`, `sh:qualifiedMaxCount`,
-  - `sh:class`, `sh:datatype`, `sh:nodeKind`, `sh:in`, `sh:pattern`, etc.
+    - `sh:minCount`, `sh:maxCount`,
+    - `sh:qualifiedMinCount`, `sh:qualifiedMaxCount`,
+    - `sh:class`, `sh:datatype`, `sh:nodeKind`, `sh:in`, `sh:pattern`, etc.
 
 Validation messages are concise and describe the issue from the focus node's perspective.
 

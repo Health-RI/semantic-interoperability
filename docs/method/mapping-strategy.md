@@ -17,8 +17,8 @@ OMG defines three main abstraction layers <a href="#ref1">[1]</a>, <a href="#ref
 
 Within our semantic interoperability framework:
 
-- The **HRIO OntoUML reference model** sits at the [CIM layer](https://cio-wiki.org/wiki/Computation-Independent_Model_(CIM)): it defines conceptual domain entities and relationships grounded in the Unified Foundational Ontology (UFO) <a href="#ref3">[3]</a>.
-- The **HRIO gUFO/OWL implementation** (gUFO-based OWL implementation of UFO) resides at the [PIM layer](https://cio-wiki.org/wiki/Platform_Independent_Model_(PIM)): it expresses those same concepts as an executable OWL 2 DL ontology, suitable for reasoning and integration with Semantic Web tools <a href="#ref3">[3]</a>.
+- The **HRIO OntoUML reference model** sits at the [CIM layer](<https://cio-wiki.org/wiki/Computation-Independent_Model_(CIM)>): it defines conceptual domain entities and relationships grounded in the Unified Foundational Ontology (UFO) <a href="#ref3">[3]</a>.
+- The **HRIO gUFO/OWL implementation** (gUFO-based OWL implementation of UFO) resides at the [PIM layer](<https://cio-wiki.org/wiki/Platform_Independent_Model_(PIM)>): it expresses those same concepts as an executable OWL 2 DL ontology, suitable for reasoning and integration with Semantic Web tools <a href="#ref3">[3]</a>.
 
 ![Mapping from OntoUML at CIM to gUFO/OWL at PIM](./assets/images/mapping-cim-pim.png)
 *Figure 1: HRIO OntoUML (CIM) defines the semantics that are implemented in HRIO gUFO/OWL (PIM).*
@@ -41,6 +41,7 @@ Maintaining both artifacts ensures clear traceability from domain concepts (HRIO
 In the Health-RI architecture, every class in the HRIO gUFO/OWL ontology (PIM) is implicitly semantically defined by its counterpart in the HRIO OntoUML reference model (CIM). For example, the class `hrio:Person` in HRIO gUFO/OWL borrows its semantics from the `Person` class in the HRIO OntoUML model. Because the CIM is not computational, this semantic linkage remains implicit and is *not formally encoded* <a href="#ref3">[3]</a>.
 
 !!! tip "Why the CIM-PIM link matters"
+
     Even though the HRIO OntoUML model is not executable, it defines the core meaning that HRIO gUFO/OWL classes implement. This semantic grounding improves trust, clarity, and alignment in data integration.
 
 ## Conceptualization, Implementation, and Mapping
@@ -79,15 +80,19 @@ There are two possible approaches for creating and maintaining such mappings:
 These complementary approaches enable semantic alignment in both centrally controlled and federated interoperability scenarios.
 
 !!! info "Mapping Set Structure & Stable Artifacts"
+
     See the [SSSOM Mapping Set](./mapping-schema.md) page for the structure, schema, and **stable w3id artifact URIs**.
 
 !!! info "Browse the Created Mappings"
+
     Explore and visualize the mappings that have already been created in the [Mappings](../deliverables/mappings.md) page. (Convenience view; for normative artifacts see the Mapping Set page.)
 
 !!! info
+
     For details about the schema and contribution process, see the [SSSOM Mapping Set](./mapping-schema.md).
 
 !!! warning "Only one `hriv:hasExactMeaning` allowed"
+
     Each concept may have **exactly one** `hriv:hasExactMeaning` to a Health-RI concept—**and only when the expression's intended semantics are fully and precisely defined by a specific linked HRIO meaning**. Using more than one `hriv:hasExactMeaning` for the same concept is not allowed, as it introduces ambiguity.
 
 ![Deriving OntoUML semantics via mapping to Health-RI reference model](./assets/images/mapping-cim-pim2.png)
@@ -108,6 +113,7 @@ The Health-RI mapping relations are declared as specializations of SKOS mapping 
 ### Our Strategy: Choosing the Right Mapping Property
 
 !!! tip "Need a quick mapping draft?"
+
     Use the **HRIO Mapping Assistant** to propose HRIO candidate targets and the most appropriate HRIV predicate (`hriv:hasExactMeaning`, `hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`) with confidence and evidence snippets.
 
     **Use it as a drafting aid, not as an authority.** You still need to justify predicate choice based on *definitions and scope* (not label similarity) and follow the policy on exact-meaning uniqueness.
@@ -120,6 +126,7 @@ The Health-RI mapping relations are declared as specializations of SKOS mapping 
 - **[`hriv:hasNarrowerMeaningThan`](./specification-vocabulary.html#hasNarrowerMeaningThan)** is used when the external expression is **narrower in scope** than the HRIO meaning it is linked to (i.e., it is limited to a subset of what the linked HRIO meaning covers).
 
 !!! note "Clarifying hriv:hasExactMeaning semantics"
+
     Although `hriv:hasExactMeaning` expresses a strong meaning-level commitment, it should not be interpreted as an OWL class axiom (e.g., it does not entail `owl:equivalentClass`, `owl:sameAs`, or `rdfs:subClassOf` between mapped classes). In OWL implementations, mapping assertions can be expressed as object-property assertions between individuals denoting expressions and meanings (with OWL 2 DL punning when class IRIs are used).
 
 In contrast to `hriv:hasExactMeaning`, both `hriv:hasNarrowerMeaningThan` and `hriv:hasBroaderMeaningThan` allow **multiple mappings per concept** to express partial or hierarchical semantic overlaps.
@@ -134,6 +141,7 @@ These mappings are used when an exact-meaning alignment is not justified (or not
 This figure illustrates how concepts such as `hc:Patient` and `vet:Patient` are mapped to `hrio:HealthcarePatient` and `hrio:VeterinaryPatient` respectively. These are in turn subsumed by higher-level concepts like `hrio:Human` or `hrio:NonHumanAnimal`, ultimately aligning under `hrio:Animal`. This modeling strategy ensures that semantic alignments preserve domain distinctions while enabling unified interpretation under a shared reference ontology.
 
 !!! tip "How to assert an exact match in your OWL file"
+
     To assign that a concept in your ontology has its semantics defined by a concept in the **latest version** of the Health-RI Ontology, use `hriv:hasExactMeaning` as shown below:
 
     - `hc:Patient hriv:hasExactMeaning <https://w3id.org/health-ri/ontology#HealthcarePatient> .`
@@ -160,14 +168,15 @@ This figure illustrates how concepts such as `hc:Patient` and `vet:Patient` are 
 This more flexible mapping strategy supports gradual alignment of external ontologies to our reference model even in cases where semantic overlap is partial rather than complete.
 
 !!! tip "How to assert broader or narrower mappings in your OWL file"
+
     After having defined the `hriv` prefix, to express an approximate mapping using `hriv:hasNarrowerMeaningThan` or `hriv:hasBroaderMeaningThan`, use:
 
-      - `ghc:Patient hriv:hasBroaderMeaningThan hrio:VeterinaryPatient .`
-      - `pvet:PetAnimal hriv:hasNarrowerMeaningThan hrio:NonHumanAnimal .`
+    - `ghc:Patient hriv:hasBroaderMeaningThan hrio:VeterinaryPatient .`
+    - `pvet:PetAnimal hriv:hasNarrowerMeaningThan hrio:NonHumanAnimal .`
 
     You may also reference a specific version using the full ontology's URI (e.g., for v2.0.0):
 
-      - `ghc:Patient hriv:hasBroaderMeaningThan <https://w3id.org/health-ri/ontology/v2.0.0#VeterinaryPatient> .`
+    - `ghc:Patient hriv:hasBroaderMeaningThan <https://w3id.org/health-ri/ontology/v2.0.0#VeterinaryPatient> .`
 
 #### Visual Example: Completing the Ontology via Semantic Gaps
 
