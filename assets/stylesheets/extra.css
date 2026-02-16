@@ -21,6 +21,39 @@
 }
 
 /* =============================================================================
+   1B. CONTRIBUTION BUTTONS
+   Two-column layout on desktop, stacks on small screens.
+============================================================================= */
+.md-typeset .button-gridb {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 320px));
+  justify-content: center; /* center the grid as a whole */
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.md-typeset .button-gridb > p {
+  margin: 0;
+}
+
+.md-typeset .button-gridb .md-button {
+  width: 320px;
+  text-align: center;
+  padding: 0.9rem 1rem;
+}
+
+/* Stack to one column on narrow screens */
+@media (max-width: 45em) {
+  .md-typeset .button-gridb {
+    grid-template-columns: 1fr;
+  }
+  .md-typeset .button-gridb .md-button {
+    width: min(320px, 100%);
+  }
+}
+
+
+/* =============================================================================
    2. FOOTNOTE COLOR OVERRIDE
    Ensures footnote reference numbers are always golden (#D4AF37) in both
    light and dark modes. Overrides default Material color variables.
