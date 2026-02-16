@@ -29,16 +29,16 @@ The shapes graph is authored in Turtle and relies on SHACL Core and SHACL Advanc
     - Constraints and derivation rules are specified as notes attached to classes, relations, or diagrams.
     - Notes use tags such as `CNST (ShortName):` and `DRIV (ShortName):`, followed by a precise natural-language description.
 
-1. **OWL export to HRIO gUFO/OWL**
+2. **OWL export to HRIO gUFO/OWL**
 
     - The HRIO OntoUML model is exported to OWL as HRIO gUFO/OWL, following gUFO patterns for types, relators, roles, situations, etc.
 
-1. **SHACL authoring over the released OWL vocabulary**
+3. **SHACL authoring over the released OWL vocabulary**
 
     - SHACL shapes and rules are authored only over IRIs present in the released HRIO gUFO/OWL files.
     - No SHACL artifact references internal OntoUML identifiers or unversioned/pre-release IRIs.
 
-1. **Execution over published HRIO gUFO/OWL**
+4. **Execution over published HRIO gUFO/OWL**
 
     - Shapes target IRIs in the released ontology namespace and reuse `gufo:` IRIs where relevant.
     - Validation and rule materialization operate on datasets aligned to HRIO gUFO/OWL.

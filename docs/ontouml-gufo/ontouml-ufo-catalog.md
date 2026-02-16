@@ -15,6 +15,7 @@ The catalog is openly maintained on GitHub at [w3id.org/ontouml/models](https://
 - **`.vpp`**: Original diagrams in Visual Paradigm format
 
 !!! tip
+
     If your goal is to use OntoUML with Semantic Web technologies, prefer the `.ttl` files. For diagram visualization and editing, use the `.vpp` files in Visual Paradigm.
 
 Each model is organized in its own folder and includes a set of standardized metadata files (`metadata.ttl`, `metadata-json.ttl`, `metadata-vpp.ttl`, etc.). The catalog as a whole is described by a root `catalog.ttl` file and validated using SHACL shapes provided under the `/shapes` directory.

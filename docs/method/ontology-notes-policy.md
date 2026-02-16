@@ -51,9 +51,9 @@ Color selection rule: Use the top row (R1) of the VP color palette, choosing col
 ### Forms & Anchoring
 
 - A note can appear in one of three forms:
-  1. Anchored to a single class, relation, or another note.
-  2. Anchored to multiple classes/relations/notes.
-  3. No anchor (interpreted as diagram-wide).
+    1. Anchored to a single class, relation, or another note.
+    2. Anchored to multiple classes/relations/notes.
+    3. No anchor (interpreted as diagram-wide).
 - Always anchor a note when it refers to specific elements; do not leave it anchorless if it targets a particular class, relation, or note.
 - **CNST and DRIV notes must be anchored.** Anchor to the element governed by the rule that the note paraphrases.
 
@@ -66,12 +66,15 @@ Color selection rule: Use the top row (R1) of the VP color palette, choosing col
 - All note text must be fully visible in the diagram and in exports (PNG). Resize or wrap text instead of truncating.
 
 !!! warning "Rule names in notes"
+
     Rule names appear in parentheses in the `CNST` and `DRIV` prefixes so that each note can be associated with its complete definition in the corresponding SHACL artifact. The ontology diagrams contain only the readable description; the formal rules live in the external SHACL file.
 
 !!! note
+
     Rule names must follow the constraint naming rules defined in [Ontology Rules and SHACL Implementation](./ontology-rules.md).
 
 !!! info "Rules in `int` stage diagrams (no SHACL formalization yet)"
+
     A constraint or derivation rule shown in a diagram in the `int` stage may not yet have been formalized in SHACL. In that case, its note may omit the rule name in parentheses and use only the tag prefix (`CNST:` or `DRIV:`) followed by a provisional description. Such notes do not claim a stable link to the SHACL artifact.
 
     Once the rule has been formalized in SHACL, the corresponding note **must** be updated to follow the standard format with the rule name in parentheses (`**CNST (RuleName):** …` or `**DRIV (RuleName):** …`). All `CNST` and `DRIV` notes that refer to implemented SHACL constraints or derivation rules are required to carry their rule names.
@@ -96,6 +99,7 @@ Color selection rule: Use the top row (R1) of the VP color palette, choosing col
 ## Example Snippets
 
 <!-- TODO: Update so all use real examples. -->
+
 - **SEMI:** "Encounter" denotes a healthcare interaction episode; not a location stay.
 - **CNST (OneActiveIdentifier):** context Patient must have exactly one active Identifier.
 - **DRIV (CreatesOnBehalfOfRule):** If an Administrative Gender Recognition mediates both an Administrative Gender Recognition Agent and an Administrative Gender Recognizing Organization, then the Agent creates on behalf of the Organization.

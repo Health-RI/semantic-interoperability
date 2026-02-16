@@ -9,7 +9,9 @@ This versioning strategy applies to all ontology artifacts released as part of t
 Defines how versions are assigned and incremented for the ontology/model releases, including precedence (`X > Y > Z`), single-step increments, and resets. Stage mechanics (`int`/`irv`/`erv`/`pub`) are covered in *Validation Strategy*; they are referenced here only where they directly affect `Y`. This strategy is effective for releases starting at `v1.0.0`; earlier releases (`< v1.0.0`) followed an [earlier versioning policy](./ontology-versioning-old.md).
 
 !!! note "Artifacts covered and alignment"
+
     The `X.Y.Z` version identifier applies uniformly to the ontology artifacts released by this initiative:
+
     - HRIO OntoUML model in Visual Paradigm (`.vpp` project).
     - HRIO OntoUML model exported as JSON (`.json`).
     - HRIO gUFO/OWL ontology (`.ttl`, in Turtle).
@@ -29,6 +31,7 @@ Defines how versions are assigned and incremented for the ontology/model release
 > Note on stages. Stages are tracked per domain packages (see *Validation Strategy*). A stage transition causes `Y++` and resets `Z → 0`, per rules below.
 
 !!! note "Published tags are rarely "round""
+
     GitHub releases are created when the relevant domain package is in `pub` stage, occurring after stage transitions (`int → irv → erv → pub`). Stage transitions bump `Y`, so published versions are **unlikely** to be exactly `X.0.0` (e.g., `2.0.0`), and `Z` may be non-zero. Expect tags like `2.1.0` or `2.3.4`. "Round" versions may still occur because we version the ontology as a whole (not per package), while domain packages' independent state transitions influence the overall ontology version.
 
 ## Version Numbering & Semantics — Increment & Reset Rules
@@ -50,23 +53,27 @@ Defines how versions are assigned and incremented for the ontology/model release
 ### Conditions for increasing `X`
 
 - Triggers:
+
     - Starting a new package (new domain scope) in the repository.
     - Removing an existing package from the official package set (any removal from scope is `X`).
 
 - Non-triggers:
+
     - Advancing a package through stages (`int`, `irv`, `erv`, `pub`): that is `Y`, not `X`.
     - Renaming/regrouping classes within an existing package without adding a new package.
 
 ### Conditions for increasing `Y`
 
 - Triggers:
-    - Any domain package stage transition: `int → irv`, `irv → erv`, `erv → pub`, or a recorded reversion (e.g., `irv → int`) via the  package's stage tagged value.
+
+    - Any domain package stage transition: `int → irv`, `irv → erv`, `erv → pub`, or a recorded reversion (e.g., `irv → int`) via the package's stage tagged value.
     - Any semantic change that alters model meaning within a package (e.g., adding/removing/retaxonomizing classes, retyping relations, changing multiplicities or constraints, revising authoritative definitions, introducing/removing key axioms).
         - Action: record `<current> → int` for the package (see *Validation Strategy*).
         - Result: `Y++` for that release; `Z → 0`.
     - When multiple packages transition in the same release, perform a single `Y++` (`Z` resets to `0`).
 
 - Non-triggers:
+
     - Being in a stage without a transition since last release.
     - Diagram/class edits that do not change the package stage.
     - Tagged-value corrections that leave stage history unchanged.
@@ -75,9 +82,11 @@ Defines how versions are assigned and incremented for the ontology/model release
 ### Conditions for increasing `Z`
 
 - Triggers:
+
     - Minor, non-semantic corrections that do not materially change domain representation: label/name normalization, spelling/typos, diagram layout, link/URI fix, file reorganization, export settings, docstring wording, small diagram tweaks.
 
 - Non-triggers:
+
     - Any package stage transition (`int/irv/erv/pub`) → that is `Y` (and resets `Z` to `0`).
     - Starting/adding a new package → that is `X` (and resets `Y` and `Z` to `0`).
     - Semantic modeling changes are never `Z`; they require a stage reset to `int` and thus `Y++`.
@@ -86,11 +95,11 @@ Defines how versions are assigned and incremented for the ontology/model release
 
 Treat the change as **semantic** (counts for `Y`) if any of the following is **yes**; otherwise it is `Z`:
 
-1) Entailment / constraints test. Does the change alter logical consequences, constraints, or permitted structures (e.g., subsumption, typing, multiplicities, keys, disjointness)? → yes ⇒ semantic (`Y`).
-2) Extension / instances test. Would at least one previously valid instance become invalid (or vice versa) solely due to this change? → yes ⇒ semantic (`Y`).
-3) Identity / reference stability test. Does the change alter IRIs/identifiers or definitions in a way that affects element identity/meaning? → yes ⇒ semantic (`Y`).
-     - Label-only edits (e.g., `rdfs:label`, typos, capitalization) with unchanged IRI/definition are `Z`.
-4) Diagram-only test. Is the change confined to visuals (positions, routing, styling) with no change to model elements or constraints? → yes ⇒ non-semantic (`Z`).
+1. Entailment / constraints test. Does the change alter logical consequences, constraints, or permitted structures (e.g., subsumption, typing, multiplicities, keys, disjointness)? → yes ⇒ semantic (`Y`).
+2. Extension / instances test. Would at least one previously valid instance become invalid (or vice versa) solely due to this change? → yes ⇒ semantic (`Y`).
+3. Identity / reference stability test. Does the change alter IRIs/identifiers or definitions in a way that affects element identity/meaning? → yes ⇒ semantic (`Y`).
+    - Label-only edits (e.g., `rdfs:label`, typos, capitalization) with unchanged IRI/definition are `Z`.
+4. Diagram-only test. Is the change confined to visuals (positions, routing, styling) with no change to model elements or constraints? → yes ⇒ non-semantic (`Z`).
 
 ### Edge-case examples
 

@@ -1,6 +1,7 @@
 # OntoUML Stereotypes
 
 !!! warning "Disclaimer"
+
     While efforts have been made to ensure accuracy, the material in this page is still under review and may contain inaccuracies or omissions. Users are advised to interpret and apply the content with caution.
 
 ## [Class Stereotypes](https://ontouml.readthedocs.io/en/latest/classes/index.html)

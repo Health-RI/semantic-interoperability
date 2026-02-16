@@ -65,10 +65,12 @@ repos:
         files: \.(md|mdx)$
         # Plugins installed inside the hook venv:
         # - mdformat-mkdocs: MkDocs/MkDocs-Material friendly formatting; keeps 4-space indents.
+        args: [--number]
         additional_dependencies:
           - mdformat-gfm
           - mdformat-frontmatter
           - mdformat-mkdocs==5.1.4
+          - mdformat-footnote==0.1.3
 
   # ---------------------------------------------------------------------------
   # 3) Python lint + format (Ruff)

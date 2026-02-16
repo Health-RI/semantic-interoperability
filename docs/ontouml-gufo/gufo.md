@@ -41,7 +41,6 @@ gUFO is implemented in OWL 2 DL, which means it can be used with standard ontolo
 
 This balance between formality and simplicity makes gUFO ideal for organizations aiming to adopt semantic technologies without starting from scratch.
 
-
 ## How to Create a gUFO Ontology
 
 There are two main ways to create a gUFO-compliant ontology, depending on the user's familiarity with ontology modeling tools and the desired level of formality or tool support.
@@ -70,14 +69,14 @@ An alternative and user-friendly approach to creating a gUFO ontology is to firs
 #### Steps:
 
 1. **Create the OntoUML model** using Visual Paradigm with the OntoUML plugin.
-   - The plugin supports OntoUML stereotypes such as `«kind»`, `«role»`, `«relator»`, and offers a dedicated palette for ontology-driven modeling.
+    - The plugin supports OntoUML stereotypes such as `«kind»`, `«role»`, `«relator»`, and offers a dedicated palette for ontology-driven modeling.
 2. **Export directly to gUFO**:
-   - From the top menu, select **`Export → Export to gUFO`**.
-   - In the dialog that appears, configure the export parameters:
-     - Set the **Base IRI**
-     - Choose the **output format** (e.g., Turtle)
-     - Optionally enable URI customization, property creation behavior, and pre-analysis
-   - Select which model elements to include and click **Export**.
+    - From the top menu, select **`Export → Export to gUFO`**.
+    - In the dialog that appears, configure the export parameters:
+        - Set the **Base IRI**
+        - Choose the **output format** (e.g., Turtle)
+        - Optionally enable URI customization, property creation behavior, and pre-analysis
+    - Select which model elements to include and click **Export**.
 
 This process will generate an OWL ontology in the selected format, conforming to the [gUFO specification](https://nemo-ufes.github.io/gufo/).
 

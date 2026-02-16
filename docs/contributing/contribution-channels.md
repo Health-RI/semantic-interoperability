@@ -75,7 +75,7 @@ You can contribute to the Health-RI **SSSOM mapping set** (manually curated) in 
 1. **Preferred: Submit the issue form**
     Use our **[SSSOM mapping issue form](https://github.com/health-ri/semantic-interoperability/issues/new?template=sssom-new-mapping.yml)** to add a single mapping row. Fill in the required fields; Health-RI curators will review and integrate your contribution.
 
-1. **Alternative: Use the Excel template**
+2. **Alternative: Use the Excel template**
     Download the **[XLSX template](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx)** and enter:
 
     - the mapping row(s) in the **mappings** sheet, and

@@ -369,7 +369,7 @@
     There are two options:
 
     1. Issue form (preferred) — submit the SSSOM mapping issue form for a single row.
-    1. Excel template — fill in the `mappings` sheet (rows) and the `prefix` sheet (CURIE bindings) in the provided XLSX, then attach it to a new issue.
+    2. Excel template — fill in the `mappings` sheet (rows) and the `prefix` sheet (CURIE bindings) in the provided XLSX, then attach it to a new issue.
         In the template, headers for mandatory fields are black, and optional ones are green. Both methods are curator-reviewed and integrated into the official mapping set.
 
 ??? question "What should I check before submitting a mapping?"
