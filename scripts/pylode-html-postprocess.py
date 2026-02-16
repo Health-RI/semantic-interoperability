@@ -43,7 +43,9 @@ from rdflib.namespace import RDFS, SKOS, DCTERMS
 VS = rdflib.Namespace("http://www.w3.org/2003/06/sw-vocab-status/ns#")
 
 _INTERNAL_LINK_FIX_RE = re.compile(r'href="file://[^"]*/specification\.html#([^"]+)"')
-MATURITY_DOCS_URL = "https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"
+MATURITY_DOCS_URL = (
+    "https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"
+)
 
 
 # ---------------------------
@@ -149,7 +151,9 @@ def sort_toc_nested_lists(soup: BeautifulSoup) -> None:
             continue
 
         indexed = list(enumerate(items))
-        indexed_sorted = sorted(indexed, key=lambda pair: (label_for_li(pair[1]).casefold(), pair[0]))
+        indexed_sorted = sorted(
+            indexed, key=lambda pair: (label_for_li(pair[1]).casefold(), pair[0])
+        )
         if [li for _, li in indexed_sorted] != items:
             ul.clear()
             for _, li in indexed_sorted:
@@ -281,7 +285,9 @@ def parse_ttl(ttl_path: Path) -> rdflib.Graph:
     return g
 
 
-def build_rdf_indexes(g: rdflib.Graph) -> Tuple[
+def build_rdf_indexes(
+    g: rdflib.Graph,
+) -> Tuple[
     Dict[str, List[str]],  # class_iri -> alt labels
     Dict[str, str],  # class_iri -> package_iri
     Dict[str, str],  # package_iri -> rdfs:label
@@ -403,7 +409,9 @@ def _is_inserted_maturity_line(node: Tag) -> bool:
 
 def collect_class_entries(classes_section: Tag) -> List[ClassEntry]:
     entries: List[ClassEntry] = []
-    for block in classes_section.find_all("div", class_=["property", "entity"], recursive=False):
+    for block in classes_section.find_all(
+        "div", class_=["property", "entity"], recursive=False
+    ):
         if not is_entity_block(block):
             continue
         anchor_id = block.get("id")
@@ -411,9 +419,18 @@ def collect_class_entries(classes_section: Tag) -> List[ClassEntry]:
             raise ValueError("Found class block without an id attribute.")
         class_iri = find_table_row_code_value(block, "IRI")
         if not class_iri:
-            raise ValueError(f"Class block {anchor_id} missing IRI row; cannot match reliably.")
+            raise ValueError(
+                f"Class block {anchor_id} missing IRI row; cannot match reliably."
+            )
         display_label = extract_display_label(block.find("h3"))
-        entries.append(ClassEntry(class_iri=class_iri, anchor_id=anchor_id, display_label=display_label, block=block))
+        entries.append(
+            ClassEntry(
+                class_iri=class_iri,
+                anchor_id=anchor_id,
+                display_label=display_label,
+                block=block,
+            )
+        )
     return entries
 
 
@@ -434,7 +451,9 @@ def compute_groups_and_meta(
     for e in entries:
         pkg_iri = class_to_pkg.get(e.class_iri)
         if not pkg_iri:
-            logging.warning(f"Class has no dcterms:isPartOf; grouping as Unassigned: {e.class_iri}")
+            logging.warning(
+                f"Class has no dcterms:isPartOf; grouping as Unassigned: {e.class_iri}"
+            )
             key = "Unassigned"
             if key not in meta:
                 heading_id = _ensure_unique_id(existing_ids, "pkg-unassigned")
@@ -451,7 +470,9 @@ def compute_groups_and_meta(
 
         segment = package_path_segment(pkg_iri)
         if not segment:
-            logging.warning(f"Could not parse package segment; grouping as Unassigned: {e.class_iri} -> {pkg_iri}")
+            logging.warning(
+                f"Could not parse package segment; grouping as Unassigned: {e.class_iri} -> {pkg_iri}"
+            )
             key = "Unassigned"
             if key not in meta:
                 heading_id = _ensure_unique_id(existing_ids, "pkg-unassigned")
@@ -472,10 +493,14 @@ def compute_groups_and_meta(
         if top_pkg_iri in pkg_nodes:
             # Package exists in TTL: label is mandatory
             if top_pkg_iri not in pkg_to_label:
-                raise ValueError(f"ERROR: top-level package exists but is missing rdfs:label: {top_pkg_iri}")
+                raise ValueError(
+                    f"ERROR: top-level package exists but is missing rdfs:label: {top_pkg_iri}"
+                )
             label = pkg_to_label[top_pkg_iri]
             if not label.strip():
-                raise ValueError(f"ERROR: top-level package has empty rdfs:label: {top_pkg_iri}")
+                raise ValueError(
+                    f"ERROR: top-level package has empty rdfs:label: {top_pkg_iri}"
+                )
             term_status = pkg_to_status.get(top_pkg_iri)
             resolved = True
         else:
@@ -487,7 +512,6 @@ def compute_groups_and_meta(
             resolved = False
 
         if key not in meta:
-
             heading_id = _ensure_unique_id(existing_ids, f"pkg-{slug_id(segment)}")
             meta[key] = PackageMeta(
                 key=key,
@@ -529,7 +553,9 @@ def restructure_classes_section(
         if isinstance(node, Tag) and is_entity_block(node):
             break
 
-        if isinstance(node, Tag) and (_is_inserted_package_heading(node) or _is_inserted_maturity_line(node)):
+        if isinstance(node, Tag) and (
+            _is_inserted_package_heading(node) or _is_inserted_maturity_line(node)
+        ):
             node.extract()  # drop previously inserted structure
             node = nxt
             continue
@@ -576,16 +602,21 @@ def restructure_classes_section(
 
     pkg_keys = list(groups.keys())
     pkg_keys.sort(
-        key=lambda k: (k.casefold() == "unassigned", meta[k].label.casefold(), (meta[k].segment or "").casefold())
+        key=lambda k: (
+            k.casefold() == "unassigned",
+            meta[k].label.casefold(),
+            (meta[k].segment or "").casefold(),
+        )
     )
     packages_in_order: List[PackageMeta] = [meta[k] for k in pkg_keys]
 
     for pkg in packages_in_order:
         h3 = soup.new_tag("h3", id=pkg.heading_id)
-        pkg_heading_text = pkg.label if pkg.key.casefold() == "unassigned" else f"Package: {pkg.label}"
+        pkg_heading_text = (
+            pkg.label if pkg.key.casefold() == "unassigned" else f"Package: {pkg.label}"
+        )
         h3.append(NavigableString(pkg_heading_text))
         classes_section.append(h3)
-
 
         if pkg.term_status:
             mtxt = maturity_text(pkg.term_status)
@@ -615,7 +646,9 @@ def restructure_classes_section(
                 )
         else:
             if pkg.resolved_in_ttl:
-                logging.warning(f"Missing vs:term_status for package; omitting maturity line: {pkg.label}")
+                logging.warning(
+                    f"Missing vs:term_status for package; omitting maturity line: {pkg.label}"
+                )
 
         cls_entries = groups[pkg.key]
         cls_entries.sort(key=lambda e: (e.display_label.casefold(), e.class_iri))
@@ -625,7 +658,9 @@ def restructure_classes_section(
     # Post-check: count unchanged
     after_count = len(classes_section.select("div.property.entity"))
     if after_count != before_count:
-        raise ValueError(f"ERROR: Class count changed after restructuring (before={before_count}, after={after_count})")
+        raise ValueError(
+            f"ERROR: Class count changed after restructuring (before={before_count}, after={after_count})"
+        )
 
     return packages_in_order, groups, entries
 
@@ -652,7 +687,9 @@ def add_synonyms(
     class_to_alt: Dict[str, List[str]],
 ) -> int:
     changed = 0
-    for block in classes_section.find_all("div", class_=["property", "entity"], recursive=False):
+    for block in classes_section.find_all(
+        "div", class_=["property", "entity"], recursive=False
+    ):
         if not is_entity_block(block):
             continue
 
@@ -694,7 +731,11 @@ def add_synonyms(
             tr_new.append(th_new)
             tr_new.append(td_new)
 
-            after = "Description" if find_table_row_code_value(block, "Description") is not None else "IRI"
+            after = (
+                "Description"
+                if find_table_row_code_value(block, "Description") is not None
+                else "IRI"
+            )
             inserted = False
             for tr in table.find_all("tr"):
                 th = tr.find("th")
@@ -723,7 +764,9 @@ def rewrite_classes_toc(
 
     classes_link = toc.find("a", href="#classes")
     if classes_link is None:
-        logging.warning('No ToC entry for Classes (a[href="#classes"]); cannot rewrite Classes ToC.')
+        logging.warning(
+            'No ToC entry for Classes (a[href="#classes"]); cannot rewrite Classes ToC.'
+        )
         return
 
     classes_li = classes_link.find_parent("li")
@@ -741,7 +784,9 @@ def rewrite_classes_toc(
     for pkg in packages_in_order:
         li_pkg = soup.new_tag("li")
         a_pkg = soup.new_tag("a", href=f"#{pkg.heading_id}")
-        pkg_toc_text = pkg.label if pkg.key.casefold() == "unassigned" else f"Package: {pkg.label}"
+        pkg_toc_text = (
+            pkg.label if pkg.key.casefold() == "unassigned" else f"Package: {pkg.label}"
+        )
         a_pkg.append(NavigableString(pkg_toc_text))
         li_pkg.append(a_pkg)
 
@@ -768,7 +813,9 @@ def validate_classes_structure(soup: BeautifulSoup, classes_section: Tag) -> Non
     ids = [b.get("id") for b in classes_section.select("div.property.entity[id]")]
     ids = [i for i in ids if i]
     if len(ids) != len(set(ids)):
-        raise ValueError("ERROR: Duplicate class anchor ids detected in #classes section.")
+        raise ValueError(
+            "ERROR: Duplicate class anchor ids detected in #classes section."
+        )
 
     toc = soup.find(id="toc")
     if toc:
@@ -817,7 +864,9 @@ def postprocess_html(
 
     if ttl_path is not None:
         g = parse_ttl(ttl_path)
-        class_to_alt, class_to_pkg, pkg_to_label, pkg_to_status, pkg_nodes = build_rdf_indexes(g)
+        class_to_alt, class_to_pkg, pkg_to_label, pkg_to_status, pkg_nodes = (
+            build_rdf_indexes(g)
+        )
 
     classes_section = soup.find(id="classes")
     packages_in_order: List[PackageMeta] = []
@@ -827,9 +876,13 @@ def postprocess_html(
         if ttl_path is None:
             raise ValueError("Classes restructuring requires --ttl.")
         if classes_section is None:
-            raise ValueError("No #classes section found, but classes restructuring was requested.")
+            raise ValueError(
+                "No #classes section found, but classes restructuring was requested."
+            )
         if not pkg_nodes:
-            logging.info("No #package/ collections detected in TTL; skipping Classes restructuring.")
+            logging.info(
+                "No #package/ collections detected in TTL; skipping Classes restructuring."
+            )
         else:
             packages_in_order, groups, _ = restructure_classes_section(
                 soup,
@@ -858,19 +911,47 @@ def main() -> int:
 
     ap = argparse.ArgumentParser()
     ap.add_argument("--html-in", required=True, type=Path, help="Input HTML file.")
-    ap.add_argument("--html-out", type=Path, default=None, help="Output HTML file (default: overwrite input).")
-    ap.add_argument("--ttl", type=Path, default=None, help="TTL file used for RDF-driven edits (packages, synonyms).")
-
-    ap.add_argument("--no-link-fix", action="store_true", help="Disable legacy internal link fix.")
-    ap.add_argument("--no-toc-sort", action="store_true", help="Disable legacy ToC nested sorting.")
-    ap.add_argument("--no-logo", action="store_true", help="Disable logo insertion.")
-    ap.add_argument("--logo-url", default="../assets/images/health-ri-logo-blue.png", help="Logo URL to insert.")
-    ap.add_argument("--logo-alt", default="Health-RI Logo", help="Logo alt text.")
-    ap.add_argument("--no-toc-css", action="store_true", help="Disable responsive TOC CSS injection.")
     ap.add_argument(
-        "--no-classes-restructure", action="store_true", help="Disable package grouping / ToC rewrite for Classes."
+        "--html-out",
+        type=Path,
+        default=None,
+        help="Output HTML file (default: overwrite input).",
     )
-    ap.add_argument("--no-synonyms", action="store_true", help="Disable inserting/updating Synonyms rows.")
+    ap.add_argument(
+        "--ttl",
+        type=Path,
+        default=None,
+        help="TTL file used for RDF-driven edits (packages, synonyms).",
+    )
+
+    ap.add_argument(
+        "--no-link-fix", action="store_true", help="Disable legacy internal link fix."
+    )
+    ap.add_argument(
+        "--no-toc-sort", action="store_true", help="Disable legacy ToC nested sorting."
+    )
+    ap.add_argument("--no-logo", action="store_true", help="Disable logo insertion.")
+    ap.add_argument(
+        "--logo-url",
+        default="../assets/images/health-ri-logo-blue.png",
+        help="Logo URL to insert.",
+    )
+    ap.add_argument("--logo-alt", default="Health-RI Logo", help="Logo alt text.")
+    ap.add_argument(
+        "--no-toc-css",
+        action="store_true",
+        help="Disable responsive TOC CSS injection.",
+    )
+    ap.add_argument(
+        "--no-classes-restructure",
+        action="store_true",
+        help="Disable package grouping / ToC rewrite for Classes.",
+    )
+    ap.add_argument(
+        "--no-synonyms",
+        action="store_true",
+        help="Disable inserting/updating Synonyms rows.",
+    )
 
     args = ap.parse_args()
 

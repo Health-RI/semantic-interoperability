@@ -42,7 +42,9 @@ def move_ontology_block_to_top(ttl_text: str, ontology_iri: str) -> str:
     return block + rest.lstrip()
 
 
-def get_previous_versions(directory: Path, current_version_str: str, latest_per_minor: bool = False) -> list[str]:
+def get_previous_versions(
+    directory: Path, current_version_str: str, latest_per_minor: bool = False
+) -> list[str]:
     """
     Returns versions found in directory that are strictly lower than current_version_str.
 
@@ -76,7 +78,9 @@ def get_previous_versions(directory: Path, current_version_str: str, latest_per_
     # Keep only the latest patch for each (major, minor) among prior versions
     best_by_minor: dict[tuple[int, int], tuple[object, str]] = {}
     for v_obj, v_str in prior:
-        release = getattr(v_obj, "releaseU", None)  # force miss? no; keep safe fallback below
+        release = getattr(
+            v_obj, "releaseU", None
+        )  # force miss? no; keep safe fallback below
 
     best_by_minor = {}
     for v_obj, v_str in prior:
@@ -136,7 +140,9 @@ def get_latest_ttl_file(directory):
     return latest_file, version_str
 
 
-def get_immediate_previous_version(directory: Path, current_version_str: str) -> str | None:
+def get_immediate_previous_version(
+    directory: Path, current_version_str: str
+) -> str | None:
     """
     Returns the highest version strictly lower than current_version_str, based on versions
     present as files in the directory (SemVer ordering).
@@ -260,7 +266,9 @@ def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
     ontology_uri = URIRef("https://w3id.org/health-ri/ontology")
     version_iri = URIRef(f"https://w3id.org/health-ri/ontology/v{version_str}")
     conforms_to_vpp = URIRef(f"https://w3id.org/health-ri/ontology/v{version_str}/vpp")
-    conforms_to_json = URIRef(f"https://w3id.org/health-ri/ontology/v{version_str}/json")
+    conforms_to_json = URIRef(
+        f"https://w3id.org/health-ri/ontology/v{version_str}/json"
+    )
 
     g_a.add((ontology_uri, DCTERMS.modified, Literal(today, datatype=XSD.date)))
     g_a.add((ontology_uri, OWL.versionInfo, Literal(version_str)))
@@ -271,7 +279,9 @@ def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
     # owl:priorVersion: point to the immediate predecessor version IRI (highest < current)
     prev_version_str = get_immediate_previous_version(latest_a.parent, version_str)
     if prev_version_str:
-        prev_version_iri = URIRef(f"https://w3id.org/health-ri/ontology/v{prev_version_str}")
+        prev_version_iri = URIRef(
+            f"https://w3id.org/health-ri/ontology/v{prev_version_str}"
+        )
 
         # Make reruns idempotent
         for o in list(g_a.objects(version_iri, OWL.priorVersion)):
@@ -284,14 +294,18 @@ def merge_ttl_files(latest_a: Path, b_path: Path, version_str: str):
         g_a.remove((ontology_uri, DCAT.hasVersion, o))
 
     version_dir = latest_a.parent
-    prior_versions = get_previous_versions(version_dir, version_str, latest_per_minor=LATEST_PER_MINOR)
+    prior_versions = get_previous_versions(
+        version_dir, version_str, latest_per_minor=LATEST_PER_MINOR
+    )
     for prev_v in prior_versions:
         g_a.add((ontology_uri, DCAT.hasVersion, make_ontology_version_iri(prev_v)))
 
     bind_common_prefixes(g_a)
 
     ttl_text = g_a.serialize(format="turtle")
-    ttl_text = move_ontology_block_to_top(ttl_text, "https://w3id.org/health-ri/ontology")
+    ttl_text = move_ontology_block_to_top(
+        ttl_text, "https://w3id.org/health-ri/ontology"
+    )
     ttl_text = move_subject_block_after(
         ttl_text,
         f"https://w3id.org/health-ri/ontology/v{version_str}",
@@ -325,4 +339,6 @@ if __name__ == "__main__":
         if not latest_gufo_path:
             logging.warning(f"No valid TTL file found in: {directory}")
         if not ttl_metadata_path.exists():
-            logging.warning(f"Metadata file not found at: {ttl_metadata_path.resolve()}")
+            logging.warning(
+                f"Metadata file not found at: {ttl_metadata_path.resolve()}"
+            )

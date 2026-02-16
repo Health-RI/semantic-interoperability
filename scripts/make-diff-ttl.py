@@ -143,12 +143,16 @@ def canonicalize_all_lists(g: Graph, log_every: int = 0) -> (int, Set[Node]):
         for _, _, lst in g.triples((None, p, None)):
             heads.add(lst)
     heads = list(heads)
-    log.info(f"[lists] Found {len(heads)} list heads across {len(LIST_PROPS)} properties")
+    log.info(
+        f"[lists] Found {len(heads)} list heads across {len(LIST_PROPS)} properties"
+    )
     rewritten = 0
     for i, head in enumerate(heads, 1):
         rewritten += canonicalize_rdf_list(g, head)
         if log_every and (i % log_every == 0):
-            log.debug(f"[lists] processed {i}/{len(heads)} heads (rewrites so far: {rewritten})")
+            log.debug(
+                f"[lists] processed {i}/{len(heads)} heads (rewrites so far: {rewritten})"
+            )
     log.info(f"[lists] Canonicalized {rewritten} list items across {len(heads)} heads")
     return rewritten, set(heads)
 
@@ -163,7 +167,9 @@ def _list_hash(g: Graph, head: Node) -> str:
     items = _sorted_list_items(g, head)
     if not items:
         return ""
-    return hashlib.sha1("|".join(_n3_key(g, t) for t in items).encode("utf-8")).hexdigest()
+    return hashlib.sha1(
+        "|".join(_n3_key(g, t) for t in items).encode("utf-8")
+    ).hexdigest()
 
 
 def determinize_list_heads(g: Graph, heads: Set[Node], log_every: int = 0):
@@ -180,7 +186,9 @@ def determinize_list_heads(g: Graph, heads: Set[Node], log_every: int = 0):
                 prop_heads.append((s, p, head))
 
     unique_heads = set(heads)
-    log.info(f"[heads] {len(unique_heads)} unique list heads; {len(prop_heads)} property references")
+    log.info(
+        f"[heads] {len(unique_heads)} unique list heads; {len(prop_heads)} property references"
+    )
 
     canonical_by_hash = {}  # hash -> canonical BNode
     head2canon = {}  # original head -> canonical BNode
@@ -210,9 +218,13 @@ def determinize_list_heads(g: Graph, heads: Set[Node], log_every: int = 0):
         g.remove((s, p, head))
         rewired += 1
         if log_every and (i % log_every == 0):
-            log.debug(f"[heads] rewired {i}/{len(prop_heads)} refs (rewired so far: {rewired})")
+            log.debug(
+                f"[heads] rewired {i}/{len(prop_heads)} refs (rewired so far: {rewired})"
+            )
 
-    log.info(f"[heads] Rewired {rewired} refs to canonical heads; {len(canonical_by_hash)} unique member sets")
+    log.info(
+        f"[heads] Rewired {rewired} refs to canonical heads; {len(canonical_by_hash)} unique member sets"
+    )
     return rewired, head2canon
 
 
@@ -232,7 +244,9 @@ def _collect_list_chain_nodes(g: Graph, head: Node) -> Set[Node]:
     return visited
 
 
-def prune_orphan_lists(g: Graph, original_heads: Set[Node], head2canon: dict, log_every: int = 0) -> int:
+def prune_orphan_lists(
+    g: Graph, original_heads: Set[Node], head2canon: dict, log_every: int = 0
+) -> int:
     """
     Remove rdf:first/rest triples that belong to original list chains whose heads
     were rewired to canonical heads (and are no longer referenced as a list head).
@@ -241,7 +255,9 @@ def prune_orphan_lists(g: Graph, original_heads: Set[Node], head2canon: dict, lo
     """
     removed = 0
     # Heads that were replaced (orig != canon)
-    replaced_heads = [h for h, c in head2canon.items() if c and h != c and h in original_heads]
+    replaced_heads = [
+        h for h, c in head2canon.items() if c and h != c and h in original_heads
+    ]
     if not replaced_heads:
         log.info("[prune] Nothing to prune (no replaced list heads)")
         return 0
@@ -269,9 +285,13 @@ def prune_orphan_lists(g: Graph, original_heads: Set[Node], head2canon: dict, lo
                 g.remove(t)
                 removed += 1
         if log_every and (i % log_every == 0):
-            log.debug(f"[prune] processed {i}/{len(todo)} orphan heads (removed so far: {removed})")
+            log.debug(
+                f"[prune] processed {i}/{len(todo)} orphan heads (removed so far: {removed})"
+            )
 
-    log.info(f"[prune] Removed {removed} rdf:first/rest triples from orphan list chains")
+    log.info(
+        f"[prune] Removed {removed} rdf:first/rest triples from orphan list chains"
+    )
     return removed
 
 
@@ -303,7 +323,9 @@ def canonicalize_equivalentClass_orientation(g: Graph, log_every: int = 0) -> in
                 g.remove((s, p, o))
                 rewritten += 1
         if log_every and (i % log_every == 0):
-            log.debug(f"[eqClass] processed {i}/{len(pairs)} (rewrites so far: {rewritten})")
+            log.debug(
+                f"[eqClass] processed {i}/{len(pairs)} (rewrites so far: {rewritten})"
+            )
     log.info(f"[eqClass] Rewrote {rewritten} triples")
     return rewritten
 
@@ -325,7 +347,9 @@ def canonicalize_symmetric_edges(g: Graph, log_every: int = 0) -> int:
                 g.remove((s, p, o))
                 rewritten += 1
             if log_every and (i % log_every == 0):
-                log.debug(f"[symmetric] {p.n3()} processed {i}/{len(pairs)} (rewrites so far: {rewritten})")
+                log.debug(
+                    f"[symmetric] {p.n3()} processed {i}/{len(pairs)} (rewrites so far: {rewritten})"
+                )
         log.info(f"[symmetric] {p.n3()} rewrote {rewritten}")
         rewritten_total += rewritten
     return rewritten_total
@@ -334,7 +358,9 @@ def canonicalize_symmetric_edges(g: Graph, log_every: int = 0) -> int:
 # ---- Orchestration ----
 
 
-def normalize_for_diff(g: Graph, list_canon: bool, symm_canon: bool, prune_lists: bool, log_every: int = 0) -> None:
+def normalize_for_diff(
+    g: Graph, list_canon: bool, symm_canon: bool, prune_lists: bool, log_every: int = 0
+) -> None:
     """
     Apply normalizations in the right order (each list head touched once).
     """
@@ -365,7 +391,9 @@ def normalize_for_diff(g: Graph, list_canon: bool, symm_canon: bool, prune_lists
         log.info(f"[normalize] symmetric canon done in {_tsec(t)}")
 
     after = len(g)
-    log.info(f"[normalize] finished in {_tsec(t0)}; triples now {after} (Δ {after - before})")
+    log.info(
+        f"[normalize] finished in {_tsec(t0)}; triples now {after} (Δ {after - before})"
+    )
 
 
 # ---- Simple diff ----
@@ -417,18 +445,30 @@ def main() -> int:
     )
     p.add_argument("old", type=Path, help="OLD file (e.g., .ttl)")
     p.add_argument("new", type=Path, help="NEW file (e.g., .ttl)")
-    p.add_argument("--out-prefix", default="diff", help="Prefix for output files (default: diff)")
+    p.add_argument(
+        "--out-prefix", default="diff", help="Prefix for output files (default: diff)"
+    )
     p.add_argument(
         "--format",
         default="turtle",
         choices=["turtle", "nt", "xml", "json-ld", "trig", "n3"],
         help="Serialization format for outputs (default: turtle)",
     )
-    p.add_argument("--no-unchanged", action="store_true", help="Do not write unchanged.ttl")
     p.add_argument(
-        "--old-format", dest="old_format", default=None, help="Force parser format for OLD (e.g., 'turtle', 'xml')"
+        "--no-unchanged", action="store_true", help="Do not write unchanged.ttl"
     )
-    p.add_argument("--new-format", dest="new_format", default=None, help="Force parser format for NEW")
+    p.add_argument(
+        "--old-format",
+        dest="old_format",
+        default=None,
+        help="Force parser format for OLD (e.g., 'turtle', 'xml')",
+    )
+    p.add_argument(
+        "--new-format",
+        dest="new_format",
+        default=None,
+        help="Force parser format for NEW",
+    )
     p.add_argument(
         "--no-list-canon",
         dest="list_canon",
@@ -460,7 +500,10 @@ def main() -> int:
         help="Logging level (default: INFO)",
     )
     p.add_argument(
-        "--log-every", type=int, default=0, help="Heartbeat frequency for long loops (0 = off). Example: 500"
+        "--log-every",
+        type=int,
+        default=0,
+        help="Heartbeat frequency for long loops (0 = off). Example: 500",
     )
     p.set_defaults(list_canon=True, symm_canon=True, prune_lists=True)
 
@@ -493,8 +536,20 @@ def main() -> int:
         )
 
         # Normalize once per graph
-        normalize_for_diff(g_old, args.list_canon, args.symm_canon, args.prune_lists, log_every=args.log_every)
-        normalize_for_diff(g_new, args.list_canon, args.symm_canon, args.prune_lists, log_every=args.log_every)
+        normalize_for_diff(
+            g_old,
+            args.list_canon,
+            args.symm_canon,
+            args.prune_lists,
+            log_every=args.log_every,
+        )
+        normalize_for_diff(
+            g_new,
+            args.list_canon,
+            args.symm_canon,
+            args.prune_lists,
+            log_every=args.log_every,
+        )
 
         # Diff
         if args.diff_mode == "simple":

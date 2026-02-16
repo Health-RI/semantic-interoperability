@@ -9,8 +9,11 @@ from rdflib import Graph, Namespace
 from rdflib.namespace import RDFS
 
 VS = Namespace("http://www.w3.org/2003/06/sw-vocab-status/ns#")
-MATURITY_DOCS_URL = "https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"
+MATURITY_DOCS_URL = (
+    "https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"
+)
 BADGE_MARKER = "img.shields.io/badge/Maturity_level"
+
 
 def _normalize_label(label: str) -> str:
     """Normalize labels for matching between TTL and OntoUML JSON."""
@@ -18,6 +21,7 @@ def _normalize_label(label: str) -> str:
         return str(label)
     label = re.sub(r"\s+", " ", label).strip()
     return label.casefold()
+
 
 def maturity_badge(term_status: str):
     """Returns (badge_url, alt_text) for a given vs:term_status (same as pylode-html-postprocess.py)."""
@@ -40,12 +44,14 @@ def maturity_badge(term_status: str):
     alt_text = f"{label} {message}".replace("_", " ")
     return badge_url, alt_text
 
+
 def maturity_badge_markdown(term_status: str) -> str:
     """Markdown for the maturity badge, linked to the maturity-level docs page."""
     badge_url, alt_text = maturity_badge(term_status)
     if not badge_url:
         return ""
     return f"[![{alt_text}]({badge_url})]({MATURITY_DOCS_URL})"
+
 
 def _find_ttl_for_version(ontologies_dir: Path, latest_dir: Path, version_str: str):
     """Best-effort lookup of a TTL file matching the JSON version."""
@@ -62,6 +68,7 @@ def _find_ttl_for_version(ontologies_dir: Path, latest_dir: Path, version_str: s
         if p.exists():
             return p
     return None
+
 
 def load_top_level_package_status_by_label(ttl_path: Path):
     """Extract vs:term_status for top-level #package/<segment> nodes, keyed by rdfs:label."""
@@ -92,7 +99,6 @@ def load_top_level_package_status_by_label(ttl_path: Path):
         if status:
             out[_normalize_label(label)] = status
     return out
-
 
 
 def has_meaningful_content(pkg, diagrams_by_owner):
@@ -245,7 +251,9 @@ def process_package(pkg, diagrams_by_owner, images_folder, level=2):
     content_lines = []
     for content in pkg.get("contents") or []:
         if content.get("type") == "Package":
-            sub_output = process_package(content, diagrams_by_owner, images_folder, level + 1)
+            sub_output = process_package(
+                content, diagrams_by_owner, images_folder, level + 1
+            )
             if sub_output:
                 content_lines.extend(sub_output)
 
@@ -321,7 +329,9 @@ def generate_markdown(
         content_lines = []
         for content in pkg.get("contents") or []:
             if content.get("type") == "Package":
-                sub_output = process_package_with_prefix(content, diagrams_by_owner, images_folder, level + 1)
+                sub_output = process_package_with_prefix(
+                    content, diagrams_by_owner, images_folder, level + 1
+                )
                 if sub_output:
                     content_lines.extend(sub_output)
 
@@ -351,7 +361,9 @@ def generate_markdown(
     diagrams_by_owner = index_diagrams_by_owner(data.get("diagrams", []))
 
     for top_level_pkg in contents:
-        section = process_package_with_prefix(top_level_pkg, diagrams_by_owner, images_folder)
+        section = process_package_with_prefix(
+            top_level_pkg, diagrams_by_owner, images_folder
+        )
         if section:
             lines.extend(section)
 
@@ -431,12 +443,17 @@ def main():
     if ttl_path:
         try:
             pkg_status_by_label = load_top_level_package_status_by_label(ttl_path)
-            logging.info(f"Loaded {len(pkg_status_by_label)} top-level package maturity statuses from: {ttl_path}")
+            logging.info(
+                f"Loaded {len(pkg_status_by_label)} top-level package maturity statuses from: {ttl_path}"
+            )
         except Exception as e:
-            logging.warning(f"Could not read maturity statuses from TTL ({ttl_path}): {e}")
+            logging.warning(
+                f"Could not read maturity statuses from TTL ({ttl_path}): {e}"
+            )
     else:
-        logging.warning("Could not find a TTL file to read maturity statuses; package badges will be omitted.")
-
+        logging.warning(
+            "Could not find a TTL file to read maturity statuses; package badges will be omitted."
+        )
 
     # --- Early exit gate: if this version is already documented, skip regeneration but always sync copies ---
     # Backfill: if the versioned doc exists but predates maturity badges, regenerate once.
@@ -480,7 +497,9 @@ def main():
     data = load_json(latest_json)
 
     # 1. Main Markdown output (original path)
-    markdown_main = generate_markdown(data, version_str, images_folder, pkg_status_by_label=pkg_status_by_label)
+    markdown_main = generate_markdown(
+        data, version_str, images_folder, pkg_status_by_label=pkg_status_by_label
+    )
     output_path_main.write_text(markdown_main, encoding="utf-8")
     logging.info(f"Main documentation written to: {output_path_main}")
 

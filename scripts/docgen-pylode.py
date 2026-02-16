@@ -45,6 +45,7 @@ from packaging import version
 # Version discovery
 # ---------------------------
 
+
 def _find_latest_versioned_ttl(
     directory: Path,
     *,
@@ -68,7 +69,9 @@ def _find_latest_versioned_ttl(
     return latest_file, latest_version
 
 
-def get_latest_ontology_ttl_file(directory: Path) -> Tuple[Optional[Path], Optional[version.Version]]:
+def get_latest_ontology_ttl_file(
+    directory: Path,
+) -> Tuple[Optional[Path], Optional[version.Version]]:
     return _find_latest_versioned_ttl(
         directory,
         filename_regex=r"health-ri-ontology-v(\d+\.\d+\.\d+)\.ttl",
@@ -76,7 +79,9 @@ def get_latest_ontology_ttl_file(directory: Path) -> Tuple[Optional[Path], Optio
     )
 
 
-def get_latest_vocabulary_ttl_file(directory: Path) -> Tuple[Optional[Path], Optional[version.Version]]:
+def get_latest_vocabulary_ttl_file(
+    directory: Path,
+) -> Tuple[Optional[Path], Optional[version.Version]]:
     return _find_latest_versioned_ttl(
         directory,
         filename_regex=r"health-ri-vocabulary-v(\d+\.\d+\.\d+)\.ttl",
@@ -87,6 +92,7 @@ def get_latest_vocabulary_ttl_file(directory: Path) -> Tuple[Optional[Path], Opt
 # ---------------------------
 # Orchestration
 # ---------------------------
+
 
 @dataclass(frozen=True)
 class SpecConfig:
@@ -128,7 +134,9 @@ def _orchestrate_one_spec(
 
     latest_ttl, latest_ver = cfg.ttl_finder(cfg.ttl_dir)
     if not latest_ttl or latest_ver is None:
-        logging.warning("No valid TTL files found for %s in: %s (skipping).", cfg.name, cfg.ttl_dir)
+        logging.warning(
+            "No valid TTL files found for %s in: %s (skipping).", cfg.name, cfg.ttl_dir
+        )
         return True
 
     ver_str = str(latest_ver)
@@ -199,7 +207,11 @@ def _orchestrate_one_spec(
     shutil.copyfile(cfg.docs_output, versioned_output)
     shutil.copyfile(cfg.docs_output, cfg.latest_output)
 
-    logging.info("%s specification generated and written to docs/latest/versioned for v%s.", cfg.name, ver_str)
+    logging.info(
+        "%s specification generated and written to docs/latest/versioned for v%s.",
+        cfg.name,
+        ver_str,
+    )
     return True
 
 
@@ -224,39 +236,65 @@ def main() -> int:
 
     ok = True
 
-    ok = _orchestrate_one_spec(
-        SpecConfig(
-            name="Ontology",
-            ttl_dir=base_dir / "ontologies" / "versioned",
-            ttl_finder=get_latest_ontology_ttl_file,
-            docs_output=base_dir / "docs" / "ontology" / "specification-ontology.html",
-            latest_output=base_dir / "ontologies" / "latest" / "documentations" / "specification.html",
-            versioned_output_dir=base_dir / "ontologies" / "versioned" / "documentations",
-            raw_output_dir=base_dir / "build" / "pylode" / "ontology",
-            postprocess_extra_args=[],
-        ),
-        generate_script=generate_script,
-        postprocess_script=postprocess_script,
-        pylode_cmd=pylode_cmd,
-    ) and ok
+    ok = (
+        _orchestrate_one_spec(
+            SpecConfig(
+                name="Ontology",
+                ttl_dir=base_dir / "ontologies" / "versioned",
+                ttl_finder=get_latest_ontology_ttl_file,
+                docs_output=base_dir
+                / "docs"
+                / "ontology"
+                / "specification-ontology.html",
+                latest_output=base_dir
+                / "ontologies"
+                / "latest"
+                / "documentations"
+                / "specification.html",
+                versioned_output_dir=base_dir
+                / "ontologies"
+                / "versioned"
+                / "documentations",
+                raw_output_dir=base_dir / "build" / "pylode" / "ontology",
+                postprocess_extra_args=[],
+            ),
+            generate_script=generate_script,
+            postprocess_script=postprocess_script,
+            pylode_cmd=pylode_cmd,
+        )
+        and ok
+    )
 
     # For the vocabulary spec, we keep legacy HTML tweaks but disable package-based Classes restructuring by default.
     # This avoids failures in cases where the vocabulary HTML has no #classes section.
-    ok = _orchestrate_one_spec(
-        SpecConfig(
-            name="Vocabulary",
-            ttl_dir=base_dir / "vocabulary" / "versioned",
-            ttl_finder=get_latest_vocabulary_ttl_file,
-            docs_output=base_dir / "docs" / "method" / "specification-vocabulary.html",
-            latest_output=base_dir / "vocabulary" / "latest" / "documentations" / "specification.html",
-            versioned_output_dir=base_dir / "vocabulary" / "versioned" / "documentations",
-            raw_output_dir=base_dir / "build" / "pylode" / "vocabulary",
-            postprocess_extra_args=["--no-classes-restructure"],
-        ),
-        generate_script=generate_script,
-        postprocess_script=postprocess_script,
-        pylode_cmd=pylode_cmd,
-    ) and ok
+    ok = (
+        _orchestrate_one_spec(
+            SpecConfig(
+                name="Vocabulary",
+                ttl_dir=base_dir / "vocabulary" / "versioned",
+                ttl_finder=get_latest_vocabulary_ttl_file,
+                docs_output=base_dir
+                / "docs"
+                / "method"
+                / "specification-vocabulary.html",
+                latest_output=base_dir
+                / "vocabulary"
+                / "latest"
+                / "documentations"
+                / "specification.html",
+                versioned_output_dir=base_dir
+                / "vocabulary"
+                / "versioned"
+                / "documentations",
+                raw_output_dir=base_dir / "build" / "pylode" / "vocabulary",
+                postprocess_extra_args=["--no-classes-restructure"],
+            ),
+            generate_script=generate_script,
+            postprocess_script=postprocess_script,
+            pylode_cmd=pylode_cmd,
+        )
+        and ok
+    )
 
     return 0 if ok else 1
 

@@ -172,7 +172,9 @@ def detect_header_and_rows(lines: List[str]) -> Tuple[List[str], List[str], List
 
             m = re.match(r"^\s*#\s?(.*)$", line.rstrip("\n"))
             if m:
-                comment_lines.append(m.group(1))  # preserve leading spaces inside the block
+                comment_lines.append(
+                    m.group(1)
+                )  # preserve leading spaces inside the block
             else:
                 comment_lines.append("")  # fallback, shouldn't happen
             continue
@@ -409,13 +411,19 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
     lines = read_lines(tsv_path)
     comment_lines, header_cols, data_rows = detect_header_and_rows(lines)
     prefix_map = parse_prefix_map_from_comments(comment_lines)
-    logger.debug("Parsed %d curie_map prefixes: %s", len(prefix_map), ", ".join(sorted(prefix_map.keys())))
+    logger.debug(
+        "Parsed %d curie_map prefixes: %s",
+        len(prefix_map),
+        ", ".join(sorted(prefix_map.keys())),
+    )
     metadata = parse_metadata_from_comments(comment_lines)
     if metadata:
         logger.debug("Metadata keys detected: %s", ", ".join(sorted(metadata.keys())))
     else:
         logger.info("No metadata keys detected in commented header.")
-    prefix_map.setdefault("hrim", "https://w3id.org/health-ri/semantic-interoperability/mappings#")
+    prefix_map.setdefault(
+        "hrim", "https://w3id.org/health-ri/semantic-interoperability/mappings#"
+    )
 
     # Ensure core prefixes used in output are available (prevents ns1/ns2 fallbacks)
 
@@ -466,7 +474,9 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
             continue
         # Create Mapping node
 
-        mapping_id = expand_curie_or_iri(to_hrim_curie(parts[col_idx["record_id"]].strip()), prefix_map)
+        mapping_id = expand_curie_or_iri(
+            to_hrim_curie(parts[col_idx["record_id"]].strip()), prefix_map
+        )
         g.add((mapping_id, RDF.type, expand_curie_or_iri("sssom:Mapping", prefix_map)))
 
         def add_literal(prop, val, lang=None, datatype=None):
@@ -476,9 +486,21 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
             if v == "":
                 return
             if datatype:
-                g.add((mapping_id, expand_curie_or_iri(prop, prefix_map), Literal(v, datatype=datatype)))
+                g.add(
+                    (
+                        mapping_id,
+                        expand_curie_or_iri(prop, prefix_map),
+                        Literal(v, datatype=datatype),
+                    )
+                )
             elif lang:
-                g.add((mapping_id, expand_curie_or_iri(prop, prefix_map), Literal(v, lang=lang)))
+                g.add(
+                    (
+                        mapping_id,
+                        expand_curie_or_iri(prop, prefix_map),
+                        Literal(v, lang=lang),
+                    )
+                )
             else:
                 g.add((mapping_id, expand_curie_or_iri(prop, prefix_map), Literal(v)))
 
@@ -488,7 +510,13 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
             v = val.strip()
             if v == "":
                 return
-            g.add((mapping_id, expand_curie_or_iri(prop, prefix_map), expand_curie_or_iri(v, prefix_map)))
+            g.add(
+                (
+                    mapping_id,
+                    expand_curie_or_iri(prop, prefix_map),
+                    expand_curie_or_iri(v, prefix_map),
+                )
+            )
 
         # Apply transformation rules
 
@@ -514,7 +542,11 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
         add_resource("owl:annotatedProperty", parts[col_idx["predicate_id"]].strip())
         add_literal(
             "sssom:predicate_modifier",
-            (parts[col_idx.get("predicate_modifier", -1)].strip() if col_idx.get("predicate_modifier") else ""),
+            (
+                parts[col_idx.get("predicate_modifier", -1)].strip()
+                if col_idx.get("predicate_modifier")
+                else ""
+            ),
         )
 
         add_resource("owl:annotatedTarget", parts[col_idx["object_id"]].strip())
@@ -528,38 +560,70 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
             add_literal("sssom:object_label", obj_label_val, lang=obj_label_lang)
         add_literal(
             "sssom:object_category",
-            (parts[col_idx.get("object_category", -1)].strip() if col_idx.get("object_category") else ""),
+            (
+                parts[col_idx.get("object_category", -1)].strip()
+                if col_idx.get("object_category")
+                else ""
+            ),
         )
         add_resource(
             "sssom:mapping_justification",
-            (parts[col_idx.get("mapping_justification", -1)].strip() if col_idx.get("mapping_justification") else ""),
+            (
+                parts[col_idx.get("mapping_justification", -1)].strip()
+                if col_idx.get("mapping_justification")
+                else ""
+            ),
         )
 
         add_resource(
             "pav:authoredBy",
-            (parts[col_idx.get("author_id", -1)].strip() if col_idx.get("author_id") else ""),
+            (
+                parts[col_idx.get("author_id", -1)].strip()
+                if col_idx.get("author_id")
+                else ""
+            ),
         )
         add_literal(
             "sssom:author_label",
-            (parts[col_idx.get("author_label", -1)].strip() if col_idx.get("author_label") else ""),
+            (
+                parts[col_idx.get("author_label", -1)].strip()
+                if col_idx.get("author_label")
+                else ""
+            ),
         )
 
         add_resource(
             "sssom:reviewer_id",
-            (parts[col_idx.get("reviewer_id", -1)].strip() if col_idx.get("reviewer_id") else ""),
+            (
+                parts[col_idx.get("reviewer_id", -1)].strip()
+                if col_idx.get("reviewer_id")
+                else ""
+            ),
         )
         add_literal(
             "sssom:reviewer_label",
-            (parts[col_idx.get("reviewer_label", -1)].strip() if col_idx.get("reviewer_label") else ""),
+            (
+                parts[col_idx.get("reviewer_label", -1)].strip()
+                if col_idx.get("reviewer_label")
+                else ""
+            ),
         )
 
         add_resource(
             "dcterms:creator",
-            (parts[col_idx.get("creator_id", -1)].strip() if col_idx.get("creator_id") else ""),
+            (
+                parts[col_idx.get("creator_id", -1)].strip()
+                if col_idx.get("creator_id")
+                else ""
+            ),
         )
         add_literal(
             "sssom:creator_label",
-            (parts[col_idx.get("creator_label", -1)].strip() if col_idx.get("creator_label") else ""),
+            (
+                parts[col_idx.get("creator_label", -1)].strip()
+                if col_idx.get("creator_label")
+                else ""
+            ),
         )
 
         add_resource(
@@ -567,34 +631,58 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
             parts[col_idx.get("license", -1)].strip() if col_idx.get("license") else "",
         )
 
-        raw_subj_type = parts[col_idx.get("subject_type", -1)].strip() if col_idx.get("subject_type") else ""
+        raw_subj_type = (
+            parts[col_idx.get("subject_type", -1)].strip()
+            if col_idx.get("subject_type")
+            else ""
+        )
         norm_subj_type = normalize_entity_type(raw_subj_type)
         add_resource("sssom:subject_type", norm_subj_type)
 
         add_resource(
             "sssom:subject_source",
-            (parts[col_idx.get("subject_source", -1)].strip() if col_idx.get("subject_source") else ""),
+            (
+                parts[col_idx.get("subject_source", -1)].strip()
+                if col_idx.get("subject_source")
+                else ""
+            ),
         )
 
         add_resource("sssom:object_source", "hrio:")
 
         add_literal(
             "sssom:subject_source_version",
-            (parts[col_idx.get("subject_source_version", -1)].strip() if col_idx.get("subject_source_version") else ""),
+            (
+                parts[col_idx.get("subject_source_version", -1)].strip()
+                if col_idx.get("subject_source_version")
+                else ""
+            ),
         )
         add_literal(
             "sssom:object_source_version",
-            (parts[col_idx.get("object_source_version", -1)].strip() if col_idx.get("object_source_version") else ""),
+            (
+                parts[col_idx.get("object_source_version", -1)].strip()
+                if col_idx.get("object_source_version")
+                else ""
+            ),
         )
 
         add_literal(
             "pav:authoredOn",
-            (parts[col_idx.get("mapping_date", -1)].strip() if col_idx.get("mapping_date") else ""),
+            (
+                parts[col_idx.get("mapping_date", -1)].strip()
+                if col_idx.get("mapping_date")
+                else ""
+            ),
             datatype=XSD.date,
         )
         add_literal(
             "dcterms:issued",
-            (parts[col_idx.get("publication_date", -1)].strip() if col_idx.get("publication_date") else ""),
+            (
+                parts[col_idx.get("publication_date", -1)].strip()
+                if col_idx.get("publication_date")
+                else ""
+            ),
             datatype=XSD.date,
         )
 
@@ -605,7 +693,11 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
         )
         add_literal(
             "dcat:replaces",
-            (parts[col_idx.get("replaces", -1)].strip() if col_idx.get("replaces") else ""),
+            (
+                parts[col_idx.get("replaces", -1)].strip()
+                if col_idx.get("replaces")
+                else ""
+            ),
         )
 
         if record_id_col is not None:
@@ -619,8 +711,12 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
 
     # Add the MappingSet declaration ONCE, after collecting all record_ids
 
-    mapping_set_uri = URIRef("https://w3id.org/health-ri/semantic-interoperability/mappings#")
-    g.add((mapping_set_uri, RDF.type, expand_curie_or_iri("sssom:MappingSet", prefix_map)))
+    mapping_set_uri = URIRef(
+        "https://w3id.org/health-ri/semantic-interoperability/mappings#"
+    )
+    g.add(
+        (mapping_set_uri, RDF.type, expand_curie_or_iri("sssom:MappingSet", prefix_map))
+    )
 
     # Link to all mappings via their record_id
 
@@ -634,7 +730,9 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
         )
     # license -> dcterms:license (typed anyURI); fallback if not provided in metadata
 
-    licenses = metadata.get("license", []) or ["https://creativecommons.org/licenses/by/4.0/"]
+    licenses = metadata.get("license", []) or [
+        "https://creativecommons.org/licenses/by/4.0/"
+    ]
     for v in licenses:
         g.add(
             (
@@ -661,7 +759,11 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
     # see_also -> rdfs:seeAlso (treat as IRI/CURIE when possible, else literal)
 
     for v in metadata.get("see_also", []):
-        obj = expand_curie_or_iri(v, prefix_map) if re.match(r"^\w+:", v) or v.startswith("http") else Literal(v)
+        obj = (
+            expand_curie_or_iri(v, prefix_map)
+            if re.match(r"^\w+:", v) or v.startswith("http")
+            else Literal(v)
+        )
         g.add((mapping_set_uri, RDFS.seeAlso, obj))
     # publication_date -> dcterms:issued (xsd:date if YYYY-MM-DD)
 
@@ -744,7 +846,9 @@ def convert_tsv_to_ttl(tsv_path: Path, out_path: Path) -> int:
 
     # Strip ANY @prefix lines RDFLib may have emitted (handles leading spaces too)
 
-    body_no_prefix = "\n".join(line for line in ttl_graph.splitlines() if not re.match(r"^\s*@prefix\s", line))
+    body_no_prefix = "\n".join(
+        line for line in ttl_graph.splitlines() if not re.match(r"^\s*@prefix\s", line)
+    )
 
     # Write: only our curie_map prefixes + cleaned body (no duplicates)
 

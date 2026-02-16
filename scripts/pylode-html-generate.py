@@ -26,9 +26,13 @@ def main() -> int:
     logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 
     ap = argparse.ArgumentParser()
-    ap.add_argument("--ttl", required=True, type=Path, help="Input TTL file to feed PyLODE.")
+    ap.add_argument(
+        "--ttl", required=True, type=Path, help="Input TTL file to feed PyLODE."
+    )
     ap.add_argument("--out", required=True, type=Path, help="Output HTML path.")
-    ap.add_argument("--pylode-cmd", default="pylode", help="PyLODE command (default: pylode).")
+    ap.add_argument(
+        "--pylode-cmd", default="pylode", help="PyLODE command (default: pylode)."
+    )
     ap.add_argument(
         "--overwrite",
         action="store_true",

@@ -52,7 +52,9 @@ def main() -> int:
         default=str(repo_root / "ontologies" / "versioned"),
         help="Directory containing versioned TTLs (default: ontologies/versioned)",
     )
-    p.add_argument("--dry-run", action="store_true", help="Print what would run and exit")
+    p.add_argument(
+        "--dry-run", action="store_true", help="Print what would run and exit"
+    )
 
     args = p.parse_args()
 
@@ -65,7 +67,9 @@ def main() -> int:
     elif (args.old is None) and (args.new is None):
         old_path, new_path = pick_last_two_versioned_ttls(version_dir)
     else:
-        raise SystemExit("Provide either BOTH OLD and NEW paths, or provide none (to auto-pick).")
+        raise SystemExit(
+            "Provide either BOTH OLD and NEW paths, or provide none (to auto-pick)."
+        )
 
     post_script = script_dir / "owl-postprocess.py"
     insert_script = script_dir / "insert-metadata.py"

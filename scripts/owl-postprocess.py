@@ -128,7 +128,9 @@ def _find_base_dir(start: Path) -> Path:
         candidate = parent / VERSIONED_REL
         if candidate.is_dir():
             return parent
-    raise FileNotFoundError(f"Could not locate '{VERSIONED_REL.as_posix()}' by walking up from {start}")
+    raise FileNotFoundError(
+        f"Could not locate '{VERSIONED_REL.as_posix()}' by walking up from {start}"
+    )
 
 
 def _guard_file_size(path: Path, max_bytes: int) -> None:
@@ -137,7 +139,9 @@ def _guard_file_size(path: Path, max_bytes: int) -> None:
     except OSError as e:
         raise OSError(f"Could not stat file: {path}") from e
     if size > max_bytes:
-        raise ValueError(f"Refusing to read {path} ({size} bytes) > limit {max_bytes} bytes")
+        raise ValueError(
+            f"Refusing to read {path} ({size} bytes) > limit {max_bytes} bytes"
+        )
 
 
 def _decode_json_bytes(raw: bytes) -> str:
@@ -286,7 +290,11 @@ def _extract_packages_and_classes(
 
         pa = pkg.get("propertyAssignments")
         stage_here: Optional[str] = None
-        if isinstance(pa, dict) and isinstance(pa.get("stage"), str) and pa["stage"].strip():
+        if (
+            isinstance(pa, dict)
+            and isinstance(pa.get("stage"), str)
+            and pa["stage"].strip()
+        ):
             stage_here = pa["stage"].strip()
 
         stage_effective = stage_here or inherited_stage
@@ -349,7 +357,9 @@ def _find_latest_versioned_pair(versioned_dir: Path) -> VersionedPair:
 
     common = sorted(set(ttl_by_ver.keys()) & set(json_by_ver.keys()))
     if not common:
-        raise FileNotFoundError(f"No matching TTL+JSON versioned pairs found in {versioned_dir}")
+        raise FileNotFoundError(
+            f"No matching TTL+JSON versioned pairs found in {versioned_dir}"
+        )
 
     latest = common[-1]
     return VersionedPair(ver=latest, ttl=ttl_by_ver[latest], js=json_by_ver[latest])
@@ -383,7 +393,11 @@ def _mirror_rdfs_label_to_skos_preflabel(g: Graph) -> Tuple[int, int]:
             continue
 
         lang = o.language
-        existing_same_lang = [x for x in g.objects(s, SKOS.prefLabel) if isinstance(x, Literal) and x.language == lang]
+        existing_same_lang = [
+            x
+            for x in g.objects(s, SKOS.prefLabel)
+            if isinstance(x, Literal) and x.language == lang
+        ]
 
         if any(x == o for x in existing_same_lang):
             continue
@@ -472,10 +486,16 @@ def _ensure_package_resources(
         if not has_any_label:
             # If a prefLabel exists, mirror it to rdfs:label first (then later we mirror back)
             existing_pref = next(
-                (x for x in g.objects(pkg_iri, SKOS.prefLabel) if isinstance(x, Literal)),
+                (
+                    x
+                    for x in g.objects(pkg_iri, SKOS.prefLabel)
+                    if isinstance(x, Literal)
+                ),
                 None,
             )
-            if isinstance(existing_pref, Literal) and isinstance(existing_pref.value, str):
+            if isinstance(existing_pref, Literal) and isinstance(
+                existing_pref.value, str
+            ):
                 g.add((pkg_iri, RDFS.label, existing_pref))
                 created_from_existing_pref += 1
                 continue
@@ -553,7 +573,9 @@ def postprocess_ontology(
         if len(hits) != 1:
             unmapped_synonyms += 1
 
-            conflict_type = "missing_label_match" if not hits else "ambiguous_label_match"
+            conflict_type = (
+                "missing_label_match" if not hits else "ambiguous_label_match"
+            )
             cand_subjects = ";".join(str(s) for s, _ in hits)
             cand_labels = ";".join(_fmt_lit(label_lit) for _, label_lit in hits)
 
@@ -576,7 +598,11 @@ def postprocess_ontology(
         subj, label_lit = hits[0]
         lang = label_lit.language
 
-        pref_lex = {str(x) for x in g.objects(subj, SKOS.prefLabel) if isinstance(x, Literal) and x.language == lang}
+        pref_lex = {
+            str(x)
+            for x in g.objects(subj, SKOS.prefLabel)
+            if isinstance(x, Literal) and x.language == lang
+        }
 
         for alt in _split_synonyms(syn_str):
             if alt in pref_lex:
@@ -595,7 +621,9 @@ def postprocess_ontology(
     removed_legacy_pkg_subject_triples = 0
     if MIGRATE_PERCENT_ENCODED_PACKAGE_IRIS:
         legacy_subjects = {
-            s for s in set(g.subjects()) if isinstance(s, URIRef) and _is_legacy_percent_encoded_package_iri(s)
+            s
+            for s in set(g.subjects())
+            if isinstance(s, URIRef) and _is_legacy_percent_encoded_package_iri(s)
         }
         for s in legacy_subjects:
             triples = list(g.triples((s, None, None)))
@@ -617,7 +645,9 @@ def postprocess_ontology(
         if len(hits) != 1:
             unmapped_classes += 1
 
-            conflict_type = "missing_label_match" if not hits else "ambiguous_label_match"
+            conflict_type = (
+                "missing_label_match" if not hits else "ambiguous_label_match"
+            )
             cand_subjects = ";".join(str(s) for s, _ in hits)
             cand_labels = ";".join(_fmt_lit(label_lit) for _, label_lit in hits)
 
@@ -644,7 +674,8 @@ def postprocess_ontology(
             legacy = [
                 (subj, DCTERMS.isPartOf, obj)
                 for obj in g.objects(subj, DCTERMS.isPartOf)
-                if isinstance(obj, URIRef) and _is_legacy_percent_encoded_package_iri(obj)
+                if isinstance(obj, URIRef)
+                and _is_legacy_percent_encoded_package_iri(obj)
             ]
             for t in legacy:
                 g.remove(t)
@@ -654,7 +685,9 @@ def postprocess_ontology(
             stale = [
                 (subj, DCTERMS.isPartOf, obj)
                 for obj in g.objects(subj, DCTERMS.isPartOf)
-                if isinstance(obj, URIRef) and str(obj).startswith(f"{HRIO_NS_STR}package/") and obj != pkg_iri
+                if isinstance(obj, URIRef)
+                and str(obj).startswith(f"{HRIO_NS_STR}package/")
+                and obj != pkg_iri
             ]
             for t in stale:
                 g.remove(t)
@@ -791,7 +824,10 @@ def main() -> int:
             logging.info(f"{k}: {stats[k]}")
 
         # Warnings / strict checks
-        if stats["skos_prefLabel_conflicts_pass1"] or stats["skos_prefLabel_conflicts_pass2"]:
+        if (
+            stats["skos_prefLabel_conflicts_pass1"]
+            or stats["skos_prefLabel_conflicts_pass2"]
+        ):
             logging.warning(
                 "Some rdfs:label -> skos:prefLabel mirrors were skipped due to existing "
                 "prefLabel(s) in the same language."
