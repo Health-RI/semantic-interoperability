@@ -1,14 +1,34 @@
 name: Deploy MkDocs site to GitHub Pages
 
-# Run for:
-# - pushes to main (build, then commit generated files and deploy)
-# - pull requests into main (build and validate only; no commits/deploys)
+# Runs for:
+# - pushes to main: build -> commit generated files -> deploy
+# - PRs into main: build/validate only (no commits, no deploy)
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
     types: [opened, synchronize, reopened]
+
+# --------------------------------------------------------------------------------------
+# Default shell behavior for ALL `run:` steps (both jobs)
+#
+# Why this:
+# - GitHub's built-in `bash` already uses: `bash --noprofile --norc -eo pipefail {0}`
+#   which is effectively "fail fast" for bash scripts.
+# - We add `-u` for extra safety: referencing unset variables becomes an error.
+# - `--noprofile --norc` prevents unexpected user-profile side effects.
+# - `pipefail` ensures a failing command inside a pipeline fails the step.
+# --------------------------------------------------------------------------------------
+defaults:
+  run:
+    shell: bash --noprofile --norc -euo pipefail {0}
+
+# Prevent overlapping runs on the same ref from stepping on each other (e.g., deploy pushes).
+# If you push multiple commits quickly, older runs for the same branch are canceled.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 # Default least-privilege; PRs only need read
 permissions:
@@ -51,13 +71,13 @@ jobs:
       - name: Move newest files from versioned to latest
         run: python scripts/move-latest.py
 
-      # --- Copy ontology changelog into docs so it appears on site ---
+      # --- Copy ontology changelog into docs so it appears on the MkDocs site ---
       - name: Copy ontology changelog into docs
         run: |
           mkdir -p docs/deliverables
           cp ontologies/changelog-ontology.md docs/deliverables/changelog-ontology.md
 
-      # --- Ensure no stale PyLODE HTML remains ---
+      # --- Ensure no stale PyLODE HTML / docs remain (forces regeneration) ---
       - name: Forces clean sync
         run: |
           rm -f docs/deliverables/specification-ontology.html
@@ -65,10 +85,14 @@ jobs:
           rm -f docs/deliverables/documentation.md
 
       # --- Refresh images in docs from latest ontology assets ---
+      # Robust variant:
+      # - avoids glob failures when folders are empty or missing
+      # - ensures destination exists before copy
       - name: Replace ontology images in docs with latest
         run: |
-          rm -rf docs/deliverables/assets/images/*
-          cp -r ontologies/latest/images/* docs/deliverables/assets/images/
+          rm -rf docs/deliverables/assets/images
+          mkdir -p docs/deliverables/assets/images
+          cp -r ontologies/latest/images/. docs/deliverables/assets/images/
 
       # --- Generate OntoUML documentation (custom script) ---
       - name: Generate OntoUML documentation
@@ -116,6 +140,7 @@ jobs:
           retention-days: 7
 
       # --- Upload generated content that should be committed on main ---
+      # This keeps the repo’s generated artifacts (ontologies, vocabulary, mappings, specs) up-to-date.
       - name: Upload generated content artifact (to commit on main)
         uses: actions/upload-artifact@v6
         with:
@@ -144,7 +169,7 @@ jobs:
       contents: write
 
     steps:
-      # --- Checkout latest main so we can commit generated files ---
+      # --- Checkout the exact commit that triggered this workflow run ---
       - name: Checkout repository
         uses: actions/checkout@v6
 
@@ -167,15 +192,21 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           shopt -s globstar
+
           git add ontologies/versioned/** ontologies/latest/** || true
           git add vocabulary/versioned/** vocabulary/latest/** || true
           git add mappings/** || true
           git add docs/deliverables/assets/health-ri-mappings.tsv || true
           git add docs/deliverables/specification-ontology.html || true
           git add docs/method/specification-vocabulary.html || true
+
+          # If nothing is staged, do nothing; otherwise commit + push.
           git diff --cached --quiet || git commit -m "docs: update generated documentation and specifications"
-          git push origin main
+
+          # Future-proof: push back to the branch that triggered the run (here: main).
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 
       # --- Publish the built site to GitHub Pages from ./site ---
       - name: Deploy to GitHub Pages
