@@ -129,7 +129,7 @@ jobs:
         run: |
           linkchecker ./site \
             --no-status \
-            --ignore-url="site/deliverables/n[0-9a-f]{32,}"
+            --ignore-url="n[0-9a-f]{32,}"
 
       # --- Upload built site as artifact for deploy job ---
       - name: Upload built site artifact

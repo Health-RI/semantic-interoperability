@@ -244,7 +244,7 @@ def main() -> int:
                 ttl_finder=get_latest_ontology_ttl_file,
                 docs_output=base_dir
                 / "docs"
-                / "ontology"
+                / "deliverables"
                 / "specification-ontology.html",
                 latest_output=base_dir
                 / "ontologies"
