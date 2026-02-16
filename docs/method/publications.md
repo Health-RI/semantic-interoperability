@@ -110,7 +110,7 @@ Published mappings are **append-only**: existing rows are not deleted. To correc
     - `https://w3id.org/health-ri/semantic-interoperability/mappings/tsv` — **TSV** version
 
 !!! tip
-    A human-readable version of the mappings [can be accessed in this link](https://health-ri.github.io/semantic-interoperability/ontology/mappings/).
+    A human-readable version of the mappings [can be accessed in this link](https://health-ri.github.io/semantic-interoperability/deliverables/mappings/).
 
 !!! note
     Both serializations of the SSSOM Mapping Set — **TSV** and **TTL** — are stored in the `/mappings` folder of this repository.
