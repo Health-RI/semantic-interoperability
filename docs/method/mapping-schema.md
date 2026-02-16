@@ -5,17 +5,19 @@ One of the key deliverables of the Health-RI Semantic Interoperability Initiativ
 This page documents the mappings curated and published by Health-RI. Partners may also embed mappings directly into their own ontologies, as explained in the [Mapping Strategy](./mapping-strategy.md).
 
 !!! tip "Want to browse the mappings?"
+
     For an interactive view of the **already created** mappings, see **[Mappings](../deliverables/mappings.md)**.
 
 ## Permanent URIs
 
-We offer several stable and accessible URIs for accessing the mapping set in different formats, supporting long-term findability and reuse in FAIR-aligned infrastructures [1], [18]:
+We offer several stable and accessible URIs for accessing the mapping set in different formats, supporting long-term findability and reuse in FAIR-aligned infrastructures [1], \[18\]:
 
 - `https://w3id.org/health-ri/semantic-interoperability/mappings` — Redirects to the TTL version of the SSSOM mappings.
 - `https://w3id.org/health-ri/semantic-interoperability/mappings/ttl` — Redirects to the TTL version of the SSSOM mappings.
 - `https://w3id.org/health-ri/semantic-interoperability/mappings/tsv` — Redirects to the TSV version of the SSSOM mappings.
 
 !!! tip "What are Permanent (Persistent) URIs?"
+
     See [W3C Cool URIs don't change](https://www.w3.org/Provider/Style/URI) for the design principles behind stable, resolvable identifiers, and the [w3id community service](https://w3id.org/) for implementing them in practice.
 
 ## Versioning Strategy
@@ -25,11 +27,13 @@ As per the authoritative policy in the [Mapping Governance page's Versioning and
 For lifecycle states, approvals, and publication policy, see the [Governance, Lifecycle, and Validation of the Health-RI SSSOM Mapping Set](./mapping-governance.md) page.
 
 !!! tip "Why append-only?"
+
     An append-only approach (immutable log) preserves a complete audit trail, makes releases reproducible, and avoids ambiguity about which version of a mapping was used.
 
 ## SSSOM File Schema
 
 !!! tip "Need help turning a local term into a valid SSSOM row?"
+
     Use the **HRIO Mapping Assistant** to draft a mapping from a data-model concept (field/code/class) to an HRIO target:
 
     - It proposes HRIO candidate labels, a single HRIV `predicate_id`, confidence, and evidence snippets.
@@ -44,9 +48,11 @@ For lifecycle states, approvals, and publication policy, see the [Governance, Li
 SSSOM-based mapping sets have been used to operationalize semantic traceability by enabling meaning-level correspondences across heterogeneous standards while preserving separations between concepts and representations [29].
 
 !!! note "Language tags for labels"
+
     The `subject_label` and `object_label` fields **must** be language-tagged (RDF langstrings), e.g., `Patient@en`, `Patiënt@nl`.
 
 !!! info "What is a language-tagged string?"
+
     In RDF, a *language-tagged string* is a literal paired with a BCP 47 language tag (e.g., `Patient@en`, `Patiënt@nl`). See: [W3C RDF Schema 1.1 (`rdf:langString`)](https://www.w3.org/TR/rdf-schema/) and [RFC 5646 (BCP 47 tags)](https://datatracker.ietf.org/doc/html/rfc5646).
 
 Below is the schema for the SSSOM TSV file, with each field's link to the specification, expected datatype, cardinality, mandatory status, a concise description, and an illustrative example:
@@ -62,10 +68,10 @@ Below is the schema for the SSSOM TSV file, with each field's link to the specif
 | [object_label](https://mapping-commons.github.io/sssom/object_label/)                        | String                | 0..1        | No        | Language-tagged label of the object entity                                       | `Person@en`                                            | Contributor              |
 | [object_category](https://mapping-commons.github.io/sssom/object_category/)                  | String                | 0..1        | No        | OntoUML stereotype of the object                                                 | `Kind`                                                 | Contributor              |
 | [mapping_justification](https://mapping-commons.github.io/sssom/mapping_justification/)      | EntityReference       | 1           | Yes       | Method or rationale for creating a mapping[^mapping_justification]               | `semapv:ManualMappingCuration`                         | Contributor (or Default) |
-| [author_id](https://mapping-commons.github.io/sssom/author_id/)                              | EntityReference(s)    | 1..*        | Yes       | Identifier(s) of who created the mapping                                         | `orcid:0000-0003-2736-7817`                            | Contributor              |
-| [author_label](https://mapping-commons.github.io/sssom/author_label/)                        | String(s)             | 0..*        | No        | Name(s) of the mapping author(s)                                                 | `Pedro P. F. Barcelos`                                 | Contributor              |
-| [reviewer_id](https://mapping-commons.github.io/sssom/reviewer_id/)                          | EntityReference(s)    | 1..*        | Yes       | Identifier(s) of mapping reviewer(s) (at least one required)                     | `orcid:0000-0001-2345-6789`                            | Contributor              |
-| [reviewer_label](https://mapping-commons.github.io/sssom/reviewer_label/)                    | String(s)             | 0..*        | No        | Name(s) of the mapping reviewer(s)                                               | `Jane Doe`                                             | Contributor              |
+| [author_id](https://mapping-commons.github.io/sssom/author_id/)                              | EntityReference(s)    | 1..\*       | Yes       | Identifier(s) of who created the mapping                                         | `orcid:0000-0003-2736-7817`                            | Contributor              |
+| [author_label](https://mapping-commons.github.io/sssom/author_label/)                        | String(s)             | 0..\*       | No        | Name(s) of the mapping author(s)                                                 | `Pedro P. F. Barcelos`                                 | Contributor              |
+| [reviewer_id](https://mapping-commons.github.io/sssom/reviewer_id/)                          | EntityReference(s)    | 1..\*       | Yes       | Identifier(s) of mapping reviewer(s) (at least one required)                     | `orcid:0000-0001-2345-6789`                            | Contributor              |
+| [reviewer_label](https://mapping-commons.github.io/sssom/reviewer_label/)                    | String(s)             | 0..\*       | No        | Name(s) of the mapping reviewer(s)                                               | `Jane Doe`                                             | Contributor              |
 | [creator_id](https://mapping-commons.github.io/sssom/creator_id/)                            | EntityReference       | 1           | Yes       | Agent responsible for publishing the mapping                                     | `https://w3id.org/health-ri/semantic-interoperability` | System (Fixed)           |
 | [creator_label](https://mapping-commons.github.io/sssom/creator_label/)                      | String                | 1           | Yes       | Name of the publishing agent                                                     | `Health-RI Semantic Interoperability Initiative`       | System (Fixed)           |
 | [license](https://mapping-commons.github.io/sssom/license/)                                  | NonRelativeURI        | 1           | Yes       | License governing mapping use                                                    | `https://creativecommons.org/licenses/by/4.0/`         | Contributor (or Default) |
@@ -76,24 +82,30 @@ Below is the schema for the SSSOM TSV file, with each field's link to the specif
 | [mapping_date](https://mapping-commons.github.io/sssom/mapping_date/)                        | Date                  | 1           | Yes       | Date when mapping was created (format: YYYY-MM-DD)                               | `2025-07-02`                                           | Contributor              |
 | [publication_date](https://mapping-commons.github.io/sssom/publication_date/)                | Date                  | 1           | Yes       | Date when mapping was published (format: YYYY-MM-DD)                             | `2025-07-30`                                           | System (Generated)       |
 | [comment](https://mapping-commons.github.io/sssom/comment/)                                  | String                | 0..1        | No        | Free-text notes about the mapping                                                | `Reviewed for consistency with ontology v0.9.1.`       | Contributor              |
-| [replaces](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/replaces/) | EntityReference(s)    | 0..*        | No        | Indicates that this mapping record replaces another                              | `hrim:1c56bebe`                                        | Contributor              |
+| [replaces](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/replaces/) | EntityReference(s)    | 0..\*       | No        | Indicates that this mapping record replaces another                              | `hrim:1c56bebe`                                        | Contributor              |
 
 !!! note "Identity distinctness (two-person rule)"
+
     For every row, the set of `author_id` values **must be disjoint** from the set of `reviewer_id` values. This is validated at publication time (see the [Mappings Governance](./mapping-governance.md) page).
 
 !!! note "Uniqueness of `hriv:hasExactMeaning` (current rows)"
+
     For any given `subject_id`, there may be **at most one** *current* row with `predicate_id = hriv:hasExactMeaning` (i.e., not superseded via `replaces`, and with no `predicate_modifier = Not`). Rationale: Strategy requires a single exact meaning per concept; "current" follows the append-only supersession model. See the [Mappings Governance](./mapping-governance.md) page for the publication-time check.
 
 !!! note "Responsible initiative (publisher)"
+
     The mapping-set's `creator_id` and `creator_label` identify the initiative responsible for making the resource available (i.e., the Health-RI Semantic Interoperability Initiative). SSSOM defines no per-row "curator" slot. The curator's approval is recorded in the publication workflow.
 
 !!! note "If you negate a predicate"
+
     When `predicate_modifier` is set to `Not`, include a brief rationale in `comment` explaining **why** the negation applies. See the [Mapping Governance page's Justification and Evidence section](./mapping-governance.md#justification-and-evidence) for the policy.
 
 !!! warning "HRIV predicates are not OWL equivalence/subsumption"
+
     `hriv:hasExactMeaning`, `hriv:hasBroaderMeaningThan`, and `hriv:hasNarrowerMeaningThan` express **meaning-level** links for traceability and reuse. They must not be interpreted as OWL class axioms (e.g., `owl:equivalentClass`, `rdfs:subClassOf`) or as evidence of class identity across standards. [22], [19]
 
 !!! tip "Record versions precisely for reproducibility"
+
     When available, always provide an exact source release identifier in `subject_source_version` and `object_source_version` (not just a major family like "R4"). This makes it clear which standard/ontology release your mapping was evaluated against. [8], [9], [11]
 
 ### Responsibility Legend
@@ -130,6 +142,7 @@ Some fields in the schema have predefined default values automatically assigned 
 - **mapping_date** - Defaults to the date the contribution was received via GitHub issue.
 
 !!! note "Defaults are resolved to concrete values"
+
     Defaults such as `object_source_version` and `mapping_date` are resolved to specific values at curation time and stored in the record.
     They are not interpreted as "floating latest" values.
 
@@ -151,6 +164,7 @@ Download the **[XLSX template](https://raw.githubusercontent.com/Health-RI/seman
 Attach the completed file to a new GitHub issue; we will review it and add the mappings to the official set.
 
 !!! note "CURIE prefixes must be declared consistently"
+
     If you introduce any new CURIE prefix, declare it in the prefix sheet (XLSX) or the submission so that others can resolve it. Use official namespace URIs and stable community identifiers whenever possible.
 
 In the template, field headers are color-coded as follows:
@@ -165,6 +179,7 @@ Both methods ensure your contribution is reviewed and incorporated into the offi
 ### Submission checklist for contributors
 
 !!! tip "Quick check: are your URIs valid?"
+
     Before submitting, verify that all HTTP URIs resolve and are well-formed. A simple online check: <https://0mg.github.io/tools/uri/>
 
 Before submitting, please verify the following to ensure your contribution is complete and compliant with the schema:
@@ -194,8 +209,13 @@ Before submitting, please verify the following to ensure your contribution is co
 [30] Barcelos, P. P. F., van Ulzen, N., Groeneveld, R., Konrad, A., Khalid, Q., Zhang, S., Trompert, A., & Vos, J. (n.d.). *Enabling Semantic Traceability in Health Data: The Health-RI Semantic Interoperability Initiative* (manuscript approved at SWAT4HCLS 2026, v1.1.1). [Download link.](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf).
 
 <!-- Footnotes -->
+
 [^hrim]: `hrim` is the prefix for <https://w3id.org/health-ri/semantic-interoperability/mappings#>
+
 [^predicate_id_allowed]: Allowed values: `hriv:hasExactMeaning`, `hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`.
+
 [^predicate_modifier]: May either be set to `Not` (its only valid value) or left empty. It is used specifically to express a negated mapping predicate.
+
 [^mapping_justification]: Currently, the only acceptable value for `mapping_justification` is `semapv:ManualMappingCuration`, or a comparable alternative subject to curator evaluation. This constraint is essential for maintaining the necessary semantic alignment.
+
 [^curie]: W3C CURIE Syntax 1.0 (compact URIs): <https://www.w3.org/TR/curie/>

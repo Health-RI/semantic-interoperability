@@ -23,6 +23,7 @@ This policy defines how the Health-RI SSSOM Mapping Set is governed, validated, 
 At the current maturity level, mapping work may begin once the relevant HRIO package reaches `irv` (internal review). Our target policy is to allow mappings only after the package is in `pub` (published). Stage definitions are described in the [Ontology Lifecycle and Validation Policy](./ontology-validation.md).
 
 !!! info "Mapping stability depends on HRIO maturity"
+
     If the target HRIO package is still in internal review, mappings may need revision after publication. Prefer mapping against `pub` packages when possible, and expect supersession when meanings evolve.
 
 ### In Scope
@@ -44,8 +45,8 @@ At the current maturity level, mapping work may begin once the relevant HRIO pac
 
 - Every published record:
     - Has independent approvals by Reviewer and Curator.
-      - The Reviewer approval is recorded per row in SSSOM via reviewer_id.
-      - The Curator approval is recorded in the repository publication workflow (in git logs); SSSOM does not define a per-row curator slot.
+        - The Reviewer approval is recorded per row in SSSOM via reviewer_id.
+        - The Curator approval is recorded in the repository publication workflow (in git logs); SSSOM does not define a per-row curator slot.
     - Appears in a dated release (`YYYY-MM-DD`), with release notes summarizing additions, changes, and supersessions.
     - Is reachable via stable w3id URIs and traceable via `record_id` and the `replaces` chain (as defined and linked on the [Mapping Set](./mapping-schema.md) page).
 - Historical states are discoverable within the single canonical, append-only artifact via dated entries (see [Versioning and Change Control](#versioning-and-change-control)).
@@ -53,6 +54,7 @@ At the current maturity level, mapping work may begin once the relevant HRIO pac
 ## Roles and Responsibilities
 
 - **Mapper**
+
     - Acts as the primary owner and creator of the mapping record.
     - Analyzes the source standard concept and the target Health-RI Ontology (HRIO) concept in context (definitions, scope notes, relations, etc.), evaluates semantic fit, and selects the appropriate HRIV predicate and, where applicable, a modifier.
     - Drafts mapping records with clear comments/rationale for non-obvious choices so mappings are understandable to users.
@@ -60,25 +62,30 @@ At the current maturity level, mapping work may begin once the relevant HRIO pac
     - Implements modifications requested by the Reviewer and Curator and resubmits until approval.
 
 - **Reviewer**
+
     - A domain expert or mapper, independent from the author.
     - Acknowledges submission, evaluates semantic and syntactical correctness, and either approves for curation or requests changes back to the Mapper.
     - Records rationale when non-obvious or when using any negation (`predicate_modifier = Not`).
 
 - **Curator**
+
     - Performs curation (including format/schema checks, CURIE/URI hygiene, and supersession integrity); may perform minor syntactic fixes when appropriate.
     - Optionally serves as a secondary semantic reviewer when needed.
     - Decides on approval for publication or requests fixes back to the Mapper.
     - Publishes approved mappings.
 
 - **Separation of duties**
+
     - The author and reviewer must be different people (two-person rule).
     - Publication requires independent human approvals by the Reviewer and Curator.
 
 !!! warning "Two-person rule is mandatory"
+
     The author of a mapping cannot also act as Reviewer or Curator for that same record.
     If staffing is limited, reschedule publication rather than collapsing roles.
 
 !!! note "Curator Approval: Workflow, Not Per-Row"
+
     Curator approval is captured as workflow evidence (in git logs), not as a per-row SSSOM field. Per-row approval in SSSOM is recorded via `reviewer_id`.
 
 ## Lifecycle States and Promotion Gates
@@ -86,12 +93,14 @@ At the current maturity level, mapping work may begin once the relevant HRIO pac
 The lifecycle follows the flow below.
 
 !!! info "Promotion gates at a glance"
+
     - Draft → Review: All mandatory fields present; rationale captured for non-obvious choices.
     - Review → Curation: Independent Reviewer confirms semantic fit and predicate choice.
     - Curation → Published: Curator confirms schema, CURIE/URI hygiene, and supersession integrity.
     - Published → Superseded: New record must reference the prior via `replaces` (append-only).
 
 !!! note "Timeboxes (SLA) summary"
+
     - **Reviewer:** Concludes within **one sprint** from receipt; extendable to **two sprints** with documented justification.
     - **Curator:** Provides an outcome (**return to Mapper** or **publish**) within **one sprint** from receipt.
     - **External submission:** Initiate community submission within **one sprint** of publication.
@@ -153,13 +162,15 @@ flowchart LR
     - Reviewer acknowledges intake, evaluates meaning and scope.
     - **Timeline:** Within **one sprint** from receipt of the mapping from the Mapper, the Reviewer concludes the review; this may be extended to **two sprints** with documented justification.
     - Decision (Approve?)
-      - Yes → Curation
-      - Request changes → back to Draft
+        - Yes → Curation
+        - Request changes → back to Draft
 
     !!! note "Extensions"
+
         Extensions to two sprints are possible when justified.
 
-   !!! success "Reviewer quick-check"
+    !!! success "Reviewer quick-check"
+
     - [ ] Predicate choice justified on the concepts' semantics, not label similarity
     - [ ] Rationale present for contentious cases or any `predicate_modifier = Not`
     - [ ] Mandatory fields complete per the [Mapping Set](./mapping-schema.md) page
@@ -169,10 +180,11 @@ flowchart LR
     - Curator checks field completeness per the [Mapping Set](./mapping-schema.md) page, CURIE/URI hygiene, and supersession integrity; applies minor syntactic fixes if safe.
     - **Timeline:** Within **one sprint** from receipt, the Curator analyzes the mapping and provides an outcome (**return to Mapper** or **publish**).
     - Decision (Approve?)
-      - Yes → Published
-      - Request fixes → back to Draft
+        - Yes → Published
+        - Request fixes → back to Draft
 
     !!! success "Curator quick-check"
+
         - [ ] Required columns
         - [ ] Allowed HRIV predicates and valid (optional) `predicate_modifier`
         - [ ] CURIE/URI hygiene (resolves with 2xx/3xx where applicable)
@@ -190,6 +202,7 @@ flowchart LR
     - When Replaced? is Yes, a newer record references the prior via `replaces`. Append-only: older records remain in the canonical artifact; consumers should follow the latest in the `replaces` chain.
 
 !!! tip "How to resolve to the current mapping"
+
     When multiple rows exist for the same source-target pair, follow the latest entry in the `replaces` chain. Do not assume the highest `record_id` is the current mapping.
 
 ## Versioning and Change Control
@@ -199,14 +212,17 @@ flowchart LR
 - Reproducibility: The canonical artifact is a single append-only TSV/TTL; prior states are recoverable via dated rows. Current validity can be assessed using `replaces` chains.
 
 !!! tip "Why append-only?"
+
     An append-only approach (immutable log) preserves a complete audit trail, makes releases reproducible, and avoids ambiguity about which version of a mapping was used.
 
 !!! warning "No in-place edits to published rows"
+
     Fixes must be new records that point to the prior one via `replaces`. Editing a published row is not possible, as it would break reproducibility and the audit trail.
 
 ## Semantic Requirements
 
 !!! warning "Avoid false agreement (labels are not semantics)"
+
     Similar labels, codes, or even OWL axioms across artifacts are not sufficient evidence of shared meaning.
     Predicate selection must be justified using definitions, scope notes, and modeled constraints—not string similarity [19], [22].
 
@@ -215,6 +231,7 @@ Normative, per-row schema constraints (e.g., allowed predicates, label language 
 ### Justification and Evidence
 
 !!! tip "Draft your justification before submitting"
+
     The **HRIO Mapping Assistant** can help you draft:
 
     - candidate HRIO target labels
@@ -231,16 +248,19 @@ Normative, per-row schema constraints (e.g., allowed predicates, label language 
 - For borderline hierarchical mappings, add a brief rationale in `comment` explaining why you selected broader or narrower.
 
 !!! tip "What to include as evidence in `comment`"
+
     When a mapping is non-obvious, add short evidence pointers in `comment` (e.g., definition excerpts, scope-note references, or URLs to the relevant standard/ontology documentation). Keep it concise but sufficient for an independent reviewer to reproduce the decision [22].
 
 ## Validation
 
 - **Reviewer (independent from author):**
+
     - Apply the predicate selection policy in [Semantic Requirements](#semantic-requirements); base decisions on definitions, scope notes, and modeled relations (not label similarity).
     - Ensure rationale is recorded for contentious cases or any `Not`.
     - Approve or request changes (back to Draft).
 
 - **Curator:**
+
     - **Schema & completeness:** required columns present; datatypes valid; unique `record_id`; valid prefixes (per the [Mapping Set](./mapping-schema.md) page).
     - **Predicate policy:** conformance to allowed HRIV predicates and modifier rules (per the [Mapping Set](./mapping-schema.md) page).
     - **URI hygiene:** HTTP URIs well-formed and (where applicable) dereference with a 2xx/3xx response.
@@ -266,19 +286,21 @@ When a source or target standard maintains an official mapping registry or accep
 4. Handle outcomes via supersession: If the external review requests changes, publish a new record that supersedes the previous one using `replaces` (append-only), with a short rationale [11].
 
 !!! note "Submission SLA"
+
     Submissions to external registries (e.g., OHDSI/OMOP) must be initiated within **one sprint** of publication.
 
 ## References
 
-[1]: Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. *Scientific Data, 3*(1), 160018. https://doi.org/10.1038/sdata.2016.18
+\[1\]: Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. *Scientific Data, 3*(1), 160018. https://doi.org/10.1038/sdata.2016.18
 
-[11]: Observational Health Data Sciences and Informatics. (2014). *OMOP Common Data Model*. https://ohdsi.github.io/CommonDataModel/
+\[11\]: Observational Health Data Sciences and Informatics. (2014). *OMOP Common Data Model*. https://ohdsi.github.io/CommonDataModel/
 
-[18]: Guizzardi, G. (2020). Ontology, ontologies and the "I" of FAIR. *Data Intelligence, 2*(1–2), 181–191. https://doi.org/10.1162/dint_a_00040
+\[18\]: Guizzardi, G. (2020). Ontology, ontologies and the "I" of FAIR. *Data Intelligence, 2*(1–2), 181–191. https://doi.org/10.1162/dint_a_00040
 
-[19]: Guarino, N. (Ed.). (1998). *Formal Ontology in Information Systems: Proceedings of the 1st International Conference (Trento, Italy, June 6–8, 1998)*. IOS Press.
+\[19\]: Guarino, N. (Ed.). (1998). *Formal Ontology in Information Systems: Proceedings of the 1st International Conference (Trento, Italy, June 6–8, 1998)*. IOS Press.
 
-[22]: Guizzardi, G., & Guarino, N. (2024). Explanation, semantics, and ontology. *Data & Knowledge Engineering, 153*, 102325. https://doi.org/10.1016/j.datak.2024.102325
+\[22\]: Guizzardi, G., & Guarino, N. (2024). Explanation, semantics, and ontology. *Data & Knowledge Engineering, 153*, 102325. https://doi.org/10.1016/j.datak.2024.102325
 
 <!-- footnotes -->
+
 [^hrim]: `hrim` is the prefix for <https://w3id.org/health-ri/semantic-interoperability/mappings#>

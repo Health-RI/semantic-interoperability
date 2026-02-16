@@ -30,12 +30,15 @@ These URIs point to the **most recent release** of the Health-RI Ontology and re
 Each of these URIs redirects to the latest available version of the resource.
 
 !!! tip
+
     You can use either `/doc` or `/documentation`, and `/spec` or `/specification` — both forms are valid and equivalent.
 
 !!! note
+
     Our SHACL file uses the `.shacl` extension and Turtle serialization.
 
 !!! warning "Citing vs browsing"
+
     Use **versioned** PIDs (e.g., `/ontology/vX.Y.Z/...`) when citing HRIO in papers, metadata, or data releases to ensure reproducibility.
     Use the **latest** PIDs (e.g., `/ontology/ttl`, `/ontology/doc`) for browsing and "always-up-to-date" references.
 
@@ -56,32 +59,33 @@ Where:
 
 - `X.Y.Z` is the HRIO release version identifier (see the [Ontology Versioning Policy](./ontology-versioning.md)) (e.g., `2.0.0`)
 - `{format}` is one of:
-  - `ttl` — OWL ontology (Turtle)
-  - `vpp` — OntoUML model (Visual Paradigm)
-  - `json` — OntoUML model (JSON)
-  - `shacl` — SHACL constraint and derivation rules (Turtle)
-  - `documentation` — OntoUML HTML documentation
-  - `specification` — gUFO HTML documentation
+    - `ttl` — OWL ontology (Turtle)
+    - `vpp` — OntoUML model (Visual Paradigm)
+    - `json` — OntoUML model (JSON)
+    - `shacl` — SHACL constraint and derivation rules (Turtle)
+    - `documentation` — OntoUML HTML documentation
+    - `specification` — gUFO HTML documentation
 
 !!! tip
+
     You can also use the version URI without a `{format}` (e.g., `/v0.6.0`) to directly access the `.ttl` file.
 
 #### Examples
 
 - `https://w3id.org/health-ri/ontology/v0.6.0/ttl`
-  → Ontology in Turtle format for version 0.6.0
+    → Ontology in Turtle format for version 0.6.0
 
 - `https://w3id.org/health-ri/ontology/v0.6.0/vpp`
-  → Visual Paradigm project file for version 0.6.0
+    → Visual Paradigm project file for version 0.6.0
 
 - `https://w3id.org/health-ri/ontology/v0.9.1/documentation`
-  → HTML documentation for OntoUMl ontology version 0.9.1
+    → HTML documentation for OntoUMl ontology version 0.9.1
 
 - `https://w3id.org/health-ri/ontology/v0.6.0/specification`
-  → HTML documentation for gUFO ontology version 0.6.0
+    → HTML documentation for gUFO ontology version 0.6.0
 
 - `https://w3id.org/health-ri/ontology/v0.11.9/shacl`
-  → SHACL shapes for version 0.11.9
+    → SHACL shapes for version 0.11.9
 
 ## SSSOM Mappings PIDs
 
@@ -90,21 +94,21 @@ The following PIDs provide **stable access to the latest SSSOM mapping set** pro
 ### Latest Mappings
 
 - **URI (default/TTL):**
-  `https://w3id.org/health-ri/semantic-interoperability/mappings`
-  *(also available explicitly as `/mappings/ttl`)*
+    `https://w3id.org/health-ri/semantic-interoperability/mappings`
+    *(also available explicitly as `/mappings/ttl`)*
 
 - **URI (TSV):**
-  `https://w3id.org/health-ri/semantic-interoperability/mappings/tsv`
+    `https://w3id.org/health-ri/semantic-interoperability/mappings/tsv`
 
 These PIDs redirect to the canonical files in the Health-RI GitHub repository (branch `main`), ensuring that citations remain stable while the underlying files can be updated as needed.
 
 #### Examples
 
 - `https://w3id.org/health-ri/semantic-interoperability/mappings`
-  → Latest SSSOM mappings in Turtle (`.ttl`)
+    → Latest SSSOM mappings in Turtle (`.ttl`)
 
 - `https://w3id.org/health-ri/semantic-interoperability/mappings/tsv`
-  → Latest SSSOM mappings in TSV (`.tsv`)
+    → Latest SSSOM mappings in TSV (`.tsv`)
 
 ## Mapping Vocabulary PIDs
 
@@ -113,43 +117,44 @@ The **Health-RI Mapping Vocabulary** defines terms used in our mapping work. The
 ### Latest Vocabulary
 
 - **URI (TTL):**
-  `https://w3id.org/health-ri/mapping-vocabulary`
-  *(also available explicitly as `/mapping-vocabulary/ttl`)*
+    `https://w3id.org/health-ri/mapping-vocabulary`
+    *(also available explicitly as `/mapping-vocabulary/ttl`)*
 
 - **URI (HTML specification):**
-  `https://w3id.org/health-ri/mapping-vocabulary/specification`
-  *(alias: `/mapping-vocabulary/spec`)*
+    `https://w3id.org/health-ri/mapping-vocabulary/specification`
+    *(alias: `/mapping-vocabulary/spec`)*
 
 !!! tip
+
     Both `/spec` and `/specification` are valid and equivalent for the vocabulary specification.
 
 #### Examples
 
 - `https://w3id.org/health-ri/mapping-vocabulary`
-  → Latest vocabulary in Turtle (`.ttl`)
+    → Latest vocabulary in Turtle (`.ttl`)
 
 - `https://w3id.org/health-ri/mapping-vocabulary/spec`
-  → Latest HTML specification
+    → Latest HTML specification
 
 ### Versioned Vocabulary
 
 Versioned PIDs include an explicit `vX.Y.Z` segment and resolve to immutable artifacts for that release.
 
 - **URI (TTL):**
-  `https://w3id.org/health-ri/mapping-vocabulary/vX.Y.Z`
-  *(also available explicitly as `/vX.Y.Z/ttl`)*
+    `https://w3id.org/health-ri/mapping-vocabulary/vX.Y.Z`
+    *(also available explicitly as `/vX.Y.Z/ttl`)*
 
 - **URI (HTML specification):**
-  `https://w3id.org/health-ri/mapping-vocabulary/vX.Y.Z/specification`
-  *(alias: `/vX.Y.Z/spec`)*
+    `https://w3id.org/health-ri/mapping-vocabulary/vX.Y.Z/specification`
+    *(alias: `/vX.Y.Z/spec`)*
 
 #### Examples
 
 - `https://w3id.org/health-ri/mapping-vocabulary/v1.0.0`
-  → Vocabulary in Turtle for version `v1.0.0`
+    → Vocabulary in Turtle for version `v1.0.0`
 
 - `https://w3id.org/health-ri/mapping-vocabulary/v1.0.0/spec`
-  → HTML specification for version `v1.0.0`
+    → HTML specification for version `v1.0.0`
 
 ## Overview of Persistent Identifiers
 

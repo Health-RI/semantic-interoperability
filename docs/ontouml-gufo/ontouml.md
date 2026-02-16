@@ -27,10 +27,12 @@ This decentralized development model can pose challenges for newcomers, making t
 There are, however, two major online resources that offer learning materials for OntoUML:
 
 - The official OntoUML portal: [https://ontouml.org/](https://ontouml.org/)
-  > While this is the main site, much of its content is outdated and has not been maintained in recent years.
+
+    > While this is the main site, much of its content is outdated and has not been maintained in recent years.
 
 - The documentation project at Read the Docs: [https://ontouml.readthedocs.io/en/latest/](https://ontouml.readthedocs.io/en/latest/)
-  > This version is more comprehensive and somewhat more recent, but it still contains outdated content and should be read with caution.
+
+    > This version is more comprehensive and somewhat more recent, but it still contains outdated content and should be read with caution.
 
 Despite their limitations, these resources remain valuable for learning the language. However, users should remain aware of their partial and outdated nature and supplement them with insights from more recent academic publications.
 
@@ -63,7 +65,7 @@ The official development of OntoUML tools is hosted on GitHub at [https://github
 - **[ontouml-json2graph](https://w3id.org/ontouml/json2graph)**: Transforms OntoUML JSON models into graph representations aligned with the OntoUML Vocabulary, facilitating visualization and semantic analysis.
 - **[ontouml-metamodel](https://w3id.org/ontouml/metamodel)**: Provides an implementation-independent metamodel of OntoUML, covering both abstract and concrete syntaxes, serving as a reference for various OntoUML tools.
 - **[ontouml-models](https://w3id.org/ontouml-models/git)**: A collaborative, structured, and open-source catalog of OntoUML and UFO ontology models, supporting empirical research and model sharing.
-  > A detailed description of the catalog is provided in the [OntoUML/UFO Catalog page](./ontouml-ufo-catalog.md).
+    > A detailed description of the catalog is provided in the [OntoUML/UFO Catalog page](./ontouml-ufo-catalog.md).
 - **[ontouml-models-lib](https://w3id.org/ontouml/models-lib)**: A Python library designed to access and manage OntoUML models from the OntoUML/UFO Catalog, simplifying software development tasks.
 - **[ontouml-models-tools](https://w3id.org/ontouml/models-tools)**: A set of tools for processing and validating OntoUML models, including functionalities for data quality verification and model analysis.
 - **[ontouml-models-vocabulary](https://w3id.org/ontouml/models-vocabulary)**: Defines vocabularies to annotate and interlink models within the OntoUML/UFO Catalog, enhancing semantic interoperability.
@@ -78,19 +80,25 @@ These tools enhance the usability and applicability of OntoUML across various mo
 ## References
 
 <a id="ref1"></a>
+
 - **[1]** Guizzardi, G., Wagner, G., Falbo, R. A., Guizzardi, R. S. S., & Almeida, J. P. A. (2015). *OntoUML: A well-founded profile for UML-based conceptual modeling*. Applied Ontology, 10(3–4), 259–291. <https://doi.org/10.3233/AO-150157>
 
 <a id="ref2"></a>
+
 - **[2]** Guizzardi, G., Wagner, G., Almeida, J. P. A., Guizzardi, R. S. S., & Sales, T. P. (2022). *The Unified Foundational Ontology (UFO): Supercharging modeling with foundational ontologies*. Applied Ontology, 17(1), 1–44. <https://doi.org/10.3233/AO-210256>
 
 <a id="ref3"></a>
+
 - **[3]** Guizzardi, G. (2005). *Ontological foundations for structural conceptual models* [Doctoral dissertation, University of Twente]. Telematica Instituut / CTIT. [**[Access]**](https://research.utwente.nl/en/publications/ontological-foundations-for-structural-conceptual-models/) [**[Download]**](https://research.utwente.nl/files/6042428/thesis_Guizzardi.pdf)
 
 <a id="ref4"></a>
+
 - **[4]** Guizzardi, G., & Wagner, G. (2004). *On the ontological foundations of agent concepts*. In Proceedings of the 6th International Bi-Conference Workshop on Agent-Oriented Information Systems (AOIS), held in conjunction with CAiSE 2004, Riga, Latvia.
 
 <a id="ref5"></a>
+
 - **[5]** Guizzardi, G., & Wagner, G. (2005a). *Some applications of a unified foundational ontology in business modeling*. In T. Bui & A. G. Tjoa (Eds.), Ontologies and business systems analysis. IDEA Group Publishing.
 
 <a id="ref6"></a>
+
 - **[6]** Guizzardi, G., & Wagner, G. (2005b). *Towards ontological foundations for agent modeling concepts using UFO*. In V. Dignum, M. Dastani, B. Dunin-Kȩplicz, & R. Meyer (Eds.), Agent-Oriented Information Systems II (pp. xx–xx). Lecture Notes in Artificial Intelligence (Vol. 3508). Springer. <https://doi.org/10.1007/11538394_6>
