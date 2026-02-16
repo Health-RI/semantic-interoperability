@@ -62,9 +62,9 @@ We treat semantic artifacts like production assets:
     *These tools are drafting aids. Always validate results against the documentation and follow the mapping governance rules before publishing or submitting contributions.*
 
 **1) Pick** one ambiguous local term (column header, code, or ontology class).
-   
+
 **2) Select** the closest HRIO meaning (browse the ontology specification/documentation).
-   
+
 **3) Attach** a meaning-level relation (your semantic "unit test"):
    - `hriv:hasExactMeaning` (intended meaning is fully equivalent)
    - `hriv:hasBroaderMeaningThan` / `hriv:hasNarrowerMeaningThan` (meaning is broader/narrower)

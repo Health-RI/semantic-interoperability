@@ -216,7 +216,7 @@ Normative, per-row schema constraints (e.g., allowed predicates, label language 
 
 !!! tip "Draft your justification before submitting"
     The **HRIO Mapping Assistant** can help you draft:
-    
+
     - candidate HRIO target labels
     - a recommended HRIV `predicate_id` with a confidence estimate
     - short evidence snippets you can paste into `comment` as your justification
