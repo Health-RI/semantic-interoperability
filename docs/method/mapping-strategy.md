@@ -82,7 +82,7 @@ These complementary approaches enable semantic alignment in both centrally contr
     See the [SSSOM Mapping Set](./mapping-schema.md) page for the structure, schema, and **stable w3id artifact URIs**.
 
 !!! info "Browse the Created Mappings"
-    Explore and visualize the mappings that have already been created in the [Mappings](../ontology/mappings.md) page. (Convenience view; for normative artifacts see the Mapping Set page.)
+    Explore and visualize the mappings that have already been created in the [Mappings](../deliverables/mappings.md) page. (Convenience view; for normative artifacts see the Mapping Set page.)
 
 !!! info
     For details about the schema and contribution process, see the [SSSOM Mapping Set](./mapping-schema.md).

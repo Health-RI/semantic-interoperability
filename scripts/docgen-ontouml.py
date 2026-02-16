@@ -400,14 +400,14 @@ def main():
     os.chdir(Path(__file__).parent.parent.resolve())
 
     # Define paths
-    images_folder = Path("docs/ontology/assets/images")
+    images_folder = Path("docs/deliverables/assets/images")
     images_folder.mkdir(parents=True, exist_ok=True)
 
     ontologies_dir = Path("ontologies/versioned")
     latest_dir = Path("ontologies/latest")
     versioned_docs_dir = ontologies_dir / "documentations"
     latest_docs_dir = latest_dir / "documentations"
-    output_path_main = Path("docs/ontology/documentation.md")
+    output_path_main = Path("docs/deliverables/documentation.md")
 
     versioned_docs_dir.mkdir(parents=True, exist_ok=True)
     latest_docs_dir.mkdir(parents=True, exist_ok=True)
@@ -423,7 +423,7 @@ def main():
     versioned_md_name = f"documentation-v{version_str}.md"
     versioned_md_path = versioned_docs_dir / versioned_md_name
     latest_md_path = latest_docs_dir / "documentation.md"
-    output_path_main = Path("docs/ontology/documentation.md")  # keep this path
+    output_path_main = Path("docs/deliverables/documentation.md")  # keep this path
 
     # --- Package maturity (vs:term_status) badges (best-effort) ---
     pkg_status_by_label = {}

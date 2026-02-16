@@ -54,21 +54,21 @@ jobs:
       # --- Copy ontology changelog into docs so it appears on site ---
       - name: Copy ontology changelog into docs
         run: |
-          mkdir -p docs/ontology
-          cp ontologies/changelog-ontology.md docs/ontology/changelog-ontology.md
+          mkdir -p docs/deliverables
+          cp ontologies/changelog-ontology.md docs/deliverables/changelog-ontology.md
 
       # --- Ensure no stale PyLODE HTML remains ---
       - name: Forces clean sync
         run: |
-          rm -f docs/ontology/specification-ontology.html
+          rm -f docs/deliverables/specification-ontology.html
           rm -f docs/method/specification-vocabulary.html
-          rm -f docs/ontology/documentation.md
+          rm -f docs/deliverables/documentation.md
 
       # --- Refresh images in docs from latest ontology assets ---
       - name: Replace ontology images in docs with latest
         run: |
-          rm -rf docs/ontology/assets/images/*
-          cp -r ontologies/latest/images/* docs/ontology/assets/images/
+          rm -rf docs/deliverables/assets/images/*
+          cp -r ontologies/latest/images/* docs/deliverables/assets/images/
 
       # --- Generate OntoUML documentation (custom script) ---
       - name: Generate OntoUML documentation
@@ -85,12 +85,12 @@ jobs:
       # --- Include SSSOM TSV in built site (docs static assets) ---
       - name: Copy SSSOM TSV into docs assets
         run: |
-          mkdir -p docs/ontology/assets
-          cp mappings/health-ri-mappings.tsv docs/ontology/assets/health-ri-mappings.tsv
+          mkdir -p docs/deliverables/assets
+          cp mappings/health-ri-mappings.tsv docs/deliverables/assets/health-ri-mappings.tsv
 
       # --- Remove comments from public copy of TSV in docs assets ---
       - name: Strip commented lines from public TSV copy
-        run: sed -i '/^#/d' docs/ontology/assets/health-ri-mappings.tsv
+        run: sed -i '/^#/d' docs/deliverables/assets/health-ri-mappings.tsv
 
       # --- Validate MkDocs config before full build (fast fail) ---
       - name: Validate MkDocs configuration
@@ -105,7 +105,7 @@ jobs:
         run: |
           linkchecker ./site \
             --no-status \
-            --ignore-url="site/ontology/n[0-9a-f]{32,}"
+            --ignore-url="site/deliverables/n[0-9a-f]{32,}"
 
       # --- Upload built site as artifact for deploy job ---
       - name: Upload built site artifact
@@ -126,8 +126,8 @@ jobs:
             vocabulary/versioned/**
             vocabulary/latest/**
             mappings/**
-            docs/ontology/assets/health-ri-mappings.tsv
-            docs/ontology/specification-ontology.html
+            docs/deliverables/assets/health-ri-mappings.tsv
+            docs/deliverables/specification-ontology.html
             docs/method/specification-vocabulary.html
           retention-days: 7
 
@@ -171,8 +171,8 @@ jobs:
           git add ontologies/versioned/** ontologies/latest/** || true
           git add vocabulary/versioned/** vocabulary/latest/** || true
           git add mappings/** || true
-          git add docs/ontology/assets/health-ri-mappings.tsv || true
-          git add docs/ontology/specification-ontology.html || true
+          git add docs/deliverables/assets/health-ri-mappings.tsv || true
+          git add docs/deliverables/specification-ontology.html || true
           git add docs/method/specification-vocabulary.html || true
           git diff --cached --quiet || git commit -m "docs: update generated documentation and specifications"
           git push origin main

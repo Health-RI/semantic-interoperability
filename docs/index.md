@@ -75,7 +75,7 @@ We treat semantic artifacts like production assets:
 
 At this early stage, as we continue to explore alternatives and collaborations, we are already receiving valuable support and feedback from academics and professionals across Health-RI and the broader health data community. Their perspectives are helping us shape the work and ensure it stays aligned with ongoing national and international efforts toward interoperability.
 
-We invite you to explore the resources we are making available — including our [**ontology**](ontology/index.md), [**mapping vocabulary**](method/specification-vocabulary.html), and [**mapping sets**](method/mapping-schema.md) — all of which are openly published and continuously improved. For the conceptual rationale and the initiative-level definition of semantic traceability, see our [academic paper](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf).
+We invite you to explore the resources we are making available — including our [**ontology**](deliverables/index.md), [**mapping vocabulary**](method/specification-vocabulary.html), and [**mapping sets**](method/mapping-schema.md) — all of which are openly published and continuously improved. For the conceptual rationale and the initiative-level definition of semantic traceability, see our [academic paper](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf).
 
 We also welcome direct engagement—see [Contributing](contributing/overview.md), including time-bound [Calls for Community Review](contributing/call-for-community-review.md), and the ongoing [Contribution Channels](contributing/contribution-channels.md).
 
@@ -98,7 +98,7 @@ This site documents how Health-RI achieves semantic interoperability across heal
 - **Semantic Interoperability**: [Overview](semantic-interoperability/index.md)
 - **OntoUML & gUFO**: [Overview](ontouml-gufo/index.md) · [OntoUML](ontouml-gufo/ontouml.md) · [OntoUML Stereotypes](ontouml-gufo/ontouml-stereotypes.md) · [OntoUML/UFO Catalog](ontouml-gufo/ontouml-ufo-catalog.md) · [Creating OntoUML Models](ontouml-gufo/creating-ontouml-models.md) · [gUFO](ontouml-gufo/gufo.md)
 - **Method**: [Overview](method/index.md) · [Introduction](method/introduction.md) · [Mapping Strategy](method/mapping-strategy.md) · [Mapping Vocabulary Specification](method/specification-vocabulary.html) · [SSSOM Mapping Set](method/mapping-schema.md) · [Mapping Governance](method/mapping-governance.md) · [Ontology Versioning](method/ontology-versioning.md) · [Ontology Validation](method/ontology-validation.md) · [Publications](method/publications.md) · [Persistent Identifiers](method/persistent-ids.md)
-- **Deliverables**: [Overview](ontology/index.md) · [Ontology Documentation](ontology/documentation.md) · [Ontology Specification](ontology/specification-ontology.html) · [Ontology Changelog](ontology/changelog-ontology.md)
+- **Deliverables**: [Overview](deliverables/index.md) · [Ontology Documentation](deliverables/documentation.md) · [Ontology Specification](deliverables/specification-ontology.html) · [Ontology Changelog](deliverables/changelog-ontology.md)
 - **Help & Contributions**: [FAQ](faq.md) · [Contributing](./contributing/overview.md) · [Calls for Community Review](./contributing/call-for-community-review.md) · [Contribution Channels](./contributing/contribution-channels.md)
 
 ---

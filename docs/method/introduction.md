@@ -57,7 +57,7 @@ The next figure summarizes *semantic traceability* in the approach, connecting (
 <!-- TODO: Add this new image. -->
 ![Semantic traceability architecture (Semiotic + MDA views)](./assets/images/semantic-traceability.png)
 
-Once the computational ontology is available, computational artifacts—such as schemas, web ontologies, or others used for information exchange—can be mapped to HRIO gUFO/OWL using the Health-RI Mapping Vocabulary (HRIV). These mappings may be created by Health-RI (see [mappings](../ontology/mappings.md)) or by the owners of the aligned artifacts.[^21][^29]
+Once the computational ontology is available, computational artifacts—such as schemas, web ontologies, or others used for information exchange—can be mapped to HRIO gUFO/OWL using the Health-RI Mapping Vocabulary (HRIV). These mappings may be created by Health-RI (see [mappings](../deliverables/mappings.md)) or by the owners of the aligned artifacts.[^21][^29]
 
 !!! info "Why OntoUML?"
     OntoUML is used for HRIO OntoUML because it is grounded in the Unified Foundational Ontology (UFO) and supports explicit ontological commitments. This helps:

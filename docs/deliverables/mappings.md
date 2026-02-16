@@ -16,4 +16,4 @@ This table is automatically generated from the SSSOM TSV:
 
 <div id="columnToggles"></div>
 
-{{ read_csv('ontology/assets/health-ri-mappings.tsv', sep='\t') }}
+{{ read_csv('deliverables/assets/health-ri-mappings.tsv', sep='\t') }}

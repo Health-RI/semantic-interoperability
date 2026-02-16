@@ -5,7 +5,7 @@ One of the key deliverables of the Health-RI Semantic Interoperability Initiativ
 This page documents the mappings curated and published by Health-RI. Partners may also embed mappings directly into their own ontologies, as explained in the [Mapping Strategy](./mapping-strategy.md).
 
 !!! tip "Want to browse the mappings?"
-    For an interactive view of the **already created** mappings, see **[Mappings](../ontology/mappings.md)**.
+    For an interactive view of the **already created** mappings, see **[Mappings](../deliverables/mappings.md)**.
 
 ## Permanent URIs
 

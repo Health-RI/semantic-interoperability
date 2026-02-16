@@ -64,7 +64,7 @@
 - [**Governance, Lifecycle, and Validation of the Health-RI SSSOM Mapping Set**](./method/mapping-governance.md) — Created: defines roles, two-person rule, lifecycle gates, and validation policy for the SSSOM Mapping Set.
 - [**The Health-RI SSSOM Mapping Set Schema**](./method/mapping-schema.md) — Renamed and expanded: added a comprehensive field table and browsing guidance, and aligned versioning to append-only.
 - [**Ontology Versioning Old**](./method/ontology-versioning-old.md) — Renamed and clarified: explicitly applies to pre-v1.0.0 releases.
-- [**Mappings**](./ontology/mappings.md) — Changed: added a scope note and linked to the Mapping Set schema.
+- [**Mappings**](./deliverables/mappings.md) — Changed: added a scope note and linked to the Mapping Set schema.
 
 ## 2025-11-03
 

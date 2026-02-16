@@ -13,6 +13,7 @@ To respond to a time-bound **Call for Community Review**, use the link below:
 </div>
 
 !!! tip "Draft a mapping before you submit"
+
     If you want help drafting a mapping row (candidate HRIO target + one HRIV predicate + evidence you can turn into `mapping_justification`), try:
 
     <div class="button-grid">

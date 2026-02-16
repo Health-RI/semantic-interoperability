@@ -48,13 +48,13 @@ Generates Markdown documentation from the latest versioned OntoUML JSON export.
 
 - **Input (auto-detected):** `ontologies/versioned/health-ri-ontology-vX.Y.Z.json` (picks the highest semver)
 - **Outputs:**
-  - `docs/ontology/documentation.md`
+  - `docs/deliverables/documentation.md`
   - `ontologies/versioned/documentations/documentation-vX.Y.Z.md`
   - `ontologies/latest/documentations/documentation.md` (uses `../images` links + URL-encoding)
 - **Key characteristics:**
   - Recursively documents packages only if they contain "meaningful content" (package description and/or diagrams with descriptions, including nested packages).
   - Diagram sections are only emitted when a diagram **has a description**.
-  - Optional image embedding: if a file exists in `docs/ontology/assets/images/` named **exactly** `<diagram name>.png|.jpg|.jpeg`, it is included under the diagram section.
+  - Optional image embedding: if a file exists in `docs/deliverables/assets/images/` named **exactly** `<diagram name>.png|.jpg|.jpeg`, it is included under the diagram section.
   - Idempotent behavior: if the versioned Markdown already exists, it **does not** regenerate it; it syncs `docs/` from the versioned file and regenerates only the `latest/` copy (to apply `../images` + URL-encoding).
   - Runs from the repository root (the script `chdir`s to the repo root at startup).
 - **Run:** `python scripts/docgen-ontouml.py`
@@ -69,7 +69,7 @@ Orchestrates generating HTML specifications from the latest versioned TTLs (onto
 
 - **Outputs (per spec):**
   - **Ontology**
-    - Docs: `docs/ontology/specification-ontology.html`
+    - Docs: `docs/deliverables/specification-ontology.html`
     - Versioned: `ontologies/versioned/documentations/specification-vX.Y.Z.html`
     - Latest: `ontologies/latest/documentations/specification.html`
     - Raw intermediate: `build/pylode/ontology/ontology-vX.Y.Z-raw.html`
@@ -170,7 +170,7 @@ Post-processes PyLODE-generated HTML using BeautifulSoup, and (optionally) a TTL
     `--no-classes-restructure`, `--no-synonyms`
 
 - **Run (examples):**
-  - `python scripts/pylode-html-postprocess.py --html-in build/pylode/ontology/ontology-vX.Y.Z-raw.html --ttl ontologies/versioned/health-ri-ontology-vX.Y.Z.ttl --html-out docs/ontology/specification-ontology.html`
+  - `python scripts/pylode-html-postprocess.py --html-in build/pylode/ontology/ontology-vX.Y.Z-raw.html --ttl ontologies/versioned/health-ri-ontology-vX.Y.Z.ttl --html-out docs/deliverables/specification-ontology.html`
   - `python scripts/pylode-html-postprocess.py --html-in build/pylode/vocabulary/vocabulary-vX.Y.Z-raw.html --ttl vocabulary/versioned/health-ri-vocabulary-vX.Y.Z.ttl --no-classes-restructure --html-out docs/method/specification-vocabulary.html`
 
 - **Exit codes:**

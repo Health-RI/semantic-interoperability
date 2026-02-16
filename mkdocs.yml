@@ -61,7 +61,7 @@ markdown_extensions:
 
 extra_css:
   - assets/stylesheets/colors.css
-  - ontology/assets/stylesheets/extra.css
+  - deliverables/assets/stylesheets/extra.css
   - assets/stylesheets/extra.css
 
 nav:
@@ -93,12 +93,12 @@ nav:
       - Publications: method/publications.md
       - Persistent Identifiers: method/persistent-ids.md
   - Deliverables:
-      - Overview: ontology/index.md
-      # - Ontology Rules: ontology/rules.md
-      - Ontology Documentation: ontology/documentation.md
-      - Ontology Specification: ontology/specification-ontology.html
-      - Ontology Changelog: ontology/changelog-ontology.md
-      - SSSOM Mapping Set: ontology/mappings.md
+      - Overview: deliverables/index.md
+      # - Ontology Rules: deliverables/rules.md
+      - Ontology Documentation: deliverables/documentation.md
+      - Ontology Specification: deliverables/specification-ontology.html
+      - Ontology Changelog: deliverables/changelog-ontology.md
+      - SSSOM Mapping Set: deliverables/mappings.md
   - FAQ: faq.md
   - Contributing:
       - Overview: contributing/overview.md
@@ -122,7 +122,7 @@ extra:
       name: Website
 
 extra_javascript:
-  - ontology/assets/javascripts/tablesort.min.js
-  - ontology/assets/javascripts/init-tablesort.js
-  - ontology/assets/javascripts/table-search.js
-  - ontology/assets/javascripts/table-columns-toggle.js
+  - deliverables/assets/javascripts/tablesort.min.js
+  - deliverables/assets/javascripts/init-tablesort.js
+  - deliverables/assets/javascripts/table-search.js
+  - deliverables/assets/javascripts/table-columns-toggle.js
