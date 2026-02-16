@@ -14,7 +14,7 @@
 #   pre-commit run --all-files
 #   git add -A
 #   pre-commit run --all-files
-# Running hooks on all files is an official pre-commit usage pattern. :contentReference[oaicite:2]{index=2}
+# Running hooks on all files is an official pre-commit usage pattern.
 #
 # Path note (Windows)
 # -------------------
@@ -22,15 +22,18 @@
 
 # REPO-WIDE EXCLUSIONS (APPLIES TO *ALL* HOOKS)
 # --------------------------------------------
-# pre-commit's `exclude` takes a SINGLE regular expression string. :contentReference[oaicite:3]{index=3}
-# The top-level `exclude` is applied to all hooks. :contentReference[oaicite:4]{index=4}
+# pre-commit's `exclude` takes a SINGLE regular expression string.
+# The top-level `exclude` is applied to all hooks.
 #
-# Excluded folders:
-# - ontologies/                            (and all its sub-folders)
-# - ontologies/versioned/                  (and all its sub-folders)
+# Excluded FOLDERS:
+# - ontologies/                            (and all its sub-folders, including ontologies/versioned/)
+# - vocabulary/                            (and all its sub-folders)
 # - docs/deliverables/                     (generated exports)
+# Excluded FILES:
+# - LICENSE-*.md                           (license variants)
+# - *.tsv                                  (tabular exports)
+# - docs/method/specification-vocabulary.html (generated HTML)
 exclude: ^(ontologies/|vocabulary/|docs/deliverables/|LICENSE-.*\.md$|.*\.tsv$|docs/method/specification-vocabulary\.html$)
-
 
 repos:
   # ---------------------------------------------------------------------------
@@ -47,7 +50,7 @@ repos:
 
       # YAML validation.
       # --unsafe: parse syntax without "loading" YAML, enabling extensions/unsafe constructs
-      # (useful for MkDocs configs with python tags / custom constructors). :contentReference[oaicite:5]{index=5}
+      # (useful for MkDocs configs with python tags / custom constructors).
       - id: check-yaml
         args: [--unsafe]
 
@@ -61,7 +64,7 @@ repos:
         # Only run on Markdown files.
         files: \.(md|mdx)$
         # Plugins installed inside the hook venv:
-        # - mdformat-mkdocs: MkDocs/MkDocs-Material friendly formatting; keeps 4-space indents. :contentReference[oaicite:6]{index=6}
+        # - mdformat-mkdocs: MkDocs/MkDocs-Material friendly formatting; keeps 4-space indents.
         additional_dependencies:
           - mdformat-gfm
           - mdformat-frontmatter
@@ -74,7 +77,7 @@ repos:
     rev: v0.15.1
     hooks:
       # Lint first (and auto-fix where safe), then format.
-      # Ruff recommends placing the lint hook before the formatter when using --fix. :contentReference[oaicite:7]{index=7}
+      # Ruff recommends placing the lint hook before the formatter when using --fix.
       - id: ruff-check
         args: [--fix]
         types_or: [python, pyi]
