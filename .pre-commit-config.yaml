@@ -29,7 +29,7 @@
 # - ontologies/                            (and all its sub-folders)
 # - ontologies/versioned/                  (and all its sub-folders)
 # - docs/deliverables/                     (generated exports)
-exclude: ^(ontologies/|vocabulary/|docs/deliverables/|LICENSE-.*\.md$|.*\.tsv$|docs\method\specification-vocabulary.html)
+exclude: ^(ontologies/|vocabulary/|docs/deliverables/|LICENSE-.*\.md$|.*\.tsv$|docs/method/specification-vocabulary\.html$)
 
 
 repos:

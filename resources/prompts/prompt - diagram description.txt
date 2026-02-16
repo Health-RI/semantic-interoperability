@@ -73,4 +73,3 @@ If essential details are missing, make the minimum reasonable assumptions and li
 3. Produce deliverable: Write the description of the diagram in the specified format; return it in a `text` code block as specified. For multiple diagrams, follow the "diagram name line + single `text` block" pattern for each diagram.
 4. Quality check: Verify each success criterion, including the ASCII-only and no < or > constraints. Perform a supplementary vs. complementary double-check: remove any sentence that adds new elements, stakeholders, workflows, constraints, or commitments not present in the diagram/specification. Also remove references like "elsewhere in the model."
 5. Edge cases: If multiple images or versions depict the same scope, clarify scope consistently without adding content.
-
