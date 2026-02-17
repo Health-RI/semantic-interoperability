@@ -36,8 +36,8 @@ For this package specifically (linked below):
 ## Key links
 
 <div class="button-grid" markdown>
-[Open: Sex and Gender documentation](../deliverables/documentation/#sex-and-gender){ .md-button .md-button--primary .gpt-button }
-[Open: Sex and Gender specification](../deliverables/specification-ontology.html#pkg-sexandgender){ .md-button .md-button--primary .gpt-button }
+[Open: Sex and Gender documentation](../../deliverables/documentation/#sex-and-gender){ .md-button .md-button--primary .gpt-button }
+[Open: Sex and Gender specification](../../deliverables/specification-ontology.html#pkg-sexandgender){ .md-button .md-button--primary .gpt-button }
 </div>
 
 ## How to contribute
