@@ -43,7 +43,7 @@ For the general case, including domains without an active call or any follow-up 
   <tbody>
     <tr>
       <td style="text-align:center; background-color:#E8F5E9; color:#1B5E20; font-weight:700;">Open</td>
-      <td style="text-align:center;font-weight:700;"><a href="../external-review/sex-and-gender/">Sex and Gender</a></td>
+      <td style="text-align:center;font-weight:700;"><a href="../../external-review/sex-and-gender/">Sex and Gender</a></td>
       <td style="text-align:center;font-weight:700;">17-02-2026</td>
       <td style="text-align:center;font-weight:700;">10-03-2026</td>
     </tr>
@@ -54,7 +54,7 @@ For the general case, including domains without an active call or any follow-up 
 
 _This section lists currently active Calls for Community Review for specific HRIO domains or subdomains._
 
-- [Sex and Gender](../external-review/sex-and-gender/)
+- [Sex and Gender](../../external-review/sex-and-gender/)
 
 ### Closed calls
 
