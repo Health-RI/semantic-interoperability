@@ -99,3 +99,21 @@
 [data-md-color-scheme="slate"] .md-typeset sup a.footnote-ref {
   color: #D4AF37 !important;
 }
+
+/* =============================================================================
+   3. HIDDEN NAV ITEM FOR EXTERNAL REVIEW PAGES
+   Keep the external review pages in mkdocs.yml nav (so the left sidebar renders),
+   but hide their nav entry from the visible navigation UI.
+============================================================================= */
+
+/* Hide the link itself (fallback) */
+.md-nav__link[href*="/external-review/sex-and-gender/"],
+.md-nav__link[href*="external-review/sex-and-gender/"] {
+  display: none !important;
+}
+
+/* Hide the whole list item when :has() is supported */
+.md-nav__item:has(> .md-nav__link[href*="/external-review/sex-and-gender/"]),
+.md-nav__item:has(> .md-nav__link[href*="external-review/sex-and-gender/"]) {
+  display: none !important;
+}

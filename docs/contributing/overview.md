@@ -24,7 +24,7 @@ To respond to a time-bound **Call for Community Review**, use the link below:
 
 For the general case, you can contribute at any time using the **structured submission forms** below, which help ensure your input is reviewed and addressed efficiently. Choose one of the options to open the appropriate GitHub Issue form:
 
-<div class="button-grid" markdown>
+<div class="button-gridb" markdown>
 
 [Report an Ontology Error](https://github.com/health-ri/semantic-interoperability/issues/new?template=ontology-error-report.yml){ .md-button }
 

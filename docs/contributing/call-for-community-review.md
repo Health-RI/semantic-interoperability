@@ -27,18 +27,36 @@ During an **open** Call for Community Review, you can:
 
 For the general case, including domains without an active call or any follow-up after a call has closed, please use our available [Contribution Channels](contribution-channels.md).
 
-## Open Calls
+## Calls for Community Review
 
-_This section lists currently active Calls for Community Review for specific domains or subdomains of the Health-RI Ontology (HRIO)._
+### Calls overview
 
-No open calls at this time.
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Domain under review</th>
+      <th>Review opens</th>
+      <th>Review closes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center; background-color:#E8F5E9; color:#1B5E20; font-weight:700;">Open</td>
+      <td style="text-align:center;font-weight:700;"><a href="../external-review/sex-and-gender.md;">Sex and Gender</a></td>
+      <td style="text-align:center;font-weight:700;">17-02-2026</td>
+      <td style="text-align:center;font-weight:700;">10-03-2026</td>
+    </tr>
+  </tbody>
+</table>
 
-<!-- Example structure:
-- **[Domain name]** – open from YYYY-MM-DD to YYYY-MM-DD
-  [Call details](link-to-call-details)
--->
+### Open calls
 
-## Closed Calls
+_This section lists currently active Calls for Community Review for specific HRIO domains or subdomains._
+
+- [Sex and Gender](../external-review/sex-and-gender.md)
+
+### Closed calls
 
 _This section lists Calls for Community Review that have formally closed._
 
