@@ -1,78 +1,146 @@
 /* =============================================================================
-   1. CONTRIBUTION BUTTONS
-   Single-column layout, centered buttons with consistent spacing and width.
+   1. CONTRIBUTION BUTTONS (BASE + MODIFIERS)
+   Base styles + optional layout modifiers (row3, grid2) + sizing modifiers (wide).
 ============================================================================= */
+
+/* Base container */
 .md-typeset .button-grid {
+  --btn-max: 280px;     /* max width on small screens */
+  --btn-fixed: 280px;   /* fixed width on large screens (row/grid) */
+  --gap: 1.5rem;
+  --min-h: 64px;
+
+  margin: 1.5rem 0;
+  gap: var(--gap);
+
+  /* Default layout: stacked */
   display: flex;
   flex-direction: column;
-  align-items: center;    /* center horizontally */
-  gap: 1.2rem;            /* vertical space between buttons */
-  margin: 2rem 0;
+  align-items: center;
 }
 
+/* mkdocs-material wraps markdown links in <p> */
 .md-typeset .button-grid > p {
-  margin: 0;              /* remove extra <p> margins */
-}
-
-.md-typeset .button-grid .md-button {
-  width: 320px;           /* fixed width for all buttons */
-  text-align: center;
-  padding: 0.9rem 1rem;
-}
-
-/* =============================================================================
-   1B. CONTRIBUTION BUTTONS
-   Two-column layout on desktop, stacks on small screens.
-============================================================================= */
-.md-typeset .button-gridb {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 320px));
-  justify-content: center; /* center the grid as a whole */
-  gap: 1.2rem;
-  margin: 2rem 0;
-}
-
-.md-typeset .button-gridb > p {
   margin: 0;
-}
-
-.md-typeset .button-gridb .md-button {
-  width: 320px;
-  text-align: center;
-  padding: 0.9rem 1rem;
-}
-
-/* Stack to one column on narrow screens */
-@media (max-width: 45em) {
-  .md-typeset .button-gridb {
-    grid-template-columns: 1fr;
-  }
-  .md-typeset .button-gridb .md-button {
-    width: min(320px, 100%);
-  }
-}
-
-/* =============================================================================
-   1C. CONTRIBUTION BUTTONS
-   Single-column layout, centered buttons with consistent spacing and width.
-============================================================================= */
-.md-typeset .button-gridc {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;    /* center horizontally */
-  gap: 1.2rem;            /* vertical space between buttons */
-  margin: 2rem 0;
+  justify-content: center;
+  gap: var(--gap);
+  flex-wrap: wrap;
 }
 
-.md-typeset .button-gridc > p {
-  margin: 0;              /* remove extra <p> margins */
-}
 
-.md-typeset .button-gridc .md-button {
-  width: 520px;           /* fixed width for all buttons */
-  text-align: center;
+/* Button */
+.md-typeset .button-grid .md-button {
+  width: 100%;
+  max-width: var(--btn-max);
   padding: 0.9rem 1rem;
+  text-align: center;
+  box-sizing: border-box;
+
+  /* equal height even if text wraps */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--min-h);
 }
+
+/* --- Modifier: wide (replaces your 1C) --- */
+.md-typeset .button-grid--wide {
+  --btn-max: 520px;
+}
+
+/* --- Modifier: 3 buttons in a row on large screens (replaces your 1D) --- */
+/* Large screens: row layout + equal heights */
+@media (min-width: 900px) {
+  .md-typeset .button-grid--row3 {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: var(--gap);
+
+    /* NEW: equalize heights across the row */
+    align-items: stretch;
+  }
+
+  .md-typeset .button-grid--row3 > p {
+    width: auto;
+
+    /* NEW: ensure wrappers stretch to the tallest */
+    align-self: stretch;
+  }
+
+  .md-typeset .button-grid--row3 .md-button {
+    width: var(--btn-fixed);
+    max-width: none;
+
+    /* NEW: make button fill the wrapper height */
+    height: 100%;
+  }
+}
+
+/* --- Modifier: 2-column grid on desktop; stacks below desktop --- */
+@media (min-width: 900px) {
+  .md-typeset .button-grid--grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, var(--btn-fixed)));
+    gap: var(--gap);
+    justify-content: center;
+
+    /* NEW: make all grid cells equal height */
+    justify-items: stretch;
+    align-items: stretch;
+  }
+
+  .md-typeset .button-grid--grid2 > p {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;          /* lets the button stretch to full height */
+  }
+
+  .md-typeset .button-grid--grid2 .md-button {
+    width: 100%;
+    max-width: none;
+
+    /* NEW: equalize sizes */
+    flex: 1;
+    height: 100%;
+    min-height: 80px;       /* tweak until your longest label fits nicely */
+  }
+}
+
+/* Mobile / narrow: stacked */
+@media (max-width: 45em) {
+  .md-typeset .button-grid--grid2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Single-button variant: consistent width/height + prefer single-line labels */
+.md-typeset .button-grid--single {
+  --btn-single: 360px; /* adjust (e.g., 320–440) */
+}
+
+/* Make single buttons a consistent size */
+.md-typeset .button-grid--single .md-button {
+  width: min(var(--btn-single), 100%);
+  max-width: none;
+  height: var(--min-h);   /* same height everywhere */
+  white-space: nowrap;    /* keep label on one line */
+}
+
+/* On narrow screens, allow wrapping again (prevents overflow) */
+@media (max-width: 45em) {
+  .md-typeset .button-grid--single .md-button {
+    white-space: normal;
+    height: auto;
+    min-height: var(--min-h);
+  }
+}
+
 
 /* =============================================================================
    2. FOOTNOTE COLOR OVERRIDE
@@ -98,22 +166,4 @@
 [data-md-color-scheme="slate"] .md-typeset a.footnote-ref,
 [data-md-color-scheme="slate"] .md-typeset sup a.footnote-ref {
   color: #D4AF37 !important;
-}
-
-/* =============================================================================
-   3. HIDDEN NAV ITEM FOR EXTERNAL REVIEW PAGES
-   Keep the external review pages in mkdocs.yml nav (so the left sidebar renders),
-   but hide their nav entry from the visible navigation UI.
-============================================================================= */
-
-/* Hide the link itself (fallback) */
-.md-nav__link[href*="/external-review/sex-and-gender/"],
-.md-nav__link[href*="external-review/sex-and-gender/"] {
-  display: none !important;
-}
-
-/* Hide the whole list item when :has() is supported */
-.md-nav__item:has(> .md-nav__link[href*="/external-review/sex-and-gender/"]),
-.md-nav__item:has(> .md-nav__link[href*="external-review/sex-and-gender/"]) {
-  display: none !important;
 }
