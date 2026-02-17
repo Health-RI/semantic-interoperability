@@ -2,7 +2,7 @@
 
 # Health-RI Semantic Interoperability Initiative
 
-!!! open-call "Open call: validate the HRIO Sex and Gender Ontology"
+!!! open-call "OPEN CALL: validate the HRIO Sex and Gender Ontology"
 
     We are running an external community review of the **Sex and Gender** package in HRIO.
     Please help us validate the model and documentation.
