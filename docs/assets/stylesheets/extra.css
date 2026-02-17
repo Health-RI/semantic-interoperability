@@ -167,3 +167,56 @@
 [data-md-color-scheme="slate"] .md-typeset sup a.footnote-ref {
   color: #D4AF37 !important;
 }
+
+
+/* =============================================================================
+   3. OPEN CALL ADMONITION (CUSTOM TYPE + HIGHLIGHT COLOR)
+   Adds a custom MkDocs Material admonition type for the index “Open call” box.
+
+   Usage (Markdown):
+     !!! open-call "Open call: validate the HRIO Sex and Gender ontology"
+         ...
+
+   Notes:
+   - Uses a strong orange accent to stand out from standard admonitions.
+   - Paints the admonition body with a light fill and keeps the header darker.
+   - Works for both standard admonitions (<div class="admonition ...">) and
+     collapsible admonitions (<details class="...">).
+============================================================================= */
+
+/* Icon (inline SVG data URI) */
+:root {
+  --md-admonition-icon--open-call: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath d=%22M3 11v2h2l5 3v-8L5 11H3zm9-6v14c4-1 7-4 7-7s-3-6-7-7zm7.5 7c0 2.2-1.2 4.2-3 5.3v-10.6c1.8 1.1 3 3.1 3 5.3z%22/%3E%3C/svg%3E');
+}
+
+/* Border + light body background */
+.md-typeset .admonition.open-call,
+.md-typeset details.open-call {
+  border-color: rgb(255, 120, 0);
+  background-color: rgba(255, 120, 0, 0.06); /* LIGHT body fill */
+}
+
+/* Darker header (title/summary) */
+.md-typeset .admonition.open-call > .admonition-title,
+.md-typeset details.open-call > summary {
+  background-color: rgba(255, 120, 0, 0.22); /* DARKER header */
+}
+
+/* Title icon */
+.md-typeset .admonition.open-call > .admonition-title::before,
+.md-typeset details.open-call > summary::before {
+  background-color: rgb(255, 120, 0);
+  -webkit-mask-image: var(--md-admonition-icon--open-call);
+          mask-image: var(--md-admonition-icon--open-call);
+}
+
+/* Optional: slightly stronger contrast in dark mode */
+[data-md-color-scheme="slate"] .md-typeset .admonition.open-call,
+[data-md-color-scheme="slate"] .md-typeset details.open-call {
+  background-color: rgba(255, 120, 0, 0.10);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.open-call > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset details.open-call > summary {
+  background-color: rgba(255, 120, 0, 0.28);
+}

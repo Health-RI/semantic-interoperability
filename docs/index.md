@@ -2,6 +2,19 @@
 
 # Health-RI Semantic Interoperability Initiative
 
+!!! open-call "Open call: validate the HRIO Sex and Gender Ontology"
+
+    We are running an external community review of the **Sex and Gender** package in HRIO.
+    Please help us validate the model and documentation.
+
+    <div class="button-grid button-grid--grid2" style="--btn-fixed: 360px; --btn-max: 360px" markdown>
+
+    [Open: Sex and Gender review page](external-review/sex-and-gender/){ .md-button .md-button--primary }
+
+    [Call for Contribution Overview](contributing/call-for-community-review/){ .md-button .md-button--primary }
+
+    </div>
+
 The health domain is shaped by many standards and models that guide the design of databases and the implementation of systems. They are applied in diverse contexts, from hospital records to research infrastructures. To enable effective data reuse, the data within these systems often needs to be exchanged, compared, and integrated. In other words, the data must be interoperable (fulfilling the "I" in FAIR).
 
 In practice, interoperability often breaks because **meaning stays implicit**. Similar labels, codes, or even similar OWL patterns can hide genuine semantic misalignment ("false agreement")—and those mismatches usually surface later as brittle integrations, silent errors, and hard-to-reproduce results.
