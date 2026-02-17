@@ -24,7 +24,7 @@ We provide two specialized GPT assistants:
 
 Use this assistant to explain the initiative in plain terms and point you to the right pages and stable identifiers (w3id PIDs).
 
-<div class="button-gridc" markdown>
+<div class="button-grid button-grid--wide" markdown>
 [Open the Semantic Interoperability Guide (GPT)](https://chatgpt.com/g/g-6992c8eb8780819185f0922ac33d79ce-health-ri-semantic-interoperability-guide){ .md-button .md-button--primary }
 </div>
 
@@ -45,7 +45,7 @@ Use this assistant to explain the initiative in plain terms and point you to the
 
 Use this assistant to draft a meaning mapping from an external term/concept to HRIO, aligned with the project’s mapping strategy and governance.
 
-<div class="button-gridc" markdown>
+<div class="button-grid button-grid--wide" markdown>
 [Open the HRIO Mapping Assistant (GPT)](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant){ .md-button .md-button--primary }
 </div>
 

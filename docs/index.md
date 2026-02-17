@@ -52,9 +52,12 @@ We treat semantic artifacts like production assets:
 
     Two optional ChatGPT assistants can help you navigate the initiative and draft mappings.
 
-    <div class="button-gridb" markdown>
+    <div class="button-grid button-grid--grid2" markdown>
+
     [Open: Semantic Interoperability Guide](https://chatgpt.com/g/g-6992c8eb8780819185f0922ac33d79ce-health-ri-semantic-interoperability-guide){ .md-button .md-button--primary .gpt-button }
+
     [Open: HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant){ .md-button .md-button--primary .gpt-button }
+
     </div>
 
     - Use the **Guide** for questions about the initiative, artifacts, releases, and PIDs.

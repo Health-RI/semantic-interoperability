@@ -1,4 +1,4 @@
-# External review: Sex and Gender
+# Sex and Gender
 
 This page is for the external review of the **Sex and Gender** package in the Health-RI Ontology (HRIO), developed within the Health-RI Semantic Interoperability Initiative.
 
@@ -44,10 +44,14 @@ For this package specifically (linked below):
 
 We welcome feedback at any time (not only during specific calls for review). Use the contribution channels below:
 
-<div class="button-grid" markdown>
+<div class="button-grid button-grid--row3" markdown>
+
 [Open: Report an error](https://github.com/health-ri/semantic-interoperability/issues/new?template=ontology-error-report.yml){ .md-button .md-button--primary .gpt-button }
+
 [Open: Request a new concept](https://github.com/health-ri/semantic-interoperability/issues/new?template=concept-request.yml){ .md-button .md-button--primary .gpt-button }
+
 [Open: Other contributions](https://github.com/health-ri/semantic-interoperability/issues/new?template=other-contribution.yml){ .md-button .md-button--primary .gpt-button }
+
 </div>
 
 !!! info "Questions and explanations"

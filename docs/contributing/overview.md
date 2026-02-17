@@ -6,7 +6,7 @@ To streamline the contribution process, we distinguish between time-bound calls 
 
 To respond to a time-bound **Call for Community Review**, use the link below:
 
-<div class="button-grid" markdown>
+<div class="button-grid button-grid--single" markdown>
 
 [Calls for Community Review](call-for-community-review.md){ .md-button }
 
@@ -16,7 +16,7 @@ To respond to a time-bound **Call for Community Review**, use the link below:
 
     If you want help drafting a mapping row (candidate HRIO target + one HRIV predicate + evidence you can turn into `mapping_justification`), try:
 
-    <div class="button-grid" markdown>
+    <div class="button-grid button-grid--single" markdown>
     [Open HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant){ .md-button .md-button--primary }
     </div>
 
@@ -24,7 +24,7 @@ To respond to a time-bound **Call for Community Review**, use the link below:
 
 For the general case, you can contribute at any time using the **structured submission forms** below, which help ensure your input is reviewed and addressed efficiently. Choose one of the options to open the appropriate GitHub Issue form:
 
-<div class="button-gridb" markdown>
+<div class="button-grid button-grid--grid2" style="--btn-fixed: 360px" markdown>
 
 [Report an Ontology Error](https://github.com/health-ri/semantic-interoperability/issues/new?template=ontology-error-report.yml){ .md-button }
 

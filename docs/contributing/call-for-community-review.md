@@ -27,7 +27,7 @@ During an **open** Call for Community Review, you can:
 
 For the general case, including domains without an active call or any follow-up after a call has closed, please use our available [Contribution Channels](contribution-channels.md).
 
-## Calls for Community Review
+## Community Review
 
 ### Calls overview
 

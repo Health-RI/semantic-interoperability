@@ -103,8 +103,12 @@ nav:
       - Overview: contributing/overview.md
       - Contribution Channels: contributing/contribution-channels.md
       - Call for Community Review: contributing/call-for-community-review.md
-      - Sex and Gender external review: external-review/sex-and-gender.md
+      - Open External Review Calls:
+        - external-review/sex-and-gender.md
   - FAQ: faq.md
+
+# not_in_nav:
+#   - external-review/sex-and-gender.md
 
 extra:
   generator: false # disables "Made with Material for MkDocs" line

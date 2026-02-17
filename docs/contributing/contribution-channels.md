@@ -6,7 +6,7 @@ Outside specific [Calls for Community Review](call-for-community-review.md), you
 
 If you identify an error, inconsistency, ambiguity, or omission in any of the HRIO artifacts (including diagrams, models, or OWL files), please let us know.
 
-<div class="button-grid" markdown>
+<div class="button-grid button-grid--single" markdown>
 
 [Report an Ontology Error](https://github.com/health-ri/semantic-interoperability/issues/new?template=ontology-error-report.yml){ .md-button }
 
@@ -23,7 +23,7 @@ Typical reports may include:
 
 If you believe a concept is missing from the Health-RI Ontology (HRIO) and should be included (e.g., a new domain-specific class or relation), please use the form below to propose it.
 
-<div class="button-grid" markdown>
+<div class="button-grid button-grid--single" markdown>
 
 [Request a New Concept](https://github.com/health-ri/semantic-interoperability/issues/new?template=concept-request.yml){ .md-button }
 
@@ -39,7 +39,7 @@ Your request should ideally include:
 
 For all other types of contributions—including documentation suggestions, collaboration offers, use case proposals, or questions about modeling and alignment—please use the general-purpose form below.
 
-<div class="button-grid" markdown>
+<div class="button-grid button-grid--single" markdown>
 
 [Other Contribution or Request](https://github.com/health-ri/semantic-interoperability/issues/new?template=other-contribution.yml){ .md-button }
 
@@ -58,7 +58,7 @@ Examples of valid submissions:
 
     Before submitting a mapping, you can use the **HRIO Mapping Assistant (GPT)** to draft a candidate predicate/target and gather evidence snippets:
 
-    <div class="button-grid" markdown>
+    <div class="button-grid button-grid--single" markdown>
     [Open HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant){ .md-button .md-button--primary }
     </div>
 
@@ -66,7 +66,7 @@ Examples of valid submissions:
 
 You can contribute to the Health-RI **SSSOM mapping set** (manually curated) in two ways:
 
-<div class="button-grid" markdown>
+<div class="button-grid button-grid--single" markdown>
 
 [Propose a SSSOM Mapping](https://github.com/health-ri/semantic-interoperability/issues/new?template=sssom-new-mapping.yml){ .md-button }
 
