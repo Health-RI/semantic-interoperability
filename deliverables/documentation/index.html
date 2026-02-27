@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/health-ri-favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -2248,6 +2248,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#addressable-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addressable Place
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2376,11 +2387,61 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#persons-birth" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#person-birth" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Person's Birth
+        Person Birth
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Person Birth">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#birth-participants-and-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Birth Participants and Place
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#birth-attribute-derivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Birth Attribute Derivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#birth-provenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Birth Provenance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#birth-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Birth Types
       
     </span>
   </a>
@@ -2850,7 +2911,7 @@
 
 
 <h1 id="health-ri-ontology">Health-RI Ontology</h1>
-<p><em>Version 1.6.2</em></p>
+<p><em>Version 2.0.0</em></p>
 <h2 id="sex-and-gender">Sex and Gender</h2>
 <p><a href="https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"><img alt="Maturity level external review (erv): stage 3 of 4" src="https://img.shields.io/badge/Maturity_level-external_review_(erv)%3A_stage_3_of_4-007bff" /></a></p>
 <p>This package describes the OntoUML conceptual model of Sex and Gender, detailing its structure, types, and relationships. The model follows the ontological notion of mode, representing properties that inhere in a Person. However, while these modes always depend on the bearer (they are properties of them), their determination can be either intrinsic depending only on the person's own features or extrinsic requiring assessment, assignment, or recognition by external agents.</p>
@@ -3094,6 +3155,9 @@
 <p>The diagram introduces the general category Document, encompassing entities that serve as carriers of information. This category is specialized into two complete and disjoint subcategories: Physical Document and Digital Document.</p>
 <p>Physical Document represents tangible information carriers such as paper records, printed reports, or handwritten notes. Digital Document covers information encoded in electronic formats, including files, databases, and digitally stored reports. The complete and disjoint constraint ensures that every document must be classified as either physical or digital, with no overlap between the two.</p>
 <p>This distinction supports consistent representation of information artifacts across heterogeneous healthcare and research contexts, enabling explicit modeling of whether information exists in material form or as a digital object.</p>
+<h3 id="addressable-place">Addressable Place</h3>
+<p><img alt="Addressable Place" src="../assets/images/Addressable%20Place.png" /></p>
+<p>Address characterizes Addressable Place via  is address of . Multiplicity 1..* on both ends supports multiple addresses per place and (when needed) reuse of the same address across multiple addressable places.</p>
 <h2 id="diagnosis">Diagnosis</h2>
 <p><a href="https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"><img alt="Maturity level internal work (int): stage 1 of 4" src="https://img.shields.io/badge/Maturity_level-internal_work_(int)%3A_stage_1_of_4-ff0400" /></a></p>
 <h3 id="diagnostic-assessments">Diagnostic Assessments</h3>
@@ -3135,12 +3199,26 @@
 <p>The diagram distinguishes between two mutually exclusive living states, represented as phases: Living Person and Dead Person. This partition is complete and disjoint, ensuring that every person is classified in one and only one of these states at a time. A living person may transition across the life stages Child, Adolescent, and Adult, also modeled as complete and disjoint phases. Additional constraints clarify that no person can become an adolescent without first being a child, and no person can become an adult without first being an adolescent.</p>
 <p>The Person's Birth event creates the role Offspring, mediated by the Parent-Child Relation. A birth event includes start and end timestamps, the latter aligning with the person's registered date of birth. Conversely, the Person's Death event terminates the individual's life status and is associated with at least one Person's Death Cause. This mode is instantiated by a Person's Death Cause Type, ensuring that every recorded death is explained by an identified cause type.</p>
 <p>By connecting life stages, birth and death events, and cause of death, the diagram provides a coherent framework for modeling the lifecycle of a person within biomedical and demographic contexts.</p>
-<h3 id="persons-birth">Person's Birth</h3>
-<p><img alt="Person's Birth" src="../assets/images/Person%27s%20Birth.png" /></p>
-<p>The diagram models biological parenthood through the Parent-Child Relation, a relator that mediates the link between persons in parental and offspring roles. At its core, every Person may take on the Child phase, which represents the life stage during which the individual participates as Offspring in a parent child relation. This mediation ensures that the role of offspring is explicitly tied to a person s life cycle.</p>
-<p>On the parental side, the relator includes the roles Biological Mother and Biological Father, which are grounded in sexed subkinds of Biological Person. A Biological Mother is mediated by a Male Biological Person, while a Biological Father is mediated by a Female Biological Person. The model specifies that parenthood is always tied to the Parent-Child Relation, ensuring traceability of biological lineage.</p>
-<p>Multiplicity constraints ensure that each offspring is connected to one or more parents, while parents may have one or more children. Material relations  is biological mother of  and  is biological father of  capture the concrete grounding of these roles in parent child structures.</p>
-<p>The diagram also incorporates explicit constraints. (1) A biological mother or father can only be the parent of persons with whom they have a valid parent child relation. (2) A biological mother or father cannot be their own parent. (3) A biological mother and a biological father cannot be parents of each other. These clarifications prevent logically inconsistent cases, such as self-parenthood or reciprocal parental ties between parents, strengthening the semantic rigor of the model.</p>
+<h2 id="person-birth">Person Birth</h2>
+<p><a href="https://health-ri.github.io/semantic-interoperability/method/ontology-validation/"><img alt="Maturity level internal review (irv): stage 2 of 4" src="https://img.shields.io/badge/Maturity_level-internal_review_(irv)%3A_stage_2_of_4-ffae00" /></a></p>
+<p>This package provides the concepts needed to represent a person's birth as an event that can be linked to a place and categorized by multiplicity. It connects a Person to a Birth event that happened in a Birth Place, where Birth Place is treated as a specialization of Addressable Place. Birth is partitioned into Single Birth and Multiple Birth, and Single Birth is further partitioned into Singleton Birth and Multiple Birth Component, supporting explicit representation of multiple-birth components without mixing categories. Scope is limited to persons after birth and treats prenatal stages as out of scope.</p>
+<p>The package also supports birth provenance at an abstract level through Birth Biological Provenance, which links the person to their Genetic Mother, Genetic Father, and a Gestational Carrier, while leaving detailed conception-to-birth processes outside scope. It assumes nuclear-DNA parentage with one oocyte provider and one sperm provider, and treats additional genetic contributors as out of scope. A constraint prohibits a person from being their own Genetic Mother, Genetic Father, or Gestational Carrier. Derived person attributes are specified from the recorded birth event: birth date-time from Birth.end preserving date, time, and UTC offset, birth date and birth year from Birth.start, and current age as full years computed by comparing the birth date to the current calendar date of use.</p>
+<h3 id="birth-participants-and-place">Birth Participants and Place</h3>
+<p><img alt="Birth Participants and Place" src="../assets/images/Birth%20Participants%20and%20Place.png" /></p>
+<p>Birth is linked to the persons that originate from it and to the gestational carrier associated with it. Each Person is linked to exactly one Birth, while a Birth may be linked to one or more persons, supporting cases where a single birth is associated with multiple persons. Each Birth is linked to exactly one Gestational Carrier, and each Gestational Carrier may be linked to one or more births across time.</p>
+<p>Birth is linked to exactly one Birth Place, and a Birth Place may be linked to one or more births. Birth Place specializes Addressable Place, enabling birth locations to be treated as addressable places. Person is intended to denote an individual after birth; prenatal stages are outside scope here.</p>
+<h3 id="birth-attribute-derivation">Birth Attribute Derivation</h3>
+<p><img alt="Birth Attribute Derivation" src="../assets/images/Birth%20Attribute%20Derivation.png" /></p>
+<p>Person includes birth-derived attributes computed from the Single Birth that creates the Person. Temporal values use the date component of Single Birth.start and the full timestamp of Single Birth.end as recorded.</p>
+<p>Current age is derived as full years by comparing Single Birth.start.date to today s calendar date (subtracting one year if the birthday has not occurred yet this year). Birth year is Single Birth.start.date.year; birth date is the date part of Single Birth.start (ignoring time and UTC offset); and birth date-time is taken from Single Birth.end preserving date, clock time, and UTC offset (treat nanosecond as 0 if missing). Place-of-birth attributes (birth place address/country/city-or-location) are derived from the Birth Place used in the Single Birth and the Address applicable at the time of the Birth.</p>
+<h3 id="birth-provenance">Birth Provenance</h3>
+<p><img alt="Birth Provenance" src="../assets/images/Birth%20Provenance.png" /></p>
+<p>This diagram models biological birth provenance for a Person via a Birth Biological Provenance relator. Each Person is linked to exactly one provenance, which links the Person to exactly one Genetic Mother, one Genetic Father, and one Gestational Carrier; each contributor may participate in one or more provenances over time. Genetic Mother and Genetic Father are also connected directly to Person via the named material relations  is genetic mother of  and  is genetic father of .</p>
+<p>Scope is restricted to nuclear-DNA parentage with exactly one oocyte provider and one sperm provider per person (excluding additional contributors such as mitochondrial donation). Genetic Mother and Gestational Carrier specialize Karyotypic Female-sex Person; Genetic Father specializes Karyotypic Male-sex Person. A Person cannot be their own genetic mother, genetic father, or gestational carrier; prenatal stages are out of scope.</p>
+<h3 id="birth-types">Birth Types</h3>
+<p><img alt="Birth Types" src="../assets/images/Birth%20Types.png" /></p>
+<p>Birth is specialized into Single Birth and Multiple Birth, distinguishing births by whether they correspond to one person or to a grouped multiple birth. Single Birth is specialized into Singleton Birth and Multiple Birth Component, supporting a representation where each component birth in a multiple birth is itself treated as a single birth instance. Multiple Birth is linked to Multiple Birth Components in a whole-part relation where each Multiple Birth is linked to two or more components and each component is linked to exactly one Multiple Birth.</p>
+<p>The Person to Birth link is specialized for Single Birth, using an offspring relation between Person and Single Birth with multiplicity 1 at both ends. Birth position for Multiple Birth Component is derived by ranking the components of the same Multiple Birth by start time (earliest to latest), using end time only to break ties when start times match; the rank is the birth position. Multiple Birth start matches the earliest component start, and Multiple Birth end matches the latest component end.</p>
 
 
 
