@@ -4,6 +4,66 @@ All notable changes to this project will be documented in this file. Entries are
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [2.0.0] - 2026-02-27
+
+### TL;DR
+
+- Introduced a new **PersonBirth** package with **Birth**, **SingleBirth**, and **MultipleBirth** event taxonomy (new `owl:equivalentClass` / `owl:AllDisjointClasses` axioms and birth-participation constraints).
+- Replaced the legacy birth/biological-parentage pattern (**PersonsBirth**, **ParentChildRelation**, **BiologicalMother/Father**) with **BirthBiologicalProvenance**, genetic/gestational roles, and new material-relationship properties.
+- Added structured birthplace addressing via **Address**/**AddressablePlace** and new birth-related properties on **Person**; bumped release metadata to **2.0.0** and updated artifact links.
+
+### Added
+
+- Introduced **PersonBirth** package and birth-event taxonomy (gUFO metamodelling: `rdf:type owl:Class` + `owl:NamedIndividual` + stereotype).
+  - **Birth**, **SingleBirth**, **MultipleBirth**, **MultipleBirthComponent**, **SingletonBirth**.
+  - `owl:equivalentClass`: **Birth** = `MultipleBirth ⊔ SingleBirth`; **SingleBirth** = `MultipleBirthComponent ⊔ SingletonBirth`.
+  - `owl:AllDisjointClasses`: (`MultipleBirth`, `SingleBirth`) and (`MultipleBirthComponent`, `SingletonBirth`).
+  - Added event-structure constraints using `gufo:isEventProperPartOf` / inverse `gufo:isEventProperPartOf` (see **SingleBirth** and **MultipleBirthComponent** axioms for exact cardinalities and targets).
+  - Added participation/creation/location constraints on **Birth** using `gufo:wasCreatedIn`, `gufo:participatedIn` (inverse), and `gufo:inheresIn` (min-qualified restrictions).
+- Added biological provenance relator and birth-origin roles.
+  - **BirthBiologicalProvenance** (`rdfs:subClassOf gufo:Relator`): inverse-`gufo:mediates` some **GeneticMother**/**GeneticFather**/**GestationalCarrier**; `gufo:mediates min 1 Person`.
+  - **GeneticMother**, **GeneticFather**, **GestationalCarrier** (`gufo:Role`): `gufo:mediates min 1 BirthBiologicalProvenance` (and participation constraints where asserted).
+  - **isGeneticMotherOf**, **isGeneticFatherOf** (`gufo:MaterialRelationshipType`): `rdfs:domain` **GeneticMother**/**GeneticFather**; `rdfs:range` `Person`.
+- Added new birth-related properties.
+  - **birthDate** (`Person → Date`), **birthDateTime** (`Person → OffsetDateTime`), **birthPlaceAddress** (`Person → Address`).
+  - **birthYear**, **birthCountry**, **birthCityOrLocation**, **currentAge** (datatype properties on `Person`).
+  - **start_1**/**end_1** (`SingleBirth → OffsetDateTime`) and **birthPosition** (`MultipleBirthComponent → xsd:int`).
+- Added structured address/place layer.
+  - **Address** (`gufo:Kind`, `rdfs:subClassOf gufo:Quality`) and **AddressablePlace** (`gufo:Mixin`, `rdfs:subClassOf gufo:FunctionalComplex`) with inherence constraints via `gufo:inheresIn` / inverse-`gufo:inheresIn`.
+  - Address attribute datatype properties on **Address**: **streetName**, **houseNumber**, **houseNumberExtension**, **buildingName**, **unitDesignator**, **floor**, **careOf**, **postOfficeBox**, **postalCode**, **districtOrNeighborhood**, **cityOrLocation**, **regionOrState**, **country**, **countryCode**.
+  - **BirthPlace** (`gufo:Role`): `rdfs:subClassOf AddressablePlace`; inverse-`gufo:inheresIn` some **Birth**.
+
+### Changed
+
+- Updated release metadata and versioned artifact links.
+  - **ontology** (`https://w3id.org/health-ri/ontology`)
+    - `owl:versionInfo` **"1.6.2" → "2.0.0"**; `owl:versionIRI` **…/v1.6.2 → …/v2.0.0**.
+    - `dcterms:modified` **2026-02-15 → 2026-02-27**.
+    - `dcterms:conformsTo` updated artifact links (**…/v1.6.2/(json|vpp) → …/v2.0.0/(json|vpp)**).
+    - `dcat:hasVersion` **…/v1.6.1 → …/v1.6.2**.
+  - **ontology/v2.0.0** (`…/v2.0.0`): added `owl:priorVersion` **…/v1.6.2**.
+  - **ontology/v1.6.2** (`…/v1.6.2`): removed `owl:priorVersion` **…/v1.6.1** (version chain now continues via **…/v2.0.0**).
+- Retargeted temporal properties to the new birth model.
+  - **start**/**end**: `rdfs:domain` **PersonsBirth → MultipleBirth**.
+- **Person**: added birth-provenance and birth-event constraints (semantic change) plus new SKOS alt-labels (wording-only).
+  - `rdfs:subClassOf`: inverse-`gufo:wasCreatedIn some Birth`; `gufo:wasCreatedIn exactly 1 SingleBirth`; inverse-`gufo:mediates exactly 1 BirthBiologicalProvenance`.
+  - `skos:altLabel`: added "Human" and "Human Being".
+- **Child**: removed `rdfs:subClassOf Person` (verify intended replacement/positioning in the serialized ontology).
+- **isBornIn_1**: added `rdfs:subPropertyOf isBornIn`.
+- **OffsetDateTime**: added `skos:altLabel` variants (wording-only).
+
+### Removed
+
+- Removed legacy birth/parentage model terms and properties (superseded by **PersonBirth** + **BirthBiologicalProvenance**).
+  - **PersonsBirth**, **ParentChildRelation**, **Offspring**.
+  - **BiologicalMother**, **BiologicalFather**.
+  - **isBiologicalMotherOf**, **isBiologicalFatherOf**, **parentOf**.
+  - **dateOfBirth**.
+
+### Not serialized
+
+- None identified beyond the OWL-level changes summarized above; all observed changes are present in the serialized ontology.
+
 ## [1.6.2] - 2026-02-15
 
 ### TL;DR
