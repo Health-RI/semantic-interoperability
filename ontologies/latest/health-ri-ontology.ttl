@@ -14,8 +14,8 @@
 
 <https://w3id.org/health-ri/ontology> a owl:Ontology ;
     dct:abstract "Developed by Health‑RI and collaborators, this ontology—grounded in UFO and implemented in gUFO/OWL—enables semantic interoperability across healthcare and life sciences, extending beyond systems to include institutions, research infrastructures, and services. It establishes a common reference model that harmonizes data from diverse sources by formally defining domain concepts and allowing mappings from heterogeneous sources."@en ;
-    dct:conformsTo <https://w3id.org/health-ri/ontology/v1.6.2/json>,
-        <https://w3id.org/health-ri/ontology/v1.6.2/vpp> ;
+    dct:conformsTo <https://w3id.org/health-ri/ontology/v2.0.0/json>,
+        <https://w3id.org/health-ri/ontology/v2.0.0/vpp> ;
     dct:contributor <https://orcid.org/0000-0001-8802-7002>,
         <https://orcid.org/0000-0002-7944-2594>,
         <https://orcid.org/0000-0003-0771-3516>,
@@ -30,14 +30,14 @@
     dct:issued "2025-05-20"^^xsd:date ;
     dct:language "en"^^xsd:language ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dct:modified "2026-02-15"^^xsd:date ;
+    dct:modified "2026-02-27"^^xsd:date ;
     dct:publisher <https://w3id.org/health-ri> ;
     dct:title "Health-RI Ontology"@en ;
     vann:preferredNamespacePrefix "hrio" ;
     vann:preferredNamespaceUri "https://w3id.org/health-ri/ontology#"^^xsd:anyURI ;
     owl:imports gufo: ;
-    owl:versionIRI <https://w3id.org/health-ri/ontology/v1.6.2> ;
-    owl:versionInfo "1.6.2" ;
+    owl:versionIRI <https://w3id.org/health-ri/ontology/v2.0.0> ;
+    owl:versionInfo "2.0.0" ;
     dcat:hasVersion <https://w3id.org/health-ri/ontology/v0.10.1>,
         <https://w3id.org/health-ri/ontology/v0.11.9>,
         <https://w3id.org/health-ri/ontology/v0.4.0>,
@@ -49,7 +49,7 @@
         <https://w3id.org/health-ri/ontology/v1.3.0>,
         <https://w3id.org/health-ri/ontology/v1.4.0>,
         <https://w3id.org/health-ri/ontology/v1.5.0>,
-        <https://w3id.org/health-ri/ontology/v1.6.1> ;
+        <https://w3id.org/health-ri/ontology/v1.6.2> ;
     dcat:keyword "biomedicine"@en,
         "clinical data"@en,
         "health information systems"@en,
@@ -61,7 +61,7 @@
     foaf:logo <https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/docs/assets/images/health-ri-logo-blue.png> ;
     mod:repository <https://w3id.org/health-ri/semantic-interoperability/git> .
 
-<https://w3id.org/health-ri/ontology/v1.6.2> owl:priorVersion <https://w3id.org/health-ri/ontology/v1.6.1> .
+<https://w3id.org/health-ri/ontology/v2.0.0> owl:priorVersion <https://w3id.org/health-ri/ontology/v1.6.2> .
 
 hrio:CisgenderPerson_1 rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subPropertyOf hrio:person .
@@ -216,6 +216,101 @@ hrio:TransgenderPerson_1 rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> 
 hrio:animalInheresInHealthCondition rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subPropertyOf hrio:conditionInheresInSubstantial .
 
+hrio:birthCityOrLocation a owl:DatatypeProperty ;
+    rdfs:label "birth city or location"@en ;
+    rdfs:domain hrio:Person ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "birth city or location"@en .
+
+hrio:birthCountry a owl:DatatypeProperty ;
+    rdfs:label "birth country"@en ;
+    rdfs:domain hrio:Person ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "birth country"@en .
+
+hrio:birthDate a owl:ObjectProperty ;
+    rdfs:label "birth date"@en ;
+    rdfs:domain hrio:Person ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range hrio:Date ;
+    rdfs:subPropertyOf gufo:hasReifiedQualityValue ;
+    skos:prefLabel "birth date"@en .
+
+hrio:birthDateTime a owl:ObjectProperty ;
+    rdfs:label "birth date-time"@en ;
+    rdfs:domain hrio:Person ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range hrio:OffsetDateTime ;
+    rdfs:subPropertyOf gufo:hasReifiedQualityValue ;
+    skos:prefLabel "birth date-time"@en .
+
+hrio:birthPlaceAddress a owl:ObjectProperty ;
+    rdfs:label "birth place address"@en ;
+    rdfs:domain hrio:Person ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range hrio:Address ;
+    skos:prefLabel "birth place address"@en .
+
+hrio:birthPosition a owl:DatatypeProperty ;
+    rdfs:label "birth position"@en ;
+    rdfs:domain hrio:MultipleBirthComponent ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:int ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "birth position"@en .
+
+hrio:birthYear a owl:DatatypeProperty ;
+    rdfs:label "birth year"@en ;
+    rdfs:domain hrio:Person ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:int ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "birth year"@en .
+
+hrio:buildingName a owl:DatatypeProperty ;
+    rdfs:label "building name"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "building name"@en .
+
+hrio:careOf a owl:DatatypeProperty ;
+    rdfs:label "care of"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "care of"@en .
+
+hrio:cityOrLocation a owl:DatatypeProperty ;
+    rdfs:label "city or location"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "city or location"@en .
+
+hrio:country a owl:DatatypeProperty ;
+    rdfs:label "country"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "country"@en .
+
+hrio:countryCode a owl:DatatypeProperty ;
+    rdfs:label "country code"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "country code"@en .
+
 hrio:createsOnBehalfOf a gufo:MaterialRelationshipType,
         owl:ObjectProperty ;
     rdfs:label "creates on behalf of"@en ;
@@ -224,20 +319,20 @@ hrio:createsOnBehalfOf a gufo:MaterialRelationshipType,
     rdfs:range hrio:AdministrativeGenderRecognizingOrganization ;
     skos:prefLabel "creates on behalf of"@en .
 
+hrio:currentAge a owl:DatatypeProperty ;
+    rdfs:label "current age"@en ;
+    rdfs:domain hrio:Person ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:int ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "current age"@en .
+
 hrio:date a owl:ObjectProperty ;
     rdfs:label "date"@en ;
     rdfs:domain hrio:OffsetDateTime ;
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:range hrio:Date ;
     skos:prefLabel "date"@en .
-
-hrio:dateOfBirth a owl:ObjectProperty ;
-    rdfs:label "date of birth"@en ;
-    rdfs:domain hrio:Person ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:range hrio:Date ;
-    rdfs:subPropertyOf gufo:hasReifiedQualityValue ;
-    skos:prefLabel "date of birth"@en .
 
 hrio:day a owl:DatatypeProperty ;
     rdfs:label "day"@en ;
@@ -247,9 +342,25 @@ hrio:day a owl:DatatypeProperty ;
     rdfs:subPropertyOf gufo:hasValueComponent ;
     skos:prefLabel "day"@en .
 
+hrio:districtOrNeighborhood a owl:DatatypeProperty ;
+    rdfs:label "district or neighborhood"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "district or neighborhood"@en .
+
 hrio:end a owl:ObjectProperty ;
     rdfs:label "end"@en ;
-    rdfs:domain hrio:PersonsBirth ;
+    rdfs:domain hrio:MultipleBirth ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range hrio:OffsetDateTime ;
+    rdfs:subPropertyOf gufo:hasReifiedQualityValue ;
+    skos:prefLabel "end"@en .
+
+hrio:end_1 a owl:ObjectProperty ;
+    rdfs:label "end"@en ;
+    rdfs:domain hrio:SingleBirth ;
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:range hrio:OffsetDateTime ;
     rdfs:subPropertyOf gufo:hasReifiedQualityValue ;
@@ -263,6 +374,14 @@ hrio:femaleTypicalVisualSexCharacteristicIsComponentOfPhenotypicFemaleSexPerson 
 
 hrio:femininePresentingPerson rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subPropertyOf hrio:femaleGenderInheresInFemaleGenderPerson .
+
+hrio:floor a owl:DatatypeProperty ;
+    rdfs:label "floor"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "floor"@en .
 
 hrio:hasAllosome a gufo:MaterialRelationshipType,
         owl:ObjectProperty ;
@@ -296,27 +415,46 @@ hrio:hour a owl:DatatypeProperty ;
     rdfs:subPropertyOf gufo:hasValueComponent ;
     skos:prefLabel "hour"@en .
 
+hrio:houseNumber a owl:DatatypeProperty ;
+    rdfs:label "house number"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "house number"@en .
+
+hrio:houseNumberExtension a owl:DatatypeProperty ;
+    rdfs:label "house number extension"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "house number extension"@en .
+
 hrio:indeterminateDimorphicCharacteristicIsComponentOfIndeterminateSexPerson rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subPropertyOf hrio:sexualDimorphicCharacteristicIsComponentOfPerson .
 
 hrio:indeterminateVisualSexCharacteristicIsComponentOfPhenotypicAmbiguousSexPerson rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subPropertyOf hrio:personIsComponentOfVisualSexCharacteristic .
 
-hrio:isBiologicalFatherOf a gufo:MaterialRelationshipType,
-        owl:ObjectProperty ;
-    rdfs:label "is biological father of"@en ;
-    rdfs:domain hrio:BiologicalFather ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:range hrio:Person ;
-    skos:prefLabel "is biological father of"@en .
+hrio:isBornIn_1 rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subPropertyOf hrio:isBornIn .
 
-hrio:isBiologicalMotherOf a gufo:MaterialRelationshipType,
+hrio:isGeneticFatherOf a gufo:MaterialRelationshipType,
         owl:ObjectProperty ;
-    rdfs:label "is biological mother of"@en ;
-    rdfs:domain hrio:BiologicalMother ;
+    rdfs:label "is genetic father of"@en ;
+    rdfs:domain hrio:GeneticFather ;
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:range hrio:Person ;
-    skos:prefLabel "is biological mother of"@en .
+    skos:prefLabel "is genetic father of"@en .
+
+hrio:isGeneticMotherOf a gufo:MaterialRelationshipType,
+        owl:ObjectProperty ;
+    rdfs:label "is genetic mother of"@en ;
+    rdfs:domain hrio:GeneticMother ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range hrio:Person ;
+    skos:prefLabel "is genetic mother of"@en .
 
 hrio:karyotypicFemaleSexInheresInKaryotypicFemaleSexPerson rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subPropertyOf hrio:femaleSexInheresInFemaleSexPerson,
@@ -373,13 +511,21 @@ hrio:nanosecond a owl:DatatypeProperty ;
 hrio:nonBinaryPresentingPerson rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subPropertyOf hrio:nonBinaryGenderInheresInNonBinaryGenderPerson .
 
-hrio:parentOf a gufo:MaterialRelationshipType,
-        owl:ObjectProperty ;
-    rdfs:label "parent of"@en ;
-    rdfs:domain hrio:Person ;
+hrio:postOfficeBox a owl:DatatypeProperty ;
+    rdfs:label "post office box"@en ;
+    rdfs:domain hrio:Address ;
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:range hrio:Person ;
-    skos:prefLabel "parent of"@en .
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "post office box"@en .
+
+hrio:postalCode a owl:DatatypeProperty ;
+    rdfs:label "postal code"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "postal code"@en .
 
 hrio:recognitionBy rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subPropertyOf hrio:recognizedBy .
@@ -389,6 +535,14 @@ hrio:recognizes rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
 
 hrio:recognizesGender_1 rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subPropertyOf hrio:recognizesGender .
+
+hrio:regionOrState a owl:DatatypeProperty ;
+    rdfs:label "region or state"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "region or state"@en .
 
 hrio:second a owl:DatatypeProperty ;
     rdfs:label "second"@en ;
@@ -427,11 +581,35 @@ hrio:sexAtBirthMaleSexInheresInSexAtBirthMaleSexPerson rdfs:isDefinedBy <https:/
 
 hrio:start a owl:ObjectProperty ;
     rdfs:label "start"@en ;
-    rdfs:domain hrio:PersonsBirth ;
+    rdfs:domain hrio:MultipleBirth ;
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:range hrio:OffsetDateTime ;
     rdfs:subPropertyOf gufo:hasReifiedQualityValue ;
     skos:prefLabel "start"@en .
+
+hrio:start_1 a owl:ObjectProperty ;
+    rdfs:label "start"@en ;
+    rdfs:domain hrio:SingleBirth ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range hrio:OffsetDateTime ;
+    rdfs:subPropertyOf gufo:hasReifiedQualityValue ;
+    skos:prefLabel "start"@en .
+
+hrio:streetName a owl:DatatypeProperty ;
+    rdfs:label "street name"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "street name"@en .
+
+hrio:unitDesignator a owl:DatatypeProperty ;
+    rdfs:label "unit designator"@en ;
+    rdfs:domain hrio:Address ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gufo:hasQualityValue ;
+    skos:prefLabel "unit designator"@en .
 
 hrio:utcOffsetMinutes a owl:DatatypeProperty ;
     rdfs:label "utcOffsetMinutes"@en ;
@@ -501,6 +679,24 @@ Also called a "birth record" or "attending physician's report"."""@en ;
         gufo:FunctionalComplex ;
     skos:prefLabel "Birth Notification"@en .
 
+hrio:BirthPlace a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Birth Place"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/PersonBirth> ;
+    rdfs:comment """Birth Place is a historical role played by an Addressable Place when it is the location of a Birth event. It classifies a place according to its participation as the site where a Birth occurs.
+
+In this model, each Birth is characterized by exactly one Birth Place, while an Addressable Place may play the Birth Place role for one or more Births (potentially across different times)."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:Birth ],
+        hrio:AddressablePlace ;
+    skos:altLabel "Birth Location"@en,
+        "Birthplace"@en,
+        "Place of Birth"@en ;
+    skos:prefLabel "Birth Place"@en .
+
 hrio:BirthRelatedLegislationRule a gufo:Category,
         owl:Class,
         owl:NamedIndividual ;
@@ -520,6 +716,16 @@ hrio:CareOrientedDiagnosis a gufo:Role,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:HealthcareDiagnosis ;
     skos:prefLabel "Care-oriented Diagnosis"@en .
+
+hrio:Child a gufo:Phase,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Child"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/Person> ;
+    rdfs:comment "Child denotes the life stage of a living person prior to adolescence. It identifies persons who are not yet adolescents or adults and may bear roles that depend on being a child."@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf hrio:LivingPerson ;
+    skos:prefLabel "Child"@en .
 
 hrio:Chromosome a gufo:Kind,
         owl:Class,
@@ -1106,6 +1312,8 @@ hrio:indeterminateSexInheresInIndeterminateSexPerson rdfs:isDefinedBy <https://w
     rdfs:subPropertyOf hrio:nonBinaryPerson,
         hrio:sexInheresInPerson .
 
+hrio:isBornIn rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> .
+
 hrio:phenotypicAmbiguousSexInheresInPhenotypicAmbiguousSexPerson rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subPropertyOf hrio:indeterminateSexInheresInIndeterminateSexPerson,
         hrio:phenotypicSexInheresInPhenotypicSexAssessedPerson .
@@ -1137,6 +1345,23 @@ hrio:AcquiredHealthCondition a gufo:Category,
     rdfs:subClassOf hrio:ExternallyCausedHealthCondition,
         hrio:KnownOriginHealthCondition ;
     skos:prefLabel "Acquired Health Condition"@en .
+
+hrio:AddressablePlace a gufo:Mixin,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Addressable Place"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/General> ;
+    rdfs:comment """Addressable Place is a place considered specifically under the aspect of being addressable, that is, being the target of an Address used to refer to it in a stable and communicable way.
+
+Each Addressable Place is characterized by one or more Addresses, and an Address may characterize one or more Addressable Places, reflecting that the same address information can be applied to multiple places when they are treated as addressable within the same addressing context."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:someValuesFrom hrio:Address ],
+        gufo:FunctionalComplex ;
+    skos:altLabel "Addressable Location"@en,
+        "Place With Address"@en ;
+    skos:prefLabel "Addressable Place"@en .
 
 hrio:AdministrativeCodingDiagnosis a gufo:SubKind,
         owl:Class,
@@ -1263,34 +1488,6 @@ Belief subsumes Diagnosis Suspicion and Diagnostic Assessment Outcome as special
     rdfs:subClassOf gufo:IntrinsicMode ;
     skos:prefLabel "Belief"@en .
 
-hrio:BiologicalFather a gufo:Role,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Biological Father"@en ;
-    dct:isPartOf <https://w3id.org/health-ri/ontology#package/Person> ;
-    rdfs:comment "Biological Father is the parental capacity of a person who is the genetic father of a specific child. It is realized within a Parent-Child Relation that connects this parent with that child, who participates as Offspring. The capacity is child-specific: one person may bear it for multiple children, each through its own relation."@en ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:ParentChildRelation ;
-            owl:onProperty gufo:mediates ],
-        hrio:MaleSexPerson ;
-    skos:prefLabel "Biological Father"@en .
-
-hrio:BiologicalMother a gufo:Role,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Biological Mother"@en ;
-    dct:isPartOf <https://w3id.org/health-ri/ontology#package/Person> ;
-    rdfs:comment "Biological Mother is the parental capacity of a person who is the genetic mother of a specific child. It is realized within a Parent-Child Relation that connects this parent with that child, who participates as Offspring. The capacity is child-specific: one person may bear it for multiple children, each through its own relation."@en ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:ParentChildRelation ;
-            owl:onProperty gufo:mediates ],
-        hrio:FemaleSexPerson ;
-    skos:prefLabel "Biological Mother"@en .
-
 hrio:CellularEntityDiagnosis a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
@@ -1300,19 +1497,8 @@ hrio:CellularEntityDiagnosis a gufo:SubKind,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:HealthcareDiagnosis ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:AntemortemDiagnosis hrio:PostmortemDiagnosis ) ] ;
+            owl:unionOf ( hrio:PostmortemDiagnosis hrio:AntemortemDiagnosis ) ] ;
     skos:prefLabel "Cellular Entity Diagnosis"@en .
-
-hrio:Child a gufo:Phase,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Child"@en ;
-    dct:isPartOf <https://w3id.org/health-ri/ontology#package/Person> ;
-    rdfs:comment "Child denotes the life stage of a living person prior to adolescence. It identifies persons who are not yet adolescents or adults and may bear roles that depend on being a child."@en ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:subClassOf hrio:LivingPerson,
-        hrio:Person ;
-    skos:prefLabel "Child"@en .
 
 hrio:ClinicalDiagnosis a gufo:SubKind,
         owl:Class,
@@ -1433,6 +1619,66 @@ hrio:GenderAttributor a gufo:RoleMixin,
         gufo:FunctionalComplex,
         hrio:Agent ;
     skos:prefLabel "Gender Attributor"@en .
+
+hrio:GeneticFather a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Genetic Father"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/PersonBirth> ;
+    rdfs:comment """Genetic Father is a role played by a Person who is the genetic (paternal) parent of another Person (the offspring). In this model, each Person is related to exactly one Genetic Father, while the same Genetic Father may be related to one or more Persons, typically via Birth Biological Provenance.
+
+Genetic Fatherhood captures biological/genetic parentage (not legal or social parentage). Modeling constraint: Genetic Father is specialized from Karyotypic Male-sex Person, reflecting an explicit restriction adopted in this model."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:BirthBiologicalProvenance ;
+            owl:onProperty gufo:mediates ],
+        hrio:KaryotypicMaleSexPerson ;
+    skos:altLabel "Genetic Paternal Parent"@en,
+        "Paternal Genetic Parent"@en ;
+    skos:prefLabel "Genetic Father"@en .
+
+hrio:GeneticMother a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Genetic Mother"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/PersonBirth> ;
+    rdfs:comment """Genetic Mother is a role played by a Person who is the genetic (maternal) parent of another Person (the offspring). In this model, each Person is related to exactly one Genetic Mother, while the same Genetic Mother may be related to one or more Persons, typically via Birth Biological Provenance.
+
+Genetic Motherhood captures biological/genetic parentage (not legal or social parentage) and is distinct from the Gestational Carrier role, which concerns gestation. Modeling constraint: Genetic Mother is specialized from Karyotypic Female-sex Person, reflecting an explicit restriction adopted in this model."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:BirthBiologicalProvenance ;
+            owl:onProperty gufo:mediates ],
+        hrio:KaryotypicFemaleSexPerson ;
+    skos:altLabel "Genetic Maternal Parent"@en,
+        "Maternal Genetic Parent"@en ;
+    skos:prefLabel "Genetic Mother"@en .
+
+hrio:GestationalCarrier a gufo:Role,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Gestational Carrier"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/PersonBirth> ;
+    rdfs:comment """Gestational Carrier (historical role) is the role played by a Person who carried the pregnancy/gestation that culminated in a Birth.
+
+In this model, each Birth is associated with exactly one Gestational Carrier, and each Gestational Carrier is associated with one or more Births. Gestational Carrier is linked to Birth Biological Provenance via participation in that relator (each provenance is associated with exactly one Gestational Carrier, and each Gestational Carrier is linked to one or more provenances).
+
+Model assumption: only karyotypic female-sex persons can instantiate Gestational Carrier."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:BirthBiologicalProvenance ;
+            owl:onProperty gufo:mediates ],
+        [ a owl:Restriction ;
+            owl:onProperty gufo:participatedIn ;
+            owl:someValuesFrom hrio:Birth ],
+        hrio:KaryotypicFemaleSexPerson ;
+    skos:altLabel "Gestation Carrier"@en,
+        "Gestational Mother"@en,
+        "Pregnancy Carrier"@en ;
+    skos:prefLabel "Gestational Carrier"@en .
 
 hrio:HaploidCell a gufo:SubKind,
         owl:Class,
@@ -1668,23 +1914,6 @@ hrio:Object a gufo:Category,
         hrio:Substantial ;
     skos:prefLabel "Object"@en .
 
-hrio:Offspring a gufo:Role,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Offspring"@en ;
-    dct:isPartOf <https://w3id.org/health-ri/ontology#package/Person> ;
-    rdfs:comment "Offspring is the role a child bears relative to their biological parents. A person bears this role within a Parent-Child Relation that ties the child to a Biological Mother and/or a Biological Father, and the role is created at the child's Person's Birth event."@en ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty gufo:mediates ;
-            owl:someValuesFrom hrio:ParentChildRelation ],
-        [ a owl:Restriction ;
-            owl:onProperty [ owl:inverseOf gufo:wasCreatedIn ] ;
-            owl:someValuesFrom hrio:PersonsBirth ],
-        hrio:Child,
-        hrio:Person ;
-    skos:prefLabel "Offspring"@en .
-
 hrio:PersonsDeathCause a gufo:Kind,
         owl:Class,
         owl:NamedIndividual ;
@@ -1814,6 +2043,20 @@ hrio:SexAtBirthIndeterminateSexPerson a gufo:Role,
         hrio:PhenotypicAmbiguousSexPerson,
         hrio:SexAtBirthAssignedPerson ;
     skos:prefLabel "Sex-at-birth Indeterminate-sex Person"@en .
+
+hrio:SingletonBirth a gufo:EventType,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Singleton Birth"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/PersonBirth> ;
+    rdfs:comment """Scope: definition of Singleton Birth and its distinction from Multiple Birth Component.
+
+Singleton Birth is a Single Birth that is not a component of any Multiple Birth (i.e., a standalone delivery of exactly one offspring). Singleton Birth and Multiple Birth Component form a Disjoint and Covering partition of Single Birth (�single birth type�), so every Single Birth is exactly one of these two specializations."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf hrio:SingleBirth ;
+    skos:altLabel "Non-component Single Birth"@en,
+        "Non-multiple Single Birth"@en ;
+    skos:prefLabel "Singleton Birth"@en .
 
 hrio:StructuralHealthCondition a gufo:Category,
         owl:Class,
@@ -2006,7 +2249,7 @@ hrio:Animal a gufo:Category,
         hrio:CellularEntity,
         hrio:Substantial ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:Person hrio:NonHumanAnimal ) ] ;
+            owl:unionOf ( hrio:NonHumanAnimal hrio:Person ) ] ;
     skos:prefLabel "Animal"@en .
 
 hrio:ArtificialAgent a gufo:Category,
@@ -2065,7 +2308,7 @@ hrio:DiagnosingPerson a gufo:Role,
     rdfs:subClassOf hrio:DiagnosingAgent,
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:LaypersonDiagnosingAgent hrio:ProfessionalDiagnosingAgent ) ] ;
+            owl:unionOf ( hrio:ProfessionalDiagnosingAgent hrio:LaypersonDiagnosingAgent ) ] ;
     skos:prefLabel "Diagnosing Person"@en .
 
 hrio:DiagnosticAssessment a gufo:EventType,
@@ -2109,7 +2352,7 @@ hrio:Document a gufo:Category,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf gufo:Object ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:DigitalDocument hrio:PhysicalDocument ) ] ;
+            owl:unionOf ( hrio:PhysicalDocument hrio:DigitalDocument ) ] ;
     skos:prefLabel "Document"@en .
 
 hrio:ExposureBasedHealthCondition a gufo:Category,
@@ -2162,7 +2405,7 @@ hrio:HumanCell a gufo:Kind,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf gufo:FunctionalComplex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:DiploidCell hrio:HaploidCell hrio:Polyploid ) ] ;
+            owl:unionOf ( hrio:Polyploid hrio:DiploidCell hrio:HaploidCell ) ] ;
     skos:prefLabel "Human Cell"@en .
 
 hrio:LegallyRecognizedGenderPerson a gufo:Role,
@@ -2255,7 +2498,7 @@ hrio:NonInjuryHealthCondition a gufo:Category,
             owl:unionOf ( gufo:IntrinsicMode gufo:ExtrinsicMode ) ],
         gufo:Aspect ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:InherentHealthCondition hrio:ExposureBasedHealthCondition ) ] ;
+            owl:unionOf ( hrio:ExposureBasedHealthCondition hrio:InherentHealthCondition ) ] ;
     skos:prefLabel "Non-injury Health Condition"@en .
 
 hrio:PathologicalHealthCondition a gufo:Category,
@@ -2476,7 +2719,7 @@ hrio:SexualDimorphicCharacteristic a gufo:Category,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf gufo:FunctionalComplex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:IndeterminateDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic ) ] ;
+            owl:unionOf ( hrio:FemaleTypicalDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic hrio:IndeterminateDimorphicCharacteristic ) ] ;
     skos:prefLabel "Sexual Dimorphic Characteristic"@en .
 
 hrio:SocialAgent a gufo:Category,
@@ -2519,7 +2762,7 @@ hrio:VisualSexCharacteristic a gufo:Category,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf gufo:FunctionalComplex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:MaleTypicalVisualSexCharacteristic hrio:FemaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic ) ] ;
+            owl:unionOf ( hrio:MaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic hrio:FemaleTypicalVisualSexCharacteristic ) ] ;
     skos:prefLabel "Visual Sex Characteristic"@en .
 
 hrio:femaleGenderInheresInFemaleGenderPerson rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
@@ -2548,6 +2791,33 @@ hrio:sexAtBirthInheresInSexAtBirthAssignedPerson rdfs:isDefinedBy <https://w3id.
     rdfs:subPropertyOf hrio:phenotypicSexInheresInPhenotypicSexAssessedPerson .
 
 hrio:sexualDimorphicCharacteristicIsComponentOfPerson rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> .
+
+hrio:BirthBiologicalProvenance a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Birth Biological Provenance"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/PersonBirth> ;
+    rdfs:comment """Birth Biological Provenance is a relator that reifies a Person�s biological origin by mediating the Person to the biological and gestational participants relevant to that origin. In this model, it links the Person to exactly one Genetic Mother, exactly one Genetic Father, and exactly one Gestational Carrier, and it is in 1�1 correspondence with the Person it describes.
+
+The same Genetic Mother, Genetic Father, or Gestational Carrier may be related to multiple Persons via distinct Birth Biological Provenance instances. This construct concerns biological/gestational provenance and is distinct from legal or social parentage."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom hrio:GeneticMother ],
+        [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom hrio:GeneticFather ],
+        [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:someValuesFrom hrio:GestationalCarrier ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:Person ;
+            owl:onProperty gufo:mediates ],
+        gufo:Relator ;
+    skos:altLabel "Biological Parentage and Gestation Provenance"@en,
+        "Birth Biological Parentage Provenance"@en ;
+    skos:prefLabel "Birth Biological Provenance"@en .
 
 hrio:CellularEntity a gufo:Category,
         owl:Class,
@@ -2699,7 +2969,7 @@ It provides a common female classification that can be specified as a sex-based 
             owl:onProperty gufo:inheresIn ],
         hrio:SexGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:FemaleGender hrio:FemaleSex ) ] ;
+            owl:unionOf ( hrio:FemaleSex hrio:FemaleGender ) ] ;
     skos:prefLabel "Female"@en .
 
 hrio:GenderAttribution a gufo:Kind,
@@ -2751,7 +3021,7 @@ hrio:KaryotypicSex a gufo:Kind,
         gufo:IntrinsicMode,
         hrio:Sex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:KaryotypicMaleSex hrio:KaryotypicFemaleSex ) ] ;
+            owl:unionOf ( hrio:KaryotypicFemaleSex hrio:KaryotypicMaleSex ) ] ;
     skos:prefLabel "Karyotypic Sex"@en .
 
 hrio:LegalGenderRecognition a gufo:SubKind,
@@ -2797,7 +3067,7 @@ It provides a common male classification that can be specified as a sex-based ma
             owl:onProperty gufo:inheresIn ],
         hrio:SexGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:MaleSex hrio:MaleGender ) ] ;
+            owl:unionOf ( hrio:MaleGender hrio:MaleSex ) ] ;
     skos:prefLabel "Male"@en .
 
 hrio:Man a gufo:SubKind,
@@ -2814,8 +3084,43 @@ Sex-based male classification includes variants based on sex at birth, phenotypi
             owl:someValuesFrom hrio:Male ],
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:MaleGenderPerson hrio:MaleSexPerson ) ] ;
+            owl:unionOf ( hrio:MaleSexPerson hrio:MaleGenderPerson ) ] ;
     skos:prefLabel "Man"@en .
+
+hrio:MultipleBirth a gufo:EventType,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Multiple Birth"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/PersonBirth> ;
+    rdfs:comment """Scope: definition of Multiple Birth, its component structure, and temporal bounds.
+
+Multiple Birth is a Birth event that comprises two or more Single Birth component events (Multiple Birth Components), each corresponding to the delivery of one offspring within the overall multiple-birth event. Each Multiple Birth has two or more components (2..*), and each Multiple Birth Component belongs to exactly one Multiple Birth (1).
+
+Multiple Birth.start and Multiple Birth.end are derived temporal bounds (e.g., start = earliest component start; end = latest component end)."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf hrio:Birth ;
+    skos:altLabel "Multiple-Infant Birth Event"@en,
+        "Multiple-infant Birth"@en ;
+    skos:prefLabel "Multiple Birth"@en .
+
+hrio:MultipleBirthComponent a gufo:EventType,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Multiple Birth Component"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/PersonBirth> ;
+    rdfs:comment """Scope: definition of Multiple Birth Component, its relation to Multiple Birth, and ordering.
+
+Multiple Birth Component is a Single Birth event that represents the delivery of one offspring as part of a Multiple Birth. Each Multiple Birth has two or more components (2..*), and each component belongs to exactly one Multiple Birth (1).
+
+birth position (int, derived, multiplicity 1) records the ordinal delivery position of the component within its Multiple Birth (e.g., 1 = first delivered, 2 = second, ...), derived from the ordering of components (or from recorded clinical sequence)."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass hrio:SingleBirth ;
+            owl:onProperty gufo:isEventProperPartOf ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        hrio:SingleBirth ;
+    skos:altLabel "Individual Birth in a Multiple Birth"@en ;
+    skos:prefLabel "Multiple Birth Component"@en .
 
 hrio:NonBinaryPerson a gufo:SubKind,
         owl:Class,
@@ -2831,7 +3136,7 @@ Sex-based indeterminate classification includes variants based on sex at birth a
             owl:someValuesFrom hrio:NonBinarySexGender ],
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:NonBinaryGenderPerson hrio:IndeterminateSexPerson ) ] ;
+            owl:unionOf ( hrio:IndeterminateSexPerson hrio:NonBinaryGenderPerson ) ] ;
     skos:prefLabel "Non-binary Person"@en .
 
 hrio:NonBinarySexGender a gufo:Category,
@@ -2874,30 +3179,6 @@ hrio:Organization a gufo:Kind,
     rdfs:subClassOf hrio:SocialAgent ;
     skos:prefLabel "Organization"@en .
 
-hrio:ParentChildRelation a gufo:Kind,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Parent-Child Relation"@en ;
-    dct:isPartOf <https://w3id.org/health-ri/ontology#package/Person> ;
-    rdfs:comment "Parent-Child Relation is the relation that connects a specific child with their biological parent roles. It mediates the participation of a Biological Mother and/or a Biological Father together with the child who bears the Offspring role, and it is manifested by a Person's Birth event that brings this relation into existence."@en ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
-            owl:someValuesFrom hrio:BiologicalMother ],
-        [ a owl:Restriction ;
-            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
-            owl:someValuesFrom hrio:BiologicalFather ],
-        [ a owl:Restriction ;
-            owl:onClass hrio:Offspring ;
-            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onClass hrio:PersonsBirth ;
-            owl:onProperty gufo:manifestedIn ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        gufo:Relator ;
-    skos:prefLabel "Parent-Child Relation"@en .
-
 hrio:PersonWithRegularSexChromosome a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
@@ -2909,24 +3190,6 @@ hrio:PersonWithRegularSexChromosome a gufo:SubKind,
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:RegularKaryotypicalMalePerson hrio:RegularKaryotypicalFemalePerson ) ] ;
     skos:prefLabel "Person with Regular Sex Chromosome"@en .
-
-hrio:PersonsBirth a gufo:EventType,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Person's Birth"@en ;
-    dct:isPartOf <https://w3id.org/health-ri/ontology#package/Person> ;
-    rdfs:comment "Person's Birth is the event in which a person comes into existence as a child. It creates the Offspring role for that child and is the manifestation of exactly one Parent-Child Relation that connects the child with their biological parent roles. The event has exactly one start timestamp and one end timestamp; the person's date of birth equals the date portion of the end timestamp."@en ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:ParentChildRelation ;
-            owl:onProperty [ owl:inverseOf gufo:manifestedIn ] ],
-        [ a owl:Restriction ;
-            owl:onClass hrio:Offspring ;
-            owl:onProperty gufo:wasCreatedIn ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        gufo:Event ;
-    skos:prefLabel "Person's Birth"@en .
 
 hrio:PhenotypicAmbiguousSex a gufo:SubKind,
         owl:Class,
@@ -3005,7 +3268,7 @@ hrio:SelfIdentifiedCisgenderPerson a gufo:Role,
     rdfs:subClassOf hrio:CisgenderPerson,
         hrio:SelfAwarePerson ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SelfIdentifiedCisgenderFemalePerson hrio:SelfIdentifiedCisgenderMalePerson ) ] ;
+            owl:unionOf ( hrio:SelfIdentifiedCisgenderMalePerson hrio:SelfIdentifiedCisgenderFemalePerson ) ] ;
     skos:prefLabel "Self-identified Cisgender Person"@en .
 
 hrio:SexAtBirth a gufo:SubKind,
@@ -3021,7 +3284,7 @@ hrio:SexAtBirth a gufo:SubKind,
             owl:onProperty gufo:inheresIn ],
         hrio:PhenotypicSex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SexAtBirthMaleSex hrio:SexAtBirthIndeterminateSex hrio:SexAtBirthFemaleSex ) ] ;
+            owl:unionOf ( hrio:SexAtBirthMaleSex hrio:SexAtBirthFemaleSex hrio:SexAtBirthIndeterminateSex ) ] ;
     skos:prefLabel "Sex at Birth"@en .
 
 hrio:TransgenderPerson a gufo:Phase,
@@ -3077,11 +3340,42 @@ Sex-based female classification includes variants based on sex at birth, phenoty
             owl:someValuesFrom hrio:Female ],
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:FemaleSexPerson hrio:FemaleGenderPerson ) ] ;
+            owl:unionOf ( hrio:FemaleGenderPerson hrio:FemaleSexPerson ) ] ;
     skos:prefLabel "Woman"@en .
 
 hrio:phenotypicSexInheresInPhenotypicSexAssessedPerson rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subPropertyOf hrio:sexInheresInPerson .
+
+hrio:Birth a gufo:EventType,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Birth"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/PersonBirth> ;
+    rdfs:comment """Birth is an event in which one or more Persons come into existence (i.e., are created by the birth occurrence). It is specialized into Single Birth and Multiple Birth while preserving the same modeling patterns for participants and location. Each Birth occurs at exactly one Birth Place and involves exactly one Gestational Carrier, while a Birth Place or Gestational Carrier may be related to one or more Births.
+
+A Multiple Birth aggregates at least two Multiple Birth Components. Each Multiple Birth Component belongs to exactly one Multiple Birth and is modeled as a kind of Single Birth, recording a required birth position and supporting start/end timestamps for the component occurrence."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass hrio:Person ;
+            owl:onProperty gufo:wasCreatedIn ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:GestationalCarrier ;
+            owl:onProperty [ owl:inverseOf gufo:participatedIn ] ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:BirthPlace ;
+            owl:onProperty gufo:inheresIn ],
+        gufo:Event ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:MultipleBirth hrio:SingleBirth ) ] ;
+    skos:altLabel "Birth Event"@en,
+        "Birth Occurrence"@en,
+        "Birth of a Human"@en,
+        "Birth of a Person"@en,
+        "Human Birth"@en ;
+    skos:prefLabel "Birth"@en .
 
 hrio:Date a gufo:AbstractIndividualType,
         owl:Class,
@@ -3113,7 +3407,7 @@ A diagnosed entity may be characterized by conditions and by condition indicator
             owl:onProperty gufo:inheresIn ],
         hrio:Substantial ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:DiagnosedBiologicalPart hrio:DiagnosedSpecimen hrio:DiagnosedGroup hrio:DiagnosedCellularEntity ) ] ;
+            owl:unionOf ( hrio:DiagnosedCellularEntity hrio:DiagnosedBiologicalPart hrio:DiagnosedGroup hrio:DiagnosedSpecimen ) ] ;
     skos:prefLabel "Diagnosed Entity"@en .
 
 hrio:DiagnosingAgent a gufo:RoleMixin,
@@ -3134,7 +3428,7 @@ A diagnosing agent can be characterized by diagnosis suspicions it holds, and ma
         gufo:FunctionalComplex,
         hrio:Agent ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:DiagnosingPerson hrio:DiagnosingArtificialAgent ) ] ;
+            owl:unionOf ( hrio:DiagnosingArtificialAgent hrio:DiagnosingPerson ) ] ;
     skos:prefLabel "Diagnosing Agent"@en .
 
 hrio:ExternallyCausedHealthCondition a gufo:Category,
@@ -3147,7 +3441,7 @@ hrio:ExternallyCausedHealthCondition a gufo:Category,
     rdfs:subClassOf gufo:ExtrinsicMode,
         hrio:KnownOriginHealthCondition ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ExposureBasedHealthCondition hrio:Injury ) ] ;
+            owl:unionOf ( hrio:Injury hrio:ExposureBasedHealthCondition ) ] ;
     skos:prefLabel "Externally-caused Health Condition"@en .
 
 hrio:ExternallyGenderAttributedPerson a gufo:Role,
@@ -3166,7 +3460,7 @@ hrio:ExternallyGenderAttributedPerson a gufo:Role,
             owl:onProperty gufo:inheresIn ],
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ExternallyAttributedCisgenderPerson hrio:ExternallyAttributedTransgenderPerson ) ] ;
+            owl:unionOf ( hrio:ExternallyAttributedTransgenderPerson hrio:ExternallyAttributedCisgenderPerson ) ] ;
     skos:prefLabel "Externally Gender-attributed Person"@en .
 
 hrio:GenderModality a gufo:Category,
@@ -3263,7 +3557,7 @@ Legal Gender denotes a gender classification that is recognized through an offic
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         hrio:AdministrativeGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:LegalFemaleGender hrio:LegalNonBinaryGender hrio:LegalMaleGender ) ] ;
+            owl:unionOf ( hrio:LegalMaleGender hrio:LegalFemaleGender hrio:LegalNonBinaryGender ) ] ;
     skos:prefLabel "Legal Gender"@en .
 
 hrio:NonTraumaticHealthCondition a gufo:Category,
@@ -3285,7 +3579,7 @@ hrio:PersonWithVariantSexChromosome a gufo:SubKind,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:VariantKaryotypicalFemalePerson hrio:KaryotypicalIndeterminatePerson hrio:VariantKaryotypicalMalePerson ) ] ;
+            owl:unionOf ( hrio:VariantKaryotypicalMalePerson hrio:VariantKaryotypicalFemalePerson hrio:KaryotypicalIndeterminatePerson ) ] ;
     skos:prefLabel "Person with Variant Sex Chromosome"@en .
 
 hrio:SelfAwarePerson a gufo:Phase,
@@ -3306,7 +3600,7 @@ hrio:SelfAwarePerson a gufo:Phase,
         hrio:LivingPerson,
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SelfIdentifiedTransgenderPerson hrio:SelfIdentifiedCisgenderPerson ) ] ;
+            owl:unionOf ( hrio:SelfIdentifiedCisgenderPerson hrio:SelfIdentifiedTransgenderPerson ) ] ;
     skos:prefLabel "Self-aware Person"@en .
 
 hrio:Substantial a gufo:Category,
@@ -3319,7 +3613,7 @@ hrio:Substantial a gufo:Category,
     rdfs:subClassOf gufo:Object,
         hrio:Endurant ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:Agent hrio:Object ) ] ;
+            owl:unionOf ( hrio:Object hrio:Agent ) ] ;
     skos:prefLabel "Substantial"@en .
 
 <https://w3id.org/health-ri/ontology#package/UFO> a skos:Collection ;
@@ -3399,7 +3693,7 @@ hrio:Agent a gufo:Category,
     rdfs:subClassOf gufo:Object,
         hrio:Substantial ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SocialAgent hrio:Animal ) ] ;
+            owl:unionOf ( hrio:Animal hrio:SocialAgent ) ] ;
     skos:prefLabel "Agent"@en .
 
 hrio:CisgenderPerson a gufo:Phase,
@@ -3417,7 +3711,7 @@ hrio:CisgenderPerson a gufo:Phase,
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:ExternallyAttributedCisgenderPerson hrio:SelfIdentifiedCisgenderPerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:MaleCisgenderPerson hrio:FemaleCisgenderPerson ) ] ;
+            owl:unionOf ( hrio:FemaleCisgenderPerson hrio:MaleCisgenderPerson ) ] ;
     skos:prefLabel "Cisgender Person"@en .
 
 hrio:Diagnosis a gufo:SubKind,
@@ -3438,6 +3732,29 @@ As an outcome, it stands in contrast to a No-Diagnosis Outcome and provides the 
         "Diagnosis Result"@en ;
     skos:prefLabel "Diagnosis"@en .
 
+hrio:FemaleSexPerson a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Female-sex Person"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/SexAndGender/Sex/SexOutcome> ;
+    rdfs:comment "Refers to a person whose sexual dimorphic characteristics align more strongly with those typically classified as female. The classification is based on the predominance of female-typical features in the overall assessment."@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:FemaleSex ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:FemaleSex ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ],
+        hrio:Person,
+        hrio:Woman ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:PhenotypicFemaleSexPerson hrio:KaryotypicFemaleSexPerson ) ] ;
+    skos:altLabel "Biological Female"@en,
+        "Biological Female Person"@en ;
+    skos:prefLabel "Female-sex Person"@en .
+
 hrio:HealthCondition a gufo:Category,
         owl:Class,
         owl:NamedIndividual ;
@@ -3447,9 +3764,9 @@ hrio:HealthCondition a gufo:Category,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:Condition ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:RiskBasedHealthCondition hrio:EstablishedHealthCondition ) ],
+            owl:unionOf ( hrio:EstablishedHealthCondition hrio:RiskBasedHealthCondition ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:PathologicalHealthCondition hrio:NonPathologicalHealthCondition ) ] ;
+            owl:unionOf ( hrio:NonPathologicalHealthCondition hrio:PathologicalHealthCondition ) ] ;
     skos:altLabel "health condition"@en ;
     skos:prefLabel "Health Condition"@en .
 
@@ -3470,44 +3787,6 @@ This classification concerns biological sex categorization and is distinct from 
         hrio:Sex ;
     skos:prefLabel "Indeterminate Sex"@en .
 
-hrio:KaryotypicFemaleSexPerson a gufo:SubKind,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Karyotypic Female-sex Person"@en ;
-    dct:isPartOf <https://w3id.org/health-ri/ontology#package/Biology> ;
-    rdfs:comment """A person whose karyotypical sex is female, determined by the sex chromosome complement. This class classifies persons by karyotype only and does not depend on phenotypic traits or on any sex assigned or assessed at birth or later.
-
-Karyotypic Female-sex Person subsumes both Regular Karyotypical Female Person and Variant Karyotypical Female Person, which are categorized as female in the model. It is exclusive with Karyotypic Male-sex Person within the karyotypical-sex classification of persons."""@en ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass hrio:KaryotypicFemaleSex ;
-            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        hrio:FemaleSexPerson,
-        hrio:Person ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:RegularKaryotypicalFemalePerson hrio:VariantKaryotypicalFemalePerson ) ] ;
-    skos:prefLabel "Karyotypic Female-sex Person"@en .
-
-hrio:KaryotypicMaleSexPerson a gufo:SubKind,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Karyotypic Male-sex Person"@en ;
-    dct:isPartOf <https://w3id.org/health-ri/ontology#package/Biology> ;
-    rdfs:comment """A person whose karyotypical sex is male, determined by the sex chromosome complement. This class classifies persons by karyotype only and does not depend on phenotypic traits or on any sex assigned or assessed at birth or later.
-
-Karyotypic Male-sex Person subsumes both Regular Karyotypical Male Person and Variant Karyotypical Male Person, which are categorized as male in the model. It is exclusive with Karyotypic Female-sex Person within the karyotypical-sex classification of persons."""@en ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass hrio:KaryotypicMaleSex ;
-            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        hrio:MaleSexPerson,
-        hrio:Person ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:RegularKaryotypicalMalePerson hrio:VariantKaryotypicalMalePerson ) ] ;
-    skos:prefLabel "Karyotypic Male-sex Person"@en .
-
 hrio:KnownOriginHealthCondition a gufo:Category,
         owl:Class,
         owl:NamedIndividual ;
@@ -3519,7 +3798,7 @@ hrio:KnownOriginHealthCondition a gufo:Category,
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:CongenitalHealthCondition hrio:AcquiredHealthCondition ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:InherentHealthCondition hrio:ExternallyCausedHealthCondition ) ] ;
+            owl:unionOf ( hrio:ExternallyCausedHealthCondition hrio:InherentHealthCondition ) ] ;
     skos:prefLabel "Known-Origin Health Condition"@en .
 
 hrio:LivingPerson a gufo:Phase,
@@ -3533,8 +3812,31 @@ hrio:LivingPerson a gufo:Phase,
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:SelfAwarePerson hrio:NonSelfAwarePerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:Adult hrio:Adolescent hrio:Child ) ] ;
+            owl:unionOf ( hrio:Child hrio:Adult hrio:Adolescent ) ] ;
     skos:prefLabel "Living Person"@en .
+
+hrio:MaleSexPerson a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Male-sex Person"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/SexAndGender/Sex/SexOutcome> ;
+    rdfs:comment "Describes a person whose overall set of sexual dimorphic characteristics aligns more strongly with those typically classified as male. This classification relies on counting or weighting traits that are conventionally considered male-typical."@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:MaleSex ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:MaleSex ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ],
+        hrio:Man,
+        hrio:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:KaryotypicMaleSexPerson hrio:PhenotypicMaleSexPerson ) ] ;
+    skos:altLabel "Biological Male"@en,
+        "Biological Male Person"@en ;
+    skos:prefLabel "Male-sex Person"@en .
 
 hrio:NonBinaryGenderPerson a gufo:Phase,
         owl:Class,
@@ -3549,7 +3851,7 @@ hrio:NonBinaryGenderPerson a gufo:Phase,
         hrio:NonBinaryPerson,
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:NonBinaryPresentingPerson hrio:SelfIdentifiedNonBinaryGenderPerson hrio:ExternallyAttributedNonBinaryGenderPerson ) ] ;
+            owl:unionOf ( hrio:ExternallyAttributedNonBinaryGenderPerson hrio:NonBinaryPresentingPerson hrio:SelfIdentifiedNonBinaryGenderPerson ) ] ;
     skos:prefLabel "Non-binary-gender Person"@en .
 
 hrio:PhenotypicFemaleSex a gufo:SubKind,
@@ -3596,7 +3898,7 @@ hrio:PhenotypicSex a gufo:Kind,
         gufo:ExtrinsicMode,
         hrio:Sex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:PhenotypicAmbiguousSex hrio:PhenotypicFemaleSex hrio:PhenotypicMaleSex ) ] ;
+            owl:unionOf ( hrio:PhenotypicFemaleSex hrio:PhenotypicMaleSex hrio:PhenotypicAmbiguousSex ) ] ;
     skos:altLabel "Received Phenotypic Sex"@en ;
     skos:prefLabel "Phenotypic Sex"@en .
 
@@ -3616,7 +3918,7 @@ hrio:PhenotypicSexAssessedPerson a gufo:Role,
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:PhenotypicMaleSexPerson hrio:PhenotypicFemaleSexPerson hrio:PhenotypicAmbiguousSexPerson ) ] ;
+            owl:unionOf ( hrio:PhenotypicFemaleSexPerson hrio:PhenotypicMaleSexPerson hrio:PhenotypicAmbiguousSexPerson ) ] ;
     skos:prefLabel "Phenotypic-sex-assessed Person"@en .
 
 hrio:SexAtBirthFemaleSexPerson a gufo:Role,
@@ -3670,31 +3972,27 @@ hrio:FemaleGenderPerson a gufo:Phase,
         hrio:Person,
         hrio:Woman ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ExternallyAttributedFemaleGenderPerson hrio:SelfIdentifiedFemaleGenderPerson hrio:FemininePresentingPerson ) ] ;
+            owl:unionOf ( hrio:FemininePresentingPerson hrio:ExternallyAttributedFemaleGenderPerson hrio:SelfIdentifiedFemaleGenderPerson ) ] ;
     skos:prefLabel "Female-gender Person"@en .
 
-hrio:FemaleSexPerson a gufo:SubKind,
+hrio:KaryotypicMaleSexPerson a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
-    rdfs:label "Female-sex Person"@en ;
-    dct:isPartOf <https://w3id.org/health-ri/ontology#package/SexAndGender/Sex/SexOutcome> ;
-    rdfs:comment "Refers to a person whose sexual dimorphic characteristics align more strongly with those typically classified as female. The classification is based on the predominance of female-typical features in the overall assessment."@en ;
+    rdfs:label "Karyotypic Male-sex Person"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/Biology> ;
+    rdfs:comment """A person whose karyotypical sex is male, determined by the sex chromosome complement. This class classifies persons by karyotype only and does not depend on phenotypic traits or on any sex assigned or assessed at birth or later.
+
+Karyotypic Male-sex Person subsumes both Regular Karyotypical Male Person and Variant Karyotypical Male Person, which are categorized as male in the model. It is exclusive with Karyotypic Female-sex Person within the karyotypical-sex classification of persons."""@en ;
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:FemaleSex ;
-            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:FemaleSex ;
-            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ],
-        hrio:Person,
-        hrio:Woman ;
+            owl:onClass hrio:KaryotypicMaleSex ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        hrio:MaleSexPerson,
+        hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:KaryotypicFemaleSexPerson hrio:PhenotypicFemaleSexPerson ) ] ;
-    skos:altLabel "Biological Female"@en,
-        "Biological Female Person"@en ;
-    skos:prefLabel "Female-sex Person"@en .
+            owl:unionOf ( hrio:RegularKaryotypicalMalePerson hrio:VariantKaryotypicalMalePerson ) ] ;
+    skos:prefLabel "Karyotypic Male-sex Person"@en .
 
 hrio:MaleGenderPerson a gufo:Phase,
         owl:Class,
@@ -3709,31 +4007,8 @@ hrio:MaleGenderPerson a gufo:Phase,
         hrio:Man,
         hrio:Person ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ExternallyAttributedMaleGenderPerson hrio:SelfIdentifiedMaleGenderPerson hrio:MasculinePresentingPerson ) ] ;
+            owl:unionOf ( hrio:SelfIdentifiedMaleGenderPerson hrio:MasculinePresentingPerson hrio:ExternallyAttributedMaleGenderPerson ) ] ;
     skos:prefLabel "Male-gender Person"@en .
-
-hrio:MaleSexPerson a gufo:SubKind,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "Male-sex Person"@en ;
-    dct:isPartOf <https://w3id.org/health-ri/ontology#package/SexAndGender/Sex/SexOutcome> ;
-    rdfs:comment "Describes a person whose overall set of sexual dimorphic characteristics aligns more strongly with those typically classified as male. This classification relies on counting or weighting traits that are conventionally considered male-typical."@en ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:MaleSex ;
-            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
-            owl:onClass hrio:MaleSex ;
-            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ],
-        hrio:Man,
-        hrio:Person ;
-    owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:PhenotypicMaleSexPerson hrio:KaryotypicMaleSexPerson ) ] ;
-    skos:altLabel "Biological Male"@en,
-        "Biological Male Person"@en ;
-    skos:prefLabel "Male-sex Person"@en .
 
 <https://w3id.org/health-ri/ontology#package/SexAndGender/Sex> a skos:Collection ;
     rdfs:label "Sex"@en ;
@@ -3768,7 +4043,7 @@ An externally-attributed gender is a gender characterization that applies to a p
         gufo:ExtrinsicMode,
         hrio:Gender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ExternallyAttributedMaleGender hrio:ExternallyAttributedFemaleGender hrio:ExternallyAttributedNonBinaryGender ) ] ;
+            owl:unionOf ( hrio:ExternallyAttributedNonBinaryGender hrio:ExternallyAttributedMaleGender hrio:ExternallyAttributedFemaleGender ) ] ;
     skos:prefLabel "Externally-attributed Gender"@en .
 
 hrio:FemaleGender a gufo:PhaseMixin,
@@ -3785,7 +4060,7 @@ hrio:FemaleGender a gufo:PhaseMixin,
         hrio:Female,
         hrio:Gender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SelfIdentifiedFemaleGender hrio:ExternallyAttributedFemaleGender hrio:FeminineGenderExpression ) ] ;
+            owl:unionOf ( hrio:SelfIdentifiedFemaleGender hrio:FeminineGenderExpression hrio:ExternallyAttributedFemaleGender ) ] ;
     skos:prefLabel "Female Gender"@en .
 
 hrio:FemaleSex a gufo:Category,
@@ -3804,7 +4079,7 @@ This classification concerns biological sex categorization and is distinct from 
         hrio:Female,
         hrio:Sex ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:KaryotypicFemaleSex hrio:PhenotypicFemaleSex ) ] ;
+            owl:unionOf ( hrio:PhenotypicFemaleSex hrio:KaryotypicFemaleSex ) ] ;
     skos:prefLabel "Female Sex"@en .
 
 hrio:GenderExpression a gufo:Kind,
@@ -3821,8 +4096,27 @@ hrio:GenderExpression a gufo:Kind,
         hrio:Gender,
         hrio:SelfDesignatedGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:FeminineGenderExpression hrio:NonBinaryGenderExpression hrio:MasculineGenderExpression ) ] ;
+            owl:unionOf ( hrio:FeminineGenderExpression hrio:MasculineGenderExpression hrio:NonBinaryGenderExpression ) ] ;
     skos:prefLabel "Gender Expression"@en .
+
+hrio:KaryotypicFemaleSexPerson a gufo:SubKind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Karyotypic Female-sex Person"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/Biology> ;
+    rdfs:comment """A person whose karyotypical sex is female, determined by the sex chromosome complement. This class classifies persons by karyotype only and does not depend on phenotypic traits or on any sex assigned or assessed at birth or later.
+
+Karyotypic Female-sex Person subsumes both Regular Karyotypical Female Person and Variant Karyotypical Female Person, which are categorized as female in the model. It is exclusive with Karyotypic Male-sex Person within the karyotypical-sex classification of persons."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass hrio:KaryotypicFemaleSex ;
+            owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        hrio:FemaleSexPerson,
+        hrio:Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:RegularKaryotypicalFemalePerson hrio:VariantKaryotypicalFemalePerson ) ] ;
+    skos:prefLabel "Karyotypic Female-sex Person"@en .
 
 hrio:MaleGender a gufo:PhaseMixin,
         owl:Class,
@@ -3838,7 +4132,7 @@ hrio:MaleGender a gufo:PhaseMixin,
         hrio:Gender,
         hrio:Male ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:ExternallyAttributedMaleGender hrio:SelfIdentifiedMaleGender hrio:MasculineGenderExpression ) ] ;
+            owl:unionOf ( hrio:SelfIdentifiedMaleGender hrio:ExternallyAttributedMaleGender hrio:MasculineGenderExpression ) ] ;
     skos:prefLabel "Male Gender"@en .
 
 hrio:MaleSex a gufo:Category,
@@ -3875,20 +4169,8 @@ hrio:NonBinaryGender a gufo:PhaseMixin,
         hrio:Gender,
         hrio:NonBinarySexGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:NonBinaryGenderExpression hrio:ExternallyAttributedNonBinaryGender hrio:SelfIdentifiedNonBinaryGender ) ] ;
+            owl:unionOf ( hrio:ExternallyAttributedNonBinaryGender hrio:NonBinaryGenderExpression hrio:SelfIdentifiedNonBinaryGender ) ] ;
     skos:prefLabel "Non-binary Gender"@en .
-
-hrio:OffsetDateTime a gufo:AbstractIndividualType,
-        owl:Class,
-        owl:NamedIndividual ;
-    rdfs:label "OffsetDateTime"@en ;
-    dct:isPartOf <https://w3id.org/health-ri/ontology#package/General> ;
-    rdfs:comment """A civil date-time with explicit UTC offset and nanosecond precision. It consists of a Date plus hour, minute, second, optional nanosecond, and utcOffsetMinutes. Hour is 0..23. Minute is 0..59. Second is 0..59; leap seconds (value 60) are out of scope and inputs with second equal to 60 must be rejected. Nanosecond, when present, is an integer in 0..999999999. The value 24:00:00 is not permitted.
-
-The UTC offset is expressed as an integer number of minutes east of UTC in the closed range -840..+840. Any whole-minute offset is allowed, including zones that use 30 or 45 minute increments. The offset qualifies the local date-time but does not imply time-zone rules such as daylight-saving transitions."""@en ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    rdfs:subClassOf gufo:QualityValue ;
-    skos:prefLabel "OffsetDateTime"@en .
 
 hrio:SelfIdentifiedGender a gufo:Kind,
         owl:Class,
@@ -3906,7 +4188,7 @@ Self-identified Gender denotes the gender with which a self-aware person identif
         hrio:Gender,
         hrio:SelfDesignatedGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:SelfIdentifiedNonBinaryGender hrio:SelfIdentifiedMaleGender hrio:SelfIdentifiedFemaleGender ) ] ;
+            owl:unionOf ( hrio:SelfIdentifiedMaleGender hrio:SelfIdentifiedNonBinaryGender hrio:SelfIdentifiedFemaleGender ) ] ;
     skos:altLabel "Gender Identity"@en,
         "Self-assigned Gender"@en,
         "Self-attributed Gender"@en ;
@@ -3929,10 +4211,39 @@ It provides a common space for male, female, and non-binary classifications at t
             owl:onProperty gufo:inheresIn ],
         gufo:Aspect ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:Female hrio:NonBinarySexGender hrio:Male ) ],
+            owl:unionOf ( hrio:NonBinarySexGender hrio:Female hrio:Male ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:Sex hrio:Gender ) ] ;
+            owl:unionOf ( hrio:Gender hrio:Sex ) ] ;
     skos:prefLabel "Sex-Gender"@en .
+
+hrio:SingleBirth a gufo:EventType,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Single Birth"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/PersonBirth> ;
+    rdfs:comment """Scope: definition of Single Birth, temporal attributes, and offspring linkage.
+
+Single Birth is a Birth event that results in the delivery of exactly one offspring (Person). It has start and end attributes typed as OffsetDateTime (multiplicity 1 each).
+
+A Single Birth is associated with exactly one Person via offspring (1), and each Person is linked to exactly one Single Birth (1). Single Birth is partitioned into:
+- Singleton Birth (standalone single birth), and
+- Multiple Birth Component (single birth occurring as part of a Multiple Birth)."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass hrio:Person ;
+            owl:onProperty [ owl:inverseOf gufo:wasCreatedIn ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass hrio:MultipleBirthComponent ;
+            owl:onProperty [ owl:inverseOf gufo:isEventProperPartOf ] ],
+        hrio:Birth ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( hrio:MultipleBirthComponent hrio:SingletonBirth ) ] ;
+    skos:altLabel "Birth Event of One Infant"@en,
+        "Per-infant Birth Event"@en,
+        "Single-outcome Birth"@en ;
+    skos:prefLabel "Single Birth"@en .
 
 hrio:EstablishedHealthCondition a gufo:Category,
         owl:Class,
@@ -3943,11 +4254,11 @@ hrio:EstablishedHealthCondition a gufo:Category,
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:HealthCondition ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:TraumaticHealthCondition hrio:NonTraumaticHealthCondition ) ],
+            owl:unionOf ( hrio:NonTraumaticHealthCondition hrio:TraumaticHealthCondition ) ],
         [ a owl:Class ;
             owl:unionOf ( hrio:NonStructuralHealthCondition hrio:StructuralHealthCondition ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:KnownOriginHealthCondition hrio:IdiopathicHealthCondition ) ] ;
+            owl:unionOf ( hrio:IdiopathicHealthCondition hrio:KnownOriginHealthCondition ) ] ;
     skos:prefLabel "Established Health Condition"@en .
 
 hrio:SexAtBirthAssignedPerson a gufo:Role,
@@ -3973,6 +4284,12 @@ hrio:SexAtBirthAssignedPerson a gufo:Role,
             owl:unionOf ( hrio:SexAtBirthIndeterminateSexPerson hrio:CisgenderPerson hrio:TransgenderPerson ) ] ;
     skos:prefLabel "Sex-at-birth-assigned Person"@en .
 
+<https://w3id.org/health-ri/ontology#package/PersonBirth> a skos:Collection ;
+    rdfs:label "Person Birth"@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    vs:term_status "irv" ;
+    skos:prefLabel "Person Birth"@en .
+
 hrio:HealthcareDiagnosis a gufo:SubKind,
         owl:Class,
         owl:NamedIndividual ;
@@ -3984,12 +4301,27 @@ In the model it is organized by focus (human or veterinary), by source of eviden
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     rdfs:subClassOf hrio:Diagnosis ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:AdministrativeCodingDiagnosis hrio:LaboratoryDiagnosis hrio:ClinicalDiagnosis hrio:EpidemiologicalDiagnosis hrio:RadiologicalDiagnosis ) ],
+            owl:unionOf ( hrio:AdministrativeCodingDiagnosis hrio:ClinicalDiagnosis hrio:RadiologicalDiagnosis hrio:LaboratoryDiagnosis hrio:EpidemiologicalDiagnosis ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:VeterinaryDiagnosis hrio:HumanHealthcareDiagnosis ) ],
+            owl:unionOf ( hrio:HumanHealthcareDiagnosis hrio:VeterinaryDiagnosis ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:CareOrientedDiagnosis hrio:ResearchDiagnosis hrio:SurveillanceDiagnosis ) ] ;
+            owl:unionOf ( hrio:ResearchDiagnosis hrio:SurveillanceDiagnosis hrio:CareOrientedDiagnosis ) ] ;
     skos:prefLabel "Healthcare Diagnosis"@en .
+
+hrio:OffsetDateTime a gufo:AbstractIndividualType,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "OffsetDateTime"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/General> ;
+    rdfs:comment """A civil date-time with explicit UTC offset and nanosecond precision. It consists of a Date plus hour, minute, second, optional nanosecond, and utcOffsetMinutes. Hour is 0..23. Minute is 0..59. Second is 0..59; leap seconds (value 60) are out of scope and inputs with second equal to 60 must be rejected. Nanosecond, when present, is an integer in 0..999999999. The value 24:00:00 is not permitted.
+
+The UTC offset is expressed as an integer number of minutes east of UTC in the closed range -840..+840. Any whole-minute offset is allowed, including zones that use 30 or 45 minute increments. The offset qualifies the local date-time but does not imply time-zone rules such as daylight-saving transitions."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf gufo:QualityValue ;
+    skos:altLabel "Date-time with Offset"@en,
+        "DateTime with UTC Offset"@en,
+        "Offset Date-time"@en ;
+    skos:prefLabel "OffsetDateTime"@en .
 
 hrio:Sex a gufo:Category,
         owl:Class,
@@ -4004,15 +4336,15 @@ hrio:Sex a gufo:Category,
             owl:onProperty gufo:inheresIn ],
         hrio:SexGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:IndeterminateSex hrio:MaleSex hrio:FemaleSex ) ] ;
+            owl:unionOf ( hrio:FemaleSex hrio:MaleSex hrio:IndeterminateSex ) ] ;
     skos:altLabel "Biological Sex"@en ;
     skos:prefLabel "Sex"@en .
 
-<https://w3id.org/health-ri/ontology#package/General> a skos:Collection ;
-    rdfs:label "General"@en ;
+<https://w3id.org/health-ri/ontology#package/Person> a skos:Collection ;
+    rdfs:label "Person"@en ;
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     vs:term_status "int" ;
-    skos:prefLabel "General"@en .
+    skos:prefLabel "Person"@en .
 
 hrio:Month a gufo:AbstractIndividualType,
         owl:Class,
@@ -4039,23 +4371,38 @@ hrio:Gender a gufo:Category,
             owl:onProperty gufo:inheresIn ],
         hrio:SexGender ;
     owl:equivalentClass [ a owl:Class ;
-            owl:unionOf ( hrio:MaleGender hrio:NonBinaryGender hrio:FemaleGender ) ],
+            owl:unionOf ( hrio:NonBinaryGender hrio:MaleGender hrio:FemaleGender ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:SelfIdentifiedGender hrio:GenderExpression hrio:ExternallyAttributedGender ) ] ;
+            owl:unionOf ( hrio:GenderExpression hrio:SelfIdentifiedGender hrio:ExternallyAttributedGender ) ] ;
     skos:altLabel "Social Gender"@en ;
     skos:prefLabel "Gender"@en .
+
+<https://w3id.org/health-ri/ontology#package/General> a skos:Collection ;
+    rdfs:label "General"@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    vs:term_status "int" ;
+    skos:prefLabel "General"@en .
+
+hrio:Address a gufo:Kind,
+        owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Address"@en ;
+    dct:isPartOf <https://w3id.org/health-ri/ontology#package/General> ;
+    rdfs:comment """Address is the quality that specifies a conventional locator for an Addressable Place. It captures the information used to refer to a place for identification and locating purposes in human and system communication.
+
+Each Address is associated with one or more Addressable Places, and each Addressable Place is associated with one or more Addresses, supporting both shared and multiple address assignments where this is required for unambiguous reference."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty gufo:inheresIn ;
+            owl:someValuesFrom hrio:AddressablePlace ],
+        gufo:Quality ;
+    skos:prefLabel "Address"@en .
 
 <https://w3id.org/health-ri/ontology#package/SexAndGender/Gender/GenderModality> a skos:Collection ;
     rdfs:label "Gender Modality"@en ;
     rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
     vs:term_status "int" ;
     skos:prefLabel "Gender Modality"@en .
-
-<https://w3id.org/health-ri/ontology#package/Person> a skos:Collection ;
-    rdfs:label "Person"@en ;
-    rdfs:isDefinedBy <https://w3id.org/health-ri/ontology> ;
-    vs:term_status "int" ;
-    skos:prefLabel "Person"@en .
 
 <https://w3id.org/health-ri/ontology#package/SexAndGender/Gender/GenderOutcome> a skos:Collection ;
     rdfs:label "Gender Outcome"@en ;
@@ -4115,40 +4462,53 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
         [ a owl:Restriction ;
             owl:onProperty [ owl:inverseOf gufo:inheresIn ] ;
             owl:someValuesFrom hrio:SexGender ],
+        [ a owl:Restriction ;
+            owl:onClass hrio:SingleBirth ;
+            owl:onProperty gufo:wasCreatedIn ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty [ owl:inverseOf gufo:wasCreatedIn ] ;
+            owl:someValuesFrom hrio:Birth ],
+        [ a owl:Restriction ;
+            owl:onClass hrio:BirthBiologicalProvenance ;
+            owl:onProperty [ owl:inverseOf gufo:mediates ] ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         hrio:Animal,
         hrio:IndividualAgent ;
     owl:equivalentClass [ a owl:Class ;
             owl:unionOf ( hrio:LegallyUnassignedGenderPerson hrio:LegallyRecognizedGenderPerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:MaleGenderPerson hrio:FemaleGenderPerson hrio:NonBinaryGenderPerson ) ],
+            owl:unionOf ( hrio:NonBinaryGenderPerson hrio:MaleGenderPerson hrio:FemaleGenderPerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:PersonWithRegularSexChromosome hrio:PersonWithVariantSexChromosome ) ],
+            owl:unionOf ( hrio:PersonWithVariantSexChromosome hrio:PersonWithRegularSexChromosome ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:KaryotypicFemaleSexPerson hrio:KaryotypicMaleSexPerson ) ],
+            owl:unionOf ( hrio:KaryotypicMaleSexPerson hrio:KaryotypicFemaleSexPerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:Man hrio:Woman hrio:NonBinaryPerson ) ],
+            owl:unionOf ( hrio:NonBinaryPerson hrio:Man hrio:Woman ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:DeadPerson hrio:LivingPerson ) ],
+            owl:unionOf ( hrio:LivingPerson hrio:DeadPerson ) ],
         [ a owl:Class ;
             owl:unionOf ( hrio:SexAtBirthUnassignedPerson hrio:SexAtBirthAssignedPerson ) ],
         [ a owl:Class ;
-            owl:unionOf ( hrio:MaleSexPerson hrio:IndeterminateSexPerson hrio:FemaleSexPerson ) ] ;
+            owl:unionOf ( hrio:MaleSexPerson hrio:FemaleSexPerson hrio:IndeterminateSexPerson ) ] ;
+    skos:altLabel "Human"@en,
+        "Human Being"@en ;
     skos:prefLabel "Person"@en .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:KaryotypicFemaleSex hrio:PhenotypicFemaleSex ) .
+    owl:members ( hrio:PhenotypicFemaleSex hrio:KaryotypicFemaleSex ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:PhenotypicMaleSex hrio:KaryotypicMaleSex ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:MaleTypicalVisualSexCharacteristic hrio:FemaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic ) .
+    owl:members ( hrio:MaleTypicalVisualSexCharacteristic hrio:IndeterminateVisualSexCharacteristic hrio:FemaleTypicalVisualSexCharacteristic ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:KaryotypicMaleSex hrio:KaryotypicFemaleSex ) .
+    owl:members ( hrio:KaryotypicFemaleSex hrio:KaryotypicMaleSex ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:PhenotypicAmbiguousSex hrio:PhenotypicFemaleSex hrio:PhenotypicMaleSex ) .
+    owl:members ( hrio:PhenotypicFemaleSex hrio:PhenotypicMaleSex hrio:PhenotypicAmbiguousSex ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:SelfIdentifiedGender hrio:GenderExpression ) .
@@ -4163,16 +4523,16 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
     owl:members ( hrio:RegularKaryotypicalMalePerson hrio:RegularKaryotypicalFemalePerson ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:SelfIdentifiedGender hrio:GenderExpression hrio:ExternallyAttributedGender ) .
+    owl:members ( hrio:GenderExpression hrio:SelfIdentifiedGender hrio:ExternallyAttributedGender ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:PersonWithRegularSexChromosome hrio:PersonWithVariantSexChromosome ) .
+    owl:members ( hrio:PersonWithVariantSexChromosome hrio:PersonWithRegularSexChromosome ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:VariantKaryotypicalFemalePerson hrio:KaryotypicalIndeterminatePerson hrio:VariantKaryotypicalMalePerson ) .
+    owl:members ( hrio:VariantKaryotypicalMalePerson hrio:VariantKaryotypicalFemalePerson hrio:KaryotypicalIndeterminatePerson ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:KaryotypicFemaleSexPerson hrio:KaryotypicMaleSexPerson ) .
+    owl:members ( hrio:KaryotypicMaleSexPerson hrio:KaryotypicFemaleSexPerson ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:RegularKaryotypicalFemalePerson hrio:VariantKaryotypicalFemalePerson ) .
@@ -4181,10 +4541,10 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
     owl:members ( hrio:RegularKaryotypicalMalePerson hrio:VariantKaryotypicalMalePerson ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:Person hrio:NonHumanAnimal ) .
+    owl:members ( hrio:NonHumanAnimal hrio:Person ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:TraumaticHealthCondition hrio:NonTraumaticHealthCondition ) .
+    owl:members ( hrio:NonTraumaticHealthCondition hrio:TraumaticHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:CongenitalHealthCondition hrio:AcquiredHealthCondition ) .
@@ -4193,28 +4553,28 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
     owl:members ( hrio:NonStructuralHealthCondition hrio:StructuralHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:RiskBasedHealthCondition hrio:EstablishedHealthCondition ) .
+    owl:members ( hrio:EstablishedHealthCondition hrio:RiskBasedHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:InherentHealthCondition hrio:ExternallyCausedHealthCondition ) .
+    owl:members ( hrio:ExternallyCausedHealthCondition hrio:InherentHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:KaryotypicSex hrio:PhenotypicSex ) .
+    owl:members ( hrio:PhenotypicSex hrio:KaryotypicSex ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:InherentHealthCondition hrio:ExposureBasedHealthCondition ) .
+    owl:members ( hrio:ExposureBasedHealthCondition hrio:InherentHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:KnownOriginHealthCondition hrio:IdiopathicHealthCondition ) .
+    owl:members ( hrio:IdiopathicHealthCondition hrio:KnownOriginHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:PathologicalHealthCondition hrio:NonPathologicalHealthCondition ) .
+    owl:members ( hrio:NonPathologicalHealthCondition hrio:PathologicalHealthCondition ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:Person hrio:ArtificialAgent ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:DigitalDocument hrio:PhysicalDocument ) .
+    owl:members ( hrio:PhysicalDocument hrio:DigitalDocument ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( hrio:IndividualAgent hrio:Organization ) .
@@ -4229,29 +4589,35 @@ A Person may bear intrinsic modes such as Sex and Gender, which can be assessed,
     owl:members ( hrio:NegativeDiagnosisAssessment hrio:PositiveDiagnosisAssessment ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:AntemortemDiagnosis hrio:PostmortemDiagnosis ) .
+    owl:members ( hrio:PostmortemDiagnosis hrio:AntemortemDiagnosis ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:AdministrativeCodingDiagnosis hrio:LaboratoryDiagnosis hrio:ClinicalDiagnosis hrio:EpidemiologicalDiagnosis hrio:RadiologicalDiagnosis ) .
+    owl:members ( hrio:AdministrativeCodingDiagnosis hrio:ClinicalDiagnosis hrio:RadiologicalDiagnosis hrio:LaboratoryDiagnosis hrio:EpidemiologicalDiagnosis ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:VeterinaryDiagnosis hrio:HumanHealthcareDiagnosis ) .
+    owl:members ( hrio:HumanHealthcareDiagnosis hrio:VeterinaryDiagnosis ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:Agent hrio:Object ) .
+    owl:members ( hrio:Object hrio:Agent ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:Sex hrio:Gender ) .
+    owl:members ( hrio:MultipleBirth hrio:SingleBirth ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:IndeterminateDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic hrio:FemaleTypicalDimorphicCharacteristic ) .
+    owl:members ( hrio:MultipleBirthComponent hrio:SingletonBirth ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:MaleSexPerson hrio:IndeterminateSexPerson hrio:FemaleSexPerson ) .
+    owl:members ( hrio:Gender hrio:Sex ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:SexAtBirthMaleSex hrio:SexAtBirthIndeterminateSex hrio:SexAtBirthFemaleSex ) .
+    owl:members ( hrio:FemaleTypicalDimorphicCharacteristic hrio:MaleTypicalDimorphicCharacteristic hrio:IndeterminateDimorphicCharacteristic ) .
 
 [] a owl:AllDisjointClasses ;
-    owl:members ( hrio:IndeterminateSex hrio:MaleSex hrio:FemaleSex ) .
+    owl:members ( hrio:MaleSexPerson hrio:FemaleSexPerson hrio:IndeterminateSexPerson ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hrio:SexAtBirthMaleSex hrio:SexAtBirthFemaleSex hrio:SexAtBirthIndeterminateSex ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( hrio:FemaleSex hrio:MaleSex hrio:IndeterminateSex ) .
 
