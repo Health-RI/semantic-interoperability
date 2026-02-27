@@ -1,5 +1,14 @@
 # News & Updates
 
+## 2026-02-27
+
+- **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Added: Published v2.0.0 release artifacts, introducing the PersonBirth birth-event taxonomy and biological provenance model, with refreshed birth and address diagrams.
+
+## 2026-02-17
+
+- **Calls for Community Review** — Announced an open community review for the Sex and Gender domain (17 Feb–10 Mar 2026) and clarified how to contribute and be acknowledged.
+- **Sex and Gender** — Created: Published a dedicated external review page with scope, recommended review flow, and links to documentation, specification, and feedback channels.
+
 ## 2026-02-16
 
 - **[HRIO Mapping Assistant (GPT)](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant)** — Added: Published a dedicated assistant to help draft HRIV meaning mappings from domain concepts to HRIO (one predicate, confidence %, and evidence snippets).
