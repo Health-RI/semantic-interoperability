@@ -1,0 +1,768 @@
+@prefix : <https://w3id.org/health-ri/ontology#> .
+@prefix gufo: <http://purl.org/nemo/gufo#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+# =============================================================================
+# CONSTRAINTS
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# RULE: NoSelfSexAtBirthAssignment
+# RULE TYPE: Constraint
+# DESCRIPTION: In a Sex at Birth Assignment, the person who creates the Birth Notification (Assigner) must not be the same individual whose birth is being notified (Person with Assigned Sex at Birth).
+# -----------------------------------------------------------------------------
+:NoSelfSexAtBirthAssignment
+    a sh:NodeShape ;
+    sh:name "NoSelfSexAtBirthAssignment"@en ;
+    sh:description "Constraint: within one SexAtBirthAssignment, no participant may be both SexAtBirthAssigner and SexAtBirthAssignedPerson."@en ;
+    sh:targetClass :SexAtBirthAssignment ;
+    sh:property [
+        sh:path gufo:mediates ;
+        sh:qualifiedValueShape [
+            sh:and (
+                [ sh:class :SexAtBirthAssigner ]
+                [ sh:class :SexAtBirthAssignedPerson ]
+            )
+        ] ;
+        sh:qualifiedMaxCount 0 ;
+        sh:severity sh:Violation ;
+        sh:message "The same individual plays both SexAtBirthAssigner and SexAtBirthAssignedPerson for this SexAtBirthAssignment."@en
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: NoSelfGeneticMotherFatherOrGestationalCarrier
+# RULE TYPE: Constraint
+# DESCRIPTION: A Person cannot be their own genetic mother, genetic father, or gestational carrier.
+# -----------------------------------------------------------------------------
+
+# Assumption: :isGestationalCarrierOf exists and follows the same naming/direction pattern as :isGeneticMotherOf / :isGeneticFatherOf.
+
+:NoSelfGeneticMotherFatherOrGestationalCarrier
+    a sh:NodeShape ;
+    sh:name "NoSelfGeneticMotherFatherOrGestationalCarrier"@en ;
+    sh:description "Constraint: a Person must not be linked to themselves as genetic mother, genetic father, or gestational carrier."@en ;
+    sh:targetClass :Person ;
+
+    sh:property [
+        sh:path :isGeneticMotherOf ;
+        sh:severity sh:Violation ;
+        sh:sparql [
+            a sh:SPARQLConstraint ;
+            sh:message "A Person cannot be their own genetic mother."@en ;
+            sh:select """
+                PREFIX : <https://w3id.org/health-ri/ontology#>
+                SELECT $this
+                WHERE {
+                    $this :isGeneticMotherOf $this .
+                }
+            """ ;
+        ] ;
+    ] ;
+
+    sh:property [
+        sh:path :isGeneticFatherOf ;
+        sh:severity sh:Violation ;
+        sh:sparql [
+            a sh:SPARQLConstraint ;
+            sh:message "A Person cannot be their own genetic father."@en ;
+            sh:select """
+                PREFIX : <https://w3id.org/health-ri/ontology#>
+                SELECT $this
+                WHERE {
+                    $this :isGeneticFatherOf $this .
+                }
+            """ ;
+        ] ;
+    ] ;
+
+    sh:property [
+        sh:path :isGestationalCarrierOf ;
+        sh:severity sh:Violation ;
+        sh:sparql [
+            a sh:SPARQLConstraint ;
+            sh:message "A Person cannot be their own gestational carrier."@en ;
+            sh:select """
+                PREFIX : <https://w3id.org/health-ri/ontology#>
+                SELECT $this
+                WHERE {
+                    $this :isGestationalCarrierOf $this .
+                }
+            """ ;
+        ] ;
+    ] .
+
+# Conclusion: This is a Constraint rule (it forbids self-relations).
+# Justification: A violation is raised whenever a Person is related to itself via any of the specified predicates.
+
+# =============================================================================
+# DERIVATIONS
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# RULE: AGRCreatesOnBehalfOfRule
+# RULE TYPE: Derivation
+# DESCRIPTION: If an Administrative Gender Recognition mediates both an Administrative Gender Recognition Agent and an Administrative Gender Recognizing Organization, then the Agent creates on behalf of the Organization.
+# -----------------------------------------------------------------------------
+:AGRCreatesOnBehalfOfRule
+    a sh:NodeShape ;
+    sh:name "AGRCreatesOnBehalfOfRule"@en ;
+    sh:description "Derivation (materialization-only): if an Administrative Gender Recognition mediates both an Administrative Gender Recognition Agent and an Administrative Gender Recognizing Organization, then materialize :createsOnBehalfOf from the Agent to the Organization."@en ;
+    sh:targetClass :AdministrativeGenderRecognition ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :     <https://w3id.org/health-ri/ontology#>
+            PREFIX gufo: <http://purl.org/nemo/gufo#>
+
+            CONSTRUCT {
+              ?agent :createsOnBehalfOf ?org .
+            }
+            WHERE {
+              $this gufo:mediates ?agent .
+              $this gufo:mediates ?org .
+              ?agent a :AdministrativeGenderRecognitionAgent .
+              ?org   a :AdministrativeGenderRecognizingOrganization .
+              FILTER NOT EXISTS { ?agent :createsOnBehalfOf ?org }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: FemaleCisgenderPerson
+# RULE TYPE: Derivation
+# DESCRIPTION: If a Sex-at-birth-assigned Person is both a Female-gender Person and a Sex-at-birth Female-sex Person, then this person is a Female Cisgender Person.
+# -----------------------------------------------------------------------------
+:FemaleCisgenderPerson
+    a sh:NodeShape ;
+    sh:name "FemaleCisgenderPerson"@en ;
+    sh:description "Derivation (materialization-only): if a Sex-at-birth-assigned Person is both a Female-gender Person and a Sex-at-birth Female-sex Person, then materialize that this person is a Female Cisgender Person."@en ;
+    sh:targetClass :SexAtBirthAssignedPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :    <https://w3id.org/health-ri/ontology#>
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+            CONSTRUCT {
+              $this rdf:type :FemaleCisgenderPerson .
+            }
+            WHERE {
+              $this a :SexAtBirthAssignedPerson ,
+                       :FemaleGenderPerson ,
+                       :SexAtBirthFemaleSexPerson .
+              FILTER NOT EXISTS { $this a :FemaleCisgenderPerson . }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: MaleCisgenderPerson
+# RULE TYPE: Derivation
+# DESCRIPTION: If a Sex-at-birth-assigned Person is both a Male-gender Person and a Sex-at-birth Male-sex Person, then this person is a Male Cisgender Person.
+# -----------------------------------------------------------------------------
+:MaleCisgenderPerson
+    a sh:NodeShape ;
+    sh:name "MaleCisgenderPerson"@en ;
+    sh:description "Derivation (materialization-only): if a Sex-at-birth-assigned Person is both a Male-gender Person and a Sex-at-birth Male-sex Person, then materialize that this person is a Male Cisgender Person."@en ;
+    sh:targetClass :SexAtBirthAssignedPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :    <https://w3id.org/health-ri/ontology#>
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+            CONSTRUCT {
+              $this rdf:type :MaleCisgenderPerson .
+            }
+            WHERE {
+              $this a :SexAtBirthAssignedPerson ,
+                       :MaleGenderPerson ,
+                       :SexAtBirthMaleSexPerson .
+              FILTER NOT EXISTS { $this a :MaleCisgenderPerson . }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: DeriveGenderModalityPairings
+# RULE TYPE: Derivation
+# DESCRIPTION: When a Sex-at-birth-assigned Person is characterized by one or more Gender instances and by one or more Sex-at-birth Sex instances, the model introduces Gender Modality instances to represent the possible Sex-and-Gender pairings for that person. Only Sex-at-birth Male Sex and Sex-at-birth Female Sex are used to form these pairings; Sex-at-birth Indeterminate Sex is ignored for this purpose and does not lead to any Gender Modality instance. For each pairing between an eligible Sex-at-birth Sex and a Gender, there is a corresponding Gender Modality instance that is linked by has cause to exactly that Sex (role "sex") and to exactly that Gender (role "gender").
+# -----------------------------------------------------------------------------
+:DeriveGenderModalityPairings
+    a sh:NodeShape ;
+    sh:name "DeriveGenderModalityPairings"@en ;
+    sh:description "Derivation (materialization-only): for each :SexAtBirthAssignedPerson, materialize one :GenderModality per eligible Sex-at-birth Sex (Male/Female only) × Gender pairing inhering in the same person, and link it via :hasCause (sex role) and :hasCause_1 (gender role)."@en ;
+    sh:targetClass :SexAtBirthAssignedPerson ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :     <https://w3id.org/health-ri/ontology#>
+            PREFIX gufo: <http://purl.org/nemo/gufo#>
+            PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+            CONSTRUCT {
+              ?gm rdf:type :GenderModality ;
+                  gufo:inheresIn $this ;
+                  :hasCause ?sex ;
+                  :hasCause_1 ?gender .
+            }
+            WHERE {
+              ?sex gufo:inheresIn $this .
+              VALUES ?eligibleSexClass { :SexAtBirthMaleSex :SexAtBirthFemaleSex } .
+              ?sex rdf:type/rdfs:subClassOf* ?eligibleSexClass .
+
+              ?gender gufo:inheresIn $this ;
+                      rdf:type/rdfs:subClassOf* :Gender .
+              FILTER NOT EXISTS { ?gender rdf:type/rdfs:subClassOf* :GenderModality }
+
+              BIND(
+                IRI(
+                  CONCAT(
+                    STR(:GenderModality),
+                    "_",
+                    ENCODE_FOR_URI(CONCAT(STR($this), "|", STR(?sex), "|", STR(?gender)))
+                  )
+                ) AS ?gm
+              )
+
+              FILTER NOT EXISTS {
+                ?gm rdf:type :GenderModality ;
+                    gufo:inheresIn $this ;
+                    :hasCause ?sex ;
+                    :hasCause_1 ?gender .
+              }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: DeriveCisgenderForGenderModality
+# RULE TYPE: Derivation
+# DESCRIPTION: A Gender Modality instance is typed as Cisgender when its has cause links point to a Sex-at-birth Sex and a Gender that match (Sex-at-birth Male Sex with Male Gender, or Sex-at-birth Female Sex with Female Gender).
+# -----------------------------------------------------------------------------
+:DeriveCisgenderForGenderModality
+    a sh:NodeShape ;
+    sh:name "DeriveCisgenderForGenderModality"@en ;
+    sh:description "Derivation (materialization-only): if a :GenderModality has causes (:hasCause sex, :hasCause_1 gender) that match Male×Male or Female×Female, then materialize rdf:type :Cisgender."@en ;
+    sh:targetClass :GenderModality ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :     <https://w3id.org/health-ri/ontology#>
+            PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+            CONSTRUCT {
+              $this rdf:type :Cisgender .
+            }
+            WHERE {
+              $this :hasCause ?sex ;
+                    :hasCause_1 ?gender .
+
+              {
+                ?sex    rdf:type/rdfs:subClassOf* :SexAtBirthMaleSex .
+                ?gender rdf:type/rdfs:subClassOf* :MaleGender .
+              }
+              UNION
+              {
+                ?sex    rdf:type/rdfs:subClassOf* :SexAtBirthFemaleSex .
+                ?gender rdf:type/rdfs:subClassOf* :FemaleGender .
+              }
+
+              FILTER NOT EXISTS { $this rdf:type :Cisgender . }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: DeriveTransgenderForGenderModality
+# RULE TYPE: Derivation
+# DESCRIPTION: A Gender Modality instance is typed as Transgender when its has cause links point to a Sex-at-birth Sex and a Gender that do not match (Sex-at-birth Male Sex with Female Gender or Non-binary Gender, or Sex-at-birth Female Sex with Male Gender or Non-binary Gender).
+# -----------------------------------------------------------------------------
+:DeriveTransgenderForGenderModality
+    a sh:NodeShape ;
+    sh:name "DeriveTransgenderForGenderModality"@en ;
+    sh:description "Derivation (materialization-only): if a :GenderModality has causes (:hasCause sex, :hasCause_1 gender) that mismatch Male×{Female,Non-binary} or Female×{Male,Non-binary}, then materialize rdf:type :Transgender."@en ;
+    sh:targetClass :GenderModality ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :     <https://w3id.org/health-ri/ontology#>
+            PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+            CONSTRUCT {
+              $this rdf:type :Transgender .
+            }
+            WHERE {
+              $this :hasCause ?sex ;
+                    :hasCause_1 ?gender .
+
+              {
+                ?sex rdf:type/rdfs:subClassOf* :SexAtBirthMaleSex .
+                VALUES ?mismatchGenderClass { :FemaleGender :NonBinaryGender } .
+                ?gender rdf:type/rdfs:subClassOf* ?mismatchGenderClass .
+              }
+              UNION
+              {
+                ?sex rdf:type/rdfs:subClassOf* :SexAtBirthFemaleSex .
+                VALUES ?mismatchGenderClass { :MaleGender :NonBinaryGender } .
+                ?gender rdf:type/rdfs:subClassOf* ?mismatchGenderClass .
+              }
+
+              FILTER NOT EXISTS { $this rdf:type :Transgender . }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: DeriveBirthDateTime
+# RULE TYPE: Derivation
+# DESCRIPTION: DRIV: Person."birth date-time" is the recorded moment of birth (delivery). Use the timestamp stored in the associated Single Birth.end; keep the same date, clock time, and UTC offset (treat nanosecond as 0 if missing).
+# -----------------------------------------------------------------------------
+:DeriveBirthDateTime
+    a sh:NodeShape ;
+    sh:name "DeriveBirthDateTime"@en ;
+    sh:description "Derivation (materialization-only): for each :Person, materialize :birthDateTime by reusing the associated :SingleBirth end timestamp (:end_1). If the referenced OffsetDateTime has no :nanosecond value, materialize it as 0."@en ;
+    sh:targetClass :Person ;
+
+    sh:rule [
+        a sh:SPARQLRule ;
+
+        # Assumption: A :Person is linked to its birth event via :isBornIn or :isBornIn_1 (either direction).
+        # Assumption: The birth event is a (possibly specialized) :SingleBirth and its end timestamp is linked via :end_1.
+        # Assumption: :nanosecond is an optional xsd:int value on the OffsetDateTime node; if missing, treat as 0 by materializing it.
+
+        sh:construct """
+            PREFIX :    <https://w3id.org/health-ri/ontology#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+            CONSTRUCT {
+              $this  :birthDateTime ?endDT .
+              ?endDT :nanosecond   ?nsFinal .
+            }
+            WHERE {
+              # Find the associated Single Birth event, robust to either predicate direction.
+              $this (:isBornIn|:isBornIn_1|^:isBornIn|^:isBornIn_1) ?birth .
+
+              # Robust to specialization (e.g., :SingletonBirth, :MultipleBirthComponent) without relying on entailment.
+              ?birth a ?bt ;
+                     :end_1 ?endDT .
+              ?bt rdfs:subClassOf* :SingleBirth .
+
+              # Avoid creating additional values if one already exists on the Person (multiplicity 1).
+              FILTER NOT EXISTS { $this :birthDateTime ?_existingDT . }
+
+              # Default nanosecond to 0 if missing; if present, keep the existing value.
+              OPTIONAL { ?endDT :nanosecond ?nsExisting . }
+              BIND(COALESCE(?nsExisting, "0"^^xsd:int) AS ?nsFinal)
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: DeriveBirthDate
+# RULE TYPE: Derivation
+# DESCRIPTION: Person."birth date" is the calendar date part of the associated Single Birth.start (ignore time and UTC offset).
+# -----------------------------------------------------------------------------
+:DeriveBirthDate
+    a sh:NodeShape ;
+    sh:name "DeriveBirthDate"@en ;
+    sh:description "Derivation: materialize :birthDate for each :Person by copying the :date component of the associated :SingleBirth :start (ignoring time and UTC offset)."@en ;
+    sh:targetClass :Person ;
+
+    # Conclusion: feasible in SHACL-AF as a pure projection/copy (OffsetDateTime -> Date) with no external context.
+    # Justification: DRIV note pqk2qTmGAqAEHBdI defines birth date as the date part of Single Birth.start.
+
+    sh:rule [
+        a sh:SPARQLRule ;
+
+        # Assumptions: (1) :isBornIn links a :Person to its (unique) :SingleBirth. (2) :start points to an :OffsetDateTime with :date -> :Date.
+        sh:construct """
+            PREFIX : <https://w3id.org/health-ri/ontology#>
+
+            CONSTRUCT {
+                $this :birthDate ?birthDate .
+            }
+            WHERE {
+                FILTER NOT EXISTS { $this :birthDate ?_existing . }
+
+                $this :isBornIn ?singleBirth .
+                ?singleBirth a :SingleBirth ;
+                            :start ?startODT .
+
+                ?startODT :date ?birthDate .
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: PersonBirthYear
+# RULE TYPE: Derivation
+# DESCRIPTION: DRIV: Person."birth year" is the calendar year in which the person was born, taken from the associated Single Birth.start.date.year.
+# -----------------------------------------------------------------------------
+# Assumption: :isBornIn links a :Person to the :SingleBirth that created them. (DRIV note: wpk2qTmGAqAEHBdT)
+# Assumption: Each :Person has exactly one such :isBornIn link.
+# Assumption: Paths exist as: :SingleBirth :start → :OffsetDateTime :date → :Date :year.
+
+:PersonBirthYear
+    a sh:NodeShape ;
+    sh:name "PersonBirthYear"@en ;
+    sh:description "Derivation: materializes a Person's birth year by copying Date.year from the associated SingleBirth.start.date."@en ;
+    sh:targetClass :Person ;
+
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :    <https://w3id.org/health-ri/ontology#>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+            CONSTRUCT {
+                $this :birthYear ?birthYear .
+            }
+            WHERE {
+                $this :isBornIn ?singleBirth .
+                ?singleBirth :start ?startDT .
+                ?startDT :date ?birthDate .
+                ?birthDate :year ?y .
+
+                BIND(xsd:integer(?y) AS ?birthYear)
+
+                # Idempotence: avoid re-asserting the same value.
+                FILTER NOT EXISTS { $this :birthYear ?birthYear }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: IsGeneticMotherOfRule
+# RULE TYPE: Derivation
+# DESCRIPTION: "is genetic mother of" holds between a Genetic Mother and a Person when the Genetic Mother mediates the same Birth Biological Provenance that mediates the Person.
+# -----------------------------------------------------------------------------
+:IsGeneticMotherOfRule
+    a sh:NodeShape ;
+    sh:name "IsGeneticMotherOfRule"@en ;
+    sh:description "Derivation (materialization-only): within the same BirthBiologicalProvenance, materialize :isGeneticMotherOf from the mediated Genetic Mother to the mediated Person."@en ;
+    sh:targetClass :BirthBiologicalProvenance ;
+
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :     <https://w3id.org/health-ri/ontology#>
+            PREFIX gufo: <http://purl.org/nemo/gufo#>
+            PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+            CONSTRUCT {
+              ?mother :isGeneticMotherOf ?person .
+            }
+            WHERE {
+              $this gufo:mediates ?mother .
+              $this gufo:mediates ?person .
+
+              ?mother rdf:type/rdfs:subClassOf* :GeneticMother .
+              ?person rdf:type/rdfs:subClassOf* :Person .
+
+              # Assumption: the Genetic Mother and the Person are distinct individuals.
+              FILTER(?mother != ?person)
+
+              FILTER NOT EXISTS { ?mother :isGeneticMotherOf ?person }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: IsGeneticFatherOfRule
+# RULE TYPE: Derivation
+# DESCRIPTION: "is genetic father of" holds between a Genetic Father and a Person when the Genetic Father mediates the same Birth Biological Provenance that mediates the Person.
+# -----------------------------------------------------------------------------
+:IsGeneticFatherOfRule
+    a sh:NodeShape ;
+    sh:name "IsGeneticFatherOfRule"@en ;
+    sh:description "Derivation (materialization-only): within the same BirthBiologicalProvenance, materialize :isGeneticFatherOf from the mediated Genetic Father to the mediated Person."@en ;
+    sh:targetClass :BirthBiologicalProvenance ;
+
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :     <https://w3id.org/health-ri/ontology#>
+            PREFIX gufo: <http://purl.org/nemo/gufo#>
+            PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+            CONSTRUCT {
+              ?father :isGeneticFatherOf ?person .
+            }
+            WHERE {
+              $this gufo:mediates ?father .
+              $this gufo:mediates ?person .
+
+              ?father rdf:type/rdfs:subClassOf* :GeneticFather .
+              ?person rdf:type/rdfs:subClassOf* :Person .
+
+              # Assumption: the Genetic Father and the Person are distinct individuals.
+              FILTER(?father != ?person)
+
+              FILTER NOT EXISTS { ?father :isGeneticFatherOf ?person }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: DeriveBirthPosition
+# RULE TYPE: Derivation
+# DESCRIPTION: "birth position" is derived by ranking the Multiple Birth Components of the same Multiple Birth in time order. The ranking uses "start" time (earliest to latest) and uses "end" time only to break ties when start times match. The value is the component's rank in that sequence (first, second, third, ...).
+# -----------------------------------------------------------------------------
+:DeriveBirthPosition
+    a sh:NodeShape ;
+    sh:name "DeriveBirthPosition"@en ;
+
+    # Assumption 1: Each :MultipleBirthComponent is linked to its :MultipleBirth via gufo:isEventProperPartOf.
+    # Assumption 2: Start/end timestamps are given via :start_1 and :end_1 (reified :OffsetDateTime with date + time components).
+    # Assumption 3: If both start and end timestamps tie, STR(IRI) is used only as a deterministic final tie-breaker.
+
+    sh:description "Derivation (materialization-only): for each MultipleBirthComponent, materialize :birthPosition as 1 + the number of earlier components of the same MultipleBirth, ordered by start time (then end time to break ties)."@en ;
+    sh:targetClass :MultipleBirthComponent ;
+
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX :     <https://w3id.org/health-ri/ontology#>
+            PREFIX gufo: <http://purl.org/nemo/gufo#>
+            PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+            CONSTRUCT {
+              $this :birthPosition ?birthPosition .
+            }
+            WHERE {
+              FILTER NOT EXISTS { $this :birthPosition ?_existing . }
+
+              {
+                SELECT $this (xsd:integer(COUNT(?earlier) + 1) AS ?birthPosition)
+                WHERE {
+                  $this a :MultipleBirthComponent ;
+                        gufo:isEventProperPartOf ?mb ;
+                        :start_1 ?thisStart ;
+                        :end_1   ?thisEnd .
+                  ?mb a :MultipleBirth .
+
+                  # --- THIS start parts ---
+                  ?thisStart :date ?thisStartDate ;
+                             :hour ?tSh ;
+                             :minute ?tSm ;
+                             :second ?tSs ;
+                             :nanosecond ?tSn .
+                  ?thisStartDate :year ?tSy ;
+                                 :month ?tSmonth ;
+                                 :day ?tSd .
+                  VALUES (?tSmonth ?tSmonthNum) {
+                    (:January   1) (:February  2) (:March     3) (:April     4)
+                    (:May       5) (:June      6) (:July      7) (:August    8)
+                    (:September 9) (:October  10) (:November 11) (:December 12)
+                  }
+
+                  # --- THIS end parts (tie-breaker) ---
+                  ?thisEnd :date ?thisEndDate ;
+                           :hour ?tEh ;
+                           :minute ?tEm ;
+                           :second ?tEs ;
+                           :nanosecond ?tEn .
+                  ?thisEndDate :year ?tEy ;
+                               :month ?tEmonth ;
+                               :day ?tEd .
+                  VALUES (?tEmonth ?tEmonthNum) {
+                    (:January   1) (:February  2) (:March     3) (:April     4)
+                    (:May       5) (:June      6) (:July      7) (:August    8)
+                    (:September 9) (:October  10) (:November 11) (:December 12)
+                  }
+
+                  OPTIONAL {
+                    ?earlier a :MultipleBirthComponent ;
+                             gufo:isEventProperPartOf ?mb ;
+                             :start_1 ?eStart ;
+                             :end_1   ?eEnd .
+                    FILTER ( ?earlier != $this )
+
+                    # --- EARLIER start parts ---
+                    ?eStart :date ?eStartDate ;
+                            :hour ?eSh ;
+                            :minute ?eSm ;
+                            :second ?eSs ;
+                            :nanosecond ?eSn .
+                    ?eStartDate :year ?eSy ;
+                                :month ?eSmonth ;
+                                :day ?eSd .
+                    VALUES (?eSmonth ?eSmonthNum) {
+                      (:January   1) (:February  2) (:March     3) (:April     4)
+                      (:May       5) (:June      6) (:July      7) (:August    8)
+                      (:September 9) (:October  10) (:November 11) (:December 12)
+                    }
+
+                    # --- EARLIER end parts ---
+                    ?eEnd :date ?eEndDate ;
+                          :hour ?eEh ;
+                          :minute ?eEm ;
+                          :second ?eEs ;
+                          :nanosecond ?eEn .
+                    ?eEndDate :year ?eEy ;
+                              :month ?eEmonth ;
+                              :day ?eEd .
+                    VALUES (?eEmonth ?eEmonthNum) {
+                      (:January   1) (:February  2) (:March     3) (:April     4)
+                      (:May       5) (:June      6) (:July      7) (:August    8)
+                      (:September 9) (:October  10) (:November 11) (:December 12)
+                    }
+
+                    # Earlier-than comparison:
+                    #   1) start time (Y, M, D, h, m, s, ns)
+                    #   2) if start ties, end time (Y, M, D, h, m, s, ns)
+                    #   3) if still ties, deterministic IRI order
+                    FILTER (
+                      # --- start earlier ---
+                      xsd:integer(?eSy) < xsd:integer(?tSy) ||
+                      (xsd:integer(?eSy) = xsd:integer(?tSy) && xsd:integer(?eSmonthNum) < xsd:integer(?tSmonthNum)) ||
+                      (xsd:integer(?eSy) = xsd:integer(?tSy) && xsd:integer(?eSmonthNum) = xsd:integer(?tSmonthNum) && xsd:integer(?eSd) < xsd:integer(?tSd)) ||
+                      (xsd:integer(?eSy) = xsd:integer(?tSy) && xsd:integer(?eSmonthNum) = xsd:integer(?tSmonthNum) && xsd:integer(?eSd) = xsd:integer(?tSd) && xsd:integer(?eSh) < xsd:integer(?tSh)) ||
+                      (xsd:integer(?eSy) = xsd:integer(?tSy) && xsd:integer(?eSmonthNum) = xsd:integer(?tSmonthNum) && xsd:integer(?eSd) = xsd:integer(?tSd) && xsd:integer(?eSh) = xsd:integer(?tSh) && xsd:integer(?eSm) < xsd:integer(?tSm)) ||
+                      (xsd:integer(?eSy) = xsd:integer(?tSy) && xsd:integer(?eSmonthNum) = xsd:integer(?tSmonthNum) && xsd:integer(?eSd) = xsd:integer(?tSd) && xsd:integer(?eSh) = xsd:integer(?tSh) && xsd:integer(?eSm) = xsd:integer(?tSm) && xsd:integer(?eSs) < xsd:integer(?tSs)) ||
+                      (xsd:integer(?eSy) = xsd:integer(?tSy) && xsd:integer(?eSmonthNum) = xsd:integer(?tSmonthNum) && xsd:integer(?eSd) = xsd:integer(?tSd) && xsd:integer(?eSh) = xsd:integer(?tSh) && xsd:integer(?eSm) = xsd:integer(?tSm) && xsd:integer(?eSs) = xsd:integer(?tSs) && xsd:integer(?eSn) < xsd:integer(?tSn)) ||
+
+                      # --- start ties AND end earlier ---
+                      (
+                        xsd:integer(?eSy) = xsd:integer(?tSy) &&
+                        xsd:integer(?eSmonthNum) = xsd:integer(?tSmonthNum) &&
+                        xsd:integer(?eSd) = xsd:integer(?tSd) &&
+                        xsd:integer(?eSh) = xsd:integer(?tSh) &&
+                        xsd:integer(?eSm) = xsd:integer(?tSm) &&
+                        xsd:integer(?eSs) = xsd:integer(?tSs) &&
+                        xsd:integer(?eSn) = xsd:integer(?tSn) &&
+
+                        (
+                          xsd:integer(?eEy) < xsd:integer(?tEy) ||
+                          (xsd:integer(?eEy) = xsd:integer(?tEy) && xsd:integer(?eEmonthNum) < xsd:integer(?tEmonthNum)) ||
+                          (xsd:integer(?eEy) = xsd:integer(?tEy) && xsd:integer(?eEmonthNum) = xsd:integer(?tEmonthNum) && xsd:integer(?eEd) < xsd:integer(?tEd)) ||
+                          (xsd:integer(?eEy) = xsd:integer(?tEy) && xsd:integer(?eEmonthNum) = xsd:integer(?tEmonthNum) && xsd:integer(?eEd) = xsd:integer(?tEd) && xsd:integer(?eEh) < xsd:integer(?tEh)) ||
+                          (xsd:integer(?eEy) = xsd:integer(?tEy) && xsd:integer(?eEmonthNum) = xsd:integer(?tEmonthNum) && xsd:integer(?eEd) = xsd:integer(?tEd) && xsd:integer(?eEh) = xsd:integer(?tEh) && xsd:integer(?eEm) < xsd:integer(?tEm)) ||
+                          (xsd:integer(?eEy) = xsd:integer(?tEy) && xsd:integer(?eEmonthNum) = xsd:integer(?tEmonthNum) && xsd:integer(?eEd) = xsd:integer(?tEd) && xsd:integer(?eEh) = xsd:integer(?tEh) && xsd:integer(?eEm) = xsd:integer(?tEm) && xsd:integer(?eEs) < xsd:integer(?tEs)) ||
+                          (xsd:integer(?eEy) = xsd:integer(?tEy) && xsd:integer(?eEmonthNum) = xsd:integer(?tEmonthNum) && xsd:integer(?eEd) = xsd:integer(?tEd) && xsd:integer(?eEh) = xsd:integer(?tEh) && xsd:integer(?eEm) = xsd:integer(?tEm) && xsd:integer(?eEs) = xsd:integer(?tEs) && xsd:integer(?eEn) < xsd:integer(?tEn))
+                        )
+                      ) ||
+
+                      # --- start ties AND end ties AND deterministic final tie-breaker ---
+                      (
+                        xsd:integer(?eSy) = xsd:integer(?tSy) &&
+                        xsd:integer(?eSmonthNum) = xsd:integer(?tSmonthNum) &&
+                        xsd:integer(?eSd) = xsd:integer(?tSd) &&
+                        xsd:integer(?eSh) = xsd:integer(?tSh) &&
+                        xsd:integer(?eSm) = xsd:integer(?tSm) &&
+                        xsd:integer(?eSs) = xsd:integer(?tSs) &&
+                        xsd:integer(?eSn) = xsd:integer(?tSn) &&
+                        xsd:integer(?eEy) = xsd:integer(?tEy) &&
+                        xsd:integer(?eEmonthNum) = xsd:integer(?tEmonthNum) &&
+                        xsd:integer(?eEd) = xsd:integer(?tEd) &&
+                        xsd:integer(?eEh) = xsd:integer(?tEh) &&
+                        xsd:integer(?eEm) = xsd:integer(?tEm) &&
+                        xsd:integer(?eEs) = xsd:integer(?tEs) &&
+                        xsd:integer(?eEn) = xsd:integer(?tEn) &&
+                        STR(?earlier) < STR($this)
+                      )
+                    )
+                  }
+                }
+                GROUP BY $this
+              }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: MultipleBirthStartFromFirstComponent
+# RULE TYPE: Derivation
+# DESCRIPTION: DRIV: A Multiple Birth "start" matches the "start" of the Multiple Birth Component that begins first among its components.
+# -----------------------------------------------------------------------------
+:MultipleBirthStartFromFirstComponent
+    a sh:NodeShape ;
+    sh:name "MultipleBirthStartFromFirstComponent"@en ;
+
+    # Assumption: :isComponentOf links a :MultipleBirthComponent to its containing :MultipleBirth (OntoUML association "is component of").
+    # Assumption: "begins first" is determined by the lowest :birthPosition (xsd:int) among components.
+    # Conclusion/justification: materialize :start from the first component’s :start_1 to keep MultipleBirth interval aligned with its earliest component.
+    sh:description "Derivation (materialization-only): for each :MultipleBirth, materialize :start as the :start_1 of the :MultipleBirthComponent with the lowest :birthPosition among its components."@en ;
+    sh:targetClass :MultipleBirth ;
+
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX : <https://w3id.org/health-ri/ontology#>
+
+            CONSTRUCT {
+              $this :start ?start .
+            }
+            WHERE {
+              # Pick the component with the smallest birthPosition (i.e., the first component).
+              ?component a :MultipleBirthComponent ;
+                         :isComponentOf $this ;
+                         :birthPosition ?pos ;
+                         :start_1 ?start .
+
+              FILTER NOT EXISTS {
+                ?other a :MultipleBirthComponent ;
+                       :isComponentOf $this ;
+                       :birthPosition ?pos2 .
+                FILTER(?pos2 < ?pos)
+              }
+
+              # Materialize only when :start is not already asserted.
+              FILTER NOT EXISTS { $this :start ?_existingStart . }
+            }
+        """ ;
+    ] .
+
+# -----------------------------------------------------------------------------
+# RULE: MultipleBirthEndFromLastComponent
+# RULE TYPE: Derivation
+# DESCRIPTION: DRIV: A Multiple Birth "end" matches the "end" of the Multiple Birth Component that finishes last among its components.
+# -----------------------------------------------------------------------------
+:MultipleBirthEndFromLastComponent
+    a sh:NodeShape ;
+    sh:name "MultipleBirthEndFromLastComponent"@en ;
+
+    # Assumption: :isComponentOf links a :MultipleBirthComponent to its containing :MultipleBirth (OntoUML association "is component of").
+    # Assumption: "finishes last" is determined by the highest :birthPosition (xsd:int) among components.
+    # Conclusion/justification: materialize :end from the last component’s :end_1 to keep MultipleBirth interval aligned with its latest component.
+    sh:description "Derivation (materialization-only): for each :MultipleBirth, materialize :end as the :end_1 of the :MultipleBirthComponent with the highest :birthPosition among its components."@en ;
+    sh:targetClass :MultipleBirth ;
+
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:construct """
+            PREFIX : <https://w3id.org/health-ri/ontology#>
+
+            CONSTRUCT {
+              $this :end ?end .
+            }
+            WHERE {
+              # Pick the component with the largest birthPosition (i.e., the last component).
+              ?component a :MultipleBirthComponent ;
+                         :isComponentOf $this ;
+                         :birthPosition ?pos ;
+                         :end_1 ?end .
+
+              FILTER NOT EXISTS {
+                ?other a :MultipleBirthComponent ;
+                       :isComponentOf $this ;
+                       :birthPosition ?pos2 .
+                FILTER(?pos2 > ?pos)
+              }
+
+              # Materialize only when :end is not already asserted.
+              FILTER NOT EXISTS { $this :end ?_existingEnd . }
+            }
+        """ ;
+    ] .
