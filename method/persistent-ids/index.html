@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../assets/images/health-ri-favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -1417,6 +1417,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#chatgpt-assistants-guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ChatGPT Assistants / Guides
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ontology-identifier" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2199,12 +2221,37 @@
 
 <h1 id="persistent-identifiers-pids">Persistent Identifiers (PIDs)</h1>
 <p>This page lists the <strong>persistent, stable, and dereferenceable identifiers (PIDs)</strong> established by the Health-RI Semantic Interoperability Initiative. These URIs support semantic interoperability, long-term accessibility, and alignment with FAIR principles.</p>
+<div class="admonition tip">
+<p class="admonition-title">Choosing the right PID (formats)</p>
+<p>Some PIDs can open in different formats depending on how the link is accessed.</p>
+<ul>
+<li>Use the <strong>about URI</strong> (e.g., <code>https://w3id.org/health-ri/ontology</code>) to let the system pick a suitable format automatically.</li>
+<li>Use an <strong>explicit format URI</strong> (e.g., <code>/ontology/ttl</code>, <code>/ontology/json</code>, <code>/mapping-vocabulary/spec</code>) when you need a specific format.</li>
+</ul>
+<p>Note: browsers usually open HTML pages, while RDF tools can request RDF (e.g., Turtle). You may also be forwarded to GitHub or the documentation site—this is expected; the <code>w3id.org</code> link is the stable PID.</p>
+</div>
 <h2 id="initiative-wide-identifier">Initiative-Wide Identifier</h2>
 <h3 id="uri-httpsw3idorghealth-risemantic-interoperability">URI: <code>https://w3id.org/health-ri/semantic-interoperability</code></h3>
-<p>This URI refers to the Semantic Interoperability Initiative as a whole. It provides persistent access to the initiative's public-facing resources and is suitable for citing the initiative in publications, websites, and metadata records. For a scholarly citation of the initiative's conceptual rationale, cite the <a href="https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf">academic paper</a> (and optionally include this URI as the project identifier).</p>
+<p>This URI refers to the Semantic Interoperability Initiative as a whole. It provides persistent access to the initiative's public-facing resources and is suitable for citing the initiative in publications, websites, and metadata records. For a scholarly citation of the initiative's conceptual rationale, cite the <a href="https://w3id.org/health-ri/semantic-interoperability/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf">academic paper</a> (and optionally include this URI as the project identifier).</p>
+<h2 id="chatgpt-assistants-guides">ChatGPT Assistants / Guides</h2>
+<p>These PIDs are <strong>simple redirects</strong> (no content negotiation):</p>
+<ul>
+<li><code>https://w3id.org/health-ri/semantic-interoperability/hrio-mapping-assistant</code></li>
+<li><code>https://w3id.org/health-ri/semantic-interoperability/health-ri-semantic-interoperability-guide</code></li>
+</ul>
+<h2 id="documents">Documents</h2>
+<p>Project documents stored in the Semantic Interoperability repository are exposed under:</p>
+<p><code>https://w3id.org/health-ri/semantic-interoperability/documents/&lt;path&gt;</code></p>
+<p>This PID pattern redirects to the corresponding file under <code>documents/</code> on the <code>main</code> branch.</p>
+<p>Example:</p>
+<ul>
+<li><code>https://w3id.org/health-ri/semantic-interoperability/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf</code>
+    → Preprint PDF (stable PID; file hosted on GitHub)</li>
+</ul>
 <h2 id="ontology-identifier">Ontology Identifier</h2>
 <h3 id="uri-httpsw3idorghealth-riontology">URI: <code>https://w3id.org/health-ri/ontology</code></h3>
-<p>This is the <strong>main identifier for the Health-RI Ontology (HRIO)</strong>, and always resolves to the ontology's most recent version. The namespace IRI for HRIO terms is <code>https://w3id.org/health-ri/ontology#</code> (prefix <code>hrio:</code>).</p>
+<p>This is the <strong>main identifier for the Health-RI Ontology (HRIO)</strong>, and always resolves to the ontology's most recent version. The namespace IRI for HRIO terms is <code>https://w3id.org/health-ri/ontology#</code> (prefix <code>hrio:</code>).
+In a browser, this typically opens the HTML documentation; RDF tools typically obtain Turtle (or JSON, if requested).</p>
 <h3 id="identifiers-for-the-latest-ontology-version">Identifiers for the <strong>Latest Ontology Version</strong></h3>
 <p>These URIs point to the <strong>most recent release</strong> of the Health-RI Ontology and related documentation formats.</p>
 <table>
@@ -2272,14 +2319,14 @@ Use the <strong>latest</strong> PIDs (e.g., <code>/ontology/ttl</code>, <code>/o
 <li><code>vpp</code> — OntoUML model (Visual Paradigm)</li>
 <li><code>json</code> — OntoUML model (JSON)</li>
 <li><code>shacl</code> — SHACL constraint and derivation rules (Turtle)</li>
-<li><code>documentation</code> — OntoUML HTML documentation</li>
+<li><code>documentation</code> — OntoUML documentation (Markdown source, rendered as HTML)</li>
 <li><code>specification</code> — gUFO HTML documentation</li>
 </ul>
 </li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can also use the version URI without a <code>{format}</code> (e.g., <code>/v0.6.0</code>) to directly access the <code>.ttl</code> file.</p>
+<p>You can also use the version URI without a <code>{format}</code> (e.g., <code>/v0.6.0</code>): browsers open the HTML specification, while RDF tools default to Turtle (or JSON if requested).</p>
 </div>
 <h4 id="examples">Examples</h4>
 <ul>
@@ -2293,7 +2340,7 @@ Use the <strong>latest</strong> PIDs (e.g., <code>/ontology/ttl</code>, <code>/o
 </li>
 <li>
 <p><code>https://w3id.org/health-ri/ontology/v0.9.1/documentation</code>
-    → HTML documentation for OntoUMl ontology version 0.9.1</p>
+    → Documentation (Markdown source, rendered as HTML) for OntoUML ontology version 0.9.1</p>
 </li>
 <li>
 <p><code>https://w3id.org/health-ri/ontology/v0.6.0/specification</code>
@@ -2309,12 +2356,16 @@ Use the <strong>latest</strong> PIDs (e.g., <code>/ontology/ttl</code>, <code>/o
 <h3 id="latest-mappings">Latest Mappings</h3>
 <ul>
 <li>
-<p><strong>URI (default/TTL):</strong>
+<p><strong>URI (about / negotiated):</strong>
     <code>https://w3id.org/health-ri/semantic-interoperability/mappings</code>
-    <em>(also available explicitly as <code>/mappings/ttl</code>)</em></p>
+    <em>(browsers typically open TSV; RDF tools default to Turtle; also available explicitly as <code>/mappings/ttl</code> and <code>/mappings/tsv</code>)</em></p>
 </li>
 <li>
-<p><strong>URI (TSV):</strong>
+<p><strong>URI (TTL, explicit):</strong>
+    <code>https://w3id.org/health-ri/semantic-interoperability/mappings/ttl</code></p>
+</li>
+<li>
+<p><strong>URI (TSV, explicit):</strong>
     <code>https://w3id.org/health-ri/semantic-interoperability/mappings/tsv</code></p>
 </li>
 </ul>
@@ -2323,7 +2374,7 @@ Use the <strong>latest</strong> PIDs (e.g., <code>/ontology/ttl</code>, <code>/o
 <ul>
 <li>
 <p><code>https://w3id.org/health-ri/semantic-interoperability/mappings</code>
-    → Latest SSSOM mappings in Turtle (<code>.ttl</code>)</p>
+    → Latest SSSOM mappings. Negotiated: TSV in a browser; TTL for RDF tools</p>
 </li>
 <li>
 <p><code>https://w3id.org/health-ri/semantic-interoperability/mappings/tsv</code>
@@ -2335,9 +2386,13 @@ Use the <strong>latest</strong> PIDs (e.g., <code>/ontology/ttl</code>, <code>/o
 <h3 id="latest-vocabulary">Latest Vocabulary</h3>
 <ul>
 <li>
-<p><strong>URI (TTL):</strong>
+<p><strong>URI (about / negotiated):</strong>
     <code>https://w3id.org/health-ri/mapping-vocabulary</code>
-    <em>(also available explicitly as <code>/mapping-vocabulary/ttl</code>)</em></p>
+    <em>(browsers typically open the HTML specification; RDF tools default to Turtle; also available explicitly as <code>/mapping-vocabulary/ttl</code> and <code>/mapping-vocabulary/spec</code>)</em></p>
+</li>
+<li>
+<p><strong>URI (TTL, explicit):</strong>
+    <code>https://w3id.org/health-ri/mapping-vocabulary/ttl</code></p>
 </li>
 <li>
 <p><strong>URI (HTML specification):</strong>
@@ -2353,7 +2408,7 @@ Use the <strong>latest</strong> PIDs (e.g., <code>/ontology/ttl</code>, <code>/o
 <ul>
 <li>
 <p><code>https://w3id.org/health-ri/mapping-vocabulary</code>
-    → Latest vocabulary in Turtle (<code>.ttl</code>)</p>
+    → Latest vocabulary. Negotiated: HTML specification in a browser; TTL for RDF tools</p>
 </li>
 <li>
 <p><code>https://w3id.org/health-ri/mapping-vocabulary/spec</code>
@@ -2364,9 +2419,13 @@ Use the <strong>latest</strong> PIDs (e.g., <code>/ontology/ttl</code>, <code>/o
 <p>Versioned PIDs include an explicit <code>vX.Y.Z</code> segment and resolve to immutable artifacts for that release.</p>
 <ul>
 <li>
-<p><strong>URI (TTL):</strong>
+<p><strong>URI (about / negotiated):</strong>
     <code>https://w3id.org/health-ri/mapping-vocabulary/vX.Y.Z</code>
-    <em>(also available explicitly as <code>/vX.Y.Z/ttl</code>)</em></p>
+    <em>(browsers open the HTML specification; RDF tools default to Turtle; also available explicitly as <code>/vX.Y.Z/ttl</code> and <code>/vX.Y.Z/spec</code>)</em></p>
+</li>
+<li>
+<p><strong>URI (TTL, explicit):</strong>
+    <code>https://w3id.org/health-ri/mapping-vocabulary/vX.Y.Z/ttl</code></p>
 </li>
 <li>
 <p><strong>URI (HTML specification):</strong>
@@ -2378,7 +2437,7 @@ Use the <strong>latest</strong> PIDs (e.g., <code>/ontology/ttl</code>, <code>/o
 <ul>
 <li>
 <p><code>https://w3id.org/health-ri/mapping-vocabulary/v1.0.0</code>
-    → Vocabulary in Turtle for version <code>v1.0.0</code></p>
+    → Vocabulary version <code>v1.0.0</code>. Negotiated: HTML specification in a browser; TTL for RDF tools</p>
 </li>
 <li>
 <p><code>https://w3id.org/health-ri/mapping-vocabulary/v1.0.0/spec</code>
@@ -2399,115 +2458,127 @@ Use the <strong>latest</strong> PIDs (e.g., <code>/ontology/ttl</code>, <code>/o
 <tr>
 <td><code>/semantic-interoperability</code></td>
 <td>Project-level identifier</td>
-<td>Redirects to documentation site</td>
+<td>Forwards to documentation site</td>
 <td><a href="https://w3id.org/health-ri/semantic-interoperability">https://w3id.org/health-ri/semantic-interoperability</a></td>
 </tr>
 <tr>
 <td><code>/semantic-interoperability/git</code></td>
 <td>Source code and data repository</td>
-<td>Redirects to GitHub</td>
+<td>Forwards to GitHub</td>
 <td><a href="https://w3id.org/health-ri/semantic-interoperability/git">https://w3id.org/health-ri/semantic-interoperability/git</a></td>
 </tr>
 <tr>
+<td><code>/semantic-interoperability/hrio-mapping-assistant</code></td>
+<td>HRIO Mapping Assistant (ChatGPT)</td>
+<td>Forwards to the ChatGPT assistant</td>
+<td><a href="https://w3id.org/health-ri/semantic-interoperability/hrio-mapping-assistant">https://w3id.org/health-ri/semantic-interoperability/hrio-mapping-assistant</a></td>
+</tr>
+<tr>
+<td><code>/semantic-interoperability/health-ri-semantic-interoperability-guide</code></td>
+<td>Semantic Interoperability Guide (ChatGPT)</td>
+<td>Forwards to the ChatGPT guide</td>
+<td><a href="https://w3id.org/health-ri/semantic-interoperability/health-ri-semantic-interoperability-guide">https://w3id.org/health-ri/semantic-interoperability/health-ri-semantic-interoperability-guide</a></td>
+</tr>
+<tr>
+<td><code>/semantic-interoperability/documents/{path}</code></td>
+<td>Project documents</td>
+<td>Forwards to the raw file on GitHub (<code>main</code>)</td>
+<td><a href="https://w3id.org/health-ri/semantic-interoperability/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf">https://w3id.org/health-ri/semantic-interoperability/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf</a></td>
+</tr>
+<tr>
 <td><code>/ontology</code></td>
-<td>Ontology root</td>
-<td>Redirects to raw <code>.ttl</code> file</td>
+<td>Ontology root (about URI)</td>
+<td>Forwards to HTML documentation (browser) or TTL/JSON (tools)</td>
 <td><a href="https://w3id.org/health-ri/ontology">https://w3id.org/health-ri/ontology</a></td>
 </tr>
 <tr>
 <td><code>/ontology/ttl</code></td>
 <td>Latest ontology in Turtle format</td>
-<td>Redirects to raw <code>.ttl</code> file</td>
+<td>Forwards to latest <code>.ttl</code> file (GitHub)</td>
 <td><a href="https://w3id.org/health-ri/ontology/ttl">https://w3id.org/health-ri/ontology/ttl</a></td>
 </tr>
 <tr>
 <td><code>/ontology/shacl</code></td>
 <td>Latest SHACL shapes</td>
-<td>Redirects to latest <code>.shacl</code></td>
+<td>Forwards to latest <code>.shacl</code> file (GitHub)</td>
 <td><a href="https://w3id.org/health-ri/ontology/shacl">https://w3id.org/health-ri/ontology/shacl</a></td>
 </tr>
 <tr>
 <td><code>/ontology/documentation</code></td>
 <td>Latest HTML documentation</td>
-<td>OntoUML's human-readable documentation</td>
+<td>Forwards to OntoUML human-readable documentation</td>
 <td><a href="https://w3id.org/health-ri/ontology/documentation">https://w3id.org/health-ri/ontology/documentation</a></td>
 </tr>
 <tr>
 <td><code>/ontology/specification</code></td>
 <td>Latest HTML specification</td>
-<td>gUFO's human-readable documentation</td>
+<td>Forwards to gUFO human-readable documentation</td>
 <td><a href="https://w3id.org/health-ri/ontology/specification">https://w3id.org/health-ri/ontology/specification</a></td>
 </tr>
 <tr>
 <td><code>/ontology/json</code></td>
 <td>Latest JSON export of OntoUML</td>
-<td>Redirects to <code>.json</code></td>
+<td>Forwards to latest <code>.json</code> file (GitHub)</td>
 <td><a href="https://w3id.org/health-ri/ontology/json">https://w3id.org/health-ri/ontology/json</a></td>
 </tr>
 <tr>
 <td><code>/ontology/vpp</code></td>
 <td>Latest OntoUML model (<code>.vpp</code>)</td>
-<td>Redirects to Visual Paradigm file</td>
+<td>Forwards to latest <code>.vpp</code> file (GitHub)</td>
 <td><a href="https://w3id.org/health-ri/ontology/vpp">https://w3id.org/health-ri/ontology/vpp</a></td>
 </tr>
 <tr>
 <td><code>/ontology/vX.Y.Z/{format}</code></td>
 <td>Versioned ontology release</td>
-<td>Format-specific persistent access</td>
+<td>Forwards to version-specific file/page</td>
 <td><a href="https://w3id.org/health-ri/ontology/v0.6.0/ttl">https://w3id.org/health-ri/ontology/v0.6.0/ttl</a></td>
 </tr>
 <tr>
-<td><code>/ontology/vX.Y.Z/shacl</code></td>
-<td>Versioned SHACL shapes</td>
-<td>Redirects to <code>.shacl</code> for that version</td>
-<td><a href="https://w3id.org/health-ri/ontology/v0.11.9/shacl">https://w3id.org/health-ri/ontology/v0.11.9/shacl</a></td>
-</tr>
-<tr>
 <td><code>/semantic-interoperability/mappings</code></td>
-<td>Latest SSSOM mappings (TTL)</td>
-<td>Redirects to latest <code>.ttl</code></td>
+<td>Latest SSSOM mappings (about URI)</td>
+<td>Forwards to TSV (browser) or TTL (RDF tools)</td>
 <td><a href="https://w3id.org/health-ri/semantic-interoperability/mappings">https://w3id.org/health-ri/semantic-interoperability/mappings</a></td>
 </tr>
 <tr>
 <td><code>/semantic-interoperability/mappings/ttl</code></td>
 <td>Latest SSSOM mappings (TTL, explicit)</td>
-<td>Redirects to latest <code>.ttl</code></td>
+<td>Forwards to latest <code>.ttl</code> file (GitHub)</td>
 <td><a href="https://w3id.org/health-ri/semantic-interoperability/mappings/ttl">https://w3id.org/health-ri/semantic-interoperability/mappings/ttl</a></td>
 </tr>
 <tr>
 <td><code>/semantic-interoperability/mappings/tsv</code></td>
-<td>Latest SSSOM mappings (TSV)</td>
-<td>Redirects to latest <code>.tsv</code></td>
+<td>Latest SSSOM mappings (TSV, explicit)</td>
+<td>Forwards to latest <code>.tsv</code> file (GitHub)</td>
 <td><a href="https://w3id.org/health-ri/semantic-interoperability/mappings/tsv">https://w3id.org/health-ri/semantic-interoperability/mappings/tsv</a></td>
 </tr>
 <tr>
 <td><code>/mapping-vocabulary</code></td>
-<td>Latest Mapping Vocabulary (TTL)</td>
-<td>Redirects to latest <code>.ttl</code></td>
+<td>Mapping Vocabulary (about URI)</td>
+<td>Forwards to HTML spec (browser) or TTL (RDF tools)</td>
 <td><a href="https://w3id.org/health-ri/mapping-vocabulary">https://w3id.org/health-ri/mapping-vocabulary</a></td>
 </tr>
 <tr>
 <td><code>/mapping-vocabulary/ttl</code></td>
 <td>Latest Mapping Vocabulary (TTL, explicit)</td>
-<td>Redirects to latest <code>.ttl</code></td>
+<td>Forwards to latest <code>.ttl</code> file (GitHub)</td>
 <td><a href="https://w3id.org/health-ri/mapping-vocabulary/ttl">https://w3id.org/health-ri/mapping-vocabulary/ttl</a></td>
 </tr>
 <tr>
 <td><code>/mapping-vocabulary/specification</code></td>
 <td>Latest Mapping Vocabulary HTML specification</td>
-<td>Redirects to latest spec page</td>
+<td>Forwards to latest spec page</td>
 <td><a href="https://w3id.org/health-ri/mapping-vocabulary/specification">https://w3id.org/health-ri/mapping-vocabulary/specification</a></td>
 </tr>
 <tr>
 <td><code>/mapping-vocabulary/vX.Y.Z</code></td>
-<td>Versioned Mapping Vocabulary (TTL)</td>
-<td>Redirects to version-specific <code>.ttl</code></td>
+<td>Versioned Mapping Vocabulary (about URI)</td>
+<td>Forwards to HTML spec (browser) or TTL (RDF tools)</td>
 <td><a href="https://w3id.org/health-ri/mapping-vocabulary/v1.0.0">https://w3id.org/health-ri/mapping-vocabulary/v1.0.0</a></td>
 </tr>
 <tr>
 <td><code>/mapping-vocabulary/vX.Y.Z/specification</code></td>
 <td>Versioned Mapping Vocabulary specification</td>
-<td>Redirects to version-specific HTML spec</td>
+<td>Forwards to version-specific HTML spec</td>
 <td><a href="https://w3id.org/health-ri/mapping-vocabulary/v1.0.0/specification">https://w3id.org/health-ri/mapping-vocabulary/v1.0.0/specification</a></td>
 </tr>
 </tbody>
