@@ -2214,10 +2214,10 @@
 <li>Covers all submission routes referenced on the <a href="../mapping-schema/">Mapping Set</a> page (e.g., issue form or XLSX) and the end-to-end path to publication.</li>
 </ul>
 <h4 id="start-stage-for-mappings">Start stage for mappings</h4>
-<p>At the current maturity level, mapping work may begin once the relevant HRIO package reaches <code>irv</code> (internal review). Our target policy is to allow mappings only after the package is in <code>pub</code> (published). Stage definitions are described in the <a href="../ontology-validation/">Ontology Lifecycle and Validation Policy</a>.</p>
+<p>At the current maturity level, mapping work may begin once the relevant HRIO package reaches <code>erv</code> (external review). Our target policy is to prefer mappings to <code>pub</code> (published) packages when possible. Mappings MUST NOT target concepts from packages in <code>int</code> (internal) or <code>irv</code> (internal review). Stage definitions are described in the <a href="../ontology-validation/">Ontology Lifecycle and Validation Policy</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Mapping stability depends on HRIO maturity</p>
-<p>If the target HRIO package is still in internal review, mappings may need revision after publication. Prefer mapping against <code>pub</code> packages when possible, and expect supersession when meanings evolve.</p>
+<p>If the target HRIO package is still in external review, mappings may need revision after publication. Prefer mapping against <code>pub</code> packages when possible, and expect supersession when meanings evolve.</p>
 </div>
 <h3 id="in-scope">In Scope</h3>
 <ul>
@@ -2403,6 +2403,7 @@ If staffing is limited, reschedule publication rather than collapsing roles.</p>
 <p class="admonition-title">Curator quick-check</p>
 <ul>
 <li>[ ] Required columns</li>
+<li>[ ] Target HRIO stage: <code>object_id</code> belongs to a package in stage <code>erv</code> or <code>pub</code></li>
 <li>[ ] Allowed HRIV predicates and valid (optional) <code>predicate_modifier</code></li>
 <li>[ ] CURIE/URI hygiene (resolves with 2xx/3xx where applicable)</li>
 <li>[ ] <code>replaces</code> points to an existing record</li>
