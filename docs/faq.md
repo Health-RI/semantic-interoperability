@@ -229,6 +229,8 @@
     - If an external artifact is outside Health-RI's editorial control, mappings are typically maintained non-invasively in a separate mapping artifact (e.g., a SSSOM mapping set).
     - If an external artifact is under the editorial control of its authors/maintainers (and governance permits), HRIV mapping assertions may be embedded directly in the artifact itself (e.g., as ontology annotations or axioms).
 
+    **Important:** Mappings may only target HRIO concepts in packages that are at least at the `erv` (external review) stage. Mapping to concepts in packages at the `int` (internal) or `irv` (internal review) stage is not permitted.
+
     Mappings can be asserted using:
 
     - [`hriv:hasExactMeaning`](../method/specification-vocabulary.html#hasExactMeaning) when an exact-meaning alignment is justified,
@@ -606,3 +608,7 @@
 
     The initiative maintains a consolidated table of all PIDs, covering the ontology, mapping set, and mapping vocabulary.
     This table describes the behavior of each PID (e.g., redirects, format-specific access) and provides examples.
+
+??? question "How do persistent identifiers (w3id) work in this project?"
+
+    Persistent identifiers (PIDs) are used throughout the initiative to provide stable, dereferenceable URIs that link to project resources (e.g., OntoUML models, documentation). These PIDs resolve via content negotiation, meaning they can return different formats (e.g., HTML, Markdown, or Turtle) based on how the link is accessed. The system selects the best format automatically or, in some cases, forwards you to the Initiative's GitHub repository or the documentation site.
