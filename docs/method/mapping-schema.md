@@ -185,6 +185,7 @@ Both methods ensure your contribution is reviewed and incorporated into the offi
 Before submitting, please verify the following to ensure your contribution is complete and compliant with the schema:
 
 - All **mandatory** contributor fields are present and correctly formatted.
+- The `object_id` you choose is an HRIO concept in a package at stage `erv` or `pub` (do not map to `int` or `irv` packages).
 - All `subject_label` and `object_label` fields you provide are language-tagged (e.g., `Patient@en`, `Patiënt@nl`).
 - Any optional values provided use valid identifiers (e.g., ORCID IDs, resolvable URIs, SEMAPV terms).
 

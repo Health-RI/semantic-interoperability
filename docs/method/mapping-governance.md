@@ -20,11 +20,11 @@ This policy defines how the Health-RI SSSOM Mapping Set is governed, validated, 
 
 #### Start stage for mappings
 
-At the current maturity level, mapping work may begin once the relevant HRIO package reaches `irv` (internal review). Our target policy is to allow mappings only after the package is in `pub` (published). Stage definitions are described in the [Ontology Lifecycle and Validation Policy](./ontology-validation.md).
+At the current maturity level, mapping work may begin once the relevant HRIO package reaches `erv` (external review). Our target policy is to prefer mappings to `pub` (published) packages when possible. Mappings MUST NOT target concepts from packages in `int` (internal) or `irv` (internal review). Stage definitions are described in the [Ontology Lifecycle and Validation Policy](./ontology-validation.md).
 
 !!! info "Mapping stability depends on HRIO maturity"
 
-    If the target HRIO package is still in internal review, mappings may need revision after publication. Prefer mapping against `pub` packages when possible, and expect supersession when meanings evolve.
+    If the target HRIO package is still in external review, mappings may need revision after publication. Prefer mapping against `pub` packages when possible, and expect supersession when meanings evolve.
 
 ### In Scope
 
@@ -186,6 +186,7 @@ flowchart LR
     !!! success "Curator quick-check"
 
         - [ ] Required columns
+        - [ ] Target HRIO stage: `object_id` belongs to a package in stage `erv` or `pub`
         - [ ] Allowed HRIV predicates and valid (optional) `predicate_modifier`
         - [ ] CURIE/URI hygiene (resolves with 2xx/3xx where applicable)
         - [ ] `replaces` points to an existing record

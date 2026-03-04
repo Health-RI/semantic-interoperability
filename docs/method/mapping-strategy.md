@@ -71,6 +71,10 @@ Theories of formal semantics tell us that an OWL class gets its meaning from two
 
 Our common semantic reference model (HRIO) provides the shared meanings to which external concept definitions can be mapped. When another ontology defines `ont:Human`, it may be semantically aligned with our `hrio:Person`. To make this relationship explicit, a **`hriv:hasExactMeaning`** link can be asserted—either by the Health-RI mapping team (e.g., in SSSOM format), or by the owners of the external ontology within their artifact—signifying that the external concept's intended semantics are fully and precisely defined by that linked HRIO meaning.
 
+!!! warning "Target only mature HRIO packages"
+
+    Create mappings only to HRIO concepts in packages at stage `erv` or `pub`. Do not create mappings to concepts in packages at stage `int` or `irv`. Stage definitions are described in the [Ontology Lifecycle and Validation Policy](./ontology-validation.md).
+
 There are two possible approaches for creating and maintaining such mappings:
 
 - **Mappings performed by the Health-RI team:** In this case, mappings are created by Health-RI's semantic modeling team and provided in [SSSOM](https://w3id.org/sssom/) format. This is the default strategy when the external ontology or resource is publicly available or beyond Health-RI's editorial control (e.g., national standards, web-accessible vocabularies). These mappings are *non-invasive*, meaning they do not alter the original artifacts but describe their alignment externally. For details on how these mappings are published, versioned, and curated, see the [SSSOM Mapping Set](./mapping-schema.md).
