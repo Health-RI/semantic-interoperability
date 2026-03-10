@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#versioning-strategy-for-ontology-releases" class="md-skip">
+        <a href="#versioning-strategy-for-the-health-ri-ontology" class="md-skip">
           Skip to content
         </a>
       
@@ -1225,6 +1225,34 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#conditions-for-creating-a-github-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditions for creating a GitHub Release
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditions for creating a GitHub Release">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-release-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Release examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2141,14 +2169,18 @@
   
 
 
-<h1 id="versioning-strategy-for-ontology-releases">Versioning Strategy for Ontology Releases</h1>
-<p>This document specifies the version number semantics (<code>X.Y.Z</code>), priority rules, increment/reset logic, and triggers for <code>X</code>/<code>Y</code>/<code>Z</code>. It also includes the semantic vs. non-semantic decision tests, worked examples, and the versioning flowchart. Stage concepts are referenced only insofar as they drive <code>Y</code>-level changes.</p>
-<p>This versioning strategy applies to all ontology artifacts released as part of the Health-RI Ontology (HRIO). In any given release, all artifacts share the same version identifier (<code>X.Y.Z</code>) and correspond to the same underlying HRIO OntoUML model.</p>
+<h1 id="versioning-strategy-for-the-health-ri-ontology">Versioning Strategy for the Health-RI Ontology</h1>
+<p>This document specifies the version number semantics (<code>X.Y.Z</code>), priority rules, increment/reset logic, and triggers for <code>X</code>/<code>Y</code>/<code>Z</code>. It also includes the semantic vs. non-semantic decision tests, worked examples, and decision diagrams for ontology version assignment and GitHub Release creation. Stage concepts are referenced only insofar as they drive <code>Y</code>-level changes.</p>
+<p>This versioning strategy applies to all ontology artifacts versioned as part of the Health-RI Ontology (HRIO). For any given ontology version, all artifacts share the same version identifier (<code>X.Y.Z</code>) and correspond to the same underlying HRIO OntoUML model.</p>
 <h2 id="purpose-scope">Purpose &amp; Scope</h2>
-<p>Defines how versions are assigned and incremented for the ontology/model releases, including precedence (<code>X &gt; Y &gt; Z</code>), single-step increments, and resets. Stage mechanics (<code>int</code>/<code>irv</code>/<code>erv</code>/<code>pub</code>) are covered in <em>Validation Strategy</em>; they are referenced here only where they directly affect <code>Y</code>. This strategy is effective for releases starting at <code>v1.0.0</code>; earlier releases (<code>&lt; v1.0.0</code>) followed an <a href="../ontology-versioning-old/">earlier versioning policy</a>.</p>
+<p>Defines how versions are assigned and incremented for the ontology/model artifacts, including precedence (<code>X &gt; Y &gt; Z</code>), single-step increments, and resets. Stage mechanics (<code>int</code>/<code>irv</code>/<code>erv</code>/<code>pub</code>) are covered in the <a href="../ontology-validation/">Validation Strategy</a>; they are referenced here only where they directly affect <code>Y</code>. This strategy is effective for versions starting at <code>v1.0.0</code>; earlier versions (<code>&lt; v1.0.0</code>) followed an <a href="../ontology-versioning-old/">earlier versioning policy</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Ontology versioning vs. GitHub Releases</p>
+<p>This page defines how the ontology version identifier (<code>X.Y.Z</code>) is assigned. A GitHub Release is a separate repository publication event. GitHub Releases use an already assigned ontology version, but they do not determine whether <code>X</code>, <code>Y</code>, or <code>Z</code> changes.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Artifacts covered and alignment</p>
-<p>The <code>X.Y.Z</code> version identifier applies uniformly to the ontology artifacts released by this initiative:</p>
+<p>The <code>X.Y.Z</code> version identifier applies uniformly to the ontology artifacts versioned and maintained by this initiative:</p>
 <ul>
 <li>HRIO OntoUML model in Visual Paradigm (<code>.vpp</code> project).</li>
 <li>HRIO OntoUML model exported as JSON (<code>.json</code>).</li>
@@ -2156,7 +2188,7 @@
 <li>SHACL shapes file (<code>.shacl</code>, in Turtle).</li>
 <li>Ontology documentation and specification.</li>
 </ul>
-<p>Model changes are authored in the OntoUML <code>.vpp</code> project first. For each release, the derived artifacts above are regenerated or updated from that source so they remain synchronized under the same version identifier.</p>
+<p>Model changes are authored in the OntoUML <code>.vpp</code> project first. For each ontology version, the derived artifacts above are regenerated or updated from that source so they remain synchronized under the same version identifier.</p>
 </div>
 <h2 id="definitions-glossary">Definitions &amp; Glossary</h2>
 <ul>
@@ -2169,24 +2201,27 @@
 </li>
 </ul>
 <blockquote>
-<p>Note on stages. Stages are tracked per domain packages (see <em>Validation Strategy</em>). A stage transition causes <code>Y++</code> and resets <code>Z → 0</code>, per rules below.</p>
+<p>Note on stages. Stages are tracked per domain packages (see <a href="../ontology-validation/">Validation Strategy</a>). A stage transition causes <code>Y++</code> and resets <code>Z → 0</code>, per rules below.</p>
 </blockquote>
 <div class="admonition note">
-<p class="admonition-title">Published tags are rarely "round"</p>
-<p>GitHub releases are created when the relevant domain package is in <code>pub</code> stage, occurring after stage transitions (<code>int → irv → erv → pub</code>). Stage transitions bump <code>Y</code>, so published versions are <strong>unlikely</strong> to be exactly <code>X.0.0</code> (e.g., <code>2.0.0</code>), and <code>Z</code> may be non-zero. Expect tags like <code>2.1.0</code> or <code>2.3.4</code>. "Round" versions may still occur because we version the ontology as a whole (not per package), while domain packages' independent state transitions influence the overall ontology version.</p>
+<p class="admonition-title">GitHub Release versions are rarely 'round'</p>
+<p>GitHub Release creation is operationally separate from ontology version assignment, but the version shown in a GitHub Release always reflects the ontology version already assigned under the <code>X</code>/<code>Y</code>/<code>Z</code> rules in this document.</p>
+<p>Because domain package stage transitions increase <code>Y</code>, and non-semantic corrections may increase <code>Z</code>, versions that are made available through GitHub Releases are unlikely to be exactly <code>X.0.0</code> (e.g., <code>2.0.0</code>). In practice, expect versions such as <code>2.1.0</code> or <code>2.3.4</code> to appear frequently.</p>
+<p>A GitHub Release is created when a package enters <code>erv</code>, when a package already in <code>erv</code> or <code>pub</code> is updated, or when a package advances from <code>erv</code> to <code>pub</code>. Changes limited to packages that remain only in <code>int</code> or <code>irv</code> do not require a GitHub Release.</p>
+<p>"Round" versions may still occur, but they are expected to be uncommon because the ontology is versioned as a whole, while package-level stage transitions and corrections continue to influence the overall ontology version.</p>
 </div>
 <h2 id="version-numbering-semantics-increment-reset-rules">Version Numbering &amp; Semantics — Increment &amp; Reset Rules</h2>
 <ul>
-<li>Single-step per release. Exactly one component increments by <code>+1</code> per release — the highest-priority applicable one (<code>X &gt; Y &gt; Z</code>). Lower components never increment concurrently; they only reset (<code>Y → 0</code> on <code>X++</code>; <code>Z → 0</code> on <code>X++</code> or <code>Y++</code>).<ul>
-<li>Not allowed: <code>1.5.3 → 1.6.4</code> or <code>1.5.3 → 1.7.0</code> in a single release.</li>
+<li>Single-step per ontology update. Exactly one component increments by <code>+1</code> per ontology update — the highest-priority applicable one (<code>X &gt; Y &gt; Z</code>). Lower components never increment concurrently; they only reset (<code>Y → 0</code> on <code>X++</code>; <code>Z → 0</code> on <code>X++</code> or <code>Y++</code>).<ul>
+<li>Not allowed: <code>1.5.3 → 1.6.4</code> or <code>1.5.3 → 1.7.0</code> in a single ontology update.</li>
 <li>Allowed: <code>1.5.3 → 1.6.0</code> (<code>Y++</code>) or <code>1.5.3 → 2.0.0</code> (<code>X++</code>).</li>
 </ul>
 </li>
 <li>Priority. If multiple qualifying changes occur together, apply only the highest-priority bump (<code>X &gt; Y &gt; Z</code>). Lower components reset accordingly.</li>
 <li>No skipping within a component. Always increment by exactly <code>+1</code> within <code>X</code>, <code>Y</code>, or <code>Z</code>.</li>
-<li>Mixed <code>X</code> with <code>Y/Z</code>. If any <code>X</code> trigger occurs in a release, apply <code>X++</code> (once). Record <code>Y</code>/<code>Z</code>-qualifying changes in the changelog; do not increment <code>Y</code> or <code>Z</code> in that same release (<code>Y = 0</code>, <code>Z = 0</code> after <code>X++</code>).</li>
-<li>Mixed <code>Y</code> with <code>Z</code>. If any <code>Y</code> trigger occurs in a release, apply <code>Y++</code> (once). Record <code>Z</code>-qualifying changes in the changelog; do not increment <code>Z</code> in that same release (<code>Z → 0</code> on <code>Y++</code>).</li>
-<li>Semantic changes mandate a stage transition. Any semantic change (meaning of classes/relations/constraints/definitions) must be recorded as a package stage reversion to <code>int</code> (see <em>Validation Strategy</em>). This causes <code>Y++</code> and <code>Z → 0</code>.</li>
+<li>Mixed <code>X</code> with <code>Y/Z</code>. If any <code>X</code> trigger occurs in the same ontology update, apply <code>X++</code> (once). Record <code>Y</code>/<code>Z</code>-qualifying changes in the changelog; do not increment <code>Y</code> or <code>Z</code> in that same ontology update (<code>Y = 0</code>, <code>Z = 0</code> after <code>X++</code>).</li>
+<li>Mixed <code>Y</code> with <code>Z</code>. If any <code>Y</code> trigger occurs in the same ontology update, apply <code>Y++</code> (once). Record <code>Z</code>-qualifying changes in the changelog; do not increment <code>Z</code> in that same ontology update (<code>Z → 0</code> on <code>Y++</code>).</li>
+<li>Semantic changes mandate a stage transition. Any semantic change (meaning of classes/relations/constraints/definitions) must be recorded as a package stage reversion to <code>int</code> (see <a href="../ontology-validation/">Validation Strategy</a>). This causes <code>Y++</code> and <code>Z → 0</code>.</li>
 <li>Resets.<ul>
 <li>When <code>Y</code> increases, <code>Z</code> resets to <code>0</code>.</li>
 <li>When <code>X</code> increases, <code>Y</code> and <code>Z</code> reset to <code>0</code>.</li>
@@ -2218,17 +2253,17 @@
 <ul>
 <li>Any domain package stage transition: <code>int → irv</code>, <code>irv → erv</code>, <code>erv → pub</code>, or a recorded reversion (e.g., <code>irv → int</code>) via the package's stage tagged value.</li>
 <li>Any semantic change that alters model meaning within a package (e.g., adding/removing/retaxonomizing classes, retyping relations, changing multiplicities or constraints, revising authoritative definitions, introducing/removing key axioms).<ul>
-<li>Action: record <code>&lt;current&gt; → int</code> for the package (see <em>Validation Strategy</em>).</li>
-<li>Result: <code>Y++</code> for that release; <code>Z → 0</code>.</li>
+<li>Action: record <code>&lt;current&gt; → int</code> for the package (see <a href="../ontology-validation/">Validation Strategy</a>).</li>
+<li>Result: <code>Y++</code> for that ontology update; <code>Z → 0</code>.</li>
 </ul>
 </li>
-<li>When multiple packages transition in the same release, perform a single <code>Y++</code> (<code>Z</code> resets to <code>0</code>).</li>
+<li>When multiple packages transition in the same ontology update, perform a single <code>Y++</code> (<code>Z</code> resets to <code>0</code>).</li>
 </ul>
 </li>
 <li>
 <p>Non-triggers:</p>
 <ul>
-<li>Being in a stage without a transition since last release.</li>
+<li>Being in a stage without a transition since the previous ontology update.</li>
 <li>Diagram/class edits that do not change the package stage.</li>
 <li>Tagged-value corrections that leave stage history unchanged.</li>
 <li>Removing a package (this is <code>X</code>, not <code>Y</code>).</li>
@@ -2252,6 +2287,127 @@
 </ul>
 </li>
 </ul>
+<h3 id="conditions-for-creating-a-github-release">Conditions for creating a GitHub Release</h3>
+<p>GitHub Release creation is independent from ontology versioning. A GitHub Release must be created when at least one domain package satisfies one of the following conditions:</p>
+<ul>
+<li>the package enters external review (<code>irv → erv</code>);</li>
+<li>the package is updated while already in <code>erv</code>;</li>
+<li>the package is updated while already in <code>pub</code>;</li>
+<li>the package advances from <code>erv</code> to <code>pub</code>.</li>
+</ul>
+<p>A GitHub Release is not required when all affected packages remain only in <code>int</code> or <code>irv</code> (for example, <code>int → irv</code> by itself).</p>
+<p>When a GitHub Release is created, use the ontology version already assigned under the <code>X</code>/<code>Y</code>/<code>Z</code> rules above. The GitHub Release does not create or alter the ontology version number.</p>
+<h4 id="github-release-examples">GitHub Release examples</h4>
+<p>The examples below illustrate the difference between ontology version assignment and GitHub Release creation.</p>
+<p>Assume the current ontology version is <code>v1.2.3</code> and the ontology currently includes the following domain packages:</p>
+<ul>
+<li>
+<p>Patient package — stage <code>int</code>
+    Covers core patient identification and demographic concepts such as <code>Patient</code>, <code>Patient Identifier</code>, <code>Date of Birth</code>, and <code>Sex at Birth</code>.</p>
+</li>
+<li>
+<p>Laboratory Observation package — stage <code>erv</code>
+    Covers laboratory-result concepts such as <code>Laboratory Observation</code>, <code>Observation Result</code>, <code>Specimen</code>, <code>Observation Method</code>, and the link to the observed analyte/test.</p>
+</li>
+<li>
+<p>Care Plan package — stage <code>pub</code>
+    Covers care-planning concepts such as <code>Care Plan</code>, <code>Care Plan Activity</code>, <code>Goal</code>, <code>Performer</code>, and care-planning status information.</p>
+</li>
+</ul>
+<p>The cases below are independent examples. In each case, assume the starting ontology version is <code>v1.2.3</code>.</p>
+<ol>
+<li>
+<p>Internal-only progression in a package that is not yet externally visible</p>
+<p>The Patient package completes internal modeling and is promoted from <code>int</code> to <code>irv</code>. No package currently in <code>erv</code> or <code>pub</code> is changed in this ontology update.</p>
+<ul>
+<li>Change made in package: <code>Patient package</code></li>
+<li>Package transition: <code>int → irv</code></li>
+<li>Versioning effect: <code>Y++</code>, so the ontology version becomes <code>v1.3.0</code></li>
+<li>GitHub Release?: No</li>
+</ul>
+<p><strong>Why?</strong> The ontology version changes because any recorded domain-package stage transition contributes to <code>Y</code>. However, no GitHub Release is required for this event alone because the affected package has not yet entered external review or publication.</p>
+</li>
+<li>
+<p>Non-semantic update in a package currently under external review</p>
+<p>The Laboratory Observation package is already in <code>erv</code>. During external review, the team corrects the textual definition of <code>Observation Result</code> for clarity, fixes a typo in the package documentation, and improves the layout of the diagram showing <code>Laboratory Observation</code> and <code>Specimen</code>. The model meaning does not change.</p>
+<ul>
+<li>Change made in package: <code>Laboratory Observation package</code></li>
+<li>Package stage during change: remains <code>erv</code></li>
+<li>Type of modification: non-semantic documentation/diagram correction</li>
+<li>Versioning effect: <code>Z++</code>, so the ontology version becomes <code>v1.2.4</code></li>
+<li>GitHub Release?: Yes</li>
+</ul>
+<p><strong>Why?</strong> The version change is only <code>Z</code> because the modification is non-semantic. Even so, a GitHub Release is created because the updated package is already in <code>erv</code>, meaning that the package is in an externally visible review stage.</p>
+</li>
+<li>
+<p>Promotion from external review to publication</p>
+<p>The Laboratory Observation package completes external review successfully and advances from <code>erv</code> to <code>pub</code>.</p>
+<ul>
+<li>Change made in package: <code>Laboratory Observation package</code></li>
+<li>Package transition: <code>erv → pub</code></li>
+<li>Versioning effect: <code>Y++</code>, so the ontology version becomes <code>v1.3.0</code></li>
+<li>GitHub Release?: Yes</li>
+</ul>
+<p><strong>Why?</strong> The package stage transition contributes to <code>Y</code>, and the package is becoming formally published. This is therefore both a versioned ontology update and a GitHub Release event.</p>
+</li>
+<li>
+<p>Non-semantic correction in a package that is already published</p>
+<p>The Care Plan package is already in <code>pub</code>. The team fixes a spelling mistake in the definition of <code>Care Plan Activity</code>, updates one outdated figure title, and adjusts diagram alignment to improve readability. No classes, relations, constraints, or definitions are changed in a way that affects meaning.</p>
+<ul>
+<li>Change made in package: <code>Care Plan package</code></li>
+<li>Package stage during change: remains <code>pub</code></li>
+<li>Type of modification: non-semantic correction</li>
+<li>Versioning effect: <code>Z++</code>, so the ontology version becomes <code>v1.2.4</code></li>
+<li>GitHub Release?: Yes</li>
+</ul>
+<p><strong>Why?</strong> The change is non-semantic, so it increases <code>Z</code> only. A GitHub Release is still required because the updated package is already in <code>pub</code>.</p>
+</li>
+<li>
+<p>Mixed release affecting more than one package</p>
+<p>In the same ontology update, the Patient package advances from <code>int</code> to <code>irv</code>, while the Laboratory Observation package advances from <code>erv</code> to <code>pub</code>.</p>
+<ul>
+<li>Changes made in packages: <code>Patient package</code> and <code>Laboratory Observation package</code></li>
+<li>Package transitions: <code>int → irv</code> and <code>erv → pub</code></li>
+<li>Versioning effect: only one <code>Y++</code> is applied, so the ontology version becomes <code>v1.3.0</code></li>
+<li>GitHub Release?: Yes</li>
+</ul>
+<p><strong>Why?</strong> Multiple package events may occur in the same ontology update, but the version still changes only once according to the priority rules. A GitHub Release is required here because at least one affected package is entering or already belongs to the externally visible stages governed by this policy.</p>
+</li>
+</ol>
+<p>The following diagram summarizes the GitHub Release decision logic illustrated by the examples above.</p>
+<pre class="mermaid"><code>flowchart LR
+    A[HRIO state changes] --&gt; B{Did any domain package change?}
+
+    B --&gt; N0["&lt;b&gt;No&lt;/b&gt;"] --&gt; N1[No GitHub Release]
+    B --&gt; Y0["&lt;b&gt;Yes&lt;/b&gt;"] --&gt; C{Did a package enter erv or advance to pub?}
+
+    C --&gt; Y1["&lt;b&gt;Yes&lt;/b&gt;"] --&gt; R[Create GitHub Release]
+    C --&gt; N2["&lt;b&gt;No&lt;/b&gt;"] --&gt; D{Was a package in erv or pub updated?}
+
+    D --&gt; Y2["&lt;b&gt;Yes&lt;/b&gt;"] --&gt; R
+    D --&gt; N3["&lt;b&gt;No&lt;/b&gt;"] --&gt; N4[No GitHub Release]
+
+    classDef startNode fill:#eef4ff,stroke:#4a6fa5,stroke-width:1.5px,color:#1f2d3d;
+    classDef decisionNode fill:#fff8e8,stroke:#c08a00,stroke-width:1.5px,color:#3b2f00;
+    classDef actionNode fill:#eefaf0,stroke:#2f855a,stroke-width:1.5px,color:#1f3d2b;
+    classDef noReleaseNode fill:#fdecec,stroke:#c53030,stroke-width:1.5px,color:#5a1f1f;
+
+    classDef yesLabel fill:transparent,stroke:transparent,color:#2f855a,font-weight:bold;
+    classDef noLabel fill:transparent,stroke:transparent,color:#c53030,font-weight:bold;
+
+    class A startNode;
+    class B,C,D decisionNode;
+    class R actionNode;
+    class N1,N4 noReleaseNode;
+    class Y0,Y1,Y2 yesLabel;
+    class N0,N2,N3 noLabel;</code></pre>
+<p><em>Figure 1. GitHub Release decision logic. A GitHub Release is created when a domain package enters <code>erv</code>, advances to <code>pub</code>, or is updated while already in <code>erv</code> or <code>pub</code>.</em></p>
+<p>These examples show that ontology versioning and GitHub Release creation are related but not identical:</p>
+<ul>
+<li>the ontology version is assigned according to the <code>X</code>/<code>Y</code>/<code>Z</code> rules;</li>
+<li>a GitHub Release is created only when the release conditions for externally visible packages are met.</li>
+</ul>
+<p>As a result, versions shown in GitHub Releases will often be non-round values such as <code>v1.3.0</code> or <code>v1.2.4</code>, because they reflect the ontology version already assigned to that repository state.</p>
 <h2 id="semantic-vs-non-semantic-decision-tests">Semantic vs. Non-Semantic — Decision Tests</h2>
 <p>Treat the change as <strong>semantic</strong> (counts for <code>Y</code>) if any of the following is <strong>yes</strong>; otherwise it is <code>Z</code>:</p>
 <ol>
@@ -2314,11 +2470,11 @@
 <p><em>(Assume current version is <code>v1.5.8</code> unless noted.)</em></p>
 <ol>
 <li>A: <code>int → irv</code> → <code>Y++</code> → <code>v1.6.0</code> (<code>Z → 0</code>).</li>
-<li>A: <code>irv → erv</code>, B: <code>int → irv</code> (same release) → <code>Y++</code> once → <code>v1.6.0</code> (<code>Z → 0</code>).</li>
-<li>Start new package C and A: <code>erv → pub</code> (same release) → <code>X++</code> → <code>v2.0.0</code> (<code>Y, Z → 0</code>).</li>
+<li>A: <code>irv → erv</code>, B: <code>int → irv</code> (same ontology update) → <code>Y++</code> once → <code>v1.6.0</code> (<code>Z → 0</code>).</li>
+<li>Start new package C and A: <code>erv → pub</code> (same ontology update) → <code>X++</code> → <code>v2.0.0</code> (<code>Y, Z → 0</code>).</li>
 <li>Typos/layout only → <code>Z++</code> → <code>v1.5.9</code>.</li>
 <li>B: <code>irv → int</code> (recorded) → <code>Y++</code> → <code>v1.6.0</code> (<code>Z → 0</code>).</li>
-<li>Later A: <code>erv → pub</code> (new release) → <code>Y++</code> → <code>v1.7.0</code> (<code>Z → 0</code>).</li>
+<li>Later A: <code>erv → pub</code> (subsequent ontology update) → <code>Y++</code> → <code>v1.7.0</code> (<code>Z → 0</code>).</li>
 <li>Semantic change at <code>erv</code> (retype relation): record <code>erv → int</code> → <code>Y++</code> → <code>v1.6.0</code> (<code>Z → 0</code>).</li>
 <li>Remove a package (scope contraction) from <code>v1.5.8</code> → <code>X++</code> → <code>v2.0.0</code> (<code>Y = 0</code>, <code>Z = 0</code>).</li>
 <li><code>X</code> present with multiple <code>Y</code> events → <code>X++</code> once → <code>v2.0.0</code> (no <code>Y++</code>).</li>
@@ -2392,11 +2548,12 @@
   %% Edge styling
   linkStyle default stroke:#000000,stroke-width:2px;
   linkStyle 3,4,5 stroke:#8B0000,stroke-width:2px;</code></pre>
+<p><em>Figure 2. Ontology versioning decision flow. The highest-priority applicable trigger determines the ontology version increment (<code>X &gt; Y &gt; Z</code>).</em></p>
 <h2 id="edge-cases-notes">Edge Cases &amp; Notes</h2>
 <ul>
 <li>Reverting a stage. Any recorded stage transition (forward or backward) increments <code>Y</code> and resets <code>Z</code> to <code>0</code>.</li>
-<li>Simultaneous edits across many packages. Combine into one release → at most one increment; apply <code>X &gt; Y &gt; Z</code> priority and resets.</li>
-<li>Semantic change at any stage (including <code>pub</code>). Reset stage to <code>int</code> (<code>&lt;current&gt; → int</code>) and issue <code>Y++</code> (<code>Z → 0</code>). If missed earlier, correct the stage and bump <code>Y</code> in the release that fixes the record.</li>
+<li>Simultaneous edits across many packages. Combine into one ontology update → at most one increment; apply <code>X &gt; Y &gt; Z</code> priority and resets.</li>
+<li>Semantic change at any stage (including <code>pub</code>). Reset stage to <code>int</code> (<code>&lt;current&gt; → int</code>) and issue <code>Y++</code> (<code>Z → 0</code>). If missed earlier, correct the stage and bump <code>Y</code> in the ontology update that fixes the record.</li>
 <li>Definition of semantic change. A change is semantic iff it alters at least one of: (i) logical consequences; (ii) admissible instance space; or (iii) intentional content (identity) via IRI/definition changes. All other changes are non-semantic.</li>
 <li>Moving classes between existing packages. If entailments/constraints/definitions change → treat as semantic (<code>Y</code>); otherwise <code>Z</code>.</li>
 </ul>
