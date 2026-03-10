@@ -5,10 +5,11 @@
 <!-- TODO: Update this image, removing the "nodes" concept. -->
 
 ![Current Situation](./assets/images/Picture1.png)
+*Figure 1. Fragmented cross-institutional schemas and pairwise mappings in the current situation.*
 
 !!! note
 
-    This figure may contain legacy terminology (e.g., "nodes"). Interpret it as referring to data sources/schemas and their mappings.
+    Figure 1 may contain legacy terminology (e.g., "nodes"). Interpret it as referring to data sources/schemas and their mappings.
 
 Across the health and life sciences, data producers and consumers often need to publish and consume data across institutions and systems. However, for this data exchange to be meaningful and analytically reliable, the data must be interpreted consistently and correctly by all parties involved.[^1][^2] In practice, achieving this often relies on manual, case-by-case mappings across heterogeneous standards and local schemas, which is technically complex, time-consuming, and error-prone.[^3][^4]
 
@@ -18,7 +19,7 @@ Across the health and life sciences, data producers and consumers often need to 
 
 Addressing this challenge requires moving beyond structural or syntactic alignment. What is needed is semantic interoperability—a shared understanding of the meaning behind the data being exchanged.[^3][^4][^5] Otherwise, systems may appear to agree because they use the same terms or data structures, while still committing to different conceptualizations. Such a situation can lead to [*false agreement*](../semantic-interoperability/index.md).[^6][^7]
 
-As illustrated in the figure above, each institution maintains its own data schema and data repository, often resulting in fragmented data silos. These schemas often vary significantly in structure, terminology, and the standards or assumptions they follow.[^3][^4][^8][^9][^10] In practice, several challenges arise:
+As illustrated in Figure 1, each institution maintains its own data schema and data repository, often resulting in fragmented data silos. These schemas often vary significantly in structure, terminology, and the standards or assumptions they follow.[^3][^4][^8][^9][^10] In practice, several challenges arise:
 
 - Some schemas adhere to formal standards, while others are informally defined by the data authors themselves.[^4][^10]
 - A single schema might be influenced by multiple standards, each introducing different terminologies or modeling assumptions.[^4][^8]
@@ -48,21 +49,153 @@ HRIO is not intended to replace local schemas. Instead, it will serve as a seman
 
     The Common Reference Model is a semantic hub, not a replacement for local schemas. It supports reuse by letting multiple standards and local schemas align to one shared conceptualization rather than maintaining many pairwise mappings.
 
+### Framing the Scope of HRIO
+
+HRIO differs from ontologies whose primary goal is to prescribe a single, self-contained conceptualization of a narrowly delimited domain. Because HRIO functions as a common semantic reference model for semantic interoperability, its scope is defined primarily by the meanings that must be made explicit so that heterogeneous standards, local schemas, and related implementation artifacts can be interpreted in a shared and reviewable way.
+
+In this sense, HRIO is not intended to reproduce every term, structure, or modeling decision found in external artifacts. Rather, it aims to provide a shared semantic foundation that captures the meanings most relevant for alignment across standards, schemas, and related artifacts. This is especially important in a domain as broad as health and life sciences, where the same label may be used with different intended meanings in different contexts. Accordingly, the use or reuse of mature external semantic resources should not be framed as an alternative to HRIO. When appropriate, such resources can be aligned to HRIO through mappings, allowing reuse of existing artifacts while preserving HRIO’s role as the shared meaning-level reference model for interoperability. Other semantic artifacts may therefore remain valuable at the representation or implementation level without replacing HRIO’s role in making meaning explicit and traceable.
+
+For example, a term such as `Patient` may be used in one artifact to denote a person registered to receive care, in another to denote a person currently receiving care, and in another to denote a person with a history of care. If HRIO attempted to pre-model every possible interpretation of every reused label across the full domain, the reference model would quickly become unmanageably large and difficult to govern. For that reason, HRIO must be scoped incrementally and according to interoperability value.
+
+Figure 2 summarizes the prioritization logic for candidate HRIO content.
+
+```mermaid
+flowchart LR
+    S([Candidate concept])
+
+    D1{Cross-artifact<br/>recurrence?}
+    D2{Interoperability<br/>relevance?}
+    D3{Meaning-level<br/>risk?}
+
+    O1[[Deprioritize<br/>or exclude for now]]
+    O2[[Defer unless<br/>strategically required]]
+    O3[[Priority candidate<br/>for HRIO analysis]]
+    O4[[Contextual candidate<br/>for HRIO analysis]]
+
+    S --> D1
+    D1 -- Yes --> D2
+    D1 -- No --> O1
+
+    D2 -- Yes --> D3
+    D2 -- No --> O2
+
+    D3 -- Yes --> O3
+    D3 -- No --> O4
+
+    classDef start fill:#ffffff,stroke:#1f1f1f,stroke-width:2px,color:#111111;
+    classDef decision fill:#fafafa,stroke:#4a4a4a,stroke-width:1.5px,color:#111111;
+    classDef outcome fill:#f7f7f7,stroke:#5b5b5b,stroke-width:1.5px,color:#111111;
+    classDef selected fill:#f4f4f4,stroke:#222222,stroke-width:2px,color:#111111;
+
+    class S start;
+    class D1,D2,D3 decision;
+    class O1,O2 outcome;
+    class O3,O4 selected;
+```
+
+*Figure 2. Prioritization logic for candidate HRIO content.*
+
+Apparent coverage should therefore be interpreted carefully. Broad coverage at the label level does not necessarily mean that the distinctions needed for semantic traceability, governance, and the avoidance of false agreement are already available at the meaning level.
+
+!!! note
+
+    The scope of HRIO is driven by meaning-level interoperability needs, not by the mere frequency of labels in external artifacts.
+
+Priority should therefore be given to concepts that:
+
+- occur across multiple influential standards or local schemas;
+- are especially important for semantic interoperability and recurrent mapping work; and
+- require conceptual clarification because their intended meaning varies across artifacts or is prone to false agreement.
+
+At the current stage of the initiative, this prioritization can begin with standards such as FHIR, OMOP, and openEHR. For each prioritized concept, the modeling process begins by examining how the corresponding source expressions are used in those artifacts, including their definitions, usage context, and related terms. Based on this analysis, candidate content for HRIO can be classified using practical decision lists such as *must be*, *should be*, *can be*, and *should not be*. This helps distinguish what is essential to the reference model from what is optional, premature, or outside the current scope.
+
+Figure 3 summarizes the analysis workflow and scope classification for candidate HRIO content.
+
+```mermaid
+%%{init: {"flowchart": {"wrappingWidth": 110}} }%%
+flowchart LR
+    S([Prioritized or<br/>contextual candidate])
+
+    P1[Collect source<br/>expressions]
+    P2[Examine<br/>definitions]
+    P3[Examine usage context<br/>and related terms]
+    P4[Assign<br/>scope class]
+
+    subgraph C["Scope classes"]
+        direction TB
+        C1[[must be]]
+        C2[[should be]]
+        C3[[can be]]
+        C4[[should not be]]
+    end
+
+    E([Scope justification<br/>recorded])
+
+    S --> P1 --> P2 --> P3 --> P4
+    P4 --> C1
+    P4 --> C2
+    P4 --> C3
+    P4 --> C4
+
+    C1 --> E
+    C2 --> E
+    C3 --> E
+    C4 --> E
+
+    classDef start fill:#ffffff,stroke:#1f1f1f,stroke-width:2px,color:#111111;
+    classDef process fill:#fafafa,stroke:#4a4a4a,stroke-width:1.5px,color:#111111;
+    classDef outcome fill:#f7f7f7,stroke:#5b5b5b,stroke-width:1.5px,color:#111111;
+
+    class S,E start;
+    class P1,P2,P3,P4 process;
+    class C1,C2,C3,C4 outcome;
+```
+
+*Figure 3. Analysis workflow and scope classification for candidate HRIO content.*
+
+!!! note "Internal scoping process"
+
+    Health-RI applies an internal scoping process to prioritize candidate HRIO content and to guide scope-classification decisions. This process is important for maintaining conceptual rigor, consistency, and governance. However, its full internal content, working materials, and decision records are not published on this page.
+
+Accordingly, HRIO should cover the meanings and distinctions that are necessary to support reliable alignment across important standards and local schemas. It should also include the related concepts needed to define, contextualize, and differentiate those target meanings in an ontologically well-founded way. However, HRIO should not aim to mirror external artifacts one by one, nor to introduce distinctions solely because they are possible in principle. Coverage should be justified by interoperability relevance, conceptual necessity, and evidence of actual use.
+
+The scope of HRIO is also expected to evolve over time. Insights from mapping activities, expert review, and external validation may reveal semantic gaps in the reference model. When this happens, the ontology may be extended with additional concepts or refinements, provided that these additions improve semantic traceability and support better alignment across artifacts. Likewise, contributions received during the lifecycle may justify extensions or revisions when they expose genuine interoperability needs and are accepted through the appropriate review process.
+
+!!! note "Current maintainability approach and future modularization"
+
+    As HRIO grows, stronger modularization techniques may become necessary to keep the ontology maintainable, governable, and reusable over time. In a more mature setup, domain-oriented modules could be packaged more explicitly, with clearer ownership boundaries and more fine-grained maintenance practices.
+
+    At present, however, this is not yet the adopted approach. The current governance already distinguishes domain packages and tracks their lifecycle independently, but ontology artifacts are still released under a shared HRIO version identifier and maintained as parts of one coordinated release process.
+
+    Given the current size of the ontology and available capacity, the practical strategy is to preserve coherence and maintainability through disciplined scoping, consistent modeling decisions, and a shared release line. In this sense, stronger modularization should be understood as a future improvement rather than a current requirement.
+
+From a mapping perspective, the long-term goal is that relevant source expressions in prioritized standards, schemas, and related artifacts can be linked to HRIO meanings via `hriv:hasExactMeaning` whenever their intended semantics are fully and precisely defined by a specific HRIO concept. When this is not yet possible, `hriv:hasBroaderMeaningThan` and `hriv:hasNarrowerMeaningThan` should be used to make the remaining semantic mismatch explicit. These non-exact mappings are not failures; they are useful indicators that the reference model may later need refinement. Over time, such cases should be reviewed so that approximate alignments can be replaced with exact ones whenever justified by improved modeling.
+
+!!! info "Why `hriv:hasExactMeaning` behaves like a partial function"
+
+    If we consider only `hriv:hasExactMeaning`, the mapping behaves like a partial many-to-one function from source expressions to HRIO meanings. It is *function-like* because each source expression may have at most one exact HRIO target. It is *partial* because some source expressions may have no exact target yet. It is *many-to-one* because multiple source expressions from different standards or schemas may share the same HRIO meaning.
+
+    This characterization applies only to `hriv:hasExactMeaning`. In contrast, `hriv:hasBroaderMeaningThan` and `hriv:hasNarrowerMeaningThan` may relate a single source expression to multiple HRIO meanings when semantic overlap is partial or distributed, but only where the broader/narrower relation is justified by definitions and scope.
+
+### Expressing HRIO as a Semantic Reference Model
+
 To be effective, HRIO must be expressed in a highly expressive modeling language—one capable of making ontological commitments explicit and capturing rich semantic distinctions.[^14][^15]
 
 These requirements call for the use of ontologically well-founded modeling languages, which are grounded in formal ontology and support the precise representation of complex domains. Among them, [OntoUML](../ontouml-gufo/ontouml.md) stands out as a leading and widely adopted approach, offering both theoretical rigor and practical tooling.[^14][^15]
 
-The image below illustrates the roles and technologies involved in our approach to enabling semantic interoperability. At the top, the conceptual HRIO reference model is represented using OntoUML (HRIO OntoUML), providing a clear and ontologically well-founded view of the meaning of concepts. While this model supports human understanding, it is not directly usable in computational artifacts.
+Figure 4 illustrates the roles and technologies involved in our approach to enabling semantic interoperability. At the top, the conceptual HRIO reference model is represented using OntoUML (HRIO OntoUML), providing a clear and ontologically well-founded view of the meaning of concepts. While this model supports human understanding, it is not directly usable in computational artifacts.
 
 ![Common Reference Model](./assets/images/common-reference-model.png)
+*Figure 4. HRIO as a common semantic reference model, from conceptual representation to computational implementation and mappings.*
 
 To enable computational use, the HRIO OntoUML model is transformed into a corresponding gUFO-based OWL implementation (HRIO gUFO/OWL), based on [gUFO](../ontouml-gufo/gufo.md), a lightweight ontology in OWL aligned with the Unified Foundational Ontology (UFO).[^15][^16]
 
-The next figure summarizes *semantic traceability* in the approach, connecting (i) the semiotic view (referent, conceptualization, representation) with (ii) the Model-Driven Architecture (MDA) view. It highlights the relationship between the conceptual model (HRIO OntoUML, CIM) and its computational ontology implementation (HRIO gUFO/OWL, PIM), helping preserve meaning across layers.[^17][^18][^19] For the initiative-level conceptual rationale and worked example, see the academic paper.[^20]
+Figure 5 summarizes *semantic traceability* in the approach, connecting (i) the semiotic view (referent, conceptualization, representation) with (ii) the Model-Driven Architecture (MDA) view. It highlights the relationship between the conceptual model (HRIO OntoUML, CIM) and its computational ontology implementation (HRIO gUFO/OWL, PIM), helping preserve meaning across layers.[^17][^18][^19] For the initiative-level conceptual rationale and worked example, see the academic paper.[^20]
 
 <!-- TODO: Add this new image. -->
 
 ![Semantic traceability architecture (Semiotic + MDA views)](./assets/images/semantic-traceability.png)
+*Figure 5. Semantic traceability across semiotic and MDA views, linking HRIO OntoUML (CIM) to HRIO gUFO/OWL (PIM).*
 
 Once the computational ontology is available, computational artifacts—such as schemas, web ontologies, or others used for information exchange—can be mapped to HRIO gUFO/OWL using the Health-RI Mapping Vocabulary (HRIV). These mappings may be created by Health-RI (see [mappings](../deliverables/mappings.md)) or by the owners of the aligned artifacts.[^11][^21]
 
@@ -79,6 +212,7 @@ Once the computational ontology is available, computational artifacts—such as 
 ## Division of Responsibilities: Modeling and Mapping Teams
 
 ![Modeling and Mapping Teams](./assets/images/Picture2.png)
+*Figure 6. Division of responsibilities and feedback loop between the ontology modeling and ontology mapping teams.*
 
 To operationalize the approach based on a common semantic reference model (HRIO), Health-RI will structure the effort around two complementary teams:
 
@@ -133,10 +267,10 @@ This group ensures that the teams are supported with the necessary context and r
 
 ### Collaborative Iteration and Feedback
 
-As shown in the diagram, the Modeling and Mapping Teams operate in a collaborative feedback loop.
+As shown in Figure 6, the Modeling and Mapping Teams operate in a collaborative feedback loop.
 
 - The Ontology Modeling Team develops the conceptual model.
-- The Ontology Mapping Team uses this model to map concepts from external artifacts (standards, local schemas, and ontologies) and local schemas (and related implementation artifacts) to HRIO.
+- The Ontology Mapping Team uses this model to map source expressions from external artifacts to HRIO.
 - Insights gained during the mapping process are fed back to the modeling team.
 
 This feedback may include:
