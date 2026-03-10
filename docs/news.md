@@ -1,5 +1,10 @@
 # News & Updates
 
+## 2026-03-10
+
+- **[Method's Introduction](./method/introduction.md)** — Changed: Expanded HRIO scope and prioritization guidance, added numbered figure captions, and clarified mapping terminology and team responsibilities.
+- **[Versioning Strategy for the Health-RI Ontology](./method/ontology-versioning.md)** — Changed: Clarified ontology versioning rules and added GitHub Release guidance, examples, and decision diagrams.
+
 ## 2026-02-27
 
 - **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Added: Published v2.0.0 release artifacts, introducing the PersonBirth birth-event taxonomy and biological provenance model, with refreshed birth and address diagrams.
