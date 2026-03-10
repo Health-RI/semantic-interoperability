@@ -2108,6 +2108,16 @@
 <p>OntoUML defines the domain-level semantics, while gUFO implements those concepts in OWL. This layered architecture supports semantic traceability from the conceptual model to machine-processable artifacts.</p>
 </details>
 <details class="question">
+<summary>Does HRIO aim to model everything in health and life sciences?</summary>
+<p>No. HRIO is not intended to model every possible term, label, or modeling choice found across the full health and life sciences domain.</p>
+<p>Instead, HRIO is scoped incrementally as a common semantic reference model for interoperability. Its purpose is to make the meanings most relevant for alignment across important standards, local schemas, ontologies, and related implementation artifacts explicit and reviewable. Coverage should therefore be driven by interoperability value, conceptual necessity, and evidence of actual use, rather than by the mere existence or frequency of labels in external artifacts.</p>
+</details>
+<details class="question">
+<summary>How is candidate HRIO content prioritized?</summary>
+<p>Candidate HRIO content should be prioritized according to interoperability value. Priority is highest for meanings that recur across influential standards, schemas, or related artifacts, are important for recurrent mapping work, and are especially prone to semantic ambiguity or false agreement.</p>
+<p>In practice, this means HRIO should focus first on concepts whose meanings need to be made explicit so that heterogeneous artifacts can be interpreted and aligned in a shared and reviewable way. Not every local distinction or artifact-specific label should be incorporated into the reference model.</p>
+</details>
+<details class="question">
 <summary>How does this initiative relate to the FAIR principles?</summary>
 <p>It supports the 'I' in FAIR—Interoperability—by grounding vocabularies and schemas in shared ontologies and ontological commitments (see <a href="../semantic-interoperability/">FAIR &amp; semantic interoperability</a>).</p>
 </details>
@@ -2140,8 +2150,9 @@
 <p>TBD.</p>
 </details>
 <details class="question">
-<summary>Does the Health-RI initiative reuse any existing biomedical or life sciences ontologies? Are external ontologies integrated or referenced within the Health-RI ontology? (TBD)</summary>
-<p>TBD.</p>
+<summary>How does HRIO relate to external ontologies and semantic resources?</summary>
+<p>HRIO is not intended to replace mature external ontologies or other semantic resources. Instead, it serves as the common meaning-level reference model used to support semantic interoperability across heterogeneous artifacts.</p>
+<p>When appropriate, external ontologies and related semantic resources can be reused and aligned to HRIO through mappings. In this way, existing resources may remain valuable at the representation or implementation level without replacing HRIO's role in making shared meanings explicit, comparable, and traceable.</p>
 </details>
 <details class="question">
 <summary>Given that many life sciences ontologies adopt the Basic Formal Ontology (BFO), what motivated the use of UFO rather than BFO as the foundation for this initiative's ontology? (TBD)</summary>
@@ -2158,6 +2169,11 @@
 <summary>What are OntoUML and gUFO, and why are they used?</summary>
 <p>OntoUML is a conceptual modeling language grounded in the foundational ontology named Unified Foundational Ontology (UFO). gUFO is its OWL counterpart, enabling computational use. Together, they ensure semantic precision and machine-actionable models.</p>
 <p>OntoUML operates at MDA's CIM layer to capture conceptual semantics, while gUFO provides a platform-independent OWL implementation at the PIM layer. This ensures a traceable and interoperable flow from conceptualization to deployment.</p>
+</details>
+<details class="question">
+<summary>What is semantic traceability in this initiative?</summary>
+<p>Semantic traceability is the ability to preserve and inspect how intended meaning is carried across the different layers of the initiative's approach, from the conceptual reference model to its computational implementation and related mapping artifacts.</p>
+<p>In practice, this means that HRIO OntoUML provides the conceptual representation of the intended meanings, while HRIO gUFO/OWL provides the corresponding computational implementation. Mappings from source expressions to HRIO then make it possible to trace how meanings in external artifacts relate to the shared reference model in a controlled and reviewable way.</p>
 </details>
 <details class="question">
 <summary>OntoUML and gUFO seem very complex. Isn't that a barrier to adoption?</summary>
@@ -2536,6 +2552,11 @@ When present, the OWL file includes a <code>dcterms:conformsTo</code> triple lin
 <p>GitHub Release creation is operationally separate from ontology version assignment. When the conditions for a GitHub Release are met, the repository publication uses the ontology version already assigned under the <code>X</code>/<code>Y</code>/<code>Z</code> rules; it does not determine the version number itself.</p>
 <p>The ontology is published in multiple formats and exposed through stable, citable persistent identifiers (PIDs). Validation and publication checks are applied as appropriate before release so that the published artifacts remain transparent, accessible, and semantically traceable across versions.</p>
 <p>Semantic mappings produced within the initiative are also maintained in version-controlled repositories and published in stable forms, but they follow their own versioning and publication rules rather than the ontology's <code>X.Y.Z</code> version identifier.</p>
+</details>
+<details class="question">
+<summary>Will HRIO be modularized into separate ontology modules?</summary>
+<p>Possibly in the future, but this is not yet the current operating model.</p>
+<p>At present, governance already distinguishes domain packages and tracks their lifecycle independently, but the ontology artifacts are still versioned and released under a shared HRIO version identifier as parts of one coordinated release process. Stronger modularization may become useful as HRIO grows, especially to improve maintainability, governance, and reuse, but it should currently be understood as a future improvement rather than an adopted requirement.</p>
 </details>
 <details class="question">
 <summary>Who is responsible for maintaining the ontology and its associated mappings?</summary>
