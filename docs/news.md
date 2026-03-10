@@ -2,7 +2,7 @@
 
 ## 2026-03-10
 
-- **[Method's Introduction](./method/introduction.md)** — Changed: Expanded HRIO scope and prioritization guidance, added numbered figure captions, and clarified mapping terminology and team responsibilities.
+- **[Method's Introduction](./method/introduction.md)** — Changed: Expanded HRIO scope and prioritization guidance.
 - **[Versioning Strategy for the Health-RI Ontology](./method/ontology-versioning.md)** — Changed: Clarified ontology versioning rules and added GitHub Release guidance, examples, and decision diagrams.
 
 ## 2026-02-27

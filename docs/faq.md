@@ -47,7 +47,9 @@
 
 ??? question "What exactly are we trying to achieve with semantic interoperability?"
 
-    We aim to align external and internal ontologies to a shared reference model, ensuring that semantic definitions are preserved across conceptual and computational layers. This is achieved through structured meaning mappings (e.g., `hriv:hasExactMeaning`) from third-party concepts to the Health-RI Ontology (HRIO), specified in OntoUML and implemented as a gUFO-based OWL ontology (HRIO gUFO/OWL).
+    We aim to align source expressions from heterogeneous artifacts—such as standards, local schemas, ontologies, and related implementation artifacts—to a shared reference model, so that their intended meanings can be interpreted consistently across conceptual and computational layers.
+
+    This is achieved through structured meaning mappings (e.g., `hriv:hasExactMeaning`, `hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`) from source expressions to the Health-RI Ontology (HRIO), which is specified in OntoUML and implemented as a gUFO-based OWL ontology (HRIO gUFO/OWL).
 
 ??? question "Why is semantic interoperability important in healthcare and life sciences?"
 
@@ -72,7 +74,9 @@
 
 ??? question "What does success look like for this project?"
 
-    Success means having a robust reference model (HRIO OntoUML) and its executable OWL implementation (HRIO gUFO/OWL) in place, with external ontologies semantically aligned through precise meaning mappings. It also includes supporting community contributions, replacing broader/narrower meaning mappings (`hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`) with `hriv:hasExactMeaning` where possible, and continuously refining the model to bridge semantic gaps.
+    Success means having a robust common semantic reference model (HRIO OntoUML) and its computational implementation (HRIO gUFO/OWL) in place, with high-priority source expressions from important standards, schemas, ontologies, and related implementation artifacts aligned to HRIO meanings through reviewed mappings.
+
+    It also includes supporting community contributions, treating broader/narrower mappings as useful indicators of semantic mismatch, and refining the model over time so that exact-meaning mappings (`hriv:hasExactMeaning`) can be used whenever they are genuinely justified.
 
 ??? question "Who will benefit from or use the developed solutions?"
 
@@ -92,13 +96,15 @@
 
 ??? question "What are some examples of current successes or progress?"
 
-    The development of the OntoUML conceptual model, its implementation as the gUFO OWL ontology, and the strategy for semantically aligning third-party ontologies using [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html) properties are all concrete milestones achieved. Figures and examples in the documentation illustrate successful alignment strategies already in use.
+    The development of the HRIO OntoUML conceptual model, its implementation as the gUFO-based OWL ontology, and the strategy for semantically aligning source expressions from heterogeneous artifacts using [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html) properties are all concrete milestones already achieved.
 
 ??? question "What challenges are currently being faced?"
 
-    One challenge is when no exact-meaning alignment is justified between an external concept and the reference ontology. This requires broader/narrower meaning mappings and motivates the need to expand the Health-RI ontology to bridge gaps over time.
+    A recurring challenge is that no exact-meaning alignment is sometimes justified between a source expression and the current reference ontology. In such cases, broader/narrower meaning mappings are not failures; they are useful ways to make semantic mismatch explicit and may indicate areas where HRIO should later be refined.
 
-    Another challenge is ensuring consistent interpretation across tooling. HRIV mappings can be aligned to SKOS mapping relations for interoperability and discovery, but SKOS-level entailments (e.g., transitivity of `skos:exactMatch`) must not be used to change the intended interpretation of an HRIV mapping. This makes curation rules and governance important for keeping mappings reliable as sources evolve.
+    A further challenge concerns scoping the reference model in a domain as broad as health and life sciences. HRIO cannot model every possible interpretation of every reused label, so coverage must be prioritized according to interoperability value, recurrence across important artifacts, and the risk of false agreement.
+
+    Consistent interpretation across tooling also remains important. HRIV mappings can be aligned to SKOS mapping relations for interoperability and discovery, but SKOS-level entailments (e.g., transitivity of `skos:exactMatch`) must not be used to change the intended interpretation of an HRIV mapping. This makes curation rules and governance essential for keeping mappings reliable as sources evolve.
 
 ??? question "What risks and limitations should be considered?"
 
@@ -117,7 +123,7 @@
 
 ??? question "What changes are expected in the future?"
 
-    Future work includes refining the ontology by introducing intermediate concepts to replace approximate mappings with exact ones, enhancing semantic precision and reasoning capabilities.
+    Future work includes extending and refining HRIO incrementally when mapping activities, expert review, and external validation reveal semantic gaps or missing distinctions. Over time, some approximate mappings may be replaced with exact ones where improved modeling justifies it.
 
 ??? question "How might the future process or system improve data use across institutions? (TBD)"
 
@@ -129,9 +135,9 @@
 
 ??? question "What is the common reference model and why is it needed?"
 
-    It's a conceptual model created using OntoUML to serve as a semantic anchor for all participating data schemas. Instead of replacing local schemas, it provides a shared foundation for mapping and aligning meaning.
+    It is a conceptual model created using OntoUML to serve as a shared semantic reference for standards, local schemas, ontologies, and related implementation artifacts. Rather than replacing local schemas or mirroring external artifacts one by one, it acts as a semantic hub that makes relevant meanings explicit and supports reviewed mappings across heterogeneous sources.
 
-    OntoUML defines the domain-level semantics, while gUFO implements those concepts in OWL. This layered architecture ensures that semantic meaning is preserved from human-level models to machine-readable artifacts.
+    OntoUML defines the domain-level semantics, while gUFO implements those concepts in OWL. This layered architecture supports semantic traceability from the conceptual model to machine-processable artifacts.
 
 ??? question "How does this initiative relate to the FAIR principles?"
 
@@ -139,9 +145,11 @@
 
 ??? question "What are the main components of the approach?"
 
-    - [OntoUML](../ontouml-gufo/ontouml) conceptual modeling
-    - [gUFO](../ontouml-gufo/gufo) OWL-based computational ontologies
-    - Schema-to-ontology mappings using tools like [SSSOM](https://mapping-commons.github.io/sssom/)
+    - [OntoUML](../ontouml-gufo/ontouml) conceptual modeling for HRIO
+    - [gUFO](../ontouml-gufo/gufo) as the OWL-based computational implementation of HRIO
+    - HRIV meaning mappings from source expressions to HRIO meanings
+    - SSSOM mapping sets and embedded mappings for managing semantic alignments
+    - Persistent identifiers and publication artifacts for stable access and traceability
 
 ??? question "Why do we need the semantic interoperability initiative if standards like HL7, OMOP, or DCAT-AP already exist? Isn't this duplicating existing efforts?"
 
@@ -153,9 +161,9 @@
 
 ??? question "What is the relationship between this initiative and existing health data standards such as OMOP, HL7, or DCAT-AP?"
 
-    This initiative does not aim to create a new standard. Instead, it recognizes that existing standards such as OMOP, HL7, and DCAT-AP each serve different purposes and contain distinct types of content—ranging from data exchange formats to terminologies and domain-specific data models.
+    This initiative does not aim to create a new standard or to replace existing standards, schemas, or ontologies. Instead, it recognizes that artifacts such as OMOP, HL7 standards such as FHIR, openEHR, and DCAT-AP serve different purposes and contain different kinds of content, including exchange structures, information models, terminologies, and other implementation-level artifacts.
 
-    The goal is to harmonize the underlying concepts from these standards, as well as other models and artifacts, by aligning them with a shared semantic reference ontology. This ontology provides a common conceptual foundation that enables consistent interpretation and integration of diverse representations. The reference ontology acts as a semantic anchor, supporting interoperability across heterogeneous data sources, standards, and systems.
+    The goal is to support semantic interoperability across such heterogeneous artifacts by aligning relevant source expressions to shared HRIO meanings. In this way, HRIO functions as a common semantic reference model: it does not replace those artifacts, but provides a shared meaning-level foundation that helps make their intended semantics explicit, comparable, and mappable in a reviewable way.
 
 ??? question "Why did Health-RI decide to build a new ontology instead of reusing existing ones from the biomedical and life sciences domains (like those in OBO Foundry)? (TBD)"
 
@@ -220,23 +228,25 @@
 
     *Drafting aid only: always confirm against HRIO docs and apply the review/curation rules described in Mapping Governance.*
 
-??? question "How are mappings from local schemas to the reference model created?"
+??? question "How are mappings from source artifacts to the reference model created?"
 
     Mappings are expressed using the Health-RI Mapping Vocabulary (HRIV) predicates (i.e., HRIV-defined subproperties of `hriv:meaningMappingRelation`).
 
-    In practice, there are two complementary approaches:
+    In practice, the mapping target is an HRIO meaning, while the source may be a source expression drawn from a standard, local schema, ontology, or related implementation artifact.
 
-    - If an external artifact is outside Health-RI's editorial control, mappings are typically maintained non-invasively in a separate mapping artifact (e.g., a SSSOM mapping set).
-    - If an external artifact is under the editorial control of its authors/maintainers (and governance permits), HRIV mapping assertions may be embedded directly in the artifact itself (e.g., as ontology annotations or axioms).
+    There are two complementary approaches:
+
+    - If a source artifact is outside Health-RI's editorial control, mappings are typically maintained non-invasively in a separate mapping artifact (e.g., a SSSOM mapping set).
+    - If a source artifact is under the editorial control of its authors/maintainers (and governance permits), HRIV mapping assertions may be embedded directly in the artifact itself.
 
     **Important:** Mappings may only target HRIO concepts in packages that are at least at the `erv` (external review) stage. Mapping to concepts in packages at the `int` (internal) or `irv` (internal review) stage is not permitted.
 
     Mappings can be asserted using:
 
     - [`hriv:hasExactMeaning`](../method/specification-vocabulary.html#hasExactMeaning) when an exact-meaning alignment is justified,
-    - [`hriv:hasBroaderMeaningThan`](../method/specification-vocabulary.html#hasBroaderMeaningThan) or [`hriv:hasNarrowerMeaningThan`](../method/specification-vocabulary.html#hasNarrowerMeaningThan) when an exact-meaning alignment is not justified (or not available), to make the direction of mismatch explicit.
+    - [`hriv:hasBroaderMeaningThan`](../method/specification-vocabulary.html#hasBroaderMeaningThan) or [`hriv:hasNarrowerMeaningThan`](../method/specification-vocabulary.html#hasNarrowerMeaningThan) when exact alignment is not justified, to make the remaining mismatch explicit.
 
-    These mappings support semantic alignment without requiring replacement of existing schemas, and can be managed either by Health-RI (non-invasively in SSSOM) or by partners (embedded in their own RDF/OWL artifacts).
+    These mappings support semantic alignment without requiring replacement of source artifacts, and can be managed either by Health-RI (non-invasively in SSSOM) or by partners (embedded in their own artifacts where appropriate).
 
 ??? question "What is `hriv:hasExactMeaning`, and how is it different from `owl:equivalentClass` or `skos:exactMatch`?"
 
@@ -261,7 +271,9 @@
 
 ??? question "Why is there a rule that only one `hriv:hasExactMeaning` is allowed per concept?"
 
-    To avoid semantic ambiguity during curation and downstream interpretation. Allowing multiple `hriv:hasExactMeaning` assertions for the same external concept would make its intended meaning unclear (or potentially conflicting), which hinders consistent use in interoperability scenarios.
+    To avoid semantic ambiguity during curation and downstream interpretation, and to keep exact-meaning mappings function-like. With respect to `hriv:hasExactMeaning`, each source expression may have at most one exact HRIO target.
+
+    This makes exact-meaning mapping behave like a partial many-to-one function: some source expressions may have no exact target yet, while multiple source expressions may share the same HRIO meaning.
 
     Practically, this is best treated as a curation/validation policy for Health-RI mapping artifacts (rather than an OWL logical constraint): HRIV's use is designed around controlled, consistently interpretable mapping assertions.
 
@@ -284,13 +296,17 @@
 
 ??? question "What should I do if no exact match exists between my concept and the Health-RI ontology?"
 
-    If your concept is broader or narrower than any existing reference concept, use `hriv:hasBroaderMeaningThan` or `hriv:hasNarrowerMeaningThan` accordingly. These mappings allow approximate alignment. You are also encouraged to contact the Health-RI team to propose additions to the reference model to enable more precise mappings in the future.
+    If no exact HRIO target is justified, use `hriv:hasBroaderMeaningThan` or `hriv:hasNarrowerMeaningThan` to make the remaining semantic mismatch explicit. These approximate mappings are not failures; they document what can already be aligned and what still differs semantically.
+
+    You are also encouraged to propose refinements to the reference model when repeated or high-value approximate mappings reveal a genuine interoperability need.
 
 ??? question "Can new concepts be added to the Health-RI ontology to improve mapping precision?"
 
-    Yes. When `hriv:hasExactMeaning` cannot be used due to missing concepts, we encourage you to contact the Health-RI modeling team.
+    Yes. When exact-meaning mappings (using `hriv:hasExactMeaning`) are not possible because relevant meanings or distinctions are missing from HRIO, candidate concepts or refinements may be proposed for inclusion in the reference model.
 
-    If justified, new intermediate concepts may be added to the reference ontology. This helps replace approximate mappings (`hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`) with exact ones and ensures better semantic precision for reasoning, integration, and long-term alignment. Requests are welcome and reviewed by the Health-RI modeling team; if accepted, new concepts may be added to enable stronger future mappings.
+    However, not every missing label or local modeling choice should be added to HRIO. Proposed additions should be justified by interoperability relevance, conceptual necessity, and evidence of actual use across important standards, schemas, or related artifacts. Priority is highest when the candidate meaning recurs across influential artifacts, is important for recurrent mapping work, or is especially prone to false agreement or semantic ambiguity.
+
+    If accepted through the appropriate review process, HRIO may be extended or refined to support stronger future mappings, including exact-meaning mappings where they are genuinely justified.
 
 ??? question "Who creates and maintains the semantic mappings to the Health-RI ontology?"
 
@@ -437,7 +453,9 @@
     - `int` — internal work (drafting, labeling, layout).
     - `irv` — internal review by team members not involved in modeling.
     - `erv` — external review with invited community input.
-    - `pub` — published; release operations (e.g., GitHub Release, DOI) are executed while remaining in `pub`.
+    - `pub` — published.
+
+    A package's stage describes its validation status. GitHub Release creation is related but separate: a GitHub Release may be created when a package enters `erv`, when a package already in `erv` or `pub` is updated, or when a package advances from `erv` to `pub`.
 
 ??? question "Who validates at each stage?"
 
@@ -462,16 +480,19 @@
 
 ??? question "How does versioning work for the ontology (X.Y.Z)?"
 
-    Format: `X.Y.Z` with strict priority X > Y > Z — only one component increments per release; lower components reset.
+    Format: `X.Y.Z` with strict priority `X > Y > Z`. Only one component increments per ontology update; lower components reset.
 
     Meanings:
 
-    - X — package index: add/remove a package → X++; then `Y = 0`, `Z = 0`.
-    - Y — stage/semantic: any stage change (`int ↔ irv ↔ erv ↔ pub`) or semantic modeling change → Y++; then `Z = 0`.
-    - Z — non-semantic: labels/typos, diagram/layout, links/docs → Z++.
+    - X — package index: add/remove a package → `X++`; then `Y = 0`, `Z = 0`.
+    - Y — stage/semantic: any package stage transition or semantic modeling change → `Y++`; then `Z = 0`.
+    - Z — non-semantic: labels/typos, diagram/layout, links/docs, and other non-semantic corrections → `Z++`.
 
-    Rules: No skipping numbers; exactly one single-step bump per release.
-    Scope: Applies to the ontology; the mapping set and mapping vocabulary are versioned separately.
+    Rules: no skipping numbers; exactly one single-step bump per ontology update.
+
+    Important: ontology version assignment is separate from GitHub Release creation. GitHub Releases use an already assigned ontology version, but they do not determine whether `X`, `Y`, or `Z` changes.
+
+    Scope: applies to the ontology artifacts versioned together as HRIO; the mapping set and mapping vocabulary are versioned separately.
 
 ??? question "What does the 'latest' folder contain and how is it maintained?"
 
@@ -547,24 +568,34 @@
 
 ??? question "What is the publishing strategy for ontology releases?"
 
-    What we publish (per release):
+    Ontology versioning and GitHub Release creation are related but distinct.
 
-    - A tagged GitHub Release with packaged artifacts (Technical Report PDF, exported figures) and detailed notes.
-    - An archived snapshot on Zenodo with a minted DOI (referenced from the Release notes).
-    - Artifacts exposed under w3id PIDs and repository folders:
-        - Latest: `https://w3id.org/health-ri/ontology` and `ontologies/latest/` (most recent release).
-        - Versioned: `https://w3id.org/health-ri/ontology/vX.Y.Z/...` and `ontologies/versioned/` (immutable per release).
-    - Catalog and discoverability records: OntoUML/UFO Catalog entry/update; Technical Report on ResearchGate; announcements on LinkedIn.
+    The ontology version (`X.Y.Z`) is assigned according to the ontology versioning rules. A GitHub Release is created only when at least one domain package enters `erv`, when a package already in `erv` or `pub` is updated, or when a package advances from `erv` to `pub`. Changes limited to packages that remain only in `int` or `irv` do not require a GitHub Release.
+
+    When a GitHub Release is created, it uses the ontology version already assigned to that repository state; it does not determine the version number itself.
+
+    Publication and dissemination activities associated with a GitHub Release may include:
+
+    - a tagged GitHub Release with release notes and relevant packaged artifacts;
+    - an archived snapshot with a DOI, where applicable;
+    - artifacts exposed through w3id PIDs and repository folders for latest and versioned access;
+    - catalog and discoverability updates, where applicable.
 
     Where to get the files:
 
-    - GitHub Release page (exact packaged artifacts and notes).
-    - Zenodo record (DOI) for a preserved, citable snapshot.
-    - w3id PIDs and repository folders for "latest" and "versioned" access; images (`.png`) live under `ontologies/latest/`.
+    - GitHub Release page for the released repository state and notes;
+    - DOI-backed archive, where available, for a preserved and citable snapshot;
+    - w3id PIDs and repository folders for stable latest and versioned access.
 
 ??? question "How are the OntoUML and gUFO ontologies and the produced semantic mappings maintained over time?"
 
-    Ontologies and semantic mappings are maintained in version-controlled repositories and released through a structured publishing pipeline. Each release is assigned a permanent, citable URL, with both a Persistent Identifier (PI). Ontologies are published in multiple formats (e.g., RDF/Turtle, JSON) and validated prior to release. This process ensures transparency, long-term accessibility, and semantic stability across versions.
+    The ontology artifacts are maintained in version-controlled repositories through a structured ontology versioning and publication process. For any given ontology version, the ontology artifacts released as part of HRIO share the same `X.Y.Z` identifier and remain aligned to the same underlying HRIO OntoUML model.
+
+    GitHub Release creation is operationally separate from ontology version assignment. When the conditions for a GitHub Release are met, the repository publication uses the ontology version already assigned under the `X`/`Y`/`Z` rules; it does not determine the version number itself.
+
+    The ontology is published in multiple formats and exposed through stable, citable persistent identifiers (PIDs). Validation and publication checks are applied as appropriate before release so that the published artifacts remain transparent, accessible, and semantically traceable across versions.
+
+    Semantic mappings produced within the initiative are also maintained in version-controlled repositories and published in stable forms, but they follow their own versioning and publication rules rather than the ontology's `X.Y.Z` version identifier.
 
 ??? question "Who is responsible for maintaining the ontology and its associated mappings?"
 
@@ -572,23 +603,34 @@
 
 ??? question "How will the new solutions be maintained and supported?"
 
-    After a package reaches `pub`, we run the Publication Stage Operations Checklist while remaining in `pub`:
+    The ontology is maintained through version-controlled ontology updates, staged validation, publication-stage operations, and ongoing issue-based feedback.
 
-    - Release and preservation: publish a GitHub Release (tag, notes) including the package report (PDF) and figures; trigger Zenodo and record the DOI.
-    - Catalog and discoverability: update the OntoUML/UFO Catalog; upload the report to ResearchGate; announce publication and follow-ups (e.g., DOI/catalog) on LinkedIn.
-    - Academic publication (optional): consider a peer-reviewed venue; when accepted, add the formal citation and publisher DOI to the docs and Release.
+    After a package reaches `pub`, the Publication Stage Operations Checklist continues to apply while the package remains in `pub`. However, GitHub Releases are not limited to `pub`: they may also be created when a package enters `erv`, when a package already in `erv` or `pub` is updated, or when a package advances from `erv` to `pub`.
 
-    Ongoing support and feedback: GitHub Issues remain open as a standing channel; substantive issues can lead to a stage reversion for corrective work.
+    Publication-stage operations may include:
+
+    - Release and preservation: create or update the GitHub Release as required, preserve the released state, and record the DOI-backed archive where applicable.
+    - Catalog and discoverability: update the OntoUML/UFO Catalog, upload the package report to our repository where applicable, and announce publication-related updates and follow-ups.
+    - Academic publication (optional): consider a peer-reviewed venue and, when accepted, add the formal citation and publisher DOI to the documentation and release materials.
+
+    Ongoing support and feedback: GitHub Issues remain open as a standing channel, and substantive issues can lead to a stage reversion for corrective work.
+
     Scope: This operational checklist is specific to the ontology.
 
 ??? question "What happens right after a package is published (`pub`)?"
 
-    While remaining in `pub`, we:
+    When a package advances from `erv` to `pub`, it becomes formally published. While remaining in `pub`, publication-stage operations are completed or updated as appropriate.
 
-    - Publish a GitHub Release (tag, notes, packaged artifacts) and mint a Zenodo DOI.
-    - Update the OntoUML/UFO Catalog and upload the Technical Report to ResearchGate.
-    - Post announcements and follow-ups (e.g., DOI/catalog) on LinkedIn.
-        Feedback continues via GitHub Issues; substantive issues may trigger a reversion to `int`.
+    These may include:
+
+    - creating or updating the GitHub Release for the relevant ontology version, where required;
+    - preserving the released state (e.g., DOI-backed archive);
+    - updating catalogs and other discoverability channels;
+    - posting publication-related announcements and follow-ups.
+
+    Feedback continues via GitHub Issues, and substantive issues may still trigger a reversion to `int`.
+
+    Note: GitHub Release activity is not exclusive to `pub`; it may also occur earlier when a package enters `erv` or when packages already in `erv` or `pub` are updated.
 
 ??? question "How will the ontology be tested and accepted?"
 
