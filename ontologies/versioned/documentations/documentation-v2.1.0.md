@@ -10,7 +10,7 @@ This distinction is crucial to properly model the social, legal, and biological 
 
 ### Person's Sex and Gender Basic Taxonomy
 
-![Person's Sex and Gender Basic Taxonomy](../images/Person%27s%20Sex%20and%20Gender%20Basic%20Taxonomy.png)
+![Person's Sex and Gender Basic Taxonomy](assets/images/Person's Sex and Gender Basic Taxonomy.png)
 
 Person is classified into Woman, Man, and Non-binary Person as a complete set of person types. Each of these is further specified along two perspectives: sex-based person categories (Female-sex Person, Male-sex Person, Indeterminate-sex Person) and gender-based person categories (Female-gender Person, Male-gender Person, Non-binary-gender Person).
 
@@ -18,7 +18,7 @@ Overlap between sex-based and gender-based specializations is permitted, enablin
 
 ### Person's Sex and Gender Full Taxonomy
 
-![Person's Sex and Gender Full Taxonomy](../images/Person%27s%20Sex%20and%20Gender%20Full%20Taxonomy.png)
+![Person's Sex and Gender Full Taxonomy](assets/images/Person's Sex and Gender Full Taxonomy.png)
 
 Person is classified through multiple perspectives that cover sex at birth, phenotypic assessment, karyotypic characterization, and gender modality. Sex-at-birth-assigned Person is refined into Sex-at-birth Female-sex Person, Sex-at-birth Male-sex Person, and Sex-at-birth Indeterminate-sex Person and is aligned with phenotypic person categories, while karyotypic person categories distinguish regular and variant sex chromosome cases and refine them into regular and variant karyotypical male and female persons, including a karyotypical indeterminate person for variant cases.
 
@@ -26,7 +26,7 @@ Gender classification is represented through Female-gender Person, Male-gender P
 
 ### Sex and Gender Full Taxonomy
 
-![Sex and Gender Full Taxonomy](../images/Sex%20and%20Gender%20Full%20Taxonomy.png)
+![Sex and Gender Full Taxonomy](assets/images/Sex and Gender Full Taxonomy.png)
 
 Organizes a taxonomy of Sex-Gender, Sex, and Gender categories used in the Sex and Gender scope. Provides a coherent naming structure across self-designated, externally-attributed, administrative, legal, and expression-based gender variants, alongside sex-related variants.
 
@@ -34,7 +34,7 @@ Sex-Gender is specialized into Male, Female, and Non-binary; Male is specialized
 
 ### Sex and Gender Types
 
-![Sex and Gender Types](../images/Sex%20and%20Gender%20Types.png)
+![Sex and Gender Types](assets/images/Sex and Gender Types.png)
 
 Sex-Gender provides a shared classification space for outcome categories that are used across sex-based and gender-based recording. This enables a single set of outcome identifiers to be referenced while still distinguishing whether the classification is being treated as sex-based or gender-based.
 
@@ -48,7 +48,7 @@ The package separates characterization, assessment, and registration. Phenotypic
 
 #### Sex Definition
 
-![Sex Definition](../images/Sex%20Definition.png)
+![Sex Definition](assets/images/Sex Definition.png)
 
 The diagram models Sex as a biological property that characterizes every Person. In this context, sex is represented as a mode, understood as an intrinsic property grounded in the person s biological makeup. The ontology acknowledges, however, that biological sex is not a single or unitary concept but rather an umbrella encompassing multiple dimensions, such as chromosomal, gonadal, hormonal, anatomical, and phenotypical aspects.
 
@@ -60,7 +60,7 @@ By organizing sex in this way, the ontology establishes biological sex as a mult
 
 #### Sex Overview
 
-![Sex Overview](../images/Sex%20Overview.png)
+![Sex Overview](assets/images/Sex Overview.png)
 
 Sex is the general entry point for sex classification and is refined into Phenotypic Sex and Karyotypic Sex, with Sex at Birth positioned as a specialization of Phenotypic Sex to represent a recorded classification at birth.
 
@@ -68,7 +68,7 @@ The basic sex categories Male Sex, Female Sex, and Indeterminate Sex provide anc
 
 #### Sex Taxonomy
 
-![Sex Taxonomy](../images/Sex%20Taxonomy.png)
+![Sex Taxonomy](assets/images/Sex Taxonomy.png)
 
 Sex is organized as an umbrella category with distinct dimensions. Karyotypic Sex and Phenotypic Sex provide two major dimensions, and Sex at Birth is positioned as a refinement of phenotypic sex that captures formal assignment at birth.
 
@@ -76,7 +76,7 @@ Male Sex, Female Sex, and Indeterminate Sex act as core sex outcomes, while kary
 
 #### Sex Types
 
-![Sex Types](../images/Sex%20Types.png)
+![Sex Types](assets/images/Sex Types.png)
 
 Sex is organized to distinguish the basis on which sex is described from the categorical value that is recorded. An axis layer provides alternative sex description bases, while an outcome layer provides the categorical sex outcomes used for recording and exchange.
 
@@ -90,7 +90,7 @@ Specialized person categories correspond to each sex category, distinguishing ma
 
 ##### Sex Outcome
 
-![Sex Outcome](../images/Sex%20Outcome.png)
+![Sex Outcome](assets/images/Sex Outcome.png)
 
 Sex is decomposed into male, female, and indeterminate categories, establishing a basic biological sex classification that can be used as a shared reference for person categorization. Person is included as the general bearer of sex, enabling sex classification to be applied at the level of individuals.
 
@@ -98,7 +98,7 @@ Specialized person categories correspond to each sex category, distinguishing ma
 
 ##### Male Sex
 
-![Male Sex](../images/Male%20Sex.png)
+![Male Sex](assets/images/Male Sex.png)
 
 Male Sex is refined into distinct characterizations that capture the basis used for determining male sex. Karyotypic Male Sex, Phenotypic Male Sex, and Sex-at-birth Male Sex provide karyotypic, phenotypic, and birth-record perspectives while keeping Male Sex as the shared reference category.
 
@@ -106,7 +106,7 @@ Male-sex Person is specialized into corresponding person categories that track t
 
 ##### Female Sex
 
-![Female Sex](../images/Female%20Sex.png)
+![Female Sex](assets/images/Female Sex.png)
 
 Female Sex is refined into distinct characterizations that capture the basis used for determining female sex. Karyotypic Female Sex, Phenotypic Female Sex, and Sex-at-birth Female Sex provide karyotypic, phenotypic, and birth-record perspectives while keeping Female Sex as the shared reference category.
 
@@ -114,7 +114,7 @@ Female-sex Person is specialized into corresponding person categories that track
 
 ##### Indeterminate Sex
 
-![Indeterminate Sex](../images/Indeterminate%20Sex.png)
+![Indeterminate Sex](assets/images/Indeterminate Sex.png)
 
 Indeterminate Sex captures cases that do not align with a determinate male or female classification. Phenotypic Ambiguous Sex refines this notion for phenotypic assessment, and Sex-at-birth Indeterminate Sex further refines it to the context of registration at birth.
 
@@ -128,7 +128,7 @@ The package captures the assessment and assignment contexts that underpin non-in
 
 ##### Sex at Birth
 
-![Sex at Birth](../images/Sex%20at%20Birth.png)
+![Sex at Birth](assets/images/Sex at Birth.png)
 
 The diagram models Sex at Birth as an extrinsic mode that is determined through a process of formal assignment at the time of birth registration. While such assignments often rely on the newborn s phenotypical features, they are not merely descriptive but the outcome of a social and administrative act recorded in official documents.
 
@@ -138,7 +138,7 @@ The assignment is also tied to a Birth Notification, which documents the registr
 
 ##### Karyotypic Sex
 
-![Karyotypic Sex](../images/Karyotypic%20Sex.png)
+![Karyotypic Sex](assets/images/Karyotypic Sex.png)
 
 The diagram represents Karyotypic Sex as a mode that characterizes every Person according to their chromosomal configuration. This intrinsic determination is grounded in the composition of sex chromosomes and is present from birth, independently of later developmental or interpretive factors.
 
@@ -148,7 +148,7 @@ At the level of persons, the ontology separates Person with Regular Sex Chromoso
 
 ##### Phenotypic Sex
 
-![Phenotypic Sex](../images/Phenotypic%20Sex.png)
+![Phenotypic Sex](assets/images/Phenotypic Sex.png)
 
 The diagram models Phenotypic Sex as a mode that characterizes a Person based on their observable anatomical and morphological traits. Unlike karyotypic sex, phenotypic sex is extrinsic, as it arises through assessment by others rather than being solely determined by genetic makeup. This assessment is represented through the relator Phenotypic Sex Assessment, which mediates the interaction between the Phenotypic-sex-assessed Person and the Phenotypic Sex Assessor, a role typically played by a healthcare professional.
 
@@ -158,7 +158,7 @@ The ontology makes explicit use of Visual Sex Characteristic as the basis for as
 
 ##### Sex Axis
 
-![Sex Axis](../images/Sex%20Axis.png)
+![Sex Axis](assets/images/Sex Axis.png)
 
 Sex is treated as a biological classification grounded in distinct dimensions, including chromosomal constitution and observable anatomical features. Persons can be connected to sex classifications that are assessed or recorded, including a recorded classification at birth.
 
@@ -166,7 +166,7 @@ Sex is specialized into Karyotypic Sex and Phenotypic Sex as mutually exclusive 
 
 ##### Sex at Birth Taxonomy
 
-![Sex at Birth Taxonomy](../images/Sex%20at%20Birth%20Taxonomy.png)
+![Sex at Birth Taxonomy](assets/images/Sex at Birth Taxonomy.png)
 
 Sex at birth assignment is treated as a classification outcome for a person, distinguishing cases with a recorded assignment from cases without a recorded assignment. Recorded assignments can be refined into determinate outcomes and indeterminate outcomes, and determinate outcomes are refined into male and female categories.
 
@@ -174,7 +174,7 @@ Person is partitioned into Sex-at-birth-assigned Person and Sex-at-birth-unassig
 
 ##### Karyotypic Sex Specializations
 
-![Karyotypic Sex Specializations](../images/Karyotypic%20Sex%20Specializations.png)
+![Karyotypic Sex Specializations](assets/images/Karyotypic Sex Specializations.png)
 
 Karyotypic Sex provides a chromosomal perspective on sex classification, distinguishing Karyotypic Male Sex and Karyotypic Female Sex as refinements of a common karyotypic basis.
 
@@ -182,7 +182,7 @@ Persons are classified in parallel through Karyotypic Male-sex Person and Karyot
 
 ##### Phenotypic Sex Specializations
 
-![Phenotypic Sex Specializations](../images/Phenotypic%20Sex%20Specializations.png)
+![Phenotypic Sex Specializations](assets/images/Phenotypic Sex Specializations.png)
 
 Phenotypic sex is decomposed into male, female, and ambiguous categories, supporting classification based on phenotypic assessment while retaining an explicit place for ambiguity. A person category is included to represent individuals for whom phenotypic sex has been assessed.
 
@@ -190,7 +190,7 @@ Specialized person categories correspond to phenotypic male sex, phenotypic fema
 
 ##### Sex at Birth Specializations
 
-![Sex at Birth Specializations](../images/Sex%20at%20Birth%20Specializations.png)
+![Sex at Birth Specializations](assets/images/Sex at Birth Specializations.png)
 
 Sex at birth is decomposed into male, female, and indeterminate categories, supporting representation of assigned sex at birth as a distinct classification. A person category is included to represent individuals with an assigned sex at birth.
 
@@ -204,7 +204,7 @@ Gender is organized around common gender outcomes and supports consistent alignm
 
 #### Gender Overview
 
-![Gender Overview](../images/Gender%20Overview.png)
+![Gender Overview](assets/images/Gender Overview.png)
 
 Gender is organized along two orthogonal partitions that are each complete and disjoint: gender contexts and gender outcomes. Gender contexts distinguish Self-identified Gender, Gender Expression, and Externally-attributed Gender, with Administrative Gender and Legal Gender refining Externally-attributed Gender, and the externally-attributed, administrative, and legal partitions allowing overlap. Gender outcomes distinguish Male Gender, Female Gender, and Non-binary Gender.
 
@@ -212,7 +212,7 @@ Each gender context is further specialized into outcome-specific types that alig
 
 #### Gender Taxonomy
 
-![Gender Taxonomy](../images/Gender%20Taxonomy.png)
+![Gender Taxonomy](assets/images/Gender Taxonomy.png)
 
 Gender is organized as a taxonomy that distinguishes a general notion of gender from several attribution modalities that reflect how gender is expressed, identified, or recorded. The taxonomy separates personal identification from external attribution and from institutionally recorded forms, supporting explicit distinctions between self-identified, externally-attributed, administrative, and legal variants of gender.
 
@@ -220,7 +220,7 @@ Within each attribution modality, gender categories are specialized into male, f
 
 #### Gender Types
 
-![Gender Types](../images/Gender%20Types.png)
+![Gender Types](assets/images/Gender Types.png)
 
 Gender is organized to separate how gender information is established from the categorical result that is recorded. A context layer captures the basis for a gender characterization, while an outcome layer captures the resulting gender category, supporting consistent interpretation in interoperability settings.
 
@@ -234,7 +234,7 @@ Gender Context captures recognition as a mediated process that can involve recog
 
 ##### Legal Gender
 
-![Legal Gender](../images/Legal%20Gender.png)
+![Legal Gender](assets/images/Legal Gender.png)
 
 Legal Gender is established through Legal Gender Recognition, which is carried out by a Legal Gender Recognizer situated within a Government. This recognition is formalized in a Legal Gender Recognition Document, and both the recognition and its document are treated as specializations of their administrative recognition counterparts. This frames legal gender as a state-based form of gender recognition.
 
@@ -242,7 +242,7 @@ Legal Gender Recognition recognizes a Person, yielding the classification Legall
 
 ##### Administrative Gender
 
-![Administrative Gender](../images/Administrative%20Gender.png)
+![Administrative Gender](assets/images/Administrative Gender.png)
 
 Administrative Gender is assigned through an Administrative Gender Recognition, which specializes Gender Attribution. An Administrative Gender Recognizing Organization recognizes a Person through this recognition, supporting the classification Administratively Recognized Gender Person. The recognized person is associated with one or more Administrative Gender instances, capturing administrative gender outcomes as results of organizational recognition.
 
@@ -250,7 +250,7 @@ An Administrative Gender Recognition is created by an Administrative Gender Reco
 
 ##### Self-designated Gender
 
-![Self-designated Gender](../images/Self-designated%20Gender.png)
+![Self-designated Gender](assets/images/Self-designated Gender.png)
 
 A Living Person may be in the Self-aware Person condition, which supports capturing self-designated information about gender. Each Self-aware Person is characterized by exactly one Self-identified Gender and exactly one Gender Expression. Both Self-identified Gender and Gender Expression are treated as kinds of Self-designated Gender, and they are mutually exclusive and collectively exhaustive with respect to Self-designated Gender.
 
@@ -258,7 +258,7 @@ Preferred pronouns are recorded for a Self-aware Person as optional, repeatable 
 
 ##### Externally-attributed Gender
 
-![Externally-attributed Gender](../images/Externally-attributed%20Gender.png)
+![Externally-attributed Gender](assets/images/Externally-attributed Gender.png)
 
 Externally-attributed Gender is grounded in Gender Attribution, which links a Gender Attributor to an Externally Gender-attributed Person via mediation relations. This supports an explicit attribution situation in which an individual agent attributes gender information to a person, and the attributed person is associated with one or more Externally-attributed Gender instances.
 
@@ -266,7 +266,7 @@ Each Gender Attribution has exactly one Gender Attributor and is attributed to e
 
 ##### Person by Gender Context
 
-![Person by Gender Context](../images/Person%20by%20Gender%20Context.png)
+![Person by Gender Context](assets/images/Person by Gender Context.png)
 
 Person is characterized by Gender through a set of gender contexts that are complete and disjoint. Self-aware Person is characterized by exactly one Self-identified Gender and exactly one Gender Expression, reflecting the distinction between a person's current self-identification and a person's outward expression.
 
@@ -274,7 +274,7 @@ Externally Gender-attributed Person is characterized by one or more Externally-a
 
 ##### Externally-attributed Gender Hierarchy
 
-![Externally-attributed Gender Hierarchy](../images/Externally-attributed%20Gender%20Hierarchy.png)
+![Externally-attributed Gender Hierarchy](assets/images/Externally-attributed Gender Hierarchy.png)
 
 Gender Attribution defines how gender can be attributed to a person by an external agent through an explicit attribution relationship. It captures the roles of the gender attributor and the externally gender-attributed person, and it links the externally gender-attributed person to an externally-attributed gender characterization. Each attribution involves an attributing agent that is distinct from the person to whom gender is attributed, keeping the source of externally-attributed gender statements explicit.
 
@@ -288,7 +288,7 @@ This package distinguishes person classifications by the source of the associate
 
 ##### Person by Gender Outcome
 
-![Person by Gender Outcome](../images/Person%20by%20Gender%20Outcome.png)
+![Person by Gender Outcome](assets/images/Person by Gender Outcome.png)
 
 Person is classified into Male-gender Person, Female-gender Person, and Non-binary-gender Person, with the classification defined as complete and overlapping. Each Person is characterized by one or more Gender instances, and each such Gender instance characterizes exactly one Person.
 
@@ -296,7 +296,7 @@ Male-gender Person, Female-gender Person, and Non-binary-gender Person are each 
 
 ##### Male Gender
 
-![Male Gender](../images/Male%20Gender.png)
+![Male Gender](assets/images/Male Gender.png)
 
 Male-gender Person is characterized by one or more Male Gender outcomes. Male-gender persons are specialized as a complete and overlapping set of person types covering self-identification, presentation, and external attribution, and these specializations are aligned with corresponding male gender context types through characterization relations.
 
@@ -304,7 +304,7 @@ Male Gender is specialized into Self-identified Male Gender, Masculine Gender Ex
 
 ##### Female Gender
 
-![Female Gender](../images/Female%20Gender.png)
+![Female Gender](assets/images/Female Gender.png)
 
 Female-gender Person is characterized by one or more Female Gender outcomes. Female-gender persons are specialized as a complete and overlapping set of person types covering self-identification, presentation, and external attribution, and these specializations are aligned with corresponding female gender context types through characterization relations.
 
@@ -312,7 +312,7 @@ Female Gender is specialized into Self-identified Female Gender, Feminine Gender
 
 ##### Non-binary Gender
 
-![Non-binary Gender](../images/Non-binary%20Gender.png)
+![Non-binary Gender](assets/images/Non-binary Gender.png)
 
 Non-binary-gender Person is characterized by one or more Non-binary Gender outcomes. Non-binary-gender persons are specialized as a complete and overlapping set of person types covering self-identification, presentation, and external attribution, and these specializations are aligned with corresponding non-binary gender context types through characterization relations.
 
@@ -326,7 +326,7 @@ Gender Modality also refines cisgender and transgender person types through thei
 
 ##### Gender Modality Overview
 
-![Gender Modality Overview](../images/Gender%20Modality%20Overview.png)
+![Gender Modality Overview](assets/images/Gender Modality Overview.png)
 
 Person is classified by gender modality into Cisgender Person and Transgender Person, with the classification defined as complete and overlapping. Two context-specific person types support modality assignment: Self-aware Person supports self-identified modality types, and Externally Gender-attributed Person supports externally-attributed modality types.
 
@@ -334,7 +334,7 @@ Self-identified Cisgender Person and Self-identified Transgender Person speciali
 
 ##### Self-identified Cisgender Criteria
 
-![Self-identified Cisgender Criteria](../images/Self-identified%20Cisgender%20Criteria.png)
+![Self-identified Cisgender Criteria](assets/images/Self-identified Cisgender Criteria.png)
 
 Defines self-identified cisgender classification by combining a self-identified gender-type classification with a sex-at-birth classification.
 
@@ -342,7 +342,7 @@ Self-identified cisgender persons are partitioned into female and male cases. Ea
 
 ##### Externally-attributed Cisgender Criteria
 
-![Externally-attributed Cisgender Criteria](../images/Externally-attributed%20Cisgender%20Criteria.png)
+![Externally-attributed Cisgender Criteria](assets/images/Externally-attributed Cisgender Criteria.png)
 
 Defines externally-attributed cisgender classification by combining an externally attributed gender-type classification with a sex-at-birth classification.
 
@@ -350,7 +350,7 @@ Externally-attributed cisgender persons are partitioned into female and male cas
 
 ##### Cisgender and Transgender
 
-![Cisgender and Transgender](../images/Cisgender%20and%20Transgender.png)
+![Cisgender and Transgender](assets/images/Cisgender and Transgender.png)
 
 Gender modality is used to classify persons with an assigned sex at birth by the relationship between a gender classification and the sex-at-birth classification. Cisgender and transgender modalities are introduced and then specialized to capture male and female cisgender cases that combine gender characterization and sex-at-birth classification.
 
@@ -358,7 +358,7 @@ Sex-at-birth-assigned Person has specializations Cisgender Person, Transgender P
 
 ##### Person by Gender Modality
 
-![Person by Gender Modality](../images/Person%20by%20Gender%20Modality.png)
+![Person by Gender Modality](assets/images/Person by Gender Modality.png)
 
 Gender Modality links Person-level sex and gender characterizations by representing pairings between a Sex-at-birth-related sex classification and a gender classification. A Person may be classified as Cisgender Person and or Transgender Person, reflecting an explicitly incomplete and overlapping partition of Person by modality-based characterization.
 
@@ -366,7 +366,7 @@ Each Gender Modality instance is linked by has cause relations to exactly one Se
 
 ##### Gender Modality Types
 
-![Gender Modality Types](../images/Gender%20Modality%20Types.png)
+![Gender Modality Types](assets/images/Gender Modality Types.png)
 
 Gender Modality supports a controlled representation of how sex and gender relate for a person by organizing modality as a distinct classification focus. A dedicated type layer provides stable modality type identifiers that can be used to classify modality instances consistently across data capture and exchange.
 
@@ -380,7 +380,7 @@ The package also provides corresponding person classifications that unify sex-ba
 
 #### Sex-Gender Outcome
 
-![Sex-Gender Outcome](../images/Sex-Gender%20Outcome.png)
+![Sex-Gender Outcome](assets/images/Sex-Gender Outcome.png)
 
 Defines the Sex-Gender outcome space used to qualify a general person class and the three high-level outcome categories. Clarifies how the outcome categories relate to the corresponding person categories.
 
@@ -388,7 +388,7 @@ A general class (unlabeled) is characterized by Sex-Gender, and Sex-Gender is sp
 
 #### Male
 
-![Male](../images/Male.png)
+![Male](assets/images/Male.png)
 
 Distinguishes sex-based and gender-based forms of Male and aligns these with corresponding types of Man. Captures separate qualification patterns for the sex-based and gender-based cases.
 
@@ -396,7 +396,7 @@ Man is characterized by Male. Male is specialized into Male Sex and Male Gender 
 
 #### Female
 
-![Female](../images/Female.png)
+![Female](assets/images/Female.png)
 
 Distinguishes sex-based and gender-based forms of Female and aligns these with corresponding types of Woman. Captures separate qualification patterns for the sex-based and gender-based cases.
 
@@ -404,7 +404,7 @@ Woman is characterized by Female. Female is specialized into Female Sex and Fema
 
 #### Non-binary
 
-![Non-binary](../images/Non-binary.png)
+![Non-binary](assets/images/Non-binary.png)
 
 Distinguishes gender-based and indeterminate-sex forms of Non-binary and aligns these with corresponding types of Non-binary Person. Captures separate qualification patterns for the gender-based and indeterminate-sex cases.
 
@@ -415,7 +415,7 @@ Non-binary Person is characterized by Non-binary. Non-binary is specialized into
 
 ### Chromosomes
 
-![Chromosomes](../images/Chromosomes.png)
+![Chromosomes](assets/images/Chromosomes.png)
 
 The diagram models chromosomes and their role in human cells and persons. At its core, Chromosome is specialized into the subkind Allosome, which is further partitioned into Allosome X and Allosome Y. A note clarifies that an allosome set can never consist of only Y, preventing biologically inconsistent representations. The model enforces that allosome type is complete and disjoint.
 
@@ -425,7 +425,7 @@ On the organismal level, Person is represented as composed of two or more human 
 
 ### Cellular Entities
 
-![Cellular Entities](../images/Cellular%20Entities.png)
+![Cellular Entities](assets/images/Cellular Entities.png)
 
 The diagram represents the high-level modeling of cellular entities and their relation to broader biological categories. At the core is the category Cellular Entity, which generalizes living beings composed of cells, including both individual organisms and more specific cellular components. This category is specialized according to the complete and disjoint states Living Cellular Entity and Dead Cellular Entity, capturing the essential life-state distinction relevant to medical and biological contexts.
 
@@ -437,7 +437,7 @@ From a taxonomic perspective, Cellular Entity subsumes Animal, which is further 
 
 #### Health Condition Overview
 
-![Health Condition Overview](../images/Health%20Condition%20Overview.png)
+![Health Condition Overview](assets/images/Health Condition Overview.png)
 
 The diagram Health Condition Overview provides a high-level structure for representing health conditions and their main distinctions. It introduces Health Condition as a specialization of Condition, associated with Animal entities, and instantiated through Health Condition Types. This establishes the general framework in which health conditions are characterized and classified within the ontology.
 
@@ -447,7 +447,7 @@ Together, these partitions provide a coherent schema for distinguishing between 
 
 #### Established Health Condition Types
 
-![Established Health Condition Types](../images/Established%20Health%20Condition%20Types.png)
+![Established Health Condition Types](assets/images/Established Health Condition Types.png)
 
 The diagram Established Health Condition Types organizes the classification of health conditions based on structural, functional, psychological, and etiological aspects. It provides a structured view of how different categories of conditions are related, ensuring that all relevant perspectives on health conditions are consistently represented. The model distinguishes between structural and non-structural conditions, including functional and psychological conditions, and connects them to broader classifications of established health conditions. It also incorporates etiological distinctions, such as idiopathic and known-origin conditions, with the latter further divided into congenital and acquired types.
 
@@ -460,7 +460,7 @@ Overall, the diagram provides a comprehensive schema for differentiating establi
 
 ### Agents
 
-![Agents](../images/Agents.png)
+![Agents](assets/images/Agents.png)
 
 The diagram organizes the ontology of Agents, rooted in the UFO-based category Agent. Agents are understood as entities capable of acting or exercising agency in a system. The diagram distinguishes between collective and individual forms of agency.
 
@@ -470,13 +470,13 @@ The diagram specifies that types of agents as a whole are incomplete and disjoin
 
 ### Datatypes
 
-![Datatypes](../images/Datatypes.png)
+![Datatypes](assets/images/Datatypes.png)
 
 A coherent set of datatypes for calendar and civil time. It includes an enumeration Month with twelve named values, a Date datatype that combines year, month, and day in the proleptic Gregorian calendar, and an OffsetDateTime that reuses Date and adds hour, minute, second, optional nanosecond, and a UTC offset in whole minutes. The separation between Date and OffsetDateTime supports reuse of calendar dates where no time-of-day or offset is needed and enables precise timestamping where an explicit offset is required.
 
 ### Documents
 
-![Documents](../images/Documents.png)
+![Documents](assets/images/Documents.png)
 
 The diagram introduces the general category Document, encompassing entities that serve as carriers of information. This category is specialized into two complete and disjoint subcategories: Physical Document and Digital Document.
 
@@ -486,7 +486,7 @@ This distinction supports consistent representation of information artifacts acr
 
 ### Addressable Place
 
-![Addressable Place](../images/Addressable%20Place.png)
+![Addressable Place](assets/images/Addressable Place.png)
 
 Address characterizes Addressable Place via  is address of . Multiplicity 1..* on both ends supports multiple addresses per place and (when needed) reuse of the same address across multiple addressable places.
 
@@ -495,7 +495,7 @@ Address characterizes Addressable Place via  is address of . Multiplicity 1..* o
 
 ### Diagnostic Assessments
 
-![Diagnostic Assessments](../images/Diagnostic%20Assessments.png)
+![Diagnostic Assessments](assets/images/Diagnostic Assessments.png)
 
 The diagram represents the structure and results of diagnostic processes. At the top, a Diagnostic Relation connects diagnosing agents and diagnosed entities. Once a diagnostic process has been completed, this relation becomes a Concluded Diagnostic Relation, which manifests in one or more Diagnostic Assessments. These assessments classify the determination of diagnostic results into complete and disjoint categories.
 
@@ -505,7 +505,7 @@ The model also includes a connection from Diagnostic Assessment Outcome to the g
 
 ### Diagnostic Relations
 
-![Diagnostic Relations](../images/Diagnostic%20Relations.png)
+![Diagnostic Relations](assets/images/Diagnostic Relations.png)
 
 The diagram presents the structural components and mediations that constitute a Diagnostic Relation. This relator connects a Diagnosing Agent and a Diagnosed Entity, ensuring that diagnostic activities are explicitly grounded in the participation of both an agent and a target entity.
 
@@ -517,7 +517,7 @@ On the side of the diagnosed entity, the diagram shows that each diagnosed entit
 
 ### Diagnosing Agents
 
-![Diagnosing Agents](../images/Diagnosing%20Agents.png)
+![Diagnosing Agents](assets/images/Diagnosing Agents.png)
 
 The diagram specifies the agents responsible for performing diagnostic activities and issuing diagnostic outcomes. At its root, the general category Agent is specialized through the role mixin Diagnosing Agent, representing any entity capable of carrying out a diagnostic process. This general type is further specialized into two disjoint roles: Diagnosing Artificial Agent and Diagnosing Person.
 
@@ -527,7 +527,7 @@ In addition, diagnosing agents are linked to the role mixin Diagnostic Outcome I
 
 ### Diagnosis Types
 
-![Diagnosis Types](../images/Diagnosis%20Types.png)
+![Diagnosis Types](assets/images/Diagnosis Types.png)
 
 The diagram structures the taxonomy of Diagnosis, identifying different types according to their object, focus, source, and use. A general subkind Diagnosis is specialized into Cellular Entity Diagnosis and Healthcare Diagnosis, ensuring coverage of both cellular-level and broader healthcare-oriented diagnostic contexts.
 
@@ -537,7 +537,7 @@ The model also incorporates the distinction between Self-diagnosis and External 
 
 ### Diagnosed Entities
 
-![Diagnosed Entities](../images/Diagnosed%20Entities.png)
+![Diagnosed Entities](assets/images/Diagnosed Entities.png)
 
 The diagram defines the abstract notion of a Diagnosed Entity, capturing the range of entities that may be the subject of a diagnostic process. This is partitioned into four disjoint and complete types, ensuring that all diagnosed entities fall into one of these categories.
 
@@ -548,7 +548,7 @@ The specialization includes Diagnosed Cellular Entity, which is explicitly linke
 
 ### Endurant
 
-![Endurant](../images/Endurant.png)
+![Endurant](assets/images/Endurant.png)
 
 The diagram presents the high-level taxonomy of Endurants as conceptualized in UFO. At the top, Particular is introduced as a general mixin that subsumes all individual entities. From this root, the category Endurant captures entities that persist through time while possibly undergoing changes in their properties.
 
@@ -559,7 +559,7 @@ Substantial is modeled as a specialization of endurants, representing entities t
 
 ### Person's Living Status
 
-![Person's Living Status](../images/Person%27s%20Living%20Status.png)
+![Person's Living Status](assets/images/Person's Living Status.png)
 
 The diagram models the temporal and biological aspects of a person s existence, capturing both life stages and living status. At its center is the kind Person, which includes an attribute date of birth that records the individual's birth date. A constraint ensures consistency by requiring that the date of birth matches the date portion of the end attribute of the associated Person s Birth event.
 
@@ -578,7 +578,7 @@ The package also supports birth provenance at an abstract level through Birth Bi
 
 ### Birth Participants and Place
 
-![Birth Participants and Place](../images/Birth%20Participants%20and%20Place.png)
+![Birth Participants and Place](assets/images/Birth Participants and Place.png)
 
 Birth is linked to the persons that originate from it and to the gestational carrier associated with it. Each Person is linked to exactly one Birth, while a Birth may be linked to one or more persons, supporting cases where a single birth is associated with multiple persons. Each Birth is linked to exactly one Gestational Carrier, and each Gestational Carrier may be linked to one or more births across time.
 
@@ -586,7 +586,7 @@ Birth is linked to exactly one Birth Place, and a Birth Place may be linked to o
 
 ### Birth Attribute Derivation
 
-![Birth Attribute Derivation](../images/Birth%20Attribute%20Derivation.png)
+![Birth Attribute Derivation](assets/images/Birth Attribute Derivation.png)
 
 Person includes birth-derived attributes computed from the Single Birth that creates the Person. Temporal values use the date component of Single Birth.start and the full timestamp of Single Birth.end as recorded.
 
@@ -594,7 +594,7 @@ Current age is derived as full years by comparing Single Birth.start.date to tod
 
 ### Birth Provenance
 
-![Birth Provenance](../images/Birth%20Provenance.png)
+![Birth Provenance](assets/images/Birth Provenance.png)
 
 This diagram models biological birth provenance for a Person via a Birth Biological Provenance relator. Each Person is linked to exactly one provenance, which links the Person to exactly one Genetic Mother, one Genetic Father, and one Gestational Carrier; each contributor may participate in one or more provenances over time. Genetic Mother and Genetic Father are also connected directly to Person via the named material relations  is genetic mother of  and  is genetic father of .
 
@@ -602,7 +602,7 @@ Scope is restricted to nuclear-DNA parentage with exactly one oocyte provider an
 
 ### Birth Types
 
-![Birth Types](../images/Birth%20Types.png)
+![Birth Types](assets/images/Birth Types.png)
 
 Birth is specialized into Single Birth and Multiple Birth, distinguishing births by whether they correspond to one person or to a grouped multiple birth. Single Birth is specialized into Singleton Birth and Multiple Birth Component, supporting a representation where each component birth in a multiple birth is itself treated as a single birth instance. Multiple Birth is linked to Multiple Birth Components in a whole-part relation where each Multiple Birth is linked to two or more components and each component is linked to exactly one Multiple Birth.
 

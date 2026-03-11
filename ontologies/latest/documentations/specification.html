@@ -66,6 +66,9 @@
         #classes ul li {
             margin-left: -40px;
         }
+        #metadata dd p {
+          margin: 0;
+        }
 
         ul.hlist {
             list-style-type: none;
@@ -328,7 +331,7 @@ td {
     "https://schema.org/dateModified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2026-02-27"
+        "@value": "2026-03-11"
       }
     ],
     "https://schema.org/description": [
@@ -456,7 +459,7 @@ td {
 <dt>
 <a class="hover_property" href="http://purl.org/dc/terms/modified" title="Date on which the resource was changed. Defined in DCMI Metadata Terms">Date Modified</a>
 </dt>
-<dd><p>2026-02-27</p></dd>
+<dd><p>2026-03-11</p></dd>
 </div>
 <div>
 <dt>
@@ -477,14 +480,14 @@ td {
 <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionIRI" title="The property that identifies the version IRI of an ontology. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Iri</a>
 </dt>
 <dd>
-<a href="https://w3id.org/health-ri/ontology/v2.0.0">https://w3id.org/health-ri/ontology/v2.0.0</a>
+<a href="https://w3id.org/health-ri/ontology/v2.1.0">https://w3id.org/health-ri/ontology/v2.1.0</a>
 </dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionInfo" title="The annotation property that provides version information for an ontology or another OWL construct. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Info</a>
 </dt>
-<dd><p>2.0.0</p></dd>
+<dd><p>2.1.0</p></dd>
 </div>
 <div>
 <dt>
@@ -505,6 +508,14 @@ td {
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </dt>
 <dd><p>This ontology is part of Health-RI’s semantic interoperability initiative, which provides a shared ontological framework for harmonizing healthcare and life sciences data across institutions. It includes a conceptual reference model defined in OntoUML and a machine-processable OWL ontology implemented using gUFO. These artifacts are used to enable explicit mappings from heterogeneous data schemas, ensuring consistent semantics in data exchange and integration. The approach supports both human understanding and computational tractability. All components are openly published and designed for reuse across systems and services.</p></dd>
+</div>
+<div>
+<dt>
+<a class="hover_property" href="http://www.w3.org/2002/07/owl#imports" title="The property that is used for importing other ontologies into a given ontology. Defined in The OWL 2 Schema vocabulary (OWL 2)">Imports</a>
+</dt>
+<dd>
+<a href="http://purl.org/nemo/gufo#">gufo:</a>
+</dd>
 </div>
 </dl>
 </div>
@@ -582,12 +593,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#AllosomeX">Allosome X</a>
+<a href="#AllosomeY">Allosome Y</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#AllosomeY">Allosome Y</a>
+<a href="#AllosomeX">Allosome X</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1140,23 +1151,23 @@ td {
 <ul>
 <li>
 <span>
-<a href="#TraumaticHealthCondition">Traumatic Health Condition</a>
+<a href="#NonTraumaticHealthCondition">Non-traumatic Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#NonTraumaticHealthCondition">Non-traumatic Health Condition</a>
+<a href="#TraumaticHealthCondition">Traumatic Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#StructuralHealthCondition">Structural Health Condition</a>
+<a href="#NonStructuralHealthCondition">Non-structural Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#NonStructuralHealthCondition">Non-structural Health Condition</a>
+<a href="#StructuralHealthCondition">Structural Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -1489,12 +1500,12 @@ td {
 </li>
 <li>
 <span>
-<a href="#PathologicalHealthCondition">Pathological Health Condition</a>
+<a href="#Non-PathologicalHealthCondition">Non-Pathological Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Non-PathologicalHealthCondition">Non-Pathological Health Condition</a>
+<a href="#PathologicalHealthCondition">Pathological Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -1792,7 +1803,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb440">n77ad31ab3d674d909ec1b18e47b4fbedb440</a>
+<a href="ne18ca415df334983835e34ea5f509399b440">ne18ca415df334983835e34ea5f509399b440</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -1880,12 +1891,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#VariantKaryotypicalMalePerson">Variant Karyotypical Male Person</a>
+<a href="#RegularKaryotypicalMalePerson">Regular Karyotypical Male Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#RegularKaryotypicalMalePerson">Regular Karyotypical Male Person</a>
+<a href="#VariantKaryotypicalMalePerson">Variant Karyotypical Male Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1897,7 +1908,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb407">n77ad31ab3d674d909ec1b18e47b4fbedb407</a>
+<a href="ne18ca415df334983835e34ea5f509399b402">ne18ca415df334983835e34ea5f509399b402</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -1999,12 +2010,12 @@ td {
 <ul>
 <li>
 <span>
-<a href="#CongenitalHealthCondition">Congenital Health Condition</a>
+<a href="#AcquiredHealthCondition">Acquired Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#AcquiredHealthCondition">Acquired Health Condition</a>
+<a href="#CongenitalHealthCondition">Congenital Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -2161,12 +2172,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a>
+<a href="#InherentHealthCondition">Inherent Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#InherentHealthCondition">Inherent Health Condition</a>
+<a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2262,12 +2273,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#PsychologicalHealthCondition">Psychological Health Condition</a>
+<a href="#FunctionalHealthCondition">Functional Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#FunctionalHealthCondition">Functional Health Condition</a>
+<a href="#PsychologicalHealthCondition">Psychological Health Condition</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2490,12 +2501,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#VariantKaryotypicalFemalePerson">Variant Karyotypical Female Person</a>
+<a href="#KaryotypicalIndeterminatePerson">Karyotypical Indeterminate Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#KaryotypicalIndeterminatePerson">Karyotypical Indeterminate Person</a>
+<a href="#VariantKaryotypicalFemalePerson">Variant Karyotypical Female Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -2977,12 +2988,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#AntemortemDiagnosis">Antemortem Diagnosis</a>
+<a href="#PostmortemDiagnosis">Postmortem Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#PostmortemDiagnosis">Postmortem Diagnosis</a>
+<a href="#AntemortemDiagnosis">Antemortem Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3122,12 +3133,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#NegativeDiagnosisAssessment">Negative Diagnosis Assessment</a>
+<a href="#PositiveDiagnosisAssessment">Positive Diagnosis Assessment</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#PositiveDiagnosisAssessment">Positive Diagnosis Assessment</a>
+<a href="#NegativeDiagnosisAssessment">Negative Diagnosis Assessment</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3310,17 +3321,17 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#DiagnosedGroup">Diagnosed Group</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
 <a href="#DiagnosedCellularEntity">Diagnosed Cellular Entity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#DiagnosedSpecimen">Diagnosed Specimen</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#DiagnosedGroup">Diagnosed Group</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3334,7 +3345,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb259">n77ad31ab3d674d909ec1b18e47b4fbedb259</a>
+<a href="ne18ca415df334983835e34ea5f509399b259">ne18ca415df334983835e34ea5f509399b259</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -3509,12 +3520,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#DiagnosingArtificialAgent">Diagnosing Artificial Agent</a>
+<a href="#DiagnosingPerson">Diagnosing Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#DiagnosingPerson">Diagnosing Person</a>
+<a href="#DiagnosingArtificialAgent">Diagnosing Artificial Agent</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3528,7 +3539,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb267">n77ad31ab3d674d909ec1b18e47b4fbedb267</a>
+<a href="ne18ca415df334983835e34ea5f509399b267">ne18ca415df334983835e34ea5f509399b267</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -3544,7 +3555,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb269">n77ad31ab3d674d909ec1b18e47b4fbedb269</a>
+<a href="ne18ca415df334983835e34ea5f509399b269">ne18ca415df334983835e34ea5f509399b269</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -3671,12 +3682,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#LaypersonDiagnosingAgent">Layperson Diagnosing Agent</a>
+<a href="#ProfessionalDiagnosingAgent">Professional Diagnosing Agent</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#ProfessionalDiagnosingAgent">Professional Diagnosing Agent</a>
+<a href="#LaypersonDiagnosingAgent">Layperson Diagnosing Agent</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3739,7 +3750,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb340">n77ad31ab3d674d909ec1b18e47b4fbedb340</a>
+<a href="ne18ca415df334983835e34ea5f509399b335">ne18ca415df334983835e34ea5f509399b335</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -3852,12 +3863,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#ConclusiveDiagnosticAssessment">Conclusive Diagnostic Assessment</a>
+<a href="#InconclusiveDiagnosticAssessment">Inconclusive Diagnostic Assessment</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#InconclusiveDiagnosticAssessment">Inconclusive Diagnostic Assessment</a>
+<a href="#ConclusiveDiagnosticAssessment">Conclusive Diagnostic Assessment</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -3869,7 +3880,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb95">n77ad31ab3d674d909ec1b18e47b4fbedb95</a>
+<a href="ne18ca415df334983835e34ea5f509399b97">ne18ca415df334983835e34ea5f509399b97</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -3934,12 +3945,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#NoDiagnosisOutcome">No-Diagnosis Outcome</a>
+<a href="#Diagnosis">Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Diagnosis">Diagnosis</a>
+<a href="#NoDiagnosisOutcome">No-Diagnosis Outcome</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -4059,7 +4070,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb15">n77ad31ab3d674d909ec1b18e47b4fbedb15</a>
+<a href="ne18ca415df334983835e34ea5f509399b19">ne18ca415df334983835e34ea5f509399b19</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -4136,7 +4147,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb175">n77ad31ab3d674d909ec1b18e47b4fbedb175</a>
+<a href="ne18ca415df334983835e34ea5f509399b175">ne18ca415df334983835e34ea5f509399b175</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -4254,12 +4265,7 @@ td {
 <ul>
 <li>
 <span>
-<a href="#RadiologicalDiagnosis">Radiological Diagnosis</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#ClinicalDiagnosis">Clinical Diagnosis</a>
+<a href="#AdministrativeCodingDiagnosis">Administrative Coding Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -4269,23 +4275,28 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#AdministrativeCodingDiagnosis">Administrative Coding Diagnosis</a>
+<a href="#LaboratoryDiagnosis">Laboratory Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#LaboratoryDiagnosis">Laboratory Diagnosis</a>
+<a href="#ClinicalDiagnosis">Clinical Diagnosis</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#RadiologicalDiagnosis">Radiological Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#VeterinaryDiagnosis">Veterinary Diagnosis</a>
+<a href="#HumanHealthcareDiagnosis">Human Healthcare Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#HumanHealthcareDiagnosis">Human Healthcare Diagnosis</a>
+<a href="#VeterinaryDiagnosis">Veterinary Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -4296,12 +4307,12 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#SurveillanceDiagnosis">Surveillance Diagnosis</a>
+<a href="#ResearchDiagnosis">Research Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#ResearchDiagnosis">Research Diagnosis</a>
+<a href="#SurveillanceDiagnosis">Surveillance Diagnosis</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -4580,7 +4591,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb119">n77ad31ab3d674d909ec1b18e47b4fbedb119</a>
+<a href="ne18ca415df334983835e34ea5f509399b121">ne18ca415df334983835e34ea5f509399b121</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -5023,7 +5034,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb32">n77ad31ab3d674d909ec1b18e47b4fbedb32</a>
+<a href="ne18ca415df334983835e34ea5f509399b36">ne18ca415df334983835e34ea5f509399b36</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -5281,12 +5292,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#DigitalDocument">Digital Document</a>
+<a href="#PhysicalDocument">Physical Document</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#PhysicalDocument">Physical Document</a>
+<a href="#DigitalDocument">Digital Document</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -5870,7 +5881,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb89">n77ad31ab3d674d909ec1b18e47b4fbedb89</a>
+<a href="ne18ca415df334983835e34ea5f509399b91">ne18ca415df334983835e34ea5f509399b91</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -5990,17 +6001,17 @@ td {
 </li>
 <li>
 <span>
+<a href="#Child">Child</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
 <a href="#Adolescent">Adolescent</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#Adult">Adult</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#Child">Child</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -6123,16 +6134,21 @@ td {
 <ul>
 <li>
 <span>
-<a href="#LegallyRecognizedGenderPerson">Legally Recognized Gender Person</a>
+<a href="#LegallyUnassignedGenderPerson">Legally Unassigned Gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#LegallyUnassignedGenderPerson">Legally Unassigned Gender Person</a>
+<a href="#LegallyRecognizedGenderPerson">Legally Recognized Gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
+<span>
+<a href="#MaleGenderPerson">Male-gender Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
 <span>
 <a href="#FemaleGenderPerson">Female-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -6142,20 +6158,15 @@ td {
 <a href="#NonBinaryGenderPerson">Non-binary-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
-<span class="cardinality">or</span>
-<span>
-<a href="#MaleGenderPerson">Male-gender Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
 </li>
 <li>
 <span>
-<a href="#PersonwithRegularSexChromosome">Person with Regular Sex Chromosome</a>
+<a href="#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a>
+<a href="#PersonwithRegularSexChromosome">Person with Regular Sex Chromosome</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -6199,21 +6210,16 @@ td {
 </li>
 <li>
 <span>
-<a href="#SexAtBirthAssignedPerson">Sex-at-birth-assigned Person</a>
+<a href="#Sex-at-birth-unassignedPerson">Sex-at-birth-unassigned Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Sex-at-birth-unassignedPerson">Sex-at-birth-unassigned Person</a>
+<a href="#SexAtBirthAssignedPerson">Sex-at-birth-assigned Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
-<span>
-<a href="#FemaleSexPerson">Female-sex Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
 <span>
 <a href="#MaleSexPerson">Male-sex Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -6221,6 +6227,11 @@ td {
 <span class="cardinality">or</span>
 <span>
 <a href="#IndeterminateSexPerson">Indeterminate-sex Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#FemaleSexPerson">Female-sex Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -6314,7 +6325,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb543">n77ad31ab3d674d909ec1b18e47b4fbedb543</a>
+<a href="ne18ca415df334983835e34ea5f509399b547">ne18ca415df334983835e34ea5f509399b547</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -6341,7 +6352,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb546">n77ad31ab3d674d909ec1b18e47b4fbedb546</a>
+<a href="ne18ca415df334983835e34ea5f509399b550">ne18ca415df334983835e34ea5f509399b550</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -6357,7 +6368,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb548">n77ad31ab3d674d909ec1b18e47b4fbedb548</a>
+<a href="ne18ca415df334983835e34ea5f509399b552">ne18ca415df334983835e34ea5f509399b552</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -6384,7 +6395,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb551">n77ad31ab3d674d909ec1b18e47b4fbedb551</a>
+<a href="ne18ca415df334983835e34ea5f509399b555">ne18ca415df334983835e34ea5f509399b555</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -6400,7 +6411,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb553">n77ad31ab3d674d909ec1b18e47b4fbedb553</a>
+<a href="ne18ca415df334983835e34ea5f509399b557">ne18ca415df334983835e34ea5f509399b557</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -6509,12 +6520,6 @@ td {
 </li>
 <li>
 <span>
-<a href="#SelfAwarePerson">Self-aware Person</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
 <a href="#CisgenderPerson">Cisgender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
@@ -6575,6 +6580,12 @@ td {
 </li>
 <li>
 <span>
+<a href="#SelfAwarePerson">Self-aware Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
 <a href="#SexAtBirthAssignedPerson">Sex-at-birth-assigned Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
@@ -6615,7 +6626,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb27">n77ad31ab3d674d909ec1b18e47b4fbedb27</a>
+<a href="ne18ca415df334983835e34ea5f509399b31">ne18ca415df334983835e34ea5f509399b31</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -6710,15 +6721,35 @@ td {
 <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="The property that determines that two given classes are equivalent, and that is used to specify datatype definitions. Defined in The OWL 2 Schema vocabulary (OWL 2)">Equivalentclass</a>
 </th>
 <td>
+<ul>
+<li>
 <span>
-<a href="#Self-identifiedTransgenderPerson">Self-identified Transgender Person</a>
+<a href="#SelfIdentifiedFemaleGenderPerson">Self-identified Female-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
+<a href="#SelfIdentifiedNonBinaryGenderPerson">Self-identified Non-binary-gender Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#SelfIdentifiedMaleGenderPerson">Self-identified Male-gender Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
 <a href="#SelfIdentifiedCisgenderPerson">Self-identified Cisgender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
+<span class="cardinality">or</span>
+<span>
+<a href="#Self-identifiedTransgenderPerson">Self-identified Transgender Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 <tr>
@@ -6726,30 +6757,15 @@ td {
 <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
 </th>
 <td>
-<ul>
-<li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb306">n77ad31ab3d674d909ec1b18e47b4fbedb306</a>
+<a href="ne18ca415df334983835e34ea5f509399b459">ne18ca415df334983835e34ea5f509399b459</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
 </span><br/>
 </span>
 </span>
-</li>
-<li>
-<span>
-<span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb308">n77ad31ab3d674d909ec1b18e47b4fbedb308</a>
-<span>
-<span class="cardinality">exactly</span>
-<span>1</span>
-</span><br/>
-</span>
-</span>
-</li>
-</ul>
 </td>
 </tr>
 <tr>
@@ -6766,7 +6782,25 @@ td {
 </li>
 <li>
 <span>
+<a href="#SelfIdentifiedFemaleGenderPerson">Self-identified Female-gender Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#SelfIdentifiedMaleGenderPerson">Self-identified Male-gender Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
 <a href="#SelfIdentifiedCisgenderPerson">Self-identified Cisgender Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#SelfIdentifiedNonBinaryGenderPerson">Self-identified Non-binary-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -6836,7 +6870,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb253">n77ad31ab3d674d909ec1b18e47b4fbedb253</a>
+<a href="ne18ca415df334983835e34ea5f509399b253">ne18ca415df334983835e34ea5f509399b253</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -6915,7 +6949,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb160">n77ad31ab3d674d909ec1b18e47b4fbedb160</a>
+<a href="ne18ca415df334983835e34ea5f509399b160">ne18ca415df334983835e34ea5f509399b160</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -6931,7 +6965,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb162">n77ad31ab3d674d909ec1b18e47b4fbedb162</a>
+<a href="ne18ca415df334983835e34ea5f509399b162">ne18ca415df334983835e34ea5f509399b162</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -6947,7 +6981,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb164">n77ad31ab3d674d909ec1b18e47b4fbedb164</a>
+<a href="ne18ca415df334983835e34ea5f509399b164">ne18ca415df334983835e34ea5f509399b164</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -7011,7 +7045,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb4">n77ad31ab3d674d909ec1b18e47b4fbedb4</a>
+<a href="ne18ca415df334983835e34ea5f509399b8">ne18ca415df334983835e34ea5f509399b8</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -7355,12 +7389,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#SingletonBirth">Singleton Birth</a>
+<a href="#MultipleBirthComponent">Multiple Birth Component</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#MultipleBirthComponent">Multiple Birth Component</a>
+<a href="#SingletonBirth">Singleton Birth</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -7395,7 +7429,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb475">n77ad31ab3d674d909ec1b18e47b4fbedb475</a>
+<a href="ne18ca415df334983835e34ea5f509399b479">ne18ca415df334983835e34ea5f509399b479</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -7406,7 +7440,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb477">n77ad31ab3d674d909ec1b18e47b4fbedb477</a>
+<a href="ne18ca415df334983835e34ea5f509399b481">ne18ca415df334983835e34ea5f509399b481</a>
 <span>
 <span class="cardinality">min</span>
 <span>2</span>
@@ -7577,7 +7611,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb34">n77ad31ab3d674d909ec1b18e47b4fbedb34</a>
+<a href="ne18ca415df334983835e34ea5f509399b38">ne18ca415df334983835e34ea5f509399b38</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -7637,17 +7671,17 @@ td {
 </th>
 <td>
 <span>
+<a href="#AdministrativeFemaleGender">Administrative Female Gender</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
 <a href="#AdministrativeMaleGender">Administrative Male Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#AdministrativeNonBinaryGender">Administrative Non-binary Gender</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
-<a href="#AdministrativeFemaleGender">Administrative Female Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -7672,7 +7706,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb317">n77ad31ab3d674d909ec1b18e47b4fbedb317</a>
+<a href="ne18ca415df334983835e34ea5f509399b312">ne18ca415df334983835e34ea5f509399b312</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -7777,7 +7811,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb325">n77ad31ab3d674d909ec1b18e47b4fbedb325</a>
+<a href="ne18ca415df334983835e34ea5f509399b320">ne18ca415df334983835e34ea5f509399b320</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -7929,7 +7963,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb37">n77ad31ab3d674d909ec1b18e47b4fbedb37</a>
+<a href="ne18ca415df334983835e34ea5f509399b41">ne18ca415df334983835e34ea5f509399b41</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8011,7 +8045,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb73">n77ad31ab3d674d909ec1b18e47b4fbedb73</a>
+<a href="ne18ca415df334983835e34ea5f509399b75">ne18ca415df334983835e34ea5f509399b75</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8145,7 +8179,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb39">n77ad31ab3d674d909ec1b18e47b4fbedb39</a>
+<a href="ne18ca415df334983835e34ea5f509399b43">ne18ca415df334983835e34ea5f509399b43</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8279,7 +8313,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb41">n77ad31ab3d674d909ec1b18e47b4fbedb41</a>
+<a href="ne18ca415df334983835e34ea5f509399b45">ne18ca415df334983835e34ea5f509399b45</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8352,7 +8386,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb77">n77ad31ab3d674d909ec1b18e47b4fbedb77</a>
+<a href="ne18ca415df334983835e34ea5f509399b79">ne18ca415df334983835e34ea5f509399b79</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8368,7 +8402,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb79">n77ad31ab3d674d909ec1b18e47b4fbedb79</a>
+<a href="ne18ca415df334983835e34ea5f509399b81">ne18ca415df334983835e34ea5f509399b81</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8429,7 +8463,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb2">n77ad31ab3d674d909ec1b18e47b4fbedb2</a>
+<a href="ne18ca415df334983835e34ea5f509399b6">ne18ca415df334983835e34ea5f509399b6</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -8557,12 +8591,12 @@ td {
 <ul>
 <li>
 <span>
-<a href="#SelfIdentifiedCisgenderPerson">Self-identified Cisgender Person</a>
+<a href="#ExternallyAttributedCisgenderPerson">Externally-attributed Cisgender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#ExternallyAttributedCisgenderPerson">Externally-attributed Cisgender Person</a>
+<a href="#SelfIdentifiedCisgenderPerson">Self-identified Cisgender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -8587,7 +8621,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb332">n77ad31ab3d674d909ec1b18e47b4fbedb332</a>
+<a href="ne18ca415df334983835e34ea5f509399b327">ne18ca415df334983835e34ea5f509399b327</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8688,7 +8722,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb277">n77ad31ab3d674d909ec1b18e47b4fbedb277</a>
+<a href="ne18ca415df334983835e34ea5f509399b277">ne18ca415df334983835e34ea5f509399b277</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -8879,12 +8913,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#Externally-attributedCisgenderFemalePerson">Externally-attributed Cisgender Female Person</a>
+<a href="#Externally-attributedCisgenderMalePerson">Externally-attributed Cisgender Male Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Externally-attributedCisgenderMalePerson">Externally-attributed Cisgender Male Person</a>
+<a href="#Externally-attributedCisgenderFemalePerson">Externally-attributed Cisgender Female Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -9013,7 +9047,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb181">n77ad31ab3d674d909ec1b18e47b4fbedb181</a>
+<a href="ne18ca415df334983835e34ea5f509399b181">ne18ca415df334983835e34ea5f509399b181</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -9091,17 +9125,17 @@ td {
 </th>
 <td>
 <span>
-<a href="#ExternallyAttributedMaleGender">Externally-attributed Male Gender</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
 <a href="#ExternallyAttributedFemaleGender">Externally-attributed Female Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#ExternallyAttributedNonBinaryGender">Externally-attributed Non-binary Gender</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#ExternallyAttributedMaleGender">Externally-attributed Male Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -9115,7 +9149,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb418">n77ad31ab3d674d909ec1b18e47b4fbedb418</a>
+<a href="ne18ca415df334983835e34ea5f509399b418">ne18ca415df334983835e34ea5f509399b418</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -9131,7 +9165,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb420">n77ad31ab3d674d909ec1b18e47b4fbedb420</a>
+<a href="ne18ca415df334983835e34ea5f509399b420">ne18ca415df334983835e34ea5f509399b420</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -9278,7 +9312,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb184">n77ad31ab3d674d909ec1b18e47b4fbedb184</a>
+<a href="ne18ca415df334983835e34ea5f509399b184">ne18ca415df334983835e34ea5f509399b184</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -9416,7 +9450,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb107">n77ad31ab3d674d909ec1b18e47b4fbedb107</a>
+<a href="ne18ca415df334983835e34ea5f509399b109">ne18ca415df334983835e34ea5f509399b109</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -9654,12 +9688,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#FeminineGenderExpression">Feminine Gender Expression</a>
+<a href="#ExternallyAttributedFemaleGender">Externally-attributed Female Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#ExternallyAttributedFemaleGender">Externally-attributed Female Gender</a>
+<a href="#FeminineGenderExpression">Feminine Gender Expression</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -9711,13 +9745,13 @@ td {
 </li>
 <li>
 <span>
-<a href="#Self-identifiedFemaleGender">Self-identified Female Gender</a>
+<a href="#ExternallyAttributedFemaleGender">Externally-attributed Female Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#ExternallyAttributedFemaleGender">Externally-attributed Female Gender</a>
+<a href="#Self-identifiedFemaleGender">Self-identified Female Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -9868,7 +9902,7 @@ td {
 </th>
 <td>
 <span>
-<a href="#ExternallyAttributedFemaleGenderPerson">Externally-attributed Female-gender Person</a>
+<a href="#Feminine-presentingPerson">Feminine-presenting Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -9878,7 +9912,7 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Feminine-presentingPerson">Feminine-presenting Person</a>
+<a href="#ExternallyAttributedFemaleGenderPerson">Externally-attributed Female-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -9890,7 +9924,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb401">n77ad31ab3d674d909ec1b18e47b4fbedb401</a>
+<a href="ne18ca415df334983835e34ea5f509399b396">ne18ca415df334983835e34ea5f509399b396</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -9982,12 +10016,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#PhenotypicFemale-sexPerson">Phenotypic Female-sex Person</a>
+<a href="#KaryotypicFemaleSexPerson">Karyotypic Female-sex Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#KaryotypicFemaleSexPerson">Karyotypic Female-sex Person</a>
+<a href="#PhenotypicFemale-sexPerson">Phenotypic Female-sex Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -10001,7 +10035,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb342">n77ad31ab3d674d909ec1b18e47b4fbedb342</a>
+<a href="ne18ca415df334983835e34ea5f509399b337">ne18ca415df334983835e34ea5f509399b337</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -10012,7 +10046,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb344">n77ad31ab3d674d909ec1b18e47b4fbedb344</a>
+<a href="ne18ca415df334983835e34ea5f509399b339">ne18ca415df334983835e34ea5f509399b339</a>
 <span>
 <span class="cardinality">max</span>
 <span>3</span>
@@ -10194,7 +10228,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb47">n77ad31ab3d674d909ec1b18e47b4fbedb47</a>
+<a href="ne18ca415df334983835e34ea5f509399b51">ne18ca415df334983835e34ea5f509399b51</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -10240,7 +10274,7 @@ td {
 <ul>
 <li>
 <span>
-<a href="#MaleGender">Male Gender</a>
+<a href="#NonBinaryGender">Non-binary Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -10250,7 +10284,7 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#NonBinaryGender">Non-binary Gender</a>
+<a href="#MaleGender">Male Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -10320,6 +10354,12 @@ td {
 </li>
 <li>
 <span>
+<a href="#SelfIdentifiedGender">Self-identified Gender</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
 <a href="#ExternallyAttributedGender">Externally-attributed Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
@@ -10345,12 +10385,6 @@ td {
 <li>
 <span>
 <a href="#NonBinaryGender">Non-binary Gender</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#SelfIdentifiedGender">Self-identified Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -10393,7 +10427,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb191">n77ad31ab3d674d909ec1b18e47b4fbedb191</a>
+<a href="ne18ca415df334983835e34ea5f509399b191">ne18ca415df334983835e34ea5f509399b191</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -10550,7 +10584,7 @@ td {
 </th>
 <td>
 <span>
-<a href="#MasculineGenderExpression">Masculine Gender Expression</a>
+<a href="#FeminineGenderExpression">Feminine Gender Expression</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -10560,7 +10594,7 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#FeminineGenderExpression">Feminine Gender Expression</a>
+<a href="#MasculineGenderExpression">Masculine Gender Expression</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -10644,12 +10678,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#Cisgender">Cisgender</a>
+<a href="#Transgender">Transgender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Transgender">Transgender</a>
+<a href="#Cisgender">Cisgender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -10893,7 +10927,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb287">n77ad31ab3d674d909ec1b18e47b4fbedb287</a>
+<a href="ne18ca415df334983835e34ea5f509399b287">ne18ca415df334983835e34ea5f509399b287</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -11087,7 +11121,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb195">n77ad31ab3d674d909ec1b18e47b4fbedb195</a>
+<a href="ne18ca415df334983835e34ea5f509399b195">ne18ca415df334983835e34ea5f509399b195</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -11215,7 +11249,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb17">n77ad31ab3d674d909ec1b18e47b4fbedb17</a>
+<a href="ne18ca415df334983835e34ea5f509399b21">ne18ca415df334983835e34ea5f509399b21</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -11270,12 +11304,12 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#LegalNonBinaryGender">Legal Non-binary Gender</a>
+<a href="#LegalMaleGender">Legal Male Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#LegalMaleGender">Legal Male Gender</a>
+<a href="#LegalNonBinaryGender">Legal Non-binary Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -11289,7 +11323,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb294">n77ad31ab3d674d909ec1b18e47b4fbedb294</a>
+<a href="ne18ca415df334983835e34ea5f509399b294">ne18ca415df334983835e34ea5f509399b294</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -11305,7 +11339,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb296">n77ad31ab3d674d909ec1b18e47b4fbedb296</a>
+<a href="ne18ca415df334983835e34ea5f509399b296">ne18ca415df334983835e34ea5f509399b296</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -11469,7 +11503,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb19">n77ad31ab3d674d909ec1b18e47b4fbedb19</a>
+<a href="ne18ca415df334983835e34ea5f509399b23">ne18ca415df334983835e34ea5f509399b23</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -11530,7 +11564,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb21">n77ad31ab3d674d909ec1b18e47b4fbedb21</a>
+<a href="ne18ca415df334983835e34ea5f509399b25">ne18ca415df334983835e34ea5f509399b25</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -11642,7 +11676,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb23">n77ad31ab3d674d909ec1b18e47b4fbedb23</a>
+<a href="ne18ca415df334983835e34ea5f509399b27">ne18ca415df334983835e34ea5f509399b27</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -11754,7 +11788,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb25">n77ad31ab3d674d909ec1b18e47b4fbedb25</a>
+<a href="ne18ca415df334983835e34ea5f509399b29">ne18ca415df334983835e34ea5f509399b29</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -11817,7 +11851,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb114">n77ad31ab3d674d909ec1b18e47b4fbedb114</a>
+<a href="ne18ca415df334983835e34ea5f509399b116">ne18ca415df334983835e34ea5f509399b116</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -11910,12 +11944,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#MaleSex">Male Sex</a>
+<a href="#MaleGender">Male Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#MaleGender">Male Gender</a>
+<a href="#MaleSex">Male Sex</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -12053,12 +12087,12 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#ExternallyAttributedMaleGender">Externally-attributed Male Gender</a>
+<a href="#Self-identifiedMaleGender">Self-identified Male Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Self-identifiedMaleGender">Self-identified Male Gender</a>
+<a href="#ExternallyAttributedMaleGender">Externally-attributed Male Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -12105,13 +12139,13 @@ td {
 </li>
 <li>
 <span>
-<a href="#Self-identifiedMaleGender">Self-identified Male Gender</a>
+<a href="#ExternallyAttributedMaleGender">Externally-attributed Male Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#ExternallyAttributedMaleGender">Externally-attributed Male Gender</a>
+<a href="#Self-identifiedMaleGender">Self-identified Male Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -12262,7 +12296,7 @@ td {
 </th>
 <td>
 <span>
-<a href="#Masculine-presentingPerson">Masculine-presenting Person</a>
+<a href="#SelfIdentifiedMaleGenderPerson">Self-identified Male-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -12272,7 +12306,7 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#SelfIdentifiedMaleGenderPerson">Self-identified Male-gender Person</a>
+<a href="#Masculine-presentingPerson">Masculine-presenting Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -12284,7 +12318,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb412">n77ad31ab3d674d909ec1b18e47b4fbedb412</a>
+<a href="ne18ca415df334983835e34ea5f509399b407">ne18ca415df334983835e34ea5f509399b407</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -12376,12 +12410,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#PhenotypicMale-sexPerson">Phenotypic Male-sex Person</a>
+<a href="#KaryotypicMaleSexPerson">Karyotypic Male-sex Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#KaryotypicMaleSexPerson">Karyotypic Male-sex Person</a>
+<a href="#PhenotypicMale-sexPerson">Phenotypic Male-sex Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -12395,7 +12429,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb369">n77ad31ab3d674d909ec1b18e47b4fbedb369</a>
+<a href="ne18ca415df334983835e34ea5f509399b364">ne18ca415df334983835e34ea5f509399b364</a>
 <span>
 <span class="cardinality">min</span>
 <span>1</span>
@@ -12406,7 +12440,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb371">n77ad31ab3d674d909ec1b18e47b4fbedb371</a>
+<a href="ne18ca415df334983835e34ea5f509399b366">ne18ca415df334983835e34ea5f509399b366</a>
 <span>
 <span class="cardinality">max</span>
 <span>3</span>
@@ -12532,12 +12566,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#MaleGenderPerson">Male-gender Person</a>
+<a href="#MaleSexPerson">Male-sex Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#MaleSexPerson">Male-sex Person</a>
+<a href="#MaleGenderPerson">Male-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -12549,7 +12583,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb208">n77ad31ab3d674d909ec1b18e47b4fbedb208</a>
+<a href="ne18ca415df334983835e34ea5f509399b208">ne18ca415df334983835e34ea5f509399b208</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -12676,7 +12710,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb57">n77ad31ab3d674d909ec1b18e47b4fbedb57</a>
+<a href="ne18ca415df334983835e34ea5f509399b61">ne18ca415df334983835e34ea5f509399b61</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -12730,12 +12764,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#Self-identifiedNon-binaryGender">Self-identified Non-binary Gender</a>
+<a href="#ExternallyAttributedNonBinaryGender">Externally-attributed Non-binary Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#ExternallyAttributedNonBinaryGender">Externally-attributed Non-binary Gender</a>
+<a href="#Self-identifiedNon-binaryGender">Self-identified Non-binary Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -12908,7 +12942,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb214">n77ad31ab3d674d909ec1b18e47b4fbedb214</a>
+<a href="ne18ca415df334983835e34ea5f509399b214">ne18ca415df334983835e34ea5f509399b214</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -12979,12 +13013,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#IndeterminateSex">Indeterminate Sex</a>
+<a href="#NonBinaryGender">Non-binary Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#NonBinaryGender">Non-binary Gender</a>
+<a href="#IndeterminateSex">Indeterminate Sex</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -13076,12 +13110,12 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#ExternallyAttributedNonBinaryGenderPerson">Externally-attributed Non-binary-gender Person</a>
+<a href="#SelfIdentifiedNonBinaryGenderPerson">Self-identified Non-binary-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Self-identifiedNon-binary-genderPerson">Self-identified Non-binary-gender Person</a>
+<a href="#ExternallyAttributedNonBinaryGenderPerson">Externally-attributed Non-binary-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -13093,7 +13127,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb376">n77ad31ab3d674d909ec1b18e47b4fbedb376</a>
+<a href="ne18ca415df334983835e34ea5f509399b371">ne18ca415df334983835e34ea5f509399b371</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -13121,13 +13155,13 @@ td {
 </li>
 <li>
 <span>
-<a href="#Self-identifiedNon-binary-genderPerson">Self-identified Non-binary-gender Person</a>
+<a href="#ExternallyAttributedNonBinaryGenderPerson">Externally-attributed Non-binary-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#ExternallyAttributedNonBinaryGenderPerson">Externally-attributed Non-binary-gender Person</a>
+<a href="#SelfIdentifiedNonBinaryGenderPerson">Self-identified Non-binary-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -13171,7 +13205,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb59">n77ad31ab3d674d909ec1b18e47b4fbedb59</a>
+<a href="ne18ca415df334983835e34ea5f509399b63">ne18ca415df334983835e34ea5f509399b63</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -13292,7 +13326,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb128">n77ad31ab3d674d909ec1b18e47b4fbedb128</a>
+<a href="ne18ca415df334983835e34ea5f509399b130">ne18ca415df334983835e34ea5f509399b130</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -13424,7 +13458,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb230">n77ad31ab3d674d909ec1b18e47b4fbedb230</a>
+<a href="ne18ca415df334983835e34ea5f509399b230">ne18ca415df334983835e34ea5f509399b230</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -13556,7 +13590,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb232">n77ad31ab3d674d909ec1b18e47b4fbedb232</a>
+<a href="ne18ca415df334983835e34ea5f509399b232">ne18ca415df334983835e34ea5f509399b232</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -13618,7 +13652,7 @@ td {
 </th>
 <td>
 <span>
-<a href="#PhenotypicMaleSex">Phenotypic Male Sex</a>
+<a href="#PhenotypicAmbiguousSex">Phenotypic Ambiguous Sex</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -13628,7 +13662,7 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#PhenotypicAmbiguousSex">Phenotypic Ambiguous Sex</a>
+<a href="#PhenotypicMaleSex">Phenotypic Male Sex</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -13717,7 +13751,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb62">n77ad31ab3d674d909ec1b18e47b4fbedb62</a>
+<a href="ne18ca415df334983835e34ea5f509399b66">ne18ca415df334983835e34ea5f509399b66</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -13853,7 +13887,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb389">n77ad31ab3d674d909ec1b18e47b4fbedb389</a>
+<a href="ne18ca415df334983835e34ea5f509399b384">ne18ca415df334983835e34ea5f509399b384</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -13869,7 +13903,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb391">n77ad31ab3d674d909ec1b18e47b4fbedb391</a>
+<a href="ne18ca415df334983835e34ea5f509399b386">ne18ca415df334983835e34ea5f509399b386</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -13992,12 +14026,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#GenderExpression">Gender Expression</a>
+<a href="#SelfIdentifiedGender">Self-identified Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#SelfIdentifiedGender">Self-identified Gender</a>
+<a href="#GenderExpression">Gender Expression</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -14010,17 +14044,47 @@ td {
 <ul>
 <li>
 <span>
-<a href="#GenderExpression">Gender Expression</a>
+<a href="#SelfIdentifiedGender">Self-identified Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#SelfIdentifiedGender">Self-identified Gender</a>
+<a href="#GenderExpression">Gender Expression</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
 </ul>
+</td>
+</tr>
+</table>
+</div><div class="property entity" id="Self-identifiedAgenderPerson">
+<h3>Self-identified Agender Person
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/health-ri/ontology#SelfIdentifiedAgenderPerson</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A Self-identified Agender Person is a self-identified non-binary-gender person whose self-classification is not characterized by any self-identified gender.</p>
+<p>This description clarifies that the defining feature of the class is the absence of self-identified gender. It supports a precise understanding of agender self-classification as a distinct form of non-binary self-classification.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="#SelfIdentifiedNonBinaryGenderPerson">Self-identified Non-binary-gender Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
 </td>
 </tr>
 </table>
@@ -14160,12 +14224,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#Self-identifiedCisgenderFemalePerson">Self-identified Cisgender Female Person</a>
+<a href="#Self-identifiedCisgenderMalePerson">Self-identified Cisgender Male Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Self-identifiedCisgenderMalePerson">Self-identified Cisgender Male Person</a>
+<a href="#Self-identifiedCisgenderFemalePerson">Self-identified Cisgender Female Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -14230,22 +14294,6 @@ td {
 </ul>
 </td>
 </tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-</th>
-<td>
-<span>
-<span>
-<a href="http://purl.org/nemo/gufo#inheresIn">gufo:inheresIn</a>
-<span>
-<span class="cardinality">min</span>
-<span>1</span>
-</span><br/>
-</span>
-</span>
-</td>
-</tr>
 </table>
 </div><div class="property entity" id="SelfIdentifiedFemaleGenderPerson">
 <h3>Self-identified Female-gender Person
@@ -14270,10 +14318,20 @@ td {
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
+<ul>
+<li>
 <span>
 <a href="#FemaleGenderPerson">Female-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
+</li>
+<li>
+<span>
+<a href="#SelfAwarePerson">Self-aware Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 <tr>
@@ -14283,7 +14341,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb132">n77ad31ab3d674d909ec1b18e47b4fbedb132</a>
+<a href="ne18ca415df334983835e34ea5f509399b133">ne18ca415df334983835e34ea5f509399b133</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -14388,6 +14446,12 @@ td {
 <ul>
 <li>
 <span>
+<a href="#Self-identifiedNon-binaryGender">Self-identified Non-binary Gender</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
 <a href="#Self-identifiedFemaleGender">Self-identified Female Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
@@ -14395,12 +14459,6 @@ td {
 <li>
 <span>
 <a href="#Self-identifiedMaleGender">Self-identified Male Gender</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#Self-identifiedNon-binaryGender">Self-identified Non-binary Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -14446,22 +14504,6 @@ td {
 </ul>
 </td>
 </tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-</th>
-<td>
-<span>
-<span>
-<a href="http://purl.org/nemo/gufo#inheresIn">gufo:inheresIn</a>
-<span>
-<span class="cardinality">min</span>
-<span>1</span>
-</span><br/>
-</span>
-</span>
-</td>
-</tr>
 </table>
 </div><div class="property entity" id="SelfIdentifiedMaleGenderPerson">
 <h3>Self-identified Male-gender Person
@@ -14486,10 +14528,20 @@ td {
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
+<ul>
+<li>
 <span>
 <a href="#MaleGenderPerson">Male-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
+</li>
+<li>
+<span>
+<a href="#SelfAwarePerson">Self-aware Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 <tr>
@@ -14499,7 +14551,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb135">n77ad31ab3d674d909ec1b18e47b4fbedb135</a>
+<a href="ne18ca415df334983835e34ea5f509399b135">ne18ca415df334983835e34ea5f509399b135</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -14575,7 +14627,7 @@ td {
 </td>
 </tr>
 </table>
-</div><div class="property entity" id="Self-identifiedNon-binary-genderPerson">
+</div><div class="property entity" id="SelfIdentifiedNonBinaryGenderPerson">
 <h3>Self-identified Non-binary-gender Person
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </h3>
@@ -14598,10 +14650,20 @@ td {
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
 </th>
 <td>
+<ul>
+<li>
 <span>
 <a href="#NonBinaryGenderPerson">Non-binary-gender Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
+</li>
+<li>
+<span>
+<a href="#SelfAwarePerson">Self-aware Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 <tr>
@@ -14611,13 +14673,34 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb68">n77ad31ab3d674d909ec1b18e47b4fbedb68</a>
+<a href="ne18ca415df334983835e34ea5f509399b306">ne18ca415df334983835e34ea5f509399b306</a>
 <span>
-<span class="cardinality">exactly</span>
+<span class="cardinality">max</span>
 <span>1</span>
 </span><br/>
 </span>
 </span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+</th>
+<td>
+<ul>
+<li>
+<span>
+<a href="#Self-identifiedAgenderPerson">Self-identified Agender Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#Self-identifiedTwo-genderPerson">Self-identified Two-gender Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 </table>
@@ -14660,6 +14743,67 @@ td {
 </td>
 </tr>
 </table>
+</div><div class="property entity" id="Self-identifiedTwo-genderPerson">
+<h3>Self-identified Two-gender Person
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/health-ri/ontology#SelfIdentifiedTwoGenderPerson</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A Self-identified Two-gender Person is a person whose self-identification is characterized by one self-identified male gender and one self-identified female gender, rather than by a self-identified non-binary gender.</p>
+<p>This description clarifies that the class concerns a specific form of non-binary self-classification grounded in the joint presence of male and female self-identification. It helps distinguish this case from other non-binary self-classifications that are not characterized in this way.</p></td>
+</tr><tr><th><a class="hover_property" href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource. Defined in SKOS.">Synonyms</a></th><td>Self-identified Two Spirit Person</td></tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="#SelfIdentifiedNonBinaryGenderPerson">Self-identified Non-binary-gender Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+</th>
+<td>
+<ul>
+<li>
+<span>
+<span>
+<a href="ne18ca415df334983835e34ea5f509399b2">ne18ca415df334983835e34ea5f509399b2</a>
+<span>
+<span class="cardinality">exactly</span>
+<span>1</span>
+</span><br/>
+</span>
+</span>
+</li>
+<li>
+<span>
+<span>
+<a href="ne18ca415df334983835e34ea5f509399b4">ne18ca415df334983835e34ea5f509399b4</a>
+<span>
+<span class="cardinality">exactly</span>
+<span>1</span>
+</span><br/>
+</span>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
 </div><div class="property entity" id="Sex">
 <h3>Sex
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -14694,7 +14838,7 @@ td {
 </th>
 <td>
 <span>
-<a href="#MaleSex">Male Sex</a>
+<a href="#FemaleSex">Female Sex</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -14704,7 +14848,7 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#FemaleSex">Female Sex</a>
+<a href="#MaleSex">Male Sex</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -14810,12 +14954,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#Sex-at-birthIndeterminateSex">Sex-at-birth Indeterminate Sex</a>
+<a href="#Sex-at-birthFemaleSex">Sex-at-birth Female Sex</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Sex-at-birthFemaleSex">Sex-at-birth Female Sex</a>
+<a href="#Sex-at-birthIndeterminateSex">Sex-at-birth Indeterminate Sex</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -14904,7 +15048,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb30">n77ad31ab3d674d909ec1b18e47b4fbedb30</a>
+<a href="ne18ca415df334983835e34ea5f509399b34">ne18ca415df334983835e34ea5f509399b34</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -15038,12 +15182,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#SexAtBirthFemaleSexPerson">Sex-at-birth Female-sex Person</a>
+<a href="#SexAtBirthMaleSexPerson">Sex-at-birth Male-sex Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#SexAtBirthMaleSexPerson">Sex-at-birth Male-sex Person</a>
+<a href="#SexAtBirthFemaleSexPerson">Sex-at-birth Female-sex Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -15189,7 +15333,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb397">n77ad31ab3d674d909ec1b18e47b4fbedb397</a>
+<a href="ne18ca415df334983835e34ea5f509399b392">ne18ca415df334983835e34ea5f509399b392</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -15333,7 +15477,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb70">n77ad31ab3d674d909ec1b18e47b4fbedb70</a>
+<a href="ne18ca415df334983835e34ea5f509399b72">ne18ca415df334983835e34ea5f509399b72</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -15456,7 +15600,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb399">n77ad31ab3d674d909ec1b18e47b4fbedb399</a>
+<a href="ne18ca415df334983835e34ea5f509399b394">ne18ca415df334983835e34ea5f509399b394</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -15539,12 +15683,12 @@ td {
 <ul>
 <li>
 <span>
-<a href="#SexAtBirthMaleSexPerson">Sex-at-birth Male-sex Person</a>
+<a href="#SexAtBirthFemaleSexPerson">Sex-at-birth Female-sex Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#SexAtBirthFemaleSexPerson">Sex-at-birth Female-sex Person</a>
+<a href="#SexAtBirthMaleSexPerson">Sex-at-birth Male-sex Person</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -15576,7 +15720,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb491">n77ad31ab3d674d909ec1b18e47b4fbedb491</a>
+<a href="ne18ca415df334983835e34ea5f509399b495">ne18ca415df334983835e34ea5f509399b495</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -15587,7 +15731,7 @@ td {
 <li>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb493">n77ad31ab3d674d909ec1b18e47b4fbedb493</a>
+<a href="ne18ca415df334983835e34ea5f509399b497">ne18ca415df334983835e34ea5f509399b497</a>
 <span>
 <span class="cardinality">exactly</span>
 <span>1</span>
@@ -15722,17 +15866,17 @@ td {
 <ul>
 <li>
 <span>
-<a href="#Female">Female</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-<span class="cardinality">or</span>
-<span>
 <a href="#NonBinarySexGender">Non-binary Sex-Gender</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
 <a href="#Male">Male</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#Female">Female</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </li>
@@ -15993,7 +16137,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb242">n77ad31ab3d674d909ec1b18e47b4fbedb242</a>
+<a href="ne18ca415df334983835e34ea5f509399b242">ne18ca415df334983835e34ea5f509399b242</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -16060,7 +16204,7 @@ td {
 </th>
 <td>
 <span>
-<a href="#IndeterminateVisualSexCharacteristic">Indeterminate Visual Sex Characteristic</a>
+<a href="#Male-typicalVisualSexCharacteristic">Male-typical Visual Sex Characteristic</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
@@ -16070,7 +16214,7 @@ td {
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Male-typicalVisualSexCharacteristic">Male-typical Visual Sex Characteristic</a>
+<a href="#IndeterminateVisualSexCharacteristic">Indeterminate Visual Sex Characteristic</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -16155,7 +16299,7 @@ td {
 <td>
 <span>
 <span>
-<a href="n77ad31ab3d674d909ec1b18e47b4fbedb247">n77ad31ab3d674d909ec1b18e47b4fbedb247</a>
+<a href="ne18ca415df334983835e34ea5f509399b247">ne18ca415df334983835e34ea5f509399b247</a>
 <span>
 <span class="cardinality">some</span>
 <span>
@@ -16430,12 +16574,12 @@ td {
 </th>
 <td>
 <span>
-<a href="#Agent">Agent</a>
+<a href="#Object">Object</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 <span class="cardinality">or</span>
 <span>
-<a href="#Object">Object</a>
+<a href="#Agent">Agent</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -18223,7 +18367,7 @@ td {
 <span id="y">y</span>
 <span>LODE</span>
 </a>
-<a href="https://github.com/rdflib/pyLODE/release/3.2.3" id="version">3.2.3</a>
+<a href="https://github.com/rdflib/pyLODE/release/3.3.4" id="version">3.3.4</a>
 <span> with the </span>
 <a href="https://w3id.org/profile/ontpub" id="profile">OntPub</a>
 <span>profile</span>
@@ -18241,7 +18385,7 @@ td {
 <h4>
 <a href="#classes">Classes</a>
 </h4>
-<ul class="second"><li><a href="#pkg-biology">Package: Biology</a><ul class="third"><li><a href="#AcquiredHealthCondition">Acquired Health Condition</a></li><li><a href="#Allosome">Allosome</a></li><li><a href="#AllosomeX">Allosome X</a></li><li><a href="#AllosomeY">Allosome Y</a></li><li><a href="#Animal">Animal</a></li><li><a href="#CellularEntity">Cellular Entity</a></li><li><a href="#Chromosome">Chromosome</a></li><li><a href="#Condition">Condition</a></li><li><a href="#CongenitalHealthCondition">Congenital Health Condition</a></li><li><a href="#DeadCellularEntity">Dead Cellular Entity</a></li><li><a href="#DiploidCell">Diploid Cell</a></li><li><a href="#Disease">Disease</a></li><li><a href="#EstablishedHealthCondition">Established Health Condition</a></li><li><a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a></li><li><a href="#ExternallyCausedHealthCondition">Externally-caused Health Condition</a></li><li><a href="#FunctionalHealthCondition">Functional Health Condition</a></li><li><a href="#Gamete">Gamete</a></li><li><a href="#HaploidCell">Haploid Cell</a></li><li><a href="#HealthCondition">Health Condition</a></li><li><a href="#HumanCell">Human Cell</a></li><li><a href="#IdiopathicHealthCondition">Idiopathic Health Condition</a></li><li><a href="#InherentHealthCondition">Inherent Health Condition</a></li><li><a href="#Injury">Injury</a></li><li><a href="#KaryotypicFemaleSexPerson">Karyotypic Female-sex Person</a></li><li><a href="#KaryotypicMaleSexPerson">Karyotypic Male-sex Person</a></li><li><a href="#KaryotypicalIndeterminatePerson">Karyotypical Indeterminate Person</a></li><li><a href="#KnownOriginHealthCondition">Known-Origin Health Condition</a></li><li><a href="#LivingCellularEntity">Living Cellular Entity</a></li><li><a href="#Non-HumanAnimal">Non-Human Animal</a></li><li><a href="#NonInjuryHealthCondition">Non-injury Health Condition</a></li><li><a href="#Non-PathologicalHealthCondition">Non-Pathological Health Condition</a></li><li><a href="#NonStructuralHealthCondition">Non-structural Health Condition</a></li><li><a href="#NonTraumaticHealthCondition">Non-traumatic Health Condition</a></li><li><a href="#PathologicalHealthCondition">Pathological Health Condition</a></li><li><a href="#PersonwithRegularSexChromosome">Person with Regular Sex Chromosome</a></li><li><a href="#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a></li><li><a href="#Polyploid">Polyploid</a></li><li><a href="#PsychologicalHealthCondition">Psychological Health Condition</a></li><li><a href="#RegularKaryotypicalFemalePerson">Regular Karyotypical Female Person</a></li><li><a href="#RegularKaryotypicalMalePerson">Regular Karyotypical Male Person</a></li><li><a href="#Risk-basedHealthCondition">Risk-based Health Condition</a></li><li><a href="#StructuralHealthCondition">Structural Health Condition</a></li><li><a href="#TraumaticHealthCondition">Traumatic Health Condition</a></li><li><a href="#VariantKaryotypicalFemalePerson">Variant Karyotypical Female Person</a></li><li><a href="#VariantKaryotypicalMalePerson">Variant Karyotypical Male Person</a></li></ul></li><li><a href="#pkg-diagnosis">Package: Diagnosis</a><ul class="third"><li><a href="#AdministrativeCodingDiagnosis">Administrative Coding Diagnosis</a></li><li><a href="#AntemortemDiagnosis">Antemortem Diagnosis</a></li><li><a href="#Care-orientedDiagnosis">Care-oriented Diagnosis</a></li><li><a href="#CellularEntityDiagnosis">Cellular Entity Diagnosis</a></li><li><a href="#ClinicalDiagnosis">Clinical Diagnosis</a></li><li><a href="#ConcludedDiagnosticRelation">Concluded Diagnostic Relation</a></li><li><a href="#ConclusiveDiagnosticAssessment">Conclusive Diagnostic Assessment</a></li><li><a href="#ConditionIndicator">Condition Indicator</a></li><li><a href="#DiagnosedBiologicalPart">Diagnosed Biological Part</a></li><li><a href="#DiagnosedCellularEntity">Diagnosed Cellular Entity</a></li><li><a href="#DiagnosedEntity">Diagnosed Entity</a></li><li><a href="#DiagnosedGroup">Diagnosed Group</a></li><li><a href="#DiagnosedSpecimen">Diagnosed Specimen</a></li><li><a href="#DiagnosingAgent">Diagnosing Agent</a></li><li><a href="#DiagnosingArtificialAgent">Diagnosing Artificial Agent</a></li><li><a href="#DiagnosingPerson">Diagnosing Person</a></li><li><a href="#Diagnosis">Diagnosis</a></li><li><a href="#DiagnosisSuspicion">Diagnosis Suspicion</a></li><li><a href="#DiagnosticAssessment">Diagnostic Assessment</a></li><li><a href="#DiagnosticAssessmentOutcome">Diagnostic Assessment Outcome</a></li><li><a href="#DiagnosticMethod">Diagnostic Method</a></li><li><a href="#DiagnosticOutcomeIssuer">Diagnostic Outcome Issuer</a></li><li><a href="#DiagnosticRelation">Diagnostic Relation</a></li><li><a href="#EpidemiologicalDiagnosis">Epidemiological Diagnosis</a></li><li><a href="#ExternalDiagnosis">External Diagnosis</a></li><li><a href="#HealthcareDiagnosis">Healthcare Diagnosis</a></li><li><a href="#HumanHealthcareDiagnosis">Human Healthcare Diagnosis</a></li><li><a href="#InconclusiveDiagnosticAssessment">Inconclusive Diagnostic Assessment</a></li><li><a href="#LaboratoryDiagnosis">Laboratory Diagnosis</a></li><li><a href="#LaypersonDiagnosingAgent">Layperson Diagnosing Agent</a></li><li><a href="#NegativeDiagnosisAssessment">Negative Diagnosis Assessment</a></li><li><a href="#NoDiagnosisOutcome">No-Diagnosis Outcome</a></li><li><a href="#PositiveDiagnosisAssessment">Positive Diagnosis Assessment</a></li><li><a href="#PostmortemDiagnosis">Postmortem Diagnosis</a></li><li><a href="#ProfessionalDiagnosingAgent">Professional Diagnosing Agent</a></li><li><a href="#RadiologicalDiagnosis">Radiological Diagnosis</a></li><li><a href="#ResearchDiagnosis">Research Diagnosis</a></li><li><a href="#Self-diagnosis">Self-diagnosis</a></li><li><a href="#SurveillanceDiagnosis">Surveillance Diagnosis</a></li><li><a href="#VeterinaryDiagnosis">Veterinary Diagnosis</a></li></ul></li><li><a href="#pkg-general">Package: General</a><ul class="third"><li><a href="#Address">Address</a></li><li><a href="#AddressablePlace">Addressable Place</a></li><li><a href="#ArtificialAgent">Artificial Agent</a></li><li><a href="#Belief">Belief</a></li><li><a href="#Date">Date</a></li><li><a href="#DigitalDocument">Digital Document</a></li><li><a href="#Document">Document</a></li><li><a href="#Government">Government</a></li><li><a href="#IndividualAgent">Individual Agent</a></li><li><a href="#Month">Month</a></li><li><a href="#OffsetDateTime">OffsetDateTime</a></li><li><a href="#Organization">Organization</a></li><li><a href="#PhysicalDocument">Physical Document</a></li><li><a href="#SocialAgent">Social Agent</a></li></ul></li><li><a href="#pkg-person">Package: Person</a><ul class="third"><li><a href="#Adolescent">Adolescent</a></li><li><a href="#Adult">Adult</a></li><li><a href="#Child">Child</a></li><li><a href="#DeadPerson">Dead Person</a></li><li><a href="#HealthcareProfessional">Healthcare Professional</a></li><li><a href="#LivingPerson">Living Person</a></li><li><a href="#Non-self-awarePerson">Non-self-aware Person</a></li><li><a href="#Person">Person</a></li><li><a href="#Person'sDeath">Person's Death</a></li><li><a href="#Person'sDeathCause">Person's Death Cause</a></li><li><a href="#SelfAwarePerson">Self-aware Person</a></li></ul></li><li><a href="#pkg-personbirth">Package: Person Birth</a><ul class="third"><li><a href="#Birth">Birth</a></li><li><a href="#BirthBiologicalProvenance">Birth Biological Provenance</a></li><li><a href="#BirthPlace">Birth Place</a></li><li><a href="#GeneticFather">Genetic Father</a></li><li><a href="#GeneticMother">Genetic Mother</a></li><li><a href="#GestationalCarrier">Gestational Carrier</a></li><li><a href="#MultipleBirth">Multiple Birth</a></li><li><a href="#MultipleBirthComponent">Multiple Birth Component</a></li><li><a href="#SingleBirth">Single Birth</a></li><li><a href="#SingletonBirth">Singleton Birth</a></li></ul></li><li><a href="#pkg-sexandgender">Package: Sex and Gender</a><ul class="third"><li><a href="#AdministrativeFemaleGender">Administrative Female Gender</a></li><li><a href="#AdministrativeFemaleGenderPerson">Administrative Female-gender Person</a></li><li><a href="#AdministrativeGender">Administrative Gender</a></li><li><a href="#AdministrativeGenderRecognition">Administrative Gender Recognition</a></li><li><a href="#AdministrativeGenderRecognitionAgent">Administrative Gender Recognition Agent</a></li><li><a href="#AdministrativeGenderRecognitionDocument">Administrative Gender Recognition Document</a></li><li><a href="#AdministrativeGenderRecognizingOrganization">Administrative Gender Recognizing Organization</a></li><li><a href="#AdministrativeMaleGender">Administrative Male Gender</a></li><li><a href="#AdministrativeMaleGenderPerson">Administrative Male-gender Person</a></li><li><a href="#AdministrativeNonBinaryGender">Administrative Non-binary Gender</a></li><li><a href="#AdministrativeNonBinaryGenderPerson">Administrative Non-binary-gender Person</a></li><li><a href="#AdministrativelyRecognizedGenderPerson">Administratively Recognized Gender Person</a></li><li><a href="#BirthNotification">Birth Notification</a></li><li><a href="#Birth-relatedLegislationRule">Birth-related Legislation Rule</a></li><li><a href="#Cisgender">Cisgender</a></li><li><a href="#CisgenderPerson">Cisgender Person</a></li><li><a href="#ExternallyGenderAttributedPerson">Externally Gender-attributed Person</a></li><li><a href="#Externally-attributedCisgenderFemalePerson">Externally-attributed Cisgender Female Person</a></li><li><a href="#Externally-attributedCisgenderMalePerson">Externally-attributed Cisgender Male Person</a></li><li><a href="#ExternallyAttributedCisgenderPerson">Externally-attributed Cisgender Person</a></li><li><a href="#ExternallyAttributedFemaleGender">Externally-attributed Female Gender</a></li><li><a href="#ExternallyAttributedFemaleGenderPerson">Externally-attributed Female-gender Person</a></li><li><a href="#ExternallyAttributedGender">Externally-attributed Gender</a></li><li><a href="#ExternallyAttributedMaleGender">Externally-attributed Male Gender</a></li><li><a href="#ExternallyAttributedMaleGenderPerson">Externally-attributed Male-gender Person</a></li><li><a href="#ExternallyAttributedNonBinaryGender">Externally-attributed Non-binary Gender</a></li><li><a href="#ExternallyAttributedNonBinaryGenderPerson">Externally-attributed Non-binary-gender Person</a></li><li><a href="#Externally-attributedTransgenderPerson">Externally-attributed Transgender Person</a></li><li><a href="#Female">Female</a></li><li><a href="#FemaleCisgenderPerson">Female Cisgender Person</a></li><li><a href="#FemaleGender">Female Gender</a></li><li><a href="#FemaleSex">Female Sex</a></li><li><a href="#FemaleGenderPerson">Female-gender Person</a></li><li><a href="#FemaleSexPerson">Female-sex Person</a></li><li><a href="#Female-typicalDimorphicCharacteristic">Female-typical Dimorphic Characteristic</a></li><li><a href="#Female-typicalVisualSexCharacteristic">Female-typical Visual Sex Characteristic</a></li><li><a href="#FeminineGenderExpression">Feminine Gender Expression</a></li><li><a href="#Feminine-presentingPerson">Feminine-presenting Person</a></li><li><a href="#Gender">Gender</a></li><li><a href="#GenderAttribution">Gender Attribution</a></li><li><a href="#GenderAttributor">Gender Attributor</a></li><li><a href="#GenderExpression">Gender Expression</a></li><li><a href="#GenderModality">Gender Modality</a></li><li><a href="#IndeterminateDimorphicCharacteristic">Indeterminate Dimorphic Characteristic</a></li><li><a href="#IndeterminateSex">Indeterminate Sex</a></li><li><a href="#IndeterminateVisualSexCharacteristic">Indeterminate Visual Sex Characteristic</a></li><li><a href="#IndeterminateSexPerson">Indeterminate-sex Person</a></li><li><a href="#KaryotypicFemaleSex">Karyotypic Female Sex</a></li><li><a href="#KaryotypicMaleSex">Karyotypic Male Sex</a></li><li><a href="#KaryotypicSex">Karyotypic Sex</a></li><li><a href="#LegalFemaleGender">Legal Female Gender</a></li><li><a href="#LegalFemale-genderPerson">Legal Female-gender Person</a></li><li><a href="#LegalGender">Legal Gender</a></li><li><a href="#LegalGenderRecognition">Legal Gender Recognition</a></li><li><a href="#LegalGenderRecognitionDocument">Legal Gender Recognition Document</a></li><li><a href="#LegalGenderRecognizer">Legal Gender Recognizer</a></li><li><a href="#LegalMaleGender">Legal Male Gender</a></li><li><a href="#LegalMale-genderPerson">Legal Male-gender Person</a></li><li><a href="#LegalNonBinaryGender">Legal Non-binary Gender</a></li><li><a href="#LegalNon-binary-genderPerson">Legal Non-binary-gender Person</a></li><li><a href="#LegallyRecognizedGenderPerson">Legally Recognized Gender Person</a></li><li><a href="#LegallyUnassignedGenderPerson">Legally Unassigned Gender Person</a></li><li><a href="#Male">Male</a></li><li><a href="#MaleCisgenderPerson">Male Cisgender Person</a></li><li><a href="#MaleGender">Male Gender</a></li><li><a href="#MaleSex">Male Sex</a></li><li><a href="#MaleGenderPerson">Male-gender Person</a></li><li><a href="#MaleSexPerson">Male-sex Person</a></li><li><a href="#Male-typicalDimorphicCharacteristic">Male-typical Dimorphic Characteristic</a></li><li><a href="#Male-typicalVisualSexCharacteristic">Male-typical Visual Sex Characteristic</a></li><li><a href="#Man">Man</a></li><li><a href="#MasculineGenderExpression">Masculine Gender Expression</a></li><li><a href="#Masculine-presentingPerson">Masculine-presenting Person</a></li><li><a href="#NonBinaryGender">Non-binary Gender</a></li><li><a href="#Non-binaryGenderExpression">Non-binary Gender Expression</a></li><li><a href="#Non-binaryPerson">Non-binary Person</a></li><li><a href="#NonBinarySexGender">Non-binary Sex-Gender</a></li><li><a href="#NonBinaryGenderPerson">Non-binary-gender Person</a></li><li><a href="#Non-binary-presentingPerson">Non-binary-presenting Person</a></li><li><a href="#PhenotypicAmbiguousSex">Phenotypic Ambiguous Sex</a></li><li><a href="#PhenotypicAmbiguousSexPerson">Phenotypic Ambiguous-sex Person</a></li><li><a href="#PhenotypicFemaleSex">Phenotypic Female Sex</a></li><li><a href="#PhenotypicFemale-sexPerson">Phenotypic Female-sex Person</a></li><li><a href="#PhenotypicMaleSex">Phenotypic Male Sex</a></li><li><a href="#PhenotypicMale-sexPerson">Phenotypic Male-sex Person</a></li><li><a href="#PhenotypicSex">Phenotypic Sex</a></li><li><a href="#PhenotypicSexAssessment">Phenotypic Sex Assessment</a></li><li><a href="#PhenotypicSexAssessor">Phenotypic Sex Assessor</a></li><li><a href="#PhenotypicSexAssessedPerson">Phenotypic-sex-assessed Person</a></li><li><a href="#PreferredPronoun">Preferred Pronoun</a></li><li><a href="#Self-designatedGender">Self-designated Gender</a></li><li><a href="#Self-identifiedCisgenderFemalePerson">Self-identified Cisgender Female Person</a></li><li><a href="#Self-identifiedCisgenderMalePerson">Self-identified Cisgender Male Person</a></li><li><a href="#SelfIdentifiedCisgenderPerson">Self-identified Cisgender Person</a></li><li><a href="#Self-identifiedFemaleGender">Self-identified Female Gender</a></li><li><a href="#SelfIdentifiedFemaleGenderPerson">Self-identified Female-gender Person</a></li><li><a href="#SelfIdentifiedGender">Self-identified Gender</a></li><li><a href="#Self-identifiedMaleGender">Self-identified Male Gender</a></li><li><a href="#SelfIdentifiedMaleGenderPerson">Self-identified Male-gender Person</a></li><li><a href="#Self-identifiedNon-binaryGender">Self-identified Non-binary Gender</a></li><li><a href="#Self-identifiedNon-binary-genderPerson">Self-identified Non-binary-gender Person</a></li><li><a href="#Self-identifiedTransgenderPerson">Self-identified Transgender Person</a></li><li><a href="#Sex">Sex</a></li><li><a href="#SexAtBirth">Sex at Birth</a></li><li><a href="#SexatBirthAssigner">Sex at Birth Assigner</a></li><li><a href="#SexAtBirthAssignment">Sex at Birth Assignment</a></li><li><a href="#Sex-at-birthDeterminate-sexPerson">Sex-at-birth Determinate-sex Person</a></li><li><a href="#Sex-at-birthFemaleSex">Sex-at-birth Female Sex</a></li><li><a href="#SexAtBirthFemaleSexPerson">Sex-at-birth Female-sex Person</a></li><li><a href="#Sex-at-birthIndeterminateSex">Sex-at-birth Indeterminate Sex</a></li><li><a href="#Sex-at-birthIndeterminate-sexPerson">Sex-at-birth Indeterminate-sex Person</a></li><li><a href="#Sex-at-birthMaleSex">Sex-at-birth Male Sex</a></li><li><a href="#SexAtBirthMaleSexPerson">Sex-at-birth Male-sex Person</a></li><li><a href="#SexAtBirthAssignedPerson">Sex-at-birth-assigned Person</a></li><li><a href="#Sex-at-birth-unassignedPerson">Sex-at-birth-unassigned Person</a></li><li><a href="#SexGender">Sex-Gender</a></li><li><a href="#SexualDimorphicCharacteristic">Sexual Dimorphic Characteristic</a></li><li><a href="#Transgender">Transgender</a></li><li><a href="#TransgenderPerson">Transgender Person</a></li><li><a href="#VisualSexCharacteristic">Visual Sex Characteristic</a></li><li><a href="#Woman">Woman</a></li></ul></li><li><a href="#pkg-ufo">Package: UFO</a><ul class="third"><li><a href="#Agent">Agent</a></li><li><a href="#Endurant">Endurant</a></li><li><a href="#Object">Object</a></li><li><a href="#Particular">Particular</a></li><li><a href="#Substantial">Substantial</a></li></ul></li></ul></li>
+<ul class="second"><li><a href="#pkg-biology">Package: Biology</a><ul class="third"><li><a href="#AcquiredHealthCondition">Acquired Health Condition</a></li><li><a href="#Allosome">Allosome</a></li><li><a href="#AllosomeX">Allosome X</a></li><li><a href="#AllosomeY">Allosome Y</a></li><li><a href="#Animal">Animal</a></li><li><a href="#CellularEntity">Cellular Entity</a></li><li><a href="#Chromosome">Chromosome</a></li><li><a href="#Condition">Condition</a></li><li><a href="#CongenitalHealthCondition">Congenital Health Condition</a></li><li><a href="#DeadCellularEntity">Dead Cellular Entity</a></li><li><a href="#DiploidCell">Diploid Cell</a></li><li><a href="#Disease">Disease</a></li><li><a href="#EstablishedHealthCondition">Established Health Condition</a></li><li><a href="#Exposure-basedHealthCondition">Exposure-based Health Condition</a></li><li><a href="#ExternallyCausedHealthCondition">Externally-caused Health Condition</a></li><li><a href="#FunctionalHealthCondition">Functional Health Condition</a></li><li><a href="#Gamete">Gamete</a></li><li><a href="#HaploidCell">Haploid Cell</a></li><li><a href="#HealthCondition">Health Condition</a></li><li><a href="#HumanCell">Human Cell</a></li><li><a href="#IdiopathicHealthCondition">Idiopathic Health Condition</a></li><li><a href="#InherentHealthCondition">Inherent Health Condition</a></li><li><a href="#Injury">Injury</a></li><li><a href="#KaryotypicFemaleSexPerson">Karyotypic Female-sex Person</a></li><li><a href="#KaryotypicMaleSexPerson">Karyotypic Male-sex Person</a></li><li><a href="#KaryotypicalIndeterminatePerson">Karyotypical Indeterminate Person</a></li><li><a href="#KnownOriginHealthCondition">Known-Origin Health Condition</a></li><li><a href="#LivingCellularEntity">Living Cellular Entity</a></li><li><a href="#Non-HumanAnimal">Non-Human Animal</a></li><li><a href="#NonInjuryHealthCondition">Non-injury Health Condition</a></li><li><a href="#Non-PathologicalHealthCondition">Non-Pathological Health Condition</a></li><li><a href="#NonStructuralHealthCondition">Non-structural Health Condition</a></li><li><a href="#NonTraumaticHealthCondition">Non-traumatic Health Condition</a></li><li><a href="#PathologicalHealthCondition">Pathological Health Condition</a></li><li><a href="#PersonwithRegularSexChromosome">Person with Regular Sex Chromosome</a></li><li><a href="#PersonWithVariantSexChromosome">Person with Variant Sex Chromosome</a></li><li><a href="#Polyploid">Polyploid</a></li><li><a href="#PsychologicalHealthCondition">Psychological Health Condition</a></li><li><a href="#RegularKaryotypicalFemalePerson">Regular Karyotypical Female Person</a></li><li><a href="#RegularKaryotypicalMalePerson">Regular Karyotypical Male Person</a></li><li><a href="#Risk-basedHealthCondition">Risk-based Health Condition</a></li><li><a href="#StructuralHealthCondition">Structural Health Condition</a></li><li><a href="#TraumaticHealthCondition">Traumatic Health Condition</a></li><li><a href="#VariantKaryotypicalFemalePerson">Variant Karyotypical Female Person</a></li><li><a href="#VariantKaryotypicalMalePerson">Variant Karyotypical Male Person</a></li></ul></li><li><a href="#pkg-diagnosis">Package: Diagnosis</a><ul class="third"><li><a href="#AdministrativeCodingDiagnosis">Administrative Coding Diagnosis</a></li><li><a href="#AntemortemDiagnosis">Antemortem Diagnosis</a></li><li><a href="#Care-orientedDiagnosis">Care-oriented Diagnosis</a></li><li><a href="#CellularEntityDiagnosis">Cellular Entity Diagnosis</a></li><li><a href="#ClinicalDiagnosis">Clinical Diagnosis</a></li><li><a href="#ConcludedDiagnosticRelation">Concluded Diagnostic Relation</a></li><li><a href="#ConclusiveDiagnosticAssessment">Conclusive Diagnostic Assessment</a></li><li><a href="#ConditionIndicator">Condition Indicator</a></li><li><a href="#DiagnosedBiologicalPart">Diagnosed Biological Part</a></li><li><a href="#DiagnosedCellularEntity">Diagnosed Cellular Entity</a></li><li><a href="#DiagnosedEntity">Diagnosed Entity</a></li><li><a href="#DiagnosedGroup">Diagnosed Group</a></li><li><a href="#DiagnosedSpecimen">Diagnosed Specimen</a></li><li><a href="#DiagnosingAgent">Diagnosing Agent</a></li><li><a href="#DiagnosingArtificialAgent">Diagnosing Artificial Agent</a></li><li><a href="#DiagnosingPerson">Diagnosing Person</a></li><li><a href="#Diagnosis">Diagnosis</a></li><li><a href="#DiagnosisSuspicion">Diagnosis Suspicion</a></li><li><a href="#DiagnosticAssessment">Diagnostic Assessment</a></li><li><a href="#DiagnosticAssessmentOutcome">Diagnostic Assessment Outcome</a></li><li><a href="#DiagnosticMethod">Diagnostic Method</a></li><li><a href="#DiagnosticOutcomeIssuer">Diagnostic Outcome Issuer</a></li><li><a href="#DiagnosticRelation">Diagnostic Relation</a></li><li><a href="#EpidemiologicalDiagnosis">Epidemiological Diagnosis</a></li><li><a href="#ExternalDiagnosis">External Diagnosis</a></li><li><a href="#HealthcareDiagnosis">Healthcare Diagnosis</a></li><li><a href="#HumanHealthcareDiagnosis">Human Healthcare Diagnosis</a></li><li><a href="#InconclusiveDiagnosticAssessment">Inconclusive Diagnostic Assessment</a></li><li><a href="#LaboratoryDiagnosis">Laboratory Diagnosis</a></li><li><a href="#LaypersonDiagnosingAgent">Layperson Diagnosing Agent</a></li><li><a href="#NegativeDiagnosisAssessment">Negative Diagnosis Assessment</a></li><li><a href="#NoDiagnosisOutcome">No-Diagnosis Outcome</a></li><li><a href="#PositiveDiagnosisAssessment">Positive Diagnosis Assessment</a></li><li><a href="#PostmortemDiagnosis">Postmortem Diagnosis</a></li><li><a href="#ProfessionalDiagnosingAgent">Professional Diagnosing Agent</a></li><li><a href="#RadiologicalDiagnosis">Radiological Diagnosis</a></li><li><a href="#ResearchDiagnosis">Research Diagnosis</a></li><li><a href="#Self-diagnosis">Self-diagnosis</a></li><li><a href="#SurveillanceDiagnosis">Surveillance Diagnosis</a></li><li><a href="#VeterinaryDiagnosis">Veterinary Diagnosis</a></li></ul></li><li><a href="#pkg-general">Package: General</a><ul class="third"><li><a href="#Address">Address</a></li><li><a href="#AddressablePlace">Addressable Place</a></li><li><a href="#ArtificialAgent">Artificial Agent</a></li><li><a href="#Belief">Belief</a></li><li><a href="#Date">Date</a></li><li><a href="#DigitalDocument">Digital Document</a></li><li><a href="#Document">Document</a></li><li><a href="#Government">Government</a></li><li><a href="#IndividualAgent">Individual Agent</a></li><li><a href="#Month">Month</a></li><li><a href="#OffsetDateTime">OffsetDateTime</a></li><li><a href="#Organization">Organization</a></li><li><a href="#PhysicalDocument">Physical Document</a></li><li><a href="#SocialAgent">Social Agent</a></li></ul></li><li><a href="#pkg-person">Package: Person</a><ul class="third"><li><a href="#Adolescent">Adolescent</a></li><li><a href="#Adult">Adult</a></li><li><a href="#Child">Child</a></li><li><a href="#DeadPerson">Dead Person</a></li><li><a href="#HealthcareProfessional">Healthcare Professional</a></li><li><a href="#LivingPerson">Living Person</a></li><li><a href="#Non-self-awarePerson">Non-self-aware Person</a></li><li><a href="#Person">Person</a></li><li><a href="#Person'sDeath">Person's Death</a></li><li><a href="#Person'sDeathCause">Person's Death Cause</a></li><li><a href="#SelfAwarePerson">Self-aware Person</a></li></ul></li><li><a href="#pkg-personbirth">Package: Person Birth</a><ul class="third"><li><a href="#Birth">Birth</a></li><li><a href="#BirthBiologicalProvenance">Birth Biological Provenance</a></li><li><a href="#BirthPlace">Birth Place</a></li><li><a href="#GeneticFather">Genetic Father</a></li><li><a href="#GeneticMother">Genetic Mother</a></li><li><a href="#GestationalCarrier">Gestational Carrier</a></li><li><a href="#MultipleBirth">Multiple Birth</a></li><li><a href="#MultipleBirthComponent">Multiple Birth Component</a></li><li><a href="#SingleBirth">Single Birth</a></li><li><a href="#SingletonBirth">Singleton Birth</a></li></ul></li><li><a href="#pkg-sexandgender">Package: Sex and Gender</a><ul class="third"><li><a href="#AdministrativeFemaleGender">Administrative Female Gender</a></li><li><a href="#AdministrativeFemaleGenderPerson">Administrative Female-gender Person</a></li><li><a href="#AdministrativeGender">Administrative Gender</a></li><li><a href="#AdministrativeGenderRecognition">Administrative Gender Recognition</a></li><li><a href="#AdministrativeGenderRecognitionAgent">Administrative Gender Recognition Agent</a></li><li><a href="#AdministrativeGenderRecognitionDocument">Administrative Gender Recognition Document</a></li><li><a href="#AdministrativeGenderRecognizingOrganization">Administrative Gender Recognizing Organization</a></li><li><a href="#AdministrativeMaleGender">Administrative Male Gender</a></li><li><a href="#AdministrativeMaleGenderPerson">Administrative Male-gender Person</a></li><li><a href="#AdministrativeNonBinaryGender">Administrative Non-binary Gender</a></li><li><a href="#AdministrativeNonBinaryGenderPerson">Administrative Non-binary-gender Person</a></li><li><a href="#AdministrativelyRecognizedGenderPerson">Administratively Recognized Gender Person</a></li><li><a href="#BirthNotification">Birth Notification</a></li><li><a href="#Birth-relatedLegislationRule">Birth-related Legislation Rule</a></li><li><a href="#Cisgender">Cisgender</a></li><li><a href="#CisgenderPerson">Cisgender Person</a></li><li><a href="#ExternallyGenderAttributedPerson">Externally Gender-attributed Person</a></li><li><a href="#Externally-attributedCisgenderFemalePerson">Externally-attributed Cisgender Female Person</a></li><li><a href="#Externally-attributedCisgenderMalePerson">Externally-attributed Cisgender Male Person</a></li><li><a href="#ExternallyAttributedCisgenderPerson">Externally-attributed Cisgender Person</a></li><li><a href="#ExternallyAttributedFemaleGender">Externally-attributed Female Gender</a></li><li><a href="#ExternallyAttributedFemaleGenderPerson">Externally-attributed Female-gender Person</a></li><li><a href="#ExternallyAttributedGender">Externally-attributed Gender</a></li><li><a href="#ExternallyAttributedMaleGender">Externally-attributed Male Gender</a></li><li><a href="#ExternallyAttributedMaleGenderPerson">Externally-attributed Male-gender Person</a></li><li><a href="#ExternallyAttributedNonBinaryGender">Externally-attributed Non-binary Gender</a></li><li><a href="#ExternallyAttributedNonBinaryGenderPerson">Externally-attributed Non-binary-gender Person</a></li><li><a href="#Externally-attributedTransgenderPerson">Externally-attributed Transgender Person</a></li><li><a href="#Female">Female</a></li><li><a href="#FemaleCisgenderPerson">Female Cisgender Person</a></li><li><a href="#FemaleGender">Female Gender</a></li><li><a href="#FemaleSex">Female Sex</a></li><li><a href="#FemaleGenderPerson">Female-gender Person</a></li><li><a href="#FemaleSexPerson">Female-sex Person</a></li><li><a href="#Female-typicalDimorphicCharacteristic">Female-typical Dimorphic Characteristic</a></li><li><a href="#Female-typicalVisualSexCharacteristic">Female-typical Visual Sex Characteristic</a></li><li><a href="#FeminineGenderExpression">Feminine Gender Expression</a></li><li><a href="#Feminine-presentingPerson">Feminine-presenting Person</a></li><li><a href="#Gender">Gender</a></li><li><a href="#GenderAttribution">Gender Attribution</a></li><li><a href="#GenderAttributor">Gender Attributor</a></li><li><a href="#GenderExpression">Gender Expression</a></li><li><a href="#GenderModality">Gender Modality</a></li><li><a href="#IndeterminateDimorphicCharacteristic">Indeterminate Dimorphic Characteristic</a></li><li><a href="#IndeterminateSex">Indeterminate Sex</a></li><li><a href="#IndeterminateVisualSexCharacteristic">Indeterminate Visual Sex Characteristic</a></li><li><a href="#IndeterminateSexPerson">Indeterminate-sex Person</a></li><li><a href="#KaryotypicFemaleSex">Karyotypic Female Sex</a></li><li><a href="#KaryotypicMaleSex">Karyotypic Male Sex</a></li><li><a href="#KaryotypicSex">Karyotypic Sex</a></li><li><a href="#LegalFemaleGender">Legal Female Gender</a></li><li><a href="#LegalFemale-genderPerson">Legal Female-gender Person</a></li><li><a href="#LegalGender">Legal Gender</a></li><li><a href="#LegalGenderRecognition">Legal Gender Recognition</a></li><li><a href="#LegalGenderRecognitionDocument">Legal Gender Recognition Document</a></li><li><a href="#LegalGenderRecognizer">Legal Gender Recognizer</a></li><li><a href="#LegalMaleGender">Legal Male Gender</a></li><li><a href="#LegalMale-genderPerson">Legal Male-gender Person</a></li><li><a href="#LegalNonBinaryGender">Legal Non-binary Gender</a></li><li><a href="#LegalNon-binary-genderPerson">Legal Non-binary-gender Person</a></li><li><a href="#LegallyRecognizedGenderPerson">Legally Recognized Gender Person</a></li><li><a href="#LegallyUnassignedGenderPerson">Legally Unassigned Gender Person</a></li><li><a href="#Male">Male</a></li><li><a href="#MaleCisgenderPerson">Male Cisgender Person</a></li><li><a href="#MaleGender">Male Gender</a></li><li><a href="#MaleSex">Male Sex</a></li><li><a href="#MaleGenderPerson">Male-gender Person</a></li><li><a href="#MaleSexPerson">Male-sex Person</a></li><li><a href="#Male-typicalDimorphicCharacteristic">Male-typical Dimorphic Characteristic</a></li><li><a href="#Male-typicalVisualSexCharacteristic">Male-typical Visual Sex Characteristic</a></li><li><a href="#Man">Man</a></li><li><a href="#MasculineGenderExpression">Masculine Gender Expression</a></li><li><a href="#Masculine-presentingPerson">Masculine-presenting Person</a></li><li><a href="#NonBinaryGender">Non-binary Gender</a></li><li><a href="#Non-binaryGenderExpression">Non-binary Gender Expression</a></li><li><a href="#Non-binaryPerson">Non-binary Person</a></li><li><a href="#NonBinarySexGender">Non-binary Sex-Gender</a></li><li><a href="#NonBinaryGenderPerson">Non-binary-gender Person</a></li><li><a href="#Non-binary-presentingPerson">Non-binary-presenting Person</a></li><li><a href="#PhenotypicAmbiguousSex">Phenotypic Ambiguous Sex</a></li><li><a href="#PhenotypicAmbiguousSexPerson">Phenotypic Ambiguous-sex Person</a></li><li><a href="#PhenotypicFemaleSex">Phenotypic Female Sex</a></li><li><a href="#PhenotypicFemale-sexPerson">Phenotypic Female-sex Person</a></li><li><a href="#PhenotypicMaleSex">Phenotypic Male Sex</a></li><li><a href="#PhenotypicMale-sexPerson">Phenotypic Male-sex Person</a></li><li><a href="#PhenotypicSex">Phenotypic Sex</a></li><li><a href="#PhenotypicSexAssessment">Phenotypic Sex Assessment</a></li><li><a href="#PhenotypicSexAssessor">Phenotypic Sex Assessor</a></li><li><a href="#PhenotypicSexAssessedPerson">Phenotypic-sex-assessed Person</a></li><li><a href="#PreferredPronoun">Preferred Pronoun</a></li><li><a href="#Self-designatedGender">Self-designated Gender</a></li><li><a href="#Self-identifiedAgenderPerson">Self-identified Agender Person</a></li><li><a href="#Self-identifiedCisgenderFemalePerson">Self-identified Cisgender Female Person</a></li><li><a href="#Self-identifiedCisgenderMalePerson">Self-identified Cisgender Male Person</a></li><li><a href="#SelfIdentifiedCisgenderPerson">Self-identified Cisgender Person</a></li><li><a href="#Self-identifiedFemaleGender">Self-identified Female Gender</a></li><li><a href="#SelfIdentifiedFemaleGenderPerson">Self-identified Female-gender Person</a></li><li><a href="#SelfIdentifiedGender">Self-identified Gender</a></li><li><a href="#Self-identifiedMaleGender">Self-identified Male Gender</a></li><li><a href="#SelfIdentifiedMaleGenderPerson">Self-identified Male-gender Person</a></li><li><a href="#Self-identifiedNon-binaryGender">Self-identified Non-binary Gender</a></li><li><a href="#SelfIdentifiedNonBinaryGenderPerson">Self-identified Non-binary-gender Person</a></li><li><a href="#Self-identifiedTransgenderPerson">Self-identified Transgender Person</a></li><li><a href="#Self-identifiedTwo-genderPerson">Self-identified Two-gender Person</a></li><li><a href="#Sex">Sex</a></li><li><a href="#SexAtBirth">Sex at Birth</a></li><li><a href="#SexatBirthAssigner">Sex at Birth Assigner</a></li><li><a href="#SexAtBirthAssignment">Sex at Birth Assignment</a></li><li><a href="#Sex-at-birthDeterminate-sexPerson">Sex-at-birth Determinate-sex Person</a></li><li><a href="#Sex-at-birthFemaleSex">Sex-at-birth Female Sex</a></li><li><a href="#SexAtBirthFemaleSexPerson">Sex-at-birth Female-sex Person</a></li><li><a href="#Sex-at-birthIndeterminateSex">Sex-at-birth Indeterminate Sex</a></li><li><a href="#Sex-at-birthIndeterminate-sexPerson">Sex-at-birth Indeterminate-sex Person</a></li><li><a href="#Sex-at-birthMaleSex">Sex-at-birth Male Sex</a></li><li><a href="#SexAtBirthMaleSexPerson">Sex-at-birth Male-sex Person</a></li><li><a href="#SexAtBirthAssignedPerson">Sex-at-birth-assigned Person</a></li><li><a href="#Sex-at-birth-unassignedPerson">Sex-at-birth-unassigned Person</a></li><li><a href="#SexGender">Sex-Gender</a></li><li><a href="#SexualDimorphicCharacteristic">Sexual Dimorphic Characteristic</a></li><li><a href="#Transgender">Transgender</a></li><li><a href="#TransgenderPerson">Transgender Person</a></li><li><a href="#VisualSexCharacteristic">Visual Sex Characteristic</a></li><li><a href="#Woman">Woman</a></li></ul></li><li><a href="#pkg-ufo">Package: UFO</a><ul class="third"><li><a href="#Agent">Agent</a></li><li><a href="#Endurant">Endurant</a></li><li><a href="#Object">Object</a></li><li><a href="#Particular">Particular</a></li><li><a href="#Substantial">Substantial</a></li></ul></li></ul></li>
 <li>
 <h4>
 <a href="#objectproperties">Object Properties</a>

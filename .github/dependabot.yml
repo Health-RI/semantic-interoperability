@@ -1,4 +1,3 @@
-# .github/dependabot.yml
 version: 2
 updates:
   - package-ecosystem: "github-actions"
@@ -8,6 +7,12 @@ updates:
       day: "monday"
       time: "07:15"
       timezone: "Europe/Amsterdam"
+    groups:
+      gha-all:
+        patterns: ["*"]
+    commit-message:
+      prefix: "deps"
+      include: "scope"
 
   - package-ecosystem: "pip"
     directory: "/scripts"
