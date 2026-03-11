@@ -1,5 +1,10 @@
 # News & Updates
 
+## 2026-03-11
+
+- **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Added: Published v2.1.0 release artifacts, introducing self-identified agender and two-gender person classes and refining self-identified gender bearer constraints.
+    **Call For Community Review** — Changed: Extended the Sex and Gender external validation to 13-03-2026 and added the planned Person Birth review window.
+
 ## 2026-03-10
 
 - **[Method's Introduction](./method/introduction.md)** — Changed: Expanded HRIO scope and prioritization guidance.
