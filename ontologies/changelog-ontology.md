@@ -4,6 +4,52 @@ All notable changes to this project will be documented in this file. Entries are
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [2.1.0] - 2026-03-11
+
+### TL;DR
+
+- Introduces two new self-identified non-binary bearer classes: **SelfIdentifiedAgenderPerson** and **SelfIdentifiedTwoGenderPerson**.
+- Refines the self-identified gender bearer model by adding explicit **SelfAwarePerson** membership and by relaxing one non-binary bearer cardinality constraint.
+- Updates release metadata to **2.1.0** and adds explicit version-chain links for the new release.
+
+### Added
+
+- Introduced new self-identified non-binary bearer classes (gUFO metamodelling: `rdf:type owl:Class` + `owl:NamedIndividual` + stereotype):
+  - **SelfIdentifiedAgenderPerson** (`gufo:Phase`): `rdfs:subClassOf` **SelfIdentifiedNonBinaryGenderPerson**.
+  - **SelfIdentifiedTwoGenderPerson** (`gufo:Phase`): `rdfs:subClassOf` **SelfIdentifiedNonBinaryGenderPerson**.
+  - **SelfIdentifiedTwoGenderPerson**: added inverse-`gufo:inheresIn` `owl:qualifiedCardinality 1` restrictions to **SelfIdentifiedFemaleGender** and **SelfIdentifiedMaleGender**.
+  - **SelfIdentifiedTwoGenderPerson**: added `skos:altLabel` **"Self-identified Two Spirit Person"**.
+- Added property-hierarchy assertions under **selfIdentifiedGenderInheresInSelfAwarePerson**:
+  - **selfIdentifiedFemaleGenderPerson**, **selfIdentifiedMaleGenderPerson**, **selfIdentifiedNonBinaryGenderPerson**.
+  - **selfIdentifiedTwoGenderPerson**, **selfIdentifiedTwoGenderPerson_1**.
+- Added release-link metadata:
+  - **ontology** (`https://w3id.org/health-ri/ontology`): added `dcat:hasVersion` **…/v2.0.0**.
+  - **ontology/v2.1.0** (`…/v2.1.0`): added `owl:priorVersion` **…/v2.0.0**.
+
+### Changed
+
+- Updated release metadata:
+  - **ontology** (`https://w3id.org/health-ri/ontology`)
+  - `owl:versionInfo` **"2.0.0" → "2.1.0"**.
+  - `owl:versionIRI` **…/v2.0.0 → …/v2.1.0**.
+  - `dcterms:modified` **2026-02-27 → 2026-03-11**.
+  - `dcterms:conformsTo` updated artifact links (**…/v2.0.0/(json|vpp) → …/v2.1.0/(json|vpp)**).
+- Refined self-identified gender bearer constraints:
+  - **SelfIdentifiedFemaleGenderPerson**: added `rdfs:subClassOf` **SelfAwarePerson**.
+  - **SelfIdentifiedMaleGenderPerson**: added `rdfs:subClassOf` **SelfAwarePerson**.
+  - **SelfIdentifiedNonBinaryGenderPerson**: added `rdfs:subClassOf` **SelfAwarePerson**.
+  - **SelfIdentifiedNonBinaryGenderPerson**: inverse-`gufo:inheresIn` restriction changed **`owl:qualifiedCardinality 1` → `owl:maxQualifiedCardinality 1`** for **SelfIdentifiedNonBinaryGender**.
+
+### Removed
+
+- Removed stricter self-identified gender cardinality axioms:
+  - **SelfAwarePerson**: removed inverse-`gufo:inheresIn` `owl:qualifiedCardinality 1` restriction to **SelfIdentifiedGender**.
+  - **SelfIdentifiedFemaleGender**: removed `gufo:inheresIn` `owl:minQualifiedCardinality 1` restriction to **SelfIdentifiedFemaleGenderPerson**.
+  - **SelfIdentifiedMaleGender**: removed `gufo:inheresIn` `owl:minQualifiedCardinality 1` restriction to **SelfIdentifiedMaleGenderPerson**.
+- Removed superseded version-link metadata:
+  - **ontology/v2.0.0** (`…/v2.0.0`): removed `owl:priorVersion` **…/v1.6.2** (the version chain now continues via **…/v2.1.0**).
+- No named classes, properties, or individuals were removed in this release.
+
 ## [2.0.0] - 2026-02-27
 
 ### TL;DR
