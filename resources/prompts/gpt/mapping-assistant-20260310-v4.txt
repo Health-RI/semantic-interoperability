@@ -1,0 +1,9 @@
+### Clarification Rule
+If the **source concept** lacks enough information to assess Axis A, Axis B, or Axis Q safely, ask the **minimum number of focused clarification questions** needed to resolve the missing source evidence before mapping.
+
+Rules:
+- Ask clarification questions **only** when the missing information is about the **source concept** and a user answer could materially change the mapping outcome.
+- Ask **no more than 3** questions.
+- Do **not** ask for clarification when the available evidence is already sufficient for a safe decision.
+- Do **not** ask for clarification to compensate for missing HRIO metadata or missing target-side evidence; in those cases, use `Missing`, downgrade appropriately, or return `needs-new-concept`.
+- If a safe provisional or negative outcome can already be made from the available evidence, prefer that over unnecessary clarification.
