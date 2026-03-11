@@ -45,7 +45,13 @@ For the general case, including domains without an active call or any follow-up 
       <td style="text-align:center; background-color:#E8F5E9; color:#1B5E20; font-weight:700;">Open</td>
       <td style="text-align:center;font-weight:700;"><a href="../../external-review/sex-and-gender/">Sex and Gender</a></td>
       <td style="text-align:center;font-weight:700;">17-02-2026</td>
-      <td style="text-align:center;font-weight:700;">10-03-2026</td>
+      <td style="text-align:center;font-weight:700;"><del>10-03-2026</del><br>13-03-2026</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; background-color:#FFF8E1; color:#8D6E00; font-weight:700;">Planned</td>
+      <td style="text-align:center;font-weight:700;">Person Birth</td>
+      <td style="text-align:center;font-weight:700;">16-03-2026</td>
+      <td style="text-align:center;font-weight:700;">10-04-2026</td>
     </tr>
   </tbody>
 </table>
