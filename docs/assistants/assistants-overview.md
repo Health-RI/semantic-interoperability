@@ -49,6 +49,8 @@ Use this assistant to draft a meaning mapping from an external term/concept to H
 [Open the HRIO Mapping Assistant (GPT)](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant){ .md-button .md-button--primary }
 </div>
 
+For detailed guidance on scope, evidence rules, limitations, output structure, and prompt traceability, see the [HRIO Mapping Assistant User Guide](mapping-assistant.md).
+
 ### What it produces
 
 - Exactly **one** proposed HRIV predicate:

@@ -98,7 +98,9 @@ nav:
       - Ontology Specification: deliverables/specification-ontology.html
       - Ontology Changelog: deliverables/changelog-ontology.md
       - SSSOM Mapping Set: deliverables/mappings.md
-  - AI Assistants: assistants.md
+  - AI Assistants:
+    - Overview: assistants/assistants-overview.md
+    - HRIO Mapping Assistant: assistants/mapping-assistant.md
   - Contributing:
       - Overview: contributing/overview.md
       - Contribution Channels: contributing/contribution-channels.md

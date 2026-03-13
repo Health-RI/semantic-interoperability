@@ -122,6 +122,8 @@ The Health-RI mapping relations are declared as specializations of SKOS mapping 
 
     **Use it as a drafting aid, not as an authority.** You still need to justify predicate choice based on *definitions and scope* (not label similarity) and follow the policy on exact-meaning uniqueness.
 
+    For detailed guidance on the HRIO Mapping Assistant, we provide its [User Guide](../assistants/hrio-mapping-assistant.md).
+
     [Open HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant)
 
 - **[`hriv:hasExactMeaning`](./specification-vocabulary.html#hasExactMeaning)** is used when the expression's intended semantics are fully and precisely defined by a specific linked HRIO meaning.
