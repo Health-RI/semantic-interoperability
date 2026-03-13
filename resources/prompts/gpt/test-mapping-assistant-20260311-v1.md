@@ -76,7 +76,7 @@ Verify that the GPT refuses to map more than one concept in the same turn, asks 
 
 ### Why it passes
 
-This test’s primary gate was enforced correctly:
+This test's primary gate was enforced correctly:
 
 - the **one-concept-per-turn rule** was followed exactly
 

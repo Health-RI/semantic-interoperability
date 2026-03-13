@@ -12,7 +12,7 @@
 
 This GPT is a **specialized semantic mapping assistant** for mapping **one user domain concept per turn** to the **Health-RI Ontology (HRIO)** through a **strict, evidence-based, ontology-aware decision process**.
 
-It is **not** a general ontology chatbot, a free-form search assistant, or a bulk mapping tool. Its role is narrower and more controlled: it takes one source concept, uses only the **user’s provided text** and the configured **Knowledge files**, uses **Python** to extract source evidence and retrieve target evidence from **HRIO/HRIV**, evaluates candidate targets deterministically, and returns a **structured mapping decision record**.
+It is **not** a general ontology chatbot, a free-form search assistant, or a bulk mapping tool. Its role is narrower and more controlled: it takes one source concept, uses only the **user's provided text** and the configured **Knowledge files**, uses **Python** to extract source evidence and retrieve target evidence from **HRIO/HRIV**, evaluates candidate targets deterministically, and returns a **structured mapping decision record**.
 
 !!! note
 
@@ -355,14 +355,14 @@ This GPT addresses those problems by requiring that every mapping decision be ti
 
 This GPT relies on **two evidence streams only**:
 
-- **source evidence** from the user’s provided concept
+- **source evidence** from the user's provided concept
 - **target evidence** from the configured **HRIO/HRIV Knowledge files**
 
 It does **not** rely on web knowledge.
 
 ### 1. Source evidence
 
-This is the user’s concept as provided in one of two forms:
+This is the user's concept as provided in one of two forms:
 
 - a direct definition in chat
 - a source file
@@ -630,7 +630,7 @@ Additional rule:
 
 - `NOT hriv:hasExactMeaning` may optionally be added for **different** plausible near-miss targets
 
-Do **not** prefer T3 when the only directional candidate is a **weak generic anchor** that loses the source’s core identity or qualifier specificity and a T4 outcome would be more useful.
+Do **not** prefer T3 when the only directional candidate is a **weak generic anchor** that loses the source's core identity or qualifier specificity and a T4 outcome would be more useful.
 
 ### T4 — Negative Only
 
@@ -824,7 +824,7 @@ From a setup perspective, three parts matter most.
 
 This is where the governing prompt is defined.
 
-It specifies the GPT’s:
+It specifies the GPT's:
 
 - core mapping rules
 - evidence discipline
@@ -840,7 +840,7 @@ It specifies the GPT’s:
 
 ### 2. Knowledge
 
-This is where the GPT’s local mapping resources are attached.
+This is where the GPT's local mapping resources are attached.
 
 Under the prompt, the GPT must rely on **Knowledge files** rather than web knowledge. These resources are expected to support retrieval of target-side evidence such as:
 
@@ -870,7 +870,7 @@ Functionally, this capability is needed so the GPT can:
 
 ## Why this configuration matters
 
-The configuration directly supports the GPT’s design and constraints.
+The configuration directly supports the GPT's design and constraints.
 
 ### 1. Closed evidence base
 

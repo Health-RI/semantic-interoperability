@@ -19,7 +19,7 @@ All judgments below are based on the prompt **as written**, with particular atte
 
 - **Pass**: compliant or largely compliant with only minor issues
 - **Pass with issues**: substantively correct, but with one or more formal inconsistencies
-- **Fail**: not compliant with the prompt’s decision logic
+- **Fail**: not compliant with the prompt's decision logic
 
 ______________________________________________________________________
 
@@ -36,7 +36,7 @@ Verify whether the prompt supports a clean **T1 Exact-Lock** outcome when the so
 ### Test input
 
 - **Source label:** Self-identified gender identity
-- **Source definition:** A person’s gender identity as explicitly self-identified by the person.
+- **Source definition:** A person's gender identity as explicitly self-identified by the person.
 - **Key source evidence:** “Gender identity reported by the individual themself.”
 
 ### Expected outcome pattern
@@ -71,7 +71,7 @@ Under the prompt, those should be **`partial`**, because they rely on:
 
 - directional approximation
 - `Target(Q): Missing`
-- generalization beyond the source’s specific self-identification constraint
+- generalization beyond the source's specific self-identification constraint
 
 ### Formal verdict
 
@@ -155,7 +155,7 @@ Verify whether the prompt treats `NOT hriv:hasExactMeaning` as a **valid mapping
 ### Test input
 
 - **Source label:** Administrative sex registration
-- **Source definition:** A person’s sex value as officially recorded in an administrative or legal record.
+- **Source definition:** A person's sex value as officially recorded in an administrative or legal record.
 - **Key source evidence:** “Sex as officially registered in the administrative record.”
 
 ### Expected outcome pattern
@@ -282,7 +282,7 @@ Verify whether the prompt resists treating remote genomics-adjacent classes as v
 ### Test input
 
 - **Source label:** Algorithmically inferred multi-ancestry genomic cluster membership
-- **Source definition:** A person’s membership in a genomic ancestry cluster assigned by computational inference from genotype data, where the output may include multiple cluster memberships with confidence scores.
+- **Source definition:** A person's membership in a genomic ancestry cluster assigned by computational inference from genotype data, where the output may include multiple cluster memberships with confidence scores.
 - **Key source evidence:** “Cluster membership derived computationally from genotype data, potentially assigning more than one ancestry cluster with associated confidence values.”
 
 ### Expected outcome pattern
@@ -311,7 +311,7 @@ Status:
 
 This result conflicts with **T5**.
 
-The output itself established that the retrieved targets lose the source’s defining features, including:
+The output itself established that the retrieved targets lose the source's defining features, including:
 
 - ancestry-cluster meaning
 - computational inference structure
@@ -358,7 +358,7 @@ The prompt is working well at:
 
 ### Stable weakness exposed by the tests
 
-The main recurring weakness is the model’s tendency to over-assign:
+The main recurring weakness is the model's tendency to over-assign:
 
 - `Candidate Ready-to-Apply: yes`
 
@@ -374,7 +374,7 @@ This happens especially for **directional** candidates that involve:
 
 ### Practical interpretation
 
-The prompt’s core logic is sound. The main operational risk is **overconfident readiness labeling**, not gross semantic failure, except in Test 5.
+The prompt's core logic is sound. The main operational risk is **overconfident readiness labeling**, not gross semantic failure, except in Test 5.
 
 ______________________________________________________________________
 
@@ -395,4 +395,4 @@ A concise operational rule that would likely improve consistency is:
 
 - mark **directional** candidates as `partial` by default whenever they lose a defining source feature, rely on approximation, or have `Target(Q): Missing`
 
-This would likely improve Tests 1–3 without changing the prompt’s overall decision structure.
+This would likely improve Tests 1–3 without changing the prompt's overall decision structure.

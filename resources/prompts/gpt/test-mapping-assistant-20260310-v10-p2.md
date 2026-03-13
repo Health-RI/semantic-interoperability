@@ -61,7 +61,7 @@ The core safety behavior was correct:
 - the source qualifier `inferred/derived` was handled correctly
 - no unretrieved semantics were invented
 
-However, the result is **borderline between T4 and T5**. A strong argument can be made that the remaining anchors are too generic and lose too much of the source’s defining identity:
+However, the result is **borderline between T4 and T5**. A strong argument can be made that the remaining anchors are too generic and lose too much of the source's defining identity:
 
 - frailty
 - trajectory
@@ -151,7 +151,7 @@ This test was mainly about whether the GPT would resist asking extra questions w
 - no unnecessary clarification was asked
 - a safe non-exact outcome was returned
 
-That matches the prompt’s clarification policy.
+That matches the prompt's clarification policy.
 
 ### Main caveats
 

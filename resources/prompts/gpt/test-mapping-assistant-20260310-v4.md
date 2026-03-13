@@ -246,7 +246,7 @@ A second small presentation issue:
 
 ### Conclusion
 
-This is the strongest evidence that the new `needs-new-concept` rule is working properly. The prompt successfully prevented forced mapping and preserved the source’s essential structure.
+This is the strongest evidence that the new `needs-new-concept` rule is working properly. The prompt successfully prevented forced mapping and preserved the source's essential structure.
 
 ______________________________________________________________________
 

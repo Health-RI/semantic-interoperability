@@ -31,7 +31,7 @@ Use this assistant to explain the initiative in plain terms and point you to the
 ### Typical questions it can help with
 
 - What is the Health-RI Semantic Interoperability Initiative?
-- Give me a tour of the project’s main artifacts.
+- Give me a tour of the project's main artifacts.
 - Where can I find the latest official HRIO release (docs/spec/TTL/SHACL)?
 - Explain HRIO and HRIV (Mapping Vocabulary) and how they should be used.
 - How should I cite an ontology or mapping release (and when should I prefer versioned PIDs)?
@@ -43,7 +43,7 @@ Use this assistant to explain the initiative in plain terms and point you to the
 
 ## HRIO Mapping Assistant (GPT)
 
-Use this assistant to draft a meaning mapping from an external term/concept to HRIO, aligned with the project’s mapping strategy and governance.
+Use this assistant to draft a meaning mapping from an external term/concept to HRIO, aligned with the project's mapping strategy and governance.
 
 <div class="button-grid button-grid--wide" markdown>
 [Open the HRIO Mapping Assistant (GPT)](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant){ .md-button .md-button--primary }
