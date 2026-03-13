@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2026-03-13
+
+- **[User Guide: HRIO Mapping Assistant](./assistants/mapping-assistant.md)** — Created: Published a detailed user guide explaining the assistant's scope, evidence rules, qualifier handling, outcomes, and structured results.
+
 ## 2026-03-11
 
 - **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Added: Published v2.1.0 release artifacts, introducing self-identified agender and two-gender person classes and refining self-identified gender bearer constraints.

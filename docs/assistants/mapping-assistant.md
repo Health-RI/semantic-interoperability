@@ -101,6 +101,23 @@ flowchart LR
     K --> R
     K --> S
     S --> T([End: mapping record delivered])
+
+    classDef terminal fill:#0F4C81,stroke:#0B3558,color:#FFFFFF,stroke-width:2px;
+    classDef process fill:#EAF3FF,stroke:#5B8CC0,color:#12324A,stroke-width:1.5px;
+    classDef search fill:#EEF9F7,stroke:#5EA89B,color:#17443D,stroke-width:1.5px;
+    classDef decision fill:#FFF4CC,stroke:#C9A227,color:#5F4B00,stroke-width:1.5px;
+    classDef output fill:#F3EEFF,stroke:#8A76C1,color:#2F244D,stroke-width:1.5px;
+    classDef knowledge fill:#EAF7EA,stroke:#6AA56A,color:#23402B,stroke-width:1.5px;
+    classDef user fill:#F3F4F6,stroke:#9AA3AF,color:#374151,stroke-width:1.5px;
+    classDef alert fill:#FFF7E6,stroke:#D18B00,color:#6B4E00,stroke-width:1.5px;
+    classDef negative fill:#FDEDEC,stroke:#C23B22,color:#6E2519,stroke-width:1.5px;
+
+    class A,T terminal;
+    class B,C,G,H,I,J,K process;
+    class D,E,F search;
+    class L,M,N,O,P,Q,R,S output;
+
+    style OUT fill:#FBFAFF,stroke:#8A76C1,stroke-width:1.5px,color:#2F244D
 ```
 
 *Diagram 1. End-to-end workflow for mapping one user domain concept to HRIO under the prompt.*
@@ -232,7 +249,7 @@ flowchart LR
     end
 
     subgraph K[Knowledge]
-        K1[(HRIO / HRIV Knowledge files)]
+        K1[(HRIO / HRIV knowledge files)]
     end
 
     U1 --> U2 --> U3 --> G1
@@ -241,6 +258,30 @@ flowchart LR
     G2 -- Yes --> G5
     K1 --> G5
     G5 --> G6 --> G7 --> G8 --> G9 --> U5
+
+    classDef terminal fill:#0F4C81,stroke:#0B3558,color:#FFFFFF,stroke-width:2px;
+    classDef process fill:#EAF3FF,stroke:#5B8CC0,color:#12324A,stroke-width:1.5px;
+    classDef search fill:#EEF9F7,stroke:#5EA89B,color:#17443D,stroke-width:1.5px;
+    classDef decision fill:#FFF4CC,stroke:#C9A227,color:#5F4B00,stroke-width:1.5px;
+    classDef output fill:#F3EEFF,stroke:#8A76C1,color:#2F244D,stroke-width:1.5px;
+    classDef knowledge fill:#EAF7EA,stroke:#6AA56A,color:#23402B,stroke-width:1.5px;
+    classDef user fill:#F3F4F6,stroke:#9AA3AF,color:#374151,stroke-width:1.5px;
+    classDef alert fill:#FFF7E6,stroke:#D18B00,color:#6B4E00,stroke-width:1.5px;
+
+    class U1,U5 terminal;
+    class U2,U3,U4 user;
+    class G1,G4,G5,G7,G8,G9 process;
+    class G6 search;
+    class G2 decision;
+    class G3 alert;
+    class K1 knowledge;
+
+    style U fill:#FCFCFD,stroke:#9AA3AF,stroke-width:1px,color:#374151
+    style G fill:#F8FBFF,stroke:#5B8CC0,stroke-width:1px,color:#12324A
+    style K fill:#F6FBF7,stroke:#6AA56A,stroke-width:1px,color:#23402B
+
+    linkStyle 4 stroke:#C23B22,stroke-width:2.5px
+    linkStyle 8 stroke:#2E8B57,stroke-width:2.5px
 ```
 
 *Diagram 2. User–GPT interaction flow for submitting one concept and receiving a structured mapping result.*
@@ -588,6 +629,29 @@ flowchart LR
     H --> L
     J --> L
     K --> L
+
+    classDef terminal fill:#0F4C81,stroke:#0B3558,color:#FFFFFF,stroke-width:2px;
+    classDef decision fill:#FFF4CC,stroke:#C9A227,color:#5F4B00,stroke-width:1.5px;
+    classDef output fill:#F3EEFF,stroke:#8A76C1,color:#2F244D,stroke-width:1.5px;
+    classDef negative fill:#FDEDEC,stroke:#C23B22,color:#6E2519,stroke-width:1.5px;
+    classDef alert fill:#FFF7E6,stroke:#D18B00,color:#6B4E00,stroke-width:1.5px;
+
+    class A,L terminal;
+    class B,C,D,G,I decision;
+    class E,F,H output;
+    class J negative;
+    class K alert;
+
+    linkStyle 1 stroke:#2E8B57,stroke-width:2.5px;
+    linkStyle 2 stroke:#C23B22,stroke-width:2.5px;
+    linkStyle 3 stroke:#2E8B57,stroke-width:2.5px;
+    linkStyle 4 stroke:#C23B22,stroke-width:2.5px;
+    linkStyle 5 stroke:#2E8B57,stroke-width:2.5px;
+    linkStyle 6 stroke:#C23B22,stroke-width:2.5px;
+    linkStyle 7 stroke:#2E8B57,stroke-width:2.5px;
+    linkStyle 8 stroke:#C23B22,stroke-width:2.5px;
+    linkStyle 9 stroke:#2E8B57,stroke-width:2.5px;
+    linkStyle 10 stroke:#C23B22,stroke-width:2.5px;
 ```
 
 *Diagram 3. Decision ladder for selecting the safest defensible mapping outcome.*
