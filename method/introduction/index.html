@@ -350,17 +350,18 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../assistants/" class="md-tabs__link">
-        
-  
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="../../assistants/assistants-overview/" class="md-tabs__link">
+          
+  
   
   AI Assistants
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -1744,9 +1745,27 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../assistants/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -1760,7 +1779,79 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Assistants
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assistants/assistants-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assistants/mapping-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HRIO Mapping Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2138,7 +2229,7 @@
 </div>
 <h3 id="framing-the-scope-of-hrio">Framing the Scope of HRIO</h3>
 <p>HRIO differs from ontologies whose primary goal is to prescribe a single, self-contained conceptualization of a narrowly delimited domain. Because HRIO functions as a common semantic reference model for semantic interoperability, its scope is defined primarily by the meanings that must be made explicit so that heterogeneous standards, local schemas, and related implementation artifacts can be interpreted in a shared and reviewable way.</p>
-<p>In this sense, HRIO is not intended to reproduce every term, structure, or modeling decision found in external artifacts. Rather, it aims to provide a shared semantic foundation that captures the meanings most relevant for alignment across standards, schemas, and related artifacts. This is especially important in a domain as broad as health and life sciences, where the same label may be used with different intended meanings in different contexts. Accordingly, the use or reuse of mature external semantic resources should not be framed as an alternative to HRIO. When appropriate, such resources can be aligned to HRIO through mappings, allowing reuse of existing artifacts while preserving HRIO’s role as the shared meaning-level reference model for interoperability. Other semantic artifacts may therefore remain valuable at the representation or implementation level without replacing HRIO’s role in making meaning explicit and traceable.</p>
+<p>In this sense, HRIO is not intended to reproduce every term, structure, or modeling decision found in external artifacts. Rather, it aims to provide a shared semantic foundation that captures the meanings most relevant for alignment across standards, schemas, and related artifacts. This is especially important in a domain as broad as health and life sciences, where the same label may be used with different intended meanings in different contexts. Accordingly, the use or reuse of mature external semantic resources should not be framed as an alternative to HRIO. When appropriate, such resources can be aligned to HRIO through mappings, allowing reuse of existing artifacts while preserving HRIO's role as the shared meaning-level reference model for interoperability. Other semantic artifacts may therefore remain valuable at the representation or implementation level without replacing HRIO's role in making meaning explicit and traceable.</p>
 <p>For example, a term such as <code>Patient</code> may be used in one artifact to denote a person registered to receive care, in another to denote a person currently receiving care, and in another to denote a person with a history of care. If HRIO attempted to pre-model every possible interpretation of every reused label across the full domain, the reference model would quickly become unmanageably large and difficult to govern. For that reason, HRIO must be scoped incrementally and according to interoperability value.</p>
 <p>Figure 2 summarizes the prioritization logic for candidate HRIO content.</p>
 <pre class="mermaid"><code>flowchart LR

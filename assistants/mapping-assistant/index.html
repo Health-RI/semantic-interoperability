@@ -1,0 +1,4071 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation of models, ontologies, and activities related to semantic interoperability within Health-RI">
+      
+      
+        <meta name="author" content="Pedro Paulo F. Barcelos">
+      
+      
+        <link rel="canonical" href="https://health-ri.github.io/semantic-interoperability/assistants/mapping-assistant/">
+      
+      
+        <link rel="prev" href="../assistants-overview/">
+      
+      
+        <link rel="next" href="../../contributing/overview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/health-ri-favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>HRIO Mapping Assistant - Health-RI Semantic Interoperability</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/colors.css">
+    
+      <link rel="stylesheet" href="../../deliverables/assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-guide-hrio-mapping-assistant" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Health-RI Semantic Interoperability" class="md-header__button md-logo" aria-label="Health-RI Semantic Interoperability" data-md-component="logo">
+      
+  <img src="../../assets/images/health-ri-logo-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Health-RI Semantic Interoperability
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HRIO Mapping Assistant
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/health-ri/semantic-interoperability/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../news/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  News & Updates
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../semantic-interoperability/" class="md-tabs__link">
+          
+  
+  
+  Semantic Interoperability
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ontouml-gufo/" class="md-tabs__link">
+          
+  
+  
+  OntoUML & gUFO
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../method/" class="md-tabs__link">
+          
+  
+  
+  Method
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../deliverables/" class="md-tabs__link">
+          
+  
+  
+  Deliverables
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../assistants-overview/" class="md-tabs__link">
+          
+  
+  
+  AI Assistants
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../contributing/overview/" class="md-tabs__link">
+          
+  
+  
+  Contributing
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Health-RI Semantic Interoperability" class="md-nav__button md-logo" aria-label="Health-RI Semantic Interoperability" data-md-component="logo">
+      
+  <img src="../../assets/images/health-ri-logo-white.png" alt="logo">
+
+    </a>
+    Health-RI Semantic Interoperability
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/health-ri/semantic-interoperability/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../news/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    News & Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic Interoperability
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Semantic Interoperability
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../semantic-interoperability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OntoUML & gUFO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OntoUML & gUFO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ontouml-gufo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ontouml-gufo/ontouml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OntoUML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ontouml-gufo/ontouml-stereotypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OntoUML Stereotypes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ontouml-gufo/ontouml-ufo-catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OntoUML/UFO Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ontouml-gufo/creating-ontouml-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating OntoUML Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ontouml-gufo/gufo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gUFO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Method
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Method
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ontology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/ontology-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle and Validation Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/ontology-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Rules and SHACL Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/ontology-notes-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Note Classification and Visual Conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/ontology-versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versioning Strategy for Ontology Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mappings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mappings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/mapping-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/mapping-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/mapping-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance, Lifecycle, and Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/specification-vocabulary.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vocabulary Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../method/persistent-ids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Persistent Identifiers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deliverables
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deliverables
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliverables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliverables/documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliverables/specification-ontology.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliverables/changelog-ontology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontology Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deliverables/mappings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSSOM Mapping Set
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Assistants
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Assistants
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assistants-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HRIO Mapping Assistant
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HRIO Mapping Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-gpt-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this GPT is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        At a glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-this-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use this GPT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When to use this GPT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-mapping-one-concept-from-a-user-domain-model-to-hrio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Mapping one concept from a user domain model to HRIO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-checking-whether-the-best-defensible-relation-is-exact-broader-or-narrower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Checking whether the best defensible relation is exact, broader, or narrower
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-checking-whether-a-candidate-is-a-plausible-near-miss-but-not-exact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Checking whether a candidate is a plausible near-miss but not exact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-reviewing-whether-a-new-ontology-concept-may-be-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Reviewing whether a new ontology concept may be needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-producing-a-traceable-and-reviewable-mapping-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E. Producing a traceable and reviewable mapping record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-handling-qualifier-sensitive-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F. Handling qualifier-sensitive concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-preferring-safe-outcomes-over-forced-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G. Preferring safe outcomes over forced mappings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-not-to-use-this-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When not to use this GPT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When not to use this GPT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-general-ontology-browsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. General ontology browsing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-multi-concept-or-batch-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Multi-concept or batch mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-creative-ontology-design-or-unconstrained-conceptual-restructuring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Creative ontology design or unconstrained conceptual restructuring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-unconstrained-search-across-external-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Unconstrained search across external resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-situations-where-you-only-need-a-rough-lexical-suggestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E. Situations where you only need a rough lexical suggestion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-cases-where-the-source-concept-is-too-vague-for-safe-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F. Cases where the source concept is too vague for safe mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-cases-where-missing-ontology-side-evidence-must-be-guessed-or-compensated-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G. Cases where missing ontology-side evidence must be guessed or compensated for
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h-tasks-that-require-relaxed-or-heuristic-judgment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        H. Tasks that require relaxed or heuristic judgment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-users-should-use-this-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How users should use this GPT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How users should use this GPT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-usage-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended usage pattern
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended usage pattern">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-submit-one-concept-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Submit one concept only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-provide-the-source-concept-in-a-usable-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Provide the source concept in a usable form
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-let-the-gpt-retrieve-target-evidence-from-knowledge-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Let the GPT retrieve target evidence from Knowledge files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-clarify-only-when-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Clarify only when needed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-expect-a-conservative-structured-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Expect a conservative structured result
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mini-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mini worked example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#good-request-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Good request template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-based-request-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File-based request template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-users-should-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What users should avoid
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-problem-it-solves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What problem it solves
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-information-this-gpt-relies-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What information this GPT relies on
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What information this GPT relies on">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-source-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Source evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-target-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Target evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-behavior-rules-of-this-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core behavior rules of this GPT
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core behavior rules of this GPT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-core-mapping-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Core mapping rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Core mapping rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-evidence-discipline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Evidence discipline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-clarification-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Clarification rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-deterministic-evaluation-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Deterministic evaluation logic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Deterministic evaluation logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axis-a-meaning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis A — meaning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis-b-bearer-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis B — bearer scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axis-q-qualifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axis Q — qualifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualifier-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualifier handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qualifier handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allowed-qualifier-buckets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Allowed qualifier buckets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-qualifiers-are-determined" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How qualifiers are determined
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-qualifier-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important qualifier restrictions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outcome-selection-ladder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outcome selection ladder
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outcome selection ladder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#t1-exact-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        T1 — Exact-Lock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t2-bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        T2 — Bounds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t3-directional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        T3 — Directional
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t4-negative-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        T4 — Negative Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t5-needs-new-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        T5 — Needs New Concept
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision priority
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-output-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the output looks like
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the output looks like">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preflight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Preflight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-retrieval-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Retrieval Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Candidates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-final-presentation-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Final Presentation Matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-why-these-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Why These Candidates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mapping-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Mapping Record
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-self-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Self-Audit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-gpt-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this GPT exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-this-gpt-can-be-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where this GPT can be found
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Where this GPT can be found">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Instructions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-knowledge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Knowledge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-configuration-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this configuration matters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why this configuration matters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-closed-evidence-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Closed evidence base
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-python-is-required-for-evidence-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Python is required for evidence handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-restricted-configuration-supports-safe-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Restricted configuration supports safe decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-configuration-must-support-safe-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The configuration must support safe failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known limitations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-it-is-intentionally-conservative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. It is intentionally conservative
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-it-depends-on-readable-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. It depends on readable evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-it-handles-one-concept-per-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. It handles one concept per turn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-it-does-not-use-the-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. It does not use the web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-it-does-not-invent-ontology-structure-identifiers-or-qualifier-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. It does not invent ontology structure, identifiers, or qualifier values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-it-is-not-a-bulk-mapping-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. It is not a bulk-mapping tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-interpretation-of-the-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical interpretation of the configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-user-facing-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested user-facing description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-user-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested user instructions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-one-sentence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In one sentence
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/contribution-channels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribution Channels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/call-for-community-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Call for Community Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open External Review Calls
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Open External Review Calls
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-review/sex-and-gender/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sex and Gender
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../assistants-overview/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    AI Assistants
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="user-guide-hrio-mapping-assistant">User Guide: <strong>HRIO Mapping Assistant</strong></h1>
+<div class="admonition warning">
+<p class="admonition-title">Disclaimer</p>
+<p>This page contains AI-assisted content that is currently under review and may include inaccuracies or omissions. Readers should use their judgment when interpreting or applying this information.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Prompt version and traceability</p>
+<p>This documentation reflects prompt version <strong><a href="https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/prompts/gpt/mapping-assistant-20260311-v1.txt">20260311-v1</a></strong> of the HRIO Mapping Assistant. The prompt files are available <a href="https://github.com/Health-RI/semantic-interoperability/tree/main/resources/prompts/gpt">in this folder</a>.</p>
+</div>
+<h2 id="what-this-gpt-is">What this GPT is</h2>
+<p>This GPT is a <strong>specialized semantic mapping assistant</strong> for mapping <strong>one user domain concept per turn</strong> to the <strong>Health-RI Ontology (HRIO)</strong> through a <strong>strict, evidence-based, ontology-aware decision process</strong>.</p>
+<p>It is <strong>not</strong> a general ontology chatbot, a free-form search assistant, or a bulk mapping tool. Its role is narrower and more controlled: it takes one source concept, uses only the <strong>user's provided text</strong> and the configured <strong>Knowledge files</strong>, uses <strong>Python</strong> to extract source evidence and retrieve target evidence from <strong>HRIO/HRIV</strong>, evaluates candidate targets deterministically, and returns a <strong>structured mapping decision record</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This GPT is designed for <strong>careful, one-concept-at-a-time mapping decisions</strong>, not for casual term matching or open-ended ontology browsing.</p>
+</div>
+<p>Its permitted mapping predicates are intentionally limited to:</p>
+<ul>
+<li><code>hriv:hasExactMeaning</code></li>
+<li><code>hriv:hasBroaderMeaningThan</code></li>
+<li><code>hriv:hasNarrowerMeaningThan</code></li>
+<li><code>NOT hriv:hasExactMeaning</code></li>
+</ul>
+<p>If no defensible mapping can be asserted, it returns:</p>
+<ul>
+<li><code>needs-new-concept</code></li>
+</ul>
+<p>If Python cannot read the source or the Knowledge resources, or if the source is unreadable, partial, or otherwise too unreliable for safe mapping, it returns:</p>
+<ul>
+<li><code>knowledge-access-failed</code></li>
+</ul>
+<p>This GPT should therefore be understood as a <strong>governed semantic decision tool</strong>. Its purpose is to help users reach the <strong>strongest defensible mapping outcome</strong> while making retrieved evidence, missingness, risks, downgrade logic, and final status explicit.</p>
+<p>Candidate evaluation is deterministic and follows three axes:</p>
+<ul>
+<li><strong>Axis A</strong>: meaning</li>
+<li><strong>Axis B</strong>: bearer scope</li>
+<li><strong>Axis Q</strong>: qualifier</li>
+</ul>
+<p>Qualifier handling is central to how this GPT works. Exact meaning is not allowed unless qualifier compatibility is <strong>explicitly evidenced</strong>. It recognizes only the following qualifier buckets:</p>
+<ul>
+<li><code>self-reported</code></li>
+<li><code>clinician-assessed/diagnosed</code></li>
+<li><code>measured/observed</code></li>
+<li><code>administrative/recorded</code></li>
+<li><code>inferred/derived</code></li>
+</ul>
+<p>The GPT evaluates candidates through a conservative outcome ladder:</p>
+<ul>
+<li><strong>T1</strong>: exact only</li>
+<li><strong>T2</strong>: broader + narrower bounds</li>
+<li><strong>T3</strong>: one directional mapping</li>
+<li><strong>T4</strong>: negative-only near-miss mapping</li>
+<li><strong>T5</strong>: <code>needs-new-concept</code></li>
+</ul>
+<p>It also distinguishes the final result status explicitly:</p>
+<ul>
+<li><code>final</code></li>
+<li><code>provisional</code></li>
+<li><code>needs-new-concept</code></li>
+</ul>
+<p><code>knowledge-access-failed</code> is a separate <strong>access outcome</strong>, not a mapping status.</p>
+<p>At a high level, this is how the GPT moves from one user concept to a mapping result:</p>
+<pre class="mermaid"><code>flowchart LR
+
+    A([Start: one concept submitted]) --&gt; B[Extract source evidence with Python]
+    B --&gt; C[Retrieve target evidence from HRIO or HRIV with Python]
+    C --&gt; D[Search order: exact phrase]
+    D --&gt; E[Search order: head noun]
+    E --&gt; F[Search order: synonyms or tokens]
+    F --&gt; G[Evaluate Axis A: meaning]
+    G --&gt; H[Evaluate Axis B: bearer scope]
+    H --&gt; I[Evaluate Axis Q: qualifier]
+    I --&gt; J[Apply conservative outcome ladder]
+    J --&gt; K[Build structured mapping result]
+
+    subgraph OUT[Returned output]
+        L[Preflight]
+        M[Retrieval Log]
+        N[Candidates]
+        O[Final Presentation Matrix]
+        P[Why These Candidates]
+        Q[Mapping Record]
+        R[Status]
+        S[Self-Audit]
+    end
+
+    K --&gt; L
+    K --&gt; M
+    K --&gt; N
+    K --&gt; O
+    K --&gt; P
+    K --&gt; Q
+    K --&gt; R
+    K --&gt; S
+    S --&gt; T([End: mapping record delivered])
+
+    classDef terminal fill:#0F4C81,stroke:#0B3558,color:#FFFFFF,stroke-width:2px;
+    classDef process fill:#EAF3FF,stroke:#5B8CC0,color:#12324A,stroke-width:1.5px;
+    classDef search fill:#EEF9F7,stroke:#5EA89B,color:#17443D,stroke-width:1.5px;
+    classDef decision fill:#FFF4CC,stroke:#C9A227,color:#5F4B00,stroke-width:1.5px;
+    classDef output fill:#F3EEFF,stroke:#8A76C1,color:#2F244D,stroke-width:1.5px;
+    classDef knowledge fill:#EAF7EA,stroke:#6AA56A,color:#23402B,stroke-width:1.5px;
+    classDef user fill:#F3F4F6,stroke:#9AA3AF,color:#374151,stroke-width:1.5px;
+    classDef alert fill:#FFF7E6,stroke:#D18B00,color:#6B4E00,stroke-width:1.5px;
+    classDef negative fill:#FDEDEC,stroke:#C23B22,color:#6E2519,stroke-width:1.5px;
+
+    class A,T terminal;
+    class B,C,G,H,I,J,K process;
+    class D,E,F search;
+    class L,M,N,O,P,Q,R,S output;
+
+    style OUT fill:#FBFAFF,stroke:#8A76C1,stroke-width:1.5px,color:#2F244D</code></pre>
+<p><em>Diagram 1. End-to-end workflow for mapping one user domain concept to HRIO under the prompt.</em></p>
+<h2 id="at-a-glance">At a glance</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Input</strong></td>
+<td style="text-align: left;">One concept only, provided as a direct definition or source file</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Evidence base</strong></td>
+<td style="text-align: left;">User text + configured Knowledge files only</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Method</strong></td>
+<td style="text-align: left;">Python-based source extraction, Python-based HRIO/HRIV retrieval, deterministic evaluation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Evaluation axes</strong></td>
+<td style="text-align: left;">Meaning, bearer scope, qualifier</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possible mapping predicates</strong></td>
+<td style="text-align: left;"><code>hriv:hasExactMeaning</code>, <code>hriv:hasBroaderMeaningThan</code>, <code>hriv:hasNarrowerMeaningThan</code>, <code>NOT hriv:hasExactMeaning</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Possible non-mapping outcomes</strong></td>
+<td style="text-align: left;"><code>needs-new-concept</code>, <code>knowledge-access-failed</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Best use case</strong></td>
+<td style="text-align: left;">Reviewable, one-concept semantic mapping to HRIO</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Not for</strong></td>
+<td style="text-align: left;">Batch mapping, general browsing, web search, approximate lexical matching</td>
+</tr>
+</tbody>
+</table>
+<h2 id="when-to-use-this-gpt">When to use this GPT</h2>
+<p>Use this GPT when you need a <strong>careful, evidence-based semantic mapping</strong> of <strong>one user domain concept per turn</strong> to <strong>HRIO</strong>.</p>
+<p>Use it when the goal is to determine the <strong>strongest defensible semantic relationship</strong> under strict constraints on evidence, bearer scope, qualifiers, and final statement safety.</p>
+<p>Typical good use cases include:</p>
+<h3 id="a-mapping-one-concept-from-a-user-domain-model-to-hrio">A. Mapping one concept from a user domain model to HRIO</h3>
+<p>Use it when you have <strong>one source concept</strong> and want to determine whether it can be mapped safely to an HRIO target.</p>
+<h3 id="b-checking-whether-the-best-defensible-relation-is-exact-broader-or-narrower">B. Checking whether the best defensible relation is exact, broader, or narrower</h3>
+<p>Use it when the distinction matters and you want a defensible answer rather than a guess.</p>
+<h3 id="c-checking-whether-a-candidate-is-a-plausible-near-miss-but-not-exact">C. Checking whether a candidate is a plausible near-miss but not exact</h3>
+<p>Use it when a target appears semantically close enough to compare, but not safe enough to assert as exact, broader, or narrower.</p>
+<h3 id="d-reviewing-whether-a-new-ontology-concept-may-be-needed">D. Reviewing whether a new ontology concept may be needed</h3>
+<p>Use it when the nearest existing HRIO concepts appear close lexically but lose a defining feature, depend on unsupported assumptions, or fail on qualifier or bearer distinctions.</p>
+<h3 id="e-producing-a-traceable-and-reviewable-mapping-record">E. Producing a traceable and reviewable mapping record</h3>
+<p>Use it when the output must be reviewable by ontology engineers, semantic modelers, or governance groups.</p>
+<h3 id="f-handling-qualifier-sensitive-concepts">F. Handling qualifier-sensitive concepts</h3>
+<p>Use it when the source concept depends on <strong>how the concept is established</strong>, and that distinction may affect exactness.</p>
+<h3 id="g-preferring-safe-outcomes-over-forced-mappings">G. Preferring safe outcomes over forced mappings</h3>
+<p>Use it when the evidence may be incomplete, the source may be partially readable, or qualifier and bearer distinctions may materially affect the mapping.</p>
+<h2 id="when-not-to-use-this-gpt">When not to use this GPT</h2>
+<p>Do <strong>not</strong> use this GPT for tasks such as:</p>
+<h3 id="a-general-ontology-browsing">A. General ontology browsing</h3>
+<p>Do not use it when the goal is simply to explore HRIO casually or inspect terms without needing a formal mapping decision.</p>
+<h3 id="b-multi-concept-or-batch-mapping">B. Multi-concept or batch mapping</h3>
+<p>Do not use it when you want to map many concepts at once.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The prompt explicitly enforces <strong>one concept per turn</strong>. If more than one concept is provided, the GPT should ask which single concept to assess.</p>
+</div>
+<h3 id="c-creative-ontology-design-or-unconstrained-conceptual-restructuring">C. Creative ontology design or unconstrained conceptual restructuring</h3>
+<p>Do not use it when the goal is to brainstorm new ontology structures freely or redesign large portions of a model without strict evidence constraints.</p>
+<h3 id="d-unconstrained-search-across-external-resources">D. Unconstrained search across external resources</h3>
+<p>Do not use it when the task depends on broad external search, web supplementation, or open-ended discovery beyond the configured evidence base.</p>
+<h3 id="e-situations-where-you-only-need-a-rough-lexical-suggestion">E. Situations where you only need a rough lexical suggestion</h3>
+<p>Do not use it when you only want a quick approximate match, a loose keyword suggestion, or a lightweight “closest label” answer.</p>
+<h3 id="f-cases-where-the-source-concept-is-too-vague-for-safe-mapping">F. Cases where the source concept is too vague for safe mapping</h3>
+<p>Do not use it when the source concept is so underspecified that even a conservative mapping assessment cannot be made safely.</p>
+<h3 id="g-cases-where-missing-ontology-side-evidence-must-be-guessed-or-compensated-for">G. Cases where missing ontology-side evidence must be guessed or compensated for</h3>
+<p>Do not use it if the task depends on inventing missing HRIO metadata, inferring unretrieved qualifier buckets, or compensating for missing ontology-side evidence through user questioning.</p>
+<h3 id="h-tasks-that-require-relaxed-or-heuristic-judgment">H. Tasks that require relaxed or heuristic judgment</h3>
+<p>Do not use it when the task calls for flexible, intuitive, or deliberately approximate semantic judgment.</p>
+<h2 id="how-users-should-use-this-gpt">How users should use this GPT</h2>
+<p>For best results, users should treat this GPT as a <strong>single-concept semantic mapping workflow</strong>.</p>
+<p>This GPT works best when the user provides:</p>
+<ul>
+<li><strong>one concept only</strong></li>
+<li>either a <strong>direct definition in chat</strong> or a <strong>source file</strong></li>
+<li>clarification only when the GPT asks for it and only when source-side missing information could materially change the result</li>
+</ul>
+<p>Users should not treat it as a bulk-mapping tool, a casual ontology browser, or a free-form search assistant. It is designed for <strong>careful, evidence-based mapping of one concept at a time</strong> using only <strong>user text</strong> and <strong>Knowledge files</strong>.</p>
+<p>Before reviewing the usage pattern in detail, it helps to see the interaction flow.</p>
+<pre class="mermaid"><code>flowchart LR
+
+    subgraph U[User]
+        U1([Start request])
+        U2[Provide one concept]
+        U3[Provide direct definition or source file]
+        U4[Provide clarification if asked]
+        U5([Receive structured mapping result])
+    end
+
+    subgraph G[GPT]
+        G1[Extract source evidence with Python]
+        G2{Is source-side evidence sufficient for safe assessment?}
+        G3[Ask limited clarification questions]
+        G4[Reassess source evidence]
+        G5[Retrieve target evidence from HRIO or HRIV with Python]
+        G6[Search in required order: exact phrase, head noun, synonyms/tokens]
+        G7[Evaluate candidates on Axis A, Axis B, and Axis Q]
+        G8[Apply outcome ladder]
+        G9[Return structured output with Mapping Record, Status, and Self-Audit]
+    end
+
+    subgraph K[Knowledge]
+        K1[(HRIO / HRIV knowledge files)]
+    end
+
+    U1 --&gt; U2 --&gt; U3 --&gt; G1
+    G1 --&gt; G2
+    G2 -- No --&gt; G3 --&gt; U4 --&gt; G4 --&gt; G2
+    G2 -- Yes --&gt; G5
+    K1 --&gt; G5
+    G5 --&gt; G6 --&gt; G7 --&gt; G8 --&gt; G9 --&gt; U5
+
+    classDef terminal fill:#0F4C81,stroke:#0B3558,color:#FFFFFF,stroke-width:2px;
+    classDef process fill:#EAF3FF,stroke:#5B8CC0,color:#12324A,stroke-width:1.5px;
+    classDef search fill:#EEF9F7,stroke:#5EA89B,color:#17443D,stroke-width:1.5px;
+    classDef decision fill:#FFF4CC,stroke:#C9A227,color:#5F4B00,stroke-width:1.5px;
+    classDef output fill:#F3EEFF,stroke:#8A76C1,color:#2F244D,stroke-width:1.5px;
+    classDef knowledge fill:#EAF7EA,stroke:#6AA56A,color:#23402B,stroke-width:1.5px;
+    classDef user fill:#F3F4F6,stroke:#9AA3AF,color:#374151,stroke-width:1.5px;
+    classDef alert fill:#FFF7E6,stroke:#D18B00,color:#6B4E00,stroke-width:1.5px;
+
+    class U1,U5 terminal;
+    class U2,U3,U4 user;
+    class G1,G4,G5,G7,G8,G9 process;
+    class G6 search;
+    class G2 decision;
+    class G3 alert;
+    class K1 knowledge;
+
+    style U fill:#FCFCFD,stroke:#9AA3AF,stroke-width:1px,color:#374151
+    style G fill:#F8FBFF,stroke:#5B8CC0,stroke-width:1px,color:#12324A
+    style K fill:#F6FBF7,stroke:#6AA56A,stroke-width:1px,color:#23402B
+
+    linkStyle 4 stroke:#C23B22,stroke-width:2.5px
+    linkStyle 8 stroke:#2E8B57,stroke-width:2.5px</code></pre>
+<p><em>Diagram 2. User–GPT interaction flow for submitting one concept and receiving a structured mapping result.</em></p>
+<h3 id="recommended-usage-pattern">Recommended usage pattern</h3>
+<h4 id="1-submit-one-concept-only">1. Submit one concept only</h4>
+<p>The GPT is explicitly designed for <strong>one concept per turn</strong>.</p>
+<h4 id="2-provide-the-source-concept-in-a-usable-form">2. Provide the source concept in a usable form</h4>
+<p>The source concept should be provided as either:</p>
+<ul>
+<li>a direct definition in chat</li>
+<li>a source file</li>
+</ul>
+<h4 id="3-let-the-gpt-retrieve-target-evidence-from-knowledge-files">3. Let the GPT retrieve target evidence from Knowledge files</h4>
+<p>Users should expect the GPT to rely on <strong>configured Knowledge files</strong>, not web knowledge.</p>
+<h4 id="4-clarify-only-when-needed">4. Clarify only when needed</h4>
+<p>The GPT may ask clarification questions, but only in a narrow set of cases:</p>
+<ul>
+<li>the missing information is about the <strong>source concept</strong></li>
+<li>the missing information could materially change the outcome</li>
+<li>a safe assessment cannot yet be made from the available source-side evidence</li>
+</ul>
+<h4 id="5-expect-a-conservative-structured-result">5. Expect a conservative structured result</h4>
+<p>The GPT is designed to return the <strong>strongest defensible safe outcome</strong>, not the most optimistic one.</p>
+<p>Depending on the evidence, that may be:</p>
+<ul>
+<li>an exact mapping</li>
+<li>a broader or narrower mapping</li>
+<li>a negative-only near-miss result</li>
+<li><code>needs-new-concept</code></li>
+<li><code>knowledge-access-failed</code></li>
+</ul>
+<h3 id="mini-worked-example">Mini worked example</h3>
+<p>A user provides the source concept:</p>
+<blockquote>
+<p><strong>Source label:</strong> Family history of diabetes
+<strong>Source definition:</strong> Presence of diabetes in biological relatives, as reported by the participant.</p>
+</blockquote>
+<p>A simplified decision path could look like this:</p>
+<ol>
+<li>The GPT extracts the source evidence and identifies a likely qualifier of <code>self-reported</code> because that wording is <strong>explicitly present</strong>.</li>
+<li>It retrieves candidate HRIO targets using the required order: exact phrase, then head noun, then synonyms/tokens.</li>
+<li>Suppose it finds a candidate that captures <strong>diabetes diagnosis in the patient</strong>, not <strong>family history</strong>.</li>
+<li>Axis A may look partially related at the lexical level, but Axis B fails because the bearer differs: the source is about <strong>relatives</strong>, while the target is about the <strong>patient</strong>.</li>
+<li>Exactness is therefore blocked, even if the label looks close.</li>
+<li>If no safe broader or narrower relation is useful, but a plausible semantic near-miss exists, the result may be <strong>T4</strong> with:<ul>
+<li><code>NOT hriv:hasExactMeaning</code></li>
+</ul>
+</li>
+</ol>
+<p>This example shows why label similarity alone is not enough: meaning, bearer scope, and qualifier evidence all matter.</p>
+<h3 id="good-request-template">Good request template</h3>
+<p>A strong user request looks like this:</p>
+<blockquote>
+<p>Map this one concept to HRIO using the full structured result.
+Source label: [label]
+Source definition: [definition or verbatim excerpt]
+Source context: [optional bearer/scope/context]
+Source qualifier context: [only if explicit]
+Please use only the available user text and Knowledge files.
+Please assess <code>hriv:hasExactMeaning</code>, <code>hriv:hasBroaderMeaningThan</code>, <code>hriv:hasNarrowerMeaningThan</code>, or <code>NOT hriv:hasExactMeaning</code> only if supported by the retrieved evidence.</p>
+</blockquote>
+<h3 id="file-based-request-template">File-based request template</h3>
+<p>Another good request pattern is:</p>
+<blockquote>
+<p>Use this file as the source evidence for one concept and map it to HRIO.
+Concept to assess: [label or identifier]
+Please return the full structured mapping result.
+Please do not infer missing metadata, qualifier values, bearer constraints, or ontology structure.</p>
+</blockquote>
+<h3 id="what-users-should-avoid">What users should avoid</h3>
+<p>Users should avoid:</p>
+<ul>
+<li>submitting multiple concepts at once</li>
+<li>giving only a vague label with no definition or usable source evidence</li>
+<li>asking for a forced exact match</li>
+<li>expecting the GPT to compensate for missing HRIO-side metadata</li>
+<li>treating lexical similarity as sufficient evidence</li>
+<li>asking the GPT to guess qualifier values, identifiers, or ontology structure</li>
+<li>using the GPT as a bulk-mapping or general browsing tool</li>
+</ul>
+<h2 id="what-problem-it-solves">What problem it solves</h2>
+<p>Without a system like this, semantic mapping often suffers from:</p>
+<ul>
+<li>overreliance on lexical similarity</li>
+<li>undocumented assumptions</li>
+<li>hidden interpretation of qualifiers</li>
+<li>inferred bearer constraints that were never retrieved</li>
+<li>inconsistent treatment of broader versus narrower relations</li>
+<li>contradictory statements on the same source-target pair</li>
+<li>forced exact matches when evidence is incomplete</li>
+<li>unclear downgrade logic</li>
+<li>lack of transparent justification</li>
+<li>failure to distinguish between “no safe mapping” and “knowledge could not be accessed safely”</li>
+</ul>
+<p>This GPT addresses those problems by requiring that every mapping decision be tied to <strong>retrieved evidence</strong> and by making missing evidence visible instead of silently inventing it.</p>
+<h2 id="what-information-this-gpt-relies-on">What information this GPT relies on</h2>
+<p>This GPT relies on <strong>two evidence streams only</strong>:</p>
+<ul>
+<li><strong>source evidence</strong> from the user's provided concept</li>
+<li><strong>target evidence</strong> from the configured <strong>HRIO/HRIV Knowledge files</strong></li>
+</ul>
+<p>It does <strong>not</strong> rely on web knowledge.</p>
+<h3 id="1-source-evidence">1. Source evidence</h3>
+<p>This is the user's concept as provided in one of two forms:</p>
+<ul>
+<li>a direct definition in chat</li>
+<li>a source file</li>
+</ul>
+<p>According to the prompt, the GPT must use <strong>Python</strong> to extract source evidence.</p>
+<p>It reports:</p>
+<ul>
+<li>source label</li>
+<li>source definition</li>
+<li>normalization keys</li>
+<li>location</li>
+<li>verbatim source evidence</li>
+</ul>
+<p>If evidence is unavailable, it must be recorded as <code>Missing</code>.</p>
+<h3 id="2-target-evidence">2. Target evidence</h3>
+<p>This is retrieved from the <strong>HRIO/HRIV Knowledge files</strong> using <strong>Python</strong>.</p>
+<p>According to the prompt, the GPT must retrieve target-side evidence such as:</p>
+<ul>
+<li>HRIO labels</li>
+<li>HRIV labels</li>
+<li>CURIEs</li>
+<li>triples</li>
+<li>comments</li>
+<li>qualifier metadata</li>
+</ul>
+<p>This target evidence is used to support candidate evaluation across:</p>
+<ul>
+<li>Axis A: meaning</li>
+<li>Axis B: bearer scope</li>
+<li>Axis Q: qualifier</li>
+</ul>
+<p>The prompt also requires target retrieval to follow this order:</p>
+<ul>
+<li>exact phrase</li>
+<li>head noun</li>
+<li>synonyms/tokens</li>
+</ul>
+<p>If Python cannot read the source or the Knowledge files, or if the source is unreadable, partial, or otherwise too unreliable for safe mapping, the GPT must return:</p>
+<ul>
+<li><code>knowledge-access-failed</code></li>
+</ul>
+<h2 id="core-behavior-rules-of-this-gpt">Core behavior rules of this GPT</h2>
+<p>This GPT is governed by several strict rule groups.</p>
+<h3 id="1-core-mapping-rules">1. Core mapping rules</h3>
+<p>These rules define the allowed semantic outputs and how they may be combined.</p>
+<h4 id="key-constraints">Key constraints</h4>
+<ul>
+<li><strong>one concept per turn</strong></li>
+<li><strong>one predicate per HRIO target</strong></li>
+<li>only the following mapping predicates are allowed:<ul>
+<li><code>hriv:hasExactMeaning</code></li>
+<li><code>hriv:hasBroaderMeaningThan</code></li>
+<li><code>hriv:hasNarrowerMeaningThan</code></li>
+<li><code>NOT hriv:hasExactMeaning</code></li>
+</ul>
+</li>
+<li><code>NOT hriv:hasExactMeaning</code> is a valid mapping statement</li>
+<li>broader and narrower relations must never be negated</li>
+<li>HRIO labels and CURIEs must be quoted <strong>verbatim</strong></li>
+<li>identifiers must never be invented</li>
+<li>for the same source-target pair, broader or narrower must not be combined with <code>NOT hriv:hasExactMeaning</code></li>
+<li>if <code>hriv:hasExactMeaning</code> appears in the Mapping Record, it must be the <strong>only</strong> final statement</li>
+<li>under T1, non-exact candidates may still appear for comparison, but only the exact statement enters the Mapping Record</li>
+</ul>
+<h3 id="2-evidence-discipline">2. Evidence discipline</h3>
+<p>This is one of the most important parts of the GPT.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Absence of evidence is not positive evidence.</strong> If something is not retrieved, it must not be invented.</p>
+</div>
+<p>It must:</p>
+<ul>
+<li>use only <strong>retrieved evidence</strong></li>
+<li>avoid paraphrasing as evidence</li>
+<li>avoid inferring unretrieved metadata, qualifier buckets, bearer constraints, or ontology structure</li>
+<li>record missing evidence as <code>Missing</code></li>
+<li>avoid fabricating structure from partial or unreadable files</li>
+<li>label any small interpretive bridge as a <strong>risk/assumption</strong>, not as direct evidence</li>
+</ul>
+<h3 id="3-clarification-rule">3. Clarification rule</h3>
+<p>The GPT may ask clarification questions, but only under tightly limited conditions.</p>
+<p>It should ask only when:</p>
+<ul>
+<li>the missing information concerns the <strong>source concept</strong></li>
+<li>the missing information could materially change the result</li>
+<li>clarification is genuinely needed for a safe assessment</li>
+</ul>
+<p>It should not ask when:</p>
+<ul>
+<li>evidence already supports a safe decision</li>
+<li>the missing information is about HRIO metadata rather than the source</li>
+<li>a safe <code>provisional</code>, <code>no</code>, or <code>needs-new-concept</code> outcome already exists</li>
+<li>clarification would only compensate for missing ontology-side evidence</li>
+</ul>
+<p>Additional constraints:</p>
+<ul>
+<li>ask at most <strong>3 questions</strong></li>
+<li>do not ask for clarification merely because HRIO-side metadata is missing</li>
+<li>prefer a safe conservative outcome over extra questioning when that is already justified</li>
+</ul>
+<h3 id="4-deterministic-evaluation-logic">4. Deterministic evaluation logic</h3>
+<p>Each candidate target is evaluated using three axes.</p>
+<h4 id="axis-a-meaning">Axis A — meaning</h4>
+<p>Does the source concept mean the same thing as the target?</p>
+<h4 id="axis-b-bearer-scope">Axis B — bearer scope</h4>
+<p>Does the target apply to the same kind of bearer or subject as the source?</p>
+<h4 id="axis-q-qualifier">Axis Q — qualifier</h4>
+<p>Do source and target align on how the concept is established or qualified?</p>
+<p>The GPT restricts qualifier handling to the following buckets only:</p>
+<ul>
+<li><code>self-reported</code></li>
+<li><code>clinician-assessed/diagnosed</code></li>
+<li><code>measured/observed</code></li>
+<li><code>administrative/recorded</code></li>
+<li><code>inferred/derived</code></li>
+</ul>
+<p>Additional deterministic rules also apply:</p>
+<ul>
+<li>exact meaning requires <strong>explicit evidence</strong> that <code>Source(Q) = Target(Q)</code></li>
+<li><code>Source(Q)</code> may contain more than one explicit bucket</li>
+<li>if a target captures only part of a composite <code>Source(Q)</code>, it is <strong>not exact</strong></li>
+<li><code>Target(Q)</code> may be assigned only from:<ul>
+<li>explicit HRIO metadata, or</li>
+<li>explicit HRIO subclassing to a target already assigned that bucket</li>
+</ul>
+</li>
+<li>if <code>Target(Q)</code> is missing or mismatched, the result must be downgraded to T3, T4, or T5</li>
+<li>if Axis A and Axis B conflict, positive predicates should be avoided for that target and <code>NOT hriv:hasExactMeaning</code> should be preferred</li>
+<li>OntoUML structure and formal definition take priority over lexical similarity</li>
+</ul>
+<h2 id="qualifier-handling">Qualifier handling</h2>
+<p>Qualifier logic is central to this GPT.</p>
+<h3 id="allowed-qualifier-buckets">Allowed qualifier buckets</h3>
+<p>Only the following qualifier buckets are allowed:</p>
+<ul>
+<li><code>self-reported</code></li>
+<li><code>clinician-assessed/diagnosed</code></li>
+<li><code>measured/observed</code></li>
+<li><code>administrative/recorded</code></li>
+<li><code>inferred/derived</code></li>
+</ul>
+<h3 id="how-qualifiers-are-determined">How qualifiers are determined</h3>
+<p>Qualifier values must be determined from <strong>explicit evidence only</strong>.</p>
+<p>The GPT must report qualifier audit values in the form:</p>
+<ul>
+<li><code>Source(Q): [bucket | bucket1 + bucket2 | None explicit | Missing]</code></li>
+<li><code>Target(Q): [bucket | Missing]</code></li>
+</ul>
+<p>The GPT may normalize <strong>explicit wording</strong> as follows:</p>
+<ul>
+<li>self-identified / self-identification / self-identifies as → <code>self-reported</code></li>
+<li>diagnosed by / clinical diagnosis / clinician-assessed → <code>clinician-assessed/diagnosed</code></li>
+<li>measured / observed / laboratory assessed → <code>measured/observed</code></li>
+<li>administratively recorded / registered / officially recorded → <code>administrative/recorded</code></li>
+<li>derived from / computed from / algorithmically inferred → <code>inferred/derived</code></li>
+<li>otherwise → <code>Missing</code></li>
+</ul>
+<p><code>Target(Q)</code> may be determined only from:</p>
+<ul>
+<li>explicit HRIO metadata, or</li>
+<li>explicit HRIO subclassing to a target already assigned that bucket</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Qualifier mismatch does not automatically mean “no relationship at all.” It means <strong>exactness is blocked</strong>, and the GPT must consider safer downgraded outcomes.</p>
+</div>
+<h3 id="important-qualifier-restrictions">Important qualifier restrictions</h3>
+<ul>
+<li>qualifiers must be <strong>explicitly evidenced</strong></li>
+<li>if a target captures only part of a composite <code>Source(Q)</code>, the mapping is <strong>not exact</strong></li>
+<li>if target qualifier evidence is absent, record <code>Target(Q): Missing</code></li>
+<li>qualifier values must not be guessed from suggestive wording alone</li>
+<li>qualifier values must <strong>not</strong> be inferred from terms such as <code>karyotypic</code>, <code>chromosomal</code>, or <code>structural</code></li>
+</ul>
+<h2 id="outcome-selection-ladder">Outcome selection ladder</h2>
+<p>The GPT uses a fixed ladder from the <strong>strongest</strong> to the <strong>weakest</strong> defensible mapping outcome.</p>
+<p>This ladder governs <strong>mapping outcome selection</strong> (<code>T1</code> to <code>T5</code>). The separate <strong>Status</strong> result (<code>final</code>, <code>provisional</code>, or <code>needs-new-concept</code>) is assigned afterward based on the final statements and candidate readiness.</p>
+<pre class="mermaid"><code>flowchart LR
+
+    A([Start candidate review]) --&gt; B{"Do Axis A and Axis B support exact meaning?"}
+    B -- Yes --&gt; C{"Is Source(Q) = Target(Q)&lt;br/&gt;explicitly evidenced&lt;br/&gt;and does confidence meet the 99% threshold?"}
+    B -- No --&gt; D{"Are both a broader and a narrower relation&lt;br/&gt;defensible on different targets?"}
+
+    C -- Yes --&gt; E["T1: Exact-Lock&lt;br/&gt;hriv:hasExactMeaning only"]
+    C -- No --&gt; D
+
+    D -- Yes --&gt; F["T2: Bounds&lt;br/&gt;one broader + one narrower"]
+    D -- No --&gt; G{"Is one safe directional relation defensible&lt;br/&gt;and useful enough to assert?"}
+
+    G -- Yes --&gt; H["T3: Directional&lt;br/&gt;one broader or one narrower"]
+    G -- No --&gt; I{"Are there plausible semantic near-miss targets&lt;br/&gt;with Candidate Ready-to-Apply = yes?"}
+
+    I -- Yes --&gt; J["T4: Negative Only&lt;br/&gt;NOT hriv:hasExactMeaning"]
+    I -- No --&gt; K["T5: needs-new-concept"]
+
+    E --&gt; L([End])
+    F --&gt; L
+    H --&gt; L
+    J --&gt; L
+    K --&gt; L
+
+    classDef terminal fill:#0F4C81,stroke:#0B3558,color:#FFFFFF,stroke-width:2px;
+    classDef decision fill:#FFF4CC,stroke:#C9A227,color:#5F4B00,stroke-width:1.5px;
+    classDef output fill:#F3EEFF,stroke:#8A76C1,color:#2F244D,stroke-width:1.5px;
+    classDef negative fill:#FDEDEC,stroke:#C23B22,color:#6E2519,stroke-width:1.5px;
+    classDef alert fill:#FFF7E6,stroke:#D18B00,color:#6B4E00,stroke-width:1.5px;
+
+    class A,L terminal;
+    class B,C,D,G,I decision;
+    class E,F,H output;
+    class J negative;
+    class K alert;
+
+    linkStyle 1 stroke:#2E8B57,stroke-width:2.5px;
+    linkStyle 2 stroke:#C23B22,stroke-width:2.5px;
+    linkStyle 3 stroke:#2E8B57,stroke-width:2.5px;
+    linkStyle 4 stroke:#C23B22,stroke-width:2.5px;
+    linkStyle 5 stroke:#2E8B57,stroke-width:2.5px;
+    linkStyle 6 stroke:#C23B22,stroke-width:2.5px;
+    linkStyle 7 stroke:#2E8B57,stroke-width:2.5px;
+    linkStyle 8 stroke:#C23B22,stroke-width:2.5px;
+    linkStyle 9 stroke:#2E8B57,stroke-width:2.5px;
+    linkStyle 10 stroke:#C23B22,stroke-width:2.5px;</code></pre>
+<p><em>Diagram 3. Decision ladder for selecting the safest defensible mapping outcome.</em></p>
+<h3 id="t1-exact-lock">T1 — Exact-Lock</h3>
+<p>Use only when:</p>
+<ul>
+<li>Axis A and Axis B support exact meaning</li>
+<li><code>Source(Q) = Target(Q)</code> is <strong>explicitly evidenced</strong></li>
+<li>confidence meets the <strong>99% threshold</strong></li>
+<li>the exact statement is safe as the <strong>only</strong> final statement</li>
+</ul>
+<p>Output:</p>
+<ul>
+<li>one <code>hriv:hasExactMeaning</code> only</li>
+</ul>
+<p>Under T1, non-exact candidates may still appear for comparison, but only the exact statement enters the Mapping Record.</p>
+<h3 id="t2-bounds">T2 — Bounds</h3>
+<p>Use when:</p>
+<ul>
+<li>one <code>hriv:hasBroaderMeaningThan</code> is defensible for one target, and</li>
+<li>one <code>hriv:hasNarrowerMeaningThan</code> is defensible for a different target</li>
+</ul>
+<h3 id="t3-directional">T3 — Directional</h3>
+<p>Use when:</p>
+<ul>
+<li>exactly one broader or narrower relation is defensible for the best target</li>
+<li>exact meaning is not supported</li>
+</ul>
+<p>Output:</p>
+<ul>
+<li>one <code>hriv:hasBroaderMeaningThan</code> <strong>or</strong></li>
+<li>one <code>hriv:hasNarrowerMeaningThan</code></li>
+</ul>
+<p>Additional rule:</p>
+<ul>
+<li><code>NOT hriv:hasExactMeaning</code> may optionally be added for <strong>different</strong> plausible near-miss targets</li>
+</ul>
+<p>Do <strong>not</strong> prefer T3 when the only directional candidate is a <strong>weak generic anchor</strong> that loses the source's core identity or qualifier specificity and a T4 outcome would be more useful.</p>
+<h3 id="t4-negative-only">T4 — Negative Only</h3>
+<p>Use when:</p>
+<ul>
+<li>plausible <strong>semantic near-miss</strong> targets exist</li>
+<li>no safe <strong>useful</strong> broader or narrower relation should be asserted</li>
+<li>at least one negative candidate has <code>Candidate Ready-to-Apply: yes</code></li>
+</ul>
+<p>Output:</p>
+<ul>
+<li><code>NOT hriv:hasExactMeaning</code> only</li>
+</ul>
+<p>Additional rule:</p>
+<ul>
+<li>in T4, the Final Statements must include <strong>all</strong> candidates marked <code>Candidate Ready-to-Apply: yes</code> whose predicate is <code>NOT hriv:hasExactMeaning</code></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do <strong>not</strong> use T4 when the negatives are only structurally adjacent, lexically incidental, or semantically remote. In those cases, the correct outcome is <strong>T5</strong>.</p>
+</div>
+<h3 id="t5-needs-new-concept">T5 — Needs New Concept</h3>
+<p>Use when:</p>
+<ul>
+<li>no candidate is defensible as exact, broader, or narrower</li>
+<li>the best matches are only lexical near-matches</li>
+<li>missing qualifier or bearer distinctions are essential</li>
+<li>every candidate loses a core defining feature</li>
+<li>T4 cannot be supported because no negative candidate is <code>Candidate Ready-to-Apply: yes</code></li>
+</ul>
+<p>Output:</p>
+<ul>
+<li><code>needs-new-concept</code></li>
+</ul>
+<h2 id="decision-priority">Decision priority</h2>
+<p>When the evidence is uncertain, the GPT should prefer:</p>
+<ul>
+<li>exact over directional</li>
+<li>directional over unsafe exact</li>
+<li>negative-only over unsafe positive mappings</li>
+<li>T4 over weak generic-anchor T3 when T4 is more useful to the user</li>
+<li><code>Target(Q): Missing</code> over invented Q values</li>
+<li><code>partial</code> over <code>yes</code> when conditions are not fully satisfied</li>
+<li><code>provisional</code> over <code>final</code> when conditions are not fully satisfied</li>
+<li><code>needs-new-concept</code> over forced mapping</li>
+</ul>
+<h2 id="what-the-output-looks-like">What the output looks like</h2>
+<p>The GPT is designed to return a <strong>structured answer</strong>.</p>
+<p>In addition to the named output sections below, the response must also report the required <strong>source evidence details</strong>:</p>
+<ul>
+<li>source label</li>
+<li>source definition</li>
+<li>normalization keys</li>
+<li>location</li>
+<li>verbatim source evidence</li>
+</ul>
+<h3 id="1-preflight">1. Preflight</h3>
+<p>States whether knowledge access <strong>succeeded</strong> or <strong>failed</strong>.</p>
+<h3 id="2-retrieval-log">2. Retrieval Log</h3>
+<p>Reports the required target retrieval progression:</p>
+<ul>
+<li>exact phrase</li>
+<li>head noun</li>
+<li>synonyms/tokens</li>
+</ul>
+<p>It must also report the findings at each step.</p>
+<h3 id="3-candidates">3. Candidates</h3>
+<p>Lists up to <strong>10 candidates</strong>.</p>
+<p>For each candidate, the GPT must provide:</p>
+<ol>
+<li>HRIO Label: <code>[Label] ([CURIE])</code></li>
+<li>Predicate</li>
+<li>Qualifier Audit: <code>Source(Q): ...</code> vs <code>Target(Q): ...</code></li>
+<li>Confidence: <code>0–100%</code> plus justification</li>
+<li>Alignment: Axis A, Axis B, Axis Q</li>
+<li>Risks</li>
+<li>Evidence Pointers: verbatim source snippet vs verbatim target excerpt</li>
+<li>Candidate Ready-to-Apply: <code>yes | partial | no</code></li>
+</ol>
+<p>The readiness values mean:</p>
+<ul>
+<li><code>yes</code> = safe as a candidate mapping statement and eligible for Final Statements</li>
+<li><code>partial</code> = defensible as a candidate mapping statement but dependent on directional approximation, missing metadata, qualifier mismatch, or loss/generalization of a defining source feature; eligible for Final Statements only when Overall Status is <code>provisional</code></li>
+<li><code>no</code> = not safe as a candidate mapping statement and not eligible for Final Statements</li>
+</ul>
+<p>Additional candidate completeness rule:</p>
+<ul>
+<li>if a retrieved target is described as the <strong>closest</strong>, <strong>best</strong>, or <strong>most semantically relevant</strong> target, it <strong>must</strong> appear in <strong>Candidates</strong> and in the <strong>Final Presentation Matrix</strong>, even if exactness is blocked</li>
+<li>a target should <strong>not</strong> be elevated to full candidate status only because it is the nearest retrieved item; remote contrasts may instead be discussed in <strong>Why These Candidates</strong></li>
+</ul>
+<h3 id="4-final-presentation-matrix">4. Final Presentation Matrix</h3>
+<p>This is a mandatory summary table.</p>
+<p>It must always include:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">#</th>
+<th style="text-align: left;">Target HRIO Label (CURIE)</th>
+<th style="text-align: left;">Predicate</th>
+<th style="text-align: center;">Confidence</th>
+<th style="text-align: left;">Candidate Ready-to-Apply</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-why-these-candidates">5. Why These Candidates</h3>
+<p>Explains:</p>
+<ul>
+<li>why candidates were included</li>
+<li>why candidates were downgraded or rejected</li>
+<li>why T3, T4, or T5 was or was not triggered</li>
+</ul>
+<h3 id="6-mapping-record">6. Mapping Record</h3>
+<p>Provides:</p>
+<ul>
+<li><strong>Final Statements</strong></li>
+<li><strong>Overall Status</strong></li>
+<li><strong>Reason</strong></li>
+</ul>
+<p>Final Statements must be reported in the form:</p>
+<ul>
+<li><code>&lt;User concept&gt; → &lt;predicate&gt; → hrio:CURIE</code></li>
+<li>or <code>none</code></li>
+</ul>
+<p>Additional rules:</p>
+<ul>
+<li>if <code>hriv:hasExactMeaning</code> appears in the Mapping Record, it must be the <strong>only</strong> final statement</li>
+<li>in T4, Final Statements must include <strong>all</strong> candidates marked <code>Candidate Ready-to-Apply: yes</code> whose predicate is <code>NOT hriv:hasExactMeaning</code></li>
+</ul>
+<h3 id="7-status">7. Status</h3>
+<p>Reports one of:</p>
+<ul>
+<li><code>final</code></li>
+<li><code>provisional</code></li>
+<li><code>needs-new-concept</code></li>
+</ul>
+<p><code>knowledge-access-failed</code> remains a separate access outcome reported in Preflight.</p>
+<p>The status rules are:</p>
+<ul>
+<li><code>final</code> = all Final Statements are from candidates marked <code>yes</code></li>
+<li><code>provisional</code> = at least one Final Statement is from a candidate marked <code>partial</code>, and no Final Statement is from a candidate marked <code>no</code></li>
+<li><code>needs-new-concept</code> = no safe Final Statement can be asserted</li>
+</ul>
+<h3 id="8-self-audit">8. Self-Audit</h3>
+<p>Confirms that the GPT respected the required guardrails:</p>
+<ul>
+<li>Exact-Lock rule respected</li>
+<li>Monotonicity preserved</li>
+<li>Structure prioritized over label similarity</li>
+<li>No redundant negation on the same source-target pair</li>
+<li>Q buckets were <strong>not</strong> inferred</li>
+<li>Missing evidence was recorded as <code>Missing</code></li>
+</ul>
+<h2 id="why-this-gpt-exists">Why this GPT exists</h2>
+<p>This GPT exists to make concept mapping:</p>
+<ul>
+<li><strong>more consistent</strong></li>
+<li><strong>more auditable</strong></li>
+<li><strong>more evidence-based</strong></li>
+<li><strong>less dependent on ad hoc human judgment</strong></li>
+<li><strong>safer when exact equivalence is uncertain</strong></li>
+<li><strong>more explicit when evidence is missing</strong></li>
+<li><strong>more conservative when qualifier or bearer distinctions are not explicitly supported</strong></li>
+<li><strong>more reliable in distinguishing between no safe mapping and no safe knowledge access</strong></li>
+</ul>
+<p>Its design reduces common failures such as:</p>
+<ul>
+<li>treating lexical similarity as semantic equivalence</li>
+<li>forcing exact mappings when only weaker relations are defensible</li>
+<li>inferring unretrieved metadata, qualifier values, bearer constraints, or ontology structure</li>
+<li>asking unnecessary clarification questions when a safe conservative outcome already exists</li>
+<li>collapsing distinct outcomes into one, instead of distinguishing <code>provisional</code>, <code>needs-new-concept</code>, and <code>knowledge-access-failed</code></li>
+</ul>
+<h2 id="where-this-gpt-can-be-found">Where this GPT can be found</h2>
+<p>This GPT is a <strong>custom GPT in ChatGPT</strong>. Users access it through the GPT itself in the ChatGPT interface, while its behavior is defined in the GPT editor.</p>
+<p>From a setup perspective, three parts matter most.</p>
+<h3 id="1-instructions">1. Instructions</h3>
+<p>This is where the governing prompt is defined.</p>
+<p>It specifies the GPT's:</p>
+<ul>
+<li>core mapping rules</li>
+<li>evidence discipline</li>
+<li>clarification constraints</li>
+<li>source evidence requirements</li>
+<li>target evidence requirements</li>
+<li>deterministic evaluation logic</li>
+<li>qualifier handling rules</li>
+<li>outcome ladder</li>
+<li>response format</li>
+<li>self-audit requirements</li>
+<li>decision priority rules</li>
+</ul>
+<h3 id="2-knowledge">2. Knowledge</h3>
+<p>This is where the GPT's local mapping resources are attached.</p>
+<p>Under the prompt, the GPT must rely on <strong>Knowledge files</strong> rather than web knowledge. These resources are expected to support retrieval of target-side evidence such as:</p>
+<ul>
+<li>HRIO labels</li>
+<li>HRIV labels</li>
+<li>CURIEs</li>
+<li>triples</li>
+<li>comments</li>
+<li>qualifier metadata</li>
+</ul>
+<h3 id="3-capabilities">3. Capabilities</h3>
+<p>The prompt explicitly requires <strong>Python</strong> for both:</p>
+<ul>
+<li>source evidence extraction</li>
+<li>target evidence retrieval</li>
+</ul>
+<p>Functionally, this capability is needed so the GPT can:</p>
+<ul>
+<li>extract source label, source definition, normalization keys, location, and verbatim source evidence</li>
+<li>retrieve HRIO/HRIV labels, CURIEs, triples, comments, and qualifier metadata</li>
+<li>follow the required search order:<ul>
+<li>exact phrase</li>
+<li>head noun</li>
+<li>synonyms/tokens</li>
+</ul>
+</li>
+<li>detect when source or Knowledge access is unreadable, partial, or otherwise too unreliable for safe mapping</li>
+</ul>
+<h2 id="why-this-configuration-matters">Why this configuration matters</h2>
+<p>The configuration directly supports the GPT's design and constraints.</p>
+<h3 id="1-closed-evidence-base">1. Closed evidence base</h3>
+<p>The prompt explicitly requires the GPT to:</p>
+<ul>
+<li>use <strong>no web knowledge</strong></li>
+<li>use only <strong>user text</strong> and <strong>Knowledge files</strong></li>
+</ul>
+<h3 id="2-python-is-required-for-evidence-handling">2. Python is required for evidence handling</h3>
+<p>The prompt explicitly requires Python for both source extraction and target retrieval.</p>
+<h3 id="3-restricted-configuration-supports-safe-decisions">3. Restricted configuration supports safe decisions</h3>
+<p>Because the GPT relies on local Knowledge resources plus Python-based retrieval, it operates in a <strong>restricted evidence environment</strong>. That supports rules such as:</p>
+<ul>
+<li>use only retrieved evidence</li>
+<li>do not treat paraphrase as evidence</li>
+<li>do not invent identifiers, metadata, qualifier values, bearer constraints, or structure</li>
+<li>record unavailable evidence as <code>Missing</code></li>
+</ul>
+<h3 id="4-the-configuration-must-support-safe-failure">4. The configuration must support safe failure</h3>
+<p>If Python cannot read the source or the Knowledge resources, or if the source is unreadable, partial, or otherwise too unreliable for safe mapping, the correct result is:</p>
+<ul>
+<li><code>knowledge-access-failed</code></li>
+</ul>
+<h2 id="known-limitations">Known limitations</h2>
+<p>This GPT is strong in precision, but its design also introduces limits.</p>
+<h3 id="1-it-is-intentionally-conservative">1. It is intentionally conservative</h3>
+<p>It may reject mappings that a human expert might still discuss informally.</p>
+<h3 id="2-it-depends-on-readable-evidence">2. It depends on readable evidence</h3>
+<p>If Python cannot read the source or the Knowledge files, or if the source is unreadable, partial, or otherwise too unreliable for safe mapping, it may return <code>knowledge-access-failed</code>.</p>
+<h3 id="3-it-handles-one-concept-per-turn">3. It handles one concept per turn</h3>
+<p>This improves quality and control, but reduces throughput.</p>
+<h3 id="4-it-does-not-use-the-web">4. It does not use the web</h3>
+<p>It cannot supplement missing local knowledge with external resources.</p>
+<h3 id="5-it-does-not-invent-ontology-structure-identifiers-or-qualifier-values">5. It does not invent ontology structure, identifiers, or qualifier values</h3>
+<p>This increases trustworthiness, but may feel strict to users expecting more inferential flexibility.</p>
+<h3 id="6-it-is-not-a-bulk-mapping-tool">6. It is not a bulk-mapping tool</h3>
+<p>It is designed for controlled concept-by-concept assessment, not large batch workflows.</p>
+<h2 id="practical-interpretation-of-the-configuration">Practical interpretation of the configuration</h2>
+<p>Based on the prompt, this GPT should be understood as:</p>
+<ul>
+<li>a <strong>single-concept HRIO mapping assistant</strong></li>
+<li>grounded in <strong>user text</strong> and <strong>Knowledge files</strong></li>
+<li>dependent on <strong>Python-based source extraction and target retrieval</strong></li>
+<li>optimized for <strong>structured, auditable semantic decisions</strong></li>
+<li>intentionally restricted to <strong>safe and reviewable outputs</strong></li>
+</ul>
+<h2 id="suggested-user-facing-description">Suggested user-facing description</h2>
+<blockquote>
+<p>This GPT maps one user domain concept at a time to HRIO using only user text, configured Knowledge files, and Python-based evidence handling. It returns a structured, auditable mapping result using strict semantic rules, qualifier checks, and conservative outcome selection.</p>
+</blockquote>
+<h2 id="suggested-user-instructions">Suggested user instructions</h2>
+<ol>
+<li>Provide exactly <strong>one concept</strong> per request.</li>
+<li>Include a definition or source evidence whenever possible.</li>
+<li>Mention qualifier context only when it is <strong>explicitly supported</strong> by the source.</li>
+<li>Do not force exactness; expect conservative outcomes when evidence is incomplete.</li>
+<li>Do not expect the GPT to invent missing HRIO-side metadata.</li>
+<li>Use the result as a reviewable mapping record or decision artifact.</li>
+</ol>
+<h2 id="in-one-sentence">In one sentence</h2>
+<p>This GPT is a <strong>controlled semantic mapping tool for assigning one source concept at a time to HRIO using retrieved evidence, explicit qualifier handling, and conservative ontology-aware decision logic</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:pedro.barcelos@health-ri.nl" target="_blank" rel="noopener" title="Email" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/pedro-paulo-favato-barcelos/" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/pedropaulofb" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://health-ri.nl" target="_blank" rel="noopener" title="Website" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.instant", "navigation.path", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "toc.follow", "toc.integrate", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../deliverables/assets/javascripts/tablesort.min.js"></script>
+      
+        <script src="../../deliverables/assets/javascripts/init-tablesort.js"></script>
+      
+        <script src="../../deliverables/assets/javascripts/table-search.js"></script>
+      
+        <script src="../../deliverables/assets/javascripts/table-columns-toggle.js"></script>
+      
+    
+  </body>
+</html>
