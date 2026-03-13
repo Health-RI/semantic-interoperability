@@ -50,8 +50,8 @@ For the general case, including domains without an active call or any follow-up 
     <tr>
       <td style="text-align:center; background-color:#FFF8E1; color:#8D6E00; font-weight:700;">Planned</td>
       <td style="text-align:center;font-weight:700;">Person Birth</td>
-      <td style="text-align:center;font-weight:700;">16-03-2026</td>
-      <td style="text-align:center;font-weight:700;">10-04-2026</td>
+      <td style="text-align:center;font-weight:700;">30-03-2026</td>
+      <td style="text-align:center;font-weight:700;">17-04-2026</td>
     </tr>
   </tbody>
 </table>
