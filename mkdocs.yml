@@ -105,7 +105,8 @@ nav:
       - Overview: contributing/overview.md
       - Contribution Channels: contributing/contribution-channels.md
       - Call for Community Review: contributing/call-for-community-review.md
-      - Open External Review Calls:
+      # - Open External Review Calls:
+      - Closed External Review Calls:
         - external-review/sex-and-gender.md
   - FAQ: faq.md
 

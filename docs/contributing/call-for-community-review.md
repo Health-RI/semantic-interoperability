@@ -18,7 +18,11 @@ Contributors can choose whether they are acknowledged. By default, we will inclu
 
 All instructions on how to collaborate in each external review, including access to materials and feedback channels, are provided in the description of the corresponding call listed below.
 
-Although each call has an explicit opening and closing date, **contributions are welcome at any time**. Outside an active call, please use the general [Contribution Channels](contribution-channels.md); your input will still be reviewed and may lead to updates in future releases.
+!!! info "Contributions remain welcome after a call closes"
+
+    The opening and closing dates define the formal external-review window for a package. They help manage the package's validation lifecycle and stage transitions, but they do **not** mean that feedback is no longer accepted.
+
+    You can still submit comments, questions, and suggestions at any time through the general [Contribution Channels](contribution-channels.md). Accepted input will be reviewed and may inform future revisions and releases.
 
 During an **open** Call for Community Review, you can:
 
@@ -42,10 +46,10 @@ For the general case, including domains without an active call or any follow-up 
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:center; background-color:#E8F5E9; color:#1B5E20; font-weight:700;">Open</td>
+      <td style="text-align:center; background-color:#ECEFF1; color:#37474F; font-weight:700;">Closed</td>
       <td style="text-align:center;font-weight:700;"><a href="../../external-review/sex-and-gender/">Sex and Gender</a></td>
       <td style="text-align:center;font-weight:700;">17-02-2026</td>
-      <td style="text-align:center;font-weight:700;"><del>10-03-2026</del><br>13-03-2026</td>
+      <td style="text-align:center;font-weight:700;">13-03-2026</td>
     </tr>
     <tr>
       <td style="text-align:center; background-color:#FFF8E1; color:#8D6E00; font-weight:700;">Planned</td>
@@ -60,10 +64,12 @@ For the general case, including domains without an active call or any follow-up 
 
 _This section lists currently active Calls for Community Review for specific HRIO domains or subdomains._
 
-- [Sex and Gender](../../external-review/sex-and-gender/)
+There are currently no active Calls for Community Review.
 
 ### Closed calls
 
 _This section lists Calls for Community Review that have formally closed._
+
+- [Sex and Gender](../../external-review/sex-and-gender/)
 
 Feedback on these domains remains welcome. If you would like to comment on a domain that appears under a closed call, please submit your input via the general [Contribution Channels](contribution-channels.md) and reference the relevant domain or call in your submission.

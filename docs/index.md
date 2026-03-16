@@ -2,7 +2,7 @@
 
 # Health-RI Semantic Interoperability Initiative
 
-!!! open-call "OPEN CALL: validate the HRIO Sex and Gender Ontology"
+<!-- !!! open-call "OPEN CALL: validate the HRIO Sex and Gender Ontology"
 
     We are running an external community review of the **Sex and Gender** package in HRIO.
     Please help us validate the model and documentation.
@@ -13,7 +13,7 @@
 
     [Call for Contribution Overview](contributing/call-for-community-review/){ .md-button .md-button--primary }
 
-    </div>
+    </div> -->
 
 The health domain is shaped by many standards and models that guide the design of databases and the implementation of systems. They are applied in diverse contexts, from hospital records to research infrastructures. To enable effective data reuse, the data within these systems often needs to be exchanged, compared, and integrated. In other words, the data must be interoperable (fulfilling the "I" in FAIR).
 
