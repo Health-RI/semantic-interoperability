@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2026-03-16
+
+- **Calls for Community Review** — Changed: Closed the Sex and Gender review window, clarified that feedback remains welcome, and noted that the package will move to the published (`pub`) stage soon.
+
 ## 2026-03-13
 
 - **[User Guide: HRIO Mapping Assistant](./assistants/mapping-assistant.md)** — Created: Published a detailed user guide explaining the assistant's scope, evidence rules, qualifier handling, outcomes, and structured results.
