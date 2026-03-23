@@ -6,6 +6,7 @@ This folder contains utility scripts used across the Health-RI Semantic Interope
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [Dependencies (Python)](#dependencies-python)
 - [Python scripts](#python-scripts)
     - [`docgen-ontouml.py` — OntoUML JSON → Markdown docs](#docgen-ontoumlpy--ontouml-json--markdown-docs)
@@ -19,6 +20,7 @@ This folder contains utility scripts used across the Health-RI Semantic Interope
     - [`move-latest.py` — Populate `ontologies/latest/` from versioned artifacts](#move-latestpy--populate-ontologieslatest-from-versioned-artifacts)
     - [`sssom-tsv2ttl.py` — Health-RI SSSOM TSV → TTL converter (tailored)](#sssom-tsv2ttlpy--health-ri-sssom-tsv--ttl-converter-tailored)
     - [`clean-unwanted-files.py` — Delete temporary/lock/backup artifacts across the repo](#clean-unwanted-filespy--delete-temporarylockbackup-artifacts-across-the-repo)
+    - [`calculate-crc32.py` — Generate CRC-32 values for mapping IDs](#calculate-crc32py--generate-crc-32-values-for-mapping-ids)
 - [Batch scripts (Windows)](#batch-scripts-windows)
     - [`make-diff-json.bat` — Unified diff between two OntoUML JSON exports (with noise reduction)](#make-diff-jsonbat--unified-diff-between-two-ontouml-json-exports-with-noise-reduction)
     - [`prepare-image.bat` — Batch-process images for consistent presentation](#prepare-imagebat--batch-process-images-for-consistent-presentation)
@@ -395,6 +397,47 @@ Deletes common unwanted files (locks, backups, OS junk) across the repository tr
     - Special rule for `.bat`: preserves `.bat` files if their relative path contains a directory segment named `scripts`; deletes `.bat` elsewhere.
     - **Destructive**: permanently removes files.
 - **Run:** `python scripts/clean-unwanted-files.py`
+
+### `calculate-crc32.py` — Generate CRC-32 values for mapping IDs
+
+Generates CRC-32 checksums for mapping identifiers, intended to support the creation of IDs for mappings to be registered in the SSSOM Mapping Set.
+
+- **Input (CLI):**
+
+    - `INPUT_FILE` (required): path to a text file containing **one mapping ID candidate per line**.
+
+- **Output:**
+
+    - A text file in the same directory, with `_out` inserted before the final extension.
+    - Examples:
+        - `input.txt` → `input_out.txt`
+        - `mapping-ids.txt` → `mapping-ids_out.txt`
+
+- **Behavior:**
+
+    - Reads the input as UTF-8 text (UTF-8 with BOM is also accepted).
+    - Computes one CRC-32 checksum per input line.
+    - Writes one checksum per output line, preserving input order.
+    - Uses uppercase 8-character hexadecimal output.
+    - Preserves empty lines in the middle of the file as valid entries.
+    - Ignores empty lines at the **end** of the file.
+    - Preserves all characters except line-ending characters (`\n`, `\r\n`) before hashing.
+
+- **Important notes:**
+
+    - CRC-32 is used here as a compact checksum-based identifier aid; it is **not** encryption.
+    - The checksum is computed over the **exact input text**, so the result is case-sensitive with respect to the source ID string.
+    - Uppercase/lowercase differences in the **printed hexadecimal checksum** are formatting only; the underlying value is the same.
+
+- **Typical usage:**
+
+    - Prepare a plain-text file with one candidate mapping ID per line.
+    - Run the script to generate the corresponding CRC-32 values.
+    - Use the generated values as the basis for mapping registration workflows, as needed by the SSSOM mapping set process.
+
+- **Run:**
+
+    - `python scripts/calculate-crc32.py path/to/input.txt`
 
 ## Batch scripts (Windows)
 
