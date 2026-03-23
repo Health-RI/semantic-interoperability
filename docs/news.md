@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2026-03-23
+
+- **[Health-RI Ontology Mappings](https://w3id.org/health-ri/semantic-interoperability/mappings)** — Added: Published SSSOM mapping set version 2026-03-23, adding mappings with sex and gender terms from FHIR, HL7, CDISC, SNOMED CT, LOINC, and GA4GH.
+
 ## 2026-03-16
 
 - **Calls for Community Review** — Changed: Closed the Sex and Gender review window, clarified that feedback remains welcome, and noted that the package will move to the published (`pub`) stage soon.
