@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2026-03-24
+
+- **Enabling Semantic Traceability in Health Data: The Health-RI Semantic Interoperability Initiative** — Added: Published the [SWAT4HCLS 2026](https://www.swat4ls.org/) presentation deck in [PDF](https://w3id.org/health-ri/semantic-interoperability/documents/presentations/swat4hcls2026-enabling-semantic-traceability-in-health-data-v1.0.0.pdf) and [PowerPoint Show](https://w3id.org/health-ri/semantic-interoperability/documents/presentations/swat4hcls2026-enabling-semantic-traceability-in-health-data-v1.0.0.ppsx) formats as a standalone documents release. The [presented paper](https://w3id.org/health-ri/semantic-interoperability/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf) was already available.
+
 ## 2026-03-23
 
 - **[Health-RI Ontology Mappings](https://w3id.org/health-ri/semantic-interoperability/mappings)** — Added: Published SSSOM mapping set version 2026-03-23, adding mappings with sex and gender terms from FHIR, HL7, CDISC, SNOMED CT, LOINC, and GA4GH.
@@ -60,7 +64,7 @@
 
 ## 2026-02-11
 
-- **[Health Ri Ontology](https://w3id.org/health-ri/ontology)** — Added: Published v1.6.0 release artifacts (Turtle, JSON, SHACL, Visual Paradigm) and refreshed sex/gender diagrams and SKOS labels for improved display.
+- **[Health-RI Ontology](https://w3id.org/health-ri/ontology)** — Added: Published v1.6.0 release artifacts (Turtle, JSON, SHACL, Visual Paradigm) and refreshed sex/gender diagrams and SKOS labels for improved display.
 
 ## 2026-02-04
 
