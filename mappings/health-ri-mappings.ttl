@@ -39,7 +39,7 @@ hrim: a sssom:MappingSet ;
     rdfs:comment "This mapping set is part of the Health-RI Semantic Interoperability Initiative"@en,
         "which supports the development of shared ontologies and mappings to align heterogeneous data sources conceptually and semantically."@en ;
     rdfs:seeAlso <https://w3id.org/health-ri/semantic-interoperability> ;
-    owl:versionInfo "2026-03-23" ;
+    owl:versionInfo "2026-03-27" ;
     sssom:issue_tracker "https://github.com/Health-RI/semantic-interoperability/issues"^^xsd:anyURI ;
     sssom:mapping_set_id "https://w3id.org/health-ri/semantic-interoperability/mappings"^^xsd:anyURI ;
     sssom:mappings hrim:002C0C53,
@@ -47,21 +47,27 @@ hrim: a sssom:MappingSet ;
         hrim:00BCD535,
         hrim:011373B0,
         hrim:019A9367,
+        hrim:034A72F2,
         hrim:049D2B85,
+        hrim:0536F7E2,
         hrim:070CE706,
         hrim:074fbbc2,
         hrim:08FB71D6,
         hrim:092CB94C,
         hrim:096ECB69,
+        hrim:0A793990,
         hrim:0AAD2458,
         hrim:0B7705EE,
         hrim:0BAE797E,
+        hrim:0E8CE29B,
         hrim:0EAD5C43,
         hrim:0F0D51B3,
         hrim:0F8E7880,
         hrim:1046FB24,
+        hrim:1158513A,
         hrim:1209BC2A,
         hrim:147FA86A,
+        hrim:14D83083,
         hrim:1516D90F,
         hrim:1589B497,
         hrim:163950B6,
@@ -81,12 +87,16 @@ hrim: a sssom:MappingSet ;
         hrim:1c56bebe,
         hrim:1ce9d055,
         hrim:200FD324,
+        hrim:207D1119,
         hrim:20C61A73,
         hrim:21D70200,
+        hrim:226F5CF2,
         hrim:2563AF2B,
+        hrim:25F96BF9,
         hrim:267fb4be,
         hrim:26DDC5AF,
         hrim:26F40049,
+        hrim:276A1799,
         hrim:2949C2DB,
         hrim:2AC0C919,
         hrim:2B234469,
@@ -100,18 +110,22 @@ hrim: a sssom:MappingSet ;
         hrim:3279D3BB,
         hrim:32C9555B,
         hrim:3427E9B7,
+        hrim:3448CB1B,
         hrim:348200B1,
         hrim:34B4DBE9,
         hrim:36F36C72,
         hrim:378E7E1E,
+        hrim:381DC90E,
         hrim:38A7A3C3,
         hrim:38BC456A,
         hrim:38E3E6B8,
+        hrim:3A008FC2,
         hrim:3A1E867F,
         hrim:3A798576,
         hrim:3ABD3E80,
         hrim:3D1AAD03,
         hrim:3E074F82,
+        hrim:3EF86952,
         hrim:3F0F54AF,
         hrim:40E1B76B,
         hrim:41DC1633,
@@ -129,8 +143,10 @@ hrim: a sssom:MappingSet ;
         hrim:52BBB31A,
         hrim:5346063E,
         hrim:535B9057,
+        hrim:53795693,
         hrim:55EE862C,
         hrim:56A0DF52,
+        hrim:57096F68,
         hrim:57f0e74d,
         hrim:58437A78,
         hrim:591537B7,
@@ -138,14 +154,18 @@ hrim: a sssom:MappingSet ;
         hrim:5C1732B3,
         hrim:5E5912F3,
         hrim:5F8C0BE7,
+        hrim:60A9547D,
         hrim:63463CD5,
         hrim:638AF1C1,
         hrim:639c6016,
+        hrim:63A8814F,
         hrim:643B88D1,
         hrim:67B26CF8,
         hrim:67F3026E,
         hrim:68CA2B32,
         hrim:6996F191,
+        hrim:69D47B17,
+        hrim:6C791C6C,
         hrim:6DDF4B02,
         hrim:6E305CF1,
         hrim:6F011CFF,
@@ -161,7 +181,9 @@ hrim: a sssom:MappingSet ;
         hrim:765ABCFD,
         hrim:7668A41C,
         hrim:77D461F5,
+        hrim:7810775A,
         hrim:78244AF1,
+        hrim:788147B5,
         hrim:7C46B10D,
         hrim:7CE3271C,
         hrim:7D8AD954,
@@ -171,16 +193,19 @@ hrim: a sssom:MappingSet ;
         hrim:82525EA4,
         hrim:83D8C2F9,
         hrim:841E4586,
+        hrim:84C9F5EA,
         hrim:84CCDF8D,
         hrim:85A62585,
         hrim:88089BA3,
         hrim:885CF540,
         hrim:88E8FA34,
+        hrim:8906120C,
         hrim:892FCC20,
         hrim:8A6B879C,
         hrim:8A8D6075,
         hrim:8BA2A678,
         hrim:8CB5F8B9,
+        hrim:8DC2CC88,
         hrim:8E185060,
         hrim:8E5D0090,
         hrim:8EBE99D0,
@@ -202,10 +227,12 @@ hrim: a sssom:MappingSet ;
         hrim:9C25FB48,
         hrim:9C911E41,
         hrim:9DA69D6D,
+        hrim:9E346285,
         hrim:9EB5302C,
         hrim:9EDB0528,
         hrim:9EFA6F70,
         hrim:9F19B61F,
+        hrim:9F944ED3,
         hrim:A1BC897B,
         hrim:A204278D,
         hrim:A2B18F90,
@@ -215,28 +242,37 @@ hrim: a sssom:MappingSet ;
         hrim:A61208CF,
         hrim:A64E90ED,
         hrim:A674D186,
+        hrim:A8A5E70E,
         hrim:A8A694C7,
         hrim:AA56AE4E,
+        hrim:AB489D97,
         hrim:ABD6EFAD,
+        hrim:ADFCDFDF,
+        hrim:AEC1F8D5,
         hrim:B13DF039,
         hrim:B1A2A428,
         hrim:B2F804F1,
         hrim:B35F39C3,
         hrim:B382F827,
         hrim:B3C9CF75,
+        hrim:B40FCC13,
         hrim:B4244A2C,
         hrim:B43970EE,
         hrim:B46BCE7D,
+        hrim:B585DF58,
         hrim:B9AC2A98,
         hrim:BB4D37DA,
         hrim:BD16A22D,
         hrim:BDD2480A,
         hrim:BEA16386,
+        hrim:BEFE1115,
         hrim:C0A8AF6F,
         hrim:C0E2A576,
         hrim:C0EF8398,
+        hrim:C35827FE,
         hrim:C389F0EA,
         hrim:C3F4E8F4,
+        hrim:C4F4D535,
         hrim:C53F34A8,
         hrim:C656C05F,
         hrim:C6A875E5,
@@ -247,6 +283,7 @@ hrim: a sssom:MappingSet ;
         hrim:C8F90D22,
         hrim:CACF23D3,
         hrim:CAF52B45,
+        hrim:CB7E9E60,
         hrim:CBA8E845,
         hrim:CBD911A2,
         hrim:CEF4C522,
@@ -259,15 +296,18 @@ hrim: a sssom:MappingSet ;
         hrim:D2834F7F,
         hrim:D3E9CDE3,
         hrim:D5CC2E9A,
+        hrim:D650AA08,
         hrim:D6A55786,
         hrim:D7683BEC,
         hrim:D77F0A9B,
         hrim:D7CA8694,
+        hrim:D847100A,
         hrim:D8AE6317,
         hrim:D9F4EFA2,
         hrim:DA6EC239,
         hrim:DABA7C3E,
         hrim:DC416BAD,
+        hrim:DE03BC63,
         hrim:DEA9D700,
         hrim:DEE6906A,
         hrim:E05DE82D,
@@ -308,6 +348,7 @@ hrim: a sssom:MappingSet ;
 hrim:002C0C53 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:002C0C53"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -331,6 +372,7 @@ hrim:002C0C53 a sssom:Mapping ;
 hrim:0086F75C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:0086F75C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -354,6 +396,7 @@ hrim:0086F75C a sssom:Mapping ;
 hrim:00BCD535 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:00BCD535"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -377,6 +420,7 @@ hrim:00BCD535 a sssom:Mapping ;
 hrim:011373B0 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:011373B0"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -401,6 +445,7 @@ hrim:011373B0 a sssom:Mapping ;
 hrim:019A9367 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:019A9367"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -421,9 +466,35 @@ hrim:019A9367 a sssom:Mapping ;
     sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
     sssom:subject_source_version "2.0.38" .
 
+hrim:034A72F2 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:034A72F2"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a clinical finding that interprets gender. Gender is the relevant comparison target, but exact equivalence was rejected because the target is a person-borne gender characterization and would lose the source's core finding meaning. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:365873007 ;
+    owl:annotatedTarget hrio:Gender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Gender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:034A72F2"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Gender finding (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:049D2B85 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:049D2B85"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -444,9 +515,35 @@ hrim:049D2B85 a sssom:Mapping ;
     sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
     sssom:subject_source_version "2.0.10" .
 
+hrim:0536F7E2 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:0536F7E2"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a finding about female sex but does not state a phenotypic basis. Phenotypic Female Sex is the relevant comparison target, but exact equivalence was rejected because the target adds an assessment basis that is not present in the source. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:248152002 ;
+    owl:annotatedTarget hrio:PhenotypicFemaleSex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Phenotypic Female Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:0536F7E2"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Female (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:070CE706 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:070CE706"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -494,6 +591,7 @@ hrim:074fbbc2 a sssom:Mapping ;
 hrim:08FB71D6 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:08FB71D6"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -518,6 +616,7 @@ hrim:08FB71D6 a sssom:Mapping ;
 hrim:092CB94C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:092CB94C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -542,6 +641,7 @@ hrim:092CB94C a sssom:Mapping ;
 hrim:096ECB69 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:096ECB69"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -562,9 +662,33 @@ hrim:096ECB69 a sssom:Mapping ;
     sssom:subject_source <https://www.hl7.org/fhir/extensions/5.2.0/StructureDefinition-individual-recordedSexOrGender.html> ;
     sssom:subject_source_version "Person Recorded Sex Or Gender - FHIR Core Extensions Registry v5.2.0 (based on FHIR v5.0.0)" .
 
+hrim:0A793990 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:0A793990"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource obo:GSSO_004240 ;
+    owl:annotatedTarget hrio:Cisgender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "mode" ;
+    sssom:object_label "Cisgender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:record_id "hrim:0A793990"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "cisgender"@en ;
+    sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
+    sssom:subject_source_version "2.0.37" .
+
 hrim:0AAD2458 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:0AAD2458"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -588,6 +712,7 @@ hrim:0AAD2458 a sssom:Mapping ;
 hrim:0B7705EE a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:0B7705EE"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -611,6 +736,7 @@ hrim:0B7705EE a sssom:Mapping ;
 hrim:0BAE797E a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:0BAE797E"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -631,9 +757,35 @@ hrim:0BAE797E a sssom:Mapping ;
     sssom:subject_source <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus_26.02d.owl> ;
     sssom:subject_source_version "NCI Thesaurus 26.02d" .
 
+hrim:0E8CE29B a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:0E8CE29B"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source only says \"the patient's gender\" and does not say that it is attributed by someone else. Externally-attributed Gender is the relevant comparison target, but exact equivalence was rejected because that qualifier is not stated in the source. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:263495000 ;
+    owl:annotatedTarget hrio:ExternallyAttributedGender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "mode" ;
+    sssom:object_label "Externally-attributed Gender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:0E8CE29B"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Gender (observable entity)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:0EAD5C43 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:0EAD5C43"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -657,6 +809,7 @@ hrim:0EAD5C43 a sssom:Mapping ;
 hrim:0F0D51B3 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:0F0D51B3"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -680,6 +833,7 @@ hrim:0F0D51B3 a sssom:Mapping ;
 hrim:0F8E7880 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:0F8E7880"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -703,6 +857,7 @@ hrim:0F8E7880 a sssom:Mapping ;
 hrim:1046FB24 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1046FB24"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -724,9 +879,35 @@ hrim:1046FB24 a sssom:Mapping ;
     sssom:subject_source <https://phenopacket-schema.readthedocs.io/en/2.0.0/karyotypicsex.html> ;
     sssom:subject_source_version "GA4GH Phenopacket Schema 2.0.0 — KaryotypicSex enumeration" .
 
+hrim:1158513A a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:1158513A"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "This source concept denotes possible gender-identity values for humans. Self-identified Agender Person is a relevant comparison target because agender appears explicitly as a source example. Exact equivalence was rejected because the source covers more than agender and HRIO models a person class rather than a value class. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:GenderIdentityValue ;
+    owl:annotatedTarget hrio:SelfIdentifiedAgenderPerson ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "phase" ;
+    sssom:object_label "Self-identified Agender Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:1158513A"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Genderidentiteitswaarde"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
+
 hrim:1209BC2A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1209BC2A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -753,6 +934,7 @@ hrim:1209BC2A a sssom:Mapping ;
 hrim:147FA86A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:147FA86A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -773,9 +955,36 @@ hrim:147FA86A a sssom:Mapping ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
 
+hrim:14D83083 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:14D83083"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source denotes a sex-based female human, which makes Female-sex Person the closest comparison target. Exact equivalence was rejected because the source only states a human with some FemaleSex and does not state the same assessment framing closely enough to support an exact match. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:Woman ;
+    owl:annotatedTarget hrio:FemaleSexPerson ;
+    dcat:replaces "hrim:1ce9d055" ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Female-sex Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:14D83083"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Vrouw"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
+
 hrim:1516D90F a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1516D90F"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -799,6 +1008,7 @@ hrim:1516D90F a sssom:Mapping ;
 hrim:1589B497 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1589B497"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -822,6 +1032,7 @@ hrim:1589B497 a sssom:Mapping ;
 hrim:163950B6 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:163950B6"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -846,6 +1057,7 @@ hrim:163950B6 a sssom:Mapping ;
 hrim:169CDAA8 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:169CDAA8"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -869,6 +1081,7 @@ hrim:169CDAA8 a sssom:Mapping ;
 hrim:18136629 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:18136629"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -892,6 +1105,7 @@ hrim:18136629 a sssom:Mapping ;
 hrim:1A58D08C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1A58D08C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -915,6 +1129,7 @@ hrim:1A58D08C a sssom:Mapping ;
 hrim:1AD2B86F a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1AD2B86F"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -938,6 +1153,7 @@ hrim:1AD2B86F a sssom:Mapping ;
 hrim:1B0A60F9 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1B0A60F9"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -961,6 +1177,7 @@ hrim:1B0A60F9 a sssom:Mapping ;
 hrim:1B52D0D6 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1B52D0D6"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -986,6 +1203,7 @@ hrim:1B52D0D6 a sssom:Mapping ;
 hrim:1CB686C4 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1CB686C4"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1010,6 +1228,7 @@ hrim:1CB686C4 a sssom:Mapping ;
 hrim:1CD108E2 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1CD108E2"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1033,6 +1252,7 @@ hrim:1CD108E2 a sssom:Mapping ;
 hrim:1CDED3BF a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1CDED3BF"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1056,6 +1276,7 @@ hrim:1CDED3BF a sssom:Mapping ;
 hrim:1DC26B57 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1DC26B57"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1079,6 +1300,7 @@ hrim:1DC26B57 a sssom:Mapping ;
 hrim:1DD6F6A8 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1DD6F6A8"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1102,6 +1324,7 @@ hrim:1DD6F6A8 a sssom:Mapping ;
 hrim:1DDDCC1C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1DDDCC1C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1125,6 +1348,7 @@ hrim:1DDDCC1C a sssom:Mapping ;
 hrim:1EC7879A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:1EC7879A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1195,6 +1419,7 @@ hrim:1ce9d055 a sssom:Mapping ;
 hrim:200FD324 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:200FD324"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1215,9 +1440,35 @@ hrim:200FD324 a sssom:Mapping ;
     sssom:subject_source <https://loinc.org/news/loinc-version-2-82-release-highlights/> ;
     sssom:subject_source_version "LOINC 2.117" .
 
+hrim:207D1119 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:207D1119"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a male-related finding but does not state birth registration or official recording at birth. Sex-at-birth Male Sex is the relevant comparison target, but exact equivalence was rejected because the added birth-time meaning is not present in the source. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:248153007 ;
+    owl:annotatedTarget hrio:SexAtBirthMaleSex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Sex-at-birth Male Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:207D1119"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Male (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:20C61A73 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:20C61A73"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1241,6 +1492,7 @@ hrim:20C61A73 a sssom:Mapping ;
 hrim:21D70200 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:21D70200"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1261,9 +1513,35 @@ hrim:21D70200 a sssom:Mapping ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
 
+hrim:226F5CF2 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:226F5CF2"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "This source concept denotes possible gender-identity values for humans. Self-identified Gender is the closest HRIO comparison target because it captures the gender a person identifies with. Exact equivalence was rejected because the source is a value class and HRIO models a gender class with narrower formal coverage. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:GenderIdentityValue ;
+    owl:annotatedTarget hrio:SelfIdentifiedGender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "mode" ;
+    sssom:object_label "Self-identified Gender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:226F5CF2"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Genderidentiteitswaarde"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
+
 hrim:2563AF2B a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:2563AF2B"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1284,6 +1562,32 @@ hrim:2563AF2B a sssom:Mapping ;
     sssom:subject_label "indeterminate sex"@en ;
     sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
     sssom:subject_source_version "2.0.31" .
+
+hrim:25F96BF9 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:25F96BF9"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "This source concept denotes the biological sex quality of an organism. Phenotypic Sex is a relevant comparison target because the source mentions biological features as one basis for sex. Exact equivalence was rejected because the source is broader than Phenotypic Sex and the HRIO class is assessment-shaped and person-scoped rather than organism-scoped. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:BiologicalSex ;
+    owl:annotatedTarget hrio:PhenotypicSex ;
+    dcat:replaces "hrim:57f0e74d" ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "mode" ;
+    sssom:object_label "Phenotypic Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:25F96BF9"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Geslacht"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
 
 hrim:267fb4be a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
@@ -1311,6 +1615,7 @@ hrim:267fb4be a sssom:Mapping ;
 hrim:26DDC5AF a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:26DDC5AF"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1334,6 +1639,7 @@ hrim:26DDC5AF a sssom:Mapping ;
 hrim:26F40049 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:26F40049"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1354,9 +1660,35 @@ hrim:26F40049 a sssom:Mapping ;
     sssom:subject_source <https://phenopacket-schema.readthedocs.io/en/2.0.0/karyotypicsex.html> ;
     sssom:subject_source_version "GA4GH Phenopacket Schema 2.0.0 — KaryotypicSex enumeration" .
 
+hrim:276A1799 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:276A1799"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "This source denotes female biological sex as a quality of an organism. Female Sex is the relevant HRIO comparison target because it captures female sex, but exact equivalence was rejected because HRIO applies this category to a person rather than to organisms in general. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:FemaleSex ;
+    owl:annotatedTarget hrio:FemaleSex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Female Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:276A1799"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Vrouwelijk geslacht"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
+
 hrim:2949C2DB a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:2949C2DB"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1380,6 +1712,7 @@ hrim:2949C2DB a sssom:Mapping ;
 hrim:2AC0C919 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:2AC0C919"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1403,6 +1736,7 @@ hrim:2AC0C919 a sssom:Mapping ;
 hrim:2B234469 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:2B234469"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1426,6 +1760,7 @@ hrim:2B234469 a sssom:Mapping ;
 hrim:2B5CA8DA a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:2B5CA8DA"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1449,6 +1784,7 @@ hrim:2B5CA8DA a sssom:Mapping ;
 hrim:2BE841AE a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:2BE841AE"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1472,6 +1808,7 @@ hrim:2BE841AE a sssom:Mapping ;
 hrim:2C69B880 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:2C69B880"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1495,6 +1832,7 @@ hrim:2C69B880 a sssom:Mapping ;
 hrim:2EA1BCDC a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:2EA1BCDC"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1518,6 +1856,7 @@ hrim:2EA1BCDC a sssom:Mapping ;
 hrim:2EFEE185 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:2EFEE185"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1541,6 +1880,7 @@ hrim:2EFEE185 a sssom:Mapping ;
 hrim:30463ADA a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:30463ADA"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1564,6 +1904,7 @@ hrim:30463ADA a sssom:Mapping ;
 hrim:32016AE7 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:32016AE7"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1587,6 +1928,7 @@ hrim:32016AE7 a sssom:Mapping ;
 hrim:3279D3BB a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:3279D3BB"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1610,6 +1952,7 @@ hrim:3279D3BB a sssom:Mapping ;
 hrim:32C9555B a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:32C9555B"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1633,6 +1976,7 @@ hrim:32C9555B a sssom:Mapping ;
 hrim:3427E9B7 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:3427E9B7"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1653,9 +1997,35 @@ hrim:3427E9B7 a sssom:Mapping ;
     sssom:subject_source <https://www.hl7.org/fhir/extensions/5.2.0/StructureDefinition-individual-recordedSexOrGender.html> ;
     sssom:subject_source_version "Person Recorded Sex Or Gender - FHIR Core Extensions Registry v5.2.0 (based on FHIR v5.0.0)" .
 
+hrim:3448CB1B a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:3448CB1B"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a finding and does not clearly identify a person classification. Male-sex Person is the relevant comparison target, but exact equivalence was rejected because the source remains too underspecified for a safe person-level match. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:248153007 ;
+    owl:annotatedTarget hrio:MaleSexPerson ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Male-sex Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:3448CB1B"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Male (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:348200B1 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:348200B1"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1679,6 +2049,7 @@ hrim:348200B1 a sssom:Mapping ;
 hrim:34B4DBE9 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:34B4DBE9"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1702,6 +2073,7 @@ hrim:34B4DBE9 a sssom:Mapping ;
 hrim:36F36C72 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:36F36C72"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1725,6 +2097,7 @@ hrim:36F36C72 a sssom:Mapping ;
 hrim:378E7E1E a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:378E7E1E"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1745,9 +2118,36 @@ hrim:378E7E1E a sssom:Mapping ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
 
+hrim:381DC90E a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:381DC90E"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "This source concept denotes a sex-based male category. Male-sex Person is the closest comparison target because it also applies to a sex-based male person. Exact equivalence was rejected because the source evidence is limited to a sparse structural axiom and does not justify treating it as exactly the same in meaning as HRIO Male-sex Person. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:Man ;
+    owl:annotatedTarget hrio:MaleSexPerson ;
+    dcat:replaces "hrim:1c56bebe" ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Male-sex Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:381DC90E"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Man"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
+
 hrim:38A7A3C3 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:38A7A3C3"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1771,6 +2171,7 @@ hrim:38A7A3C3 a sssom:Mapping ;
 hrim:38BC456A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:38BC456A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1794,6 +2195,7 @@ hrim:38BC456A a sssom:Mapping ;
 hrim:38E3E6B8 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:38E3E6B8"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1814,9 +2216,33 @@ hrim:38E3E6B8 a sssom:Mapping ;
     sssom:subject_source <https://evs.nci.nih.gov/ftp1/CDISC/SDTM/Archive/SDTM%20Terminology%202025-09-26.pdf> ;
     sssom:subject_source_version "CDISC SDTM Controlled Terminology, 2025-09-26 — SEX (Sex)" .
 
+hrim:3A008FC2 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:3A008FC2"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource obo:GSSO_011405 ;
+    owl:annotatedTarget hrio:SexAtBirthMaleSexPerson ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "role" ;
+    sssom:object_label "Sex-at-birth Male-sex Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:record_id "hrim:3A008FC2"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "person assigned male at birth"@en ;
+    sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
+    sssom:subject_source_version "2.0.45" .
+
 hrim:3A1E867F a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:3A1E867F"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1840,6 +2266,7 @@ hrim:3A1E867F a sssom:Mapping ;
 hrim:3A798576 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:3A798576"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1863,6 +2290,7 @@ hrim:3A798576 a sssom:Mapping ;
 hrim:3ABD3E80 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:3ABD3E80"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1886,6 +2314,7 @@ hrim:3ABD3E80 a sssom:Mapping ;
 hrim:3D1AAD03 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:3D1AAD03"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1911,6 +2340,7 @@ hrim:3D1AAD03 a sssom:Mapping ;
 hrim:3E074F82 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:3E074F82"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1931,9 +2361,34 @@ hrim:3E074F82 a sssom:Mapping ;
     sssom:subject_source <https://phenopacket-schema.readthedocs.io/en/2.0.0/karyotypicsex.html> ;
     sssom:subject_source_version "GA4GH Phenopacket Schema 2.0.0 — KaryotypicSex enumeration" .
 
+hrim:3EF86952 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:3EF86952"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source concept denotes an organism-level and explicitly underspecified umbrella over reproductive structure, functions, phenotype, and genotype. Sex is the closest HRIO comparison target, but exact equivalence was rejected because HRIO Sex is a human-person-scoped classification that also includes observation and formal assignment branches. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource obo:NCIT_C28421 ;
+    owl:annotatedTarget hrio:Sex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:record_id "hrim:3EF86952"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Sex"@en ;
+    sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
+    sssom:subject_source_version "2.0.49" .
+
 hrim:3F0F54AF a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:3F0F54AF"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1957,6 +2412,7 @@ hrim:3F0F54AF a sssom:Mapping ;
 hrim:40E1B76B a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:40E1B76B"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -1980,6 +2436,7 @@ hrim:40E1B76B a sssom:Mapping ;
 hrim:41DC1633 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:41DC1633"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2003,6 +2460,7 @@ hrim:41DC1633 a sssom:Mapping ;
 hrim:4250D7F8 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:4250D7F8"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2049,6 +2507,7 @@ hrim:4382f22d a sssom:Mapping ;
 hrim:44B8EB15 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:44B8EB15"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2072,6 +2531,7 @@ hrim:44B8EB15 a sssom:Mapping ;
 hrim:45D746CC a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:45D746CC"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2095,6 +2555,7 @@ hrim:45D746CC a sssom:Mapping ;
 hrim:48D726DF a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:48D726DF"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2119,6 +2580,7 @@ hrim:48D726DF a sssom:Mapping ;
 hrim:4998C184 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:4998C184"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2142,6 +2604,7 @@ hrim:4998C184 a sssom:Mapping ;
 hrim:4BAF6C9F a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:4BAF6C9F"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2188,6 +2651,7 @@ hrim:4a3ce4ed a sssom:Mapping ;
 hrim:514C537A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:514C537A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2212,6 +2676,7 @@ hrim:514C537A a sssom:Mapping ;
 hrim:51584C4C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:51584C4C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2236,6 +2701,7 @@ hrim:51584C4C a sssom:Mapping ;
 hrim:51F797D1 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:51F797D1"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2259,6 +2725,7 @@ hrim:51F797D1 a sssom:Mapping ;
 hrim:52BBB31A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:52BBB31A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2282,6 +2749,7 @@ hrim:52BBB31A a sssom:Mapping ;
 hrim:5346063E a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:5346063E"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2305,6 +2773,7 @@ hrim:5346063E a sssom:Mapping ;
 hrim:535B9057 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:535B9057"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2325,9 +2794,35 @@ hrim:535B9057 a sssom:Mapping ;
     sssom:subject_source <https://loinc.org/news/loinc-version-2-82-release-highlights/> ;
     sssom:subject_source_version "LOINC 2.112" .
 
+hrim:53795693 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:53795693"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source only says \"the patient's gender\" and does not say that it is self-identified. Self-identified Gender is the relevant comparison target, but exact equivalence was rejected because that qualifier is not stated in the source. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:263495000 ;
+    owl:annotatedTarget hrio:SelfIdentifiedGender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "mode" ;
+    sssom:object_label "Self-identified Gender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:53795693"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Gender (observable entity)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:55EE862C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:55EE862C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2352,6 +2847,7 @@ hrim:55EE862C a sssom:Mapping ;
 hrim:56A0DF52 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:56A0DF52"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2371,6 +2867,32 @@ hrim:56A0DF52 a sssom:Mapping ;
     sssom:subject_label "UNKNOWN_SEX"@en ;
     sssom:subject_source <https://phenopacket-schema.readthedocs.io/en/2.0.0/sex.html> ;
     sssom:subject_source_version "GA4GH Phenopacket Schema 2.0.0 — Sex enumeration" .
+
+hrim:57096F68 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:57096F68"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "This source concept denotes the biological sex quality of an organism. Sex is the closest comparison target because it represents biological sex at an umbrella level. Exact equivalence was rejected because the source inheres in organisms, whereas Sex is person-scoped and includes assignment or assessment structure not stated for the source. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:BiologicalSex ;
+    owl:annotatedTarget hrio:Sex ;
+    dcat:replaces "hrim:57f0e74d" ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:57096F68"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Geslacht"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
 
 hrim:57f0e74d a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
@@ -2398,6 +2920,7 @@ hrim:57f0e74d a sssom:Mapping ;
 hrim:58437A78 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:58437A78"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2422,6 +2945,7 @@ hrim:58437A78 a sssom:Mapping ;
 hrim:591537B7 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:591537B7"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2445,6 +2969,7 @@ hrim:591537B7 a sssom:Mapping ;
 hrim:599C8E09 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:599C8E09"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2468,6 +2993,7 @@ hrim:599C8E09 a sssom:Mapping ;
 hrim:5C1732B3 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:5C1732B3"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2491,6 +3017,7 @@ hrim:5C1732B3 a sssom:Mapping ;
 hrim:5E5912F3 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:5E5912F3"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2514,6 +3041,7 @@ hrim:5E5912F3 a sssom:Mapping ;
 hrim:5F8C0BE7 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:5F8C0BE7"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2534,9 +3062,33 @@ hrim:5F8C0BE7 a sssom:Mapping ;
     sssom:subject_source <https://www.hl7.org/fhir/R5/patient.profile.canonical.xml> ;
     sssom:subject_source_version "Patient StructureDefinition - FHIR v5.0.0" .
 
+hrim:60A9547D a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:60A9547D"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource obo:GSSO_009418 ;
+    owl:annotatedTarget hrio:SexAtBirth ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Sex at Birth"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:record_id "hrim:60A9547D"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "assigned gender at birth"@en ;
+    sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
+    sssom:subject_source_version "2.0.43" .
+
 hrim:63463CD5 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:63463CD5"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2560,6 +3112,7 @@ hrim:63463CD5 a sssom:Mapping ;
 hrim:638AF1C1 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:638AF1C1"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2604,9 +3157,35 @@ hrim:639c6016 a sssom:Mapping ;
     sssom:subject_source_version "2.8.1" ;
     sssom:subject_type owl:Class .
 
+hrim:63A8814F a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:63A8814F"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a finding, while Self-designated Gender is a broader HRIO class rather than a finding. Self-designated Gender is the relevant comparison target, but exact equivalence was rejected because the source is modeled differently and mixes content that HRIO separates. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:285116001 ;
+    owl:annotatedTarget hrio:SelfDesignatedGender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Self-designated Gender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:63A8814F"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Gender identity finding (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:643B88D1 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:643B88D1"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2630,6 +3209,7 @@ hrim:643B88D1 a sssom:Mapping ;
 hrim:67B26CF8 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:67B26CF8"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2653,6 +3233,7 @@ hrim:67B26CF8 a sssom:Mapping ;
 hrim:67F3026E a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:67F3026E"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2676,6 +3257,7 @@ hrim:67F3026E a sssom:Mapping ;
 hrim:68CA2B32 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:68CA2B32"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2699,6 +3281,7 @@ hrim:68CA2B32 a sssom:Mapping ;
 hrim:6996F191 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:6996F191"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2719,9 +3302,60 @@ hrim:6996F191 a sssom:Mapping ;
     sssom:subject_source <https://loinc.org/news/loinc-version-2-82-release-highlights/> ;
     sssom:subject_source_version "LOINC 2.88" .
 
+hrim:69D47B17 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:69D47B17"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a clinical finding rather than a person-borne gender characterization. Self-identified Gender is the relevant comparison target, but exact equivalence was rejected because self-identification is not stated in the source definition. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:365873007 ;
+    owl:annotatedTarget hrio:SelfIdentifiedGender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "mode" ;
+    sssom:object_label "Self-identified Gender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:69D47B17"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Gender finding (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
+hrim:6C791C6C a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:6C791C6C"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a finding about female sex but does not state a chromosomal basis. Karyotypic Female Sex is the relevant comparison target, but exact equivalence was rejected because the target adds a karyotypic basis that is not present in the source. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:248152002 ;
+    owl:annotatedTarget hrio:KaryotypicFemaleSex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Karyotypic Female Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:6C791C6C"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Female (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:6DDF4B02 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:6DDF4B02"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2745,6 +3379,7 @@ hrim:6DDF4B02 a sssom:Mapping ;
 hrim:6E305CF1 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:6E305CF1"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2770,6 +3405,7 @@ hrim:6E305CF1 a sssom:Mapping ;
 hrim:6F011CFF a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:6F011CFF"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2793,6 +3429,7 @@ hrim:6F011CFF a sssom:Mapping ;
 hrim:6F4CB9BC a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:6F4CB9BC"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2816,6 +3453,7 @@ hrim:6F4CB9BC a sssom:Mapping ;
 hrim:6FE6C8C2 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:6FE6C8C2"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2839,6 +3477,7 @@ hrim:6FE6C8C2 a sssom:Mapping ;
 hrim:703633D0 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:703633D0"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2862,6 +3501,7 @@ hrim:703633D0 a sssom:Mapping ;
 hrim:70C2BF1B a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:70C2BF1B"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2885,6 +3525,7 @@ hrim:70C2BF1B a sssom:Mapping ;
 hrim:7109FAC1 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:7109FAC1"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2908,6 +3549,7 @@ hrim:7109FAC1 a sssom:Mapping ;
 hrim:72DACFEC a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:72DACFEC"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2931,6 +3573,7 @@ hrim:72DACFEC a sssom:Mapping ;
 hrim:73A0F136 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:73A0F136"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2955,6 +3598,7 @@ hrim:73A0F136 a sssom:Mapping ;
 hrim:74F2C83B a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:74F2C83B"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -2979,6 +3623,7 @@ hrim:74F2C83B a sssom:Mapping ;
 hrim:764B22C4 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:764B22C4"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3002,6 +3647,7 @@ hrim:764B22C4 a sssom:Mapping ;
 hrim:765ABCFD a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:765ABCFD"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3025,6 +3671,7 @@ hrim:765ABCFD a sssom:Mapping ;
 hrim:7668A41C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:7668A41C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3049,6 +3696,7 @@ hrim:7668A41C a sssom:Mapping ;
 hrim:77D461F5 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:77D461F5"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3069,9 +3717,33 @@ hrim:77D461F5 a sssom:Mapping ;
     sssom:subject_source <https://www.cdisc.org/kb/ecrf/sexual-orientation-gender-identity-sogi> ;
     sssom:subject_source_version "Sexual Orientation & Gender Identity (SOGI) | CDISC — public page, version not stated" .
 
+hrim:7810775A a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:7810775A"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource obo:NCIT_C17357 ;
+    owl:annotatedTarget hrio:Gender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Gender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:record_id "hrim:7810775A"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Gender"@en ;
+    sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
+    sssom:subject_source_version "2.0.48" .
+
 hrim:78244AF1 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:78244AF1"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3092,9 +3764,35 @@ hrim:78244AF1 a sssom:Mapping ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
 
+hrim:788147B5 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:788147B5"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a finding about female sex but does not state birth registration or recorded-at-birth meaning. Sex-at-birth Female Sex is the relevant comparison target, but exact equivalence was rejected because the target adds birth-time recording semantics that are not present in the source. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:248152002 ;
+    owl:annotatedTarget hrio:SexAtBirthFemaleSex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Sex-at-birth Female Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:788147B5"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Female (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:7C46B10D a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:7C46B10D"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3118,6 +3816,7 @@ hrim:7C46B10D a sssom:Mapping ;
 hrim:7CE3271C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:7CE3271C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3141,6 +3840,7 @@ hrim:7CE3271C a sssom:Mapping ;
 hrim:7D8AD954 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:7D8AD954"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3164,6 +3864,7 @@ hrim:7D8AD954 a sssom:Mapping ;
 hrim:7F3DFD9B a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:7F3DFD9B"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3187,6 +3888,7 @@ hrim:7F3DFD9B a sssom:Mapping ;
 hrim:7FAEFB6A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:7FAEFB6A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3210,6 +3912,7 @@ hrim:7FAEFB6A a sssom:Mapping ;
 hrim:807877F8 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:807877F8"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3233,6 +3936,7 @@ hrim:807877F8 a sssom:Mapping ;
 hrim:82525EA4 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:82525EA4"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3257,6 +3961,7 @@ hrim:82525EA4 a sssom:Mapping ;
 hrim:83D8C2F9 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:83D8C2F9"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3280,6 +3985,7 @@ hrim:83D8C2F9 a sssom:Mapping ;
 hrim:841E4586 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:841E4586"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3300,9 +4006,35 @@ hrim:841E4586 a sssom:Mapping ;
     sssom:subject_source <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus_26.02d.owl> ;
     sssom:subject_source_version "NCI Thesaurus 26.02d" .
 
+hrim:84C9F5EA a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:84C9F5EA"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a finding, while Gender is a broader HRIO class rather than a finding. Gender is the relevant comparison target, but exact equivalence was rejected because the source is modeled differently and mixes content that HRIO separates. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:285116001 ;
+    owl:annotatedTarget hrio:Gender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Gender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:84C9F5EA"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Gender identity finding (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:84CCDF8D a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:84CCDF8D"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3326,6 +4058,7 @@ hrim:84CCDF8D a sssom:Mapping ;
 hrim:85A62585 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:85A62585"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3349,6 +4082,7 @@ hrim:85A62585 a sssom:Mapping ;
 hrim:88089BA3 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:88089BA3"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3372,6 +4106,7 @@ hrim:88089BA3 a sssom:Mapping ;
 hrim:885CF540 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:885CF540"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3395,6 +4130,7 @@ hrim:885CF540 a sssom:Mapping ;
 hrim:88E8FA34 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:88E8FA34"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3415,9 +4151,35 @@ hrim:88E8FA34 a sssom:Mapping ;
     sssom:subject_source <https://www.hl7.org/fhir/extensions/5.2.0/StructureDefinition-individual-recordedSexOrGender.html> ;
     sssom:subject_source_version "Person Recorded Sex Or Gender - FHIR Core Extensions Registry v5.2.0 (based on FHIR v5.0.0)" .
 
+hrim:8906120C a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:8906120C"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a finding, while Female Sex is a sex category. Female Sex is the relevant comparison target because it is closest in meaning, but exact equivalence was rejected because the source is modeled as a finding rather than a category-level sex concept. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:248152002 ;
+    owl:annotatedTarget hrio:FemaleSex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Female Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:8906120C"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Female (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:892FCC20 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:892FCC20"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3441,6 +4203,7 @@ hrim:892FCC20 a sssom:Mapping ;
 hrim:8A6B879C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:8A6B879C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3464,6 +4227,7 @@ hrim:8A6B879C a sssom:Mapping ;
 hrim:8A8D6075 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:8A8D6075"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3490,6 +4254,7 @@ hrim:8A8D6075 a sssom:Mapping ;
 hrim:8BA2A678 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:8BA2A678"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3514,6 +4279,7 @@ hrim:8BA2A678 a sssom:Mapping ;
 hrim:8CB5F8B9 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:8CB5F8B9"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3534,9 +4300,35 @@ hrim:8CB5F8B9 a sssom:Mapping ;
     sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
     sssom:subject_source_version "2.0.37" .
 
+hrim:8DC2CC88 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:8DC2CC88"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "It describes an organism-level quality for intersexual sex, defined as having both female and male characteristics. Indeterminate Sex is the closest relevant HRIO comparison target, but exact equivalence was not used because HRIO models a person-scoped indeterminate sex category and does not preserve the source's organism bearer scope or specific intersexual meaning. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:Intersexual ;
+    owl:annotatedTarget hrio:IndeterminateSex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Indeterminate Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:8DC2CC88"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Intersexe geslacht"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
+
 hrim:8E185060 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:8E185060"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3560,6 +4352,7 @@ hrim:8E185060 a sssom:Mapping ;
 hrim:8E5D0090 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:8E5D0090"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3583,6 +4376,7 @@ hrim:8E5D0090 a sssom:Mapping ;
 hrim:8EBE99D0 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:8EBE99D0"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3606,6 +4400,7 @@ hrim:8EBE99D0 a sssom:Mapping ;
 hrim:8F1D80FB a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:8F1D80FB"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3675,6 +4470,7 @@ hrim:8f3d75d9 a sssom:Mapping ;
 hrim:90EF3CA3 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:90EF3CA3"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3698,6 +4494,7 @@ hrim:90EF3CA3 a sssom:Mapping ;
 hrim:91DA1DEB a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:91DA1DEB"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3721,6 +4518,7 @@ hrim:91DA1DEB a sssom:Mapping ;
 hrim:951F2DC4 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:951F2DC4"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3744,6 +4542,7 @@ hrim:951F2DC4 a sssom:Mapping ;
 hrim:9567BF09 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9567BF09"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3767,6 +4566,7 @@ hrim:9567BF09 a sssom:Mapping ;
 hrim:959B56A6 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:959B56A6"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3790,6 +4590,7 @@ hrim:959B56A6 a sssom:Mapping ;
 hrim:989C4E05 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:989C4E05"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3813,6 +4614,7 @@ hrim:989C4E05 a sssom:Mapping ;
 hrim:98E82361 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:98E82361"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3837,6 +4639,7 @@ hrim:98E82361 a sssom:Mapping ;
 hrim:9999A348 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9999A348"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3860,6 +4663,7 @@ hrim:9999A348 a sssom:Mapping ;
 hrim:9ADC1E2F a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9ADC1E2F"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3884,6 +4688,7 @@ hrim:9ADC1E2F a sssom:Mapping ;
 hrim:9ADCE66A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9ADCE66A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3907,6 +4712,7 @@ hrim:9ADCE66A a sssom:Mapping ;
 hrim:9B138340 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9B138340"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3931,6 +4737,7 @@ hrim:9B138340 a sssom:Mapping ;
 hrim:9B85D513 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9B85D513"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3954,6 +4761,7 @@ hrim:9B85D513 a sssom:Mapping ;
 hrim:9C25FB48 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9C25FB48"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -3978,6 +4786,7 @@ hrim:9C25FB48 a sssom:Mapping ;
 hrim:9C911E41 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9C911E41"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4001,6 +4810,7 @@ hrim:9C911E41 a sssom:Mapping ;
 hrim:9DA69D6D a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9DA69D6D"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4021,9 +4831,35 @@ hrim:9DA69D6D a sssom:Mapping ;
     sssom:subject_source <https://loinc.org/news/loinc-version-2-82-release-highlights/> ;
     sssom:subject_source_version "LOINC 2.92" .
 
+hrim:9E346285 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:9E346285"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a male-related finding but does not state a chromosomal or karyotypic basis. Karyotypic Male Sex is the relevant comparison target, but exact equivalence was rejected because the added basis is not present in the source. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:248153007 ;
+    owl:annotatedTarget hrio:KaryotypicMaleSex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Karyotypic Male Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:9E346285"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Male (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:9EB5302C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9EB5302C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4047,6 +4883,7 @@ hrim:9EB5302C a sssom:Mapping ;
 hrim:9EDB0528 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9EDB0528"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4070,6 +4907,7 @@ hrim:9EDB0528 a sssom:Mapping ;
 hrim:9EFA6F70 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9EFA6F70"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4094,6 +4932,7 @@ hrim:9EFA6F70 a sssom:Mapping ;
 hrim:9F19B61F a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:9F19B61F"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4114,9 +4953,35 @@ hrim:9F19B61F a sssom:Mapping ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
 
+hrim:9F944ED3 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:9F944ED3"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is explicitly about biological sex. Female is the relevant comparison target because it is close in meaning, but exact equivalence was rejected because Female is not limited to sex and can also cover gender. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:248152002 ;
+    owl:annotatedTarget hrio:Female ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Female"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:9F944ED3"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Female (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:A1BC897B a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:A1BC897B"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4140,6 +5005,7 @@ hrim:A1BC897B a sssom:Mapping ;
 hrim:A204278D a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:A204278D"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4164,6 +5030,7 @@ hrim:A204278D a sssom:Mapping ;
 hrim:A2B18F90 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:A2B18F90"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4187,6 +5054,7 @@ hrim:A2B18F90 a sssom:Mapping ;
 hrim:A53D29E9 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:A53D29E9"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4212,6 +5080,7 @@ hrim:A53D29E9 a sssom:Mapping ;
 hrim:A5DA10B4 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:A5DA10B4"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4235,6 +5104,7 @@ hrim:A5DA10B4 a sssom:Mapping ;
 hrim:A5F1CFB8 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:A5F1CFB8"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4258,6 +5128,7 @@ hrim:A5F1CFB8 a sssom:Mapping ;
 hrim:A61208CF a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:A61208CF"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4281,6 +5152,7 @@ hrim:A61208CF a sssom:Mapping ;
 hrim:A64E90ED a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:A64E90ED"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4304,6 +5176,7 @@ hrim:A64E90ED a sssom:Mapping ;
 hrim:A674D186 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:A674D186"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4324,9 +5197,35 @@ hrim:A674D186 a sssom:Mapping ;
     sssom:subject_source <https://phenopacket-schema.readthedocs.io/en/2.0.0/karyotypicsex.html> ;
     sssom:subject_source_version "GA4GH Phenopacket Schema 2.0.0 — KaryotypicSex enumeration" .
 
+hrim:A8A5E70E a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:A8A5E70E"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a finding, while Self-identified Gender is a person-level gender quality. Self-identified Gender is the relevant comparison target, but exact equivalence was rejected because the source does not state the needed qualifier evidence and mixes content that HRIO separates. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:285116001 ;
+    owl:annotatedTarget hrio:SelfIdentifiedGender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "mode" ;
+    sssom:object_label "Self-identified Gender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:A8A5E70E"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Gender identity finding (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:A8A694C7 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:A8A694C7"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4350,6 +5249,7 @@ hrim:A8A694C7 a sssom:Mapping ;
 hrim:AA56AE4E a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:AA56AE4E"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4370,9 +5270,33 @@ hrim:AA56AE4E a sssom:Mapping ;
     sssom:subject_source <https://ckm.openehr.org/ckm/archetypes/1013.1.3715> ;
     sssom:subject_source_version "Revision Number 1.1.4" .
 
+hrim:AB489D97 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:AB489D97"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:GenderIdentity ;
+    owl:annotatedTarget hrio:SelfIdentifiedGender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "mode" ;
+    sssom:object_label "Self-identified Gender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:record_id "hrim:AB489D97"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Genderidentiteit"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
+
 hrim:ABD6EFAD a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:ABD6EFAD"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4394,9 +5318,59 @@ hrim:ABD6EFAD a sssom:Mapping ;
     sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
     sssom:subject_source_version "2.0.19" .
 
+hrim:ADFCDFDF a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:ADFCDFDF"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "This source concept denotes an identity-based non-binary person concept. Self-identified Non-binary-gender Person is the closest broader HRIO target because it preserves the non-binary person meaning and the self-identification basis. Exact equivalence was not used because the source also includes transgender person semantics that are not present in Self-identified Non-binary-gender Person. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasNarrowerMeaningThan ;
+    owl:annotatedSource obo:GSSO_000395 ;
+    owl:annotatedTarget hrio:SelfIdentifiedNonBinaryGenderPerson ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "phase" ;
+    sssom:object_label "Self-identified Non-binary-gender Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:record_id "hrim:ADFCDFDF"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0000-0001-8397-2339 ;
+    sssom:reviewer_label "Douwe Spaanderman" ;
+    sssom:subject_label "nonbinary person"@en ;
+    sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
+    sssom:subject_source_version "2.0.50" .
+
+hrim:AEC1F8D5 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:AEC1F8D5"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is biologically male-related but remains underspecified about bearer and basis. Male Sex is the relevant comparison target, but exact equivalence was rejected because the source is a finding and does not safely match an HRIO sex or person category. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:248153007 ;
+    owl:annotatedTarget hrio:MaleSex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Male Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:AEC1F8D5"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Male (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:B13DF039 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:B13DF039"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4421,6 +5395,7 @@ hrim:B13DF039 a sssom:Mapping ;
 hrim:B1A2A428 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:B1A2A428"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4444,6 +5419,7 @@ hrim:B1A2A428 a sssom:Mapping ;
 hrim:B2F804F1 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:B2F804F1"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4467,6 +5443,7 @@ hrim:B2F804F1 a sssom:Mapping ;
 hrim:B35F39C3 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:B35F39C3"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4490,6 +5467,7 @@ hrim:B35F39C3 a sssom:Mapping ;
 hrim:B382F827 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:B382F827"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4513,6 +5491,7 @@ hrim:B382F827 a sssom:Mapping ;
 hrim:B3C9CF75 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:B3C9CF75"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4533,9 +5512,35 @@ hrim:B3C9CF75 a sssom:Mapping ;
     sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
     sssom:subject_source_version "2.0.43" .
 
+hrim:B40FCC13 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:B40FCC13"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a SNOMED clinical finding superclass related to biological sex. Sex is the relevant comparison target because it is the closest semantic anchor, but exact equivalence was rejected because the source is a finding and the target is a person-level sex classification or property. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:429019009 ;
+    owl:annotatedTarget hrio:Sex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:B40FCC13"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Finding related to biological sex (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:B4244A2C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:B4244A2C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4559,6 +5564,7 @@ hrim:B4244A2C a sssom:Mapping ;
 hrim:B43970EE a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:B43970EE"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4583,6 +5589,7 @@ hrim:B43970EE a sssom:Mapping ;
 hrim:B46BCE7D a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:B46BCE7D"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4604,9 +5611,35 @@ hrim:B46BCE7D a sssom:Mapping ;
     sssom:subject_source <https://ohdsi.github.io/CommonDataModel/dataModelConventions.html> ;
     sssom:subject_source_version "Data Model Conventions" .
 
+hrim:B585DF58 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:B585DF58"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a finding, while Female-sex Person is a person class. Female-sex Person is the relevant comparison target because it is closely related, but exact equivalence was rejected because the source is not a person classification. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:248152002 ;
+    owl:annotatedTarget hrio:FemaleSexPerson ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Female-sex Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:B585DF58"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Female (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:B9AC2A98 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:B9AC2A98"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4631,6 +5664,7 @@ hrim:B9AC2A98 a sssom:Mapping ;
 hrim:BB4D37DA a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:BB4D37DA"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4654,6 +5688,7 @@ hrim:BB4D37DA a sssom:Mapping ;
 hrim:BD16A22D a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:BD16A22D"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4677,6 +5712,7 @@ hrim:BD16A22D a sssom:Mapping ;
 hrim:BDD2480A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:BDD2480A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4700,6 +5736,7 @@ hrim:BDD2480A a sssom:Mapping ;
 hrim:BEA16386 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:BEA16386"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4720,9 +5757,35 @@ hrim:BEA16386 a sssom:Mapping ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
 
+hrim:BEFE1115 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:BEFE1115"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a generic SNOMED observable about a patient's gender. Gender is the relevant comparison target, but exact equivalence was rejected because the source does not provide enough detail to support an exact match or a broader or narrower mapping. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:263495000 ;
+    owl:annotatedTarget hrio:Gender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Gender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:BEFE1115"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Gender (observable entity)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:C0A8AF6F a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C0A8AF6F"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4746,6 +5809,7 @@ hrim:C0A8AF6F a sssom:Mapping ;
 hrim:C0E2A576 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C0E2A576"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4769,6 +5833,7 @@ hrim:C0E2A576 a sssom:Mapping ;
 hrim:C0EF8398 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C0EF8398"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4789,9 +5854,36 @@ hrim:C0EF8398 a sssom:Mapping ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
 
+hrim:C35827FE a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:C35827FE"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source denotes a sex-based female human, while Female-gender Person is the corresponding target on the gender branch. Exact equivalence was rejected because the source is sex-based rather than gender-based. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:Woman ;
+    owl:annotatedTarget hrio:FemaleGenderPerson ;
+    dcat:replaces "hrim:1ce9d055" ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "phase" ;
+    sssom:object_label "Female-gender Person"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:C35827FE"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Vrouw"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
+
 hrim:C389F0EA a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C389F0EA"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4816,6 +5908,7 @@ hrim:C389F0EA a sssom:Mapping ;
 hrim:C3F4E8F4 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C3F4E8F4"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4836,9 +5929,35 @@ hrim:C3F4E8F4 a sssom:Mapping ;
     sssom:subject_source <https://phenopacket-schema.readthedocs.io/en/2.0.0/karyotypicsex.html> ;
     sssom:subject_source_version "GA4GH Phenopacket Schema 2.0.0 — KaryotypicSex enumeration" .
 
+hrim:C4F4D535 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:C4F4D535"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "This source concept denotes possible gender-identity values for humans. Self-identified Non-binary Gender is a relevant comparison target because the source examples include agender and genderfluid. Exact equivalence was rejected because the source is not limited to non-binary meanings and HRIO models a gender class rather than a value class. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:GenderIdentityValue ;
+    owl:annotatedTarget hrio:SelfIdentifiedNonBinaryGender ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "phase" ;
+    sssom:object_label "Self-identified Non-binary Gender"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:C4F4D535"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Genderidentiteitswaarde"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
+
 hrim:C53F34A8 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C53F34A8"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4863,6 +5982,7 @@ hrim:C53F34A8 a sssom:Mapping ;
 hrim:C656C05F a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C656C05F"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4886,6 +6006,7 @@ hrim:C656C05F a sssom:Mapping ;
 hrim:C6A875E5 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C6A875E5"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4909,6 +6030,7 @@ hrim:C6A875E5 a sssom:Mapping ;
 hrim:C71CCB34 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C71CCB34"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4932,6 +6054,7 @@ hrim:C71CCB34 a sssom:Mapping ;
 hrim:C76457BB a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C76457BB"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4954,6 +6077,7 @@ hrim:C76457BB a sssom:Mapping ;
 hrim:C82C95ED a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C82C95ED"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -4977,6 +6101,7 @@ hrim:C82C95ED a sssom:Mapping ;
 hrim:C88426BA a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C88426BA"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5000,6 +6125,7 @@ hrim:C88426BA a sssom:Mapping ;
 hrim:C8F90D22 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:C8F90D22"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5023,6 +6149,7 @@ hrim:C8F90D22 a sssom:Mapping ;
 hrim:CACF23D3 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:CACF23D3"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5046,6 +6173,7 @@ hrim:CACF23D3 a sssom:Mapping ;
 hrim:CAF52B45 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:CAF52B45"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5066,9 +6194,36 @@ hrim:CAF52B45 a sssom:Mapping ;
     sssom:subject_source <https://loinc.org/news/loinc-version-2-82-release-highlights/> ;
     sssom:subject_source_version "LOINC 2.107" .
 
+hrim:CB7E9E60 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:CB7E9E60"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "Here the source denotes the biological sex quality of an organism. Karyotypic Sex is a relevant comparison target because the source mentions chromosomes as one basis for sex. Exact equivalence was rejected because the source is broader than Karyotypic Sex and the HRIO class is person-scoped rather than organism-scoped. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:BiologicalSex ;
+    owl:annotatedTarget hrio:KaryotypicSex ;
+    dcat:replaces "hrim:57f0e74d" ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "mode" ;
+    sssom:object_label "Karyotypic Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:CB7E9E60"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Geslacht"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
+
 hrim:CBA8E845 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:CBA8E845"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5092,6 +6247,7 @@ hrim:CBA8E845 a sssom:Mapping ;
 hrim:CBD911A2 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:CBD911A2"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5116,6 +6272,7 @@ hrim:CBD911A2 a sssom:Mapping ;
 hrim:CEF4C522 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:CEF4C522"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5140,6 +6297,7 @@ hrim:CEF4C522 a sssom:Mapping ;
 hrim:CF61816A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:CF61816A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5163,6 +6321,7 @@ hrim:CF61816A a sssom:Mapping ;
 hrim:D0030061 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D0030061"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5186,6 +6345,7 @@ hrim:D0030061 a sssom:Mapping ;
 hrim:D0737EAB a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D0737EAB"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5209,6 +6369,7 @@ hrim:D0737EAB a sssom:Mapping ;
 hrim:D14D1EAA a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D14D1EAA"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5232,6 +6393,7 @@ hrim:D14D1EAA a sssom:Mapping ;
 hrim:D1C43DA7 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D1C43DA7"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5257,6 +6419,7 @@ hrim:D1C43DA7 a sssom:Mapping ;
 hrim:D26B6294 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D26B6294"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5280,6 +6443,7 @@ hrim:D26B6294 a sssom:Mapping ;
 hrim:D2834F7F a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D2834F7F"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5303,6 +6467,7 @@ hrim:D2834F7F a sssom:Mapping ;
 hrim:D3E9CDE3 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D3E9CDE3"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5326,6 +6491,7 @@ hrim:D3E9CDE3 a sssom:Mapping ;
 hrim:D5CC2E9A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D5CC2E9A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5346,9 +6512,35 @@ hrim:D5CC2E9A a sssom:Mapping ;
     sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
     sssom:subject_source_version "2.0.36" .
 
+hrim:D650AA08 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:D650AA08"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source sits under a biological-sex finding hierarchy, while Male leaves the sex-versus-gender basis unspecified. Male is the relevant comparison target because it is close in meaning, but exact equivalence was rejected because the source remains too underspecified for a safe exact match. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:248153007 ;
+    owl:annotatedTarget hrio:Male ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "category" ;
+    sssom:object_label "Male"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:D650AA08"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Male (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:D6A55786 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D6A55786"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5375,6 +6567,7 @@ hrim:D6A55786 a sssom:Mapping ;
 hrim:D7683BEC a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D7683BEC"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5398,6 +6591,7 @@ hrim:D7683BEC a sssom:Mapping ;
 hrim:D77F0A9B a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D77F0A9B"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5421,6 +6615,7 @@ hrim:D77F0A9B a sssom:Mapping ;
 hrim:D7CA8694 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D7CA8694"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5441,9 +6636,35 @@ hrim:D7CA8694 a sssom:Mapping ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
 
+hrim:D847100A a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:D847100A"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "This concept denotes an organism-level quality for intersexual sex, defined as having both female and male characteristics. Phenotypic Ambiguous Sex is a relevant comparison target because it concerns ambiguity in sex characteristics, but exact equivalence was not used because HRIO adds a phenotypic assessment context and remains person-scoped. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource onz-g:Intersexual ;
+    owl:annotatedTarget hrio:PhenotypicAmbiguousSex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Phenotypic Ambiguous Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:D847100A"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Intersexe geslacht"@nl ;
+    sssom:subject_source onz-g: ;
+    sssom:subject_source_version "2.8.1" .
+
 hrim:D8AE6317 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D8AE6317"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5467,6 +6688,7 @@ hrim:D8AE6317 a sssom:Mapping ;
 hrim:D9F4EFA2 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:D9F4EFA2"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5490,6 +6712,7 @@ hrim:D9F4EFA2 a sssom:Mapping ;
 hrim:DA6EC239 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:DA6EC239"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5513,6 +6736,7 @@ hrim:DA6EC239 a sssom:Mapping ;
 hrim:DABA7C3E a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:DABA7C3E"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5536,6 +6760,7 @@ hrim:DABA7C3E a sssom:Mapping ;
 hrim:DC416BAD a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:DC416BAD"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5556,9 +6781,35 @@ hrim:DC416BAD a sssom:Mapping ;
     sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
     sssom:subject_source_version "2.0.8" .
 
+hrim:DE03BC63 a sssom:Mapping ;
+    dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
+    dcterms:identifier "hrim:DE03BC63"^^xsd:anyURI ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    pav:authoredBy orcid:0000-0003-2736-7817 ;
+    pav:authoredOn "2026-03-13"^^xsd:date ;
+    rdfs:comment "The source is a male-related finding but does not state a phenotypic or assessment basis. Phenotypic Male Sex is the relevant comparison target, but exact equivalence was rejected because the added basis is not present in the source. Created with support from the Mapping Assistant."@en ;
+    owl:annotatedProperty hriv:hasExactMeaning ;
+    owl:annotatedSource snomed:248153007 ;
+    owl:annotatedTarget hrio:PhenotypicMaleSex ;
+    sssom:author_label "Pedro Paulo Favato Barcelos" ;
+    sssom:creator_label "Health-RI Semantic Interoperability Initiative" ;
+    sssom:mapping_justification semapv:ManualMappingCuration ;
+    sssom:object_category "subkind" ;
+    sssom:object_label "Phenotypic Male Sex"@en ;
+    sssom:object_source hrio: ;
+    sssom:object_source_version "2.1.0" ;
+    sssom:predicate_modifier "Not" ;
+    sssom:record_id "hrim:DE03BC63"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
+    sssom:subject_label "Male (finding)"@en ;
+    sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
+    sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
+
 hrim:DEA9D700 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:DEA9D700"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5583,6 +6834,7 @@ hrim:DEA9D700 a sssom:Mapping ;
 hrim:DEE6906A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:DEE6906A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5606,6 +6858,7 @@ hrim:DEE6906A a sssom:Mapping ;
 hrim:E05DE82D a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:E05DE82D"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5629,6 +6882,7 @@ hrim:E05DE82D a sssom:Mapping ;
 hrim:E1022FB9 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:E1022FB9"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5653,6 +6907,7 @@ hrim:E1022FB9 a sssom:Mapping ;
 hrim:E15B519C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:E15B519C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5676,6 +6931,7 @@ hrim:E15B519C a sssom:Mapping ;
 hrim:E1DD76CF a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:E1DD76CF"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5699,6 +6955,7 @@ hrim:E1DD76CF a sssom:Mapping ;
 hrim:E3412216 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:E3412216"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5722,6 +6979,7 @@ hrim:E3412216 a sssom:Mapping ;
 hrim:E5C631B1 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:E5C631B1"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5745,6 +7003,7 @@ hrim:E5C631B1 a sssom:Mapping ;
 hrim:E61BD4F0 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:E61BD4F0"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5768,6 +7027,7 @@ hrim:E61BD4F0 a sssom:Mapping ;
 hrim:E774CD0D a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:E774CD0D"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5792,6 +7052,7 @@ hrim:E774CD0D a sssom:Mapping ;
 hrim:EBC3495B a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:EBC3495B"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5816,6 +7077,7 @@ hrim:EBC3495B a sssom:Mapping ;
 hrim:EE932C9C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:EE932C9C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5839,6 +7101,7 @@ hrim:EE932C9C a sssom:Mapping ;
 hrim:EF8218B8 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:EF8218B8"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5862,6 +7125,7 @@ hrim:EF8218B8 a sssom:Mapping ;
 hrim:EFED761C a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:EFED761C"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5884,6 +7148,7 @@ hrim:EFED761C a sssom:Mapping ;
 hrim:F120F48A a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:F120F48A"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5907,6 +7172,7 @@ hrim:F120F48A a sssom:Mapping ;
 hrim:F165A084 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:F165A084"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5930,6 +7196,7 @@ hrim:F165A084 a sssom:Mapping ;
 hrim:F2B6EC0D a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:F2B6EC0D"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5953,6 +7220,7 @@ hrim:F2B6EC0D a sssom:Mapping ;
 hrim:F42D8F04 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:F42D8F04"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -5976,6 +7244,7 @@ hrim:F42D8F04 a sssom:Mapping ;
 hrim:F496E3B2 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:F496E3B2"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6000,6 +7269,7 @@ hrim:F496E3B2 a sssom:Mapping ;
 hrim:F4D62076 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:F4D62076"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6022,6 +7292,7 @@ hrim:F4D62076 a sssom:Mapping ;
 hrim:F5797932 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:F5797932"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6046,6 +7317,7 @@ hrim:F5797932 a sssom:Mapping ;
 hrim:F6DAD356 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:F6DAD356"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6069,6 +7341,7 @@ hrim:F6DAD356 a sssom:Mapping ;
 hrim:F75FEF86 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:F75FEF86"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6093,6 +7366,7 @@ hrim:F75FEF86 a sssom:Mapping ;
 hrim:F8933205 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:F8933205"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6116,6 +7390,7 @@ hrim:F8933205 a sssom:Mapping ;
 hrim:FA0A28AE a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:FA0A28AE"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6139,6 +7414,7 @@ hrim:FA0A28AE a sssom:Mapping ;
 hrim:FA2D9651 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:FA2D9651"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6162,6 +7438,7 @@ hrim:FA2D9651 a sssom:Mapping ;
 hrim:FA51714B a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:FA51714B"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6185,6 +7462,7 @@ hrim:FA51714B a sssom:Mapping ;
 hrim:FAE52A5D a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:FAE52A5D"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6208,6 +7486,7 @@ hrim:FAE52A5D a sssom:Mapping ;
 hrim:FB2D64D9 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:FB2D64D9"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6232,6 +7511,7 @@ hrim:FB2D64D9 a sssom:Mapping ;
 hrim:FE044242 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:FE044242"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6255,6 +7535,7 @@ hrim:FE044242 a sssom:Mapping ;
 hrim:FE59F8EF a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:FE59F8EF"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6279,6 +7560,7 @@ hrim:FE59F8EF a sssom:Mapping ;
 hrim:FE9F1EF1 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:FE9F1EF1"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6303,6 +7585,7 @@ hrim:FE9F1EF1 a sssom:Mapping ;
 hrim:FFC80CAB a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:FFC80CAB"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
@@ -6327,6 +7610,7 @@ hrim:FFC80CAB a sssom:Mapping ;
 hrim:FFF2AAC4 a sssom:Mapping ;
     dcterms:creator <https://w3id.org/health-ri/semantic-interoperability> ;
     dcterms:identifier "hrim:FFF2AAC4"^^xsd:anyURI ;
+    dcterms:issued "2026-03-23"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     pav:authoredBy orcid:0000-0003-2736-7817 ;
     pav:authoredOn "2026-03-13"^^xsd:date ;
