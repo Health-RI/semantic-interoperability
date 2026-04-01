@@ -365,6 +365,8 @@ hrim:002C0C53 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:002C0C53"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Male (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -462,6 +464,8 @@ hrim:019A9367 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:019A9367"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "cisgender"@en ;
     sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
     sssom:subject_source_version "2.0.38" .
@@ -850,6 +854,8 @@ hrim:0F8E7880 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:0F8E7880"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Male (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -951,6 +957,8 @@ hrim:147FA86A a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:147FA86A"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Genderidentiteitswaarde"@nl ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
@@ -1170,6 +1178,8 @@ hrim:1B0A60F9 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:1B0A60F9"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Intersexe geslacht"@nl ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
@@ -1509,6 +1519,8 @@ hrim:21D70200 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:21D70200"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Female (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -1753,6 +1765,8 @@ hrim:2B234469 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:2B234469"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Finding related to biological sex (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -1849,6 +1863,8 @@ hrim:2EA1BCDC a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:2EA1BCDC"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Female (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -1897,6 +1913,8 @@ hrim:30463ADA a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:30463ADA"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Male (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -2066,6 +2084,8 @@ hrim:34B4DBE9 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:34B4DBE9"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Gender identity finding (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -2114,6 +2134,8 @@ hrim:378E7E1E a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:378E7E1E"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Genderidentiteitswaarde"@nl ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
@@ -2283,6 +2305,8 @@ hrim:3A798576 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:3A798576"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "UNVERIFIED"@en ;
     sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
     sssom:subject_source_version "2.0.46" .
@@ -2524,6 +2548,8 @@ hrim:44B8EB15 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:44B8EB15"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Male (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -2573,6 +2599,8 @@ hrim:48D726DF a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:48D726DF"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Geslacht"@nl ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
@@ -2621,6 +2649,8 @@ hrim:4BAF6C9F a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:4BAF6C9F"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Female (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -2669,6 +2699,8 @@ hrim:514C537A a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:514C537A"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Geslacht"@nl ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
@@ -2938,6 +2970,8 @@ hrim:58437A78 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:58437A78"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Man"@nl ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
@@ -2986,6 +3020,8 @@ hrim:599C8E09 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:599C8E09"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "UNVERIFIED"@en ;
     sssom:subject_source <http://purl.obolibrary.org/obo/gsso/releases/2.0.5/gsso.owl> ;
     sssom:subject_source_version "2.0.47" .
@@ -3130,6 +3166,8 @@ hrim:638AF1C1 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:638AF1C1"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Geslacht"@nl ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
@@ -3760,6 +3798,8 @@ hrim:78244AF1 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:78244AF1"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Gender identity finding (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -3809,6 +3849,8 @@ hrim:7C46B10D a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:7C46B10D"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Intersexe geslacht"@nl ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
@@ -3857,6 +3899,8 @@ hrim:7D8AD954 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:7D8AD954"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Female (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -4196,6 +4240,8 @@ hrim:892FCC20 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:892FCC20"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Male (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -4535,6 +4581,8 @@ hrim:951F2DC4 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:951F2DC4"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Gender (observable entity)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -4754,6 +4802,8 @@ hrim:9B85D513 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:9B85D513"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Male (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -4949,6 +4999,8 @@ hrim:9F19B61F a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:9F19B61F"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Gender finding (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -5145,6 +5197,8 @@ hrim:A61208CF a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:A61208CF"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Gender (observable entity)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -5169,6 +5223,8 @@ hrim:A64E90ED a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:A64E90ED"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Female (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -5753,6 +5809,8 @@ hrim:BEA16386 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:BEA16386"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Female (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -5850,6 +5908,8 @@ hrim:C0EF8398 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:C0EF8398"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Vrouwelijk geslacht"@nl ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
@@ -6023,6 +6083,8 @@ hrim:C6A875E5 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:C6A875E5"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Gender identity finding (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -6118,6 +6180,8 @@ hrim:C88426BA a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:C88426BA"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Genderidentiteitswaarde"@nl ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
@@ -6924,6 +6988,8 @@ hrim:E15B519C a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:E15B519C"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Gender (observable entity)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -7045,6 +7111,8 @@ hrim:E774CD0D a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:E774CD0D"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Vrouw"@nl ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
@@ -7237,6 +7305,8 @@ hrim:F42D8F04 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:F42D8F04"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Gender finding (finding)"@en ;
     sssom:subject_source <http://snomed.info/sct/900000000000207008/version/20260301> ;
     sssom:subject_source_version "SNOMED CT International Edition, March 2026 release" .
@@ -7262,6 +7332,8 @@ hrim:F496E3B2 a sssom:Mapping ;
     sssom:object_source_version "2.1.0" ;
     sssom:predicate_modifier "Not" ;
     sssom:record_id "hrim:F496E3B2"^^xsd:anyURI ;
+    sssom:reviewer_id orcid:0009-0002-3089-9558 ;
+    sssom:reviewer_label "Ana Konrad" ;
     sssom:subject_label "Vrouw"@nl ;
     sssom:subject_source onz-g: ;
     sssom:subject_source_version "2.8.1" .
