@@ -5,5 +5,5 @@ mkdocs
 mkdocs-material
 mkdocs-table-reader-plugin
 packaging
-pylode==3.4.1
+pylode==3.4.2
 rdflib
