@@ -1,0 +1,353 @@
+@prefix demo: <https://w3id.org/health-ri/semantic-interoperability/schema/> .
+@prefix hriv: <https://w3id.org/health-ri/mapping-vocabulary/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/health-ri/semantic-interoperability/schema>
+    a owl:Ontology ;
+    rdfs:label "Semantic interoperability demo schema"@en ;
+    rdfs:comment "OWL/Turtle schema aligned with the current XML model and adjusted for computational population by instances."@en ;
+    demo:implementationNote "Defaults in the current model: RepresentationConcept.isConsistent = true, Relation.provenance = asserted, Mapping.polarity = positive."@en ;
+    demo:implementationNote "Qualified uniqueness for attributed relations must be enforced outside OWL. The notes explicitly give Q(StandardMapping) = {polarity}."@en ;
+    demo:implementationNote "Recommended implementation order from the notes: derive aligns and cannotAlign; then partiallyAlignsCandidate; then partiallyAligns; then mayAlignCandidate; then mayAlign."@en .
+
+#################################################################
+# Annotation properties
+#################################################################
+
+demo:derivationNote
+    a owl:AnnotationProperty ;
+    rdfs:label "derivation note"@en .
+
+demo:implementationNote
+    a owl:AnnotationProperty ;
+    rdfs:label "implementation note"@en .
+
+#################################################################
+# Classes
+#################################################################
+
+demo:ManagedElement
+    a owl:Class ;
+    rdfs:label "ManagedElement"@en ;
+    rdfs:comment "Abstract top-level class of the model."@en ;
+    owl:disjointUnionOf ( demo:Artifact demo:Concept demo:Relation ) .
+
+demo:Artifact
+    a owl:Class ;
+    rdfs:label "Artifact"@en ;
+    rdfs:subClassOf demo:ManagedElement ;
+    owl:disjointUnionOf ( demo:Standard demo:Model ) .
+
+demo:Concept
+    a owl:Class ;
+    rdfs:label "Concept"@en ;
+    rdfs:subClassOf demo:ManagedElement ;
+    owl:disjointUnionOf ( demo:RepresentationConcept demo:OntologyConcept ) .
+
+demo:Relation
+    a owl:Class ;
+    rdfs:label "Relation"@en ;
+    rdfs:comment "Abstract reified relation class. In the current model it carries provenance and specializes into Mapping and Alignment."@en ;
+    rdfs:subClassOf
+        demo:ManagedElement ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:source ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:ManagedElement
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:target ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:ManagedElement
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasProvenance ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:Provenance
+        ] ;
+    owl:disjointUnionOf ( demo:Mapping demo:Alignment ) .
+
+demo:RepresentationConcept
+    a owl:Class ;
+    rdfs:label "RepresentationConcept"@en ;
+    rdfs:comment "Abstract superclass of StandardConcept and ModelConcept."@en ;
+    rdfs:subClassOf
+        demo:Concept ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:isConsistent ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:boolean
+        ] ;
+    owl:disjointUnionOf ( demo:StandardConcept demo:ModelConcept ) .
+
+demo:Standard
+    a owl:Class ;
+    rdfs:label "Standard"@en ;
+    rdfs:subClassOf
+        demo:Artifact ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasStandardConcept ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:StandardConcept
+        ] .
+
+demo:Model
+    a owl:Class ;
+    rdfs:label "Model"@en ;
+    rdfs:subClassOf
+        demo:Artifact ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasModelConcept ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:ModelConcept
+        ] .
+
+demo:StandardConcept
+    a owl:Class ;
+    rdfs:label "StandardConcept"@en ;
+    rdfs:subClassOf demo:RepresentationConcept .
+
+demo:ModelConcept
+    a owl:Class ;
+    rdfs:label "ModelConcept"@en ;
+    rdfs:subClassOf demo:RepresentationConcept .
+
+demo:OntologyConcept
+    a owl:Class ;
+    rdfs:label "OntologyConcept"@en ;
+    rdfs:subClassOf demo:Concept .
+
+demo:Mapping
+    a owl:Class ;
+    rdfs:label "Mapping"@en ;
+    rdfs:comment "Reified exact-meaning relation with qualifier polarity. The XML also models hriv:hasExactMeaning explicitly as a binary relation."@en ;
+    rdfs:subClassOf
+        demo:Relation ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasMappingSource ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:RepresentationConcept
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasTargetOntologyConcept ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:OntologyConcept
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasPolarity ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:Polarity
+        ] .
+
+demo:Alignment
+    a owl:Class ;
+    rdfs:label "Alignment"@en ;
+    rdfs:comment "Reified alignment relation. In the XML this is the association class attached to aligns."@en ;
+    rdfs:subClassOf
+        demo:Relation ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasAlignmentSource ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:RepresentationConcept
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasAlignmentTarget ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:RepresentationConcept
+        ] .
+
+#################################################################
+# Enumeration classes
+#################################################################
+
+demo:Polarity
+    a owl:Class ;
+    rdfs:label "Polarity"@en ;
+    owl:oneOf ( demo:positive demo:negative ) .
+
+demo:Provenance
+    a owl:Class ;
+    rdfs:label "Provenance"@en ;
+    owl:oneOf ( demo:asserted demo:inferred ) .
+
+demo:positive
+    a owl:NamedIndividual , demo:Polarity ;
+    rdfs:label "positive"@en .
+
+demo:negative
+    a owl:NamedIndividual , demo:Polarity ;
+    rdfs:label "negative"@en .
+
+demo:asserted
+    a owl:NamedIndividual , demo:Provenance ;
+    rdfs:label "asserted"@en .
+
+demo:inferred
+    a owl:NamedIndividual , demo:Provenance ;
+    rdfs:label "inferred"@en .
+
+#################################################################
+# Datatype properties
+#################################################################
+
+demo:isConsistent
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:label "isConsistent"@en ;
+    rdfs:domain demo:RepresentationConcept ;
+    rdfs:range xsd:boolean ;
+    demo:derivationNote "R7: multiple positive exact meanings to distinct OntologyConcepts imply inconsistency. R8: opposite-polarity exact meanings to the same OntologyConcept also imply inconsistency."@en .
+
+#################################################################
+# Object properties: artifact-to-concept relations
+#################################################################
+
+demo:hasStandardConcept
+    a owl:ObjectProperty ;
+    rdfs:label "has standard concept"@en ;
+    rdfs:domain demo:Standard ;
+    rdfs:range demo:StandardConcept .
+
+demo:hasModelConcept
+    a owl:ObjectProperty ;
+    rdfs:label "has model concept"@en ;
+    rdfs:domain demo:Model ;
+    rdfs:range demo:ModelConcept .
+
+#################################################################
+# Object properties: generic relation structure
+#################################################################
+
+demo:source
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "source"@en ;
+    rdfs:domain demo:Relation ;
+    rdfs:range demo:ManagedElement .
+
+demo:target
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "target"@en ;
+    rdfs:domain demo:Relation ;
+    rdfs:range demo:ManagedElement .
+
+demo:hasProvenance
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has provenance"@en ;
+    rdfs:domain demo:Relation ;
+    rdfs:range demo:Provenance .
+
+demo:hasPolarity
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has polarity"@en ;
+    rdfs:domain demo:Mapping ;
+    rdfs:range demo:Polarity .
+
+demo:hasMappingSource
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has mapping source"@en ;
+    rdfs:subPropertyOf demo:source ;
+    rdfs:domain demo:Mapping ;
+    rdfs:range demo:RepresentationConcept .
+
+demo:hasTargetOntologyConcept
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has target ontology concept"@en ;
+    rdfs:subPropertyOf demo:target ;
+    rdfs:domain demo:Mapping ;
+    rdfs:range demo:OntologyConcept .
+
+demo:hasAlignmentSource
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has alignment source"@en ;
+    rdfs:subPropertyOf demo:source ;
+    rdfs:domain demo:Alignment ;
+    rdfs:range demo:RepresentationConcept .
+
+demo:hasAlignmentTarget
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has alignment target"@en ;
+    rdfs:subPropertyOf demo:target ;
+    rdfs:domain demo:Alignment ;
+    rdfs:range demo:RepresentationConcept .
+
+#################################################################
+# Object properties: modeled and implementation relations
+#################################################################
+
+hriv:hasExactMeaning
+    a owl:ObjectProperty ;
+    rdfs:label "hasExactMeaning"@en ;
+    rdfs:domain demo:RepresentationConcept ;
+    rdfs:range demo:OntologyConcept ;
+    rdfs:comment "Explicit binary relation in the XML model."@en .
+
+demo:aligns
+    a owl:ObjectProperty , owl:SymmetricProperty , owl:IrreflexiveProperty ;
+    rdfs:label "aligns"@en ;
+    rdfs:domain demo:RepresentationConcept ;
+    rdfs:range demo:RepresentationConcept ;
+    rdfs:comment "Explicit horizontal alignment relation between RepresentationConcept instances."@en ;
+    demo:derivationNote "R1: horizontal alignment relations are symmetric and irreflexive. R1a adds transitive closure by rule, not by an OWL transitivity axiom. R2 derives aligns from shared positive exact meanings."@en .
+
+demo:cannotAlign
+    a owl:ObjectProperty , owl:SymmetricProperty , owl:IrreflexiveProperty ;
+    rdfs:label "cannotAlign"@en ;
+    rdfs:domain demo:RepresentationConcept ;
+    rdfs:range demo:RepresentationConcept ;
+    rdfs:comment "Derived final horizontal relation."@en ;
+    demo:derivationNote "R3 derives cannotAlign from opposite-polarity exact meanings to the same OntologyConcept."@en .
+
+demo:mayAlign
+    a owl:ObjectProperty , owl:SymmetricProperty , owl:IrreflexiveProperty ;
+    rdfs:label "mayAlign"@en ;
+    rdfs:domain demo:RepresentationConcept ;
+    rdfs:range demo:RepresentationConcept ;
+    rdfs:comment "Derived final horizontal relation."@en ;
+    demo:derivationNote "R4b derives mayAlign from mayAlignCandidate when aligns, cannotAlign, and partiallyAligns are absent."@en .
+
+demo:partiallyAligns
+    a owl:ObjectProperty , owl:SymmetricProperty , owl:IrreflexiveProperty ;
+    rdfs:label "partiallyAligns"@en ;
+    rdfs:domain demo:RepresentationConcept ;
+    rdfs:range demo:RepresentationConcept ;
+    rdfs:comment "Derived final horizontal relation."@en ;
+    demo:derivationNote "R5b derives partiallyAligns from partiallyAlignsCandidate when aligns and cannotAlign are absent."@en .
+
+demo:mayAlignCandidate
+    a owl:ObjectProperty ;
+    rdfs:label "mayAlignCandidate"@en ;
+    rdfs:domain demo:RepresentationConcept ;
+    rdfs:range demo:RepresentationConcept ;
+    rdfs:comment "Implementation helper predicate introduced by the notes for rule execution. It is not one of the final horizontal alignment relations."@en ;
+    demo:derivationNote "R4a derives mayAlignCandidate from shared negative exact meanings."@en .
+
+demo:partiallyAlignsCandidate
+    a owl:ObjectProperty ;
+    rdfs:label "partiallyAlignsCandidate"@en ;
+    rdfs:domain demo:RepresentationConcept ;
+    rdfs:range demo:RepresentationConcept ;
+    rdfs:comment "Implementation helper predicate introduced by the notes for rule execution. It is not one of the final horizontal alignment relations."@en ;
+    demo:derivationNote "R5a derives partiallyAlignsCandidate from positive exact meanings to related OntologyConcepts."@en .
+
+#################################################################
+# Vertical relation
+#################################################################
+
+rdfs:subClassOf
+    a owl:ObjectProperty ;
+    rdfs:domain demo:OntologyConcept ;
+    rdfs:range demo:OntologyConcept ;
+    rdfs:comment "Vertical relation used in the current UML model between OntologyConcept instances."@en .

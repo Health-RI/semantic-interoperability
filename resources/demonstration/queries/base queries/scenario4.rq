@@ -1,0 +1,39 @@
+PREFIX demo: <https://w3id.org/health-ri/semantic-interoperability/schema/>
+
+SELECT DISTINCT ?relationType ?provenance
+WHERE {
+  VALUES (?sourceConcept ?targetConcept) {
+    (<SOURCE_CONCEPT_IRI> <TARGET_CONCEPT_IRI>)
+  }
+
+  {
+    ?sourceConcept ?relationType ?targetConcept .
+  }
+  UNION
+  {
+    ?targetConcept ?relationType ?sourceConcept .
+  }
+
+  VALUES ?relationType {
+    demo:aligns
+    demo:mayAlign
+    demo:partiallyAligns
+    demo:cannotAlign
+  }
+
+  OPTIONAL {
+    FILTER (?relationType = demo:aligns)
+
+    ?alignment
+      a demo:Alignment ;
+      demo:hasAlignmentSource ?a ;
+      demo:hasAlignmentTarget ?b ;
+      demo:hasProvenance ?provenance .
+
+    FILTER (
+      (?a = ?sourceConcept && ?b = ?targetConcept) ||
+      (?a = ?targetConcept && ?b = ?sourceConcept)
+    )
+  }
+}
+ORDER BY ?relationType ?provenance

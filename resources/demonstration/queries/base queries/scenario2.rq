@@ -1,0 +1,18 @@
+PREFIX demo: <https://w3id.org/health-ri/semantic-interoperability/schema/>
+
+SELECT DISTINCT ?relatedConcept ?relatedConceptIsConsistent ?polarity ?provenance
+WHERE {
+  VALUES ?focusConcept { <FOCUS_CONCEPT_IRI> }
+
+  ?mapping a demo:Mapping ;
+           demo:hasMappingSource ?relatedConcept ;
+           demo:hasTargetOntologyConcept ?focusConcept ;
+           demo:hasPolarity ?polarity ;
+           demo:hasProvenance ?provenance .
+
+  ?relatedConcept demo:isConsistent ?relatedConceptIsConsistent .
+
+  # Uncomment the next line to keep only related concepts with isConsistent = true
+  # FILTER(?relatedConceptIsConsistent = true)
+}
+ORDER BY ?relatedConcept ?polarity ?provenance

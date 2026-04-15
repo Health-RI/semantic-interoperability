@@ -1,0 +1,21 @@
+PREFIX demo: <https://w3id.org/health-ri/semantic-interoperability/schema/>
+
+SELECT DISTINCT
+  ?ontologyConcept
+  ?polarity
+  ?provenance
+WHERE {
+  VALUES ?focusConcept {
+    <FOCUS_CONCEPT_IRI>
+  }
+
+  ?mapping a demo:Mapping ;
+           demo:hasMappingSource ?focusConcept ;
+           demo:hasTargetOntologyConcept ?ontologyConcept ;
+           demo:hasPolarity ?polarity ;
+           demo:hasProvenance ?provenance .
+
+  VALUES ?polarity { demo:positive demo:negative }
+  VALUES ?provenance { demo:asserted demo:inferred }
+}
+ORDER BY ?ontologyConcept ?polarity ?provenance

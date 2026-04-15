@@ -1,0 +1,47 @@
+PREFIX demo: <https://w3id.org/health-ri/semantic-interoperability/schema/>
+
+SELECT DISTINCT
+  ?relatedConcept
+  ?relationType
+  ?provenance
+WHERE {
+  VALUES ?focusConcept {
+    <FOCUS_CONCEPT_URI>
+  }
+
+  ?focusConcept a demo:RepresentationConcept .
+  ?relatedConcept a demo:RepresentationConcept .
+
+  {
+    ?focusConcept demo:aligns ?relatedConcept .
+    FILTER(?relatedConcept != ?focusConcept)
+
+    ?alignment a demo:Alignment ;
+               demo:hasProvenance ?provenance .
+    {
+      ?alignment demo:hasAlignmentSource ?focusConcept ;
+                 demo:hasAlignmentTarget ?relatedConcept .
+    }
+    UNION
+    {
+      ?alignment demo:hasAlignmentSource ?relatedConcept ;
+                 demo:hasAlignmentTarget ?focusConcept .
+    }
+
+    BIND(demo:aligns AS ?relationType)
+  }
+  UNION
+  {
+    VALUES ?relationType {
+      demo:mayAlign
+      demo:partiallyAligns
+      demo:cannotAlign
+    }
+
+    ?focusConcept ?relationType ?relatedConcept .
+    FILTER(?relatedConcept != ?focusConcept)
+
+    BIND(demo:inferred AS ?provenance)
+  }
+}
+ORDER BY ?relationType ?relatedConcept

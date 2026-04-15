@@ -1,0 +1,25 @@
+PREFIX demo: <https://w3id.org/health-ri/semantic-interoperability/schema/>
+
+SELECT DISTINCT
+  ?relationType
+  ?targetAlignedConcept
+WHERE {
+  VALUES (?sourceConcept ?targetConcept ?proposedRelationType) {
+    (<SOURCE_CONCEPT_IRI> <TARGET_CONCEPT_IRI> demo:aligns)
+  }
+
+  FILTER(?proposedRelationType = demo:aligns)
+  FILTER(?sourceConcept != ?targetConcept)
+
+  BIND(demo:aligns AS ?relationType)
+
+  ?targetConcept (demo:aligns | ^demo:aligns)+ ?targetAlignedConcept .
+
+  FILTER(?targetAlignedConcept != ?sourceConcept)
+  FILTER(?targetAlignedConcept != ?targetConcept)
+
+  FILTER NOT EXISTS {
+    ?sourceConcept (demo:aligns | ^demo:aligns)+ ?targetAlignedConcept .
+  }
+}
+ORDER BY ?targetAlignedConcept

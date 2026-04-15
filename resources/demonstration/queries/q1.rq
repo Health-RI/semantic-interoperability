@@ -1,0 +1,15 @@
+PREFIX hrio: <https://w3id.org/health-ri/ontology#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?descendant
+WHERE {
+  VALUES ?focusConcept { hrio:Sex }
+
+  ?focusConcept a owl:Class .
+  ?descendant a owl:Class ;
+              rdfs:subClassOf+ ?focusConcept .
+
+  FILTER(isIRI(?descendant))
+}
+ORDER BY ?descendant

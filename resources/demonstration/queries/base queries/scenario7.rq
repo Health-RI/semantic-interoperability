@@ -1,0 +1,40 @@
+PREFIX demo: <https://w3id.org/health-ri/semantic-interoperability/schema/>
+
+SELECT DISTINCT
+  ?polarity
+  ?ontologyConcept
+WHERE {
+  VALUES ?focusConcept {
+    <FOCUS_CONCEPT_IRI>
+  }
+
+  ?mapping a demo:Mapping ;
+           demo:hasMappingSource ?focusConcept ;
+           demo:hasTargetOntologyConcept ?ontologyConcept ;
+           demo:hasPolarity ?polarity .
+
+  FILTER (
+    (
+      ?polarity = demo:positive
+      &&
+      EXISTS {
+        ?mapping2 a demo:Mapping ;
+                  demo:hasMappingSource ?focusConcept ;
+                  demo:hasTargetOntologyConcept ?ontologyConcept2 ;
+                  demo:hasPolarity demo:positive .
+        FILTER(?mapping2 != ?mapping)
+        FILTER(?ontologyConcept2 != ?ontologyConcept)
+      }
+    )
+    ||
+    EXISTS {
+      ?mapping2 a demo:Mapping ;
+                demo:hasMappingSource ?focusConcept ;
+                demo:hasTargetOntologyConcept ?ontologyConcept ;
+                demo:hasPolarity ?polarity2 .
+      FILTER(?mapping2 != ?mapping)
+      FILTER(?polarity2 != ?polarity)
+    }
+  )
+}
+ORDER BY ?ontologyConcept ?polarity
