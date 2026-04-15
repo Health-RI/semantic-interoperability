@@ -385,28 +385,91 @@ Typical outputs:
 ## Dependency chain
 
 ```mermaid
-flowchart TD
-    A[prefix.csv]
-    B[input-standard.csv]
-    C[input-model.csv]
-    D[input-horizontal.csv]
+flowchart LR
+  %% =========================
+  %% Source inputs
+  %% =========================
+  subgraph SRC["Source inputs"]
+    P["prefix.csv<br/>Prefix registry"]
+    IS["input-standard.csv<br/>Standard vertical mappings"]
+    IM["input-model.csv<br/>Model vertical mappings"]
+    IH["input-horizontal.csv<br/>Asserted horizontal alignments"]
+    Q["query.rq<br/>SPARQL SELECT query"]
+  end
 
-    E[create_instances.py]
-    F[instances.ttl]
-    G[infer_rules.py]
-    H[instances_extended.ttl]
-    I[run_query.py + query.rq]
-    J[query-output.csv]
+  %% =========================
+  %% Support inputs
+  %% =========================
+  subgraph SUP["Support inputs"]
+    DS["demo-schema.ttl<br/>Demo schema"]
+    HO["health-ri-ontology.ttl<br/>Reference ontology and hierarchy"]
+  end
 
-    A --> E
-    B --> E
-    C --> E
-    D --> E
-    E --> F
-    F --> G
-    G --> H
-    H --> I
-    I --> J
+  %% =========================
+  %% Scripts
+  %% =========================
+  subgraph S["Scripts"]
+    CI["create_instances.py<br/>Build asserted instance graph"]
+    IR["infer_rules.py<br/>Materialize inferred knowledge"]
+    RQ["run_query.py<br/>Run query and export CSV"]
+  end
+
+  %% =========================
+  %% Generated artifacts
+  %% =========================
+  subgraph GEN["Generated artifacts"]
+    I["instances.ttl<br/>Asserted graph<br/>Intermediate artifact"]
+    IE["instances_extended.ttl<br/>Enriched graph<br/>Intermediate artifact"]
+  end
+
+  %% =========================
+  %% Final output
+  %% =========================
+  subgraph OUT["Final output"]
+    O["query-output.csv<br/>Exported query results"]
+  end
+
+  %% Flow into create_instances.py
+  P -->|expand CURIEs| CI
+  IS -->|provide standard concepts and mappings| CI
+  IM -->|provide model concepts and mappings| CI
+  IH -->|provide asserted alignments| CI
+
+  %% create_instances output
+  CI -->|generate asserted RDF graph| I
+
+  %% Flow into infer_rules.py
+  I -->|use asserted graph as input| IR
+  HO -->|use ontology hierarchy for reasoning| IR
+
+  %% infer_rules output
+  IR -->|generate enriched RDF graph| IE
+
+  %% Flow into run_query.py
+  DS -->|load schema graph| RQ
+  HO -->|load ontology graph| RQ
+  IE -->|load enriched instance graph| RQ
+  Q -->|provide SELECT query| RQ
+
+  %% Final export
+  RQ -->|export CSV results| O
+
+  %% Optional visual emphasis on pipeline
+  CI -.->|next step input| I
+  IR -.->|next step input| IE
+
+  %% Styling
+  classDef source fill:#EAF3FF,stroke:#1E5AA8,stroke-width:1.5,color:#0B2E59;
+  classDef support fill:#E8F8F0,stroke:#1B7F5A,stroke-width:1.5,color:#0F5132;
+  classDef script fill:#FFF4E5,stroke:#D97706,stroke-width:2,color:#7C2D12;
+  classDef intermediate fill:#F3E8FF,stroke:#7E57C2,stroke-width:2,color:#4A2A84;
+  classDef final fill:#E8F5E9,stroke:#2E7D32,stroke-width:2.5,color:#1B5E20;
+
+  class P,IS,IM,IH,Q source;
+  class DS,HO support;
+  class CI,IR,RQ script;
+  class I,IE intermediate;
+  class O final;
 ```
 
 ## Short summary

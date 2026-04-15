@@ -112,7 +112,7 @@ Do not add a tie or glasses. Do not make him appear heavily wrinkled, significan
 
 ### Person description
 
-A realistic adult woman in her early-to-mid 40s, with a friendly, grounded, approachable presence that feels natural and unpretentious. She looks like a practical, capable professional rather than a polished executive.
+A realistic adult woman in her early-to-mid 40s, with a friendly, grounded, approachable presence that feels natural and unpretentious. She looks like a practical, capable professional rather than a highly polished executive.
 
 ### Physical appearance
 
@@ -120,9 +120,9 @@ She has light fair skin with a soft pink-to-neutral undertone and a healthy, nat
 
 Her eyes are clear medium blue, lively but calm, with a warm, attentive expression that suggests friendliness and patience. They are medium-sized, slightly rounded, and set in a way that feels direct and approachable. Her eyebrows are light-to-medium blonde or dark blonde, natural in shape, softly defined, and not heavily styled or sharply sculpted. Her nose is medium in size, fairly straight, and gently narrow, with a natural, unforced structure that suits the face without looking dramatic or refined. Her lips are medium in fullness, with a softer outline and a naturally warm expression that can shift into a broader, genuine smile.
 
-Her hair is dark blonde to light blonde, naturally straight to slightly loose-textured, usually worn pulled back in a practical low ponytail or loosely gathered style for work. A few soft strands may frame the face, and the overall look is tidy but relaxed, reflecting someone focused on work rather than appearance. It is not sleek, sharply cut, or salon-polished. No glamorous styling, no fashion-forward finish, and no overly deliberate hair design.
+Her hair is dark blonde to light blonde, naturally straight to slightly loose-textured, usually worn pulled back in a practical low ponytail or loosely gathered style for work. A few soft strands may frame the face, and the overall look is tidy and professional, reflecting someone focused on work rather than appearance. It is not sharply cut, fashion-forward, or overly deliberate in its styling.
 
-She may wear very minimal jewelry, such as a fine necklace, tiny studs, or no visible jewelry at all. Glasses are optional, but should be subtle and understated if present. No glamorous styling, no visible tattoos, and no statement accessories.
+She may wear very minimal jewelry, such as a fine necklace and tiny studs. Glasses are optional, but should be subtle and understated if present. No glamorous styling, no visible tattoos, and no statement accessories.
 
 Her makeup is minimal to nearly absent: perhaps light concealer, a natural lip tone, and very subtle definition around the eyes, but overall natural and realistic.
 
@@ -130,10 +130,10 @@ Her makeup is minimal to nearly absent: perhaps light concealer, a natural lip t
 
 She is dressed in understated modern professional attire:
 
-- muted gray, charcoal, soft navy, or subdued olive outer layer
-- light gray, dusty blue, soft teal, or off-white blouse, knit top, or simple layered shirt
+- muted gray blazer
+- dusty blue blouse, knit top, or simple layered shirt
 - practical, believable, office-appropriate or academic-professional styling
-- minimal accessories, possibly a thin necklace, simple watch, or nothing visible
+- minimal accessories, including a thin necklace
 
 Her overall style reads as warm, reliable, thoughtful, and approachable: someone who works carefully with documentation, coordination, stewardship, or governance, and whose appearance reflects trustworthiness and clarity rather than executive polish.
 
@@ -148,9 +148,9 @@ Preserve these features carefully:
 - medium, fairly straight nose with natural proportions
 - medium lips with a genuine, warm smile
 - dark blonde to light blonde hair, usually pulled back in a low practical style
-- minimal makeup and understated accessories
-- muted, realistic professional clothing in gray, blue, olive, or off-white tones
+- minimal makeup and understated accessories, including a fine necklace
+- muted, realistic professional clothing in gray and blue tones
 
 ### Useful negative constraints
 
-Do not make her olive-skinned, dark-haired, glamorous, delicate-featured, or highly polished. Do not use deep brown eyes, a broad sturdy jawline, thick dark wavy hair, a structured low bun, or strongly executive styling. Do not make the expression overly reserved, severe, or portrait-formal; allow a more open, friendly smile. Do not make the styling editorial, luxurious, or portrait-perfect. Keep the result realistic, approachable, natural, and clearly suited to a practical professional role.
+Do not make her olive-skinned, dark-haired, glamorous, delicate-featured, or overly polished. Do not use deep brown eyes, a broad sturdy jawline, thick dark wavy hair, a structured low bun, or strongly executive styling. Do not make the expression overly reserved, severe, or portrait-formal; allow a more open, friendly smile. Do not make the styling editorial, luxurious, or portrait-perfect. Keep the result realistic, approachable, natural, and clearly suited to a practical professional role.
