@@ -2,6 +2,10 @@
 
 This document defines the stages (`int`, `irv`, `erv`, `pub`) used to track maturity for "domain packages" (i.e., packages whose introduction/removal triggers `X` in the adopted semantic versioning), how transitions and reversions are recorded in Visual Paradigm, when and why reversions happen, and the mandatory policy for semantic modifications. It also specifies who validates at each stage, how reviews are initiated, and the expected review timelines. Version effects (Y++) are included where relevant.
 
+!!! note "Operational status"
+
+    As of **May 1, 2026**, the initiative is formally paused. The procedures described here are not currently being executed as an active development or release workflow unless a future phase is confirmed.
+
 ## Purpose & Scope
 
 Specifies stage governance for "domain packages": how stage states are tracked, transitioned, and reverted, and how those transitions are recorded. Stage states (the stage tagged value) are tracked only for domain packages (i.e., packages whose introduction/removal triggers `X` in the adopted semantic versioning); supporting/non-domain packages do not carry a stage tagged value. It also defines who performs validation and reviews, when they occur, and how version increments (Y++) are applied. Version impacts are acknowledged where stages drive them; see [Versioning Strategy](./ontology-versioning.md) for the full versioning logic. This policy applies to all modelers and reviewers involved in domain-package development and maintenance.

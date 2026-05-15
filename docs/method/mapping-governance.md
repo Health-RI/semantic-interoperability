@@ -2,6 +2,10 @@
 
 This page sets the governance, lifecycle, validation, and release policy for the Health-RI SSSOM Mapping Set. It complements the [Mapping Set](./mapping-schema.md) page (schema, field semantics, URIs) and the [Semantic Mapping Strategy](./mapping-strategy.md) page (methodology and scope).
 
+!!! note "Operational status"
+
+    As of **May 1, 2026**, the initiative is formally paused. The procedures described here are not currently being executed as an active development or release workflow unless a future phase is confirmed.
+
 ## Purpose and Scope
 
 This policy defines how the Health-RI SSSOM Mapping Set is governed, validated, versioned, and released so that mappings are trustworthy, reproducible, and easy to discover and reuse in FAIR-aligned infrastructures [1], [18].

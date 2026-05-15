@@ -2,6 +2,10 @@
 
 This repository implements a structured, transparent publishing process for both the Health-RI Ontology and its SSSOM mapping sets, ensuring all artifacts are traceable, stable, and reusable, and supporting FAIR-aligned interoperability.
 
+!!! note "Operational status"
+
+    As of **May 1, 2026**, the initiative is formally paused. The procedures described here are not currently being executed as an active development or release workflow unless a future phase is confirmed.
+
 ## Publishing the Ontology
 
 Before diving into specific files and artifacts, we first outline how ontology versions are tracked and the policy guiding version numbering.

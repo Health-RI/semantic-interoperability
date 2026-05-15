@@ -4,6 +4,10 @@ This document specifies the version number semantics (`X.Y.Z`), priority rules, 
 
 This versioning strategy applies to all ontology artifacts versioned as part of the Health-RI Ontology (HRIO). For any given ontology version, all artifacts share the same version identifier (`X.Y.Z`) and correspond to the same underlying HRIO OntoUML model.
 
+!!! note "Operational status"
+
+    As of **May 1, 2026**, the initiative is formally paused. The procedures described here are not currently being executed as an active development or release workflow unless a future phase is confirmed.
+
 ## Purpose & Scope
 
 Defines how versions are assigned and incremented for the ontology/model artifacts, including precedence (`X > Y > Z`), single-step increments, and resets. Stage mechanics (`int`/`irv`/`erv`/`pub`) are covered in the [Validation Strategy](./ontology-validation.md); they are referenced here only where they directly affect `Y`. This strategy is effective for versions starting at `v1.0.0`; earlier versions (`< v1.0.0`) followed an [earlier versioning policy](./ontology-versioning-old.md).

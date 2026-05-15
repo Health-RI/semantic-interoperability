@@ -1,7 +1,10 @@
 # Deliverables Overview
 
 This section presents the **outcomes of the Health-RI Semantic Interoperability Initiative**.
-Here you will find the concrete artifacts that have been produced, maintained, and released as part of the Initiative:
+Here you will find the concrete artifacts that have been produced and released as part of the Initiative:
+
+!!! info "Status of deliverables"
+    These deliverables remain available as released artifacts. While the initiative is paused, they should be treated as reference materials rather than actively maintained outputs. No further development, curation, or release activity is currently planned until a future phase is confirmed.
 
 - **Health-RI Ontology (HRIO)** – a common semantic reference model specified in OntoUML and implemented as a gUFO-based OWL ontology, providing a machine-processable semantic hub for aligning health and life sciences data.
 - **Health-RI Mapping Vocabulary (HRIV)** – an intentional (definitional) mapping vocabulary in OWL defining meaning-mapping relations that explicitly capture ontological commitments (e.g., `hriv:hasExactMeaning`, `hriv:hasBroaderMeaningThan`, `hriv:hasNarrowerMeaningThan`).
