@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2026-MM-DD
+
+- **Applied use cases for semantic interoperability** — Added: Published a video presenting [applied use cases from the Health-RI Semantic Interoperability Initiative](https://youtu.be/xHN8Xmxqv4w).
+
 ## 2026-05-01
 
 - **Health-RI Semantic Interoperability Initiative** — Changed: The initiative has been formally paused. Existing documentation, released artifacts, persistent identifiers, and repository materials remain available for reference and citation, but no further development, curation, community review, or release activity is currently planned until a future phase is confirmed.

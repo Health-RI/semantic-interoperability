@@ -8,6 +8,12 @@
 
     Existing documentation, released artifacts, persistent identifiers, and repository materials remain available for reference and citation. However, no further development, curation, community review, or release activity is currently planned until a future phase is confirmed.
 
+!!! tip "Watch: applied use cases for semantic interoperability"
+
+    Watch a short video showing how similar labels and values in health datasets may represent different meanings, and how HRIO and the Health-RI SSSOM mapping set can support more precise, traceable, and defensible data reuse decisions.
+
+    [Watch the video on YouTube](https://youtu.be/xHN8Xmxqv4w)
+
 <!-- !!! open-call "OPEN CALL: validate the HRIO Sex and Gender Ontology"
 
     We are running an external community review of the **Sex and Gender** package in HRIO.
