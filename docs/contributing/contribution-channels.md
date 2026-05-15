@@ -1,6 +1,12 @@
 # Contribution Channels
 
-Outside specific [Calls for Community Review](call-for-community-review.md), you can contribute at any time by submitting one of the following types of input:
+!!! warning "Contribution status while the initiative is paused"
+
+    As of **May 1, 2026**, the initiative is formally paused. Contribution channels remain visible for transparency and archival continuity, but new submissions are not actively reviewed, curated, or scheduled for release at this time.
+
+    Feedback may still be submitted for future consideration, but no response timeline or integration commitment should be assumed.
+
+Outside specific [Calls for Community Review](call-for-community-review.md), you may submit feedback for future consideration using one of the following types of input:
 
 ## Report an Error in the OntoUML or gUFO Ontology
 
@@ -64,7 +70,7 @@ Examples of valid submissions:
 
     *Always verify against HRIO documentation and follow the governance rules for curated/public mappings.*
 
-You can contribute to the Health-RI **SSSOM mapping set** (manually curated) in two ways:
+You may submit candidate additions to the Health-RI **SSSOM mapping set** (manually curated) in two ways:
 
 <div class="button-grid button-grid--single" markdown>
 
@@ -73,16 +79,16 @@ You can contribute to the Health-RI **SSSOM mapping set** (manually curated) in 
 </div>
 
 1. **Preferred: Submit the issue form**
-    Use our **[SSSOM mapping issue form](https://github.com/health-ri/semantic-interoperability/issues/new?template=sssom-new-mapping.yml)** to add a single mapping row. Fill in the required fields; Health-RI curators will review and integrate your contribution.
+    Use our **[SSSOM mapping issue form](https://github.com/health-ri/semantic-interoperability/issues/new?template=sssom-new-mapping.yml)** to add a single mapping row. Fill in the required fields; the submission will be retained for possible review if the initiative resumes or enters a new phase.
 
 2. **Alternative: Use the Excel template**
     Download the **[XLSX template](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx)** and enter:
 
     - the mapping row(s) in the **mappings** sheet, and
     - all CURIE prefix bindings in the **prefix** sheet.
-        Attach the completed file to a new issue; we'll review and add it.
+        Attach the completed file to a new issue; it may be reviewed and considered if the initiative resumes or enters a new phase.
 
-Both methods ensure your contribution is reviewed and incorporated into the official Health-RI SSSOM mapping set.
+Both methods ensure your submission is structured for possible future review and integration into the official Health-RI SSSOM mapping set.
 
 For more details, see the [Mapping Set documentation](../method/mapping-schema.md). For curation rules (e.g., mapping lifecycle, `replaces`, evidence expectations), see the [Mapping Governance](../method/mapping-governance.md) page.
 
@@ -94,8 +100,8 @@ For more details, see the [Mapping Set documentation](../method/mapping-schema.m
 
 ## Submission Process
 
-Each of the forms linked above will guide you through the required fields. Submissions are publicly visible as GitHub Issues in our repository and are reviewed regularly by the modeling and coordination teams.
+Each of the forms linked above will guide you through the required fields. Submissions are publicly visible as GitHub Issues in our repository and are retained for possible review if the initiative resumes or enters a new phase.
 
-By submitting, you agree to have your contributions used in future releases of the model and/or documentation. Attribution will be provided where applicable.
+By submitting, you agree that your contributions may be used in possible future releases of the model and/or documentation. Attribution will be provided where applicable.
 
 Thank you for your interest in improving semantic interoperability and helping build a robust reference ontology for health and life sciences.

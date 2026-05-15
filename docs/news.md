@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2026-05-01
+
+- **Health-RI Semantic Interoperability Initiative** — Changed: The initiative has been formally paused. Existing documentation, released artifacts, persistent identifiers, and repository materials remain available for reference and citation, but no further development, curation, community review, or release activity is currently planned until a future phase is confirmed.
+
 ## 2026-03-27
 
 - **[Health-RI Ontology Mappings](https://w3id.org/health-ri/semantic-interoperability/mappings)** — Added: Published SSSOM mapping set version 2026-03-27, adding new mappings with sex and gender terms.

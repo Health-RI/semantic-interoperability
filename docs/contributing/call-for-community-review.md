@@ -1,5 +1,9 @@
 # Calls for Community Review
 
+!!! warning "Community review status"
+
+    As of **May 1, 2026**, the Health-RI Semantic Interoperability Initiative is formally paused. There are currently no active Calls for Community Review, and no new review windows are planned until a future phase is confirmed.
+
 Semantic interoperability in healthcare and the life sciences is not just a technical challenge. It affects how data about patients and studies is interpreted when it moves between hospitals, registries, and research infrastructures, with direct consequences for people's lives. If different parties are to share and reuse data, they need to be able to adopt and trust a common semantic solution.
 
 That trust depends on openness and community participation. A common semantic reference model can only succeed if the people who work with these concepts in practice can see how it is built, question its assumptions, and help improve it. Community review is therefore not an optional extra, but a core part of how we work.
@@ -18,11 +22,11 @@ Contributors can choose whether they are acknowledged. By default, we will inclu
 
 All instructions on how to collaborate in each external review, including access to materials and feedback channels, are provided in the description of the corresponding call listed below.
 
-!!! info "Contributions remain welcome after a call closes"
+!!! info "Feedback after a call closes"
 
-    The opening and closing dates define the formal external-review window for a package. They help manage the package's validation lifecycle and stage transitions, but they do **not** mean that feedback is no longer accepted.
+    The opening and closing dates define the formal external-review window for a package. They help manage the package's validation lifecycle and stage transitions, but they do **not** mean that feedback can no longer be submitted.
 
-    You can still submit comments, questions, and suggestions at any time through the general [Contribution Channels](contribution-channels.md). Accepted input will be reviewed and may inform future revisions and releases.
+    You can still submit comments, questions, and suggestions for future consideration through the general [Contribution Channels](contribution-channels.md). Input may be retained for possible review if the initiative resumes or enters a new phase.
 
 During an **open** Call for Community Review, you can:
 
@@ -52,7 +56,7 @@ For the general case, including domains without an active call or any follow-up 
       <td style="text-align:center;font-weight:700;">13-03-2026</td>
     </tr>
     <tr>
-      <td style="text-align:center; background-color:#FFF8E1; color:#8D6E00; font-weight:700;">Planned</td>
+      <td style="text-align:center; background-color:#FFF8E1; color:#8D6E00; font-weight:700;">Paused</td>
       <td style="text-align:center;font-weight:700;">Person Birth</td>
       <td style="text-align:center;font-weight:700;">30-03-2026</td>
       <td style="text-align:center;font-weight:700;">17-04-2026</td>
@@ -72,4 +76,4 @@ _This section lists Calls for Community Review that have formally closed._
 
 - [Sex and Gender](../../external-review/sex-and-gender/)
 
-Feedback on these domains remains welcome. If you would like to comment on a domain that appears under a closed call, please submit your input via the general [Contribution Channels](contribution-channels.md) and reference the relevant domain or call in your submission.
+Feedback on these domains may still be submitted for future consideration. If you would like to comment on a domain that appears under a closed call, please submit your input via the general [Contribution Channels](contribution-channels.md) and reference the relevant domain or call in your submission.
