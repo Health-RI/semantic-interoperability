@@ -2085,6 +2085,12 @@
 <p>Parts of this FAQ were drafted with AI-assisted editing support. Health-RI team members review and refine entries to the best of our ability.</p>
 </div>
 <details class="question">
+<summary>What is the current status of the Health-RI Semantic Interoperability Initiative?</summary>
+<p>As of <strong>May 1, 2026</strong>, the initiative has been formally paused.</p>
+<p>Existing documentation, released artifacts, persistent identifiers, and repository materials remain available for reference and citation. However, no further development, curation, community review, or release activity is currently planned until a future phase is confirmed.</p>
+<p>This does not invalidate previously released artifacts. For reproducible references, use versioned persistent identifiers where available.</p>
+</details>
+<details class="question">
 <summary>Is there an assistant that can help me navigate this initiative and its artifacts?</summary>
 <p>Yes — we provide an Assistant (GPT) that explains the initiative in plain terms and points you to the relevant pages and stable identifiers (w3id PIDs).</p>
 <p><a class="md-button md-button--primary" href="https://chatgpt.com/g/g-6992c8eb8780819185f0922ac33d79ce-health-ri-semantic-interoperability-guide">Open the Assistant (GPT)</a></p>
@@ -2139,7 +2145,7 @@
 <details class="question">
 <summary>What does success look like for this project?</summary>
 <p>Success means having a robust common semantic reference model (HRIO OntoUML) and its computational implementation (HRIO gUFO/OWL) in place, with high-priority source expressions from important standards, schemas, ontologies, and related implementation artifacts aligned to HRIO meanings through reviewed mappings.</p>
-<p>It also includes supporting community contributions, treating broader/narrower mappings as useful indicators of semantic mismatch, and refining the model over time so that exact-meaning mappings (<code>hriv:hasExactMeaning</code>) can be used whenever they are genuinely justified.</p>
+<p>During active development, this also included supporting community contributions, treating broader/narrower mappings as useful indicators of semantic mismatch, and refining the model over time so that exact-meaning mappings (<code>hriv:hasExactMeaning</code>) could be used whenever genuinely justified.</p>
 </details>
 <details class="question">
 <summary>Who will benefit from or use the developed solutions?</summary>
@@ -2183,7 +2189,7 @@
 </details>
 <details class="question">
 <summary>What changes are expected in the future?</summary>
-<p>Future work includes extending and refining HRIO incrementally when mapping activities, expert review, and external validation reveal semantic gaps or missing distinctions. Over time, some approximate mappings may be replaced with exact ones where improved modeling justifies it.</p>
+<p>If the initiative resumes or enters a future phase, work may include extending and refining HRIO when mapping activities, expert review, or external validation reveal semantic gaps or missing distinctions. Some approximate mappings may then be replaced with exact ones where improved modeling justifies it.</p>
 </details>
 <details class="question">
 <summary>How might the future process or system improve data use across institutions? (TBD)</summary>
@@ -2350,31 +2356,31 @@
 <summary>Is there a tool to help me draft mappings to HRIO?</summary>
 <p>Yes. Use the <a href="https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant"><strong>HRIO Mapping Assistant (GPT)</strong></a></p>
 <p>It helps you map a domain concept to HRIO by proposing <strong>one</strong> HRIV predicate and a candidate HRIO target, plus a confidence estimate and supporting evidence snippets you can use in <code>mapping_justification</code>.</p>
-<p><em>Treat the output as a draft: you remain responsible for verifying the target meaning in HRIO and following the curation/review rules before contributing or publishing mappings.</em></p>
+<p><em>Treat the output as a draft: always verify the target meaning in HRIO. While the initiative is paused, assistant outputs do not enter an active Health-RI review, curation, or release workflow.</em></p>
 </details>
 <details class="question">
 <summary>What should I do if no exact match exists between my concept and the Health-RI ontology?</summary>
 <p>If no exact HRIO target is justified, use <code>hriv:hasBroaderMeaningThan</code> or <code>hriv:hasNarrowerMeaningThan</code> to make the remaining semantic mismatch explicit. These approximate mappings are not failures; they document what can already be aligned and what still differs semantically.</p>
-<p>You are also encouraged to propose refinements to the reference model when repeated or high-value approximate mappings reveal a genuine interoperability need.</p>
+<p>You may also submit refinements to the reference model for future consideration when repeated or high-value approximate mappings reveal a genuine interoperability need.</p>
 </details>
 <details class="question">
 <summary>Can new concepts be added to the Health-RI ontology to improve mapping precision?</summary>
 <p>Yes. When exact-meaning mappings (using <code>hriv:hasExactMeaning</code>) are not possible because relevant meanings or distinctions are missing from HRIO, candidate concepts or refinements may be proposed for inclusion in the reference model.</p>
 <p>However, not every missing label or local modeling choice should be added to HRIO. Proposed additions should be justified by interoperability relevance, conceptual necessity, and evidence of actual use across important standards, schemas, or related artifacts. Priority is highest when the candidate meaning recurs across influential artifacts, is important for recurrent mapping work, or is especially prone to false agreement or semantic ambiguity.</p>
-<p>If accepted through the appropriate review process, HRIO may be extended or refined to support stronger future mappings, including exact-meaning mappings where they are genuinely justified.</p>
+<p>If the initiative resumes or enters a future phase, accepted proposals may be used to extend or refine HRIO to support stronger future mappings, including exact-meaning mappings where they are genuinely justified.</p>
 </details>
 <details class="question">
 <summary>Who creates and maintains the semantic mappings to the Health-RI ontology?</summary>
-<p>Mappings can be created and maintained by:</p>
+<p>Mappings have been created and maintained by:</p>
 <ul>
-<li>The Health-RI team, which curates non-invasive mappings using the <a href="https://w3id.org/sssom/">SSSOM</a> format, for public or external ontologies. These mappings are published externally and do not alter the original third-party ontologies.</li>
-<li>External partners, who can embed mappings directly in their own ontology files using Health-RI Mapping Vocabulary properties (e.g., <code>hriv:hasExactMeaning</code>), especially when they control the editorial process of the external artifact.</li>
+<li>The Health-RI team, which has curated non-invasive mappings using the <a href="https://w3id.org/sssom/">SSSOM</a> format, for public or external ontologies. These mappings remain published externally and do not alter the original third-party ontologies.</li>
+<li>External partners, who may embed mappings directly in their own ontology files using Health-RI Mapping Vocabulary properties (e.g., <code>hriv:hasExactMeaning</code>), especially when they control the editorial process of the external artifact.</li>
 </ul>
 </details>
 <h2 id="sssom-mapping-set">SSSOM Mapping Set</h2>
 <details class="question">
 <summary>Is the Health-RI SSSOM Mapping Set manually curated or automatically generated?</summary>
-<p>It is manually curated by the Health-RI mapping team with input from external collaborators.</p>
+<p>The released mapping set has been manually curated by the Health-RI mapping team with input from external collaborators.</p>
 </details>
 <details class="question">
 <summary>Where can I download the SSSOM Mapping Set, and in which formats?</summary>
@@ -2439,13 +2445,18 @@
 <li><a href="https://github.com/health-ri/semantic-interoperability/issues/new/choose">GitHub Issue Forms</a></li>
 <li><a href="https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx">Mappings template (XLSX)</a></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Contribution status while the initiative is paused</p>
+<p>As of <strong>May 1, 2026</strong>, the initiative is formally paused. Contribution channels remain visible for transparency and archival continuity, but new submissions are not actively reviewed, curated, or scheduled for release at this time.</p>
+<p>Feedback may still be submitted for future consideration, but no response timeline or integration commitment should be assumed.</p>
+</div>
 <details class="question">
 <summary>What are the supported ways to contribute a new mapping row?</summary>
 <p>There are two options:</p>
 <ol>
 <li>Issue form (preferred) — submit the SSSOM mapping issue form for a single row.</li>
 <li>Excel template — fill in the <code>mappings</code> sheet (rows) and the <code>prefix</code> sheet (CURIE bindings) in the provided XLSX, then attach it to a new issue.
-    In the template, headers for mandatory fields are black, and optional ones are green. Both methods are curator-reviewed and integrated into the official mapping set.</li>
+    In the template, headers for mandatory fields are black, and optional ones are green. While the initiative is paused, submissions may still be retained for future consideration, but they are not actively reviewed, curated, or integrated into the official mapping set.</li>
 </ol>
 </details>
 <details class="question">
@@ -2459,7 +2470,7 @@
 </details>
 <details class="question">
 <summary>Can external parties contribute to the modeling or mapping process?</summary>
-<p>Yes. External contributions are welcome and encouraged.</p>
+<p>External feedback may still be submitted for future consideration.</p>
 <p>Community members can submit suggestions, error reports, or collaboration proposals directly via our <a href="https://github.com/health-ri/semantic-interoperability/issues/new/choose">GitHub Issue Forms</a>.</p>
 <p>Available contribution types include:</p>
 <ul>
@@ -2472,7 +2483,7 @@
 </details>
 <details class="question">
 <summary>How can I contribute to the Health-RI Semantic Interoperability Initiative?</summary>
-<p>You can contribute by submitting structured feedback using one of our <a href="https://github.com/health-ri/semantic-interoperability/issues/new/choose">GitHub Issue Forms</a>. We currently support the following contribution types:</p>
+<p>You may submit structured feedback for future consideration using one of our <a href="https://github.com/health-ri/semantic-interoperability/issues/new/choose">GitHub Issue Forms</a>. The following contribution types are available:</p>
 <ul>
 <li>Report an error in HRIO OntoUML or HRIO gUFO/OWL</li>
 <li>Request a new concept to be added to the reference model</li>
@@ -2488,8 +2499,8 @@
 </details>
 <details class="question">
 <summary>Where can I find more information on how to submit feedback?</summary>
-<p>See our <a href="../contributing/">Contributing page</a>, which outlines how to submit structured input, what types of feedback are accepted, and how your suggestions will be reviewed.</p>
-<p>All community input is tracked as GitHub Issues and reviewed by the modeling and coordination teams.</p>
+<p>See our <a href="../contributing/">Contributing page</a>, which outlines how to submit structured input and what types of feedback may be retained for future consideration.</p>
+<p>Community input may still be tracked as GitHub Issues, but it is not actively reviewed while the initiative is paused.</p>
 </details>
 <h2 id="ontology-lifecycle-and-publishing">Ontology Lifecycle and Publishing</h2>
 <p><em>Questions about how the ontology is released, versioned, and maintained over time.</em></p>
@@ -2500,6 +2511,10 @@
 <li><a href="../method/ontology-validation/">Validation &amp; stage gates</a></li>
 <li><a href="../method/persistent-ids">Persistent identifiers (PIDs)</a></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Operational status</p>
+<p>This section documents the initiative's ontology lifecycle, versioning, review, and publication approach. As of <strong>May 1, 2026</strong>, the initiative is formally paused, and these procedures are not currently being executed as an active development or release workflow.</p>
+</div>
 <details class="question">
 <summary>What are the ontology lifecycle stages (<code>int</code>, <code>irv</code>, <code>erv</code>, <code>pub</code>)?</summary>
 <ul>
@@ -2519,15 +2534,15 @@
 </details>
 <details class="question">
 <summary>How long do reviews take?</summary>
-<p>Target one sprint for internal and one sprint for external review; either may extend to two depending on scope/availability.</p>
+<p>During active development, the target was one sprint for internal and one sprint for external review; either could extend to two depending on scope/availability.</p>
 </details>
 <details class="question">
 <summary>How is the community involved in external review?</summary>
-<p>A Call for Community Review is issued when a package enters <code>erv</code>; feedback is collected during the external-review sprint.</p>
+<p>During active development, a Call for Community Review was issued when a package entered <code>erv</code>; feedback was collected during the external-review sprint.</p>
 </details>
 <details class="question">
 <summary>What triggers a stage reversion (e.g., <code>pub → int</code>) and what happens then?</summary>
-<p>Critical defects or major scope changes can revert to <code>int</code>; the package then re-passes the stage gates before moving forward again.</p>
+<p>During active development, critical defects or major scope changes could revert a package to <code>int</code>; the package then re-passed the stage gates before moving forward again.</p>
 </details>
 <details class="question">
 <summary>Where can I find the latest version of the Health-RI ontology?</summary>
@@ -2550,7 +2565,7 @@
 <summary>What does the 'latest' folder contain and how is it maintained?</summary>
 <p>The <code>ontologies/latest/</code> folder and the ontology's PID always resolves to the most recent available release.
 They provide stable access to the most recent files without needing to specify a version number.
-Each new release automatically updates the <code>latest/</code> folder and the file related to the ontology's PID to target the latest content.</p>
+When a new release is created, the <code>latest/</code> folder and the file related to the ontology's PID are updated to target the latest content.</p>
 </details>
 <details class="question">
 <summary>How do I cite or refer to the Health-RI initiative and its artifacts?</summary>
@@ -2639,9 +2654,9 @@ When present, the OWL file includes a <code>dcterms:conformsTo</code> triple lin
 </details>
 <details class="question">
 <summary>How are the OntoUML and gUFO ontologies and the produced semantic mappings maintained over time?</summary>
-<p>The ontology artifacts are maintained in version-controlled repositories through a structured ontology versioning and publication process. For any given ontology version, the ontology artifacts released as part of HRIO share the same <code>X.Y.Z</code> identifier and remain aligned to the same underlying HRIO OntoUML model.</p>
+<p>During active development, the ontology artifacts were maintained in version-controlled repositories through a structured ontology versioning and publication process. For any given ontology version, the ontology artifacts released as part of HRIO share the same <code>X.Y.Z</code> identifier and remain aligned to the same underlying HRIO OntoUML model.</p>
 <p>GitHub Release creation is operationally separate from ontology version assignment. When the conditions for a GitHub Release are met, the repository publication uses the ontology version already assigned under the <code>X</code>/<code>Y</code>/<code>Z</code> rules; it does not determine the version number itself.</p>
-<p>The ontology is published in multiple formats and exposed through stable, citable persistent identifiers (PIDs). Validation and publication checks are applied as appropriate before release so that the published artifacts remain transparent, accessible, and semantically traceable across versions.</p>
+<p>The ontology is published in multiple formats and exposed through stable, citable persistent identifiers (PIDs). Validation and publication checks were applied as appropriate before release so that the published artifacts remain transparent, accessible, and semantically traceable across versions.</p>
 <p>Semantic mappings produced within the initiative are also maintained in version-controlled repositories and published in stable forms, but they follow their own versioning and publication rules rather than the ontology's <code>X.Y.Z</code> version identifier.</p>
 </details>
 <details class="question">
@@ -2651,11 +2666,11 @@ When present, the OWL file includes a <code>dcterms:conformsTo</code> triple lin
 </details>
 <details class="question">
 <summary>Who is responsible for maintaining the ontology and its associated mappings?</summary>
-<p>The Health-RI team is responsible for maintaining the core ontologies and mappings produced within the initiative. This work is carried out in close collaboration with external partners who contribute ideas, suggestions, and mappings. Contributions are reviewed and integrated through a structured, version-controlled process.</p>
+<p>The Health-RI team is responsible for the core ontologies and mappings produced within the initiative. While the initiative is paused, active maintenance, review, and integration of contributions are not currently planned.</p>
 </details>
 <details class="question">
 <summary>How will the new solutions be maintained and supported?</summary>
-<p>The ontology is maintained through version-controlled ontology updates, staged validation, publication-stage operations, and ongoing issue-based feedback.</p>
+<p>The ontology has been maintained through version-controlled ontology updates, staged validation, publication-stage operations, and issue-based feedback.</p>
 <p>After a package reaches <code>pub</code>, the Publication Stage Operations Checklist continues to apply while the package remains in <code>pub</code>. However, GitHub Releases are not limited to <code>pub</code>: they may also be created when a package enters <code>erv</code>, when a package already in <code>erv</code> or <code>pub</code> is updated, or when a package advances from <code>erv</code> to <code>pub</code>.</p>
 <p>Publication-stage operations may include:</p>
 <ul>
@@ -2663,7 +2678,7 @@ When present, the OWL file includes a <code>dcterms:conformsTo</code> triple lin
 <li>Catalog and discoverability: update the OntoUML/UFO Catalog, upload the package report to our repository where applicable, and announce publication-related updates and follow-ups.</li>
 <li>Academic publication (optional): consider a peer-reviewed venue and, when accepted, add the formal citation and publisher DOI to the documentation and release materials.</li>
 </ul>
-<p>Ongoing support and feedback: GitHub Issues remain open as a standing channel, and substantive issues can lead to a stage reversion for corrective work.</p>
+<p>Support and feedback: GitHub Issues may remain available as a feedback channel, but while the initiative is paused, substantive issues are not actively processed as corrective work.</p>
 <p>Scope: This operational checklist is specific to the ontology.</p>
 </details>
 <details class="question">
@@ -2676,7 +2691,7 @@ When present, the OWL file includes a <code>dcterms:conformsTo</code> triple lin
 <li>updating catalogs and other discoverability channels;</li>
 <li>posting publication-related announcements and follow-ups.</li>
 </ul>
-<p>Feedback continues via GitHub Issues, and substantive issues may still trigger a reversion to <code>int</code>.</p>
+<p>Feedback may still be submitted via GitHub Issues, but while the initiative is paused, substantive issues are not actively processed for stage reversion.</p>
 <p>Note: GitHub Release activity is not exclusive to <code>pub</code>; it may also occur earlier when a package enters <code>erv</code> or when packages already in <code>erv</code> or <code>pub</code> are updated.</p>
 </details>
 <details class="question">
@@ -2690,8 +2705,8 @@ When present, the OWL file includes a <code>dcterms:conformsTo</code> triple lin
 <li><code>erv → pub</code> outcome (independent external review).
     When the package passes external review, the modeler records <code>&lt;erv → pub&gt;</code>; then the Publication Stage Operations Checklist is executed while remaining in <code>pub</code>.</li>
 </ul>
-<p>Timelines: internal and external reviews are planned as sprint activities; the target is one sprint, optionally extended to two depending on scope and availability.
-Note: Substantive defects or scope changes at any stage can revert the package to <code>int</code> for rework; advancement then follows the same gates again.</p>
+<p>Timelines: during active development, internal and external reviews were planned as sprint activities; the target was one sprint, optionally extended to two depending on scope and availability.
+Note: During active development, substantive defects or scope changes at any stage could revert the package to <code>int</code> for rework; advancement then followed the same gates again.</p>
 </details>
 <details class="question">
 <summary>Where can I find an overview of all persistent identifiers provided by the initiative?</summary>
