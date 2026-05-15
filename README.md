@@ -1,7 +1,7 @@
 # Health-RI Semantic Interoperability Initiative
 
 [![Project DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16949640.svg)](https://doi.org/10.5281/zenodo.16949640)
-[![Project Status – Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Project Status – Inactive](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Health-RI/semantic-interoperability)
 ![GitHub Created At](https://img.shields.io/github/created-at/Health-RI/semantic-interoperability)
 ![GitHub Release](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability)
@@ -9,6 +9,11 @@
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/Health-RI/semantic-interoperability/latest)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/health-ri/semantic-interoperability/deploy.yml)
 [![Documentation](https://img.shields.io/badge/Docs-Specification-blue.svg)](https://health-ri.github.io/semantic-interoperability/)
+
+> [!IMPORTANT]
+> **Initiative status:** As of **May 1, 2026**, the Health-RI Semantic Interoperability Initiative has been formally paused.
+>
+> Existing documentation, released artifacts, persistent identifiers, and repository materials remain available for reference and citation. No further development or release activity is currently planned until a future phase is confirmed.
 
 This repository hosts the source files for the [Health-RI Semantic Interoperability Initiative documentation site](https://health-ri.github.io/semantic-interoperability/), which presents our approach to enabling semantic interoperability in health and life sciences.
 

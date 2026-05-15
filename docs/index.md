@@ -2,6 +2,12 @@
 
 # Health-RI Semantic Interoperability Initiative
 
+!!! warning "Initiative status: formally paused"
+
+    As of **May 1, 2026**, the Health-RI Semantic Interoperability Initiative has been formally paused.
+
+    Existing documentation, released artifacts, persistent identifiers, and repository materials remain available for reference and citation. However, no further development, curation, community review, or release activity is currently planned until a future phase is confirmed.
+
 <!-- !!! open-call "OPEN CALL: validate the HRIO Sex and Gender Ontology"
 
     We are running an external community review of the **Sex and Gender** package in HRIO.
@@ -23,7 +29,7 @@ In practice, interoperability often breaks because **meaning stays implicit**. S
 
 The Health-RI Semantic Interoperability Initiative is a model-driven, ontology-based framework designed to enable **semantic traceability**: keeping meaning and representation aligned across the stack.
 
-We develop the **Health-RI Ontology (HRIO)** as a common semantic reference model:
+We have developed the **Health-RI Ontology (HRIO)** as a common semantic reference model:
 
 - **HRIO OntoUML (CIM)**: a conceptual model for experts to validate (meaning-first).
 - **HRIO gUFO/OWL (PIM)**: a computational OWL implementation of the same meanings (machine-processable).
@@ -91,11 +97,11 @@ We treat semantic artifacts like production assets:
 
 ## Community and collaboration
 
-At this early stage, as we continue to explore alternatives and collaborations, we are already receiving valuable support and feedback from academics and professionals across Health-RI and the broader health data community. Their perspectives are helping us shape the work and ensure it stays aligned with ongoing national and international efforts toward interoperability.
+At this stage, the initiative has received valuable support and feedback from academics and professionals across Health-RI and the broader health data community. Their perspectives have helped us shape the work and ensure it stays aligned with ongoing national and international efforts toward interoperability.
 
-We invite you to explore the resources we are making available — including our [**ontology**](deliverables/index.md), [**mapping vocabulary**](method/specification-vocabulary.html), and [**mapping sets**](method/mapping-schema.md) — all of which are openly published and continuously improved. For the conceptual rationale and the initiative-level definition of semantic traceability, see our [academic paper](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf).
+We invite you to explore the resources we have made available — including our [**ontology**](deliverables/index.md), [**mapping vocabulary**](method/specification-vocabulary.html), and [**mapping sets**](method/mapping-schema.md) — all of which remain openly published for reference, reuse, and citation. For the conceptual rationale and the initiative-level definition of semantic traceability, see our [academic paper](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf).
 
-We also welcome direct engagement—see [Contributing](contributing/overview.md), including time-bound [Calls for Community Review](contributing/call-for-community-review.md), and the ongoing [Contribution Channels](contributing/contribution-channels.md).
+General feedback may still be submitted through the repository and the documented [contribution channels](contributing/contribution-channels.md). While the initiative is paused, active review, curation, and follow-up are not currently guaranteed.
 
 After all, semantic interoperability can only be achieved **through the community**: initiatives earn trust only when they are built openly and collaboratively. Together, we can ensure this effort translates into real, lasting improvements in how health data is shared and reused.
 
