@@ -41,7 +41,7 @@ jobs:
     steps:
       # --- Checkout repo files so we can build & run scripts ---
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       # --- Install Python with pip cache for faster subsequent runs ---
       - name: Set up Python 3.x with pip cache
@@ -171,7 +171,7 @@ jobs:
     steps:
       # --- Checkout the exact commit that triggered this workflow run ---
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       # --- Retrieve generated files produced by the build job ---
       - name: Download generated content artifact
