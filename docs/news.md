@@ -1,5 +1,9 @@
 # News & Updates
 
+## 2026-08-18
+
+- **Health-RI Semantic Interoperability Initiative** — Changed: The initiative has been discontinued. No further development, curation, community review, or release activity is planned under this initiative. Existing documentation, released artifacts, persistent identifiers, and repository materials remain available as archival resources for reference, reuse, and citation, but are not actively maintained. See [Initiative Status](status.md).
+
 ## 2026-MM-DD
 
 - **Applied use cases for semantic interoperability** — Added: Published a video presenting [applied use cases from the Health-RI Semantic Interoperability Initiative](https://youtu.be/xHN8Xmxqv4w).

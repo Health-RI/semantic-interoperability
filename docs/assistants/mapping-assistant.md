@@ -1,8 +1,8 @@
 # User Guide: **HRIO Mapping Assistant**
 
-!!! warning "Disclaimer"
+!!! warning "Archived guide"
 
-    This page contains AI-assisted content that is currently under review and may include inaccuracies or omissions. Readers should use their judgment when interpreting or applying this information.
+    The Health-RI Semantic Interoperability Initiative has been discontinued. This page is retained as documentation of the HRIO Mapping Assistant prompt and behavior at the end of the initiative. The assistant and this guide are not actively maintained or under further Health-RI review, and they may contain unresolved inaccuracies or omissions.
 
 !!! info "Prompt version and traceability"
 

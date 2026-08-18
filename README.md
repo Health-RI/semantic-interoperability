@@ -1,7 +1,7 @@
 # Health-RI Semantic Interoperability Initiative
 
 [![Project DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16949640.svg)](https://doi.org/10.5281/zenodo.16949640)
-[![Project Status – Inactive](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
+[![Project Status – Unsupported](https://www.repostatus.org/badges/latest/unsupported.svg)](https://www.repostatus.org/#unsupported)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Health-RI/semantic-interoperability)
 ![GitHub Created At](https://img.shields.io/github/created-at/Health-RI/semantic-interoperability)
 ![GitHub Release](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability)
@@ -11,11 +11,13 @@
 [![Documentation](https://img.shields.io/badge/Docs-Specification-blue.svg)](https://health-ri.github.io/semantic-interoperability/)
 
 > [!IMPORTANT]
-> **Initiative status:** As of **May 1, 2026**, the Health-RI Semantic Interoperability Initiative has been formally paused.
+> **Initiative status:** The Health-RI Semantic Interoperability Initiative was formally paused on **May 1, 2026** and has since been **discontinued**.
 >
-> Existing documentation, released artifacts, persistent identifiers, and repository materials remain available for reference and citation. No further development or release activity is currently planned until a future phase is confirmed.
+> No further development, curation, community review, or release activity is planned under this initiative. Existing documentation, released artifacts, persistent identifiers, and repository materials remain available as archival resources for reference, reuse, and citation. They are not actively maintained, and known limitations may remain unresolved.
+>
+> See [Initiative Status](docs/status.md) for details.
 
-This repository hosts the source files for the [Health-RI Semantic Interoperability Initiative documentation site](https://health-ri.github.io/semantic-interoperability/), which presents our approach to enabling semantic interoperability in health and life sciences.
+This repository hosts the archived source files for the [Health-RI Semantic Interoperability Initiative documentation site](https://health-ri.github.io/semantic-interoperability/), which documents the initiative's approach to enabling semantic interoperability in health and life sciences.
 
 Visit the documentation at: **<https://health-ri.github.io/semantic-interoperability/>**
 
@@ -24,13 +26,13 @@ Visit the documentation at: **<https://health-ri.github.io/semantic-interoperabi
 | Deliverable                      | Latest Release                                                                                                                                                                                                               | All Releases                                                                                                                                                                                                                  | License                                                                                                                          |
 | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | **Health-RI Ontology**           | [![Ontology Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=ontology-v*&sort=semver)](https://github.com/health-ri/semantic-interoperability/releases/tag/ontology-v2.1.0)       | [![All Ontology Releases](https://img.shields.io/badge/All%20Ontology%20Releases-913800)](https://github.com/health-ri/semantic-interoperability/releases?q=ontology+NOT+documents+NOT+vocabulary+NOT+mappings&expanded=true) | [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/) |
-| **Health-RI SSSOM Mapping Set**  | [![Mapping Set Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=mappings-v*&sort=date)](https://github.com/health-ri/semantic-interoperability/releases/tag/mappings-v2026-03-23) | [![All Mappings Releases](https://img.shields.io/badge/All%20Mappings%20Releases-913800)](https://github.com/health-ri/semantic-interoperability/releases?q=mapping+NOT+vocabulary&expanded=true)                             | [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/) |
+| **Health-RI SSSOM Mapping Set**  | [![Mapping Set Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=mappings-v*&sort=date)](https://github.com/health-ri/semantic-interoperability/releases/tag/mappings-v2026-03-27) | [![All Mappings Releases](https://img.shields.io/badge/All%20Mappings%20Releases-913800)](https://github.com/health-ri/semantic-interoperability/releases?q=mapping+NOT+vocabulary&expanded=true)                             | [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/) |
 | **Health-RI Mapping Vocabulary** | [![Vocabulary Version](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=vocabulary-v*&sort=semver)](https://github.com/health-ri/semantic-interoperability/releases/tag/vocabulary-v1.1.0) | [![All Vocabulary Releases](https://img.shields.io/badge/All%20Vocabulary%20Releases-913800)](https://github.com/health-ri/semantic-interoperability/releases?q=vocabulary+NOT+documents&expanded=true)                       | [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/) |
-| **Documents**                    | [![Latest Document](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=documents-*&sort=date)](https://github.com/health-ri/semantic-interoperability/releases/tag/documents-2026-03-24)     | [![All Document Releases](https://img.shields.io/badge/All%20Document%20Releases-913800)](https://github.com/health-ri/semantic-interoperability/releases?q=documents&expanded=true)                                          | [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/) |
+| **Documents**                    | [![Latest Document](https://img.shields.io/github/v/release/Health-RI/semantic-interoperability?filter=documents-*&sort=date)](https://github.com/health-ri/semantic-interoperability/releases/tag/documents-2026-05-16)     | [![All Document Releases](https://img.shields.io/badge/All%20Document%20Releases-913800)](https://github.com/health-ri/semantic-interoperability/releases?q=documents&expanded=true)                                          | [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/) |
 
 ## Repository structure
 
-This repository is organized around the MkDocs documentation site and the semantic artifacts it publishes (ontology, mappings, and vocabulary).
+This repository is organized around the MkDocs documentation site and the semantic artifacts it published (ontology, mappings, and vocabulary).
 
 ```text
 .

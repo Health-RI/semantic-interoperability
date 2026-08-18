@@ -27,9 +27,10 @@ identifiers:
 repository-code: 'https://github.com/Health-RI/semantic-interoperability'
 url: 'https://health-ri.github.io/semantic-interoperability/'
 abstract: >-
-  Documentation and resources on semantic interoperability
-  efforts at Health‑RI, supporting metadata standards, FAIR
-  principles, and reusable health data models.
+  Archived documentation and released resources produced by the
+  discontinued Health-RI Semantic Interoperability Initiative,
+  covering semantic interoperability, ontology engineering,
+  meaning mappings, FAIR principles, and reusable health data models.
 keywords:
   - semantic interoperability
   - Health‑RI

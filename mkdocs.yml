@@ -1,5 +1,5 @@
 site_name: Health-RI Semantic Interoperability
-site_description: Documentation of models, ontologies, and activities related to semantic interoperability within Health-RI
+site_description: Archived documentation and released resources from the discontinued Health-RI Semantic Interoperability Initiative
 site_author: Pedro Paulo F. Barcelos
 
 site_url: https://health-ri.github.io/semantic-interoperability/
@@ -66,6 +66,7 @@ extra_css:
 
 nav:
   - Home: index.md
+  - Initiative Status: status.md
   - News & Updates: news.md
   - Semantic Interoperability:
       - Overview: semantic-interoperability/index.md
@@ -98,10 +99,10 @@ nav:
       - Ontology Specification: deliverables/specification-ontology.html
       - Ontology Changelog: deliverables/changelog-ontology.md
       - SSSOM Mapping Set: deliverables/mappings.md
-  - AI Assistants:
+  - AI Assistants (Archived):
     - Overview: assistants/assistants-overview.md
     - HRIO Mapping Assistant: assistants/mapping-assistant.md
-  - Contributing:
+  - Contribution Process (Archived):
       - Overview: contributing/overview.md
       - Contribution Channels: contributing/contribution-channels.md
       - Call for Community Review: contributing/call-for-community-review.md

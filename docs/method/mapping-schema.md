@@ -1,8 +1,12 @@
 # The Health-RI SSSOM Mapping Set Schema
 
-One of the key deliverables of the Health-RI Semantic Interoperability Initiative is a SSSOM mapping set. This mapping set is manually curated, reflecting the efforts of both the dedicated mapping team and external collaborators. In line with work that treats mappings as first-class artifacts separating meaning (data element concepts) from representation, Health-RI uses SSSOM to support semantic traceability and reuse across standards (e.g., FHIR [8], OMOP [11], openEHR [9]) [29]. For the initiative-level conceptual background (including our definition of semantic traceability), see our [academic paper](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf) [30]. For the mapping-specific conceptual background and rationale behind our mappings, see the [Mapping Strategy](./mapping-strategy.md).
+One of the key deliverables of the Health-RI Semantic Interoperability Initiative was a SSSOM mapping set. This mapping set was manually curated, reflecting the efforts of both the dedicated mapping team and external collaborators. In line with work that treats mappings as first-class artifacts separating meaning (data element concepts) from representation, Health-RI used SSSOM to support semantic traceability and reuse across standards (e.g., FHIR [8], OMOP [11], openEHR [9]) [29]. For the initiative-level conceptual background (including our definition of semantic traceability), see our [academic paper](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf) [30]. For the mapping-specific conceptual background and rationale behind our mappings, see the [Mapping Strategy](./mapping-strategy.md).
 
 This page documents the mappings curated and published by Health-RI. Partners may also embed mappings directly into their own ontologies, as explained in the [Mapping Strategy](./mapping-strategy.md).
+
+!!! note "Archival status"
+
+    The Health-RI Semantic Interoperability Initiative has been discontinued. This page is retained as the schema reference for the final published mapping set. The contribution, review, curation, and publication workflow described below is historical and is no longer operated by Health-RI under this initiative.
 
 !!! tip "Want to browse the mappings?"
 
@@ -22,9 +26,9 @@ We offer several stable and accessible URIs for accessing the mapping set in dif
 
 ## Versioning Strategy
 
-As per the authoritative policy in the [Mapping Governance page's Versioning and Change Control](./mapping-governance.md#versioning-and-change-control) section, releases are dated `YYYY-MM-DD` (at most one per calendar day) and records are **append-only** via `replaces`.
+As per the authoritative policy in the [Mapping Governance page's Versioning and Change Control](./mapping-governance.md#versioning-and-change-control) section, releases were dated `YYYY-MM-DD` (at most one per calendar day) and records were **append-only** via `replaces`.
 
-For lifecycle states, approvals, and publication policy, see the [Governance, Lifecycle, and Validation of the Health-RI SSSOM Mapping Set](./mapping-governance.md) page.
+For the lifecycle states, approvals, and publication policy used during active development, see the [Governance, Lifecycle, and Validation of the Health-RI SSSOM Mapping Set](./mapping-governance.md) page.
 
 !!! tip "Why append-only?"
 
@@ -32,16 +36,16 @@ For lifecycle states, approvals, and publication policy, see the [Governance, Li
 
 ## SSSOM File Schema
 
-!!! tip "Need help turning a local term into a valid SSSOM row?"
+!!! tip "Archived HRIO Mapping Assistant"
 
-    Use the **HRIO Mapping Assistant** to draft a mapping from a data-model concept (field/code/class) to an HRIO target:
+    The **HRIO Mapping Assistant** may remain accessible as an archival drafting aid. It is not maintained and its outputs do not enter an active Health-RI contribution, review, curation, or release workflow.
 
     - It proposes HRIO candidate labels, a single HRIV `predicate_id`, confidence, and evidence snippets.
-    - Paste the evidence snippet into `comment` to document *why* the predicate fits (definition/scope reasoning).
-    - If the assistant provides an OntoUML type/stereotype, copy it into `object_category` when appropriate.
-    - Keep `mapping_justification` as `semapv:ManualMappingCuration` unless the curator explicitly approves an alternative.
+    - Evidence snippets can be used in `comment` to document *why* the predicate fits (definition/scope reasoning).
+    - If the assistant provides an OntoUML type/stereotype, it can be copied into `object_category` when appropriate.
+    - The final published workflow used `semapv:ManualMappingCuration` as the default `mapping_justification` unless a curator explicitly approved an alternative.
 
-    **Important:** HRIV predicates express *meaning-level* links and must **not** be interpreted as OWL equivalence/subsumption. Also, you still must comply with governance checks (e.g., role separation and validation).
+    **Important:** HRIV predicates express *meaning-level* links and must **not** be interpreted as OWL equivalence/subsumption.
 
     [Open HRIO Mapping Assistant](https://chatgpt.com/g/g-6990a7e348c4819190ef2de88503ff5e-hrio-mapping-assistant)
 
@@ -86,7 +90,7 @@ Below is the schema for the SSSOM TSV file, with each field's link to the specif
 
 !!! note "Identity distinctness (two-person rule)"
 
-    For every row, the set of `author_id` values **must be disjoint** from the set of `reviewer_id` values. This is validated at publication time (see the [Mappings Governance](./mapping-governance.md) page).
+    For every row, the set of `author_id` values **must be disjoint** from the set of `reviewer_id` values. This was validated at publication time (see the [Mappings Governance](./mapping-governance.md) page).
 
 !!! note "Uniqueness of `hriv:hasExactMeaning` (current rows)"
 
@@ -94,7 +98,7 @@ Below is the schema for the SSSOM TSV file, with each field's link to the specif
 
 !!! note "Responsible initiative (publisher)"
 
-    The mapping-set's `creator_id` and `creator_label` identify the initiative responsible for making the resource available (i.e., the Health-RI Semantic Interoperability Initiative). SSSOM defines no per-row "curator" slot. The curator's approval is recorded in the publication workflow.
+    The mapping-set's `creator_id` and `creator_label` identify the initiative responsible for making the resource available (i.e., the Health-RI Semantic Interoperability Initiative). SSSOM defines no per-row "curator" slot. The curator's approval was recorded in the publication workflow.
 
 !!! note "If you negate a predicate"
 
@@ -110,13 +114,13 @@ Below is the schema for the SSSOM TSV file, with each field's link to the specif
 
 ### Responsibility Legend
 
-The following legend explains who is responsible for providing or assigning each field in the schema, clarifying whether values come from contributors, curators, or are system-generated:
+The following legend explains who was responsible for providing or assigning each field in the schema, clarifying whether values came from contributors, curators, or were system-generated:
 
-- **Contributor** – Must be provided in PRs.
-- **Curator** – Added manually by Health-RI curators.
-- **Contributor (or Default)** – Contributor should provide this; if omitted, the system assigns a default.
-- **System (Fixed)** – Always set to a fixed value, cannot be changed.
-- **System (Generated)** – Automatically assigned at publication time, not editable.
+- **Contributor** – Was provided in PRs.
+- **Curator** – Was added manually by Health-RI curators.
+- **Contributor (or Default)** – Contributor provided this or the system assigned a default.
+- **System (Fixed)** – Was always set to a fixed value.
+- **System (Generated)** – Was automatically assigned at publication time.
 
 ### Type Legend
 
@@ -134,60 +138,54 @@ The following table lists and defines all datatypes used in the schema above, ac
 
 ### Default Values
 
-Some fields in the schema have predefined default values automatically assigned when contributors do not provide them:
+The publication workflow assigned predefined default values when contributors did not provide them:
 
-- **mapping_justification** – Defaults to `semapv:ManualMappingCuration`.
-- **license** – Defaults to `https://creativecommons.org/licenses/by/4.0/`.
-- **object_source_version** – Defaults to HRIO's latest version number. E.g., `1.0.0`.
-- **mapping_date** - Defaults to the date the contribution was received via GitHub issue.
+- **mapping_justification** – Defaulted to `semapv:ManualMappingCuration`.
+- **license** – Defaulted to `https://creativecommons.org/licenses/by/4.0/`.
+- **object_source_version** – Defaulted to HRIO's latest version number at curation time. E.g., `1.0.0`.
+- **mapping_date** - Defaulted to the date the contribution was received via GitHub issue.
 
-!!! note "Defaults are resolved to concrete values"
+!!! note "Defaults were resolved to concrete values"
 
-    Defaults such as `object_source_version` and `mapping_date` are resolved to specific values at curation time and stored in the record.
+    Defaults such as `object_source_version` and `mapping_date` were resolved to specific values at curation time and stored in the record.
     They are not interpreted as "floating latest" values.
 
-## How to Contribute
+## Historical Contribution Process
 
-We welcome contributions to expand and refine the mapping set. Choose one of the following methods:
+During active development, contributions to expand and refine the mapping set were accepted through two routes. These routes are documented for provenance only; the discontinued initiative no longer reviews or integrates new mapping submissions.
 
-### Preferred: Submit the issue form
+### Preferred route: issue form
 
-Use our **[SSSOM mapping issue form](https://github.com/Health-RI/semantic-interoperability/issues/new?template=sssom-new-mapping.yml)** to add a single mapping row. Fill in the required fields and submit; Health-RI curators will review and integrate your contribution.
+Contributors used the **SSSOM mapping issue form** to submit a single mapping row. Required fields were completed in the form and Health-RI curators reviewed eligible submissions before integration.
 
-### Alternative: Use the Excel template
+### Alternative route: Excel template
 
-Download the **[XLSX template](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/resources/mappings_template.xlsx)** and enter:
+Contributors could use the **XLSX template** and enter:
 
 - the mapping row(s) in the mappings sheet, and
 - all CURIE prefix bindings in the prefix sheet.
 
-Attach the completed file to a new GitHub issue; we will review it and add the mappings to the official set.
+The completed file was attached to a GitHub issue for review.
 
 !!! note "CURIE prefixes must be declared consistently"
 
-    If you introduce any new CURIE prefix, declare it in the prefix sheet (XLSX) or the submission so that others can resolve it. Use official namespace URIs and stable community identifiers whenever possible.
+    If a mapping uses a new CURIE prefix, it should declare the official namespace URI so the identifier remains resolvable and reproducible.
 
-In the template, field headers are color-coded as follows:
+In the template, field headers were color-coded as follows:
 
 - mandatory with no default have a black background;
 - mandatory with a fixed default are purple and pre-filled;
 - mandatory with a variable default are purple and not pre-filled;
 - optional are green.
 
-Both methods ensure your contribution is reviewed and incorporated into the official Health-RI SSSOM mapping set.
+### Historical submission checklist
 
-### Submission checklist for contributors
+The following checks were used for contributed mappings:
 
-!!! tip "Quick check: are your URIs valid?"
-
-    Before submitting, verify that all HTTP URIs resolve and are well-formed. A simple online check: <https://0mg.github.io/tools/uri/>
-
-Before submitting, please verify the following to ensure your contribution is complete and compliant with the schema:
-
-- All **mandatory** contributor fields are present and correctly formatted.
-- The `object_id` you choose is an HRIO concept in a package at stage `erv` or `pub` (do not map to `int` or `irv` packages).
-- All `subject_label` and `object_label` fields you provide are language-tagged (e.g., `Patient@en`, `Patiënt@nl`).
-- Any optional values provided use valid identifiers (e.g., ORCID IDs, resolvable URIs, SEMAPV terms).
+- All **mandatory** contributor fields were present and correctly formatted.
+- The `object_id` was an HRIO concept in a package at stage `erv` or `pub` (mappings to `int` or `irv` packages were not accepted).
+- All supplied `subject_label` and `object_label` fields were language-tagged (e.g., `Patient@en`, `Patiënt@nl`).
+- Optional values used valid identifiers (e.g., ORCID IDs, resolvable URIs, SEMAPV terms).
 
 ## References
 

@@ -1,8 +1,11 @@
 # Documents releases
 
+> [!NOTE]
+> The Health-RI Semantic Interoperability Initiative has been discontinued. The release process described below is no longer active. Existing `documents-*` releases remain available for citation and archival purposes.
+
 Tag format: `documents-YYYY-MM-DD` (the date is the publication/release date)
 
-Each `documents-*` release archives one document (typically a single PDF) to:
+Each `documents-*` release archived one document (typically a single PDF) to:
 
 - formalize authorship and licensing under the repository's license for artifacts ([CC-BY-4.0](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/refs/heads/main/LICENSE-ARTIFACTS.md)), and
 - trigger Zenodo DOI minting and long-term archiving.
@@ -16,4 +19,4 @@ Cite the **version-specific Zenodo DOI** for the relevant release. Do not cite t
 ## Edge cases
 
 - Multiple documents on the same date: `documents-YYYY-MM-DDa`, `documents-YYYY-MM-DDb`, and so on.
-- New version of the same document: publish a new `documents-*` release and state in the release notes that it supersedes the previous version.
+- New version of the same document: during the active initiative, a new `documents-*` release was published and its release notes stated whether it superseded the previous version.

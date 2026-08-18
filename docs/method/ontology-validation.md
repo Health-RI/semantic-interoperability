@@ -2,9 +2,9 @@
 
 This document defines the stages (`int`, `irv`, `erv`, `pub`) used to track maturity for "domain packages" (i.e., packages whose introduction/removal triggers `X` in the adopted semantic versioning), how transitions and reversions are recorded in Visual Paradigm, when and why reversions happen, and the mandatory policy for semantic modifications. It also specifies who validates at each stage, how reviews are initiated, and the expected review timelines. Version effects (Y++) are included where relevant.
 
-!!! note "Operational status"
+!!! note "Operational status: discontinued"
 
-    As of **May 1, 2026**, the initiative is formally paused. The procedures described here are not currently being executed as an active development or release workflow unless a future phase is confirmed.
+    The Health-RI Semantic Interoperability Initiative has been **discontinued**. The procedures described here are retained as historical policy and are no longer executed as an active development, review, or release workflow. See [Initiative Status](../status.md).
 
 ## Purpose & Scope
 
@@ -262,11 +262,11 @@ Mark the package as `pub` (in its stage tagged value) once internal and external
     - Consider a peer-reviewed venue to add external validation and community contribution.
     - If proceeding, submit and track the process; once accepted, record the publisher DOI/citation in the Release notes, package docs, and Catalog entry; keep the LinkedIn audience updated as appropriate.
 
-**Passive/standing channels (indefinite window; respond when triggered):**
+**Historical passive/standing channels:**
 
-- **GitHub Issues (standing channel).** A public, always-open channel for internal and external collaborators to request inclusion/exclusion/modification of concepts and related changes via templates. Submissions are evaluated continuously; once a package is in `pub`, substantive issues may trigger a stage reversion per this policy.
+- **GitHub Issues (standing channel).** During active development, this was a public, always-open channel for internal and external collaborators to request inclusion, exclusion, or modification of concepts and related changes via templates. Submissions were evaluated continuously; once a package was in `pub`, substantive issues could trigger a stage reversion per this policy.
 
-**Feedback handling.** Feedback received through any channel (Catalog, GitHub, publications) is evaluated and may trigger stage reversions per the policies in this document. Once a package is in `pub`, any substantive issue may lead to a reversion to a previous stage; significant feedback requiring semantic changes will reset the package to `int` and contribute Y++ per the [Versioning Strategy](./ontology-versioning.md).
+**Historical feedback handling.** During active development, feedback received through any channel (Catalog, GitHub, publications) was evaluated and could trigger stage reversions per the policies in this document. Once a package was in `pub`, substantive issues could lead to a reversion to a previous stage; significant feedback requiring semantic changes reset the package to `int` and contributed Y++ per the [Versioning Strategy](./ontology-versioning.md).
 
 ## Stage Reversions — Why and When
 

@@ -1,39 +1,29 @@
 # Calls for Community Review
 
-!!! warning "Community review status"
+!!! warning "Community review process archived"
 
-    As of **May 1, 2026**, the Health-RI Semantic Interoperability Initiative is formally paused. There are currently no active Calls for Community Review, and no new review windows are planned until a future phase is confirmed.
+    The Health-RI Semantic Interoperability Initiative has been **discontinued**. There are no active Calls for Community Review, and no new review windows are planned under this initiative.
+
+    This page is retained as historical documentation of the external-review process used during active development. See [Initiative Status](../status.md).
 
 Semantic interoperability in healthcare and the life sciences is not just a technical challenge. It affects how data about patients and studies is interpreted when it moves between hospitals, registries, and research infrastructures, with direct consequences for people's lives. If different parties are to share and reuse data, they need to be able to adopt and trust a common semantic solution.
 
-That trust depends on openness and community participation. A common semantic reference model can only succeed if the people who work with these concepts in practice can see how it is built, question its assumptions, and help improve it. Community review is therefore not an optional extra, but a core part of how we work.
+During the initiative, that trust was supported through openness and community participation. A common semantic reference model was treated as something that should be visible and reviewable by people who work with the modeled concepts in practice.
 
-When we finish modeling a domain or subdomain, the corresponding part of the Health-RI Ontology (HRIO) moves into external review. At that point we issue a time-bound **Call for Community Review** for that domain model, inviting domain and modeling experts to assess its correctness and completeness with respect to both the modeling (e.g., correct use of modeling constructs and patterns) and the domain (e.g., appropriate concepts, relations, and constraints).
+When modeling of a domain or subdomain reached the external-review stage, the corresponding part of the Health-RI Ontology (HRIO) could be placed in a time-bound **Call for Community Review**. Domain and modeling experts were invited to assess correctness and completeness with respect to both modeling quality and domain content.
 
-These Calls for Community Review correspond to the external community review phase in the ontology validation lifecycle described in the [Ontology validation and lifecycle](../method/ontology-validation.md) page. Ontology packages follow a staged lifecycle with clear validation steps so that checks and changes remain transparent and traceable.
+These Calls for Community Review corresponded to the external community review phase in the ontology validation lifecycle described in the [Ontology validation and lifecycle](../method/ontology-validation.md) page.
 
-## What does the external review involve?
+## What did the external review involve?
 
-You can contribute in any way that matches your expertise (domain or modeling) and the time you have available—any contribution is welcome.
+Contributors could review a model and its documentation and report what seemed unclear, incorrect, missing, ambiguous, or misleading, especially regarding:
 
-In practice, this means looking at the model and its documentation and telling us what seems unclear, incorrect, missing, ambiguous, or misleading, especially regarding: (1) domain correctness and coverage, and (2) conceptual rigor and consistent use of modeling constructs.
+1. domain correctness and coverage; and
+2. conceptual rigor and consistent use of modeling constructs.
 
-Contributors can choose whether they are acknowledged. By default, we will include your name in the ontology metadata collaborators. If you prefer not to be acknowledged, explicitly indicate this in your feedback submission, and we will handle your contribution anonymously (and not include your name from the ontology metadata).
+Contributors could choose whether they were acknowledged. By default, reviewer names could be included in ontology metadata collaborators; contributors could request anonymity instead.
 
-All instructions on how to collaborate in each external review, including access to materials and feedback channels, are provided in the description of the corresponding call listed below.
-
-!!! info "Feedback after a call closes"
-
-    The opening and closing dates define the formal external-review window for a package. They help manage the package's validation lifecycle and stage transitions, but they do **not** mean that feedback can no longer be submitted.
-
-    You can still submit comments, questions, and suggestions for future consideration through the general [Contribution Channels](contribution-channels.md). Input may be retained for possible review if the initiative resumes or enters a new phase.
-
-During an **open** Call for Community Review, you can:
-
-- submit feedback using the relevant structured forms listed under [Contribution Channels](contribution-channels.md), or
-- contact project team members directly (for example, [Pedro Paulo Favato Barcelos](mailto:pedro.barcelos@health-ri.nl)) to provide feedback, request clarifications, or invite us to join meetings for model walkthroughs and explanations.
-
-For the general case, including domains without an active call or any follow-up after a call has closed, please use our available [Contribution Channels](contribution-channels.md).
+Instructions for each review were provided in the corresponding call.
 
 ## Community Review
 
@@ -56,7 +46,7 @@ For the general case, including domains without an active call or any follow-up 
       <td style="text-align:center;font-weight:700;">13-03-2026</td>
     </tr>
     <tr>
-      <td style="text-align:center; background-color:#FFF8E1; color:#8D6E00; font-weight:700;">Paused</td>
+      <td style="text-align:center; background-color:#ECEFF1; color:#37474F; font-weight:700;">Not completed</td>
       <td style="text-align:center;font-weight:700;">Person Birth</td>
       <td style="text-align:center;font-weight:700;">30-03-2026</td>
       <td style="text-align:center;font-weight:700;">17-04-2026</td>
@@ -66,14 +56,10 @@ For the general case, including domains without an active call or any follow-up 
 
 ### Open calls
 
-_This section lists currently active Calls for Community Review for specific HRIO domains or subdomains._
-
-There are currently no active Calls for Community Review.
+There are no active Calls for Community Review. The initiative has been discontinued.
 
 ### Closed calls
 
-_This section lists Calls for Community Review that have formally closed._
-
 - [Sex and Gender](../../external-review/sex-and-gender/)
 
-Feedback on these domains may still be submitted for future consideration. If you would like to comment on a domain that appears under a closed call, please submit your input via the general [Contribution Channels](contribution-channels.md) and reference the relevant domain or call in your submission.
+The Sex and Gender review materials and any recorded feedback remain available as part of the initiative's historical documentation.

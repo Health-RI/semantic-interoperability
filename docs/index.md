@@ -2,11 +2,13 @@
 
 # Health-RI Semantic Interoperability Initiative
 
-!!! warning "Initiative status: formally paused"
+!!! warning "Initiative status: discontinued"
 
-    As of **May 1, 2026**, the Health-RI Semantic Interoperability Initiative has been formally paused.
+    The Health-RI Semantic Interoperability Initiative was formally paused on **May 1, 2026** and has since been **discontinued**.
 
-    Existing documentation, released artifacts, persistent identifiers, and repository materials remain available for reference and citation. However, no further development, curation, community review, or release activity is currently planned until a future phase is confirmed.
+    No further development, curation, community review, or release activity is planned under this initiative. Existing documentation, released artifacts, persistent identifiers, and repository materials remain available as archival resources for reference, reuse, and citation. They are not actively maintained, and known limitations may remain unresolved.
+
+    See [Initiative Status](status.md) for details.
 
 !!! tip "Watch: applied use cases for semantic interoperability"
 
@@ -33,9 +35,9 @@ In practice, interoperability often breaks because **meaning stays implicit**. S
 
 ## What we do differently: semantic traceability
 
-The Health-RI Semantic Interoperability Initiative is a model-driven, ontology-based framework designed to enable **semantic traceability**: keeping meaning and representation aligned across the stack.
+The Health-RI Semantic Interoperability Initiative developed a model-driven, ontology-based framework designed to enable **semantic traceability**: keeping meaning and representation aligned across the stack.
 
-We have developed the **Health-RI Ontology (HRIO)** as a common semantic reference model:
+We developed the **Health-RI Ontology (HRIO)** as a common semantic reference model:
 
 - **HRIO OntoUML (CIM)**: a conceptual model for experts to validate (meaning-first).
 - **HRIO gUFO/OWL (PIM)**: a computational OWL implementation of the same meanings (machine-processable).
@@ -45,7 +47,7 @@ This makes it possible to trace semantics **from external artifacts → mapped H
 
 ## Map once, reuse everywhere (a semantic hub)
 
-Most interoperability programs end up maintaining many pairwise mappings across standards and local schemas. Our approach replaces that scaling trap with a semantic hub:
+Most interoperability programs end up maintaining many pairwise mappings across standards and local schemas. The approach developed by the initiative replaces that scaling trap with a semantic hub:
 
 - Each external standard, schema, or ontology maps **once** to HRIO.
 - When two external terms map to the same HRIO meaning, their intended semantics become comparable through the shared reference model—without needing a bespoke pairwise mapping for every combination.
@@ -64,7 +66,7 @@ With HRIO + HRIV:
 
 ## Trust by design: auditable semantic assets
 
-We treat semantic artifacts like production assets:
+During active development, we treated semantic artifacts like production assets:
 
 - **Role separation** (Mapper ≠ Reviewer; Curator publishes)
 - **Validation before release** (promotion gates)
@@ -75,7 +77,7 @@ We treat semantic artifacts like production assets:
 
 !!! tip "AI Assistants (GPT)"
 
-    Two optional ChatGPT assistants can help you navigate the initiative and draft mappings.
+    Two ChatGPT assistants created during the initiative remain linked as archival aids.
 
     <div class="button-grid button-grid--grid2" markdown>
 
@@ -88,7 +90,7 @@ We treat semantic artifacts like production assets:
     - Use the **Guide** for questions about the initiative, artifacts, releases, and PIDs.
     - Use the **Mapping Assistant** to draft a candidate **HRIV meaning mapping** from your term to **HRIO** (one predicate + confidence + evidence snippets).
 
-    *These tools are drafting aids. Always validate results against the documentation and follow the mapping governance rules before publishing or submitting contributions.*
+    *These tools are not actively maintained. Always validate results against the archived documentation. Their outputs are not reviewed, curated, or published by this discontinued initiative.*
 
 **1) Pick** one ambiguous local term (column header, code, or ontology class).
 
@@ -99,17 +101,15 @@ We treat semantic artifacts like production assets:
 - `hriv:hasExactMeaning` (intended meaning is fully equivalent)
 - `hriv:hasBroaderMeaningThan` / `hriv:hasNarrowerMeaningThan` (meaning is broader/narrower)
 
-**4) Share it** with the community (one row is fine): contribute via the routes described in the contributing pages.
+**4) Document and validate it** in your own workflow. The initiative's contribution, review, curation, and release workflows are closed.
 
 ## Community and collaboration
 
-At this stage, the initiative has received valuable support and feedback from academics and professionals across Health-RI and the broader health data community. Their perspectives have helped us shape the work and ensure it stays aligned with ongoing national and international efforts toward interoperability.
+During its active phase, the initiative received valuable support and feedback from academics and professionals across Health-RI and the broader health data community. Their perspectives helped shape the work and align it with national and international efforts toward interoperability.
 
-We invite you to explore the resources we have made available — including our [**ontology**](deliverables/index.md), [**mapping vocabulary**](method/specification-vocabulary.html), and [**mapping sets**](method/mapping-schema.md) — all of which remain openly published for reference, reuse, and citation. For the conceptual rationale and the initiative-level definition of semantic traceability, see our [academic paper](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf).
+The resources produced by the initiative remain openly available — including the [**ontology**](deliverables/index.md), [**mapping vocabulary**](method/specification-vocabulary.html), and [**mapping sets**](method/mapping-schema.md) — for reference, reuse, and citation. For the conceptual rationale and the initiative-level definition of semantic traceability, see our [academic paper](https://raw.githubusercontent.com/Health-RI/semantic-interoperability/main/documents/preprints/enabling-semantic-traceability-in-health-data-v1.1.0.pdf).
 
-General feedback may still be submitted through the repository and the documented [contribution channels](contributing/contribution-channels.md). While the initiative is paused, active review, curation, and follow-up are not currently guaranteed.
-
-After all, semantic interoperability can only be achieved **through the community**: initiatives earn trust only when they are built openly and collaboratively. Together, we can ensure this effort translates into real, lasting improvements in how health data is shared and reused.
+The contribution and community-review pages are retained as historical documentation of the processes used during the initiative. New submissions are not reviewed, curated, or integrated into project releases.
 
 ______________________________________________________________________
 
@@ -123,13 +123,14 @@ ______________________________________________________________________
 
 ## What's on this site
 
-This site documents how Health-RI achieves semantic interoperability across health and life-sciences data: our concepts, modeling foundations (OntoUML & gUFO), the method and mapping vocabulary we use, and the published ontology deliverables (specs, docs, changelog).
+This site documents how the Health-RI Semantic Interoperability Initiative approached semantic interoperability across health and life-sciences data: its concepts, modeling foundations (OntoUML & gUFO), method and mapping vocabulary, and published ontology deliverables (specs, docs, changelog).
 
+- **Initiative Status**: [Discontinuation and archival status](status.md)
 - **Semantic Interoperability**: [Overview](semantic-interoperability/index.md)
 - **OntoUML & gUFO**: [Overview](ontouml-gufo/index.md) · [OntoUML](ontouml-gufo/ontouml.md) · [OntoUML Stereotypes](ontouml-gufo/ontouml-stereotypes.md) · [OntoUML/UFO Catalog](ontouml-gufo/ontouml-ufo-catalog.md) · [Creating OntoUML Models](ontouml-gufo/creating-ontouml-models.md) · [gUFO](ontouml-gufo/gufo.md)
 - **Method**: [Overview](method/index.md) · [Introduction](method/introduction.md) · [Mapping Strategy](method/mapping-strategy.md) · [Mapping Vocabulary Specification](method/specification-vocabulary.html) · [SSSOM Mapping Set](method/mapping-schema.md) · [Mapping Governance](method/mapping-governance.md) · [Ontology Versioning](method/ontology-versioning.md) · [Ontology Validation](method/ontology-validation.md) · [Publications](method/publications.md) · [Persistent Identifiers](method/persistent-ids.md)
 - **Deliverables**: [Overview](deliverables/index.md) · [Ontology Documentation](deliverables/documentation.md) · [Ontology Specification](deliverables/specification-ontology.html) · [Ontology Changelog](deliverables/changelog-ontology.md)
-- **Help & Contributions**: [FAQ](faq.md) · [Contributing](./contributing/overview.md) · [Calls for Community Review](./contributing/call-for-community-review.md) · [Contribution Channels](./contributing/contribution-channels.md)
+- **Help & Archived Contributions**: [FAQ](faq.md) · [Contribution Process](./contributing/overview.md) · [Calls for Community Review](./contributing/call-for-community-review.md) · [Contribution Channels](./contributing/contribution-channels.md)
 
 ______________________________________________________________________
 

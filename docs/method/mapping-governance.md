@@ -2,9 +2,9 @@
 
 This page sets the governance, lifecycle, validation, and release policy for the Health-RI SSSOM Mapping Set. It complements the [Mapping Set](./mapping-schema.md) page (schema, field semantics, URIs) and the [Semantic Mapping Strategy](./mapping-strategy.md) page (methodology and scope).
 
-!!! note "Operational status"
+!!! note "Operational status: discontinued"
 
-    As of **May 1, 2026**, the initiative is formally paused. The procedures described here are not currently being executed as an active development or release workflow unless a future phase is confirmed.
+    The Health-RI Semantic Interoperability Initiative has been **discontinued**. The procedures described here are retained as historical policy and are no longer executed as an active development, curation, or release workflow. See [Initiative Status](../status.md).
 
 ## Purpose and Scope
 

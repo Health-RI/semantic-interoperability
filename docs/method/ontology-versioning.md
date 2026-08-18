@@ -4,9 +4,9 @@ This document specifies the version number semantics (`X.Y.Z`), priority rules, 
 
 This versioning strategy applies to all ontology artifacts versioned as part of the Health-RI Ontology (HRIO). For any given ontology version, all artifacts share the same version identifier (`X.Y.Z`) and correspond to the same underlying HRIO OntoUML model.
 
-!!! note "Operational status"
+!!! note "Operational status: discontinued"
 
-    As of **May 1, 2026**, the initiative is formally paused. The procedures described here are not currently being executed as an active development or release workflow unless a future phase is confirmed.
+    The Health-RI Semantic Interoperability Initiative has been **discontinued**. The procedures described here are retained as historical policy and are no longer executed as an active development or release workflow. See [Initiative Status](../status.md).
 
 ## Purpose & Scope
 

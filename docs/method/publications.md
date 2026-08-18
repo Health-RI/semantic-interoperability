@@ -1,14 +1,14 @@
 # Initiative Publications
 
-This repository implements a structured, transparent publishing process for both the Health-RI Ontology and its SSSOM mapping sets, ensuring all artifacts are traceable, stable, and reusable, and supporting FAIR-aligned interoperability.
+This repository documents the structured publishing process used for both the Health-RI Ontology and its SSSOM mapping sets, ensuring released artifacts are traceable, stable, and reusable, and supporting FAIR-aligned interoperability.
 
-!!! note "Operational status"
+!!! note "Operational status: discontinued"
 
-    As of **May 1, 2026**, the initiative is formally paused. The procedures described here are not currently being executed as an active development or release workflow unless a future phase is confirmed.
+    The Health-RI Semantic Interoperability Initiative has been **discontinued**. The procedures described on this page are retained as historical policy and are no longer executed as an active development or release workflow. No further releases are planned under this initiative. See [Initiative Status](../status.md).
 
 ## Publishing the Ontology
 
-Before diving into specific files and artifacts, we first outline how ontology versions are tracked and the policy guiding version numbering.
+Before diving into specific files and artifacts, we first outline how ontology versions were tracked and the policy that guided version numbering.
 
 ### Versioning Policy
 
@@ -16,7 +16,7 @@ Please refer to the [Ontology Versioning Policy](./ontology-versioning.md) page 
 
 ### Published Artifacts
 
-For each ontology release, the following artifacts are published — always in both `ontologies/latest/` and `ontologies/versioned/` folders.
+For each ontology release, the following artifacts were published — always in both `ontologies/latest/` and `ontologies/versioned/` folders.
 
 - **OntoUML conceptual model (Visual Paradigm)**: Includes all OntoUML constructs and diagrams.
 
@@ -50,7 +50,7 @@ For each ontology release, the following artifacts are published — always in b
 
 !!! note
 
-    Derived gUFO artifacts (`.ttl`, `.shacl`, and the HTML specification) are generated only for releases where the OntoUML model is syntactically valid and the transformation pipeline completes successfully. If a release cannot produce these derived files, they may be absent from `ontologies/versioned/`, and the corresponding "latest" PID (e.g., `/ontology/ttl`) will continue to resolve to the most recent available derived artifact.
+    Derived gUFO artifacts (`.ttl`, `.shacl`, and the HTML specification) were generated only for releases where the OntoUML model was syntactically valid and the transformation pipeline completed successfully. If a release could not produce these derived files, they could be absent from `ontologies/versioned/`, and the corresponding "latest" PID (e.g., `/ontology/ttl`) continued to resolve to the most recent available derived artifact.
 
 !!! info
 
@@ -60,7 +60,7 @@ For each ontology release, the following artifacts are published — always in b
 
 ### Repository Structure
 
-All current artifacts are made available in the `/ontologies` folder:
+Published ontology artifacts are available in the `/ontologies` folder:
 
 ```text
 ontologies/
@@ -89,22 +89,22 @@ ontologies/
 └── ...
 ```
 
-!!! tip "What does 'latest' mean?"
+!!! tip "What does 'latest' mean after discontinuation?"
 
-    The `latest/` folder always mirrors the contents of the highest published version. This provides stable, convenient access to the most recent files without needing to specify a version number.
+    The `latest/` folder mirrors the contents of the highest published version. Because the initiative has been discontinued, it should now be understood as the **final available published version**, not as an artifact expected to advance.
 
 !!! note "Where are the images of the diagrams?"
 
     The `images/` folder — containing exported PNG versions of all OntoUML diagrams — is only provided under the `latest/` folder.
-    These images are always generated from the most recent `.vpp` file and are not versioned individually.
+    These images were generated from the most recent published `.vpp` file and were not versioned individually.
 
 ### Archive and Change History
 
-- Only the **latest version** of each artifact is visible directly in the `ontologies/latest/` folder.
+- Only the **final/latest version** of each artifact is visible directly in the `ontologies/latest/` folder.
 - **All previous versions** are organized in the `ontologies/versioned/` directory for transparency and reproducibility.
 - A **changelog file (`changelog-ontology.md`)** summarizes all version changes and links them to their respective files and semantic impact.
     - The changelog follows the [Keep a Changelog](https://keepachangelog.com/) format.
-    - It is drafted with AI support as an editorial aid. Entries are intended to be reviewed and aligned with the released artifacts, but they may still contain inaccuracies or lag behind model changes in a given snapshot.
+    - It was drafted with AI support as an editorial aid. Entries were intended to be reviewed and aligned with the released artifacts, but they may still contain inaccuracies or lag behind model changes in a given snapshot.
     - The prompts used to draft AI-supported changelog content are available in `resources/prompts/`.
 
 !!! tip "Looking for PID details?"
@@ -113,10 +113,10 @@ ontologies/
 
 ## Publishing SSSOM Mappings
 
-This section describes the publication process for our **SSSOM mapping sets** (meaning mappings), which follow a different versioning strategy than the ontology artifacts described above.
+This section describes the publication process used for our **SSSOM mapping sets** (meaning mappings), which followed a different versioning strategy than the ontology artifacts described above.
 
-The SSSOM mapping set uses date-based versions in the format `YYYY-MM-DD` (at most one version per day).
-Published mappings are **append-only**: existing rows are not deleted. To correct or supersede a row, add a new one using the `replaces` field to reference the previous record.
+The SSSOM mapping set used date-based versions in the format `YYYY-MM-DD` (at most one version per day).
+Published mappings are **append-only**: existing rows are not deleted. To correct or supersede a row, a new one was added using the `replaces` field to reference the previous record.
 
 - **SSSOM Mapping Set (TSV & TTL)**:
     Curated meaning mappings published as a tabular SSSOM set and as RDF/Turtle.
@@ -126,9 +126,9 @@ Published mappings are **append-only**: existing rows are not deleted. To correc
 
 !!! tip
 
-    A human-readable version of the mappings [can be accessed in this link](https://health-ri.github.io/semantic-interoperability/deliverables/mappings/).
+    A human-readable version of the final published mappings [can be accessed in this link](https://health-ri.github.io/semantic-interoperability/deliverables/mappings/).
 
 !!! note
 
-    Both serializations of the SSSOM Mapping Set — **TSV** and **TTL** — are stored in the `/mappings` folder of this repository.
+    Both serializations of the final SSSOM Mapping Set — **TSV** and **TTL** — are stored in the `/mappings` folder of this repository.
     The redirect links above provide stable access to these files, while the folder itself contains the recorded versions.
