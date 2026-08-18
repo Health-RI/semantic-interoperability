@@ -1,0 +1,355 @@
+@prefix demo: <https://w3id.org/health-ri/semantic-interoperability/schema/> .
+@prefix hriv: <https://w3id.org/health-ri/mapping-vocabulary/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/health-ri/semantic-interoperability/schema>
+    a owl:Ontology ;
+    rdfs:label "Semantic interoperability example model"@en ;
+    rdfs:comment "OWL rendering of the uploaded Visual Paradigm model. The note-based rules are intentionally excluded from this version."@en ;
+    rdfs:comment "Instances are identified by their IRIs; the UML attribute id is not materialized as a datatype property in this version."@en .
+
+#################################################################
+# Classes
+#################################################################
+
+demo:OwnedElement
+    a owl:Class ;
+    rdfs:label "OwnedElement"@en ;
+    rdfs:comment "Abstract superclass for artifact, concept, and mapping elements."@en ;
+    owl:disjointUnionOf ( demo:Artifact demo:Concept demo:Mapping ) .
+
+demo:Artifact
+    a owl:Class ;
+    rdfs:label "Artifact"@en ;
+    rdfs:comment "Abstract superclass for Standard and Model."@en ;
+    rdfs:subClassOf demo:OwnedElement ;
+    owl:disjointUnionOf ( demo:Standard demo:Model ) .
+
+demo:Concept
+    a owl:Class ;
+    rdfs:label "Concept"@en ;
+    rdfs:comment "Abstract superclass for StandardConcept, ModelConcept, and OntologyConcept."@en ;
+    rdfs:subClassOf demo:OwnedElement ;
+    owl:disjointUnionOf ( demo:StandardConcept demo:ModelConcept demo:OntologyConcept ) .
+
+demo:Mapping
+    a owl:Class ;
+    rdfs:label "Mapping"@en ;
+    rdfs:comment "Abstract superclass for StandardMapping and ModelMapping. UML defaults shown in the model: polarity = positive; status = valid."@en ;
+    rdfs:subClassOf
+        demo:OwnedElement ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasTargetOntologyConcept ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:OntologyConcept
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasPolarity ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:Polarity
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasStatus ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:Status
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasProvenance ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:Provenance
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:replaces ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:Mapping
+        ] ;
+    owl:disjointUnionOf ( demo:StandardMapping demo:ModelMapping ) .
+
+demo:Standard
+    a owl:Class ;
+    rdfs:label "Standard"@en ;
+    rdfs:subClassOf
+        demo:Artifact ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasStandardConcept ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:StandardConcept
+        ] .
+
+demo:Model
+    a owl:Class ;
+    rdfs:label "Model"@en ;
+    rdfs:subClassOf
+        demo:Artifact ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasModelConcept ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:ModelConcept
+        ] .
+
+demo:StandardConcept
+    a owl:Class ;
+    rdfs:label "StandardConcept"@en ;
+    rdfs:subClassOf
+        demo:Concept ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:isConceptOfStandard ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:Standard
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty hriv:hasExactMeaning ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:OntologyConcept
+        ] .
+
+demo:ModelConcept
+    a owl:Class ;
+    rdfs:label "ModelConcept"@en ;
+    rdfs:subClassOf
+        demo:Concept ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:isConceptOfModel ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:Model
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty hriv:hasExactMeaning ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:OntologyConcept
+        ] .
+
+demo:OntologyConcept
+    a owl:Class ;
+    rdfs:label "OntologyConcept"@en ;
+    rdfs:subClassOf demo:Concept .
+
+demo:StandardMapping
+    a owl:Class ;
+    rdfs:label "StandardMapping"@en ;
+    rdfs:subClassOf
+        demo:Mapping ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasSourceStandardConcept ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:StandardConcept
+        ] .
+
+demo:ModelMapping
+    a owl:Class ;
+    rdfs:label "ModelMapping"@en ;
+    rdfs:subClassOf
+        demo:Mapping ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasSourceModelConcept ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:ModelConcept
+        ] .
+
+demo:Alignment
+    a owl:Class ;
+    rdfs:label "Alignment"@en ;
+    rdfs:comment "Association class between two StandardConcept instances. UML defaults shown in the model: polarity = positive; provenance = asserted."@en ;
+    rdfs:subClassOf
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasAlignmentSource ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:StandardConcept
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasAlignmentTarget ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:StandardConcept
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasPolarity ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:Polarity
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty demo:hasProvenance ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass demo:Provenance
+        ] .
+
+#################################################################
+# Enumeration classes
+#################################################################
+
+demo:Polarity
+    a owl:Class ;
+    rdfs:label "Polarity"@en ;
+    owl:oneOf ( demo:positive demo:negative ) .
+
+demo:Status
+    a owl:Class ;
+    rdfs:label "Status"@en ;
+    owl:oneOf ( demo:valid demo:replaced ) .
+
+demo:Provenance
+    a owl:Class ;
+    rdfs:label "Provenance"@en ;
+    owl:oneOf ( demo:asserted demo:inferred ) .
+
+demo:positive a owl:NamedIndividual , demo:Polarity ; rdfs:label "positive"@en .
+demo:negative a owl:NamedIndividual , demo:Polarity ; rdfs:label "negative"@en .
+
+demo:valid a owl:NamedIndividual , demo:Status ; rdfs:label "valid"@en .
+demo:replaced a owl:NamedIndividual , demo:Status ; rdfs:label "replaced"@en .
+
+demo:asserted a owl:NamedIndividual , demo:Provenance ; rdfs:label "asserted"@en .
+demo:inferred a owl:NamedIndividual , demo:Provenance ; rdfs:label "inferred"@en .
+
+
+#################################################################
+# Object properties
+#################################################################
+
+demo:hasStandardConcept
+    a owl:ObjectProperty ;
+    rdfs:label "has standard concept"@en ;
+    rdfs:domain demo:Standard ;
+    rdfs:range demo:StandardConcept ;
+    owl:inverseOf demo:isConceptOfStandard .
+
+demo:isConceptOfStandard
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "is concept of standard"@en ;
+    rdfs:domain demo:StandardConcept ;
+    rdfs:range demo:Standard .
+
+demo:hasModelConcept
+    a owl:ObjectProperty ;
+    rdfs:label "has model concept"@en ;
+    rdfs:domain demo:Model ;
+    rdfs:range demo:ModelConcept ;
+    owl:inverseOf demo:isConceptOfModel .
+
+demo:isConceptOfModel
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "is concept of model"@en ;
+    rdfs:domain demo:ModelConcept ;
+    rdfs:range demo:Model .
+
+demo:implements
+    a owl:ObjectProperty ;
+    rdfs:label "implements"@en ;
+    rdfs:domain demo:ModelConcept ;
+    rdfs:range demo:StandardConcept ;
+    owl:inverseOf demo:isImplementedBy .
+
+demo:isImplementedBy
+    a owl:ObjectProperty ;
+    rdfs:label "is implemented by"@en ;
+    rdfs:domain demo:StandardConcept ;
+    rdfs:range demo:ModelConcept .
+
+demo:replaces
+    a owl:ObjectProperty ;
+    rdfs:label "replaces"@en ;
+    rdfs:domain demo:Mapping ;
+    rdfs:range demo:Mapping ;
+    owl:inverseOf demo:isReplacedBy .
+
+demo:isReplacedBy
+    a owl:ObjectProperty ;
+    rdfs:label "is replaced by"@en ;
+    rdfs:domain demo:Mapping ;
+    rdfs:range demo:Mapping .
+
+demo:hasMappingSource
+    a owl:ObjectProperty ;
+    rdfs:label "has mapping source"@en ;
+    rdfs:domain demo:Mapping ;
+    rdfs:range demo:Concept .
+
+demo:hasSourceStandardConcept
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has source standard concept"@en ;
+    rdfs:domain demo:StandardMapping ;
+    rdfs:range demo:StandardConcept ;
+    rdfs:subPropertyOf demo:hasMappingSource .
+
+demo:hasSourceModelConcept
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has source model concept"@en ;
+    rdfs:domain demo:ModelMapping ;
+    rdfs:range demo:ModelConcept ;
+    rdfs:subPropertyOf demo:hasMappingSource .
+
+demo:hasTargetOntologyConcept
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has target ontology concept"@en ;
+    rdfs:domain demo:Mapping ;
+    rdfs:range demo:OntologyConcept .
+
+demo:derivationNote
+    a owl:AnnotationProperty ;
+    rdfs:label "derivation note"@en .
+
+hriv:hasExactMeaning
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has exact meaning"@en ;
+    rdfs:comment "Binary mapping association between a StandardConcept or ModelConcept and an OntologyConcept, corresponding to the direct maps association in the UML."@en ;
+    demo:derivationNote "This convenience relation should only represent the current exact meaning. It is not derived here with an OWL property chain because the reified Mapping model also carries status (for example, valid vs. replaced), and an unrestricted chain would incorrectly infer exact meaning from replaced mappings as well."@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf ( demo:StandardConcept demo:ModelConcept )
+    ] ;
+    rdfs:range demo:OntologyConcept .
+
+demo:hasAlignmentSource
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has alignment source"@en ;
+    rdfs:domain demo:Alignment ;
+    rdfs:range demo:StandardConcept .
+
+demo:hasAlignmentTarget
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has alignment target"@en ;
+    rdfs:domain demo:Alignment ;
+    rdfs:range demo:StandardConcept .
+
+demo:aligns
+    a owl:ObjectProperty ;
+    rdfs:label "aligns"@en ;
+    rdfs:comment "Convenience property derivable from the reified alignment pattern. Symmetry is intentionally not asserted in this version because note-based rules are out of scope for now."@en ;
+    rdfs:domain demo:StandardConcept ;
+    rdfs:range demo:StandardConcept ;
+    owl:propertyChainAxiom ( [ owl:inverseOf demo:hasAlignmentSource ] demo:hasAlignmentTarget ) .
+
+demo:hasPolarity
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has polarity"@en ;
+    rdfs:range demo:Polarity .
+
+demo:hasStatus
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has status"@en ;
+    rdfs:domain demo:Mapping ;
+    rdfs:range demo:Status .
+
+demo:hasProvenance
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has provenance"@en ;
+    rdfs:range demo:Provenance .

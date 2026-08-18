@@ -1,0 +1,4417 @@
+@prefix care-sm: <https://w3id.org/CARE-SM#> .
+@prefix demo: <https://w3id.org/health-ri/semantic-interoperability/schema/> .
+@prefix demoi: <https://example.org/health-ri/demo-instance/> .
+@prefix hl7: <http://terminology.hl7.org/ValueSet/> .
+@prefix hri-cdash: <https://data.health-ri.nl/id/cdash/> .
+@prefix hri-ga4gh-phenopacket-schema: <https://data.health-ri.nl/id/ga4gh-phenopacket-schema/> .
+@prefix hri-icd11: <https://data.health-ri.nl/id/icd11/> .
+@prefix hri-omop: <https://data.health-ri.nl/id/omop/> .
+@prefix hri-openehr: <https://data.health-ri.nl/id/openehr/> .
+@prefix hrio: <https://w3id.org/health-ri/ontology#> .
+@prefix loinc: <https://loinc.org/> .
+@prefix mesh: <http://purl.bioontology.org/ontology/MESH/> .
+@prefix model: <https://examples.mymodels/> .
+@prefix ncit: <https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix onz-g: <http://purl.org/ozo/onz-g#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix snomed: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+demoi:asserted-align-0dd62019b5ef2d4f a demo:Alignment ;
+    demo:hasAlignmentSource hri-openehr:preferred-pronoun ;
+    demo:hasAlignmentTarget model:preferred-pronoun-free-text-a ;
+    demo:hasProvenance demo:asserted ;
+    demo:source hri-openehr:preferred-pronoun ;
+    demo:target model:preferred-pronoun-free-text-a .
+
+demoi:asserted-align-0fd18d02cf7ba305 a demo:Alignment ;
+    demo:hasAlignmentSource model:indeterminate-sex-at-birth-flag ;
+    demo:hasAlignmentTarget model:general-sex-field-a ;
+    demo:hasProvenance demo:asserted ;
+    demo:source model:indeterminate-sex-at-birth-flag ;
+    demo:target model:general-sex-field-a .
+
+demoi:asserted-align-1cd4cc87c7304ff4 a demo:Alignment ;
+    demo:hasAlignmentSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/comment> ;
+    demo:hasAlignmentTarget model:legacy-gender-identity-comment ;
+    demo:hasProvenance demo:asserted ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/comment> ;
+    demo:target model:legacy-gender-identity-comment .
+
+demoi:asserted-align-1e608078b9a8ddd2 a demo:Alignment ;
+    demo:hasAlignmentSource model:legacy-gender-identity-comment ;
+    demo:hasAlignmentTarget model:official-administrative-gender-field ;
+    demo:hasProvenance demo:asserted ;
+    demo:source model:legacy-gender-identity-comment ;
+    demo:target model:official-administrative-gender-field .
+
+demoi:asserted-align-3da9944fdb9a2c6a a demo:Alignment ;
+    demo:hasAlignmentSource loinc:107454-1 ;
+    demo:hasAlignmentTarget model:official-administrative-gender-field ;
+    demo:hasProvenance demo:asserted ;
+    demo:source loinc:107454-1 ;
+    demo:target model:official-administrative-gender-field .
+
+demoi:asserted-align-3f5442f7d277d4cb a demo:Alignment ;
+    demo:hasAlignmentSource hri-ga4gh-phenopacket-schema:other_karyotype ;
+    demo:hasAlignmentTarget model:observed-female-sex-characteristics ;
+    demo:hasProvenance demo:asserted ;
+    demo:source hri-ga4gh-phenopacket-schema:other_karyotype ;
+    demo:target model:observed-female-sex-characteristics .
+
+demoi:asserted-align-40e0edb59279237d a demo:Alignment ;
+    demo:hasAlignmentSource model:official-administrative-gender-field ;
+    demo:hasAlignmentTarget model:generic-self-identified-gender-a ;
+    demo:hasProvenance demo:asserted ;
+    demo:source model:official-administrative-gender-field ;
+    demo:target model:generic-self-identified-gender-a .
+
+demoi:asserted-align-4a330786441ecb48 a demo:Alignment ;
+    demo:hasAlignmentSource hri-openehr:gender ;
+    demo:hasAlignmentTarget model:self-identified-gender-free-text ;
+    demo:hasProvenance demo:asserted ;
+    demo:source hri-openehr:gender ;
+    demo:target model:self-identified-gender-free-text .
+
+demoi:asserted-align-537a33aa136d01c6 a demo:Alignment ;
+    demo:hasAlignmentSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source-document> ;
+    demo:hasAlignmentTarget hri-openehr:legal-gender ;
+    demo:hasProvenance demo:asserted ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source-document> ;
+    demo:target hri-openehr:legal-gender .
+
+demoi:asserted-align-69516f5b0785d82e a demo:Alignment ;
+    demo:hasAlignmentSource model:preferred-pronoun-free-text-a ;
+    demo:hasAlignmentTarget model:general-sex-field-b ;
+    demo:hasProvenance demo:asserted ;
+    demo:source model:preferred-pronoun-free-text-a ;
+    demo:target model:general-sex-field-b .
+
+demoi:asserted-align-6f03271ef9a25ed3 a demo:Alignment ;
+    demo:hasAlignmentSource <https://data.health-ri.nl/id/fhir-r5/individual-pronouns/period> ;
+    demo:hasAlignmentTarget hri-openehr:preferred-pronoun ;
+    demo:hasProvenance demo:asserted ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-pronouns/period> ;
+    demo:target hri-openehr:preferred-pronoun .
+
+demoi:asserted-align-71557a2af030c149 a demo:Alignment ;
+    demo:hasAlignmentSource <https://data.health-ri.nl/id/fhir-r5/recorded-sex-or-gender-type/sex> ;
+    demo:hasAlignmentTarget hri-openehr:sex-assigned-at-birth ;
+    demo:hasProvenance demo:asserted ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/recorded-sex-or-gender-type/sex> ;
+    demo:target hri-openehr:sex-assigned-at-birth .
+
+demoi:asserted-align-7fa766aec20152fa a demo:Alignment ;
+    demo:hasAlignmentSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/comment> ;
+    demo:hasAlignmentTarget hri-openehr:administrative-gender ;
+    demo:hasProvenance demo:asserted ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/comment> ;
+    demo:target hri-openehr:administrative-gender .
+
+demoi:asserted-align-8b86b5a4f415e933 a demo:Alignment ;
+    demo:hasAlignmentSource model:biological-female-sex-flag-a ;
+    demo:hasAlignmentTarget model:biological-male-sex-flag-a ;
+    demo:hasProvenance demo:asserted ;
+    demo:source model:biological-female-sex-flag-a ;
+    demo:target model:biological-male-sex-flag-a .
+
+demoi:asserted-align-9b196c4e162d9660 a demo:Alignment ;
+    demo:hasAlignmentSource hri-ga4gh-phenopacket-schema:unknown_karyotype ;
+    demo:hasAlignmentTarget loinc:54123-5 ;
+    demo:hasProvenance demo:asserted ;
+    demo:source hri-ga4gh-phenopacket-schema:unknown_karyotype ;
+    demo:target loinc:54123-5 .
+
+demoi:asserted-align-9e63035756a6cce1 a demo:Alignment ;
+    demo:hasAlignmentSource hri-openehr:gender ;
+    demo:hasAlignmentTarget <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/value> ;
+    demo:hasProvenance demo:asserted ;
+    demo:source hri-openehr:gender ;
+    demo:target <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/value> .
+
+demoi:asserted-align-ac5004556a2ea25a a demo:Alignment ;
+    demo:hasAlignmentSource model:general-sex-field-a ;
+    demo:hasAlignmentTarget model:generic-self-identified-gender-a ;
+    demo:hasProvenance demo:asserted ;
+    demo:source model:general-sex-field-a ;
+    demo:target model:generic-self-identified-gender-a .
+
+demoi:asserted-align-b0e52868f90fc1ce a demo:Alignment ;
+    demo:hasAlignmentSource <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/comment> ;
+    demo:hasAlignmentTarget model:self-identified-gender-free-text ;
+    demo:hasProvenance demo:asserted ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/comment> ;
+    demo:target model:self-identified-gender-free-text .
+
+demoi:asserted-align-c46616775fa6c765 a demo:Alignment ;
+    demo:hasAlignmentSource hri-ga4gh-phenopacket-schema:other_karyotype ;
+    demo:hasAlignmentTarget loinc:91692-4 ;
+    demo:hasProvenance demo:asserted ;
+    demo:source hri-ga4gh-phenopacket-schema:other_karyotype ;
+    demo:target loinc:91692-4 .
+
+demoi:asserted-align-cd24edd8a06042dc a demo:Alignment ;
+    demo:hasAlignmentSource hri-openehr:legal-gender ;
+    demo:hasAlignmentTarget model:generic-admin-gender-slot-a ;
+    demo:hasProvenance demo:asserted ;
+    demo:source hri-openehr:legal-gender ;
+    demo:target model:generic-admin-gender-slot-a .
+
+demoi:asserted-align-cffc77f47d92ca8f a demo:Alignment ;
+    demo:hasAlignmentSource loinc:76689-9 ;
+    demo:hasAlignmentTarget model:indeterminate-sex-at-birth-flag ;
+    demo:hasProvenance demo:asserted ;
+    demo:source loinc:76689-9 ;
+    demo:target model:indeterminate-sex-at-birth-flag .
+
+demoi:asserted-align-ec56d9374cbb2033 a demo:Alignment ;
+    demo:hasAlignmentSource <https://data.health-ri.nl/id/fhir-r5/individual-pronouns/period> ;
+    demo:hasAlignmentTarget model:pronoun-display-comment ;
+    demo:hasProvenance demo:asserted ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-pronouns/period> ;
+    demo:target model:pronoun-display-comment .
+
+demoi:asserted-align-eccb20f483c92e00 a demo:Alignment ;
+    demo:hasAlignmentSource model:preferred-pronoun-free-text-a ;
+    demo:hasAlignmentTarget model:legacy-gender-identity-comment ;
+    demo:hasProvenance demo:asserted ;
+    demo:source model:preferred-pronoun-free-text-a ;
+    demo:target model:legacy-gender-identity-comment .
+
+demoi:asserted-align-ef6fe0aef39794d3 a demo:Alignment ;
+    demo:hasAlignmentSource hri-openehr:legal-gender ;
+    demo:hasAlignmentTarget loinc:107454-1 ;
+    demo:hasProvenance demo:asserted ;
+    demo:source hri-openehr:legal-gender ;
+    demo:target loinc:107454-1 .
+
+demoi:asserted-align-f8dd12e6ef01324f a demo:Alignment ;
+    demo:hasAlignmentSource model:official-female-gender-entry ;
+    demo:hasAlignmentTarget model:official-male-gender-entry ;
+    demo:hasProvenance demo:asserted ;
+    demo:source model:official-female-gender-entry ;
+    demo:target model:official-male-gender-entry .
+
+demoi:asserted-map-0079ebbbc4578ab2 a demo:Mapping ;
+    demo:hasMappingSource model:male-sex-at-birth-flag-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthMaleSex ;
+    demo:source model:male-sex-at-birth-flag-a ;
+    demo:target hrio:SexAtBirthMaleSex .
+
+demoi:asserted-map-010541adfda6333d a demo:Mapping ;
+    demo:hasMappingSource obo:NCIT_C28421 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Sex ;
+    demo:source obo:NCIT_C28421 ;
+    demo:target hrio:Sex .
+
+demoi:asserted-map-012f0a2eaf3dd134 a demo:Mapping ;
+    demo:hasMappingSource onz-g:IntersexPerson ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateBiologicalPerson ;
+    demo:source onz-g:IntersexPerson ;
+    demo:target hrio:IndeterminateBiologicalPerson .
+
+demoi:asserted-map-01b96717e83594a1 a demo:Mapping ;
+    demo:hasMappingSource ncit:C45908 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthIndeterminateSex ;
+    demo:source ncit:C45908 ;
+    demo:target hrio:SexAtBirthIndeterminateSex .
+
+demoi:asserted-map-01e3adf48a489073 a demo:Mapping ;
+    demo:hasMappingSource hri-omop:female ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleGender ;
+    demo:source hri-omop:female ;
+    demo:target hrio:FemaleGender .
+
+demoi:asserted-map-0265d3882a197bda a demo:Mapping ;
+    demo:hasMappingSource snomed:248152002 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthFemaleSex ;
+    demo:source snomed:248152002 ;
+    demo:target hrio:SexAtBirthFemaleSex .
+
+demoi:asserted-map-0277ed9ed50d57fe a demo:Mapping ;
+    demo:hasMappingSource ncit:C66731 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexOutcome ;
+    demo:source ncit:C66731 ;
+    demo:target hrio:SexOutcome .
+
+demoi:asserted-map-0280f5706552bdb3 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SocialAgent ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source> ;
+    demo:target hrio:SocialAgent .
+
+demoi:asserted-map-03448bcd7b3e2296 a demo:Mapping ;
+    demo:hasMappingSource model:gender_identity_nonbinary_bucket ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:NonBinaryGender ;
+    demo:source model:gender_identity_nonbinary_bucket ;
+    demo:target hrio:NonBinaryGender .
+
+demoi:asserted-map-03c59cc95097604c a demo:Mapping ;
+    demo:hasMappingSource snomed:263495000 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source snomed:263495000 ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-0404798f4700de04 a demo:Mapping ;
+    demo:hasMappingSource ncit:C20197 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleGender ;
+    demo:source ncit:C20197 ;
+    demo:target hrio:MaleGender .
+
+demoi:asserted-map-0461d898b5b2de73 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/gender-element-qualifier> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:ExternallyAttributedGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/gender-element-qualifier> ;
+    demo:target hrio:ExternallyAttributedGender .
+
+demoi:asserted-map-04c51004aefb72aa a demo:Mapping ;
+    demo:hasMappingSource model:pronoun_comment_field ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source model:pronoun_comment_field ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-055c3a3b657f3c96 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/recorded-sex-or-gender-type/sex> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Sex ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/recorded-sex-or-gender-type/sex> ;
+    demo:target hrio:Sex .
+
+demoi:asserted-map-057d6b3580142dde a demo:Mapping ;
+    demo:hasMappingSource model:sex_at_birth_unknown_text ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthIndeterminateSex ;
+    demo:source model:sex_at_birth_unknown_text ;
+    demo:target hrio:SexAtBirthIndeterminateSex .
+
+demoi:asserted-map-062dc9412f63fc42 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/comment> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/comment> ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-07ace641e22abdc7 a demo:Mapping ;
+    demo:hasMappingSource obo:NCIT_C17357 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Gender ;
+    demo:source obo:NCIT_C17357 ;
+    demo:target hrio:Gender .
+
+demoi:asserted-map-086cefef7e329c87 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA4512-5 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:TransgenderPerson ;
+    demo:source loinc:LA4512-5 ;
+    demo:target hrio:TransgenderPerson .
+
+demoi:asserted-map-09b1cfee41530ac2 a demo:Mapping ;
+    demo:hasMappingSource obo:NCIT_C17357 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Gender ;
+    demo:source obo:NCIT_C17357 ;
+    demo:target hrio:Gender .
+
+demoi:asserted-map-09c5c84cf0949c36 a demo:Mapping ;
+    demo:hasMappingSource model:gender_identity_input_field ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source model:gender_identity_input_field ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-0b72ec3ff1b56ea0 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000385 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedCisgenderFemalePerson ;
+    demo:source obo:GSSO_000385 ;
+    demo:target hrio:SelfIdentifiedCisgenderFemalePerson .
+
+demoi:asserted-map-0bdf2f0c9fe9175e a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/administrative-gender/unknown> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeMaleGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/administrative-gender/unknown> ;
+    demo:target hrio:AdministrativeMaleGender .
+
+demoi:asserted-map-0cc94b0c1a257858 a demo:Mapping ;
+    demo:hasMappingSource model:unresolved-self-identified-gender-note ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source model:unresolved-self-identified-gender-note ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-0d04f6a492088081 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/comment> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGenderRecognitionDocument ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/comment> ;
+    demo:target hrio:AdministrativeGenderRecognitionDocument .
+
+demoi:asserted-map-0d688c854061655e a demo:Mapping ;
+    demo:hasMappingSource model:gender_notes_text ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleGender ;
+    demo:source model:gender_notes_text ;
+    demo:target hrio:FemaleGender .
+
+demoi:asserted-map-0ef3c3846f0aff9e a demo:Mapping ;
+    demo:hasMappingSource model:administrative_gender_unknown_code ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeFemaleGender ;
+    demo:source model:administrative_gender_unknown_code ;
+    demo:target hrio:AdministrativeFemaleGender .
+
+demoi:asserted-map-1060a7211e7af5b2 a demo:Mapping ;
+    demo:hasMappingSource snomed:285116001 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfDesignatedGender ;
+    demo:source snomed:285116001 ;
+    demo:target hrio:SelfDesignatedGender .
+
+demoi:asserted-map-10ae19899c496f85 a demo:Mapping ;
+    demo:hasMappingSource hri-cdash:variation-in-physical-sex-characteristics ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateSex ;
+    demo:source hri-cdash:variation-in-physical-sex-characteristics ;
+    demo:target hrio:IndeterminateSex .
+
+demoi:asserted-map-10ccb942a6233a25 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA46-8 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:NonBinaryGender ;
+    demo:source loinc:LA46-8 ;
+    demo:target hrio:NonBinaryGender .
+
+demoi:asserted-map-1244257d6e054dd5 a demo:Mapping ;
+    demo:hasMappingSource model:legal_gender_female_status ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:LegalFemaleGender ;
+    demo:source model:legal_gender_female_status ;
+    demo:target hrio:LegalFemaleGender .
+
+demoi:asserted-map-1417a72244656e70 a demo:Mapping ;
+    demo:hasMappingSource loinc:76691-5 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source loinc:76691-5 ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-14b02b230bd437dc a demo:Mapping ;
+    demo:hasMappingSource obo:NCIT_C17998 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source obo:NCIT_C17998 ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-1538bc39f898d05c a demo:Mapping ;
+    demo:hasMappingSource snomed:365873007 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Gender ;
+    demo:source snomed:365873007 ;
+    demo:target hrio:Gender .
+
+demoi:asserted-map-1548f1df930f937b a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:gender-expression ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:GenderExpression ;
+    demo:source hri-openehr:gender-expression ;
+    demo:target hrio:GenderExpression .
+
+demoi:asserted-map-162918c22a8de874 a demo:Mapping ;
+    demo:hasMappingSource ncit:C17998 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicAmbiguousSex ;
+    demo:source ncit:C17998 ;
+    demo:target hrio:PhenotypicAmbiguousSex .
+
+demoi:asserted-map-164f1e5847996c3a a demo:Mapping ;
+    demo:hasMappingSource model:phenotypic_ambiguous_sex_value ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicAmbiguousSex ;
+    demo:source model:phenotypic_ambiguous_sex_value ;
+    demo:target hrio:PhenotypicAmbiguousSex .
+
+demoi:asserted-map-1753fd2e21a1237c a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:additional-details ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source hri-openehr:additional-details ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-17d262d769ec2d5f a demo:Mapping ;
+    demo:hasMappingSource snomed:703118005 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FeminineGenderExpression ;
+    demo:source snomed:703118005 ;
+    demo:target hrio:FeminineGenderExpression .
+
+demoi:asserted-map-1803490ce9c4bcfc a demo:Mapping ;
+    demo:hasMappingSource model:binary_sex_female_option ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleSex ;
+    demo:source model:binary_sex_female_option ;
+    demo:target hrio:FemaleSex .
+
+demoi:asserted-map-187ae9e7c4d38219 a demo:Mapping ;
+    demo:hasMappingSource snomed:703118005 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedFemaleGender ;
+    demo:source snomed:703118005 ;
+    demo:target hrio:SelfIdentifiedFemaleGender .
+
+demoi:asserted-map-1aa49868cc211b41 a demo:Mapping ;
+    demo:hasMappingSource model:gender_notes_text ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source model:gender_notes_text ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-1d9b41136050bdad a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:preferred-pronoun ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source hri-openehr:preferred-pronoun ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-1e81ea42d1bd0d63 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_009316 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source obo:GSSO_009316 ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-1edb216ffae991d3 a demo:Mapping ;
+    demo:hasMappingSource snomed:248152002 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicFemaleSex ;
+    demo:source snomed:248152002 ;
+    demo:target hrio:PhenotypicFemaleSex .
+
+demoi:asserted-map-20262a0d3b36cb99 a demo:Mapping ;
+    demo:hasMappingSource model:administrative-male-marker ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeMaleGender ;
+    demo:source model:administrative-male-marker ;
+    demo:target hrio:AdministrativeMaleGender .
+
+demoi:asserted-map-22edc414c30516ea a demo:Mapping ;
+    demo:hasMappingSource onz-g:GenderIdentityValue ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedNonBinaryGender ;
+    demo:source onz-g:GenderIdentityValue ;
+    demo:target hrio:SelfIdentifiedNonBinaryGender .
+
+demoi:asserted-map-254f6828dfda58ed a demo:Mapping ;
+    demo:hasMappingSource model:recorded-nonbinary-gender-entry ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeNonBinaryGender ;
+    demo:source model:recorded-nonbinary-gender-entry ;
+    demo:target hrio:AdministrativeNonBinaryGender .
+
+demoi:asserted-map-25617d3bc6b9ff81 a demo:Mapping ;
+    demo:hasMappingSource snomed:302081005 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicSex ;
+    demo:source snomed:302081005 ;
+    demo:target hrio:PhenotypicSex .
+
+demoi:asserted-map-2583ee0ac2b93243 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA29520-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source loinc:LA29520-6 ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-2657819924955ad0 a demo:Mapping ;
+    demo:hasMappingSource model:registry-male-code-b ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeMaleGender ;
+    demo:source model:registry-male-code-b ;
+    demo:target hrio:AdministrativeMaleGender .
+
+demoi:asserted-map-278a73b79cad5393 a demo:Mapping ;
+    demo:hasMappingSource hri-cdash:variation-in-physical-sex-characteristics ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateDimorphicCharacteristic ;
+    demo:source hri-cdash:variation-in-physical-sex-characteristics ;
+    demo:target hrio:IndeterminateDimorphicCharacteristic .
+
+demoi:asserted-map-27e516fb99d87ba3 a demo:Mapping ;
+    demo:hasMappingSource model:questionnaire-male-identity ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedMaleGender ;
+    demo:source model:questionnaire-male-identity ;
+    demo:target hrio:SelfIdentifiedMaleGender .
+
+demoi:asserted-map-28b13baf3e69a182 a demo:Mapping ;
+    demo:hasMappingSource snomed:248152002 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicFemaleSex ;
+    demo:source snomed:248152002 ;
+    demo:target hrio:KaryotypicFemaleSex .
+
+demoi:asserted-map-2a1347d7b31f8285 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source-document> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGenderRecognitionDocument ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source-document> ;
+    demo:target hrio:AdministrativeGenderRecognitionDocument .
+
+demoi:asserted-map-2ac8813fcb4a61b0 a demo:Mapping ;
+    demo:hasMappingSource snomed:285116001 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Gender ;
+    demo:source snomed:285116001 ;
+    demo:target hrio:Gender .
+
+demoi:asserted-map-2ae6b21df9e2b633 a demo:Mapping ;
+    demo:hasMappingSource ncit:C205472 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source ncit:C205472 ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-2c6ad5d076f3aa09 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_011405 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeMaleGenderPerson ;
+    demo:source obo:GSSO_011405 ;
+    demo:target hrio:AdministrativeMaleGenderPerson .
+
+demoi:asserted-map-30d22ba09076f4b0 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000384 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:TransgenderPerson ;
+    demo:source obo:GSSO_000384 ;
+    demo:target hrio:TransgenderPerson .
+
+demoi:asserted-map-312d888cf5b68b37 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA4732-9 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthIndeterminateSex ;
+    demo:source loinc:LA4732-9 ;
+    demo:target hrio:SexAtBirthIndeterminateSex .
+
+demoi:asserted-map-31426c7fa627fc8f a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/administrative-gender/unknown> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeFemaleGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/administrative-gender/unknown> ;
+    demo:target hrio:AdministrativeFemaleGender .
+
+demoi:asserted-map-3370f39afe7f564f a demo:Mapping ;
+    demo:hasMappingSource ncit:C16576 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleSex ;
+    demo:source ncit:C16576 ;
+    demo:target hrio:FemaleSex .
+
+demoi:asserted-map-34ccfb3cf9bb87e5 a demo:Mapping ;
+    demo:hasMappingSource model:sex_at_birth_male_value ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthMaleSex ;
+    demo:source model:sex_at_birth_male_value ;
+    demo:target hrio:SexAtBirthMaleSex .
+
+demoi:asserted-map-34cf685eeb5a7223 a demo:Mapping ;
+    demo:hasMappingSource hri-omop:person-gender-source-concept-id ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source hri-omop:person-gender-source-concept-id ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-34fbbb89fae606ea a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:xxy ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PersonWithVariantSexChromosome ;
+    demo:source hri-ga4gh-phenopacket-schema:xxy ;
+    demo:target hrio:PersonWithVariantSexChromosome .
+
+demoi:asserted-map-351e7aec52090175 a demo:Mapping ;
+    demo:hasMappingSource model:phenotypic_male_sex_value ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicMaleSex ;
+    demo:source model:phenotypic_male_sex_value ;
+    demo:target hrio:PhenotypicMaleSex .
+
+demoi:asserted-map-36068008d22f4c7d a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000384 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleGenderPerson ;
+    demo:source obo:GSSO_000384 ;
+    demo:target hrio:FemaleGenderPerson .
+
+demoi:asserted-map-367664aca63431ef a demo:Mapping ;
+    demo:hasMappingSource hl7:gender-identity ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source hl7:gender-identity ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-36e4029d38e6d0f0 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000130 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:ExternallyAttributedTransgenderPerson ;
+    demo:source obo:GSSO_000130 ;
+    demo:target hrio:ExternallyAttributedTransgenderPerson .
+
+demoi:asserted-map-37e1f0401b05f177 a demo:Mapping ;
+    demo:hasMappingSource model:self-reported-female-gender-b ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedFemaleGender ;
+    demo:source model:self-reported-female-gender-b ;
+    demo:target hrio:SelfIdentifiedFemaleGender .
+
+demoi:asserted-map-38d5744256bf6bbb a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source-document> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:LegalGenderRecognitionDocument ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source-document> ;
+    demo:target hrio:LegalGenderRecognitionDocument .
+
+demoi:asserted-map-38e3f9898b26a268 a demo:Mapping ;
+    demo:hasMappingSource model:admin_gender_nonbinary_code ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeNonBinaryGender ;
+    demo:source model:admin_gender_nonbinary_code ;
+    demo:target hrio:AdministrativeNonBinaryGender .
+
+demoi:asserted-map-3a8c1517337268e5 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000384 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthMaleSexPerson ;
+    demo:source obo:GSSO_000384 ;
+    demo:target hrio:SexAtBirthMaleSexPerson .
+
+demoi:asserted-map-3c2c6a0645158589 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA29518-0 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source loinc:LA29518-0 ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-3d94270a7ded2d6d a demo:Mapping ;
+    demo:hasMappingSource ncit:C16576 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleGender ;
+    demo:source ncit:C16576 ;
+    demo:target hrio:FemaleGender .
+
+demoi:asserted-map-3d951dd0fdfe941c a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:unknown_karyotype ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicSex ;
+    demo:source hri-ga4gh-phenopacket-schema:unknown_karyotype ;
+    demo:target hrio:KaryotypicSex .
+
+demoi:asserted-map-3f499a3bbbbfb08e a demo:Mapping ;
+    demo:hasMappingSource obo:NCIT_C28421 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Sex ;
+    demo:source obo:NCIT_C28421 ;
+    demo:target hrio:Sex .
+
+demoi:asserted-map-3f5d059e3589171a a demo:Mapping ;
+    demo:hasMappingSource loinc:LA29515-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source loinc:LA29515-6 ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-3f833c50ddfae2b7 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000385 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleCisgenderPerson ;
+    demo:source obo:GSSO_000385 ;
+    demo:target hrio:FemaleCisgenderPerson .
+
+demoi:asserted-map-40a0931734347331 a demo:Mapping ;
+    demo:hasMappingSource hri-icd11:gender-incongruence ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:TransgenderPerson ;
+    demo:source hri-icd11:gender-incongruence ;
+    demo:target hrio:TransgenderPerson .
+
+demoi:asserted-map-413f5f751ac787ed a demo:Mapping ;
+    demo:hasMappingSource model:binary_sex_female_option ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleSex ;
+    demo:source model:binary_sex_female_option ;
+    demo:target hrio:MaleSex .
+
+demoi:asserted-map-41a6bfa1a3f9757c a demo:Mapping ;
+    demo:hasMappingSource onz-g:Animal ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Animal ;
+    demo:source onz-g:Animal ;
+    demo:target hrio:Animal .
+
+demoi:asserted-map-41f2b8a0d3ae6577 a demo:Mapping ;
+    demo:hasMappingSource model:biological-female-sex-flag-b ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleSex ;
+    demo:source model:biological-female-sex-flag-b ;
+    demo:target hrio:FemaleSex .
+
+demoi:asserted-map-4314e2a0f519f992 a demo:Mapping ;
+    demo:hasMappingSource loinc:76689-9 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source loinc:76689-9 ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-431d9c665fad44c6 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000094 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FeminineGenderExpression ;
+    demo:source obo:GSSO_000094 ;
+    demo:target hrio:FeminineGenderExpression .
+
+demoi:asserted-map-43681430640c2d1d a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:unknown_karyotype ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicalIndeterminatePerson ;
+    demo:source hri-ga4gh-phenopacket-schema:unknown_karyotype ;
+    demo:target hrio:KaryotypicalIndeterminatePerson .
+
+demoi:asserted-map-436f23b2c4e2e567 a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:xo ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicSex ;
+    demo:source hri-ga4gh-phenopacket-schema:xo ;
+    demo:target hrio:KaryotypicSex .
+
+demoi:asserted-map-43d97d61514f2255 a demo:Mapping ;
+    demo:hasMappingSource model:administrative_gender_nonbinary_absent ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeNonBinaryGender ;
+    demo:source model:administrative_gender_nonbinary_absent ;
+    demo:target hrio:AdministrativeNonBinaryGender .
+
+demoi:asserted-map-4459d23d2b42cd04 a demo:Mapping ;
+    demo:hasMappingSource model:registry_gender_female_value ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeFemaleGender ;
+    demo:source model:registry_gender_female_value ;
+    demo:target hrio:AdministrativeFemaleGender .
+
+demoi:asserted-map-447fc00ecb67254b a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000371 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleCisgenderPerson ;
+    demo:source obo:GSSO_000371 ;
+    demo:target hrio:MaleCisgenderPerson .
+
+demoi:asserted-map-46fb7df14c6b0805 a demo:Mapping ;
+    demo:hasMappingSource ncit:C20197 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Male ;
+    demo:source ncit:C20197 ;
+    demo:target hrio:Male .
+
+demoi:asserted-map-489d14340556e68b a demo:Mapping ;
+    demo:hasMappingSource model:legal_gender_nonbinary_status ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:LegalNonBinaryGender ;
+    demo:source model:legal_gender_nonbinary_status ;
+    demo:target hrio:LegalNonBinaryGender .
+
+demoi:asserted-map-48d03aedc224d507 a demo:Mapping ;
+    demo:hasMappingSource model:admin_gender_male_code ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeMaleGender ;
+    demo:source model:admin_gender_male_code ;
+    demo:target hrio:AdministrativeMaleGender .
+
+demoi:asserted-map-49b25b54ff878113 a demo:Mapping ;
+    demo:hasMappingSource model:preferred-pronoun-free-text-b ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source model:preferred-pronoun-free-text-b ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-4ada17a1e0113637 a demo:Mapping ;
+    demo:hasMappingSource snomed:248153007 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthMaleSex ;
+    demo:source snomed:248153007 ;
+    demo:target hrio:SexAtBirthMaleSex .
+
+demoi:asserted-map-4bed0add26cc6c00 a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:sex-assigned-at-birth ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source hri-openehr:sex-assigned-at-birth ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-4cecc517d8cee234 a demo:Mapping ;
+    demo:hasMappingSource snomed:285116001 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source snomed:285116001 ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-4e2993656d32b816 a demo:Mapping ;
+    demo:hasMappingSource model:generic-self-identified-gender-b ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source model:generic-self-identified-gender-b ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-4e9b7d80597ebe00 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/patient/contact/gender> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/patient/contact/gender> ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-4fde5bbec3037212 a demo:Mapping ;
+    demo:hasMappingSource model:broad-female-gender-classifier ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleGender ;
+    demo:source model:broad-female-gender-classifier ;
+    demo:target hrio:FemaleGender .
+
+demoi:asserted-map-558a06b2c36c5b4c a demo:Mapping ;
+    demo:hasMappingSource ncit:C20197 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleSex ;
+    demo:source ncit:C20197 ;
+    demo:target hrio:MaleSex .
+
+demoi:asserted-map-55ca27791e1db5fc a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:additional-details ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:LegalGender ;
+    demo:source hri-openehr:additional-details ;
+    demo:target hrio:LegalGender .
+
+demoi:asserted-map-56de644f2c7b5b43 a demo:Mapping ;
+    demo:hasMappingSource model:unknown-admin-gender-code-b ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source model:unknown-admin-gender-code-b ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-56e5ac0fef9a7e5c a demo:Mapping ;
+    demo:hasMappingSource loinc:54123-5 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source loinc:54123-5 ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-5712870cb08b65cd a demo:Mapping ;
+    demo:hasMappingSource ncit:C17998 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source ncit:C17998 ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-57f3114b588d2315 a demo:Mapping ;
+    demo:hasMappingSource ncit:C46121 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedMaleGenderPerson ;
+    demo:source ncit:C46121 ;
+    demo:target hrio:SelfIdentifiedMaleGenderPerson .
+
+demoi:asserted-map-587fc47ebd65d7b3 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:ArtificialAgent ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source> ;
+    demo:target hrio:ArtificialAgent .
+
+demoi:asserted-map-5880e7090f601b1b a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:xxxx ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicFemaleSex ;
+    demo:source hri-ga4gh-phenopacket-schema:xxxx ;
+    demo:target hrio:KaryotypicFemaleSex .
+
+demoi:asserted-map-58c4f68c13a2661f a demo:Mapping ;
+    demo:hasMappingSource hri-omop:male ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleGender ;
+    demo:source hri-omop:male ;
+    demo:target hrio:MaleGender .
+
+demoi:asserted-map-5960236bf9d3346a a demo:Mapping ;
+    demo:hasMappingSource onz-g:GenderIdentity ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source onz-g:GenderIdentity ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-5b8d784d44279017 a demo:Mapping ;
+    demo:hasMappingSource model:legal_gender_male_status ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:LegalMaleGender ;
+    demo:source model:legal_gender_male_status ;
+    demo:target hrio:LegalMaleGender .
+
+demoi:asserted-map-5bb178b6d27cb2f1 a demo:Mapping ;
+    demo:hasMappingSource model:registry-female-code-b ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeFemaleGender ;
+    demo:source model:registry-female-code-b ;
+    demo:target hrio:AdministrativeFemaleGender .
+
+demoi:asserted-map-5be6d546c5cb7746 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA22878-5 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedMaleGender ;
+    demo:source loinc:LA22878-5 ;
+    demo:target hrio:SelfIdentifiedMaleGender .
+
+demoi:asserted-map-5c350faabd1cc9f2 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA22879-3 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedFemaleGender ;
+    demo:source loinc:LA22879-3 ;
+    demo:target hrio:SelfIdentifiedFemaleGender .
+
+demoi:asserted-map-5da6bc54dafa55d6 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/value> ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/value> ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-5dc7414971d8382f a demo:Mapping ;
+    demo:hasMappingSource loinc:107454-1 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source loinc:107454-1 ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-5eac1db8be9e3bc2 a demo:Mapping ;
+    demo:hasMappingSource ncit:C17998 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateSex ;
+    demo:source ncit:C17998 ;
+    demo:target hrio:IndeterminateSex .
+
+demoi:asserted-map-5f7180d081401e19 a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:gender ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Gender ;
+    demo:source hri-openehr:gender ;
+    demo:target hrio:Gender .
+
+demoi:asserted-map-5f72a8566d9c0d11 a demo:Mapping ;
+    demo:hasMappingSource hri-icd11:gender-incongruence-of-adolescence-or-adulthood ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedTransgenderPerson ;
+    demo:source hri-icd11:gender-incongruence-of-adolescence-or-adulthood ;
+    demo:target hrio:SelfIdentifiedTransgenderPerson .
+
+demoi:asserted-map-5fd122556e87fc26 a demo:Mapping ;
+    demo:hasMappingSource loinc:72143-1 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source loinc:72143-1 ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-60020b50e0547261 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_001501 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthIndeterminateSex ;
+    demo:source obo:GSSO_001501 ;
+    demo:target hrio:SexAtBirthIndeterminateSex .
+
+demoi:asserted-map-60442ecced969aab a demo:Mapping ;
+    demo:hasMappingSource onz-g:Woman ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleSexPerson ;
+    demo:source onz-g:Woman ;
+    demo:target hrio:FemaleSexPerson .
+
+demoi:asserted-map-60508d53af8da6b8 a demo:Mapping ;
+    demo:hasMappingSource model:administrative_gender_unknown_code ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeNonBinaryGender ;
+    demo:source model:administrative_gender_unknown_code ;
+    demo:target hrio:AdministrativeNonBinaryGender .
+
+demoi:asserted-map-6077f2141f46d743 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA3-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthFemaleSex ;
+    demo:source loinc:LA3-6 ;
+    demo:target hrio:SexAtBirthFemaleSex .
+
+demoi:asserted-map-632f8043d66d0cb4 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Organization ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source> ;
+    demo:target hrio:Organization .
+
+demoi:asserted-map-65df3b6c7012df47 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA3-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleGender ;
+    demo:source loinc:LA3-6 ;
+    demo:target hrio:FemaleGender .
+
+demoi:asserted-map-6611d9ebb485ecd0 a demo:Mapping ;
+    demo:hasMappingSource model:self_identified_nonbinary_gender ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedNonBinaryGender ;
+    demo:source model:self_identified_nonbinary_gender ;
+    demo:target hrio:SelfIdentifiedNonBinaryGender .
+
+demoi:asserted-map-6638da202e704353 a demo:Mapping ;
+    demo:hasMappingSource model:official-administrative-gender-field ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source model:official-administrative-gender-field ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-672b84feba2c8d99 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000094 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemininePresentingPerson ;
+    demo:source obo:GSSO_000094 ;
+    demo:target hrio:FemininePresentingPerson .
+
+demoi:asserted-map-689173439ba59f34 a demo:Mapping ;
+    demo:hasMappingSource model:questionnaire-nonbinary-identity ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedNonBinaryGender ;
+    demo:source model:questionnaire-nonbinary-identity ;
+    demo:target hrio:SelfIdentifiedNonBinaryGender .
+
+demoi:asserted-map-692b15875744b99d a demo:Mapping ;
+    demo:hasMappingSource onz-g:Intersexual ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateSex ;
+    demo:source onz-g:Intersexual ;
+    demo:target hrio:IndeterminateSex .
+
+demoi:asserted-map-69ff64ce4f62f29d a demo:Mapping ;
+    demo:hasMappingSource onz-g:Human ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Person ;
+    demo:source onz-g:Human ;
+    demo:target hrio:Person .
+
+demoi:asserted-map-6bc793bc8a4aa5c7 a demo:Mapping ;
+    demo:hasMappingSource care-sm:Sex ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Sex ;
+    demo:source care-sm:Sex ;
+    demo:target hrio:Sex .
+
+demoi:asserted-map-6cd6ca5b7420b1a4 a demo:Mapping ;
+    demo:hasMappingSource model:generic-male-gender-flag-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleGender ;
+    demo:source model:generic-male-gender-flag-a ;
+    demo:target hrio:MaleGender .
+
+demoi:asserted-map-6d8ae4ad98f5bd5d a demo:Mapping ;
+    demo:hasMappingSource hri-icd11:gender-incongruence-of-childhood ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Transgender ;
+    demo:source hri-icd11:gender-incongruence-of-childhood ;
+    demo:target hrio:Transgender .
+
+demoi:asserted-map-6e04b5137f2e11e5 a demo:Mapping ;
+    demo:hasMappingSource snomed:263495000 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Gender ;
+    demo:source snomed:263495000 ;
+    demo:target hrio:Gender .
+
+demoi:asserted-map-6e0e73210f4041cb a demo:Mapping ;
+    demo:hasMappingSource loinc:LA29517-2 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source loinc:LA29517-2 ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-6e7b1149b2097b40 a demo:Mapping ;
+    demo:hasMappingSource hri-icd11:gender-incongruence ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedTransgenderPerson ;
+    demo:source hri-icd11:gender-incongruence ;
+    demo:target hrio:SelfIdentifiedTransgenderPerson .
+
+demoi:asserted-map-72973bc75feb568d a demo:Mapping ;
+    demo:hasMappingSource model:official-male-gender-entry ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeMaleGender ;
+    demo:source model:official-male-gender-entry ;
+    demo:target hrio:AdministrativeMaleGender .
+
+demoi:asserted-map-72f08a4f5ef0727c a demo:Mapping ;
+    demo:hasMappingSource ncit:C20197 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Man ;
+    demo:source ncit:C20197 ;
+    demo:target hrio:Man .
+
+demoi:asserted-map-7436e8576ba38189 a demo:Mapping ;
+    demo:hasMappingSource obo:NCIT_C17998 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicSex ;
+    demo:source obo:NCIT_C17998 ;
+    demo:target hrio:PhenotypicSex .
+
+demoi:asserted-map-7441f3d15231c1f3 a demo:Mapping ;
+    demo:hasMappingSource snomed:248153007 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicMaleSex ;
+    demo:source snomed:248153007 ;
+    demo:target hrio:PhenotypicMaleSex .
+
+demoi:asserted-map-748751be14a05428 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000130 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:TransgenderPerson ;
+    demo:source obo:GSSO_000130 ;
+    demo:target hrio:TransgenderPerson .
+
+demoi:asserted-map-752e2ed6e62377f9 a demo:Mapping ;
+    demo:hasMappingSource model:gender_notes_text ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:NonBinaryGender ;
+    demo:source model:gender_notes_text ;
+    demo:target hrio:NonBinaryGender .
+
+demoi:asserted-map-7555351111c7d825 a demo:Mapping ;
+    demo:hasMappingSource hri-omop:gender-domain ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source hri-omop:gender-domain ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-7589fe02ecd78431 a demo:Mapping ;
+    demo:hasMappingSource onz-g:FemaleSex ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleSex ;
+    demo:source onz-g:FemaleSex ;
+    demo:target hrio:FemaleSex .
+
+demoi:asserted-map-75919f4232ba4e76 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000089 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedFemaleGender ;
+    demo:source obo:GSSO_000089 ;
+    demo:target hrio:SelfIdentifiedFemaleGender .
+
+demoi:asserted-map-75d085454c64d01b a demo:Mapping ;
+    demo:hasMappingSource loinc:LA4489-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthUnassignedPerson ;
+    demo:source loinc:LA4489-6 ;
+    demo:target hrio:SexAtBirthUnassignedPerson .
+
+demoi:asserted-map-75ed56349fcf13f2 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/recorded-sex-or-gender-type/sex-assigned-at-birth> ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/recorded-sex-or-gender-type/sex-assigned-at-birth> ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-763cc7d1365c9e66 a demo:Mapping ;
+    demo:hasMappingSource hri-icd11:gender-incongruence-of-adolescence-or-adulthood ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:TransgenderPerson ;
+    demo:source hri-icd11:gender-incongruence-of-adolescence-or-adulthood ;
+    demo:target hrio:TransgenderPerson .
+
+demoi:asserted-map-76be3b847e1e3b3e a demo:Mapping ;
+    demo:hasMappingSource model:administrative-x-marker ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeNonBinaryGender ;
+    demo:source model:administrative-x-marker ;
+    demo:target hrio:AdministrativeNonBinaryGender .
+
+demoi:asserted-map-782e9b2b38ad735a a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/gender-element-qualifier> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/gender-element-qualifier> ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-79daf4d092e7efbc a demo:Mapping ;
+    demo:hasMappingSource loinc:LA46-8 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:NonBinarySexGender ;
+    demo:source loinc:LA46-8 ;
+    demo:target hrio:NonBinarySexGender .
+
+demoi:asserted-map-7b9e8e30cddaa677 a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:administrative-gender ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source hri-openehr:administrative-gender ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-7c21fecd59f4f178 a demo:Mapping ;
+    demo:hasMappingSource loinc:91692-4 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexGender ;
+    demo:source loinc:91692-4 ;
+    demo:target hrio:SexGender .
+
+demoi:asserted-map-7c4ebc824d617b45 a demo:Mapping ;
+    demo:hasMappingSource ncit:C16576 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Female ;
+    demo:source ncit:C16576 ;
+    demo:target hrio:Female .
+
+demoi:asserted-map-7cd8f34346cf2751 a demo:Mapping ;
+    demo:hasMappingSource ncit:C16576 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Woman ;
+    demo:source ncit:C16576 ;
+    demo:target hrio:Woman .
+
+demoi:asserted-map-7ce69c55055aea3c a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/comment> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfDesignatedGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/comment> ;
+    demo:target hrio:SelfDesignatedGender .
+
+demoi:asserted-map-7dafcbb18ab04fe0 a demo:Mapping ;
+    demo:hasMappingSource snomed:248152002 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleSex ;
+    demo:source snomed:248152002 ;
+    demo:target hrio:FemaleSex .
+
+demoi:asserted-map-7e3aaefe8dc697c5 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/administrative-gender/unknown> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeNonBinaryGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/administrative-gender/unknown> ;
+    demo:target hrio:AdministrativeNonBinaryGender .
+
+demoi:asserted-map-7e4ed81d1f971767 a demo:Mapping ;
+    demo:hasMappingSource model:self_identified_male_gender ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedMaleGender ;
+    demo:source model:self_identified_male_gender ;
+    demo:target hrio:SelfIdentifiedMaleGender .
+
+demoi:asserted-map-7f0a73f2e836b580 a demo:Mapping ;
+    demo:hasMappingSource model:female-sex-at-birth-flag-b ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthFemaleSex ;
+    demo:source model:female-sex-at-birth-flag-b ;
+    demo:target hrio:SexAtBirthFemaleSex .
+
+demoi:asserted-map-7f11455063b6b078 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/acquisition-date> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Date ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/acquisition-date> ;
+    demo:target hrio:Date .
+
+demoi:asserted-map-7f2682013b75edd6 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA3-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedFemaleGender ;
+    demo:source loinc:LA3-6 ;
+    demo:target hrio:SelfIdentifiedFemaleGender .
+
+demoi:asserted-map-7f913aa856cb97fa a demo:Mapping ;
+    demo:hasMappingSource model:observed-female-sex-characteristics ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicFemaleSex ;
+    demo:source model:observed-female-sex-characteristics ;
+    demo:target hrio:PhenotypicFemaleSex .
+
+demoi:asserted-map-7fa69c2c10e79e90 a demo:Mapping ;
+    demo:hasMappingSource snomed:429019009 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Sex ;
+    demo:source snomed:429019009 ;
+    demo:target hrio:Sex .
+
+demoi:asserted-map-80712a3b92978a8f a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/patient/contact/gender> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:LegalGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/patient/contact/gender> ;
+    demo:target hrio:LegalGender .
+
+demoi:asserted-map-8321822b3aaffde3 a demo:Mapping ;
+    demo:hasMappingSource model:nonbinary_sex_gender_category ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:NonBinarySexGender ;
+    demo:source model:nonbinary_sex_gender_category ;
+    demo:target hrio:NonBinarySexGender .
+
+demoi:asserted-map-838d0ca8635ff107 a demo:Mapping ;
+    demo:hasMappingSource snomed:248152002 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleSexPerson ;
+    demo:source snomed:248152002 ;
+    demo:target hrio:FemaleSexPerson .
+
+demoi:asserted-map-855603d28fe6da38 a demo:Mapping ;
+    demo:hasMappingSource model:recorded_gender_marker_generic ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source model:recorded_gender_marker_generic ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-859fb42f27107971 a demo:Mapping ;
+    demo:hasMappingSource onz-g:GenderIdentityValue ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source onz-g:GenderIdentityValue ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-85a6378aed336712 a demo:Mapping ;
+    demo:hasMappingSource ncit:C46121 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedTransgenderPerson ;
+    demo:source ncit:C46121 ;
+    demo:target hrio:SelfIdentifiedTransgenderPerson .
+
+demoi:asserted-map-868eba08e00c3360 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_011405 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthMaleSexPerson ;
+    demo:source obo:GSSO_011405 ;
+    demo:target hrio:SexAtBirthMaleSexPerson .
+
+demoi:asserted-map-86d4a38dc799ee8d a demo:Mapping ;
+    demo:hasMappingSource hl7:pronouns ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source hl7:pronouns ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-86f652a37b82aaab a demo:Mapping ;
+    demo:hasMappingSource onz-g:GenderIdentityValue ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedAgenderPerson ;
+    demo:source onz-g:GenderIdentityValue ;
+    demo:target hrio:SelfIdentifiedAgenderPerson .
+
+demoi:asserted-map-8766bd3ab48e2436 a demo:Mapping ;
+    demo:hasMappingSource model:pronoun_free_text_field ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source model:pronoun_free_text_field ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-8773e894e63897ec a demo:Mapping ;
+    demo:hasMappingSource model:binary_gender_female_option ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:NonBinaryGender ;
+    demo:source model:binary_gender_female_option ;
+    demo:target hrio:NonBinaryGender .
+
+demoi:asserted-map-8869c0f9fe7a3285 a demo:Mapping ;
+    demo:hasMappingSource onz-g:BiologicalSex ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicSex ;
+    demo:source onz-g:BiologicalSex ;
+    demo:target hrio:PhenotypicSex .
+
+demoi:asserted-map-89e3829f6d43a984 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_004240 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Cisgender ;
+    demo:source obo:GSSO_004240 ;
+    demo:target hrio:Cisgender .
+
+demoi:asserted-map-8dd8b51f999e5ea0 a demo:Mapping ;
+    demo:hasMappingSource model:self-reported-female-gender-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedFemaleGender ;
+    demo:source model:self-reported-female-gender-a ;
+    demo:target hrio:SelfIdentifiedFemaleGender .
+
+demoi:asserted-map-8deda2af2272acb4 a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:other_karyotype ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicalIndeterminatePerson ;
+    demo:source hri-ga4gh-phenopacket-schema:other_karyotype ;
+    demo:target hrio:KaryotypicalIndeterminatePerson .
+
+demoi:asserted-map-8f5e81adeb205964 a demo:Mapping ;
+    demo:hasMappingSource hri-icd11:gender-incongruence-of-childhood ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:TransgenderPerson ;
+    demo:source hri-icd11:gender-incongruence-of-childhood ;
+    demo:target hrio:TransgenderPerson .
+
+demoi:asserted-map-8fa3d1b0737b2150 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA4512-5 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedTransgenderPerson ;
+    demo:source loinc:LA4512-5 ;
+    demo:target hrio:SelfIdentifiedTransgenderPerson .
+
+demoi:asserted-map-915f106e1d49c041 a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:other_karyotype ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicSex ;
+    demo:source hri-ga4gh-phenopacket-schema:other_karyotype ;
+    demo:target hrio:KaryotypicSex .
+
+demoi:asserted-map-91efb24f76157a79 a demo:Mapping ;
+    demo:hasMappingSource mesh:D005783 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source mesh:D005783 ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-92703b13e1ef1a61 a demo:Mapping ;
+    demo:hasMappingSource model:birth_register_female_flag_negated ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthFemaleSex ;
+    demo:source model:birth_register_female_flag_negated ;
+    demo:target hrio:SexAtBirthFemaleSex .
+
+demoi:asserted-map-935d0f8e621a721b a demo:Mapping ;
+    demo:hasMappingSource model:gender_notes_text ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleGender ;
+    demo:source model:gender_notes_text ;
+    demo:target hrio:MaleGender .
+
+demoi:asserted-map-93e66e7a80b6f7e1 a demo:Mapping ;
+    demo:hasMappingSource snomed:703118005 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleGender ;
+    demo:source snomed:703118005 ;
+    demo:target hrio:FemaleGender .
+
+demoi:asserted-map-9488b13750e454a2 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA3-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleSex ;
+    demo:source loinc:LA3-6 ;
+    demo:target hrio:FemaleSex .
+
+demoi:asserted-map-94c1d24e5ea1e11c a demo:Mapping ;
+    demo:hasMappingSource snomed:248153007 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Male ;
+    demo:source snomed:248153007 ;
+    demo:target hrio:Male .
+
+demoi:asserted-map-95fd70ce95036b1f a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_001501 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicAmbiguousSex ;
+    demo:source obo:GSSO_001501 ;
+    demo:target hrio:PhenotypicAmbiguousSex .
+
+demoi:asserted-map-9627f6305274bfb7 a demo:Mapping ;
+    demo:hasMappingSource ncit:C205468 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedNonBinaryGender ;
+    demo:source ncit:C205468 ;
+    demo:target hrio:SelfIdentifiedNonBinaryGender .
+
+demoi:asserted-map-96b7af1266581bda a demo:Mapping ;
+    demo:hasMappingSource model:self_identified_female_gender ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedFemaleGender ;
+    demo:source model:self_identified_female_gender ;
+    demo:target hrio:SelfIdentifiedFemaleGender .
+
+demoi:asserted-map-96f5cc176cee833d a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_002328 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedNonBinaryGender ;
+    demo:source obo:GSSO_002328 ;
+    demo:target hrio:SelfIdentifiedNonBinaryGender .
+
+demoi:asserted-map-973dc1f22ea53bf2 a demo:Mapping ;
+    demo:hasMappingSource model:male_sex_general_value ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleSex ;
+    demo:source model:male_sex_general_value ;
+    demo:target hrio:MaleSex .
+
+demoi:asserted-map-97e5211f9a390479 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_001501 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateSexPerson ;
+    demo:source obo:GSSO_001501 ;
+    demo:target hrio:IndeterminateSexPerson .
+
+demoi:asserted-map-99fa3cc650d9e474 a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:gender-identity ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source hri-openehr:gender-identity ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-9c132815175cbff6 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA46-8 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateSex ;
+    demo:source loinc:LA46-8 ;
+    demo:target hrio:IndeterminateSex .
+
+demoi:asserted-map-9c2ca3fe204aaef7 a demo:Mapping ;
+    demo:hasMappingSource hri-icd11:gender-incongruence-of-adolescence-or-adulthood ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:ClinicalDiagnosis ;
+    demo:source hri-icd11:gender-incongruence-of-adolescence-or-adulthood ;
+    demo:target hrio:ClinicalDiagnosis .
+
+demoi:asserted-map-9deda05ab65bf9fb a demo:Mapping ;
+    demo:hasMappingSource model:preferred-pronoun-free-text-a ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source model:preferred-pronoun-free-text-a ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-9f2a943980ada747 a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:xxy ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicMaleSex ;
+    demo:source hri-ga4gh-phenopacket-schema:xxy ;
+    demo:target hrio:KaryotypicMaleSex .
+
+demoi:asserted-map-9f4c24cd1bec6a59 a demo:Mapping ;
+    demo:hasMappingSource hri-cdash:variation-in-physical-sex-characteristics ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicAmbiguousSex ;
+    demo:source hri-cdash:variation-in-physical-sex-characteristics ;
+    demo:target hrio:PhenotypicAmbiguousSex .
+
+demoi:asserted-map-9f7a90ccf8ad7525 a demo:Mapping ;
+    demo:hasMappingSource model:pronoun-display-comment ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source model:pronoun-display-comment ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-a01792491c4ef41e a demo:Mapping ;
+    demo:hasMappingSource ncit:C17998 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source ncit:C17998 ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-a0256e494a731783 a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:xxy ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:VariantKaryotypicalMalePerson ;
+    demo:source hri-ga4gh-phenopacket-schema:xxy ;
+    demo:target hrio:VariantKaryotypicalMalePerson .
+
+demoi:asserted-map-a036f45a2e03bbf9 a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:other_karyotype ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PersonWithVariantSexChromosome ;
+    demo:source hri-ga4gh-phenopacket-schema:other_karyotype ;
+    demo:target hrio:PersonWithVariantSexChromosome .
+
+demoi:asserted-map-a05333c8be1e3c59 a demo:Mapping ;
+    demo:hasMappingSource model:phenotypic_female_sex_value ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicFemaleSex ;
+    demo:source model:phenotypic_female_sex_value ;
+    demo:target hrio:PhenotypicFemaleSex .
+
+demoi:asserted-map-a0e42baa0281e488 a demo:Mapping ;
+    demo:hasMappingSource snomed:703118005 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source snomed:703118005 ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-a13ff00502952f68 a demo:Mapping ;
+    demo:hasMappingSource model:gender_identity_male_bucket ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleGender ;
+    demo:source model:gender_identity_male_bucket ;
+    demo:target hrio:MaleGender .
+
+demoi:asserted-map-a160bc61348dc9f9 a demo:Mapping ;
+    demo:hasMappingSource hri-cdash:variation-in-physical-sex-characteristics ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateVisualSexCharacteristic ;
+    demo:source hri-cdash:variation-in-physical-sex-characteristics ;
+    demo:target hrio:IndeterminateVisualSexCharacteristic .
+
+demoi:asserted-map-a20d186b221ccec0 a demo:Mapping ;
+    demo:hasMappingSource model:generic-female-gender-flag-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleGender ;
+    demo:source model:generic-female-gender-flag-a ;
+    demo:target hrio:FemaleGender .
+
+demoi:asserted-map-a21aa5d4f2055275 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_004240 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedCisgenderPerson ;
+    demo:source obo:GSSO_004240 ;
+    demo:target hrio:SelfIdentifiedCisgenderPerson .
+
+demoi:asserted-map-a30bf94044fbe50f a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:xxxx ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PersonWithVariantSexChromosome ;
+    demo:source hri-ga4gh-phenopacket-schema:xxxx ;
+    demo:target hrio:PersonWithVariantSexChromosome .
+
+demoi:asserted-map-a3c36e3589820d6a a demo:Mapping ;
+    demo:hasMappingSource ncit:C17998 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:LegallyUnassignedGenderPerson ;
+    demo:source ncit:C17998 ;
+    demo:target hrio:LegallyUnassignedGenderPerson .
+
+demoi:asserted-map-a57435fb13f566fe a demo:Mapping ;
+    demo:hasMappingSource snomed:248153007 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicMaleSex ;
+    demo:source snomed:248153007 ;
+    demo:target hrio:KaryotypicMaleSex .
+
+demoi:asserted-map-a5cd34adb7bc1010 a demo:Mapping ;
+    demo:hasMappingSource model:self_identified_gender_generic ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source model:self_identified_gender_generic ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-a5e4e7b254762637 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000389 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:CisgenderPerson ;
+    demo:source obo:GSSO_000389 ;
+    demo:target hrio:CisgenderPerson .
+
+demoi:asserted-map-a62a7e27660a0f49 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA3-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Female ;
+    demo:source loinc:LA3-6 ;
+    demo:target hrio:Female .
+
+demoi:asserted-map-a70ebf574d6b4404 a demo:Mapping ;
+    demo:hasMappingSource model:birth_register_male_flag_negated ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthMaleSex ;
+    demo:source model:birth_register_male_flag_negated ;
+    demo:target hrio:SexAtBirthMaleSex .
+
+demoi:asserted-map-a72cfe837d7f5439 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_011405 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:ExternallyAttributedMaleGenderPerson ;
+    demo:source obo:GSSO_011405 ;
+    demo:target hrio:ExternallyAttributedMaleGenderPerson .
+
+demoi:asserted-map-a75e2d0ce0195695 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000371 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:ExternallyAttributedCisgenderMalePerson ;
+    demo:source obo:GSSO_000371 ;
+    demo:target hrio:ExternallyAttributedCisgenderMalePerson .
+
+demoi:asserted-map-a96ce16a76db15ee a demo:Mapping ;
+    demo:hasMappingSource loinc:LA4489-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthIndeterminateSex ;
+    demo:source loinc:LA4489-6 ;
+    demo:target hrio:SexAtBirthIndeterminateSex .
+
+demoi:asserted-map-aa2266aeb92aafbf a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/administrative-gender/male> ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeMaleGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/administrative-gender/male> ;
+    demo:target hrio:AdministrativeMaleGender .
+
+demoi:asserted-map-aa6abd7464348bbe a demo:Mapping ;
+    demo:hasMappingSource hri-omop:gender-domain ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Gender ;
+    demo:source hri-omop:gender-domain ;
+    demo:target hrio:Gender .
+
+demoi:asserted-map-aad6eb94efd9892e a demo:Mapping ;
+    demo:hasMappingSource loinc:LA3-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeFemaleGender ;
+    demo:source loinc:LA3-6 ;
+    demo:target hrio:AdministrativeFemaleGender .
+
+demoi:asserted-map-abecfba7ca5a563c a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:xxy ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicSex ;
+    demo:source hri-ga4gh-phenopacket-schema:xxy ;
+    demo:target hrio:KaryotypicSex .
+
+demoi:asserted-map-ac0642449f9372f8 a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:xo ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PersonWithVariantSexChromosome ;
+    demo:source hri-ga4gh-phenopacket-schema:xo ;
+    demo:target hrio:PersonWithVariantSexChromosome .
+
+demoi:asserted-map-aec924c78b33f174 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000088 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:GenderExpression ;
+    demo:source obo:GSSO_000088 ;
+    demo:target hrio:GenderExpression .
+
+demoi:asserted-map-afd1f8f8af471633 a demo:Mapping ;
+    demo:hasMappingSource model:female_sex_general_value ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleSex ;
+    demo:source model:female_sex_general_value ;
+    demo:target hrio:FemaleSex .
+
+demoi:asserted-map-b316b14954e81e14 a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:additional-details ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:GenderContext ;
+    demo:source hri-openehr:additional-details ;
+    demo:target hrio:GenderContext .
+
+demoi:asserted-map-b3240feafd0211a3 a demo:Mapping ;
+    demo:hasMappingSource model:generic-admin-gender-slot-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source model:generic-admin-gender-slot-a ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-b324a4c2e6b08b38 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Document ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source> ;
+    demo:target hrio:Document .
+
+demoi:asserted-map-b5c388bbeb2287df a demo:Mapping ;
+    demo:hasMappingSource loinc:72143-1 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source loinc:72143-1 ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-b6ff859e3b66ff6b a demo:Mapping ;
+    demo:hasMappingSource model:general-sex-field-b ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Sex ;
+    demo:source model:general-sex-field-b ;
+    demo:target hrio:Sex .
+
+demoi:asserted-map-b774d128cd6cf4d6 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/acquisition-date> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:OffsetDateTime ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/acquisition-date> ;
+    demo:target hrio:OffsetDateTime .
+
+demoi:asserted-map-b897c96754e18c5a a demo:Mapping ;
+    demo:hasMappingSource loinc:LA4732-9 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateSex ;
+    demo:source loinc:LA4732-9 ;
+    demo:target hrio:IndeterminateSex .
+
+demoi:asserted-map-b92d853a77f96cab a demo:Mapping ;
+    demo:hasMappingSource loinc:LA4732-9 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicAmbiguousSex ;
+    demo:source loinc:LA4732-9 ;
+    demo:target hrio:PhenotypicAmbiguousSex .
+
+demoi:asserted-map-b9e2ade7149d1435 a demo:Mapping ;
+    demo:hasMappingSource loinc:91692-4 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateSex ;
+    demo:source loinc:91692-4 ;
+    demo:target hrio:IndeterminateSex .
+
+demoi:asserted-map-bb649d33a30d2900 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000093 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:NonBinaryGenderExpression ;
+    demo:source obo:GSSO_000093 ;
+    demo:target hrio:NonBinaryGenderExpression .
+
+demoi:asserted-map-bc14665102fc148f a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_004240 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:ExternallyAttributedCisgenderPerson ;
+    demo:source obo:GSSO_004240 ;
+    demo:target hrio:ExternallyAttributedCisgenderPerson .
+
+demoi:asserted-map-bd3a33a70f65c0cc a demo:Mapping ;
+    demo:hasMappingSource onz-g:Intersexual ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicAmbiguousSex ;
+    demo:source onz-g:Intersexual ;
+    demo:target hrio:PhenotypicAmbiguousSex .
+
+demoi:asserted-map-bd83a498ac81086c a demo:Mapping ;
+    demo:hasMappingSource loinc:72143-1 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Sex ;
+    demo:source loinc:72143-1 ;
+    demo:target hrio:Sex .
+
+demoi:asserted-map-be15f08d3dc6ef89 a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:additional-details ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:GenderExpression ;
+    demo:source hri-openehr:additional-details ;
+    demo:target hrio:GenderExpression .
+
+demoi:asserted-map-be26e0cdb0815b58 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_011405 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthMaleSexPerson ;
+    demo:source obo:GSSO_011405 ;
+    demo:target hrio:SexAtBirthMaleSexPerson .
+
+demoi:asserted-map-be3e6335afe58769 a demo:Mapping ;
+    demo:hasMappingSource model:generic-nonbinary-gender-flag-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:NonBinaryGender ;
+    demo:source model:generic-nonbinary-gender-flag-a ;
+    demo:target hrio:NonBinaryGender .
+
+demoi:asserted-map-c17a8824ed51d448 a demo:Mapping ;
+    demo:hasMappingSource model:biological-male-sex-flag-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleSex ;
+    demo:source model:biological-male-sex-flag-a ;
+    demo:target hrio:MaleSex .
+
+demoi:asserted-map-c1ffe138d88c8d14 a demo:Mapping ;
+    demo:hasMappingSource model:karyotypic_male_sex_value ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicMaleSex ;
+    demo:source model:karyotypic_male_sex_value ;
+    demo:target hrio:KaryotypicMaleSex .
+
+demoi:asserted-map-c3753bb8cbf5c898 a demo:Mapping ;
+    demo:hasMappingSource snomed:248153007 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleSexPerson ;
+    demo:source snomed:248153007 ;
+    demo:target hrio:MaleSexPerson .
+
+demoi:asserted-map-c3bfdb50e7c6e07a a demo:Mapping ;
+    demo:hasMappingSource model:generic-female-gender-flag-b ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleGender ;
+    demo:source model:generic-female-gender-flag-b ;
+    demo:target hrio:FemaleGender .
+
+demoi:asserted-map-c4c971ee447660c6 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_009418 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source obo:GSSO_009418 ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-c4fd2ce8d9e7d2de a demo:Mapping ;
+    demo:hasMappingSource snomed:365873007 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source snomed:365873007 ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-c5e8226ad6f224c8 a demo:Mapping ;
+    demo:hasMappingSource model:indeterminate-sex-at-birth-flag ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthIndeterminateSex ;
+    demo:source model:indeterminate-sex-at-birth-flag ;
+    demo:target hrio:SexAtBirthIndeterminateSex .
+
+demoi:asserted-map-c61f19b9bb0d3a20 a demo:Mapping ;
+    demo:hasMappingSource model:female-sex-at-birth-flag-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthFemaleSex ;
+    demo:source model:female-sex-at-birth-flag-a ;
+    demo:target hrio:SexAtBirthFemaleSex .
+
+demoi:asserted-map-c6bc13f8eaa598d6 a demo:Mapping ;
+    demo:hasMappingSource loinc:99501-9 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Sex ;
+    demo:source loinc:99501-9 ;
+    demo:target hrio:Sex .
+
+demoi:asserted-map-c9370134208ba636 a demo:Mapping ;
+    demo:hasMappingSource hri-icd11:gender-incongruence-of-childhood ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PsychologicalHealthCondition ;
+    demo:source hri-icd11:gender-incongruence-of-childhood ;
+    demo:target hrio:PsychologicalHealthCondition .
+
+demoi:asserted-map-c948042fbec01443 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA4489-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:LegallyUnassignedGenderPerson ;
+    demo:source loinc:LA4489-6 ;
+    demo:target hrio:LegallyUnassignedGenderPerson .
+
+demoi:asserted-map-c953ac956bec7559 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA4489-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateSex ;
+    demo:source loinc:LA4489-6 ;
+    demo:target hrio:IndeterminateSex .
+
+demoi:asserted-map-c9bbd72518e34187 a demo:Mapping ;
+    demo:hasMappingSource model:broad-nonbinary-gender-classifier ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:NonBinaryGender ;
+    demo:source model:broad-nonbinary-gender-classifier ;
+    demo:target hrio:NonBinaryGender .
+
+demoi:asserted-map-c9dd5ed523c781eb a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/administrative-gender/unknown> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/administrative-gender/unknown> ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-cca953f7fd303069 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_004240 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Cisgender ;
+    demo:source obo:GSSO_004240 ;
+    demo:target hrio:Cisgender .
+
+demoi:asserted-map-cd89767b2900a8b6 a demo:Mapping ;
+    demo:hasMappingSource loinc:54123-5 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Gender ;
+    demo:source loinc:54123-5 ;
+    demo:target hrio:Gender .
+
+demoi:asserted-map-cecd2a7842cc74d7 a demo:Mapping ;
+    demo:hasMappingSource onz-g:Woman ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleGenderPerson ;
+    demo:source onz-g:Woman ;
+    demo:target hrio:FemaleGenderPerson .
+
+demoi:asserted-map-cee81a660fc934cf a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:additional-details ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Gender ;
+    demo:source hri-openehr:additional-details ;
+    demo:target hrio:Gender .
+
+demoi:asserted-map-d00ef314e118e981 a demo:Mapping ;
+    demo:hasMappingSource snomed:248152002 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Female ;
+    demo:source snomed:248152002 ;
+    demo:target hrio:Female .
+
+demoi:asserted-map-d027c9198efd1a40 a demo:Mapping ;
+    demo:hasMappingSource model:admin-female-marker ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeFemaleGender ;
+    demo:source model:admin-female-marker ;
+    demo:target hrio:AdministrativeFemaleGender .
+
+demoi:asserted-map-d03c354e95962263 a demo:Mapping ;
+    demo:hasMappingSource snomed:302081005 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source snomed:302081005 ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-d0afe15ff301c92c a demo:Mapping ;
+    demo:hasMappingSource model:legacy-gender-identity-comment ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source model:legacy-gender-identity-comment ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-d11e508bc918a3a4 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000384 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Woman ;
+    demo:source obo:GSSO_000384 ;
+    demo:target hrio:Woman .
+
+demoi:asserted-map-d207971ad389e22c a demo:Mapping ;
+    demo:hasMappingSource model:registry-female-code-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeFemaleGender ;
+    demo:source model:registry-female-code-a ;
+    demo:target hrio:AdministrativeFemaleGender .
+
+demoi:asserted-map-d29f401d4f6c2d7e a demo:Mapping ;
+    demo:hasMappingSource model:sex_at_birth_female_value ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthFemaleSex ;
+    demo:source model:sex_at_birth_female_value ;
+    demo:target hrio:SexAtBirthFemaleSex .
+
+demoi:asserted-map-d31e100621d75550 a demo:Mapping ;
+    demo:hasMappingSource snomed:248153007 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleSex ;
+    demo:source snomed:248153007 ;
+    demo:target hrio:MaleSex .
+
+demoi:asserted-map-d45702bfa2fdfc8b a demo:Mapping ;
+    demo:hasMappingSource hri-omop:female ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleSex ;
+    demo:source hri-omop:female ;
+    demo:target hrio:FemaleSex .
+
+demoi:asserted-map-d51ccb7e18d3f8ad a demo:Mapping ;
+    demo:hasMappingSource model:biological-female-sex-flag-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleSex ;
+    demo:source model:biological-female-sex-flag-a ;
+    demo:target hrio:FemaleSex .
+
+demoi:asserted-map-d8999774777ab82d a demo:Mapping ;
+    demo:hasMappingSource model:sex_at_birth_unknown_text ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthFemaleSex ;
+    demo:source model:sex_at_birth_unknown_text ;
+    demo:target hrio:SexAtBirthFemaleSex .
+
+demoi:asserted-map-d8c9182951fa88b4 a demo:Mapping ;
+    demo:hasMappingSource model:biological-male-sex-flag-b ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleSex ;
+    demo:source model:biological-male-sex-flag-b ;
+    demo:target hrio:MaleSex .
+
+demoi:asserted-map-dacdd5515feb8029 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source-document> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Document ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source-document> ;
+    demo:target hrio:Document .
+
+demoi:asserted-map-dae307f1b6388311 a demo:Mapping ;
+    demo:hasMappingSource model:male-sex-at-birth-flag-b ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthMaleSex ;
+    demo:source model:male-sex-at-birth-flag-b ;
+    demo:target hrio:SexAtBirthMaleSex .
+
+demoi:asserted-map-db0181179255ef2f a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_004240 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:CisgenderPerson ;
+    demo:source obo:GSSO_004240 ;
+    demo:target hrio:CisgenderPerson .
+
+demoi:asserted-map-db421cea908e3bfa a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:unknown_karyotype ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateSex ;
+    demo:source hri-ga4gh-phenopacket-schema:unknown_karyotype ;
+    demo:target hrio:IndeterminateSex .
+
+demoi:asserted-map-dc131f7261932577 a demo:Mapping ;
+    demo:hasMappingSource onz-g:GenderIdentity ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:GenderIdentity ;
+    demo:source onz-g:GenderIdentity ;
+    demo:target hrio:GenderIdentity .
+
+demoi:asserted-map-dc351124926bdf9f a demo:Mapping ;
+    demo:hasMappingSource model:generic-self-identified-gender-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source model:generic-self-identified-gender-a ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-dcaf4a4f118fc59f a demo:Mapping ;
+    demo:hasMappingSource model:registry-male-code-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeMaleGender ;
+    demo:source model:registry-male-code-a ;
+    demo:target hrio:AdministrativeMaleGender .
+
+demoi:asserted-map-dcb5fe2c63518b19 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-pronouns/period> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-pronouns/period> ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-dd76e16fcaea8646 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/gender-element-qualifier> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:GenderContext ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/gender-element-qualifier> ;
+    demo:target hrio:GenderContext .
+
+demoi:asserted-map-dd7c3f7c7f95bcae a demo:Mapping ;
+    demo:hasMappingSource hri-icd11:gender-incongruence-of-adolescence-or-adulthood ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Transgender ;
+    demo:source hri-icd11:gender-incongruence-of-adolescence-or-adulthood ;
+    demo:target hrio:Transgender .
+
+demoi:asserted-map-dda165461912f2f9 a demo:Mapping ;
+    demo:hasMappingSource hri-icd11:gender-incongruence-of-childhood ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Diagnosis ;
+    demo:source hri-icd11:gender-incongruence-of-childhood ;
+    demo:target hrio:Diagnosis .
+
+demoi:asserted-map-ddeeb5b47ee7660c a demo:Mapping ;
+    demo:hasMappingSource hri-icd11:gender-incongruence ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Transgender ;
+    demo:source hri-icd11:gender-incongruence ;
+    demo:target hrio:Transgender .
+
+demoi:asserted-map-de3a8a818bf76483 a demo:Mapping ;
+    demo:hasMappingSource model:unknown-admin-gender-code-a ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source model:unknown-admin-gender-code-a ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-debeafddd760e07c a demo:Mapping ;
+    demo:hasMappingSource hri-omop:gender-identity-information-stored-in-observation ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Gender ;
+    demo:source hri-omop:gender-identity-information-stored-in-observation ;
+    demo:target hrio:Gender .
+
+demoi:asserted-map-dede07ca67802292 a demo:Mapping ;
+    demo:hasMappingSource model:broad-male-gender-classifier ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleGender ;
+    demo:source model:broad-male-gender-classifier ;
+    demo:target hrio:MaleGender .
+
+demoi:asserted-map-df4e3e19fdf096b6 a demo:Mapping ;
+    demo:hasMappingSource model:administrative_gender_unknown_code ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeMaleGender ;
+    demo:source model:administrative_gender_unknown_code ;
+    demo:target hrio:AdministrativeMaleGender .
+
+demoi:asserted-map-e0d607cc11b4e8bd a demo:Mapping ;
+    demo:hasMappingSource <http://hl7.org/fhir/StructureDefinition/individual-pronouns> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source <http://hl7.org/fhir/StructureDefinition/individual-pronouns> ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-e10be9d378b3bd12 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/gender-element-qualifier> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/gender-element-qualifier> ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-e20065d070ebd61e a demo:Mapping ;
+    demo:hasMappingSource ncit:C45908 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicAmbiguousSex ;
+    demo:source ncit:C45908 ;
+    demo:target hrio:PhenotypicAmbiguousSex .
+
+demoi:asserted-map-e3bd59d8a975df6f a demo:Mapping ;
+    demo:hasMappingSource model:legal_gender_female_absent ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:LegalFemaleGender ;
+    demo:source model:legal_gender_female_absent ;
+    demo:target hrio:LegalFemaleGender .
+
+demoi:asserted-map-e3e78dfbff1a79c1 a demo:Mapping ;
+    demo:hasMappingSource hri-ga4gh-phenopacket-schema:xy ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:RegularKaryotypicalMalePerson ;
+    demo:source hri-ga4gh-phenopacket-schema:xy ;
+    demo:target hrio:RegularKaryotypicalMalePerson .
+
+demoi:asserted-map-e430fdaff5af1705 a demo:Mapping ;
+    demo:hasMappingSource snomed:263495000 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:ExternallyAttributedGender ;
+    demo:source snomed:263495000 ;
+    demo:target hrio:ExternallyAttributedGender .
+
+demoi:asserted-map-e48b8e80efbf8462 a demo:Mapping ;
+    demo:hasMappingSource model:binary_gender_female_option ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleGender ;
+    demo:source model:binary_gender_female_option ;
+    demo:target hrio:MaleGender .
+
+demoi:asserted-map-e55fd0ef9d569271 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_009418 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source obo:GSSO_009418 ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-e58bfb114f60138a a demo:Mapping ;
+    demo:hasMappingSource hri-omop:gender-domain ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirth ;
+    demo:source hri-omop:gender-domain ;
+    demo:target hrio:SexAtBirth .
+
+demoi:asserted-map-e64b6cc2aa2a8be7 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA20384-6 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source loinc:LA20384-6 ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-e681bc0f3584e729 a demo:Mapping ;
+    demo:hasMappingSource onz-g:BiologicalSex ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicSex ;
+    demo:source onz-g:BiologicalSex ;
+    demo:target hrio:KaryotypicSex .
+
+demoi:asserted-map-ea0aaa58f52eb36f a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/comment> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Document ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/comment> ;
+    demo:target hrio:Document .
+
+demoi:asserted-map-ea8a9292928d9a29 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA35089-4 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeNonBinaryGender ;
+    demo:source loinc:LA35089-4 ;
+    demo:target hrio:AdministrativeNonBinaryGender .
+
+demoi:asserted-map-ea90db5c816ff8c2 a demo:Mapping ;
+    demo:hasMappingSource model:admin_gender_female_code ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeFemaleGender ;
+    demo:source model:admin_gender_female_code ;
+    demo:target hrio:AdministrativeFemaleGender .
+
+demoi:asserted-map-ea9bfa13206b7a83 a demo:Mapping ;
+    demo:hasMappingSource ncit:C66731 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexGenderOutcome ;
+    demo:source ncit:C66731 ;
+    demo:target hrio:SexGenderOutcome .
+
+demoi:asserted-map-eb87b8a5123c003c a demo:Mapping ;
+    demo:hasMappingSource model:sex_at_birth_unknown_text ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthMaleSex ;
+    demo:source model:sex_at_birth_unknown_text ;
+    demo:target hrio:SexAtBirthMaleSex .
+
+demoi:asserted-map-ecab90d8de2f43b8 a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:legal-gender ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:LegalGender ;
+    demo:source hri-openehr:legal-gender ;
+    demo:target hrio:LegalGender .
+
+demoi:asserted-map-edc170c99f95acd1 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000123 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthFemaleSex ;
+    demo:source obo:GSSO_000123 ;
+    demo:target hrio:SexAtBirthFemaleSex .
+
+demoi:asserted-map-edf9b783514d464e a demo:Mapping ;
+    demo:hasMappingSource model:binary_sex_female_option ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateSex ;
+    demo:source model:binary_sex_female_option ;
+    demo:target hrio:IndeterminateSex .
+
+demoi:asserted-map-ee64460ad37f13bc a demo:Mapping ;
+    demo:hasMappingSource model:sex_at_birth_indeterminate_value ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexAtBirthIndeterminateSex ;
+    demo:source model:sex_at_birth_indeterminate_value ;
+    demo:target hrio:SexAtBirthIndeterminateSex .
+
+demoi:asserted-map-ef08a31cf43cc564 a demo:Mapping ;
+    demo:hasMappingSource <https://data.health-ri.nl/id/fhir-r5/patient/contact/gender> ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:ExternallyAttributedGender ;
+    demo:source <https://data.health-ri.nl/id/fhir-r5/patient/contact/gender> ;
+    demo:target hrio:ExternallyAttributedGender .
+
+demoi:asserted-map-efdfadcaf6b32bf6 a demo:Mapping ;
+    demo:hasMappingSource model:generic-admin-gender-slot-b ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeGender ;
+    demo:source model:generic-admin-gender-slot-b ;
+    demo:target hrio:AdministrativeGender .
+
+demoi:asserted-map-efea447bcab51cfb a demo:Mapping ;
+    demo:hasMappingSource hri-omop:gender-identity-information-stored-in-observation ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source hri-omop:gender-identity-information-stored-in-observation ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-f195ce31d10fbdb1 a demo:Mapping ;
+    demo:hasMappingSource model:general-sex-field-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Sex ;
+    demo:source model:general-sex-field-a ;
+    demo:target hrio:Sex .
+
+demoi:asserted-map-f206c2598077d0f4 a demo:Mapping ;
+    demo:hasMappingSource model:official-female-gender-entry ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:AdministrativeFemaleGender ;
+    demo:source model:official-female-gender-entry ;
+    demo:target hrio:AdministrativeFemaleGender .
+
+demoi:asserted-map-f213c5b220eab19b a demo:Mapping ;
+    demo:hasMappingSource model:questionnaire-female-identity ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedFemaleGender ;
+    demo:source model:questionnaire-female-identity ;
+    demo:target hrio:SelfIdentifiedFemaleGender .
+
+demoi:asserted-map-f2175d2119fa42e0 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA4512-5 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:ExternallyAttributedTransgenderPerson ;
+    demo:source loinc:LA4512-5 ;
+    demo:target hrio:ExternallyAttributedTransgenderPerson .
+
+demoi:asserted-map-f3ff20dddf8b405f a demo:Mapping ;
+    demo:hasMappingSource onz-g:Man ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:MaleSexPerson ;
+    demo:source onz-g:Man ;
+    demo:target hrio:MaleSexPerson .
+
+demoi:asserted-map-f67bffb1270eb839 a demo:Mapping ;
+    demo:hasMappingSource obo:NCIT_C17998 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicAmbiguousSex ;
+    demo:source obo:NCIT_C17998 ;
+    demo:target hrio:PhenotypicAmbiguousSex .
+
+demoi:asserted-map-f760ccec128a6042 a demo:Mapping ;
+    demo:hasMappingSource model:pronoun_ui_hint ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source model:pronoun_ui_hint ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-f8148f57ec98e12d a demo:Mapping ;
+    demo:hasMappingSource onz-g:BiologicalSex ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:Sex ;
+    demo:source onz-g:BiologicalSex ;
+    demo:target hrio:Sex .
+
+demoi:asserted-map-fac656af9615fce2 a demo:Mapping ;
+    demo:hasMappingSource model:indeterminate_sex_general_value ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateSex ;
+    demo:source model:indeterminate_sex_general_value ;
+    demo:target hrio:IndeterminateSex .
+
+demoi:asserted-map-faeef56aed4098b1 a demo:Mapping ;
+    demo:hasMappingSource model:karyotypic_female_sex_value ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:KaryotypicFemaleSex ;
+    demo:source model:karyotypic_female_sex_value ;
+    demo:target hrio:KaryotypicFemaleSex .
+
+demoi:asserted-map-fb21cdf2b46cdd9c a demo:Mapping ;
+    demo:hasMappingSource model:self-reported-nonbinary-gender-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedNonBinaryGender ;
+    demo:source model:self-reported-nonbinary-gender-a ;
+    demo:target hrio:SelfIdentifiedNonBinaryGender .
+
+demoi:asserted-map-fb70af138c509018 a demo:Mapping ;
+    demo:hasMappingSource loinc:LA29524-8 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PreferredPronoun ;
+    demo:source loinc:LA29524-8 ;
+    demo:target hrio:PreferredPronoun .
+
+demoi:asserted-map-fbfd0b1ee2fbe326 a demo:Mapping ;
+    demo:hasMappingSource obo:GSSO_000371 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedCisgenderMalePerson ;
+    demo:source obo:GSSO_000371 ;
+    demo:target hrio:SelfIdentifiedCisgenderMalePerson .
+
+demoi:asserted-map-fc24c8f7e906efcc a demo:Mapping ;
+    demo:hasMappingSource model:observed-male-sex-characteristics ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:PhenotypicMaleSex ;
+    demo:source model:observed-male-sex-characteristics ;
+    demo:target hrio:PhenotypicMaleSex .
+
+demoi:asserted-map-fd2b264160758399 a demo:Mapping ;
+    demo:hasMappingSource model:self-reported-male-gender-a ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedMaleGender ;
+    demo:source model:self-reported-male-gender-a ;
+    demo:target hrio:SelfIdentifiedMaleGender .
+
+demoi:asserted-map-fd7db54b9b333d5b a demo:Mapping ;
+    demo:hasMappingSource hri-openehr:gender ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SexGender ;
+    demo:source hri-openehr:gender ;
+    demo:target hrio:SexGender .
+
+demoi:asserted-map-fdb1b441d07ef689 a demo:Mapping ;
+    demo:hasMappingSource ncit:C158277 ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source ncit:C158277 ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-ff335ee326b33d0c a demo:Mapping ;
+    demo:hasMappingSource model:self-identified-gender-free-text ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:SelfIdentifiedGender ;
+    demo:source model:self-identified-gender-free-text ;
+    demo:target hrio:SelfIdentifiedGender .
+
+demoi:asserted-map-ff725b472265a84d a demo:Mapping ;
+    demo:hasMappingSource ncit:C45908 ;
+    demo:hasPolarity demo:negative ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:IndeterminateSex ;
+    demo:source ncit:C45908 ;
+    demo:target hrio:IndeterminateSex .
+
+demoi:asserted-map-ffbcf1a7203ce61b a demo:Mapping ;
+    demo:hasMappingSource model:binary_gender_female_option ;
+    demo:hasPolarity demo:positive ;
+    demo:hasProvenance demo:asserted ;
+    demo:hasTargetOntologyConcept hrio:FemaleGender ;
+    demo:source model:binary_gender_female_option ;
+    demo:target hrio:FemaleGender .
+
+demoi:model-model a demo:Model ;
+    rdfs:label "model"@en ;
+    demo:hasModelConcept model:admin-female-marker,
+        model:admin_gender_female_code,
+        model:admin_gender_male_code,
+        model:admin_gender_nonbinary_code,
+        model:administrative-male-marker,
+        model:administrative-x-marker,
+        model:administrative_gender_nonbinary_absent,
+        model:administrative_gender_unknown_code,
+        model:binary_gender_female_option,
+        model:binary_sex_female_option,
+        model:biological-female-sex-flag-a,
+        model:biological-female-sex-flag-b,
+        model:biological-male-sex-flag-a,
+        model:biological-male-sex-flag-b,
+        model:birth_register_female_flag_negated,
+        model:birth_register_male_flag_negated,
+        model:broad-female-gender-classifier,
+        model:broad-male-gender-classifier,
+        model:broad-nonbinary-gender-classifier,
+        model:female-sex-at-birth-flag-a,
+        model:female-sex-at-birth-flag-b,
+        model:female_sex_general_value,
+        model:gender_identity_input_field,
+        model:gender_identity_male_bucket,
+        model:gender_identity_nonbinary_bucket,
+        model:gender_notes_text,
+        model:general-sex-field-a,
+        model:general-sex-field-b,
+        model:generic-admin-gender-slot-a,
+        model:generic-admin-gender-slot-b,
+        model:generic-female-gender-flag-a,
+        model:generic-female-gender-flag-b,
+        model:generic-male-gender-flag-a,
+        model:generic-nonbinary-gender-flag-a,
+        model:generic-self-identified-gender-a,
+        model:generic-self-identified-gender-b,
+        model:indeterminate-sex-at-birth-flag,
+        model:indeterminate_sex_general_value,
+        model:karyotypic_female_sex_value,
+        model:karyotypic_male_sex_value,
+        model:legacy-gender-identity-comment,
+        model:legal_gender_female_absent,
+        model:legal_gender_female_status,
+        model:legal_gender_male_status,
+        model:legal_gender_nonbinary_status,
+        model:male-sex-at-birth-flag-a,
+        model:male-sex-at-birth-flag-b,
+        model:male_sex_general_value,
+        model:nonbinary_sex_gender_category,
+        model:observed-female-sex-characteristics,
+        model:observed-male-sex-characteristics,
+        model:official-administrative-gender-field,
+        model:official-female-gender-entry,
+        model:official-male-gender-entry,
+        model:phenotypic_ambiguous_sex_value,
+        model:phenotypic_female_sex_value,
+        model:phenotypic_male_sex_value,
+        model:preferred-pronoun-free-text-a,
+        model:preferred-pronoun-free-text-b,
+        model:pronoun-display-comment,
+        model:pronoun_comment_field,
+        model:pronoun_free_text_field,
+        model:pronoun_ui_hint,
+        model:questionnaire-female-identity,
+        model:questionnaire-male-identity,
+        model:questionnaire-nonbinary-identity,
+        model:recorded-nonbinary-gender-entry,
+        model:recorded_gender_marker_generic,
+        model:registry-female-code-a,
+        model:registry-female-code-b,
+        model:registry-male-code-a,
+        model:registry-male-code-b,
+        model:registry_gender_female_value,
+        model:self-identified-gender-free-text,
+        model:self-reported-female-gender-a,
+        model:self-reported-female-gender-b,
+        model:self-reported-male-gender-a,
+        model:self-reported-nonbinary-gender-a,
+        model:self_identified_female_gender,
+        model:self_identified_gender_generic,
+        model:self_identified_male_gender,
+        model:self_identified_nonbinary_gender,
+        model:sex_at_birth_female_value,
+        model:sex_at_birth_indeterminate_value,
+        model:sex_at_birth_male_value,
+        model:sex_at_birth_unknown_text,
+        model:unknown-admin-gender-code-a,
+        model:unknown-admin-gender-code-b,
+        model:unresolved-self-identified-gender-note .
+
+demoi:standard-care-sm a demo:Standard ;
+    rdfs:label "care-sm"@en ;
+    demo:hasStandardConcept care-sm:Sex .
+
+demoi:standard-fhir a demo:Standard ;
+    rdfs:label "fhir"@en ;
+    demo:hasStandardConcept <http://hl7.org/fhir/StructureDefinition/individual-pronouns> .
+
+demoi:standard-hl7 a demo:Standard ;
+    rdfs:label "hl7"@en ;
+    demo:hasStandardConcept hl7:gender-identity,
+        hl7:pronouns .
+
+demoi:standard-hri-cdash a demo:Standard ;
+    rdfs:label "hri-cdash"@en ;
+    demo:hasStandardConcept hri-cdash:variation-in-physical-sex-characteristics .
+
+demoi:standard-hri-fhir-r5 a demo:Standard ;
+    rdfs:label "hri-fhir-r5"@en ;
+    demo:hasStandardConcept <https://data.health-ri.nl/id/fhir-r5/administrative-gender/male>,
+        <https://data.health-ri.nl/id/fhir-r5/administrative-gender/unknown>,
+        <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/comment>,
+        <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/value>,
+        <https://data.health-ri.nl/id/fhir-r5/individual-pronouns/period>,
+        <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/acquisition-date>,
+        <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/comment>,
+        <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/gender-element-qualifier>,
+        <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source>,
+        <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source-document>,
+        <https://data.health-ri.nl/id/fhir-r5/patient/contact/gender>,
+        <https://data.health-ri.nl/id/fhir-r5/recorded-sex-or-gender-type/sex>,
+        <https://data.health-ri.nl/id/fhir-r5/recorded-sex-or-gender-type/sex-assigned-at-birth> .
+
+demoi:standard-hri-ga4gh-phenopacket-schema a demo:Standard ;
+    rdfs:label "hri-ga4gh-phenopacket-schema"@en ;
+    demo:hasStandardConcept hri-ga4gh-phenopacket-schema:other_karyotype,
+        hri-ga4gh-phenopacket-schema:unknown_karyotype,
+        hri-ga4gh-phenopacket-schema:xo,
+        hri-ga4gh-phenopacket-schema:xxxx,
+        hri-ga4gh-phenopacket-schema:xxy,
+        hri-ga4gh-phenopacket-schema:xy .
+
+demoi:standard-hri-icd11 a demo:Standard ;
+    rdfs:label "hri-icd11"@en ;
+    demo:hasStandardConcept hri-icd11:gender-incongruence,
+        hri-icd11:gender-incongruence-of-adolescence-or-adulthood,
+        hri-icd11:gender-incongruence-of-childhood .
+
+demoi:standard-hri-omop a demo:Standard ;
+    rdfs:label "hri-omop"@en ;
+    demo:hasStandardConcept hri-omop:female,
+        hri-omop:gender-domain,
+        hri-omop:gender-identity-information-stored-in-observation,
+        hri-omop:male,
+        hri-omop:person-gender-source-concept-id .
+
+demoi:standard-hri-openehr a demo:Standard ;
+    rdfs:label "hri-openehr"@en ;
+    demo:hasStandardConcept hri-openehr:additional-details,
+        hri-openehr:administrative-gender,
+        hri-openehr:gender,
+        hri-openehr:gender-expression,
+        hri-openehr:gender-identity,
+        hri-openehr:legal-gender,
+        hri-openehr:preferred-pronoun,
+        hri-openehr:sex-assigned-at-birth .
+
+demoi:standard-loinc a demo:Standard ;
+    rdfs:label "loinc"@en ;
+    demo:hasStandardConcept loinc:107454-1,
+        loinc:54123-5,
+        loinc:72143-1,
+        loinc:76689-9,
+        loinc:76691-5,
+        loinc:91692-4,
+        loinc:99501-9,
+        loinc:LA20384-6,
+        loinc:LA22878-5,
+        loinc:LA22879-3,
+        loinc:LA29515-6,
+        loinc:LA29517-2,
+        loinc:LA29518-0,
+        loinc:LA29520-6,
+        loinc:LA29524-8,
+        loinc:LA3-6,
+        loinc:LA35089-4,
+        loinc:LA4489-6,
+        loinc:LA4512-5,
+        loinc:LA46-8,
+        loinc:LA4732-9 .
+
+demoi:standard-mesh a demo:Standard ;
+    rdfs:label "mesh"@en ;
+    demo:hasStandardConcept mesh:D005783 .
+
+demoi:standard-ncit a demo:Standard ;
+    rdfs:label "ncit"@en ;
+    demo:hasStandardConcept ncit:C158277,
+        ncit:C16576,
+        ncit:C17998,
+        ncit:C20197,
+        ncit:C205468,
+        ncit:C205472,
+        ncit:C45908,
+        ncit:C46121,
+        ncit:C66731 .
+
+demoi:standard-obo a demo:Standard ;
+    rdfs:label "obo"@en ;
+    demo:hasStandardConcept obo:GSSO_000088,
+        obo:GSSO_000089,
+        obo:GSSO_000093,
+        obo:GSSO_000094,
+        obo:GSSO_000123,
+        obo:GSSO_000130,
+        obo:GSSO_000371,
+        obo:GSSO_000384,
+        obo:GSSO_000385,
+        obo:GSSO_000389,
+        obo:GSSO_001501,
+        obo:GSSO_002328,
+        obo:GSSO_004240,
+        obo:GSSO_009316,
+        obo:GSSO_009418,
+        obo:GSSO_011405,
+        obo:NCIT_C17357,
+        obo:NCIT_C17998,
+        obo:NCIT_C28421 .
+
+demoi:standard-onz-g a demo:Standard ;
+    rdfs:label "onz-g"@en ;
+    demo:hasStandardConcept onz-g:Animal,
+        onz-g:BiologicalSex,
+        onz-g:FemaleSex,
+        onz-g:GenderIdentity,
+        onz-g:GenderIdentityValue,
+        onz-g:Human,
+        onz-g:IntersexPerson,
+        onz-g:Intersexual,
+        onz-g:Man,
+        onz-g:Woman .
+
+demoi:standard-snomed a demo:Standard ;
+    rdfs:label "snomed"@en ;
+    demo:hasStandardConcept snomed:248152002,
+        snomed:248153007,
+        snomed:263495000,
+        snomed:285116001,
+        snomed:302081005,
+        snomed:365873007,
+        snomed:429019009,
+        snomed:703118005 .
+
+<urn:instances:semantic-interoperability-demo> a owl:Ontology .
+
+hrio:AdministrativeMaleGenderPerson a demo:OntologyConcept ;
+    rdfs:label "Administrative Male-gender Person"@en .
+
+hrio:Animal a demo:OntologyConcept ;
+    rdfs:label "Animal"@en .
+
+hrio:ArtificialAgent a demo:OntologyConcept ;
+    rdfs:label "Artificial Agent"@en .
+
+hrio:ClinicalDiagnosis a demo:OntologyConcept ;
+    rdfs:label "Clinical Diagnosis"@en .
+
+hrio:Date a demo:OntologyConcept ;
+    rdfs:label "Date"@en .
+
+hrio:Diagnosis a demo:OntologyConcept ;
+    rdfs:label "Diagnosis"@en .
+
+hrio:ExternallyAttributedCisgenderMalePerson a demo:OntologyConcept ;
+    rdfs:label "Externally-attributed Cisgender Male Person"@en .
+
+hrio:ExternallyAttributedCisgenderPerson a demo:OntologyConcept ;
+    rdfs:label "Externally-attributed Cisgender Person"@en .
+
+hrio:ExternallyAttributedMaleGenderPerson a demo:OntologyConcept ;
+    rdfs:label "Externally-attributed Male-gender Person"@en .
+
+hrio:FemaleCisgenderPerson a demo:OntologyConcept ;
+    rdfs:label "Female Cisgender Person"@en .
+
+hrio:FemininePresentingPerson a demo:OntologyConcept ;
+    rdfs:label "Feminine-presenting Person"@en .
+
+hrio:GenderIdentity a demo:OntologyConcept ;
+    rdfs:label "Gender Identity"@en .
+
+hrio:IndeterminateBiologicalPerson a demo:OntologyConcept ;
+    rdfs:label "Indeterminate Biological Person"@en .
+
+hrio:IndeterminateDimorphicCharacteristic a demo:OntologyConcept ;
+    rdfs:label "Indeterminate Dimorphic Characteristic"@en .
+
+hrio:IndeterminateSexPerson a demo:OntologyConcept ;
+    rdfs:label "Indeterminate-sex Person"@en .
+
+hrio:IndeterminateVisualSexCharacteristic a demo:OntologyConcept ;
+    rdfs:label "Indeterminate Visual Sex Characteristic"@en .
+
+hrio:LegalGenderRecognitionDocument a demo:OntologyConcept ;
+    rdfs:label "Legal Gender Recognition Document"@en .
+
+hrio:LegalMaleGender a demo:OntologyConcept ;
+    rdfs:label "Legal Male Gender"@en .
+
+hrio:LegalNonBinaryGender a demo:OntologyConcept ;
+    rdfs:label "Legal Non-binary Gender"@en .
+
+hrio:MaleCisgenderPerson a demo:OntologyConcept ;
+    rdfs:label "Male Cisgender Person"@en .
+
+hrio:Man a demo:OntologyConcept ;
+    rdfs:label "Man"@en .
+
+hrio:NonBinaryGenderExpression a demo:OntologyConcept ;
+    rdfs:label "Non-binary Gender Expression"@en .
+
+hrio:OffsetDateTime a demo:OntologyConcept ;
+    rdfs:label "OffsetDateTime"@en .
+
+hrio:Organization a demo:OntologyConcept ;
+    rdfs:label "Organization"@en .
+
+hrio:Person a demo:OntologyConcept ;
+    rdfs:label "Person"@en .
+
+hrio:PsychologicalHealthCondition a demo:OntologyConcept ;
+    rdfs:label "Psychological Health Condition"@en .
+
+hrio:RegularKaryotypicalMalePerson a demo:OntologyConcept ;
+    rdfs:label "Regular Karyotypical Male Person"@en .
+
+hrio:SelfIdentifiedAgenderPerson a demo:OntologyConcept ;
+    rdfs:label "Self-identified Agender Person"@en .
+
+hrio:SelfIdentifiedCisgenderFemalePerson a demo:OntologyConcept ;
+    rdfs:label "Self-identified Cisgender Female Person"@en .
+
+hrio:SelfIdentifiedCisgenderMalePerson a demo:OntologyConcept ;
+    rdfs:label "Self-identified Cisgender Male Person"@en .
+
+hrio:SelfIdentifiedCisgenderPerson a demo:OntologyConcept ;
+    rdfs:label "Self-identified Cisgender Person"@en .
+
+hrio:SelfIdentifiedMaleGenderPerson a demo:OntologyConcept ;
+    rdfs:label "Self-identified Male-gender Person"@en .
+
+hrio:SexAtBirthUnassignedPerson a demo:OntologyConcept ;
+    rdfs:label "Sex-at-birth-unassigned Person"@en .
+
+hrio:SexGenderOutcome a demo:OntologyConcept ;
+    rdfs:label "Sex-Gender Outcome"@en .
+
+hrio:SexOutcome a demo:OntologyConcept ;
+    rdfs:label "Sex Outcome"@en .
+
+hrio:SocialAgent a demo:OntologyConcept ;
+    rdfs:label "Social Agent"@en .
+
+hrio:VariantKaryotypicalMalePerson a demo:OntologyConcept ;
+    rdfs:label "Variant Karyotypical Male Person"@en .
+
+<http://hl7.org/fhir/StructureDefinition/individual-pronouns> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Individual pronouns"@en ;
+    demo:isConsistent true .
+
+mesh:D005783 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender Identity"@en ;
+    demo:isConsistent true .
+
+obo:GSSO_000088 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "gender expression"@en ;
+    demo:isConsistent true .
+
+obo:GSSO_000089 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "female gender identity"@en ;
+    demo:isConsistent true .
+
+obo:GSSO_000093 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "androgynous gender expression"@en ;
+    demo:isConsistent true .
+
+obo:GSSO_000123 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "assigned female at birth"@en ;
+    demo:isConsistent true .
+
+obo:GSSO_000389 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "cisgender person"@en ;
+    demo:isConsistent true .
+
+obo:GSSO_002328 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "nonbinary gender identity"@en ;
+    demo:isConsistent true .
+
+obo:GSSO_009316 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "administrative gender"@en ;
+    demo:isConsistent true .
+
+onz-g:Animal a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Dier"@nl ;
+    demo:isConsistent true .
+
+onz-g:FemaleSex a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Vrouwelijk geslacht"@nl ;
+    demo:isConsistent true .
+
+onz-g:Human a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Mens"@nl ;
+    demo:isConsistent true .
+
+onz-g:IntersexPerson a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Intersekse persoon"@nl ;
+    demo:isConsistent true .
+
+onz-g:Man a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Man"@nl ;
+    demo:isConsistent true .
+
+snomed:429019009 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Finding related to biological sex (finding)"@en ;
+    demo:isConsistent true .
+
+hl7:gender-identity a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender Identity (value domain)"@en ;
+    demo:isConsistent true .
+
+hl7:pronouns a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Personal Pronouns (value domain)"@en ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/administrative-gender/male> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "male (AdministrativeGender)"@en ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/recorded-sex-or-gender-type/sex-assigned-at-birth> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Sex assigned at birth"@en ;
+    demo:isConsistent true .
+
+hri-ga4gh-phenopacket-schema:xy a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "XY"@en ;
+    demo:isConsistent true .
+
+hri-omop:male a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Male"@en ;
+    demo:isConsistent true .
+
+hri-omop:person-gender-source-concept-id a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "PERSON.gender_source_concept_id"@en ;
+    demo:isConsistent true .
+
+hri-openehr:gender-expression a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender expression"@en ;
+    demo:isConsistent true .
+
+hri-openehr:gender-identity a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender identity"@en ;
+    demo:isConsistent true .
+
+ncit:C158277 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender identity"@en ;
+    demo:isConsistent true .
+
+ncit:C205468 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Non-Binary"@en ;
+    demo:isConsistent true .
+
+ncit:C205472 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Sex at birth (including Sex Assigned at Birth / Sex Reported at Birth)"@en ;
+    demo:isConsistent true .
+
+model:admin-female-marker a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Administrative female marker"@en ;
+    demo:isConsistent true .
+
+model:admin_gender_female_code a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Administrative gender code female"@en ;
+    demo:isConsistent true .
+
+model:admin_gender_male_code a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Administrative gender code male"@en ;
+    demo:isConsistent true .
+
+model:admin_gender_nonbinary_code a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Administrative gender code non-binary"@en ;
+    demo:isConsistent true .
+
+model:administrative-male-marker a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Administrative male marker"@en ;
+    demo:isConsistent true .
+
+model:administrative-x-marker a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Administrative non-binary marker"@en ;
+    demo:isConsistent true .
+
+model:administrative_gender_nonbinary_absent a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Administrative non-binary gender absent flag"@en ;
+    demo:isConsistent true .
+
+model:biological-female-sex-flag-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Biological female sex flag B"@en ;
+    demo:isConsistent true .
+
+model:biological-male-sex-flag-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Biological male sex flag B"@en ;
+    demo:isConsistent true .
+
+model:birth_register_female_flag_negated a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Birth register female flag (negated)"@en ;
+    demo:isConsistent true .
+
+model:birth_register_male_flag_negated a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Birth register male flag (negated)"@en ;
+    demo:isConsistent true .
+
+model:broad-female-gender-classifier a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Broad female gender classifier"@en ;
+    demo:isConsistent true .
+
+model:broad-male-gender-classifier a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Broad male gender classifier"@en ;
+    demo:isConsistent true .
+
+model:broad-nonbinary-gender-classifier a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Broad non-binary gender classifier"@en ;
+    demo:isConsistent true .
+
+model:female-sex-at-birth-flag-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Female sex at birth flag A"@en ;
+    demo:isConsistent true .
+
+model:female-sex-at-birth-flag-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Female sex at birth flag B"@en ;
+    demo:isConsistent true .
+
+model:female_sex_general_value a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Female sex general value"@en ;
+    demo:isConsistent true .
+
+model:gender_identity_input_field a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Gender identity input field"@en ;
+    demo:isConsistent true .
+
+model:gender_identity_male_bucket a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Gender identity male bucket"@en ;
+    demo:isConsistent true .
+
+model:gender_identity_nonbinary_bucket a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Gender identity non-binary bucket"@en ;
+    demo:isConsistent true .
+
+model:generic-admin-gender-slot-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Generic administrative gender slot B"@en ;
+    demo:isConsistent true .
+
+model:generic-female-gender-flag-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Generic female gender flag A"@en ;
+    demo:isConsistent true .
+
+model:generic-female-gender-flag-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Generic female gender flag B"@en ;
+    demo:isConsistent true .
+
+model:generic-male-gender-flag-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Generic male gender flag A"@en ;
+    demo:isConsistent true .
+
+model:generic-nonbinary-gender-flag-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Generic non-binary gender flag A"@en ;
+    demo:isConsistent true .
+
+model:generic-self-identified-gender-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Generic self-identified gender B"@en ;
+    demo:isConsistent true .
+
+model:indeterminate_sex_general_value a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Indeterminate sex general value"@en ;
+    demo:isConsistent true .
+
+model:karyotypic_female_sex_value a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Karyotypic female sex value"@en ;
+    demo:isConsistent true .
+
+model:karyotypic_male_sex_value a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Karyotypic male sex value"@en ;
+    demo:isConsistent true .
+
+model:legal_gender_female_absent a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Legal female gender absent flag"@en ;
+    demo:isConsistent true .
+
+model:legal_gender_female_status a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Legal gender female status"@en ;
+    demo:isConsistent true .
+
+model:legal_gender_male_status a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Legal gender male status"@en ;
+    demo:isConsistent true .
+
+model:legal_gender_nonbinary_status a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Legal gender non-binary status"@en ;
+    demo:isConsistent true .
+
+model:male-sex-at-birth-flag-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Male sex at birth flag A"@en ;
+    demo:isConsistent true .
+
+model:male-sex-at-birth-flag-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Male sex at birth flag B"@en ;
+    demo:isConsistent true .
+
+model:male_sex_general_value a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Male sex general value"@en ;
+    demo:isConsistent true .
+
+model:nonbinary_sex_gender_category a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Non-binary sex-gender category value"@en ;
+    demo:isConsistent true .
+
+model:observed-male-sex-characteristics a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Observed male sex characteristics"@en ;
+    demo:isConsistent true .
+
+model:phenotypic_ambiguous_sex_value a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Phenotypic ambiguous sex value"@en ;
+    demo:isConsistent true .
+
+model:phenotypic_female_sex_value a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Phenotypic female sex value"@en ;
+    demo:isConsistent true .
+
+model:phenotypic_male_sex_value a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Phenotypic male sex value"@en ;
+    demo:isConsistent true .
+
+model:preferred-pronoun-free-text-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Preferred pronoun free text B"@en ;
+    demo:isConsistent true .
+
+model:pronoun_comment_field a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Pronoun comment field"@en ;
+    demo:isConsistent true .
+
+model:pronoun_free_text_field a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Pronoun free-text field"@en ;
+    demo:isConsistent true .
+
+model:pronoun_ui_hint a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Pronoun UI hint text"@en ;
+    demo:isConsistent true .
+
+model:questionnaire-female-identity a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Questionnaire female identity"@en ;
+    demo:isConsistent true .
+
+model:questionnaire-male-identity a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Questionnaire male identity"@en ;
+    demo:isConsistent true .
+
+model:questionnaire-nonbinary-identity a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Questionnaire non-binary identity"@en ;
+    demo:isConsistent true .
+
+model:recorded-nonbinary-gender-entry a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Recorded non-binary gender entry"@en ;
+    demo:isConsistent true .
+
+model:recorded_gender_marker_generic a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Recorded gender marker generic value"@en ;
+    demo:isConsistent true .
+
+model:registry-female-code-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Registry female gender code A"@en ;
+    demo:isConsistent true .
+
+model:registry-female-code-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Registry female gender code B"@en ;
+    demo:isConsistent true .
+
+model:registry-male-code-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Registry male gender code A"@en ;
+    demo:isConsistent true .
+
+model:registry-male-code-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Registry male gender code B"@en ;
+    demo:isConsistent true .
+
+model:registry_gender_female_value a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Registry female gender marker"@en ;
+    demo:isConsistent true .
+
+model:self-reported-female-gender-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Self-reported female gender A"@en ;
+    demo:isConsistent true .
+
+model:self-reported-female-gender-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Self-reported female gender B"@en ;
+    demo:isConsistent true .
+
+model:self-reported-male-gender-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Self-reported male gender A"@en ;
+    demo:isConsistent true .
+
+model:self-reported-nonbinary-gender-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Self-reported non-binary gender A"@en ;
+    demo:isConsistent true .
+
+model:self_identified_female_gender a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Self-identified female gender value"@en ;
+    demo:isConsistent true .
+
+model:self_identified_gender_generic a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Self-identified gender value"@en ;
+    demo:isConsistent true .
+
+model:self_identified_male_gender a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Self-identified male gender value"@en ;
+    demo:isConsistent true .
+
+model:self_identified_nonbinary_gender a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Self-identified non-binary gender value"@en ;
+    demo:isConsistent true .
+
+model:sex_at_birth_female_value a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Sex at birth female value"@en ;
+    demo:isConsistent true .
+
+model:sex_at_birth_indeterminate_value a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Sex at birth indeterminate value"@en ;
+    demo:isConsistent true .
+
+model:sex_at_birth_male_value a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Sex at birth male value"@en ;
+    demo:isConsistent true .
+
+model:unknown-admin-gender-code-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Unknown administrative gender code A"@en ;
+    demo:isConsistent true .
+
+model:unknown-admin-gender-code-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Unknown administrative gender code B"@en ;
+    demo:isConsistent true .
+
+model:unresolved-self-identified-gender-note a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Unresolved self-identified gender note"@en ;
+    demo:isConsistent true .
+
+loinc:76691-5 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender identity"@en ;
+    demo:isConsistent true .
+
+loinc:99501-9 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Sex parameter for clinical use"@en ;
+    demo:isConsistent true .
+
+loinc:LA20384-6 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Asked but unknown (sex/gender response)"@en ;
+    demo:isConsistent true .
+
+loinc:LA22878-5 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Identifies as male"@en ;
+    demo:isConsistent true .
+
+loinc:LA22879-3 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Identifies as female"@en ;
+    demo:isConsistent true .
+
+loinc:LA29515-6 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "co/co/cos/cos/coself"@en ;
+    demo:isConsistent true .
+
+loinc:LA29517-2 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "ey/em/eir/eirs/emself"@en ;
+    demo:isConsistent true .
+
+loinc:LA29518-0 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "he/him/his/his/himself"@en ;
+    demo:isConsistent true .
+
+loinc:LA29520-6 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "they/them/their/theirs/themselves"@en ;
+    demo:isConsistent true .
+
+loinc:LA29524-8 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "ve/vis/ver/ver/verself"@en ;
+    demo:isConsistent true .
+
+loinc:LA35089-4 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender X"@en ;
+    demo:isConsistent true .
+
+care-sm:Sex a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Biological sex"@en ;
+    demo:isConsistent true .
+
+hrio:AdministrativeGenderRecognitionDocument a demo:OntologyConcept ;
+    rdfs:label "Administrative Gender Recognition Document"@en .
+
+hrio:Cisgender a demo:OntologyConcept ;
+    rdfs:label "Cisgender"@en .
+
+hrio:CisgenderPerson a demo:OntologyConcept ;
+    rdfs:label "Cisgender Person"@en .
+
+hrio:ExternallyAttributedTransgenderPerson a demo:OntologyConcept ;
+    rdfs:label "Externally-attributed Transgender Person"@en .
+
+hrio:FemaleGenderPerson a demo:OntologyConcept ;
+    rdfs:label "Female-gender Person"@en .
+
+hrio:FemaleSexPerson a demo:OntologyConcept ;
+    rdfs:label "Female-sex Person"@en .
+
+hrio:FeminineGenderExpression a demo:OntologyConcept ;
+    rdfs:label "Feminine Gender Expression"@en .
+
+hrio:GenderContext a demo:OntologyConcept ;
+    rdfs:label "Gender Context"@en .
+
+hrio:KaryotypicalIndeterminatePerson a demo:OntologyConcept ;
+    rdfs:label "Karyotypical Indeterminate Person"@en .
+
+hrio:LegalFemaleGender a demo:OntologyConcept ;
+    rdfs:label "Legal Female Gender"@en .
+
+hrio:LegallyUnassignedGenderPerson a demo:OntologyConcept ;
+    rdfs:label "Legally Unassigned Gender Person"@en .
+
+hrio:Male a demo:OntologyConcept ;
+    rdfs:label "Male"@en .
+
+hrio:MaleSexPerson a demo:OntologyConcept ;
+    rdfs:label "Male-sex Person"@en .
+
+hrio:NonBinarySexGender a demo:OntologyConcept ;
+    rdfs:label "Non-binary Sex-Gender"@en .
+
+hrio:SelfDesignatedGender a demo:OntologyConcept ;
+    rdfs:label "Self-designated Gender"@en .
+
+hrio:SexGender a demo:OntologyConcept ;
+    rdfs:label "Sex-Gender"@en .
+
+hrio:Woman a demo:OntologyConcept ;
+    rdfs:label "Woman"@en .
+
+obo:GSSO_000094 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "feminine gender expression"@en ;
+    demo:isConsistent true .
+
+obo:GSSO_000130 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "transgender person"@en ;
+    demo:isConsistent true .
+
+obo:GSSO_000385 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "cisgender woman"@en ;
+    demo:isConsistent true .
+
+obo:GSSO_009418 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "assigned gender at birth"@en ;
+    demo:isConsistent true .
+
+obo:NCIT_C17357 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender"@en ;
+    demo:isConsistent true .
+
+obo:NCIT_C28421 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Sex"@en ;
+    demo:isConsistent true .
+
+onz-g:GenderIdentity a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Genderidentiteit"@nl ;
+    demo:isConsistent true .
+
+onz-g:Intersexual a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Intersexe geslacht"@nl ;
+    demo:isConsistent true .
+
+onz-g:Woman a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Vrouw"@nl ;
+    demo:isConsistent true .
+
+snomed:302081005 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Finding of sex of baby (finding)"@en ;
+    demo:isConsistent true .
+
+snomed:365873007 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender finding (finding)"@en ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/acquisition-date> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Person recorded sex or gender.acquisitionDate"@en ;
+    demo:isConsistent true .
+
+hri-ga4gh-phenopacket-schema:xo a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "XO"@en ;
+    demo:isConsistent true .
+
+hri-ga4gh-phenopacket-schema:xxxx a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "XXXX"@en ;
+    demo:isConsistent true .
+
+hri-omop:female a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Female"@en ;
+    demo:isConsistent true .
+
+hri-omop:gender-identity-information-stored-in-observation a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender identity information (stored in OBSERVATION)"@en ;
+    demo:isConsistent true .
+
+ncit:C46121 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Transgender Man/Boy"@en ;
+    demo:isConsistent true .
+
+ncit:C66731 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Sex codelist"@en ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/value> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Individual gender identity.value"@en ;
+    demo:aligns hri-openehr:gender ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/recorded-sex-or-gender-type/sex> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Sex (Recorded Sex Or Gender Type)"@en ;
+    demo:aligns hri-openehr:sex-assigned-at-birth ;
+    demo:isConsistent true .
+
+hri-openehr:administrative-gender a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Administrative gender"@en ;
+    demo:aligns <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/comment> ;
+    demo:isConsistent true .
+
+hri-openehr:sex-assigned-at-birth a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Sex assigned at birth"@en ;
+    demo:aligns <https://data.health-ri.nl/id/fhir-r5/recorded-sex-or-gender-type/sex> ;
+    demo:isConsistent true .
+
+model:biological-female-sex-flag-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Biological female sex flag A"@en ;
+    demo:aligns model:biological-male-sex-flag-a ;
+    demo:isConsistent true .
+
+model:biological-male-sex-flag-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Biological male sex flag A"@en ;
+    demo:aligns model:biological-female-sex-flag-a ;
+    demo:isConsistent true .
+
+model:general-sex-field-b a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "General sex field B"@en ;
+    demo:aligns model:preferred-pronoun-free-text-a ;
+    demo:isConsistent true .
+
+model:generic-admin-gender-slot-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Generic administrative gender slot A"@en ;
+    demo:aligns hri-openehr:legal-gender ;
+    demo:isConsistent true .
+
+model:observed-female-sex-characteristics a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Observed female sex characteristics"@en ;
+    demo:aligns hri-ga4gh-phenopacket-schema:other_karyotype ;
+    demo:isConsistent true .
+
+model:official-female-gender-entry a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Official female gender entry"@en ;
+    demo:aligns model:official-male-gender-entry ;
+    demo:isConsistent true .
+
+model:official-male-gender-entry a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Official male gender entry"@en ;
+    demo:aligns model:official-female-gender-entry ;
+    demo:isConsistent true .
+
+model:pronoun-display-comment a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Pronoun display comment"@en ;
+    demo:aligns <https://data.health-ri.nl/id/fhir-r5/individual-pronouns/period> ;
+    demo:isConsistent true .
+
+loinc:76689-9 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Sex assigned at birth"@en ;
+    demo:aligns model:indeterminate-sex-at-birth-flag ;
+    demo:isConsistent true .
+
+hrio:Document a demo:OntologyConcept ;
+    rdfs:label "Document"@en .
+
+hrio:ExternallyAttributedGender a demo:OntologyConcept ;
+    rdfs:label "Externally-attributed Gender"@en .
+
+hrio:Female a demo:OntologyConcept ;
+    rdfs:label "Female"@en .
+
+hrio:GenderExpression a demo:OntologyConcept ;
+    rdfs:label "Gender Expression"@en .
+
+hrio:KaryotypicFemaleSex a demo:OntologyConcept ;
+    rdfs:label "Karyotypic Female Sex"@en .
+
+hrio:KaryotypicMaleSex a demo:OntologyConcept ;
+    rdfs:label "Karyotypic Male Sex"@en .
+
+hrio:LegalGender a demo:OntologyConcept ;
+    rdfs:label "Legal Gender"@en .
+
+hrio:PhenotypicFemaleSex a demo:OntologyConcept ;
+    rdfs:label "Phenotypic Female Sex"@en .
+
+hrio:PhenotypicMaleSex a demo:OntologyConcept ;
+    rdfs:label "Phenotypic Male Sex"@en .
+
+hrio:PhenotypicSex a demo:OntologyConcept ;
+    rdfs:label "Phenotypic Sex"@en .
+
+hrio:SexAtBirthMaleSexPerson a demo:OntologyConcept ;
+    rdfs:label "Sex-at-birth Male-sex Person"@en .
+
+hrio:Transgender a demo:OntologyConcept ;
+    rdfs:label "Transgender"@en .
+
+obo:GSSO_000371 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "cisgender man"@en ;
+    demo:isConsistent true .
+
+obo:GSSO_001501 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "indeterminate sex"@en ;
+    demo:isConsistent true .
+
+obo:NCIT_C17998 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "UNKNOWN_SEX"@en ;
+    demo:isConsistent true .
+
+onz-g:BiologicalSex a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Geslacht"@nl ;
+    demo:isConsistent true .
+
+onz-g:GenderIdentityValue a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Genderidentiteitswaarde"@nl ;
+    demo:isConsistent true .
+
+snomed:263495000 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender (observable entity)"@en ;
+    demo:isConsistent true .
+
+snomed:285116001 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender identity finding (finding)"@en ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/patient/contact/gender> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Patient.contact.gender"@en ;
+    demo:isConsistent true .
+
+hri-icd11:gender-incongruence a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender incongruence"@en ;
+    demo:isConsistent true .
+
+hri-omop:gender-domain a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender domain"@en ;
+    demo:isConsistent true .
+
+ncit:C45908 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Intersex"@en ;
+    demo:isConsistent true .
+
+model:administrative_gender_unknown_code a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Administrative gender unknown code"@en ;
+    demo:isConsistent true .
+
+model:binary_gender_female_option a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Binary gender female option"@en ;
+    demo:isConsistent true .
+
+model:binary_sex_female_option a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Binary sex female option"@en ;
+    demo:isConsistent true .
+
+model:sex_at_birth_unknown_text a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Sex at birth unknown text"@en ;
+    demo:isConsistent true .
+
+loinc:72143-1 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Sex [HL7.v3]"@en ;
+    demo:isConsistent true .
+
+loinc:LA4512-5 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Transsexual"@en ;
+    demo:isConsistent true .
+
+loinc:LA46-8 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Other (sex/gender response)"@en ;
+    demo:isConsistent true .
+
+loinc:LA4732-9 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Other (hermaphrodite)"@en ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/comment> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Individual gender identity.comment"@en ;
+    demo:aligns model:self-identified-gender-free-text ;
+    demo:isConsistent true .
+
+loinc:54123-5 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Sex of Family member"@en ;
+    demo:aligns hri-ga4gh-phenopacket-schema:unknown_karyotype ;
+    demo:isConsistent true .
+
+loinc:91692-4 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Sex of Personnel"@en ;
+    demo:aligns hri-ga4gh-phenopacket-schema:other_karyotype ;
+    demo:isConsistent true .
+
+hrio:PersonWithVariantSexChromosome a demo:OntologyConcept ;
+    rdfs:label "Person with Variant Sex Chromosome"@en .
+
+hrio:SelfIdentifiedMaleGender a demo:OntologyConcept ;
+    rdfs:label "Self-identified Male Gender"@en .
+
+hrio:SelfIdentifiedTransgenderPerson a demo:OntologyConcept ;
+    rdfs:label "Self-identified Transgender Person"@en .
+
+obo:GSSO_000384 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "transgender woman"@en ;
+    demo:isConsistent true .
+
+obo:GSSO_011405 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "person assigned male at birth"@en ;
+    demo:isConsistent true .
+
+snomed:703118005 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Feminine gender (finding)"@en ;
+    demo:isConsistent true .
+
+hri-cdash:variation-in-physical-sex-characteristics a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Variation in physical sex characteristics"@en ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/administrative-gender/unknown> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "unknown (AdministrativeGender)"@en ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/individual-pronouns/period> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Individual pronouns.period"@en ;
+    demo:aligns hri-openehr:preferred-pronoun,
+        model:pronoun-display-comment ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/gender-element-qualifier> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Person recorded sex or gender.genderElementQualifier"@en ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Person recorded sex or gender.source"@en ;
+    demo:isConsistent true .
+
+hri-ga4gh-phenopacket-schema:xxy a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "XXY"@en ;
+    demo:isConsistent true .
+
+hri-icd11:gender-incongruence-of-adolescence-or-adulthood a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender incongruence of adolescence or adulthood"@en ;
+    demo:isConsistent true .
+
+hri-icd11:gender-incongruence-of-childhood a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender incongruence of childhood"@en ;
+    demo:isConsistent true .
+
+hri-openehr:preferred-pronoun a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Preferred pronoun"@en ;
+    demo:aligns <https://data.health-ri.nl/id/fhir-r5/individual-pronouns/period>,
+        model:preferred-pronoun-free-text-a ;
+    demo:isConsistent true .
+
+ncit:C16576 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Female"@en ;
+    demo:isConsistent true .
+
+ncit:C20197 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Male"@en ;
+    demo:isConsistent true .
+
+model:gender_notes_text a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Gender notes text"@en ;
+    demo:isConsistent true .
+
+model:general-sex-field-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "General sex field A"@en ;
+    demo:aligns model:generic-self-identified-gender-a,
+        model:indeterminate-sex-at-birth-flag ;
+    demo:isConsistent true .
+
+model:generic-self-identified-gender-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Generic self-identified gender A"@en ;
+    demo:aligns model:general-sex-field-a,
+        model:official-administrative-gender-field ;
+    demo:isConsistent true .
+
+model:indeterminate-sex-at-birth-flag a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Indeterminate sex at birth flag"@en ;
+    demo:aligns model:general-sex-field-a,
+        loinc:76689-9 ;
+    demo:isConsistent true .
+
+model:self-identified-gender-free-text a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Self-identified gender free text"@en ;
+    demo:aligns <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/comment>,
+        hri-openehr:gender ;
+    demo:isConsistent true .
+
+loinc:107454-1 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Administrative gender"@en ;
+    demo:aligns hri-openehr:legal-gender,
+        model:official-administrative-gender-field ;
+    demo:isConsistent true .
+
+loinc:LA4489-6 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Unknown (sex/gender response)"@en ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source-document> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Person recorded sex or gender.sourceDocument"@en ;
+    demo:aligns hri-openehr:legal-gender ;
+    demo:isConsistent true .
+
+hri-ga4gh-phenopacket-schema:unknown_karyotype a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "UNKNOWN_KARYOTYPE"@en ;
+    demo:aligns loinc:54123-5 ;
+    demo:isConsistent true .
+
+hrio:KaryotypicSex a demo:OntologyConcept ;
+    rdfs:label "Karyotypic Sex"@en .
+
+obo:GSSO_004240 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "cisgender"@en ;
+    demo:isConsistent true .
+
+<https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/comment> a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Person recorded sex or gender.comment"@en ;
+    demo:aligns hri-openehr:administrative-gender,
+        model:legacy-gender-identity-comment ;
+    demo:isConsistent true .
+
+hri-openehr:additional-details a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Additional details"@en ;
+    demo:isConsistent true .
+
+hri-openehr:gender a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Gender"@en ;
+    demo:aligns <https://data.health-ri.nl/id/fhir-r5/individual-gender-identity/value>,
+        model:self-identified-gender-free-text ;
+    demo:isConsistent true .
+
+ncit:C17998 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Unknown"@en ;
+    demo:isConsistent true .
+
+hri-openehr:legal-gender a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Legal gender"@en ;
+    demo:aligns <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/source-document>,
+        model:generic-admin-gender-slot-a,
+        loinc:107454-1 ;
+    demo:isConsistent true .
+
+model:legacy-gender-identity-comment a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Legacy gender identity comment"@en ;
+    demo:aligns <https://data.health-ri.nl/id/fhir-r5/individual-recorded-sex-or-gender/comment>,
+        model:official-administrative-gender-field,
+        model:preferred-pronoun-free-text-a ;
+    demo:isConsistent true .
+
+model:official-administrative-gender-field a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Official administrative gender field"@en ;
+    demo:aligns model:generic-self-identified-gender-a,
+        model:legacy-gender-identity-comment,
+        loinc:107454-1 ;
+    demo:isConsistent true .
+
+model:preferred-pronoun-free-text-a a demo:ModelConcept,
+        demo:RepresentationConcept ;
+    rdfs:label "Preferred pronoun free text A"@en ;
+    demo:aligns hri-openehr:preferred-pronoun,
+        model:general-sex-field-b,
+        model:legacy-gender-identity-comment ;
+    demo:isConsistent true .
+
+hrio:MaleSex a demo:OntologyConcept ;
+    rdfs:label "Male Sex"@en .
+
+hrio:NonBinaryGender a demo:OntologyConcept ;
+    rdfs:label "Non-binary Gender"@en .
+
+hrio:SelfIdentifiedNonBinaryGender a demo:OntologyConcept ;
+    rdfs:label "Self-identified Non-binary Gender"@en .
+
+hrio:SexAtBirthMaleSex a demo:OntologyConcept ;
+    rdfs:label "Sex-at-birth Male Sex"@en .
+
+hrio:TransgenderPerson a demo:OntologyConcept ;
+    rdfs:label "Transgender Person"@en .
+
+snomed:248152002 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Female (finding)"@en ;
+    demo:isConsistent true .
+
+snomed:248153007 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Male (finding)"@en ;
+    demo:isConsistent true .
+
+hri-ga4gh-phenopacket-schema:other_karyotype a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "OTHER_KARYOTYPE"@en ;
+    demo:aligns model:observed-female-sex-characteristics,
+        loinc:91692-4 ;
+    demo:isConsistent true .
+
+loinc:LA3-6 a demo:RepresentationConcept,
+        demo:StandardConcept ;
+    rdfs:label "Female"@en ;
+    demo:isConsistent true .
+
+hrio:AdministrativeNonBinaryGender a demo:OntologyConcept ;
+    rdfs:label "Administrative Non-binary Gender"@en .
+
+hrio:MaleGender a demo:OntologyConcept ;
+    rdfs:label "Male Gender"@en .
+
+hrio:SexAtBirthIndeterminateSex a demo:OntologyConcept ;
+    rdfs:label "Sex-at-birth Indeterminate Sex"@en .
+
+hrio:AdministrativeMaleGender a demo:OntologyConcept ;
+    rdfs:label "Administrative Male Gender"@en .
+
+hrio:PhenotypicAmbiguousSex a demo:OntologyConcept ;
+    rdfs:label "Phenotypic Ambiguous Sex"@en .
+
+hrio:SelfIdentifiedFemaleGender a demo:OntologyConcept ;
+    rdfs:label "Self-identified Female Gender"@en .
+
+hrio:SexAtBirthFemaleSex a demo:OntologyConcept ;
+    rdfs:label "Sex-at-birth Female Sex"@en .
+
+hrio:AdministrativeFemaleGender a demo:OntologyConcept ;
+    rdfs:label "Administrative Female Gender"@en .
+
+hrio:FemaleGender a demo:OntologyConcept ;
+    rdfs:label "Female Gender"@en .
+
+hrio:FemaleSex a demo:OntologyConcept ;
+    rdfs:label "Female Sex"@en .
+
+hrio:Gender a demo:OntologyConcept ;
+    rdfs:label "Gender"@en .
+
+hrio:Sex a demo:OntologyConcept ;
+    rdfs:label "Sex"@en .
+
+hrio:IndeterminateSex a demo:OntologyConcept ;
+    rdfs:label "Indeterminate Sex"@en .
+
+hrio:SexAtBirth a demo:OntologyConcept ;
+    rdfs:label "Sex at Birth"@en .
+
+hrio:PreferredPronoun a demo:OntologyConcept ;
+    rdfs:label "Preferred Pronoun"@en .
+
+hrio:AdministrativeGender a demo:OntologyConcept ;
+    rdfs:label "Administrative Gender"@en .
+
+hrio:SelfIdentifiedGender a demo:OntologyConcept ;
+    rdfs:label "Self-identified Gender"@en .

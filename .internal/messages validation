@@ -1,0 +1,38 @@
+Hello [Name],
+
+We are inviting a small set of external reviewers to look at the Sex & Gender package in the Health-RI Ontology (HRIO), developed within the Health-RI Semantic Interoperability Initiative.
+
+A recurring problem in interoperability work is “false agreement”: two systems may record the same value (e.g., “male”) but intend different meanings (for example, biological sex vs legal sex). We are trying to make those meanings explicit so standards and local models can align through reusable mappings, instead of depending on labels (or keeping many pairwise mappings in sync).
+
+If you have time to take a look, I’d especially value your perspective on whether the model:
+
+* captures the domain correctly and with appropriate boundaries,
+* uses terminology that is clear and not misleading, and
+* makes key assumptions sufficiently explicit for others to reuse.
+
+You can start here: https://health-ri.github.io/semantic-interoperability/external-review/sex-and-gender
+(The page links the package documentation and the OWL specification, and explains how we’re collecting feedback.)
+
+We are collecting comments over the next few weeks, but feedback is welcome at any time. If you prefer not to be acknowledged, just say so and we will handle it anonymously.
+
+-------------
+
+𝐂𝐚𝐥𝐥 𝐟𝐨𝐫 𝐜𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐢𝐨𝐧𝐬: 𝐒𝐞𝐱 & 𝐆𝐞𝐧𝐝𝐞𝐫 𝐎𝐧𝐭𝐨𝐥𝐨𝐠𝐲 𝐑𝐞𝐯𝐢𝐞𝐰
+
+• 𝑇𝑤𝑜 𝑠𝑦𝑠𝑡𝑒𝑚𝑠 𝑏𝑜𝑡ℎ 𝑠𝑡𝑜𝑟𝑒 “𝑀𝑎𝑛”. 𝐷𝑜 𝑡ℎ𝑒𝑦 𝑚𝑒𝑎𝑛 𝑡ℎ𝑒 𝑠𝑎𝑚𝑒 𝑡ℎ𝑖𝑛𝑔?
+• 𝑊ℎ𝑒𝑛 𝑎 𝑑𝑎𝑡𝑎𝑠𝑒𝑡 𝑠𝑎𝑦𝑠 “𝑓𝑒𝑚𝑎𝑙𝑒”, 𝑤ℎ𝑎𝑡 𝑒𝑥𝑎𝑐𝑡𝑙𝑦 𝑖𝑠 𝑏𝑒𝑖𝑛𝑔 𝑟𝑒𝑐𝑜𝑟𝑑𝑒𝑑? 𝑆𝑒𝑥 𝑎𝑡 𝑏𝑖𝑟𝑡ℎ? 𝑃ℎ𝑒𝑛𝑜𝑡𝑦𝑝𝑖𝑐 𝑠𝑒𝑥? 𝐾𝑎𝑟𝑦𝑜𝑡𝑦𝑝𝑖𝑐 𝑠𝑒𝑥? 𝐿𝑒𝑔𝑎𝑙/𝑎𝑑𝑚𝑖𝑛 𝑔𝑒𝑛𝑑𝑒𝑟? 𝑆𝑒𝑙𝑓-𝑑𝑒𝑠𝑖𝑔𝑛𝑎𝑡𝑖𝑜𝑛?
+
+In the Health-RI Semantic Interoperability Initiative, we are building a shared semantic reference model to make meanings explicit and link standards (e.g., FHIR/OMOP/openEHR) via reusable mappings (instead of many pairwise mappings).
+
+We just published a first version of our Sex & Gender ontology, and we’re inviting everyone to review it. Community participation is fundamental if this is to serve as shared semantics for linking standards: it builds trust, makes assumptions visible, and improves clarity and coverage.
+
+What to review (any depth is welcome):
+• domain correctness & coverage
+• conceptual/modeling rigor (constructs, patterns, constraints)
+• clarity (what’s unclear, missing, ambiguous, or misleading)
+
+Join the review here: https://health-ri.github.io/semantic-interoperability/external-review/sex-and-gender
+
+All contributions are welcome over the next feQw weeks. Prefer not to be acknowledged? Say so in your submission, and we’ll handle it anonymously.
+
+#HealthRI #Sex #Gender #SemanticInteroperability #HealthData #HealthInformatics #Ontology #OntologyEngineering

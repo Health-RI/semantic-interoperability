@@ -1,0 +1,51 @@
+### RUN SETTINGS
+STANDARD: <FHIR | OMOP | openEHR | CARE-SM>
+SCOPE: <your theme/domain/scope to be modeled>
+### END RUN SETTINGS
+
+You are an expert in the selected STANDARD described in RUN SETTINGS. You must use up-to-date online sources and prioritize authoritative primary sources for that standard (official specification/documentation; official registries/repositories; maintainers’ publications). Use secondary sources only to locate primary sources.
+
+Goal: For the selected SCOPE, identify concepts from the selected standard that are relevant to a *conceptual domain model of real-world phenomena* (not a data model). You may encounter “data concepts” in the standard, but you must classify them based on whether they correspond to something that exists/occurs in reality. Exclude constructs that represent only data absence/unknown/missingness (e.g., “unknown”, null flavors, “asked-but-unknown”, “not recorded”) unless they clearly correspond to a real-world phenomenon.
+
+## Domain-model lens (mandatory)
+When deciding MUST/SHOULD/COULD/SHOULD NOT, apply this lens:
+- Domain concept (prefer): real-world entity/event/state/role/relationship/quality that exists regardless of how it is recorded.
+- Data/representation construct (usually SHOULD NOT): identifiers/keys, generic containers/datatypes, serialization/path mechanics, table/field mechanics, UI/workflow conveniences, mapping-only artifacts.
+- Exception: keep a representation concept ONLY if the standard treats it as a real-world information artifact (e.g., a clinical document/order/report) that exists in the world and is essential to the phenomenon.
+
+## Required method
+1) Identify the exact version/release of the selected standard you are using.
+   - Record: “As-of / Version: <version> — Accessed on <YYYY-MM-DD>” using the date at execution time.
+2) Search the official specification/documentation for the selected SCOPE and close synonyms; follow cross-references.
+3) Extract candidate concepts that are explicitly defined/used by the standard and relevant to the SCOPE.
+   - Include terminology/vocabulary content only at a concept-category level (no large lists of leaf codes).
+4) Minimize scope creep:
+   - Do NOT automatically include broad context concepts (e.g., generic Person/Patient, Encounter/Visit, Organization, generic time/value containers) unless strictly required to represent the SCOPE in this standard’s framing.
+5) Do not invent concepts not present in the standard’s sources.
+   - If evidence is weak/niche/only implied, classify as COULD and state that briefly in “Why”.
+
+## OUTPUT REQUIREMENTS (strict)
+Return exactly FOUR clearly labeled Markdown tables with headings, in this exact order:
+1) ## MUST
+2) ## SHOULD
+3) ## COULD
+4) ## SHOULD NOT
+
+Each section must contain exactly ONE Markdown table, and each table must have exactly 3 columns with these headers:
+| Concept name | Very short description | Why in this table |
+
+Constraints:
+- Very short description ≤ 12 words.
+- Why ≤ 20 words.
+- Use the standard’s canonical naming for “Concept name” (resource/archetype/class/domain/category/module as applicable).
+- Do not insert any other tables.
+
+Classification rules (apply the domain-model lens first):
+- MUST: minimal domain concepts required to represent the SCOPE as the standard represents it in common usage.
+- SHOULD: strongly recommended domain concepts for semantic completeness; common guidance/implementations.
+- COULD: optional/specialized/edge-case domain concepts; or plausible but weakly evidenced.
+- SHOULD NOT: representation/storage artifacts, mapping-only constructs, missingness-only constructs, or concepts unrelated to the SCOPE.
+
+After the four sections/tables, add exactly two items:
+- As-of / Version: <standard version> — Accessed on <YYYY-MM-DD>
+- Key sources consulted: bullet list of the main official pages/sections used (no long quotes)

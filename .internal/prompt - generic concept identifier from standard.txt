@@ -1,0 +1,141 @@
+Task:
+Identify all concepts in the healthcare/life sciences standard "{{X}}" that are about, within, inseparable from, necessary for describing, supporting, contextualizing, or closely adjacent to the domain "{{Y}}".
+
+Use only official sources.
+
+Instructions
+
+1. Identify the standard and its valid source base
+   - Search for "{{X}}" using only official sources.
+   - Determine the latest active, current, usable version of "{{X}}".
+   - Exclude obsolete, superseded, retired, archived, draft-only, trial-only, or otherwise non-usable versions, unless the official source clearly states that they are still active and usable.
+   - If the official documentation is distributed across multiple official pages, repositories, registries, guides, browsers, or specification artifacts, you may use all of them, but only if they are official.
+   - If the latest active usable version cannot be verified from official sources, stop and state that clearly.
+   - If the official source exists but the relevant content is inaccessible due to licensing, paywall, authentication, broken access, or similar restrictions, state that limitation clearly and do not guess.
+
+2. Scope of extraction
+   - Extract only concepts that exist within "{{X}}" and are usable by someone applying "{{X}}".
+   - Include only concepts that "{{X}}" directly defines, models, handles, names, classifies, structures, operationalizes, constrains, profiles, or expects a user, implementer, or modeler to use.
+   - Prefer first-class concepts, meaning concepts explicitly represented or directly handled by the standard, such as classes, entities, resources, elements, attributes, roles, processes, acts, events, categories, value domains, code entries, or other directly usable conceptual units.
+   - Include concepts that are clearly relevant to "{{Y}}" because they are:
+     - directly about "{{Y}}"
+     - within the scope of "{{Y}}"
+     - inseparable from describing "{{Y}}"
+     - necessary supporting concepts for "{{Y}}"
+     - context-setting concepts for "{{Y}}"
+     - adjacent concepts that the standard clearly uses to model or contextualize "{{Y}}"
+
+3. Exclusion rules
+   - Exclude terms that appear only incidentally in definitions, examples, notes, contrasts, warnings, background text, or explanatory prose.
+   - Exclude terms mentioned only to clarify another concept if they are not themselves modeled, handled, or operationalized by "{{X}}".
+   - Exclude concepts that are too generic unless the standard clearly uses them as meaningful conceptual units for modeling "{{Y}}".
+   - Exclude concepts that are merely lexical fragments inside descriptions and are not independently usable conceptual units in the standard.
+   - Example: if the standard defines "gender" and says "gender is not sex", include "gender" if it is actually handled by the standard, but exclude "sex" if it is only mentioned incidentally and is not itself handled as a concept in that context.
+
+4. Normalization and deduplication
+   - Deduplicate concepts across official artifacts and pages.
+   - Use one row per normalized concept.
+   - If "{{X}}" represents the same concept in multiple specific forms, variants, profiles, subclasses, or context-dependent manifestations, merge them into one row only when the official material shows that they are best understood as one overarching concept handled by the standard.
+   - Do not merge concepts that the standard clearly treats as distinct concepts, even if they are closely related.
+   - When a row represents a normalized concept, choose a label that best captures the overarching concept as handled by the standard.
+   - The goal is to register how the standard handles the concept overall, independently of where it appears.
+
+5. Evidence standard
+   - Every included concept must be supported by official source URL(s) where the concept is defined, described, enumerated, structured, constrained, profiled, specialized, instantiated, or clearly used or otherwise handled by the standard.
+   - For each concept, include all materially relevant official source URLs.
+   - Include URLs for all relevant places where the concept is defined, described, used, handled, constrained, profiled, specialized, or otherwise represented in the standard.
+   - Do not list redundant URLs that add no evidential value.
+   - Do not invent IRIs.
+   - If no IRI is available from the official source, write: none
+
+6. Relevance test
+   For each candidate concept, classify its relationship to "{{Y}}" as:
+   - Direct = explicitly about "{{Y}}"
+   - Strongly related = necessary, supporting, or context-setting for modeling "{{Y}}"
+   - Borderline = adjacent, but not clearly necessary and not clearly about "{{Y}}"
+
+   Inclusion rule:
+   - Include Direct concepts.
+   - Include Strongly related concepts.
+   - Exclude Borderline concepts from the main results unless the official source makes their relevance clearly strong.
+   - Put rejected Borderline cases in the "Excluded candidates" section.
+
+7. Output format
+   First provide:
+   - Standard identified
+   - Latest active usable version
+   - Official source(s) used for version identification
+
+   Then provide a table with exactly these three columns:
+   - Concept label
+   - IRI
+   - Source URL(s)
+
+   Requirements for the table:
+   - Use one row per normalized concept.
+   - In "Source URL(s)", list all materially relevant official URLs where the concept is defined, described, used, handled, constrained, profiled, specialized, or otherwise represented in the standard.
+   - The source list must be complete but non-redundant.
+   - If there is no IRI, write: none
+
+8. Per-concept verbatim evidence blocks
+   After the table, provide one separate copy/paste block for each included concept.
+   Use a fenced code block for each concept so it can be copied directly.
+
+   Each concept block must contain:
+   - Concept label
+   - IRI
+   - Source list
+   - Contexts
+
+   Rules for each concept block:
+   - Include all relevant official source URLs for that concept.
+   - Include the retrieved text verbatim, exactly as it appears in the official source.
+   - Preserve wording, capitalization, punctuation, and formatting as closely as possible.
+   - Do not paraphrase, summarize, normalize, rewrite, or interpret the quoted text inside the concept block.
+   - Make explicit each distinct context in which the concept appears.
+
+   Under "Contexts", create one subsection per relevant context, such as:
+   - Definition
+   - Description
+   - Usage
+   - Constraint
+   - Profile-specific usage
+   - Specialized form
+   - Value/domain context
+   - Other relevant context
+
+   For each context subsection:
+   - Name the context clearly.
+   - Provide the exact official source URL.
+   - Provide the verbatim text exactly as retrieved from the standard.
+   - If the concept appears in multiple relevant official pages or artifacts, include each separately.
+   - If multiple verbatim passages are relevant within the same context, include all of them, clearly separated.
+
+   Important rules for the concept blocks:
+   - Include only verbatim text that is materially about the concept as handled in the standard.
+   - Do not include long irrelevant surrounding passages.
+   - Do not include incidental mentions that do not materially define, describe, constrain, or handle the concept.
+   - If the concept is not explicitly defined anywhere but is clearly used or otherwise handled, state that explicitly and include the relevant verbatim usage passages instead.
+   - If the standard treats the concept differently in different contexts, make those contextual differences explicit.
+   - The concept blocks must reflect contextual plurality: if the same concept is defined, used, constrained, profiled, specialized, or otherwise handled in multiple places, show that explicitly.
+
+9. Excluded candidates
+   After the included concepts, provide a table titled "Excluded candidates" with these columns:
+   - Candidate
+   - Reason for exclusion
+   - Source URL
+
+10. Quality constraints
+   - Be conservative about false positives.
+   - Do not include concepts found only in incidental wording.
+   - Do not include concepts not actually present in "{{X}}".
+   - Do not infer missing concepts that are not explicitly present in the standard.
+   - Use only the latest active usable version of "{{X}}".
+   - Keep concept labels normalized and deduplicated.
+   - In the main table, consolidate each concept into a single normalized row.
+   - In the per-concept verbatim blocks, preserve contextual plurality across the standard.
+   - Prefer correctness, traceability, and conceptual usefulness over weakly supported exhaustiveness.
+
+Now perform the task for:
+- Standard X: "{{X}}"
+- Domain Y: "{{Y}}"

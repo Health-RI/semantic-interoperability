@@ -1,0 +1,193 @@
+_________ 1 st ROUND _________
+
+# 1
+
+Connect, don't reinvent. Unify what you already have.
+We don't add a new standard—we make your existing ones work together.
+
+Keep your models.
+Bring your own standards.
+
+Not another standard. A bridge between yours.
+Not a new model. A common understanding.
+Not replacement. Alignment.
+
+# 2
+
+Non-intrusive by design.
+Works with what you have.
+Add, don't alter.
+
+No refactors, no rework—just plug in.
+We meet you where you are, adding value without disruption.
+
+Fits in, doesn’t force.
+Drop-in interoperability.
+Plug in, keep moving.
+Integrates quietly, helps loudly.
+We adapt to you, not the other way around.
+
+# 3
+
+Your definition, connected.
+Plural by design.
+Context over canon.
+
+We don't declare one “true” definition—we connect yours.
+Multiple perspectives, all mappable to your context.
+Keep your meaning; we make it interoperable.
+Your concept, your definition—aligned, not overwritten.
+
+We don't enforce a single canonical definition. We model multiple legitimate views so you can map to your definition.
+Our goal is reflection, not replacement: we align what you have and want—not what we have or want.
+Concept pluralism: coexistence of definitions with precise mappings for interoperability.
+
+Not replacement—reflection.
+Not our truth—your meaning, connected.
+
+Plural definitions—your meaning, connected
+Many meanings, shared understanding.
+Multiplicity welcome, collisions resolved.
+Your context, our mapping.
+Coexist, then connect.
+Different views, interoperable results.
+
+# 4
+
+Depth over sprawl.
+Focus where it matters.
+Small scope, strong semantics.
+Essential first.
+
+We won't model the world—we'll model what moves it.
+Fewer concepts, greater clarity.
+We prioritize high-impact concepts shared across standards.
+
+We accept that modeling all of healthcare is unfeasible; we focus deeply on high-leverage concepts that recur across standards.
+Depth before breadth: better semantics where interoperability pressure is highest.
+
+Not everything—what matters most.
+Not shallow coverage—deep alignment.
+
+Depth over breadth—focus on high-leverage concepts
+Go deep where it counts.
+Sharp scope, strong outcomes.
+Concentrated effort, compounding clarity.
+Precision where the pressure is.
+
+# 5
+
+Interop is a team sport.
+Built with the community.
+Open, participatory, shared.
+Agree together, interoperate together.
+
+No community, no consensus, no interoperability.
+Propose, review, validate—together.
+The more contributors, the stronger the semantics.
+
+Semantic interoperability requires agreement; agreement requires active community involvement. Our process is open, free, and participatory.
+We invite contributions—concept proposals, fixes, reviews, validations—because broad input produces durable consensus.
+We aim for practical, shared solutions that make everyone's life easier.
+
+Join us: propose concepts, test mappings, validate changes.
+Contribute where you work—so it works for where you are.
+Open to everyone, everywhere—because semantic interoperability works only when it works for all.
+
+Community → consensus → interoperability
+Consensus built with public.
+Made together, made to last.
+Open process, shared ownership.
+From contributions to common ground.
+Everyone at the table, everything works better.
+
+# 6
+
+Practical, state-of-the-art.
+Innovation, not academia.
+
+Too academic? No. Too innovative? Proudly.
+Grounded in practice, powered by state-of-the-art tech.
+
+Innovation over theory: we operationalize proven research into practical interoperability.
+Modern approaches, measurable outcomes.
+
+Not academic posturing—applied innovation.
+Not theory, delivery.
+
+Innovative, applied, state-of-the-art
+Research-grade, production-ready.
+Cutting edge, hands-on.
+From lab insight to live impact.
+Built on the latest—aimed at the real.
+
+# 7
+
+Hard work, necessary payoff.
+Precision now, pain avoided later.
+Do the hard thing once.
+
+Defining precise semantics is hard—but skipping it just sweeps the problem under the rug.
+It's demanding work, and it's the only way to real interoperability.
+Clarity isn't optional; it's the cost of alignment.
+
+Explicit, rigorous semantics require significant analysis and modeling, but they are essential to achieve durable interoperability.
+Avoiding this effort only postpones issues; we face them directly instead of sweeping them under the rug.
+We choose correctness and clarity over shortcuts.
+
+Not shortcuts—sound semantics.
+Not later—do it right now.
+Not hidden problems—visible, resolved meanings.
+
+Hard but necessary—do the real work
+Tough now, smooth later.
+Exactness today beats errors tomorrow.
+Precision is the path, not a detour.
+Do it right once; stop fighting it forever.
+
+# 8
+
+Do it once, use it everywhere.
+One ontology, many mappings.
+
+Re-engineering concepts is costly—so we do it once and make it reusable.
+Our semantic mappings remove case-by-case analysis.
+Solve the core mapping once; reap the benefits repeatedly.
+
+We invest up front in precise concept engineering so the result persists and scales without repetitive rework.
+Shared semantic mappings replace one-off analyses, reducing cost and accelerating integration.
+Standardized alignments eliminate repeated effort across projects and systems.
+
+Reusable by design.
+Not per-project mapping—shared semantics.
+
+One solid mapping beats a hundred patches.
+Solve it centrally; scale it widely.
+Engineer once; apply on repeat.
+Reusable mappings, repeatable wins.
+
+# 9
+
+We don't own the truth—we kickstart it.
+Getting the ball rolling, together.
+Provisional today, better tomorrow.
+No one-offs—one for all.
+No custom each time—common by design.
+Not built one time—built to reuse, time after time.
+
+We're not the arbiters of truth—we're kickstarting the mappings so you can perfect them.
+Exact mappings belong to concept owners; we provide a solid first pass.
+We start the map; you make it exact.
+
+We don't claim a single truth. We provide an initial mapping set—derived from multiple standards—to help the community get started.
+Only the original concept owners can deliver exact mappings. Until then, our team offers well-researched, provisional mappings.
+These mappings are living artifacts: open, improvable, and meant to converge through community input.
+
+Not the final word—the first draft.
+Not gatekeeping—gardening (tend, refine, improve).
+
+If something's off, help us improve it—PRs and comments welcome.
+Own your concepts: propose fixes, refine mappings, validate changes.
+Join the loop: review → suggest → validate → publish
+
+Seed mappings, community-grown.

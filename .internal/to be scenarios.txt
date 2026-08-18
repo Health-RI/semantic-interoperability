@@ -1,0 +1,634 @@
+
+digraph to_be_01 {
+  graph [label="To be Example 1", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_O  { label="O";  color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; o1   [shape=ellipse, label="o1"]; }
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11d [shape=box, label="s11d", style="filled,dashed", fillcolor="#F2F2F2", color="#888888"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21  [shape=box, label="s21"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11  [shape=box, label="m11", style="rounded,filled"]; }
+
+  m11  -> s11d [label="i", color="#2E8B57", penwidth=2, xlabel="acceptable"];
+  s11d -> o1   [label="i"];
+  s11d -> s21  [label="m", style="dashed"];
+
+  { rank=same; o1; }
+  { rank=same; s11d; s21; }
+  { rank=same; m11; }
+}
+
+
+
+digraph to_be_02_updated {
+  graph [label="To be Example 2", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.45", ranksep="0.75"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 {
+    label="S1";
+    color="#CFCFCF";
+    style="rounded,filled";
+    fillcolor="#F7FFF4";
+
+    s11  [shape=box, label="s11"];
+    s11d [shape=box, label="s11d", style="filled,dashed", fillcolor="#F2F2F2", color="#888888"];
+    s11i [shape=box, label="s11i", style="filled,bold", fillcolor="#FFF1F1", color="#C0392B", fontcolor="#C0392B"];
+  }
+
+  subgraph cluster_S2 {
+    label="S2";
+    color="#CFCFCF";
+    style="rounded,filled";
+    fillcolor="#F7FFF4";
+
+    s21 [shape=box, label="s21"];
+  }
+
+  s11  -> s21 [label="valid m", style="dashed", color="#2E8B57", penwidth=2];
+  s11d -> s21 [label="deprecated m", style="dashed", color="#888888"];
+  s11i -> s21 [label="invalid m", style="dashed", color="#C0392B", penwidth=2];
+
+  note_alt [shape=note, label="alternative mapping states", fillcolor="#F8FFF1", color="#2E8B57"];
+  note_alt -> s11  [style="dotted", arrowhead="none"];
+  note_alt -> s11d [style="dotted", arrowhead="none"];
+  note_alt -> s11i [style="dotted", arrowhead="none"];
+  note_alt -> s21  [style="dotted", arrowhead="none"];
+
+  { rank=same; s11; s11d; s11i; s21; }
+}
+
+
+
+digraph to_be_03 {
+  graph [label="To be Example 3", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11 [shape=box, label="s11"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21"]; }
+  subgraph cluster_S3 { label="S3"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s31 [shape=box, label="s31"]; }
+
+  s11 -> s21 [label="m", style="dashed"];
+  s21 -> s31 [label="m", style="dashed"];
+  s11 -> s31 [label="candidate m", style="dotted", color="#B8860B"];
+
+  { rank=same; s11; s21; s31; }
+}
+
+
+
+digraph to_be_04 {
+  graph [label="To be Example 4", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_O  { label="O";  color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; o1  [shape=ellipse, label="o1"]; }
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11 [shape=box, label="s11"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+
+  s11 -> o1  [label="i"];
+  m11 -> s11 [label="i"];
+
+  { rank=same; o1; }
+  { rank=same; s11; }
+  { rank=same; m11; }
+}
+
+
+
+digraph to_be_05 {
+  graph [label="To be Example 5", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 {
+    label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4";
+    s11 [shape=box, label="s11"];
+    s12 [shape=box, label="s12", color="#2E8B57", penwidth=2];
+    s13 [shape=box, label="s13"];
+  }
+  subgraph cluster_M1 {
+    label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4";
+    m11 [shape=box, label="m11", style="rounded,filled"];
+  }
+
+  m11 -> s12 [label="i", color="#2E8B57", penwidth=2];
+
+  { rank=same; s11; s12; s13; }
+  { rank=same; m11; }
+}
+
+
+
+digraph to_be_06_updated {
+  graph [label="To be Example 6", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.45", ranksep="0.75"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_M1 {
+    label="M1";
+    color="#CFCFCF";
+    style="rounded,filled";
+    fillcolor="#F7FFF4";
+
+    m11 [shape=box, label="m11", style="rounded,filled"];
+  }
+
+  s11 [shape=box, label="s11", color="#2E8B57", penwidth=2, style="filled,dashed", fillcolor="#F8FFF1"];
+  s21 [shape=box, label="s21", color="#2E8B57", penwidth=2, style="filled,dashed", fillcolor="#F8FFF1"];
+  s31 [shape=box, label="s31", color="#2E8B57", penwidth=2, style="filled,dashed", fillcolor="#F8FFF1"];
+
+  note_targets [shape=note, label="targets={s11,s21,s31}", fillcolor="#F8FFF1", color="#2E8B57"];
+  note_targets -> m11 [style="dotted", arrowhead="none", color="#2E8B57"];
+  note_targets -> s11 [style="dotted", arrowhead="none", color="#2E8B57"];
+  note_targets -> s21 [style="dotted", arrowhead="none", color="#2E8B57"];
+  note_targets -> s31 [style="dotted", arrowhead="none", color="#2E8B57"];
+
+  { rank=same; s11; s21; s31; }
+  { rank=same; m11; }
+}
+
+
+
+digraph to_be_07 {
+  graph [label="To be Example 7", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11p [shape=box, label="m11p", style="rounded,filled"]; }
+
+  m11p -> s21 [label="i"];
+
+  { rank=same; s21; }
+  { rank=same; m11p; }
+}
+
+
+
+digraph to_be_08 {
+  graph [label="To be Example 8", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11 [shape=box, label="s11"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21"]; }
+  subgraph cluster_S3 { label="S3"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s31 [shape=box, label="s31"]; }
+
+  s11 -> s21 [label="m", style="dashed"];
+  s11 -> s31 [label="m", style="dashed"];
+
+  { rank=same; s11; s21; s31; }
+}
+
+
+
+digraph to_be_09 {
+  graph [label="To be Example 9", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11 [shape=box, label="s11"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21", color="#1F78B4", penwidth=2]; }
+  subgraph cluster_S3 { label="S3"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s31 [shape=box, label="s31", color="#1F78B4", penwidth=2]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+
+  m11 -> s11 [label="i"];
+
+  note_related [shape=note, label="related={s21,s31}", fillcolor="#F4FBFF", color="#1F78B4"];
+  note_related -> s21 [style="dotted", arrowhead="none", color="#1F78B4"];
+  note_related -> s31 [style="dotted", arrowhead="none", color="#1F78B4"];
+  note_related -> m11 [style="dotted", arrowhead="none", color="#1F78B4"];
+
+  { rank=same; s11; s21; s31; }
+  { rank=same; m11; }
+}
+
+
+
+digraph to_be_10 {
+  graph [label="To be Example 10", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11 [shape=box, label="s11"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21"]; }
+  subgraph cluster_S3 { label="S3"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s31 [shape=box, label="s31", color="#B8860B", penwidth=2]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+
+  m11 -> s11 [label="i"];
+
+  note_candidate [shape=note, label="candidate={s31}", fillcolor="#FFFDF2", color="#B8860B"];
+  note_candidate -> s31 [style="dotted", arrowhead="none", color="#B8860B"];
+  note_candidate -> m11 [style="dotted", arrowhead="none", color="#B8860B"];
+
+  { rank=same; s11; s21; s31; }
+  { rank=same; m11; }
+}
+
+
+
+digraph to_be_11 {
+  graph [label="To be Example 11", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+
+  m11 -> s21 [label="i", style="dotted", color="#B8860B", xlabel="approximate"];
+
+  { rank=same; s21; }
+  { rank=same; m11; }
+}
+
+
+
+digraph to_be_12 {
+  graph [label="To be Example 12", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+
+  note_no_i [shape=note, label="no i(m11,sxx)", fillcolor="#FFFDF2", color="#B8860B"];
+  note_no_valid_target [shape=note, label="no_valid_target(m11)", fillcolor="#FFFDF2", color="#B8860B"];
+
+  note_no_i -> m11 [style="dotted", arrowhead="none"];
+  note_no_valid_target -> m11 [style="dotted", arrowhead="none"];
+
+  { rank=same; m11; }
+}
+
+
+
+digraph to_be_13 {
+  graph [label="To be Example 13", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21", color="#2E8B57", penwidth=2]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+
+  m11 -> s21 [label="i", color="#2E8B57", penwidth=2];
+  note_selected [shape=note, label="selected(s21)", fillcolor="#F8FFF1", color="#2E8B57"];
+  note_selected -> s21 [style="dotted", arrowhead="none", color="#2E8B57"];
+
+  { rank=same; s21; }
+  { rank=same; m11; }
+}
+
+
+
+digraph to_be_14 {
+  graph [label="To be Example 14", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 {
+    label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4";
+    s11 [shape=box, label="s11"];
+    s12 [shape=box, label="s12"];
+  }
+  subgraph cluster_M1 {
+    label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4";
+    m11a [shape=box, label="m11a", style="rounded,filled"];
+    m11b [shape=box, label="m11b", style="rounded,filled"];
+  }
+
+  m11a -> s11 [label="i"];
+  m11b -> s12 [label="i"];
+
+  { rank=same; s11; s12; }
+  { rank=same; m11a; m11b; }
+}
+
+
+
+digraph to_be_15 {
+  graph [label="To be Example 15", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_O  { label="O";  color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; o1  [shape=ellipse, label="o1"]; }
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11 [shape=box, label="s11"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+
+  s11 -> o1  [label="i"];
+  m11 -> s11 [label="i"];
+
+  { rank=same; o1; }
+  { rank=same; s11; }
+  { rank=same; m11; }
+}
+
+
+
+digraph to_be_16 {
+  graph [label="To be Example 16", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11 [shape=box, label="s11"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+  subgraph cluster_M2 { label="M2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m21 [shape=box, label="m21", style="rounded,filled"]; }
+
+  m11 -> s11 [label="i"];
+  m21 -> s11 [label="i"];
+  m11 -> m21 [label="aligns", dir="none", style="dotted", color="#2E8B57", penwidth=2];
+
+  { rank=same; s11; }
+  { rank=same; m11; m21; }
+}
+
+
+
+digraph to_be_17 {
+  graph [label="To be Example 17", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11 [shape=box, label="s11"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+  subgraph cluster_M2 { label="M2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m21 [shape=box, label="m21", style="rounded,filled"]; }
+
+  m11 -> s11 [label="i"];
+  m21 -> s21 [label="i"];
+  s11 -> s21 [label="m", style="dashed"];
+  m11 -> m21 [label="aligns", dir="none", style="dotted", color="#2E8B57", penwidth=2];
+
+  { rank=same; s11; s21; }
+  { rank=same; m11; m21; }
+}
+
+
+
+digraph to_be_18 {
+  graph [label="To be Example 18", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_O  { label="O";  color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; o1  [shape=ellipse, label="o1", color="#2E8B57", penwidth=2]; }
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11 [shape=box, label="s11"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+  subgraph cluster_M2 { label="M2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m21 [shape=box, label="m21", style="rounded,filled"]; }
+
+  m11 -> s11 [label="i"];
+  m21 -> s21 [label="i"];
+  s11 -> o1  [label="i"];
+  s21 -> o1  [label="i"];
+
+  note_decision [shape=note, label="decision(shared_o1)", fillcolor="#F8FFF1", color="#2E8B57"];
+  note_decision -> o1 [style="dotted", arrowhead="none", color="#2E8B57"];
+
+  { rank=same; o1; }
+  { rank=same; s11; s21; }
+  { rank=same; m11; m21; }
+}
+
+
+
+digraph to_be_19 {
+  graph [label="To be Example 19", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11 [shape=box, label="s11"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+  subgraph cluster_M2 { label="M2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m21 [shape=box, label="m21", style="rounded,filled"]; }
+
+  s11 -> s21 [label="new m", style="dotted", color="#B8860B", penwidth=2];
+  note_new_mapping [shape=note, label="requires_new_mapping(m(s11,s21))", fillcolor="#FFFDF2", color="#B8860B"];
+  note_new_mapping -> s11 [style="dotted", arrowhead="none", color="#B8860B"];
+  note_new_mapping -> s21 [style="dotted", arrowhead="none", color="#B8860B"];
+
+  { rank=same; s11; s21; }
+  { rank=same; m11; m21; }
+}
+
+
+
+digraph to_be_20 {
+  graph [label="To be Example 20", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+  subgraph cluster_M2 { label="M2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m21 [shape=box, label="m21", style="rounded,filled"]; }
+
+  m11 -> s21 [label="i"];
+  m21 -> s21 [label="i"];
+  m11 -> m21 [label="aligns", dir="none", style="dotted", color="#2E8B57", penwidth=2];
+
+  { rank=same; s21; }
+  { rank=same; m11; m21; }
+}
+
+
+
+digraph to_be_21 {
+  graph [label="To be Example 21", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11 [shape=box, label="s11"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+  subgraph cluster_M2 { label="M2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m21 [shape=box, label="m21", style="rounded,filled"]; }
+
+  m11 -> s11 [label="i"];
+  m21 -> s21 [label="i"];
+  s11 -> s21 [label="m", style="dashed"];
+  m11 -> m21 [label="aligns", dir="none", style="dotted", color="#2E8B57", penwidth=2];
+
+  { rank=same; s11; s21; }
+  { rank=same; m11; m21; }
+}
+
+
+
+digraph to_be_22 {
+  graph [label="To be Example 22", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11 [shape=box, label="s11"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11 [shape=box, label="m11", style="rounded,filled"]; }
+  subgraph cluster_M2 { label="M2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m21 [shape=box, label="m21", style="rounded,filled"]; }
+
+  m11 -> s11 [label="i"];
+  m21 -> s21 [label="i"];
+  s11 -> s21 [label="m", style="dashed"];
+  m11 -> m21 [label="aligns", dir="none", style="dotted", color="#2E8B57", penwidth=2];
+
+  { rank=same; s11; s21; }
+  { rank=same; m11; m21; }
+}
+
+
+
+digraph to_be_23_updated {
+  graph [label="To be Example 23", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.45", ranksep="0.75"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 {
+    label="S1";
+    color="#CFCFCF";
+    style="rounded,filled";
+    fillcolor="#F7FFF4";
+
+    s11 [shape=box, label="s11"];
+  }
+
+  subgraph cluster_S2 {
+    label="S2";
+    color="#CFCFCF";
+    style="rounded,filled";
+    fillcolor="#F7FFF4";
+
+    s21 [shape=box, label="s21"];
+  }
+
+  s11 -> s21 [label="m", style="dashed"];
+
+  note_accepted [shape=note, label="accepted(m(s11,s21))", fillcolor="#F8FFF1", color="#2E8B57"];
+  note_rejected [shape=note, label="rejected(m(s11,s21))", fillcolor="#FFF4F4", color="#C0392B"];
+
+  note_accepted -> s11 [style="dotted", arrowhead="none", color="#2E8B57"];
+  note_accepted -> s21 [style="dotted", arrowhead="none", color="#2E8B57"];
+  note_rejected -> s11 [style="dotted", arrowhead="none", color="#C0392B"];
+  note_rejected -> s21 [style="dotted", arrowhead="none", color="#C0392B"];
+
+  { rank=same; s11; s21; }
+}
+
+
+
+digraph to_be_24 {
+  graph [label="To be Example 24", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_O  { label="O";  color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; o1  [shape=ellipse, label="o1"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21 [shape=box, label="s21", color="#2E8B57", penwidth=2]; }
+
+  s21 -> o1 [label="i"];
+  note_reusable [shape=note, label="reusable={s21}", fillcolor="#F8FFF1", color="#2E8B57"];
+  note_reusable -> s21 [style="dotted", arrowhead="none", color="#2E8B57"];
+
+  { rank=same; o1; }
+  { rank=same; s21; }
+}
+
+
+
+digraph to_be_25 {
+  graph [label="To be Example 25", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11d [shape=box, label="s11d", style="filled,dashed", fillcolor="#F2F2F2", color="#888888"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21  [shape=box, label="s21"]; }
+
+  s11d -> s21 [label="m", style="dashed", color="#B8860B", penwidth=2, xlabel="affected"];
+
+  { rank=same; s11d; s21; }
+}
+
+
+
+digraph to_be_26 {
+  graph [label="To be Example 26", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11d [shape=box, label="s11d", style="filled,dashed", fillcolor="#F2F2F2", color="#888888"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11  [shape=box, label="m11", style="rounded,filled"]; }
+  subgraph cluster_M2 { label="M2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m21  [shape=box, label="m21", style="rounded,filled"]; }
+
+  m11 -> s11d [label="i", color="#B8860B", penwidth=2, xlabel="affected"];
+  m21 -> s11d [label="i", color="#B8860B", penwidth=2, xlabel="affected"];
+
+  { rank=same; s11d; }
+  { rank=same; m11; m21; }
+}
+
+
+
+digraph to_be_27 {
+  graph [label="To be Example 27", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11d [shape=box, label="s11d", style="filled,dashed", fillcolor="#F2F2F2", color="#888888"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21  [shape=box, label="s21"]; }
+  subgraph cluster_S3 { label="S3"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s31  [shape=box, label="s31"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11  [shape=box, label="m11", style="rounded,filled"]; }
+
+  m11  -> s11d [label="i", color="#1F78B4", penwidth=2, xlabel="downstream"];
+  s11d -> s21  [label="m", style="dashed", color="#1F78B4", penwidth=2, xlabel="downstream"];
+  s21  -> s31  [label="m", style="dashed", color="#1F78B4", penwidth=2, xlabel="downstream"];
+
+  { rank=same; s11d; s21; s31; }
+  { rank=same; m11; }
+}
+
+
+
+digraph to_be_28 {
+  graph [label="To be Example 28", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11i [shape=box, label="s11i", style="filled,bold", fillcolor="#FFF1F1", color="#C0392B", fontcolor="#C0392B"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21  [shape=box, label="s21"]; }
+
+  s11i -> s21 [label="m", style="dashed", color="#B8860B", penwidth=2, xlabel="affected"];
+
+  { rank=same; s11i; s21; }
+}
+
+
+
+digraph to_be_29 {
+  graph [label="To be Example 29", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11i [shape=box, label="s11i", style="filled,bold", fillcolor="#FFF1F1", color="#C0392B", fontcolor="#C0392B"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11  [shape=box, label="m11", style="rounded,filled"]; }
+  subgraph cluster_M2 { label="M2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m21  [shape=box, label="m21", style="rounded,filled"]; }
+
+  m11 -> s11i [label="i", color="#B8860B", penwidth=2, xlabel="affected"];
+  m21 -> s11i [label="i", color="#B8860B", penwidth=2, xlabel="affected"];
+
+  { rank=same; s11i; }
+  { rank=same; m11; m21; }
+}
+
+
+
+digraph to_be_30 {
+  graph [label="To be Example 30", labelloc="t", bgcolor="#EAF7E6", rankdir=BT, pad="0.3", nodesep="0.35", ranksep="0.65"];
+  node  [fontname="Helvetica", fontsize=10, style="filled", fillcolor="white", color="#555555"];
+  edge  [fontname="Helvetica", fontsize=9, color="#555555", arrowsize=0.7];
+
+  subgraph cluster_S1 { label="S1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s11i [shape=box, label="s11i", style="filled,bold", fillcolor="#FFF1F1", color="#C0392B", fontcolor="#C0392B"]; }
+  subgraph cluster_S2 { label="S2"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s21  [shape=box, label="s21"]; }
+  subgraph cluster_S3 { label="S3"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; s31  [shape=box, label="s31"]; }
+  subgraph cluster_M1 { label="M1"; color="#CFCFCF"; style="rounded,filled"; fillcolor="#F7FFF4"; m11  [shape=box, label="m11", style="rounded,filled"]; }
+
+  m11  -> s11i [label="i", color="#1F78B4", penwidth=2, xlabel="downstream"];
+  s11i -> s21  [label="m", style="dashed", color="#1F78B4", penwidth=2, xlabel="downstream"];
+  s21  -> s31  [label="m", style="dashed", color="#1F78B4", penwidth=2, xlabel="downstream"];
+
+  { rank=same; s11i; s21; s31; }
+  { rank=same; m11; }
+}

@@ -1,0 +1,123 @@
+Slide 1Welcome. In this presentation, I will walk you through applied use cases from the Health-RI Semantic Interoperability Initiative.
+
+The focus is on how semantic technologies can support practical decisions in health data reuse. Rather than discussing interoperability in the abstract, we will follow concrete user stories and show how meaning can be made explicit, compared, validated, and reused across datasets.
+
+Slide 2To make the examples easier to follow, we introduce Dr. Amir Hassan, a researcher who wants to reuse health data responsibly for analysis.
+
+Amir is studying whether treatment outcomes differ across patient groups. To do that, he needs to stratify his cohort using the correct sex- or gender-related variable.
+
+At first, this may sound straightforward. Many datasets contain variables that appear to describe sex or gender.
+
+But before Amir can request and combine data, he needs to know which datasets contain the concept he actually needs, and whether similar variables are defined in the same way across institutions.
+
+This is the central challenge: the labels may look familiar, but the underlying meanings may not be the same.
+
+Slide 3We now move into the first applied scenario: clarifying meanings before reuse.
+
+This is the starting point for Amir’s work. Before selecting or combining any datasets, he needs to understand the landscape of related concepts.
+
+Although sex- and gender-related variables may appear similar at first glance, they can be based on very different aspects of a person’s identity or record, including biological characteristics, social identity, legal status, or the perspective of the person or institution defining the information.
+
+At this step, Amir is trying to understand what is out there: which sex- and gender-related meanings are represented in the available datasets, how they differ from one another, and which one best matches what he needs for his study.
+
+Slide 4On this slide, Amir sees three illustrative dataset options. They are fictional examples, created to make the scenario realistic while keeping the focus on the semantic problem.
+
+The first is the NPR Demographic Extract. We can think of this as a dataset owned by a national population registry, created to support demographic identification and population-level linkage. This dataset uses the Care-SM standard. The specific term used from that standard is care-sm:Sex, with the label “Biological sex.”
+
+The second is the Hospital Registration Extract. This can be understood as a dataset owned by a hospital registration system, created to support patient registration and administrative handling during clinical encounters. This dataset uses an openEHR-based representation. The specific term used is hri-openehr:legal-gender, with the label “Legal gender.”
+
+The third is the Administrative Intake Extract. This can be understood as a dataset owned by an intake or questionnaire service, created to collect information provided during administrative intake. This dataset uses LOINC. The specific term has label “Administrative gender.”
+
+Slide 5This slide makes Amir’s question explicit.
+
+What Amir wants is clear: he wants to build a valid cohort, use the variable that fits his research question, and interpret the available data in a way that supports reliable analysis.
+
+The challenge is that the datasets appear to contain similar sex- or gender-related information.
+
+However, if these variables do not mean the same thing, treating them as equivalent could distort the results of the study.
+
+So Amir’s key question becomes: what semantic differences do I need to understand before I can correctly compare and reuse these datasets?
+
+Slide 6This slide highlights the problem with relying on labels alone.
+
+We see terms such as female appearing in more than one dataset. But the same term does not necessarily carry the same meaning in every context.
+
+For example, the term female in a biological sex column may not be equivalent to female in a legal gender column.
+
+We also see related terms such as man and male. These may look close, but they do not necessarily refer to the same concept.
+
+This highlights an important distinction: there is the value itself, and there is the meaning of the column in which that value appears.
+
+So the key question is not just whether labels match, but whether the underlying concepts align.
+
+This is where precise and explicit definitions become essential for responsible and reproducible data reuse.
+
+Slide 7This slide shows that sex and gender are not single, uniform meanings. They branch into several related but different concepts.
+
+For example, biological sex, sex at birth, and karyotypical sex are not automatically the same thing. In the same way, social gender, self-identified gender, administrative gender, and legal gender refer to different kinds of information.
+
+So, before Amir compares variables across datasets, he needs to understand which specific meaning each variable refers to, and how those meanings relate to one another.
+
+Slide 8To support this kind of clarification, we use HRIO: the Health-RI Ontology.
+
+HRIO makes the variables’ intended meanings precise and explicit, using OntoUML: a modeling language designed to describe concepts and their relationships in a clear and unambiguous way.
+
+Slide 9Here we see the HRIO taxonomies for sex and gender.
+
+The details of the diagrams are not the main focus for the audience at this point. What this slide shows is that HRIO organizes these meanings into clear taxonomies.
+
+Instead of treating all sex- and gender-related variables as one flat group, HRIO separates them into precise categories and makes their distinctions explicit.
+
+This gives Amir a reference structure for asking better questions. For example, instead of simply asking for “gender,” he can now see that there are different kinds of gender-related concepts, connected in different ways, and identify which one best fits his study.
+
+Slide 10With these distinctions in place, Amir can use HRIO to identify the intended meaning of each dataset variable.
+
+Here, the Care-SM variable, labeled Biological sex, is linked to the HRIO’s Sex concept. The openEHR-based variable, labeled Legal gender, is linked to the HRIO’s Legal Gender concept. And the LOINC variable, labeled Administrative gender, is linked to the HRIO’s Administrative Gender concept.
+
+The key point is that each variable keeps its original representation, but its meaning becomes explicit.
+
+Slide 11We now return to the dataset variables from Amir’s scenario.
+
+The variables may still look comparable because they contain familiar values such as female, male, woman, man, and non-binary.
+
+But after Amir uses HRIO to identify the intended meaning of each variable, their differences become clear.
+
+One variable is about biological sex. One is about legal gender. One is about administrative gender.
+
+So the conclusion for this first scenario is clear: Amir should not treat these variables as interchangeable just because their labels or values look similar.
+
+By making the meanings explicit, he can avoid label-based guessing and move toward a more defensible decision about which data can be reused for his study.
+
+Slide 12We now move from Scenario 1 into Scenario 2.
+
+In the first scenario, Amir clarified that sex- and gender-related variables can represent different meanings. In this scenario, he applies that understanding to a practical task: finding the dataset that contains the right variable for his study.
+
+For Amir, the target meaning is biological sex. The question is no longer simply, “Which datasets contain a column whose label is related to sex?” The question is, “Which dataset contains the variable that represents biological sex?”
+
+Slide 13In this scenario, Amir wants to identify the datasets that contain the right variable for his study: a column representing biological sex.
+
+Several datasets may look relevant at first glance. They all contain sex- or gender-related columns, and some of their values may look familiar. But Amir knows that visible labels alone are not enough.
+
+So the question becomes: which of these datasets contains the variable that actually represents biological sex?
+
+Slide 14Back in Amir’s situation.
+
+At this point, the relevant meanings are clear in the conceptual model. Amir can see which concepts represent biological sex, legal gender, or administrative gender.
+
+However, this still leaves Amir with a practical limitation. The meanings are known, but they are not yet computationally actionable.
+
+The next step is to turn these conceptual meanings into machine-readable, queryable, and actionable relations.
+
+Slide 15In the previous scenario, we introduced HRIO as a way to support conceptual clarification. It helped make meanings precise and explicit. But we now move from conceptual clarification to computational tractability.
+
+This is where the computational version of HRIO comes in. It represents the relevant meanings and their relations in machine-readable form, so they can be queried, processed, and reused.
+
+In other words, the computational ontology turns conceptual distinctions into something that can support Amir’s dataset discovery task.
+
+Slide 16We now reach the result of Scenario 2.
+
+The meanings are now not only clear, but also computationally actionable. Amir can query for dataset columns that are mapped to the meaning he needs: biological sex, represented here as HRIO’s Sex.
+
+In this example, the query returns the NPR Demographic Extract, because its column is mapped to the biological sex meaning.
+
+So, Amir no longer has to rely only on labels or manual inspection. He can use explicit, machine-readable semantic relations to identify the dataset that contains the right variable for his study.

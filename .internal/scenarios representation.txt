@@ -1,0 +1,460 @@
+Below is the representation scheme I will use for your scenarios in Graphviz DOT, derived directly from your notation.
+
+## 1. Overall graph structure
+
+I will represent each scenario as a **directed graph**:
+
+* `digraph`
+* left-to-right layout by default (`rankdir=LR`)
+* artifacts grouped into **visual containers**
+* concepts shown as **nodes**
+* relations shown as **directed edges**
+* auxiliary scenario outcomes shown as **annotations**, not as core semantic relations
+
+This keeps the distinction clear between:
+
+* **artifact membership**
+* **core semantic relations**
+* **derived or analytical results**
+
+---
+
+## 2. Artifact layers
+
+Each artifact will be represented as a **cluster/subgraph**.
+
+### Representation
+
+* `O` → one cluster labeled **Ontology**
+* `S1`, `S2`, ..., `SN` → one cluster per standard
+* `M1`, `M2`, ..., `MN` → one cluster per model
+
+### Visual rule
+
+* Each cluster contains the concept nodes that belong to that artifact
+* The cluster label will be the artifact identifier, optionally with a readable title
+
+### Intended effect
+
+This directly mirrors your set notation, such as:
+
+* `O={o1,o2}`
+* `S1={s11,s12}`
+* `M1={m11,m12}`
+
+So **set membership** is represented by **containment inside the artifact cluster**, not by extra edges.
+
+---
+
+## 3. Concept nodes
+
+Each concept will be represented as a **node**.
+
+### 3.1 Ontology concepts
+
+Examples: `o1`, `o2`
+
+Representation:
+
+* node inside cluster `O`
+* ontology-specific visual style
+
+### 3.2 Standard concepts
+
+Examples: `s11`, `s12`, `s21`
+
+Representation:
+
+* node inside the corresponding standard cluster (`S1`, `S2`, etc.)
+* standard-specific visual style
+
+### 3.3 Model concepts
+
+Examples: `m11`, `m12`, `m21`
+
+Representation:
+
+* node inside the corresponding model cluster (`M1`, `M2`, etc.)
+* model-specific visual style
+
+---
+
+## 4. Node styling by artifact type
+
+I will distinguish ontology, standard, and model concepts visually.
+
+### Proposed convention
+
+| Artifact type | Node meaning    | Suggested visual treatment |
+| ------------- | --------------- | -------------------------- |
+| Ontology      | `o1`, `o2`, ... | ellipse                    |
+| Standard      | `sij`           | box                        |
+| Model         | `mij`           | rounded box                |
+
+This gives an immediate visual separation between the three conceptual layers.
+
+---
+
+## 5. Status notation
+
+Your default status is **valid**, with optional suffixes:
+
+* no suffix = valid
+* `d` = deprecated
+* `i` = invalid
+
+I will encode status primarily through **node appearance**.
+
+### 5.1 Valid
+
+Examples:
+
+* `o1`
+* `s11`
+* `m21`
+
+Representation:
+
+* normal border
+* normal text
+* standard fill
+
+### 5.2 Deprecated
+
+Examples:
+
+* `o1d`
+* `s11d`
+* `m21d`
+
+Representation:
+
+* dashed border
+* muted fill or lighter tone
+* label remains exactly the scenario label, including suffix if you use it in the definition
+
+### 5.3 Invalid
+
+Examples:
+
+* `o1i`
+* `s11i`
+* `m21i`
+
+Representation:
+
+* bold red border or strongly emphasized border
+* very light or warning fill
+* label remains exactly the scenario label, including suffix
+
+### Interpretation rule
+
+The suffix is part of the **scenario notation**, so I will preserve it in the displayed label when it appears explicitly.
+
+---
+
+## 6. Implements relation
+
+Your notation:
+
+* `i(x,y)` = concept `x` implements concept `y`
+
+Allowed uses in your specification:
+
+* model → standard
+* standard → ontology
+
+### Representation
+
+This will be a **directed solid edge**:
+
+* source = implementer
+* target = implemented concept
+
+### Visual rule
+
+* solid line
+* arrow from `x` to `y`
+* edge label: `implements` or short label `i`
+
+### Examples
+
+* `i(m11,s11)` → edge from `m11` to `s11`
+* `i(s11,o1)` → edge from `s11` to `o1`
+
+This preserves the implementation chain exactly as stated.
+
+---
+
+## 7. Maps relation
+
+Your notation:
+
+* `m(x,y)` = standard concept `x` maps to standard concept `y`
+
+### Representation
+
+This will be a **directed dashed edge** between standard concepts.
+
+### Visual rule
+
+* dashed line
+* arrow from source standard concept to target standard concept
+* edge label: `maps` or short label `m`
+
+### Example
+
+* `m(s11,s21)` → dashed directed edge from `s11` to `s21`
+
+Because mapping is not the same as implementation, I will keep it visually distinct from `i(...)`.
+
+---
+
+## 8. Alignment interpretation
+
+Your specification says alignment is **understood** from the relations; it is not a core structural relation by default.
+
+So I will treat alignment in two different ways depending on what you provide.
+
+### 8.1 Implicit alignment only
+
+If the scenario only contains the structural relations that imply alignment, I will **not** add an explicit alignment edge.
+
+Reason:
+
+* alignment is then an interpretation of the graph
+* the visualization should preserve the source structure faithfully
+
+### 8.2 Explicit alignment annotation
+
+If the scenario explicitly includes:
+
+* `aligns(m11,m21)`
+
+then I will represent it as an **auxiliary annotation edge**:
+
+* dotted line
+* no strong arrow semantics, or a neutral annotation style
+* label `aligns`
+
+This keeps it separate from the core relations `i(...)` and `m(...)`.
+
+---
+
+## 9. Auxiliary annotations
+
+Your examples include items such as:
+
+* `candidate={m(s11,s31)}`
+* `targets={s11,s21,s31}`
+* `affected={m(s11d,s21), i(m11,s11d)}`
+* `selected(s21)`
+* `no_valid_target(m11)`
+* `requires_new_mapping(m(s11,s21))`
+* `aligns(m11,m21)`
+* `acceptable(i(m11,s11d))`
+
+These are not core semantic relations, so I will represent them as **analysis annotations**, not as normal domain edges.
+
+### 9.1 General rule
+
+Auxiliary annotations will be shown using one of these mechanisms:
+
+* **annotation nodes** attached by dotted lines, or
+* **graph-level note blocks**, when more readable
+
+I will choose the cleaner option per scenario, but consistently.
+
+### 9.2 Specific treatment
+
+#### `selected(x)`
+
+* highlight the selected node
+* optional small annotation label `selected`
+
+#### `targets={...}`
+
+* highlight the listed nodes as a target set
+* optionally place them in a visual group or apply a shared accent
+
+#### `candidate={...}`
+
+* represent candidate mappings or candidate relations as tentative annotation edges
+* visually different from confirmed `m(...)`
+
+#### `affected={...}`
+
+* emphasize the listed nodes or edges with an “affected” overlay style
+
+#### `no_valid_target(m11)`
+
+* annotation note attached to node `m11`
+
+#### `requires_new_mapping(m(s11,s21))`
+
+* annotation note attached to the relevant pair or tentative mapping
+
+#### `acceptable(i(m11,s11d))`
+
+* annotation note attached to the specific implements edge
+
+#### `aligns(m11,m21)`
+
+* dotted annotation edge, as noted above
+
+---
+
+## 10. Membership vs. relation
+
+I will keep these clearly separated:
+
+### Membership
+
+Example:
+
+* `S1={s11,s12}`
+
+Representation:
+
+* `s11` and `s12` are **inside** cluster `S1`
+
+### Relation
+
+Examples:
+
+* `i(m11,s11)`
+* `m(s11,s21)`
+
+Representation:
+
+* these are **edges**
+
+This prevents overloading the graph with artificial “belongs_to” links.
+
+---
+
+## 11. Identifier handling in DOT
+
+Graphviz node IDs must be stable and unambiguous.
+
+### Rule
+
+I will use:
+
+* the exact concept token as the visible label
+* a safe internal DOT identifier when needed
+
+This matters especially for:
+
+* deprecated/invalid variants
+* annotation objects referring to relations
+
+For example, the displayed label may remain `s11d`, while the internal DOT id may be normalized if needed.
+
+---
+
+## 12. Default visual semantics
+
+Unless you later ask for a different style, I will use this default grammar:
+
+### Clusters
+
+* one cluster per artifact
+* clear label
+* light boundary
+
+### Nodes
+
+* ontology: ellipse
+* standard: box
+* model: rounded box
+
+### Status
+
+* valid: normal
+* deprecated: dashed / muted
+* invalid: emphasized warning style
+
+### Edges
+
+* `i(...)`: solid directed edge
+* `m(...)`: dashed directed edge
+* auxiliary/derived annotations: dotted edge or note attachment
+
+This gives a clean separation between:
+
+* **type**
+* **status**
+* **relation semantics**
+* **analysis output**
+
+---
+
+## 13. Treatment of complete chains
+
+A chain such as:
+
+* `i(m11,s11)`
+* `i(s11,o1)`
+
+will appear as a directed path from model to standard to ontology.
+
+This makes the grounding traceable visually without adding extra inferred edges.
+
+If a scenario contains:
+
+* `i(m11,s11)`
+* `i(m21,s21)`
+* `i(s11,o1)`
+* `i(s21,o1)`
+
+then the shared ontology grounding will be visible structurally through convergence on `o1`, even if no explicit `aligns(...)` annotation is added.
+
+---
+
+## 14. Design principle I will follow
+
+I will use a **three-level visual grammar**:
+
+### Level 1 — structure
+
+Artifacts and concept membership
+
+### Level 2 — semantics
+
+Core relations:
+
+* `i(...)`
+* `m(...)`
+
+### Level 3 — analysis
+
+Auxiliary annotations:
+
+* candidates
+* selected targets
+* affected relations
+* acceptability
+* derived alignment
+* warnings such as `no_valid_target(...)`
+
+This matches your documentation closely and avoids mixing scenario facts with scenario assessment.
+
+---
+
+## 15. Working convention going forward
+
+When you send a scenario, I will convert it into DOT using exactly this logic:
+
+* artifacts as clusters
+* concepts as typed nodes
+* statuses as node styles
+* `i(...)` as solid directed edges
+* `m(...)` as dashed directed edges
+* auxiliary annotations as dotted or note-style analytical overlays
+
+Once you send the first scenario, I will produce the DOT file content using this convention.
+
+* “some scenarios definitions” → “some scenario definitions” or “definitions for some scenarios”
+* “to create the dot file to me” → “to create the DOT file for me”
+* “use the specification i sent you” → “use the specification I sent you”

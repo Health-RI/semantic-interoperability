@@ -1,0 +1,132 @@
+### RUN SETTINGS
+SCOPE: <your theme/domain/scope to be modeled>
+### END RUN SETTINGS
+
+You will receive FOUR inputs after this prompt. Each input is the full output produced by the extraction prompt for the same SCOPE (it contains four labeled sections: MUST/SHOULD/COULD/SHOULD NOT; then an “As-of / Version” line; then “Key sources consulted”).
+
+Inputs are provided in this order unless explicitly labeled otherwise:
+1) FHIR
+2) OMOP
+3) openEHR
+4) CARE-SM
+
+Your task: consolidate and align the four inputs into ONE coherent Markdown task description that is *domain-first* (real-world phenomena), not data-/schema-first. You may see data/representation constructs in the inputs; keep them only if they represent real-world information artifacts essential to the domain meaning. Do NOT invent new concepts. Prevent scope creep by weakening overly broad “dependencies”.
+
+## 1) Input recognition (mandatory)
+For each of the four inputs:
+- Verify it contains the four category sections (## MUST / ## SHOULD / ## COULD / ## SHOULD NOT), each with a table having exactly 3 columns:
+  | Concept name | Very short description | Why in this table |
+- Capture its “As-of / Version” line for provenance (do not merge into concept rows).
+- Assign its standard by position (FHIR, OMOP, openEHR, CARE-SM) unless an explicit label is present and trustworthy.
+If any input is missing a category/section, proceed with what is present and note the gap under Notes.
+
+## 2) Domain-model lens (mandatory)
+Use the Real-World Test:
+- KEEP (domain concept): can exist/occur in reality (entity, event, state, role, relationship, quality), including real-world information artifacts (clinical document/order/report) when essential.
+- DEMOTE (data-like): identifiers/keys, generic containers/datatypes, serialization/path mechanics, table/field constructs, UI/workflow conveniences, mapping-only artifacts, missingness-only constructs.
+Default action:
+- If clearly data-like, place in SHOULD NOT (preferred).
+- Remove ONLY if purely syntactic/formatting noise with zero conceptual meaning; if removed, list it in Notes (“Removed concepts”) with a reason.
+- If uncertain, keep but place in SHOULD NOT and note uncertainty briefly in “Why”.
+
+## 3) Scope discipline (avoid overly strong dependencies)
+Treat “dependencies” as OPTIONAL unless strictly required to express the SCOPE as a real-world phenomenon.
+- Do NOT automatically include broad context concepts (Person/Patient, Encounter/Visit, Practitioner/Organization, generic time/value containers) unless:
+  (a) the SCOPE cannot be represented meaningfully without them in that standard, OR
+  (b) they appear as MUST in at least two inputs AND pass the Real-World Test.
+- Avoid transitive closure (“dependencies of dependencies”).
+- If a concept broadens scope substantially, demote one level (MUST→SHOULD, SHOULD→COULD, COULD→SHOULD NOT) unless required by multiple inputs.
+
+## 4) Consolidation rules
+1) Parse concepts from each input’s four tables.
+2) Normalize concept names (without changing meaning):
+   - Trim whitespace; remove trailing punctuation; prefer singular noun phrases.
+   - Keep standard-specific canonical names when domain-meaningful.
+3) De-duplicate:
+   - Exact duplicates become one row.
+   - Near-duplicates: merge ONLY if clearly the same real-world meaning; otherwise keep separate.
+   - When merging, pick one normalized label; mention key aliases briefly in “Why”.
+4) Category reconciliation (after applying domain-model lens + scope discipline):
+   - If a concept appears in multiple categories across standards, choose the most conservative:
+     MUST > SHOULD > COULD > SHOULD NOT
+   - A concept that fails the Real-World Test cannot be promoted above SHOULD NOT.
+5) Add a “Where (standards)” field:
+   - For each consolidated concept, list all standards where it appears: FHIR, OMOP, openEHR, CARE-SM (semicolon-separated).
+6) Keep text short:
+   - Description ≤ 12 words.
+   - Why ≤ 25 words.
+7) Uniform ordering:
+   - Within each category table, sort rows alphabetically by “Concept name”.
+   - The checklist must follow the same order as the corresponding table.
+
+## OUTPUT (Markdown task description) — REQUIRED STRUCTURE
+Output ONLY what follows, and keep EVERYTHING inside this single Markdown block.
+
+# Concept Consolidation Task — <copy the SCOPE value from RUN SETTINGS here>
+
+## Goal
+Align and consolidate *domain* concepts across FHIR, OMOP, openEHR, and CARE-SM for a conceptual model of real-world phenomena, minimizing data-like artifacts and scope creep.
+
+## Provenance (inputs)
+List the “As-of / Version” lines for each standard (FHIR, OMOP, openEHR, CARE-SM) as bullets.
+
+## Checklist (modeling progress)
+Create four checkbox lists below. Each list must include ALL concepts that end up in the corresponding consolidated table later (no extras, no missing items). Each concept appears exactly once.
+
+### MUST
+- [ ] <Concept name>
+...
+
+### SHOULD
+- [ ] <Concept name>
+...
+
+### COULD
+- [ ] <Concept name>
+...
+
+### SHOULD NOT
+- [ ] <Concept name>
+...
+
+## Consolidated tables
+Produce exactly FOUR clearly labeled sections in this order, each containing exactly ONE table:
+1) ## MUST
+2) ## SHOULD
+3) ## COULD
+4) ## SHOULD NOT
+
+Each table must have exactly FOUR columns with these headers:
+| Concept name | Very short description | Why in this table | Where (standards) |
+
+Where (standards) must list one or more of: FHIR, OMOP, openEHR, CARE-SM.
+
+## MUST
+| Concept name | Very short description | Why in this table | Where (standards) |
+|---|---|---|---|
+| ... | ... | ... | ... |
+
+## SHOULD
+| Concept name | Very short description | Why in this table | Where (standards) |
+|---|---|---|---|
+| ... | ... | ... | ... |
+
+## COULD
+| Concept name | Very short description | Why in this table | Where (standards) |
+|---|---|---|---|
+| ... | ... | ... | ... |
+
+## SHOULD NOT
+| Concept name | Very short description | Why in this table | Where (standards) |
+|---|---|---|---|
+| ... | ... | ... | ... |
+
+## Notes (only if needed)
+Include ONLY if necessary:
+- Removed concepts (and why)
+- Merge decisions (old names → normalized name)
+- Category conflicts (what differed and how resolved)
+- Kept-separate near-duplicates and why
+- Missing/invalid input structure (if any)
+
+Now read the four inputs and perform the consolidation exactly as specified.
