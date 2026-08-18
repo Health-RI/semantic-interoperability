@@ -12,7 +12,7 @@ Specifies stage governance for "domain packages": how stage states are tracked, 
 
 !!! info "Input sources at all stages"
 
-    Input may arrive at any stage (`int`, `irv`, `erv`, `pub`) and from multiple sources. For example, external contributors (e.g., via GitHub Issues or community calls), the mappings team, domain experts, and other stakeholders. Such input is triaged within the current stage and it does not change the stage by itself. If accepted input entails semantic changes, apply the reversion and versioning rules in [Stage Reversions — Why and When](#stage-reversions--why-and-when) and [Policy for Semantic Modifications](#policy-for-semantic-modifications).
+    Input may arrive at any stage (`int`, `irv`, `erv`, `pub`) and from multiple sources. For example, external contributors (e.g., via GitHub Issues or community calls), the mappings team, domain experts, and other stakeholders. Such input is triaged within the current stage and it does not change the stage by itself. If accepted input entails semantic changes, apply the reversion and versioning rules in [Stage Reversions — Why and When](#stage-reversions-why-and-when) and [Policy for Semantic Modifications](#policy-for-semantic-modifications).
 
 ## Definitions & Glossary (Stages)
 
@@ -216,7 +216,7 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
 
     This checklist is still under review and it should be used with caution.
 
-**In-stage operational checklist (non-gate).** Use this list to run and monitor activities while the package remains in `pub`. Failure on any item does **not** automatically change stage; substantive issues should trigger a reversion per [Stage Reversions — Why and When](#stage-reversions--why-and-when).
+**In-stage operational checklist (non-gate).** Use this list to run and monitor activities while the package remains in `pub`. Failure on any item does **not** automatically change stage; substantive issues should trigger a reversion per [Stage Reversions — Why and When](#stage-reversions-why-and-when).
 
 - [ ] **Release & preservation (one-time at publication)**
 
@@ -241,7 +241,7 @@ These checklists function strictly as exit gates: the [Internal Stage Gate Check
 
 ## Post-Publication Validation & Ongoing Feedback (`pub`)
 
-Mark the package as `pub` (in its stage tagged value) once internal and external reviews conclude. Publication does not end the package lifecycle. As described in [Stage Reversions and Semantic Modifications](#stage-reversions-and-semantic-modifications) and in the [Versioning Strategy](./ontology-versioning.md), packages may receive new feedback, undergo stage reversions, and re-enter previous stages. If feedback triggers a reversion to `int`, the package must re-pass the [Internal Stage Gate Checklist](#internal-stage-gate-checklist) before moving back to `irv`. For publication-time and ongoing `pub` tasks, execute and maintain the [Publication Stage Operations Checklist](#publication-stage-operations-checklist).
+Mark the package as `pub` (in its stage tagged value) once internal and external reviews conclude. Publication does not end the package lifecycle. As described in [Stage Reversions — Why and When](#stage-reversions-why-and-when), [Policy for Semantic Modifications](#policy-for-semantic-modifications), and the [Versioning Strategy](./ontology-versioning.md), packages may receive new feedback, undergo stage reversions, and re-enter previous stages. If feedback triggers a reversion to `int`, the package must re-pass the [Internal Stage Gate Checklist](#internal-stage-gate-checklist) before moving back to `irv`. For publication-time and ongoing `pub` tasks, execute and maintain the [Publication Stage Operations Checklist](#publication-stage-operations-checklist).
 
 **Active actions at `pub`.** Execute the [Publication Stage Operations Checklist](#publication-stage-operations-checklist). The items below explain *what* each checklist group is about:
 

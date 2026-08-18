@@ -6,8 +6,8 @@
 
 **Further reading:**
 
-- [Overview of methods and approach](../method/)
-- [FAIR & semantic interoperability context](../semantic-interoperability/)
+- [Overview of methods and approach](method/index.md)
+- [FAIR & semantic interoperability context](semantic-interoperability/index.md)
 
 !!! warning "Disclaimer"
 
@@ -105,7 +105,7 @@
 
 ??? question "What are some examples of current successes or progress?"
 
-    The development of the HRIO OntoUML conceptual model, its implementation as the gUFO-based OWL ontology, and the strategy for semantically aligning source expressions from heterogeneous artifacts using [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html) properties are all concrete milestones already achieved.
+    The development of the HRIO OntoUML conceptual model, its implementation as the gUFO-based OWL ontology, and the strategy for semantically aligning source expressions from heterogeneous artifacts using [Health-RI Mapping Vocabulary](method/specification-vocabulary.html) properties are all concrete milestones already achieved.
 
 ??? question "What challenges and unresolved limitations were identified?"
 
@@ -162,12 +162,12 @@
 
 ??? question "How does this initiative relate to the FAIR principles?"
 
-    It supports the 'I' in FAIR—Interoperability—by grounding vocabularies and schemas in shared ontologies and ontological commitments (see [FAIR & semantic interoperability](../semantic-interoperability/)).
+    It supports the 'I' in FAIR—Interoperability—by grounding vocabularies and schemas in shared ontologies and ontological commitments (see [FAIR & semantic interoperability](semantic-interoperability/index.md)).
 
 ??? question "What are the main components of the approach?"
 
-    - [OntoUML](../ontouml-gufo/ontouml) conceptual modeling for HRIO
-    - [gUFO](../ontouml-gufo/gufo) as the OWL-based computational implementation of HRIO
+    - [OntoUML](ontouml-gufo/ontouml.md) conceptual modeling for HRIO
+    - [gUFO](ontouml-gufo/gufo.md) as the OWL-based computational implementation of HRIO
     - HRIV meaning mappings from source expressions to HRIO meanings
     - SSSOM mapping sets and embedded mappings for managing semantic alignments
     - Persistent identifiers and publication artifacts for stable access and traceability
@@ -206,8 +206,8 @@
 
 **Further reading:**
 
-- [OntoUML overview](../ontouml-gufo/ontouml)
-- [gUFO details](../ontouml-gufo/gufo)
+- [OntoUML overview](ontouml-gufo/ontouml.md)
+- [gUFO details](ontouml-gufo/gufo.md)
 
 ??? question "What are OntoUML and gUFO, and why are they used?"
 
@@ -231,7 +231,7 @@
 
 ??? question "How is the OntoUML model converted to OWL?"
 
-    The OntoUML model is exported to OWL using the [gUFO specification](../ontouml-gufo/gufo) via plugin tooling. The resulting ontology retains the original semantics in a format suitable for Semantic Web technologies.
+    The OntoUML model is exported to OWL using the [gUFO specification](ontouml-gufo/gufo.md) via plugin tooling. The resulting ontology retains the original semantics in a format suitable for Semantic Web technologies.
 
 ??? question "What is the difference between OntoUML and gUFO?"
 
@@ -243,9 +243,9 @@
 
 **Further reading:**
 
-- [Health-RI Mapping Vocabulary](../method/specification-vocabulary.html)
-- [Mapping strategy guide](../method/mapping-strategy)
-- [Archived contribution process](../contributing/)
+- [Health-RI Mapping Vocabulary](method/specification-vocabulary.html)
+- [Mapping strategy guide](method/mapping-strategy.md)
+- [Archived contribution process](contributing/overview.md)
 
 !!! tip "HRIO Mapping Assistant (GPT)"
 
@@ -272,8 +272,8 @@
 
     Mappings can be asserted using:
 
-    - [`hriv:hasExactMeaning`](../method/specification-vocabulary.html#hasExactMeaning) when an exact-meaning alignment is justified,
-    - [`hriv:hasBroaderMeaningThan`](../method/specification-vocabulary.html#hasBroaderMeaningThan) or [`hriv:hasNarrowerMeaningThan`](../method/specification-vocabulary.html#hasNarrowerMeaningThan) when exact alignment is not justified, to make the remaining mismatch explicit.
+    - [`hriv:hasExactMeaning`](method/specification-vocabulary.html#hasExactMeaning) when an exact-meaning alignment is justified,
+    - [`hriv:hasBroaderMeaningThan`](method/specification-vocabulary.html#hasBroaderMeaningThan) or [`hriv:hasNarrowerMeaningThan`](method/specification-vocabulary.html#hasNarrowerMeaningThan) when exact alignment is not justified, to make the remaining mismatch explicit.
 
     These mappings support semantic alignment without requiring replacement of source artifacts.
 
@@ -407,7 +407,7 @@
 
 **Further reading:**
 
-- [Archived contribution process](../contributing/)
+- [Archived contribution process](contributing/overview.md)
 
 !!! warning "Contribution process closed"
 
@@ -436,7 +436,7 @@
 
 ??? question "How can I contribute to the Health-RI Semantic Interoperability Initiative?"
 
-    The initiative has been discontinued and no longer accepts contributions for review, curation, or integration into project releases. The [contribution pages](../contributing/) remain available as historical documentation.
+    The initiative has been discontinued and no longer accepts contributions for review, curation, or integration into project releases. The [contribution pages](contributing/overview.md) remain available as historical documentation.
 
 ??? question "Do I need to check the ontology version before submitting a contribution?"
 
@@ -444,7 +444,7 @@
 
 ??? question "Where can I find more information on how feedback was submitted?"
 
-    See the archived [Contributing page](../contributing/), which documents the contribution process used during the initiative.
+    See the archived [Contributing page](contributing/overview.md), which documents the contribution process used during the initiative.
 
 ## Ontology Lifecycle and Publishing
 
@@ -452,10 +452,10 @@
 
 **Further reading:**
 
-- [Publications & operations](../method/publications)
+- [Publications & operations](method/publications.md)
 - [Ontology versioning](./method/ontology-versioning.md)
 - [Validation & stage gates](./method/ontology-validation.md)
-- [Persistent identifiers (PIDs)](../method/persistent-ids)
+- [Persistent identifiers (PIDs)](method/persistent-ids.md)
 
 !!! note "Operational status: discontinued"
 
@@ -651,7 +651,7 @@
 
 ??? question "Where can I find an overview of all persistent identifiers provided by the initiative?"
 
-    The initiative documentation contains a consolidated table of PIDs covering the ontology, mapping set, and mapping vocabulary. See [Persistent Identifiers](../method/persistent-ids.md).
+    The initiative documentation contains a consolidated table of PIDs covering the ontology, mapping set, and mapping vocabulary. See [Persistent Identifiers](method/persistent-ids.md).
 
 ??? question "How do persistent identifiers (w3id) work in this project?"
 

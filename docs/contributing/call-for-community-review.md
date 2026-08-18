@@ -41,7 +41,7 @@ Instructions for each review were provided in the corresponding call.
   <tbody>
     <tr>
       <td style="text-align:center; background-color:#ECEFF1; color:#37474F; font-weight:700;">Closed</td>
-      <td style="text-align:center;font-weight:700;"><a href="../../external-review/sex-and-gender/">Sex and Gender</a></td>
+      <td style="text-align:center;font-weight:700;"><a href="https://health-ri.github.io/semantic-interoperability/external-review/sex-and-gender/">Sex and Gender</a></td>
       <td style="text-align:center;font-weight:700;">17-02-2026</td>
       <td style="text-align:center;font-weight:700;">13-03-2026</td>
     </tr>
@@ -60,6 +60,6 @@ There are no active Calls for Community Review. The initiative has been disconti
 
 ### Closed calls
 
-- [Sex and Gender](../../external-review/sex-and-gender/)
+- [Sex and Gender](../external-review/sex-and-gender.md)
 
 The Sex and Gender review materials and any recorded feedback remain available as part of the initiative's historical documentation.
